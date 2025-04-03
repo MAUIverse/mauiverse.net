@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Welcome to the MAUIverse.">
+    <meta name="keywords" content=".NET, MAUI, Blazor Hybrid, iOS, Android, Windows, Mac, Multi-platform App UI, cross-platform, community, open-source">
+    <meta name="author" content="mauiverse.net">
+    <title>Example Page</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            background-color: black;
+            color: white;
+            position: relative;
+        }
+        .image-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        /* Media query for mobile devices */
+        @media screen and (max-width: 768px) {
+            img {
+                /* Adjust for mobile screens */
+                object-position: center center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="img/mauiverse-logo-background.png" alt="MAUIverse Logo">
+    </div>
+</body>
+</html>
