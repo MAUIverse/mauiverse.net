@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Newsletter | MAUIverse"
+  description="Subscribe to the MAUIverse newsletter for updates."
+>
+  <!-- This site’s default global.css locks overflow to hidden for the fullscreen homepage -->
+  <style is:global>
+    html,
+    body {
+      height: auto;
+      overflow: auto;
+    }
+  </style>
+
+  <section id="newsletter" class="bg-brand-light py-24 px-0 min-h-screen">
+    <div class="container max-w-4xl mx-auto px-4 text-center">
+      <p class="text-brand-extra font-bold mb-4 text-xl font-header uppercase">
+        Stay in the loop
+      </p>
+      <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
+        Newsletter
+      </h1>
+      <p class="text-brand-dark text-base text-md mb-10 max-w-2xl mx-auto">
+        Stay in touch with MAUIverse, and get notified first about community updates and more.
+        <br />
+        <span class="text-brand-dark text-base text-md mb-10 italic">No spam. Ever.</span>
+      </p>
+
+      <!-- User is redirected to the thank-you page automatically by sendfox after submitting the form -->
+      <form
+        method="post"
+        action="https://sendfox.com/form/m79vql/m8lj22"
+        class="sendfox-form max-w-md mx-auto text-left relative"
+        id="m8lj22"
+        data-async="true"
+        data-recaptcha="true"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="sendfox_form_name" class="block text-sm font-medium text-brand-dark mb-1">
+              First Name
+            </label>
+            <input
+              type="text"
+              id="sendfox_form_name"
+              placeholder="First Name"
+              name="first_name"
+              required
+              class="w-full px-4 py-2.5 border border-gray-300 rounded-md text-brand-dark placeholder-gray-500 focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
+            />
+          </div>
+          <div>
+            <label
+              for="sendfox_form_last_name"
+              class="block text-sm font-medium text-brand-dark mb-1"
+            >
+              Last Name
+            </label>
+            <input
+              type="text"
+              id="sendfox_form_last_name"
+              placeholder="Last Name"
+              name="last_name"
+              required
+              class="w-full px-4 py-2.5 border border-gray-300 rounded-md text-brand-dark placeholder-gray-500 focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
+            />
+          </div>
+        </div>
+        <div class="mb-5">
+          <label for="sendfox_form_email" class="block text-sm font-medium text-brand-dark mb-1">
+            Email
+          </label>
+          <input
+            type="email"
+            id="sendfox_form_email"
+            placeholder="Email"
+            name="email"
+            required
+            class="w-full px-4 py-2.5 border border-gray-300 rounded-md text-brand-dark placeholder-gray-500 focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
+          />
+        </div>
+
+        <!-- no botz please -->
+        <div class="absolute left-[-5000px]" aria-hidden="true">
+          <input type="text" name="a_password" tabindex="-1" value="" autocomplete="off" />
+        </div>
+
+        <div class="text-center">
+          <p class="text-sm text-gray-500 mb-4">
+            The form is protected by <a href="/privacy" class="text-brand-extra hover:underline"
+              >reCAPTCHA</a
+            >.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <button
+            type="submit"
+            class="w-full text-center md:w-auto border-2 border-brand-extra bg-brand-extra text-white font-bold px-8 py-3 rounded-full text-md hover:bg-brand-extraDark hover:border-brand-extraDark transition"
+          >
+            Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <script src="https://cdn.sendfox.com/js/form.js" charset="utf-8" defer></script>
+</BaseLayout>
+

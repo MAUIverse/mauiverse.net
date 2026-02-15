@@ -4,6 +4,15 @@
 
 /* Match original reset and full-viewport behavior */
 @layer base {
+  :root {
+    /* Tailwind theme tokens used across the site */
+    --color-brand-light: 248 250 252; /* slate-50 */
+    --color-brand-dark: 15 23 42; /* slate-900 */
+    --color-brand: 99 102 241; /* indigo-500 */
+    --color-brand-extra: 236 72 153; /* pink-500 */
+    --color-brand-extraDark: 219 39 119; /* pink-600 */
+  }
+
   html,
   body {
     @apply m-0 p-0 w-full h-full overflow-hidden;
@@ -11,4 +20,10 @@
   body {
     @apply bg-black text-white relative;
   }
+}
+
+/* Hide reCAPTCHA badge */
+.grecaptcha-badge,
+#grecaptcha-badge {
+  visibility: hidden;
 }
