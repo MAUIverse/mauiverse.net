@@ -1,5 +1,6 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
+import { extractYouTubeVideoId } from '../../utils/youtube';
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
@@ -10,7 +11,8 @@ export async function GET(context: { site: string | undefined }) {
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   );
 
-  const baseUrl = (context.site ?? 'https://mauiverse.net').replace(/\/$/, '');
+  const site = context.site ?? 'https://mauiverse.net';
+  const baseUrl = typeof site === 'string' ? site.replace(/\/$/, '') : 'https://mauiverse.net';
 
   return rss({
     title: 'MAUIverse Community Feed',
@@ -19,7 +21,9 @@ export async function GET(context: { site: string | undefined }) {
     site: baseUrl,
     items: entries.map((entry) => {
       const hasContent = hasBody(entry);
-      const link = hasContent
+      const videoId = extractYouTubeVideoId(entry.data.link);
+      const isInternal = hasContent || videoId;
+      const link = isInternal
         ? `${baseUrl}/community-feed/${entry.id}/`
         : entry.data.link;
       return {

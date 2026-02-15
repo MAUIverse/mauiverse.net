@@ -2,6 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
 import { getAuthorDisplayName } from '../../data/authors';
+import { isGitHubUrl } from '../../utils/link';
+import {
+  extractYouTubeVideoId,
+  getYouTubeEmbedUrl,
+} from '../../utils/youtube';
 
 export async function getStaticPaths() {
   const entries = await getCollection('community-feed');
@@ -17,12 +22,14 @@ function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
 }
 
+const videoId = extractYouTubeVideoId(entry.data.link);
 const withBody = hasBody(entry);
+const showDetailPage = withBody || videoId;
 const rendered = withBody ? await render(entry) : null;
 const Content = rendered?.Content ?? null;
 ---
 
-{withBody && Content ? (
+{showDetailPage ? (
   <BaseLayout
     title={`${entry.data.title} | Community Feed | MAUIverse`}
     description={entry.data.description}
@@ -35,7 +42,7 @@ const Content = rendered?.Content ?? null;
       }
     </style>
 
-    <article class="bg-brand-light py-24 px-0 min-h-screen">
+    <article class="bg-brand-light py-24 px-0 min-h-screen text-brand-dark">
       <div class="container max-w-3xl mx-auto px-4">
         <header class="mb-8">
           <h1 class="text-brand-dark text-3xl md:text-4xl font-header font-bold mb-4">
@@ -67,19 +74,58 @@ const Content = rendered?.Content ?? null;
           )}
         </header>
 
-        <div class="prose prose-slate max-w-none prose-headings:text-brand-dark prose-a:text-brand-extra prose-a:no-underline hover:prose-a:underline">
-          <Content />
-        </div>
+        {videoId && (
+          <div class="mb-8 w-full" style="position: relative; padding-top: 56.25%;">
+            <iframe
+              title="YouTube video"
+              src={getYouTubeEmbedUrl(videoId)}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              class="rounded border border-gray-200"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+            />
+          </div>
+        )}
+
+        {withBody && Content ? (
+          <div
+            class="prose prose-slate max-w-none prose-headings:text-brand-dark prose-headings:font-header prose-headings:font-bold prose-headings:mt-10 prose-headings:mb-4 prose-a:text-brand-extra prose-a:no-underline hover:prose-a:underline prose-p:my-5 prose-p:leading-relaxed prose-ul:my-5 prose-ol:my-5 prose-li:my-2 prose-li:leading-relaxed prose-ul:pl-6 prose-ol:pl-6 prose-blockquote:border-brand-extra/30 prose-blockquote:text-gray-700"
+          >
+            <Content />
+          </div>
+        ) : videoId ? (
+          <p class="text-gray-700 text-base">{entry.data.description}</p>
+        ) : null}
 
         <p class="mt-8">
-          <a
-            href={entry.data.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-brand-extra font-medium hover:underline"
-          >
-            Related link →
-          </a>
+          {videoId ? (
+            <a
+              href={entry.data.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
+            >
+              Watch on YouTube
+            </a>
+          ) : isGitHubUrl(entry.data.link) ? (
+            <a
+              href={entry.data.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
+            >
+              View on GitHub
+            </a>
+          ) : (
+            <a
+              href={entry.data.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-brand-extra font-medium hover:underline"
+            >
+              Related link →
+            </a>
+          )}
         </p>
 
         <p class="mt-8">

@@ -1,0 +1,160 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  basePath?: string;
+}
+
+const { currentPage, totalPages, basePath = '/community-feed' } = Astro.props;
+
+type PageToken = number | '…';
+
+function getTokens(current: number, total: number): PageToken[] {
+  if (total <= 1) return [1];
+  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+
+  const tokens: PageToken[] = [1];
+  const start = Math.max(2, current - 2);
+  const end = Math.min(total - 1, current + 2);
+
+  if (start > 2) tokens.push('…');
+  for (let i = start; i <= end; i++) tokens.push(i);
+  if (end < total - 1) tokens.push('…');
+
+  tokens.push(total);
+  return tokens;
+}
+
+function hrefForPage(page: number): string {
+  const root = basePath.replace(/\/$/, '');
+  return page === 1 ? `${root}/` : `${root}/page/${page}/`;
+}
+
+const tokens = getTokens(currentPage, totalPages);
+const prevHref = currentPage > 1 ? hrefForPage(currentPage - 1) : null;
+const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
+---
+
+{totalPages > 1 && (
+  <nav class="mt-12 flex items-center justify-center" aria-label="Pagination">
+    <ul class="flex items-center gap-2 flex-wrap justify-center">
+      <li>
+        {prevHref ? (
+          <a
+            href={prevHref}
+            rel="prev"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:text-brand-extra transition"
+            aria-label="Previous page"
+            title="Previous page"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="h-5 w-5"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M11.78 15.53a.75.75 0 01-1.06 0l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 111.06 1.06L8.06 10l3.72 3.72a.75.75 0 010 1.06z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        ) : (
+          <span
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-gray-50 text-gray-300"
+            aria-disabled="true"
+            title="Previous page"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="h-5 w-5"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M11.78 15.53a.75.75 0 01-1.06 0l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 111.06 1.06L8.06 10l3.72 3.72a.75.75 0 010 1.06z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </span>
+        )}
+      </li>
+
+      {tokens.map((token) => (
+        <li>
+          {token === '…' ? (
+            <span class="px-2 text-gray-400 select-none" aria-hidden="true">
+              …
+            </span>
+          ) : token === currentPage ? (
+            <span
+              class="inline-flex h-10 min-w-10 items-center justify-center rounded-md bg-brand-extra px-3 text-white font-semibold"
+              aria-current="page"
+            >
+              {token}
+            </span>
+          ) : (
+            <a
+              href={hrefForPage(token)}
+              class="inline-flex h-10 min-w-10 items-center justify-center rounded-md border border-gray-200 bg-white px-3 text-gray-700 hover:bg-gray-50 hover:text-brand-extra transition"
+              aria-label={`Go to page ${token}`}
+            >
+              {token}
+            </a>
+          )}
+        </li>
+      ))}
+
+      <li>
+        {nextHref ? (
+          <a
+            href={nextHref}
+            rel="next"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:text-brand-extra transition"
+            aria-label="Next page"
+            title="Next page"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="h-5 w-5"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.22 4.47a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 11-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 010-1.06z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        ) : (
+          <span
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-gray-50 text-gray-300"
+            aria-disabled="true"
+            title="Next page"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="h-5 w-5"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.22 4.47a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 11-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 010-1.06z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </span>
+        )}
+      </li>
+    </ul>
+  </nav>
+)}
+

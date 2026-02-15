@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import FeedEntries from '../../../components/community-feed/FeedEntries.astro';
+import Pagination from '../../../components/community-feed/Pagination.astro';
+
+export async function getStaticPaths() {
+  const pageSize = 15;
+  const entries = (await getCollection('community-feed')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );
+
+  const totalPages = Math.max(1, Math.ceil(entries.length / pageSize));
+  const paths: Array<{
+    params: { page: string };
+    props: { entries: typeof entries; currentPage: number; totalPages: number };
+  }> = [];
+
+  // Page 1 is served by /community-feed
+  for (let currentPage = 2; currentPage <= totalPages; currentPage++) {
+    const start = (currentPage - 1) * pageSize;
+    const pageEntries = entries.slice(start, start + pageSize);
+    paths.push({
+      params: { page: String(currentPage) },
+      props: { entries: pageEntries, currentPage, totalPages },
+    });
+  }
+
+  return paths;
+}
+
+const { entries, currentPage, totalPages } = Astro.props;
+---
+
+<BaseLayout
+  title={`Community Feed (Page ${currentPage}) | MAUIverse`}
+  description="Notable moments, packages, projects, and celebrations from the MAUIverse community."
+>
+  <!-- This site's default global.css locks overflow to hidden for the fullscreen homepage -->
+  <style is:global>
+    html,
+    body {
+      height: auto;
+      overflow: auto;
+    }
+  </style>
+
+  <section class="bg-brand-light py-24 px-0 min-h-screen">
+    <div class="container max-w-4xl mx-auto px-4">
+      <p class="text-brand-extra font-bold mb-4 text-xl font-header uppercase">
+        From the community
+      </p>
+      <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
+        Community Feed
+      </h1>
+      <p class="text-brand-dark text-base text-md mb-12 max-w-2xl">
+        Notable moments, packages, projects, and celebrations from the MAUIverse community.
+      </p>
+
+      <FeedEntries entries={entries} />
+      <Pagination currentPage={currentPage} totalPages={totalPages} />
+    </div>
+  </section>
+</BaseLayout>
+
