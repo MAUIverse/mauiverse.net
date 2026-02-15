@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getAuthorDisplayName } from '../../data/authors';
+
+const entries = (await getCollection('community-feed')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+function hasBody(entry: { body?: string }): boolean {
+  return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
+}
+---
+
+<BaseLayout
+  title="Community Feed | MAUIverse"
+  description="Notable moments, packages, projects, and celebrations from the MAUIverse community."
+>
+  <!-- This site's default global.css locks overflow to hidden for the fullscreen homepage -->
+  <style is:global>
+    html,
+    body {
+      height: auto;
+      overflow: auto;
+    }
+  </style>
+
+  <section class="bg-brand-light py-24 px-0 min-h-screen">
+    <div class="container max-w-4xl mx-auto px-4">
+      <p class="text-brand-extra font-bold mb-4 text-xl font-header uppercase">
+        From the community
+      </p>
+      <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
+        Community Feed
+      </h1>
+      <p class="text-brand-dark text-base text-md mb-12 max-w-2xl">
+        Notable moments, packages, projects, and celebrations from the MAUIverse community.
+      </p>
+
+      <ul class="space-y-8" aria-label="Community feed posts">
+        {entries.map((entry) => {
+          const hasContent = hasBody(entry);
+          const detailUrl = `/community-feed/${entry.id}/`;
+          return (
+            <li class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+              <div class="flex flex-col gap-3">
+                {hasContent ? (
+                  <a
+                    href={detailUrl}
+                    class="text-brand-dark text-xl font-header font-bold hover:text-brand-extra transition-colors"
+                  >
+                    {entry.data.title}
+                  </a>
+                ) : (
+                  <a
+                    href={entry.data.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-brand-dark text-xl font-header font-bold hover:text-brand-extra transition-colors"
+                  >
+                    {entry.data.title}
+                  </a>
+                )}
+                <p class="text-gray-600 text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
+                  {entry.data.author && (
+                    <span class="inline-flex items-center gap-1.5">
+                      <img
+                        src={`https://github.com/${entry.data.author}.png?size=64`}
+                        alt=""
+                        width="24"
+                        height="24"
+                        class="h-6 w-6 rounded-full inline-block align-middle"
+                        loading="lazy"
+                      />
+                      <span>{getAuthorDisplayName(entry.data.author)}</span>
+                    </span>
+                  )}
+                  {entry.data.author && <span class="text-gray-400">·</span>}
+                  <time datetime={entry.data.date.toISOString()}>
+                    {entry.data.date.toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                </p>
+                <p class="text-gray-700 text-base">{entry.data.description}</p>
+                {hasContent ? (
+                  <a
+                    href={detailUrl}
+                    class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
+                  >
+                    Read more
+                  </a>
+                ) : (
+                  <a
+                    href={entry.data.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
+                  >
+                    Visit link
+                  </a>
+                )}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

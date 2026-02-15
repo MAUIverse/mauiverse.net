@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { getAuthorDisplayName } from '../../data/authors';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('community-feed');
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+
+function hasBody(entry: { body?: string }): boolean {
+  return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
+}
+
+const withBody = hasBody(entry);
+const rendered = withBody ? await render(entry) : null;
+const Content = rendered?.Content ?? null;
+---
+
+{withBody && Content ? (
+  <BaseLayout
+    title={`${entry.data.title} | Community Feed | MAUIverse`}
+    description={entry.data.description}
+  >
+    <style is:global>
+      html,
+      body {
+        height: auto;
+        overflow: auto;
+      }
+    </style>
+
+    <article class="bg-brand-light py-24 px-0 min-h-screen">
+      <div class="container max-w-3xl mx-auto px-4">
+        <header class="mb-8">
+          <h1 class="text-brand-dark text-3xl md:text-4xl font-header font-bold mb-4">
+            {entry.data.title}
+          </h1>
+          <p class="text-gray-600 text-sm mb-4">
+            <time datetime={entry.data.date.toISOString()}>
+              {entry.data.date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+          </p>
+          {entry.data.author && (
+            <div class="flex items-center gap-3">
+              <img
+                src={`https://github.com/${entry.data.author}.png?size=96`}
+                alt=""
+                width="48"
+                height="48"
+                class="h-12 w-12 rounded-full"
+                loading="lazy"
+              />
+              <span class="text-brand-dark font-medium">
+                {getAuthorDisplayName(entry.data.author)}
+              </span>
+            </div>
+          )}
+        </header>
+
+        <div class="prose prose-slate max-w-none prose-headings:text-brand-dark prose-a:text-brand-extra prose-a:no-underline hover:prose-a:underline">
+          <Content />
+        </div>
+
+        <p class="mt-8">
+          <a
+            href={entry.data.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-brand-extra font-medium hover:underline"
+          >
+            Related link →
+          </a>
+        </p>
+
+        <p class="mt-8">
+          <a
+            href="/community-feed/"
+            class="text-brand-extra font-medium hover:underline"
+          >
+            ← Back to Community Feed
+          </a>
+        </p>
+      </div>
+    </article>
+  </BaseLayout>
+) : (
+  <BaseLayout title={`${entry.data.title} | MAUIverse`}>
+    <Fragment slot="head">
+      <meta http-equiv="refresh" content={`0; URL='${entry.data.link}'`} />
+    </Fragment>
+    <div class="bg-brand-light py-24 px-4 min-h-screen flex flex-col items-center justify-center">
+      <p class="text-brand-dark mb-4">Redirecting to the linked page…</p>
+      <a
+        href={entry.data.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-brand-extra font-medium hover:underline"
+      >
+        Click here if you are not redirected
+      </a>
+      <a href="/community-feed/" class="mt-4 text-gray-600 hover:underline">
+        ← Back to Community Feed
+      </a>
+    </div>
+  </BaseLayout>
+)}
