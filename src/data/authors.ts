@@ -71,7 +71,6 @@ const authorTuples: [string, string, string?][] = [
   ['samidip', 'Sam Basu'],
   ['fdmomtaz', 'Farshad Momtaz'],
   ['danielmonettelli', 'Daniel Monettelli'],
-  ['danielmonetelli', 'Daniel Monettelli'],
   ['andreas-nesheim', 'Andreas Nesheim'],
   ['almirvuk', 'Almir Vuk'],
   ['flaviogoncalves', 'Flavio Gonclaves'],
