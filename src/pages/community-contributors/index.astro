@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { authorDisplayNames } from '../../data/authors';
+import {
+  getAuthorKeys,
+  getAuthorDisplayName,
+  getAuthorImageSrc,
+} from '../../data/authors';
 
 type Contributor = {
   githubUsername: string;
@@ -17,9 +21,9 @@ function shuffleContributors(contributors: Contributor[]): Contributor[] {
 }
 
 const contributors = shuffleContributors(
-  Object.entries(authorDisplayNames).map(([githubUsername, displayName]) => ({
+  getAuthorKeys().map((githubUsername) => ({
     githubUsername,
-    displayName,
+    displayName: getAuthorDisplayName(githubUsername),
   }))
 );
 ---
@@ -53,7 +57,7 @@ const contributors = shuffleContributors(
           <li class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
             <div class="flex h-full flex-col items-center text-center">
               <img
-                src={`https://github.com/${contributor.githubUsername}.png?size=256`}
+                src={getAuthorImageSrc(contributor.githubUsername, 256)}
                 alt={`${contributor.displayName} profile picture`}
                 width="96"
                 height="96"

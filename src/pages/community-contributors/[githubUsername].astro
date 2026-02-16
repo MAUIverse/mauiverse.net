@@ -2,16 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import FeedEntries from '../../components/community-feed/FeedEntries.astro';
-import { authorDisplayNames } from '../../data/authors';
+import {
+  getAuthorKeys,
+  getAuthorDisplayName,
+  getAuthorImageSrc,
+  getAuthorGitHubUrl,
+} from '../../data/authors';
 
 export async function getStaticPaths() {
-  return Object.entries(authorDisplayNames).map(([githubUsername, displayName]) => ({
+  return getAuthorKeys().map((githubUsername) => ({
     params: { githubUsername },
-    props: { githubUsername, displayName },
+    props: { githubUsername, displayName: getAuthorDisplayName(githubUsername) },
   }));
 }
 
 const { githubUsername, displayName } = Astro.props;
+const githubUrl = getAuthorGitHubUrl(githubUsername);
 
 const contributorEntries = (await getCollection('community-feed'))
   .filter((entry) => entry.data.author === githubUsername)
@@ -39,7 +45,7 @@ const contributorEntries = (await getCollection('community-feed'))
       <header class="mb-10 rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
         <div class="flex flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
           <img
-            src={`https://github.com/${githubUsername}.png?size=320`}
+            src={getAuthorImageSrc(githubUsername, 320)}
             alt={`${displayName} profile picture`}
             width="128"
             height="128"
@@ -53,14 +59,18 @@ const contributorEntries = (await getCollection('community-feed'))
             <h1 class="mb-3 text-3xl font-header font-bold text-brand-dark">
               {displayName}
             </h1>
-            <a
-              href={`https://github.com/${githubUsername}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-base font-medium text-brand-extra hover:underline"
-            >
-              @{githubUsername} on GitHub
-            </a>
+            {githubUrl ? (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-base font-medium text-brand-extra hover:underline"
+              >
+                @{githubUsername} on GitHub
+              </a>
+            ) : (
+              <span class="text-base text-gray-600">{displayName}</span>
+            )}
           </div>
         </div>
       </header>

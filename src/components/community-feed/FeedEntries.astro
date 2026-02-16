@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { getAuthorDisplayName } from '../../data/authors';
+import { getAuthorDisplayName, getAuthorImageSrc } from '../../data/authors';
 import { isGitHubUrl } from '../../utils/link';
 import { extractYouTubeVideoId, getYouTubeThumbnailUrl } from '../../utils/youtube';
 
@@ -66,7 +66,7 @@ function hasBody(entry: { body?: string }): boolean {
               {entry.data.author && (
                 <span class="inline-flex items-center gap-1.5">
                   <img
-                    src={`https://github.com/${entry.data.author}.png?size=64`}
+                    src={getAuthorImageSrc(entry.data.author, 64)}
                     alt=""
                     width="24"
                     height="24"

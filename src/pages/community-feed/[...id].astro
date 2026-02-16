@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
-import { getAuthorDisplayName } from '../../data/authors';
+import { getAuthorDisplayName, getAuthorImageSrc } from '../../data/authors';
 import { isGitHubUrl } from '../../utils/link';
 import {
   extractYouTubeVideoId,
@@ -60,7 +60,7 @@ const Content = rendered?.Content ?? null;
           {entry.data.author && (
             <div class="flex items-center gap-3">
               <img
-                src={`https://github.com/${entry.data.author}.png?size=96`}
+                src={getAuthorImageSrc(entry.data.author, 96)}
                 alt=""
                 width="48"
                 height="48"
