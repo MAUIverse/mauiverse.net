@@ -1,12 +1,207 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getAuthorDisplayName, getAuthorImageSrc } from '../data/authors';
+
+const latestEntries = (await getCollection('community-feed'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5);
+
+const DISCORD_URL = '/discord/';
+const maxTitleLength = 50;
+
+function truncateTitle(title: string): string {
+  if (title.length <= maxTitleLength) return title;
+  return title.slice(0, maxTitleLength).trim() + '…';
+}
 ---
 <BaseLayout title="Welcome to the MAUIverse" description="Welcome to the MAUIverse">
-  <div class="fixed inset-0 w-full h-full overflow-hidden">
-    <img
-      src="/img/mauiverse-logo-background.png"
-      alt="MAUIverse Logo"
-      class="w-full h-full object-cover object-center"
-    />
+  <style is:global>
+    html,
+    body {
+      height: auto;
+      overflow: auto;
+    }
+  </style>
+
+  <div class="bg-brand-light min-h-screen">
+    <div class="container mx-auto max-w-6xl px-4 py-16 md:py-24 space-y-16 md:space-y-24">
+      <!-- Row 1: Hero -->
+      <section class="text-center">
+        <h1 class="text-brand-dark text-4xl md:text-5xl font-header font-bold mb-4 uppercase">
+          MAUIverse
+        </h1>
+        <p class="text-brand-dark text-lg md:text-xl max-w-2xl mx-auto">
+          The community home for .NET MAUI developers. Whether you're building cross‑platform apps,
+          sharing packages, or celebrating wins—you. . . welcome.
+        </p>
+      </section>
+
+      <!-- Row 2: Community Feed (equal columns) -->
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+        <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm flex flex-col min-w-0">
+          <h2 class="text-brand-dark font-header font-bold text-lg mb-3">Latest from the Community</h2>
+          <ul class="space-y-3 flex-1 min-w-0" aria-label="Latest community feed entries">
+            {latestEntries.map((entry) => {
+              const detailUrl = `/community-feed/${entry.id}/`;
+              return (
+                <li class="flex items-center gap-2 min-w-0 flex-nowrap">
+                  {entry.data.author ? (
+                    <a
+                      href={detailUrl}
+                      class="flex items-center gap-1.5 flex-shrink-0"
+                      aria-hidden="true"
+                    >
+                      <img
+                        src={getAuthorImageSrc(entry.data.author, 64)}
+                        alt=""
+                        width="24"
+                        height="24"
+                        class="h-6 w-6 rounded-full flex-shrink-0"
+                        loading="lazy"
+                      />
+                      <span class="text-sm font-medium text-brand-dark whitespace-nowrap">
+                        {getAuthorDisplayName(entry.data.author)}
+                      </span>
+                    </a>
+                  ) : null}
+                  <a
+                    href={detailUrl}
+                    class="text-gray-700 text-sm truncate min-w-0 flex-1 hover:text-brand-extra transition-colors"
+                  >
+                    {truncateTitle(entry.data.title)}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div class="min-w-0 rounded-lg border border-gray-200 bg-white p-6 shadow-sm flex flex-col justify-center">
+          <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Community Feed</h2>
+          <p class="text-gray-700 mb-4 min-w-0">
+            A collation of moments, packages, projects, podcasts, and celebrations from the MAUIverse community.
+          </p>
+          <p class="min-w-0">
+            Read the feed here, or subscribe by RSS.
+          </p>
+          <a
+            href="/community-feed/"
+            class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark mt-2"
+          >
+            View full feed
+          </a>
+        </div>
+      </section>
+
+      <!-- Row 3: Discord (2/3 + 1/3) -->
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div class="lg:col-span-2 rounded-lg border border-gray-200 bg-white p-6 shadow-sm flex flex-col justify-center order-2 lg:order-1">
+          <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Join us on Discord</h2>
+          <p class="text-gray-700 mb-4">
+            Chat with other MAUI developers, get help, share what you're building, and stay in the
+            loop with the community.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Come say hi 👋
+          </p>
+          <a
+            href={DISCORD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
+          >
+            Open Discord
+          </a>
+        </div>
+        <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm flex flex-col justify-center order-1 lg:order-2">
+          <img src="/img/discord.jpg" alt="Discord" class="w-full h-auto" loading="lazy">
+        </div>
+      </section>
+
+      <!-- Row 4: Newsletter (1/3 + 2/3) -->
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm flex flex-col justify-center">
+          <p class="text-brand-extra font-bold mb-2 text-lg font-header uppercase">
+            Stay in the loop
+          </p>
+          <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Newsletter</h2>
+          <p class="text-gray-700">
+            Stay in touch with MAUIverse via curated highlights from the community.
+            <span class="italic block mt-1">No spam. Ever.</span>
+          </p>
+          <p class="text-gray-600 text-sm mt-3">
+            A monthly collation of the community feed delivered to your inbox.
+          </p>
+        </div>
+        <div class="lg:col-span-2 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <form
+            method="post"
+            action="https://sendfox.com/form/m79vql/1rzrlz"
+            class="sendfox-form max-w-md relative"
+            id="1rzrlz"
+            data-async="true"
+            data-recaptcha="true"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label for="sendfox_form_name_home" class="block text-sm font-medium text-brand-dark mb-1">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  id="sendfox_form_name_home"
+                  placeholder="First Name"
+                  name="first_name"
+                  required
+                  class="w-full px-4 py-2.5 border border-gray-300 rounded-md text-brand-dark placeholder-gray-500 focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
+                />
+              </div>
+              <div>
+                <label
+                  for="sendfox_form_last_name_home"
+                  class="block text-sm font-medium text-brand-dark mb-1"
+                >
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  id="sendfox_form_last_name_home"
+                  placeholder="Last Name"
+                  name="last_name"
+                  required
+                  class="w-full px-4 py-2.5 border border-gray-300 rounded-md text-brand-dark placeholder-gray-500 focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
+                />
+              </div>
+            </div>
+            <div class="mb-5">
+              <label for="sendfox_form_email_home" class="block text-sm font-medium text-brand-dark mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                id="sendfox_form_email_home"
+                placeholder="Email"
+                name="email"
+                required
+                class="w-full px-4 py-2.5 border border-gray-300 rounded-md text-brand-dark placeholder-gray-500 focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
+              />
+            </div>
+            <div class="absolute left-[-5000px]" aria-hidden="true">
+              <input type="text" name="a_password" tabindex="-1" value="" autocomplete="off" />
+            </div>
+            <p class="text-sm text-gray-500 mb-4">
+              The form is protected by <a href="/privacy" class="text-brand-extra hover:underline">reCAPTCHA</a>.
+            </p>
+            <button
+              type="submit"
+              class="w-full sm:w-auto border-2 border-brand-extra bg-brand-extra text-white font-bold px-8 py-3 rounded-full text-md hover:bg-brand-extraDark hover:border-brand-extraDark transition"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
   </div>
+  <script src="https://cdn.sendfox.com/js/form.js" charset="utf-8" defer></script>
 </BaseLayout>
