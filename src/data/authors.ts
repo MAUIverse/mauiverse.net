@@ -39,6 +39,7 @@ export const authorDisplayNames: Record<string, string> = {
   unoplatform: 'Uno Platform',
   'morning4coffe-dev': 'Dominik Titl',
   'TheCodeTraveler': 'Brandon Minnick',
+
 };
 
 export function getAuthorDisplayName(githubUsername: string): string {

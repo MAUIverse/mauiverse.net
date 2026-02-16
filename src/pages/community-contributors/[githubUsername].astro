@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import FeedEntries from '../../components/community-feed/FeedEntries.astro';
+import { authorDisplayNames } from '../../data/authors';
+
+export async function getStaticPaths() {
+  return Object.entries(authorDisplayNames).map(([githubUsername, displayName]) => ({
+    params: { githubUsername },
+    props: { githubUsername, displayName },
+  }));
+}
+
+const { githubUsername, displayName } = Astro.props;
+
+const contributorEntries = (await getCollection('community-feed'))
+  .filter((entry) => entry.data.author === githubUsername)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout
+  title={`${displayName} | Community Contributors | MAUIverse`}
+  description={`Community Feed contributions from ${displayName}.`}
+>
+  <style is:global>
+    html,
+    body {
+      height: auto;
+      overflow: auto;
+    }
+  </style>
+
+  <section class="bg-brand-light min-h-screen px-0 py-24">
+    <div class="container mx-auto max-w-4xl px-4">
+      <a href="/community-contributors/" class="mb-6 inline-block text-sm font-medium text-brand-extra hover:underline">
+        ← Back to Community Contributors
+      </a>
+
+      <header class="mb-10 rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+        <div class="flex flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
+          <img
+            src={`https://github.com/${githubUsername}.png?size=320`}
+            alt={`${displayName} profile picture`}
+            width="128"
+            height="128"
+            class="h-32 w-32 rounded-full"
+            loading="lazy"
+          />
+          <div>
+            <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
+              Community Contributor
+            </p>
+            <h1 class="mb-3 text-3xl font-header font-bold text-brand-dark">
+              {displayName}
+            </h1>
+            <a
+              href={`https://github.com/${githubUsername}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-base font-medium text-brand-extra hover:underline"
+            >
+              @{githubUsername} on GitHub
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <section aria-labelledby="contributor-feed-heading">
+        <h2 id="contributor-feed-heading" class="mb-6 text-2xl font-header font-bold text-brand-dark">
+          Community Feed Contributions
+        </h2>
+        {contributorEntries.length > 0 ? (
+          <FeedEntries entries={contributorEntries} />
+        ) : (
+          <p class="rounded-lg border border-dashed border-gray-300 bg-white p-6 text-gray-600">
+            No Community Feed entries are available yet for this contributor.
+          </p>
+        )}
+      </section>
+    </div>
+  </section>
+</BaseLayout>

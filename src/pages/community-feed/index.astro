@@ -38,6 +38,21 @@ const pageEntries = entries.slice(0, pageSize);
         Notable moments, packages, projects, and celebrations from the MAUIverse community.
       </p>
 
+      <div class="mb-8 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+        <h2 class="mb-2 text-2xl font-header font-bold text-brand-dark">
+          Community Contributors
+        </h2>
+        <p class="mb-4 text-gray-700">
+          Discover everyone contributing to the Community Feed.
+        </p>
+        <a
+          href="/community-contributors/"
+          class="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
+        >
+          Browse Community Contributors
+        </a>
+      </div>
+
       <FeedEntries entries={pageEntries} />
       <Pagination currentPage={1} totalPages={totalPages} />
     </div>
