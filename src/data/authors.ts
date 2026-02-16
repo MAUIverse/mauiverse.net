@@ -39,7 +39,7 @@ const authorTuples: [string, string, string?][] = [
   ['unoplatform', 'Uno Platform'],
   ['morning4coffe-dev', 'Dominik Titl'],
   ['TheCodeTraveler', 'Brandon Minnick'],
-  ['dotnetMAUIPodcast', 'The .NET MAUI Podcast', '/img/contributors/dotnetMAUIPodcast.png'],
+  ['dotnetMAUIPodcast', 'The .NET MAUI Podcast', '/img/contributors/dotnetMAUIPodcast.jpg'],
 ];
 
 const authorDisplayNames: Record<string, string> = {};
