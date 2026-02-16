@@ -39,31 +39,44 @@ const authorTuples: [string, string, string?][] = [
   ['unoplatform', 'Uno Platform'],
   ['morning4coffe-dev', 'Dominik Titl'],
   ['TheCodeTraveler', 'Brandon Minnick'],
-  ['dotnetMAUIPodcast', 'The .NET MAUI Podcast', '/img/contributors/dotnetMAUIPodcast.png'],
+  ['dotnetMAUIPodcast', 'The .NET MAUI Podcast', '/img/contributors/dotnetMAUIPodcast.jpg'],
 ];
 
 const authorDisplayNames: Record<string, string> = {};
 const authorImageOverrides: Record<string, string> = {};
+const authorKeyLookup: Record<string, string> = {};
 for (const [key, displayName, imagePath] of authorTuples) {
   authorDisplayNames[key] = displayName;
+  authorKeyLookup[key.toLowerCase()] = key;
   if (imagePath != null) authorImageOverrides[key] = imagePath;
+}
+
+function resolveAuthorKey(githubUsername: string): string {
+  return authorKeyLookup[githubUsername.toLowerCase()] ?? githubUsername;
+}
+
+export function isSameAuthorKey(leftKey: string, rightKey: string): boolean {
+  return resolveAuthorKey(leftKey).toLowerCase() === resolveAuthorKey(rightKey).toLowerCase();
 }
 
 /** Display name for feed; key is the author value from frontmatter (often GitHub username). */
 export function getAuthorDisplayName(githubUsername: string): string {
-  return authorDisplayNames[githubUsername] ?? `@${githubUsername}`;
+  const key = resolveAuthorKey(githubUsername);
+  return authorDisplayNames[key] ?? `@${githubUsername}`;
 }
 
 /** Avatar URL: custom path if set, otherwise GitHub avatar. Size is ignored for custom paths. */
 export function getAuthorImageSrc(githubUsername: string, size: number): string {
-  const override = authorImageOverrides[githubUsername];
+  const key = resolveAuthorKey(githubUsername);
+  const override = authorImageOverrides[key];
   if (override) return override;
   return `https://github.com/${githubUsername}.png?size=${size}`;
 }
 
 /** GitHub profile URL, or null when author uses a custom image (no real GitHub user). */
 export function getAuthorGitHubUrl(githubUsername: string): string | null {
-  if (authorImageOverrides[githubUsername]) return null;
+  const key = resolveAuthorKey(githubUsername);
+  if (authorImageOverrides[key]) return null;
   return `https://github.com/${githubUsername}`;
 }
 
