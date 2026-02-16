@@ -1,53 +1,66 @@
 ---
 title: "Episode 97: The New .NET MAUI Podcast"
 link: https://www.dotnetmauipodcast.com/97
-description: "Show Notes Can you believe it - the Xamarin Podcast is now the .NET MAUI Podcast?!? New name - same great flavor! We talk about .NET, Visual Studio, Azure, and of course .NET MAUI! This month there's a new preview of .NET MAUI, a bunch of Visual Studio updates, news on the .NET MAUI Community Toolkit and Essentials, and of course more Azure than you can you can shake a stick at. New releases .NET MAUI Update MAUI Themes VS Mac 2022 private preview VS 2019 v16.11 VS 2022 preview 3 Latest news VS 2022 and hot reload VS 2022 personalization VS 2022 multi-repo support .NET MAUI community toolkit .NET MAUI Essentials Cloud news Intro to the unified Azure SDK Target random users with push notifications Azure service of the month Azure Logic Apps Pick of the pod Blazorize Follow Us: James: Twitter, Blog, GitHub, Merge Conflict Podcast Matt: Twitter, Blog, GitHub David: [Twitter](https://twitter.com/davidortinau}, [Github](https://github.com/davidortinau}"
+description: "Show Notes Can you believe it - the Xamarin Podcast is now the .NET MAUI Podcast?!?"
 date: 2021-08-20
 author: dotnetMauiPodcast
-contentType: 'podcast'
+contentType: podcast
 ---
 
-Show Notes
+<h2>Show Notes</h2>
 
-Can you believe it - the Xamarin Podcast is now the .NET MAUI Podcast?!? New name - same great flavor!
+<p>Can you believe it - the Xamarin Podcast is now the .NET MAUI Podcast?!? New name - same great flavor!</p>
 
-We talk about .NET, Visual Studio, Azure, and of course .NET MAUI!
+<p>We talk about .NET, Visual Studio, Azure, and of course .NET MAUI!</p>
 
-This month there's a new preview of .NET MAUI, a bunch of Visual Studio updates, news on the .NET MAUI Community Toolkit and Essentials, and of course more Azure than you can you can shake a stick at.
+<p>This month there&#39;s a new preview of .NET MAUI, a bunch of Visual Studio updates, news on the .NET MAUI Community Toolkit and Essentials, and of course more Azure than you can you can shake a stick at.</p>
 
-New releases
+<h3>New releases</h3>
 
-.NET MAUI Update
+<ul>
+<li><a href="https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-7/?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">.NET MAUI Update</a>
 
-MAUI Themes
+<ul>
+<li><a href="https://github.com/dotnet/maui/projects/11" rel="nofollow">MAUI Themes</a></li>
+</ul></li>
+<li><a href="https://devblogs.microsoft.com/visualstudio/join-the-visual-studio-2022-for-mac-private-preview/?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">VS Mac 2022 private preview</a></li>
+<li><a href="https://devblogs.microsoft.com/visualstudio/visual-studio-16-11/?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">VS 2019 v16.11</a></li>
+<li><a href="https://devblogs.microsoft.com/visualstudio/visual-studio-2022-preview-3-now-available/?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">VS 2022 preview 3</a> </li>
+</ul>
 
-VS Mac 2022 private preview
-VS 2019 v16.11
-VS 2022 preview 3
+<h3>Latest news</h3>
 
-Latest news
+<ul>
+<li><a href="https://devblogs.microsoft.com/visualstudio/speed-up-your-dotnet-and-cplusplus-development-with-hot-reload-in-visual-studio-2022/?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">VS 2022 and hot reload</a></li>
+<li><a href="https://devblogs.microsoft.com/visualstudio/personalize-your-visual-studio-2022/?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">VS 2022 personalization</a></li>
+<li><a href="https://devblogs.microsoft.com/visualstudio/multi-repo-support-in-visual-studio/?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">VS 2022 multi-repo support</a></li>
+<li><a href="https://devblogs.microsoft.com/xamarin/the-future-of-xamarin-community-toolkit/?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">.NET MAUI community toolkit</a></li>
+<li><a href="https://devblogs.microsoft.com/xamarin/xamarin-essentials-1-7-and-introducing-net-maui-essentials/?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">.NET MAUI Essentials</a></li>
+</ul>
 
-VS 2022 and hot reload
-VS 2022 personalization
-VS 2022 multi-repo support
-.NET MAUI community toolkit
-.NET MAUI Essentials
+<h3>Cloud news</h3>
 
-Cloud news
+<ul>
+<li><a href="https://channel9.msdn.com/Shows/Azure-Friday/An-introduction-to-the-unified-Azure-SDK?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">Intro to the unified Azure SDK</a></li>
+<li><a href="https://devblogs.microsoft.com/azure-notification-hubs/targeting-random-users/?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">Target random users with push notifications</a></li>
+</ul>
 
-Intro to the unified Azure SDK
-Target random users with push notifications
+<h3>Azure service of the month</h3>
 
-Azure service of the month
+<ul>
+<li><a href="https://docs.microsoft.com/azure/logic-apps/logic-apps-overview?WT.mc_id=dotnet-38576-masoucou" rel="nofollow">Azure Logic Apps</a></li>
+</ul>
 
-Azure Logic Apps
+<h3>Pick of the pod</h3>
 
-Pick of the pod
+<ul>
+<li><a href="https://blazorise.com/" rel="nofollow">Blazorize</a></li>
+</ul>
 
-Blazorize
+<p>Follow Us:</p>
 
-Follow Us:
-
-James: Twitter, Blog, GitHub, Merge Conflict Podcast
-Matt: Twitter, Blog, GitHub
-David: [Twitter](https://twitter.com/davidortinau}, [Github](https://github.com/davidortinau}
+<ul>
+<li>James: <a href="https://twitter.com/jamesmontemagno" rel="nofollow">Twitter</a>, <a href="https://montemagno.com" rel="nofollow">Blog</a>, <a href="http://github.com/jamesmontemagno" rel="nofollow">GitHub</a>, <a href="http://mergeconflict.fm" rel="nofollow">Merge Conflict Podcast</a></li>
+<li>Matt: <a href="https://twitter.com/codemillmatt" rel="nofollow">Twitter</a>, <a href="https://codemilltech.com" rel="nofollow">Blog</a>, <a href="https://github.com/codemillmatt" rel="nofollow">GitHub</a></li>
+<li>David: [Twitter](<a href="https://twitter.com/davidortinau" rel="nofollow">https://twitter.com/davidortinau</a>}, [Github](<a href="https://github.com/davidortinau" rel="nofollow">https://github.com/davidortinau</a>}</li>
+</ul>

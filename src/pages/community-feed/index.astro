@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import FeedEntries from '../../components/community-feed/FeedEntries.astro';
 import Pagination from '../../components/community-feed/Pagination.astro';
+import { getAuthorDisplayName, getAuthorImageSrc, getAuthorKeys } from '../../data/authors';
 
 const entries = (await getCollection('community-feed')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -11,6 +12,7 @@ const entries = (await getCollection('community-feed')).sort(
 const pageSize = 15;
 const totalPages = Math.max(1, Math.ceil(entries.length / pageSize));
 const pageEntries = entries.slice(0, pageSize);
+const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5);
 ---
 
 <BaseLayout
@@ -38,20 +40,57 @@ const pageEntries = entries.slice(0, pageSize);
         Notable moments, packages, projects, and celebrations from the MAUIverse community.
       </p>
 
-      <div class="mb-8 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-        <h2 class="mb-2 text-2xl font-header font-bold text-brand-dark">
-          Community Contributors
-        </h2>
-        <p class="mb-4 text-gray-700">
-          Discover everyone contributing to the Community Feed.
-        </p>
-        <a
-          href="/community-contributors/"
-          class="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
-        >
-          Browse Community Contributors
-        </a>
-      </div>
+      <a
+        href="/community-contributors/"
+        class="mb-8 block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:bg-gray-50"
+      >
+        <span class="flex items-center gap-6 text-sm font-semibold text-gray-700 whitespace-nowrap max-w-full">
+          <span class="flex-shrink-0">View Community Contributors &rarr;</span>
+          <span
+            class="inline-flex min-w-0 flex-1 items-center justify-end gap-6 flex-nowrap overflow-hidden"
+            data-contributor-avatar-row
+            aria-hidden="true"
+          >
+            {avatarKeys.map((githubUsername) => (
+              <img
+                src={getAuthorImageSrc(githubUsername, 64)}
+                alt={getAuthorDisplayName(githubUsername)}
+                width="32"
+                height="32"
+                class="h-8 w-8 rounded-full flex-shrink-0"
+                data-contributor-avatar
+                loading="lazy"
+              />
+            ))}
+          </span>
+        </span>
+      </a>
+
+      <script>
+        const avatarRows = Array.from(document.querySelectorAll('[data-contributor-avatar-row]'));
+
+        function fitAvatarsToRow() {
+          for (const row of avatarRows) {
+            const avatars = Array.from(row.querySelectorAll('[data-contributor-avatar]'));
+            if (avatars.length === 0) continue;
+
+            const rowStyles = window.getComputedStyle(row);
+            const gap = Number.parseFloat(rowStyles.columnGap || '0') || 0;
+            const avatarWidth = avatars[0].getBoundingClientRect().width;
+            if (avatarWidth <= 0) continue;
+
+            const availableWidth = row.clientWidth;
+            const fitCount = Math.max(0, Math.floor((availableWidth + gap) / (avatarWidth + gap)));
+
+            avatars.forEach((avatar, index) => {
+              avatar.classList.toggle('hidden', index >= fitCount);
+            });
+          }
+        }
+
+        fitAvatarsToRow();
+        window.addEventListener('resize', fitAvatarsToRow);
+      </script>
 
       <FeedEntries entries={pageEntries} />
       <Pagination currentPage={1} totalPages={totalPages} />

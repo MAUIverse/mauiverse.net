@@ -1,40 +1,50 @@
 ---
 title: "Episode 100: Preview-Mania"
 link: https://www.dotnetmauipodcast.com/100
-description: "Show Notes All the previews and release candidates you could ever want. .NET 6 RC 2 - the final RC. .NET MAUI Preview 9, Visual Studio RC and Preview 5 - there's even a Visual Studio for Mac preview to talk about! Tune in as David and Matt talk all about the previews! New releases .NET MAUI Update VS 2022 Mac Preview 1 VS 2022 Release Candidate and Preview 5 .NET 6 Release Candidate 2 Latest news .NET Conf Visual Studio Theme Converter Cloud news Azure REST API Guidelines Azure service of the month QnA Maker Follow Us: James: Twitter, Blog, GitHub, Merge Conflict Podcast Matt: Twitter, Blog, GitHub David: Twitter, Github"
+description: "Show Notes All the previews and release candidates you could ever want."
 date: 2021-10-15
 author: dotnetMauiPodcast
-contentType: 'podcast'
+contentType: podcast
 ---
 
-Show Notes
+<h2>Show Notes</h2>
 
-All the previews and release candidates you could ever want. .NET 6 RC 2 - the final RC. .NET MAUI Preview 9, Visual Studio RC and Preview 5 - there's even a Visual Studio for Mac preview to talk about!
+<p>All the previews and release candidates you could ever want. .NET 6 RC 2 - the final RC. .NET MAUI Preview 9, Visual Studio RC and Preview 5 - there&#39;s even a Visual Studio for Mac preview to talk about!</p>
 
-Tune in as David and Matt talk all about the previews!
+<p>Tune in as David and Matt talk all about the previews!</p>
 
-New releases
+<h3>New releases</h3>
 
-.NET MAUI Update
-VS 2022 Mac Preview 1
-VS 2022 Release Candidate and Preview 5
-.NET 6 Release Candidate 2
+<ul>
+<li><a href="https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-9/?WT.mc_id=dotnet-44737-masoucou" rel="nofollow">.NET MAUI Update</a></li>
+<li><a href="https://devblogs.microsoft.com/visualstudio/visual-studio-2022-for-mac-preview-1-is-now-available/?WT.mc_id=dotnet-44737-masoucou" rel="nofollow">VS 2022 Mac Preview 1</a></li>
+<li><a href="https://devblogs.microsoft.com/visualstudio/join-us-november-8th-for-the-launch-of-visual-studio-2022/?WT.mc_id=dotnet-44737-masoucou" rel="nofollow">VS 2022 Release Candidate and Preview 5</a></li>
+<li><a href="https://devblogs.microsoft.com/dotnet/announcing-net-6-release-candidate-2/?WT.mc_id=dotnet-44737-masoucou" rel="nofollow">.NET 6 Release Candidate 2</a></li>
+</ul>
 
-Latest news
+<h3>Latest news</h3>
 
-.NET Conf
-Visual Studio Theme Converter
+<ul>
+<li><a href="https://www.dotnetconf.net/" rel="nofollow">.NET Conf</a></li>
+<li><a href="https://devblogs.microsoft.com/visualstudio/custom-themes/?WT.mc_id=dotnet-44737-masoucou" rel="nofollow">Visual Studio Theme Converter</a></li>
+</ul>
 
-Cloud news
+<h3>Cloud news</h3>
 
-Azure REST API Guidelines
+<ul>
+<li><a href="https://devblogs.microsoft.com/azure-sdk/azure-rest-api-guidelines-update/?WT.mc_id=dotnet-44737-masoucou" rel="nofollow">Azure REST API Guidelines</a></li>
+</ul>
 
-Azure service of the month
+<h3>Azure service of the month</h3>
 
-QnA Maker
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/?WT.mc_id=dotnet-44737-masoucou" rel="nofollow">QnA Maker</a></li>
+</ul>
 
-Follow Us:
+<p>Follow Us:</p>
 
-James: Twitter, Blog, GitHub, Merge Conflict Podcast
-Matt: Twitter, Blog, GitHub
-David: Twitter, Github
+<ul>
+<li>James: <a href="https://twitter.com/jamesmontemagno" rel="nofollow">Twitter</a>, <a href="https://montemagno.com" rel="nofollow">Blog</a>, <a href="http://github.com/jamesmontemagno" rel="nofollow">GitHub</a>, <a href="http://mergeconflict.fm" rel="nofollow">Merge Conflict Podcast</a></li>
+<li>Matt: <a href="https://twitter.com/codemillmatt" rel="nofollow">Twitter</a>, <a href="https://codemilltech.com" rel="nofollow">Blog</a>, <a href="https://github.com/codemillmatt" rel="nofollow">GitHub</a></li>
+<li>David: <a href="https://twitter.com/davidortinau" rel="nofollow">Twitter</a>, <a href="https://github.com/davidortinau" rel="nofollow">Github</a></li>
+</ul>

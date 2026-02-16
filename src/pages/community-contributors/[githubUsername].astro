@@ -7,6 +7,7 @@ import {
   getAuthorDisplayName,
   getAuthorImageSrc,
   getAuthorGitHubUrl,
+  isSameAuthorKey,
 } from '../../data/authors';
 
 export async function getStaticPaths() {
@@ -20,7 +21,7 @@ const { githubUsername, displayName } = Astro.props;
 const githubUrl = getAuthorGitHubUrl(githubUsername);
 
 const contributorEntries = (await getCollection('community-feed'))
-  .filter((entry) => entry.data.author === githubUsername)
+  .filter((entry) => entry.data.author && isSameAuthorKey(entry.data.author, githubUsername))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
@@ -66,7 +67,7 @@ const contributorEntries = (await getCollection('community-feed'))
                 rel="noopener noreferrer"
                 class="text-base font-medium text-brand-extra hover:underline"
               >
-                @{githubUsername} on GitHub
+                {displayName} on GitHub
               </a>
             ) : (
               <span class="text-base text-gray-600">{displayName}</span>
