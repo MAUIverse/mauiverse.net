@@ -43,7 +43,7 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
           <a
             href={prevHref}
             rel="prev"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:text-brand-extra transition"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface text-muted hover:bg-surface-alt hover:text-brand transition"
             aria-label="Previous page"
             title="Previous page"
           >
@@ -63,7 +63,7 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
           </a>
         ) : (
           <span
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-gray-50 text-gray-300"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface-alt text-muted-light opacity-50"
             aria-disabled="true"
             title="Previous page"
           >
@@ -87,7 +87,7 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
       {tokens.map((token) => (
         <li>
           {token === '…' ? (
-            <span class="px-2 text-gray-400 select-none" aria-hidden="true">
+            <span class="px-2 text-muted-light select-none" aria-hidden="true">
               …
             </span>
           ) : token === currentPage ? (
@@ -100,7 +100,7 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
           ) : (
             <a
               href={hrefForPage(token)}
-              class="inline-flex h-10 min-w-10 items-center justify-center rounded-md border border-gray-200 bg-white px-3 text-gray-700 hover:bg-gray-50 hover:text-brand-extra transition"
+              class="inline-flex h-10 min-w-10 items-center justify-center rounded-md border border-edge bg-surface px-3 text-muted hover:bg-surface-alt hover:text-brand transition"
               aria-label={`Go to page ${token}`}
             >
               {token}
@@ -114,7 +114,7 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
           <a
             href={nextHref}
             rel="next"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:text-brand-extra transition"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface text-muted hover:bg-surface-alt hover:text-brand transition"
             aria-label="Next page"
             title="Next page"
           >
@@ -134,7 +134,7 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
           </a>
         ) : (
           <span
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-gray-50 text-gray-300"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface-alt text-muted-light opacity-50"
             aria-disabled="true"
             title="Next page"
           >
@@ -157,4 +157,3 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
     </ul>
   </nav>
 )}
-

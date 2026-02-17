@@ -19,7 +19,6 @@ const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5);
   title="Community Feed | MAUIverse"
   description="Notable moments, packages, projects, and celebrations from the MAUIverse community."
 >
-  <!-- This site's default global.css locks overflow to hidden for the fullscreen homepage -->
   <style is:global>
     html,
     body {
@@ -28,20 +27,20 @@ const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5);
     }
   </style>
 
-  <section class="bg-brand-light py-24 px-0 min-h-screen">
+  <section class="py-24 px-0 min-h-screen">
     <div class="container max-w-4xl mx-auto px-4">
-      <p class="text-brand-extra font-bold mb-4 text-xl font-header uppercase">
+      <p class="text-brand font-bold mb-4 text-xl font-header uppercase">
         From the community
       </p>
       <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
         Community Feed
       </h1>
-      <p class="text-brand-dark text-base text-md mb-12 max-w-2xl">
+      <p class="text-muted text-base text-md mb-12 max-w-2xl">
         Notable moments, packages, projects, and celebrations from the MAUIverse community.
       </p>
       <a
         href="/community-feed/rss.xml"
-        class="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-extra transition hover:text-brand-extraDark hover:underline"
+        class="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:text-brand-extra hover:underline"
         aria-label="Subscribe to Community Feed via RSS"
       >
         Subscribe via RSS
@@ -49,9 +48,9 @@ const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5);
 
       <a
         href="/community-contributors/"
-        class="mb-8 block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:bg-gray-50"
+        class="mb-8 block rounded-lg border border-edge bg-surface p-6 shadow-sm transition hover:bg-surface-alt"
       >
-        <span class="flex items-center gap-6 text-sm font-semibold text-gray-700 whitespace-nowrap max-w-full">
+        <span class="flex items-center gap-6 text-sm font-semibold text-muted whitespace-nowrap max-w-full">
           <span class="flex-shrink-0">Meet the Community Contributors &rarr;</span>
           <span
             class="inline-flex min-w-0 flex-1 items-center justify-end gap-6 flex-nowrap overflow-hidden"

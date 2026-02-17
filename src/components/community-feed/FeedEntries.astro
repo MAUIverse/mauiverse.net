@@ -22,13 +22,13 @@ function hasBody(entry: { body?: string }): boolean {
     const isInternal = hasContent || videoId;
     const detailUrl = `/community-feed/${entry.id}/`;
     return (
-      <li class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+      <li class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
         <div class={`flex gap-3 ${videoId ? 'flex-row gap-6' : 'flex-col'}`}>
           <div class="flex flex-1 flex-col gap-3 min-w-0">
             {isInternal ? (
               <a
                 href={detailUrl}
-                class="text-brand-dark text-xl font-header font-bold hover:text-brand-extra transition-colors"
+                class="text-brand-dark text-xl font-header font-bold hover:text-brand transition-colors"
               >
                 {entry.data.title}
               </a>
@@ -37,11 +37,11 @@ function hasBody(entry: { body?: string }): boolean {
                 href={entry.data.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-brand-dark text-xl font-header font-bold hover:text-brand-extra transition-colors inline-flex items-center gap-2"
+                class="text-brand-dark text-xl font-header font-bold hover:text-brand transition-colors inline-flex items-center gap-2"
               >
                 {entry.data.title}
                 <span
-                  class="inline-block text-gray-400"
+                  class="inline-block text-muted-light"
                   aria-hidden="true"
                   title="External link"
                 >
@@ -62,7 +62,7 @@ function hasBody(entry: { body?: string }): boolean {
                 </span>
               </a>
             )}
-            <p class="text-gray-600 text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
+            <p class="text-muted-light text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
               {entry.data.author && (
                 <span class="inline-flex items-center gap-1.5">
                   <img
@@ -76,7 +76,7 @@ function hasBody(entry: { body?: string }): boolean {
                   <span>{getAuthorDisplayName(entry.data.author)}</span>
                 </span>
               )}
-              {entry.data.author && <span class="text-gray-400">·</span>}
+              {entry.data.author && <span class="text-muted-light">·</span>}
               <time datetime={entry.data.date.toISOString()}>
                 {entry.data.date.toLocaleDateString('en-US', {
                   year: 'numeric',
@@ -85,7 +85,7 @@ function hasBody(entry: { body?: string }): boolean {
                 })}
               </time>
             </p>
-            <p class="text-gray-700 text-base">{entry.data.description}</p>
+            <p class="text-muted text-base">{entry.data.description}</p>
             {isInternal ? (
               <a
                 href={detailUrl}
@@ -107,7 +107,7 @@ function hasBody(entry: { body?: string }): boolean {
           {videoId && (
             <a
               href={detailUrl}
-              class="flex-shrink-0 block w-64 sm:w-72 rounded overflow-hidden border border-gray-200 aspect-video"
+              class="flex-shrink-0 block w-64 sm:w-72 rounded overflow-hidden border border-edge aspect-video"
               aria-hidden="true"
             >
               <img
@@ -125,4 +125,3 @@ function hasBody(entry: { body?: string }): boolean {
     );
   })}
 </ul>
-

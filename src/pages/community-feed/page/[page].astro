@@ -16,7 +16,6 @@ export async function getStaticPaths() {
     props: { entries: typeof entries; currentPage: number; totalPages: number };
   }> = [];
 
-  // Page 1 is served by /community-feed
   for (let currentPage = 2; currentPage <= totalPages; currentPage++) {
     const start = (currentPage - 1) * pageSize;
     const pageEntries = entries.slice(start, start + pageSize);
@@ -36,7 +35,6 @@ const { entries, currentPage, totalPages } = Astro.props;
   title={`Community Feed (Page ${currentPage}) | MAUIverse`}
   description="Notable moments, packages, projects, and celebrations from the MAUIverse community."
 >
-  <!-- This site's default global.css locks overflow to hidden for the fullscreen homepage -->
   <style is:global>
     html,
     body {
@@ -45,15 +43,15 @@ const { entries, currentPage, totalPages } = Astro.props;
     }
   </style>
 
-  <section class="bg-brand-light py-24 px-0 min-h-screen">
+  <section class="py-24 px-0 min-h-screen">
     <div class="container max-w-4xl mx-auto px-4">
-      <p class="text-brand-extra font-bold mb-4 text-xl font-header uppercase">
+      <p class="text-brand font-bold mb-4 text-xl font-header uppercase">
         From the community
       </p>
       <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
         Community Feed
       </h1>
-      <p class="text-brand-dark text-base text-md mb-12 max-w-2xl">
+      <p class="text-muted text-base text-md mb-12 max-w-2xl">
         Notable moments, packages, projects, and celebrations from the MAUIverse community.
       </p>
 
@@ -62,4 +60,3 @@ const { entries, currentPage, totalPages } = Astro.props;
     </div>
   </section>
 </BaseLayout>
-

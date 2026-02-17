@@ -42,13 +42,13 @@ const Content = rendered?.Content ?? null;
       }
     </style>
 
-    <article class="bg-brand-light py-24 px-0 min-h-screen text-brand-dark">
+    <article class="py-24 px-0 min-h-screen text-brand-dark">
       <div class="container max-w-3xl mx-auto px-4">
         <header class="mb-8">
           <h1 class="text-brand-dark text-3xl md:text-4xl font-header font-bold mb-4">
             {entry.data.title}
           </h1>
-          <p class="text-gray-600 text-sm mb-4">
+          <p class="text-muted-light text-sm mb-4">
             <time datetime={entry.data.date.toISOString()}>
               {entry.data.date.toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -81,7 +81,7 @@ const Content = rendered?.Content ?? null;
               src={getYouTubeEmbedUrl(videoId)}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
-              class="rounded border border-gray-200"
+              class="rounded border border-edge"
               style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
             />
           </div>
@@ -89,12 +89,12 @@ const Content = rendered?.Content ?? null;
 
         {withBody && Content ? (
           <div
-            class="prose prose-slate max-w-none prose-headings:text-brand-dark prose-headings:font-header prose-headings:font-bold prose-headings:mt-10 prose-headings:mb-4 prose-a:text-brand-extra prose-a:no-underline hover:prose-a:underline prose-p:my-5 prose-p:leading-relaxed prose-ul:my-5 prose-ol:my-5 prose-li:my-2 prose-li:leading-relaxed prose-ul:pl-6 prose-ol:pl-6 prose-blockquote:border-brand-extra/30 prose-blockquote:text-gray-700"
+            class="prose prose-slate dark:prose-invert max-w-none prose-headings:text-brand-dark prose-headings:font-header prose-headings:font-bold prose-headings:mt-10 prose-headings:mb-4 prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-p:my-5 prose-p:leading-relaxed prose-ul:my-5 prose-ol:my-5 prose-li:my-2 prose-li:leading-relaxed prose-ul:pl-6 prose-ol:pl-6 prose-blockquote:border-brand/30 prose-blockquote:text-muted"
           >
             <Content />
           </div>
         ) : videoId ? (
-          <p class="text-gray-700 text-base">{entry.data.description}</p>
+          <p class="text-muted text-base">{entry.data.description}</p>
         ) : null}
 
         <p class="mt-8">
@@ -131,7 +131,7 @@ const Content = rendered?.Content ?? null;
         <p class="mt-8">
           <a
             href="/community-feed/"
-            class="text-brand-extra font-medium hover:underline"
+            class="text-brand font-medium hover:underline"
           >
             ← Back to Community Feed
           </a>
@@ -144,17 +144,17 @@ const Content = rendered?.Content ?? null;
     <Fragment slot="head">
       <meta http-equiv="refresh" content={`0; URL='${entry.data.link}'`} />
     </Fragment>
-    <div class="bg-brand-light py-24 px-4 min-h-screen flex flex-col items-center justify-center">
+    <div class="py-24 px-4 min-h-screen flex flex-col items-center justify-center">
       <p class="text-brand-dark mb-4">Redirecting to the linked page…</p>
       <a
         href={entry.data.link}
         target="_blank"
         rel="noopener noreferrer"
-        class="text-brand-extra font-medium hover:underline"
+        class="text-brand font-medium hover:underline"
       >
         Click here if you are not redirected
       </a>
-      <a href="/community-feed/" class="mt-4 text-gray-600 hover:underline">
+      <a href="/community-feed/" class="mt-4 text-muted-light hover:underline">
         ← Back to Community Feed
       </a>
     </div>

@@ -6,7 +6,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="Newsletter | MAUIverse"
   description="Subscribe to the MAUIverse newsletter for updates."
 >
-  <!-- This site’s default global.css locks overflow to hidden for the fullscreen homepage -->
   <style is:global>
     html,
     body {
@@ -15,21 +14,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
   </style>
 
-  <section id="newsletter" class="bg-brand-light py-24 px-0 min-h-screen">
+  <section id="newsletter" class="py-24 px-0 min-h-screen">
     <div class="container max-w-4xl mx-auto px-4 text-center">
-      <p class="text-brand-extra font-bold mb-4 text-xl font-header uppercase">
+      <p class="text-brand font-bold mb-4 text-xl font-header uppercase">
         Stay in the loop
       </p>
       <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
         Newsletter
       </h1>
-      <p class="text-brand-dark text-base text-md mb-10 max-w-2xl mx-auto">
+      <p class="text-muted text-base text-md mb-10 max-w-2xl mx-auto">
         Stay in touch with MAUIverse, and get notified first about community updates and more.
         <br />
-        <span class="text-brand-dark text-base text-md mb-10 italic">No spam. Ever.</span>
+        <span class="text-muted text-base text-md mb-10 italic">No spam. Ever.</span>
       </p>
 
-      <!-- User is redirected to the thank-you page automatically by sendfox after submitting the form -->
       <form
         method="post"
         action="https://sendfox.com/form/m79vql/1rzrlz"
@@ -49,7 +47,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               placeholder="First Name"
               name="first_name"
               required
-              class="w-full px-4 py-2.5 border border-gray-300 rounded-md text-brand-dark placeholder-gray-500 focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
+              class="w-full px-4 py-2.5 border border-edge rounded-md bg-surface-alt text-brand-dark placeholder-muted-light focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
             />
           </div>
           <div>
@@ -65,7 +63,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               placeholder="Last Name"
               name="last_name"
               required
-              class="w-full px-4 py-2.5 border border-gray-300 rounded-md text-brand-dark placeholder-gray-500 focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
+              class="w-full px-4 py-2.5 border border-edge rounded-md bg-surface-alt text-brand-dark placeholder-muted-light focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
             />
           </div>
         </div>
@@ -79,18 +77,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             placeholder="Email"
             name="email"
             required
-            class="w-full px-4 py-2.5 border border-gray-300 rounded-md text-brand-dark placeholder-gray-500 focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
+            class="w-full px-4 py-2.5 border border-edge rounded-md bg-surface-alt text-brand-dark placeholder-muted-light focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
           />
         </div>
 
-        <!-- no botz please -->
         <div class="absolute left-[-5000px]" aria-hidden="true">
           <input type="text" name="a_password" tabindex="-1" value="" autocomplete="off" />
         </div>
 
         <div class="text-center">
-          <p class="text-sm text-gray-500 mb-4">
-            The form is protected by <a href="/privacy" class="text-brand-extra hover:underline"
+          <p class="text-sm text-muted-light mb-4">
+            The form is protected by <a href="/privacy" class="text-brand hover:underline"
               >reCAPTCHA</a
             >.
           </p>
@@ -109,4 +106,3 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
   <script src="https://cdn.sendfox.com/js/form.js" charset="utf-8" defer></script>
 </BaseLayout>
-        

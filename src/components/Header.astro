@@ -1,7 +1,7 @@
 ---
-// Fixed site header with responsive menu (Tailwind only).
+// Fixed site header with responsive menu.
 ---
-<header class="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-white">
+<header class="fixed inset-x-0 top-0 z-50 border-b border-edge bg-surface/95 backdrop-blur-sm">
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
     <a href="/" class="flex items-center gap-3">
       <img
@@ -20,28 +20,28 @@
 
     <nav class="hidden items-center gap-6 md:flex" aria-label="Primary">
       <a
-      href="/community-feed/"
-      class="text-sm font-semibold text-brand-dark transition-colors hover:text-brand-extra"
-    >
-      Community Feed
-    </a>
+        href="/community-feed/"
+        class="text-sm font-semibold text-muted transition-colors hover:text-brand"
+      >
+        Community Feed
+      </a>
       <a
         href="/built-with-maui/"
-        class="text-sm font-semibold text-brand-dark transition-colors hover:text-brand-extra"
+        class="text-sm font-semibold text-muted transition-colors hover:text-brand"
       >
         Built with MAUI
       </a>
       <a
-      href="/newsletter"
-      class="text-sm font-semibold text-brand-dark transition-colors hover:text-brand-extra"
-    >
-      Newsletter
-    </a>
+        href="/newsletter"
+        class="text-sm font-semibold text-muted transition-colors hover:text-brand"
+      >
+        Newsletter
+      </a>
       <a
         href="/discord/"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-sm font-semibold text-brand-dark transition-colors hover:text-brand-extra"
+        class="text-sm font-semibold text-muted transition-colors hover:text-brand"
       >
         Discord
       </a>
@@ -50,7 +50,7 @@
     <button
       id="mobile-menu-button"
       type="button"
-      class="inline-flex items-center justify-center rounded-md p-2 text-brand-dark hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-brand md:hidden"
+      class="inline-flex items-center justify-center rounded-md p-2 text-muted hover:bg-surface-alt focus:outline-none focus:ring-2 focus:ring-brand md:hidden"
       aria-label="Open menu"
       aria-controls="mobile-menu"
       aria-expanded="false"
@@ -75,25 +75,25 @@
 
 <div
   id="mobile-menu"
-  class="fixed inset-x-0 top-16 z-40 hidden border-b border-gray-200 bg-white shadow-sm md:hidden"
+  class="fixed inset-x-0 top-16 z-40 hidden border-b border-edge bg-surface shadow-sm md:hidden"
 >
   <nav class="mx-auto max-w-6xl px-4 py-3 sm:px-6 lg:px-8" aria-label="Mobile Primary">
     <div class="flex flex-col gap-2">
       <a
         href="/newsletter"
-        class="rounded-md px-3 py-2 text-sm font-semibold text-brand-dark transition-colors hover:bg-gray-50 hover:text-brand-extra"
+        class="rounded-md px-3 py-2 text-sm font-semibold text-muted transition-colors hover:bg-surface-alt hover:text-brand"
       >
         Newsletter
       </a>
       <a
         href="/built-with-maui/"
-        class="rounded-md px-3 py-2 text-sm font-semibold text-brand-dark transition-colors hover:bg-gray-50 hover:text-brand-extra"
+        class="rounded-md px-3 py-2 text-sm font-semibold text-muted transition-colors hover:bg-surface-alt hover:text-brand"
       >
         Built with MAUI
       </a>
       <a
         href="/community-feed/"
-        class="rounded-md px-3 py-2 text-sm font-semibold text-brand-dark transition-colors hover:bg-gray-50 hover:text-brand-extra"
+        class="rounded-md px-3 py-2 text-sm font-semibold text-muted transition-colors hover:bg-surface-alt hover:text-brand"
       >
         Community Feed
       </a>
@@ -101,7 +101,7 @@
         href="/discord/"
         target="_blank"
         rel="noopener noreferrer"
-        class="rounded-md px-3 py-2 text-sm font-semibold text-brand-dark transition-colors hover:bg-gray-50 hover:text-brand-extra"
+        class="rounded-md px-3 py-2 text-sm font-semibold text-muted transition-colors hover:bg-surface-alt hover:text-brand"
       >
         Discord
       </a>

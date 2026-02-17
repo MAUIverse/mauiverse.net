@@ -37,13 +37,13 @@ const contributorEntries = (await getCollection('community-feed'))
     }
   </style>
 
-  <section class="bg-brand-light min-h-screen px-0 py-24">
+  <section class="min-h-screen px-0 py-24">
     <div class="container mx-auto max-w-4xl px-4">
-      <a href="/community-contributors/" class="mb-6 inline-block text-sm font-medium text-brand-extra hover:underline">
+      <a href="/community-contributors/" class="mb-6 inline-block text-sm font-medium text-brand hover:underline">
         ← Back to Community Contributors
       </a>
 
-      <header class="mb-10 rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+      <header class="mb-10 rounded-lg border border-edge bg-surface p-8 shadow-sm">
         <div class="flex flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
           <img
             src={getAuthorImageSrc(githubUsername, 320)}
@@ -54,7 +54,7 @@ const contributorEntries = (await getCollection('community-feed'))
             loading="lazy"
           />
           <div>
-            <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
+            <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-muted-light">
               Community Contributor
             </p>
             <h1 class="mb-3 text-3xl font-header font-bold text-brand-dark">
@@ -65,12 +65,12 @@ const contributorEntries = (await getCollection('community-feed'))
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-base font-medium text-brand-extra hover:underline"
+                class="text-base font-medium text-brand hover:underline"
               >
                 {displayName} on GitHub
               </a>
             ) : (
-              <span class="text-base text-gray-600">{displayName}</span>
+              <span class="text-base text-muted-light">{displayName}</span>
             )}
           </div>
         </div>
@@ -83,7 +83,7 @@ const contributorEntries = (await getCollection('community-feed'))
         {contributorEntries.length > 0 ? (
           <FeedEntries entries={contributorEntries} />
         ) : (
-          <p class="rounded-lg border border-dashed border-gray-300 bg-white p-6 text-gray-600">
+          <p class="rounded-lg border border-dashed border-edge bg-surface p-6 text-muted-light">
             No Community Feed entries are available yet for this contributor.
           </p>
         )}
