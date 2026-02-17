@@ -14,6 +14,11 @@ const communityFeed = defineCollection({
   }),
 });
 
+const builtWithMaui = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/built-with-maui' }),
+});
+
 export const collections = {
   'community-feed': communityFeed,
+  'built-with-maui': builtWithMaui,
 };

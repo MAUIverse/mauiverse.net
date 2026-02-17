@@ -3,8 +3,11 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "predev": "npm run fetch:built-with-maui",
     "dev": "astro dev",
     "start": "astro dev",
+    "fetch:built-with-maui": "node scripts/fetch-built-with-maui.mjs",
+    "prebuild": "npm run fetch:built-with-maui",
     "build": "astro build",
     "preview": "astro preview"
   },
