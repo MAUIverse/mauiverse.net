@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LivestreamCountdown from '../components/LivestreamCountdown.astro';
 import { getCollection } from 'astro:content';
 import { getAuthorDisplayName, getAuthorImageSrc } from '../data/authors';
 
@@ -35,6 +36,27 @@ function truncateTitle(title: string): string {
           The community home for .NET MAUI developers. Whether you're building cross&#8209;platform apps,
           sharing packages, or celebrating wins—you're welcome.
         </p>
+      </section>
+
+      <!-- Community Standup -->
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+        <LivestreamCountdown variant="compact" />
+        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm flex flex-col justify-center">
+          <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Community Standup</h2>
+          <p class="text-muted mb-4">
+            The .NET MAUI Community Toolkit monthly standup — project updates, Q&amp;A, and community
+            contributions, live on YouTube.
+          </p>
+          <p class="text-muted-light text-sm mb-4">
+            Every 1st Thursday &middot; 12:00 PM PT / 3:00 PM ET / 8:00 PM UTC
+          </p>
+          <a
+            href="/community-standup/"
+            class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
+          >
+            View all episodes
+          </a>
+        </div>
       </section>
 
       <!-- Community Feed -->

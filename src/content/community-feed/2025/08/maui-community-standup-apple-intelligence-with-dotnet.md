@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup: Apple Intelligence with .NET"
 link: https://www.youtube.com/watch?v=SeRGpBR3-3M
 description: "David Ortinau hosts a .NET MAUI Community Standup focused on Apple Intelligence and what it means for .NET developers building MAUI apps."

@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - .NET 7 Sneak Peek with Shane!"
 link: https://www.youtube.com/watch?v=_EU5CovdSLY
 description: "David Ortinau hosts a MAUI Community Standup featuring Shane Neuville for a .NET 7 sneak peek and MAUI updates."

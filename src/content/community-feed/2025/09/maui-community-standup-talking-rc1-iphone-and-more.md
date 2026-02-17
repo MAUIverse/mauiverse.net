@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Talking RC1, iPhone, and more"
 link: https://www.youtube.com/watch?v=Y8W56JPCqQo
 description: "David Ortinau hosts a .NET MAUI Community Standup discussing RC1, iPhone-related topics, and other updates across the MAUI ecosystem."

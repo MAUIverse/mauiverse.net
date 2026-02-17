@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - .NET MAUI 2023 Wrapped"
 link: https://www.youtube.com/watch?v=BES2KgqDvFU
 description: "David Ortinau hosts a .NET MAUI Community Standup wrapping up 2023 with a recap of highlights, progress, and community moments."

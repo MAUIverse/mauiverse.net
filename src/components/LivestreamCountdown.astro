@@ -1,0 +1,288 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  variant?: 'full' | 'compact';
+}
+
+const { variant = 'full' } = Astro.props;
+
+const CHANNEL_URL = 'https://www.youtube.com/@dotnet';
+const STREAM_DURATION_MS = 60 * 60 * 1000; // 1 hour
+
+const allEpisodes = (await getCollection('community-standup'))
+  .map((e) => ({
+    title: e.data.title,
+    date: e.data.date.toISOString(),
+    liveUrl: e.data.liveUrl ?? null,
+  }))
+  .sort((a, b) => new Date(a.date).valueOf() - new Date(b.date).valueOf());
+
+const now = Date.now();
+const nextEpisode = allEpisodes.find(
+  (e) => new Date(e.date).valueOf() + STREAM_DURATION_MS > now,
+);
+
+const hasLiveUrl = !!nextEpisode?.liveUrl;
+const isCompact = variant === 'compact';
+---
+
+<div
+  class="livestream-countdown"
+  data-episodes={JSON.stringify(allEpisodes)}
+  data-channel-url={CHANNEL_URL}
+  data-stream-duration={STREAM_DURATION_MS}
+>
+  {isCompact ? (
+    <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="livestream-live-badge hidden inline-flex items-center gap-1.5 rounded-full bg-red-600 px-2.5 py-0.5 text-xs font-bold text-white uppercase tracking-wide">
+          <span class="h-2 w-2 rounded-full bg-white animate-pulse" aria-hidden="true"></span>
+          Live
+        </span>
+        <h2 class="text-brand-dark font-header font-bold text-lg">Community Standup</h2>
+      </div>
+      <p class="livestream-title text-muted text-sm mb-2">
+        {nextEpisode ? nextEpisode.title : '.NET MAUI Community Toolkit Standup'}
+      </p>
+      <p class="livestream-date text-muted-light text-xs mb-3">
+        {nextEpisode
+          ? `Next stream: ${new Date(nextEpisode.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`
+          : 'Check back soon for the next stream'}
+      </p>
+      <div class="livestream-timer text-brand-dark font-header font-bold text-2xl tabular-nums mb-4" aria-live="polite">
+        --:--:--
+      </div>
+      <a
+        href={nextEpisode?.liveUrl ?? CHANNEL_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class:list={[
+          'livestream-watch-btn inline-flex w-fit items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-bold text-white transition',
+          'bg-[#FF0000] border-2 border-[#FF0000] hover:bg-[#cc0000] hover:border-[#cc0000]',
+          { 'hidden': !hasLiveUrl },
+        ]}
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+        </svg>
+        Watch Now
+      </a>
+      <a
+        href={CHANNEL_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class:list={[
+          'livestream-channel-link text-sm font-semibold text-brand transition-colors hover:text-brand-extra',
+          { 'hidden': hasLiveUrl },
+        ]}
+      >
+        .NET Foundation YouTube Channel
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  ) : (
+    <div class="text-center">
+      <div class="flex items-center justify-center gap-2 mb-2">
+        <span class="livestream-live-badge hidden inline-flex items-center gap-1.5 rounded-full bg-red-600 px-3 py-1 text-sm font-bold text-white uppercase tracking-wide">
+          <span class="h-2.5 w-2.5 rounded-full bg-white animate-pulse" aria-hidden="true"></span>
+          Live Now
+        </span>
+      </div>
+      <h2 class="livestream-title text-brand-dark font-header font-bold text-2xl md:text-3xl mb-2">
+        {nextEpisode ? nextEpisode.title : '.NET MAUI Community Toolkit Standup'}
+      </h2>
+      <p class="livestream-date text-muted text-base mb-6">
+        {nextEpisode
+          ? `${new Date(nextEpisode.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`
+          : 'Check back soon for the next stream'}
+      </p>
+      <div class="livestream-timer-grid flex justify-center gap-3 sm:gap-5 mb-8" aria-live="polite">
+        <div class="flex flex-col items-center">
+          <span class="livestream-days text-brand-dark font-header font-bold text-3xl sm:text-5xl tabular-nums">--</span>
+          <span class="text-muted-light text-xs sm:text-sm uppercase tracking-wide mt-1">Days</span>
+        </div>
+        <span class="text-brand-dark font-header font-bold text-3xl sm:text-5xl select-none" aria-hidden="true">:</span>
+        <div class="flex flex-col items-center">
+          <span class="livestream-hours text-brand-dark font-header font-bold text-3xl sm:text-5xl tabular-nums">--</span>
+          <span class="text-muted-light text-xs sm:text-sm uppercase tracking-wide mt-1">Hours</span>
+        </div>
+        <span class="text-brand-dark font-header font-bold text-3xl sm:text-5xl select-none" aria-hidden="true">:</span>
+        <div class="flex flex-col items-center">
+          <span class="livestream-mins text-brand-dark font-header font-bold text-3xl sm:text-5xl tabular-nums">--</span>
+          <span class="text-muted-light text-xs sm:text-sm uppercase tracking-wide mt-1">Mins</span>
+        </div>
+        <span class="text-brand-dark font-header font-bold text-3xl sm:text-5xl select-none" aria-hidden="true">:</span>
+        <div class="flex flex-col items-center">
+          <span class="livestream-secs text-brand-dark font-header font-bold text-3xl sm:text-5xl tabular-nums">--</span>
+          <span class="text-muted-light text-xs sm:text-sm uppercase tracking-wide mt-1">Secs</span>
+        </div>
+      </div>
+      <a
+        href={nextEpisode?.liveUrl ?? CHANNEL_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class:list={[
+          'livestream-watch-btn inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 text-base font-bold text-white transition',
+          'bg-[#FF0000] border-2 border-[#FF0000] hover:bg-[#cc0000] hover:border-[#cc0000]',
+          { 'hidden': !hasLiveUrl },
+        ]}
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+        </svg>
+        Watch Now
+      </a>
+      <a
+        href={CHANNEL_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class:list={[
+          'livestream-channel-link text-base font-semibold text-brand transition-colors hover:text-brand-extra',
+          { 'hidden': hasLiveUrl },
+        ]}
+      >
+        .NET Foundation YouTube Channel
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  )}
+</div>
+
+<script>
+  (() => {
+    const root = document.querySelector('.livestream-countdown');
+    if (!root) return;
+
+    const episodes = JSON.parse(root.getAttribute('data-episodes') || '[]');
+    const channelUrl = root.getAttribute('data-channel-url') || '';
+    const streamDuration = parseInt(root.getAttribute('data-stream-duration') || '3600000', 10);
+
+    const liveBadge = root.querySelector('.livestream-live-badge');
+    const titleEl = root.querySelector('.livestream-title');
+    const dateEl = root.querySelector('.livestream-date');
+    const watchBtn = root.querySelector('.livestream-watch-btn');
+    const channelLink = root.querySelector('.livestream-channel-link');
+
+    const timerEl = root.querySelector('.livestream-timer');
+    const daysEl = root.querySelector('.livestream-days');
+    const hoursEl = root.querySelector('.livestream-hours');
+    const minsEl = root.querySelector('.livestream-mins');
+    const secsEl = root.querySelector('.livestream-secs');
+
+    const isCompact = !!timerEl;
+    const isFullGrid = !!daysEl;
+
+    function findCurrentEpisode(now) {
+      return episodes.find((ep) => {
+        const start = new Date(ep.date).getTime();
+        return start + streamDuration > now;
+      }) || null;
+    }
+
+    function pad(n) {
+      return String(n).padStart(2, '0');
+    }
+
+    function formatLocalDate(isoDate) {
+      return new Date(isoDate).toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+    }
+
+    function formatLocalTime(isoDate) {
+      return new Date(isoDate).toLocaleTimeString('en-US', {
+        hour: 'numeric',
+        minute: '2-digit',
+        timeZoneName: 'short',
+      });
+    }
+
+    function updateLink(ep, isLive) {
+      const hasLive = !!(ep && ep.liveUrl);
+
+      if (watchBtn) {
+        watchBtn.classList.toggle('hidden', !hasLive);
+        if (hasLive) watchBtn.setAttribute('href', ep.liveUrl);
+      }
+
+      if (channelLink) {
+        channelLink.classList.toggle('hidden', hasLive);
+      }
+    }
+
+    function tick() {
+      const now = Date.now();
+      const ep = findCurrentEpisode(now);
+
+      if (!ep) {
+        if (titleEl) titleEl.textContent = '.NET MAUI Community Toolkit Standup';
+        if (dateEl) dateEl.textContent = 'Check back soon for the next stream';
+        if (isCompact && timerEl) timerEl.textContent = '';
+        if (isFullGrid) {
+          if (daysEl) daysEl.textContent = '--';
+          if (hoursEl) hoursEl.textContent = '--';
+          if (minsEl) minsEl.textContent = '--';
+          if (secsEl) secsEl.textContent = '--';
+        }
+        updateLink(null, false);
+        if (liveBadge) liveBadge.classList.add('hidden');
+        return;
+      }
+
+      const start = new Date(ep.date).getTime();
+      const isLive = now >= start && now < start + streamDuration;
+      const diff = Math.max(0, start - now);
+
+      if (titleEl) titleEl.textContent = ep.title;
+
+      if (dateEl) {
+        dateEl.textContent = isLive
+          ? `Started at ${formatLocalTime(ep.date)}`
+          : `${formatLocalDate(ep.date)} at ${formatLocalTime(ep.date)}`;
+      }
+
+      if (liveBadge) {
+        liveBadge.classList.toggle('hidden', !isLive);
+      }
+
+      updateLink(ep, isLive);
+
+      if (isLive) {
+        if (isCompact && timerEl) timerEl.textContent = 'LIVE';
+        if (isFullGrid) {
+          if (daysEl) daysEl.textContent = '00';
+          if (hoursEl) hoursEl.textContent = '00';
+          if (minsEl) minsEl.textContent = '00';
+          if (secsEl) secsEl.textContent = '00';
+        }
+        return;
+      }
+
+      const totalSecs = Math.floor(diff / 1000);
+      const d = Math.floor(totalSecs / 86400);
+      const h = Math.floor((totalSecs % 86400) / 3600);
+      const m = Math.floor((totalSecs % 3600) / 60);
+      const s = totalSecs % 60;
+
+      if (isCompact && timerEl) {
+        timerEl.textContent = d > 0
+          ? `${d}d ${pad(h)}:${pad(m)}:${pad(s)}`
+          : `${pad(h)}:${pad(m)}:${pad(s)}`;
+      }
+
+      if (isFullGrid) {
+        if (daysEl) daysEl.textContent = pad(d);
+        if (hoursEl) hoursEl.textContent = pad(h);
+        if (minsEl) minsEl.textContent = pad(m);
+        if (secsEl) secsEl.textContent = pad(s);
+      }
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>

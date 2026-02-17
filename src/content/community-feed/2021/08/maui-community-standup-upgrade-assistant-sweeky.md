@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Get to MAUI with the .NET Upgrade Assistant feat. Sweeky!"
 link: https://www.youtube.com/watch?v=oIQfrUfIovk
 description: "David Ortinau hosts a MAUI Community Standup on using the .NET Upgrade Assistant to move projects toward MAUI, featuring Sweeky."

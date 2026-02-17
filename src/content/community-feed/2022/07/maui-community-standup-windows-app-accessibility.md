@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Check your Window's app's accessibility"
 link: https://www.youtube.com/watch?v=hnWDH6g2oIM
 description: "David Ortinau hosts a MAUI Community Standup focused on Windows app accessibility considerations for MAUI apps."

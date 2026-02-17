@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - 2025 New Year Kickoff"
 link: https://www.youtube.com/watch?v=WeSjcHQ1V8M
 description: "David Ortinau hosts the .NET MAUI Community Standup 2025 New Year Kickoff, sharing updates, community news, and what to watch for early in the year."

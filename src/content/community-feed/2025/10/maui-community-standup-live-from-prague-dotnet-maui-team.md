@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Live from Prague with the .NET MAUI Team"
 link: https://www.youtube.com/watch?v=4EXGyCgVNp4
 description: "David Ortinau hosts a .NET MAUI Community Standup live from Prague with the .NET MAUI team, sharing updates and community Q&A."

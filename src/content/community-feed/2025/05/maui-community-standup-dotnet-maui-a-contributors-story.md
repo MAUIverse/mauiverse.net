@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - .NET MAUI: A contributor’s story"
 link: https://www.youtube.com/watch?v=lE9rkX0egGg
 description: "David Ortinau hosts a .NET MAUI Community Standup sharing a contributor’s story—how people get involved, what it’s like contributing, and why it matters."

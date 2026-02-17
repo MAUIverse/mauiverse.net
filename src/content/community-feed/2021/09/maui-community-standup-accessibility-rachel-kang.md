@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Accessibility with Rachel Kang"
 link: https://www.youtube.com/watch?v=sm6N4HQ_5iA
 description: "David Ortinau hosts a MAUI Community Standup focused on accessibility, featuring Rachel Kang."

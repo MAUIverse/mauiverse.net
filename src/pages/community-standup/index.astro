@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LivestreamCountdown from '../../components/LivestreamCountdown.astro';
+import FeedEntries from '../../components/community-feed/FeedEntries.astro';
+import Pagination from '../../components/community-feed/Pagination.astro';
+import { getCollection } from 'astro:content';
+
+const standupEntries = (await getCollection('community-feed'))
+  .filter((e) => e.data.isStandup)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const pageSize = 8;
+const totalPages = Math.max(1, Math.ceil(standupEntries.length / pageSize));
+const pageEntries = standupEntries.slice(0, pageSize);
+---
+
+<BaseLayout
+  title="Community Standup"
+  description=".NET MAUI Community Toolkit monthly standup — live on YouTube every 1st Thursday."
+>
+  <div class="min-h-screen">
+    <div class="container mx-auto max-w-4xl px-4 py-16 md:py-24 space-y-16 md:space-y-20">
+      <!-- Countdown Hero -->
+      <section>
+        <p class="text-brand font-bold mb-4 text-sm font-header uppercase tracking-wide text-center">
+          Community Standup
+        </p>
+        <LivestreamCountdown variant="full" />
+      </section>
+
+      <!-- About -->
+      <section class="rounded-lg border border-edge bg-surface p-6 md:p-8 shadow-sm">
+        <h2 class="text-brand-dark font-header font-bold text-xl mb-4">About the Standup</h2>
+        <p class="text-muted mb-4">
+          The <strong class="text-brand-dark">.NET MAUI Community monthly standup</strong> is
+          a 1-hour session live-streamed on the .NET Foundation YouTube channel. Each standup covers
+          toolkit updates, community contributions, and an open Q&amp;A.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+          <div class="rounded-md bg-surface-alt p-4">
+            <span class="block text-muted-light text-xs uppercase tracking-wide mb-1">Frequency</span>
+            <span class="text-brand-dark font-semibold">1st Thursday of every month</span>
+          </div>
+          <div class="rounded-md bg-surface-alt p-4">
+            <span class="block text-muted-light text-xs uppercase tracking-wide mb-1">Time</span>
+            <span class="text-brand-dark font-semibold">12:00 PM PT / 3:00 PM ET / 8:00 PM UTC</span>
+          </div>
+          <div class="rounded-md bg-surface-alt p-4">
+            <span class="block text-muted-light text-xs uppercase tracking-wide mb-1">YouTube</span>
+            <a
+              href="https://www.youtube.com/@dotnet"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-brand font-semibold hover:underline"
+            >
+              .NET YouTube Channel
+            </a>
+          </div>
+          <div class="rounded-md bg-surface-alt p-4">
+            <span class="block text-muted-light text-xs uppercase tracking-wide mb-1">Twitch</span>
+            <a
+              href="https://www.twitch.tv/visualstudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-brand font-semibold hover:underline"
+            >
+              Visual Studio on Twitch
+            </a>
+          </div>
+          <div class="rounded-md bg-surface-alt p-4 sm:col-span-2">
+            <span class="block text-muted-light text-xs uppercase tracking-wide mb-1">Content</span>
+            <span class="text-brand-dark font-semibold">Project updates, Q&amp;A, community contributions</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Past Standups -->
+      {pageEntries.length > 0 && (
+        <section>
+          <h2 class="text-brand-dark font-header font-bold text-xl mb-6">Past Standups</h2>
+          <FeedEntries entries={pageEntries} showAuthor={false} actionLabel="Watch" />
+          <Pagination currentPage={1} totalPages={totalPages} basePath="/community-standup" />
+        </section>
+      )}
+    </div>
+  </div>
+</BaseLayout>

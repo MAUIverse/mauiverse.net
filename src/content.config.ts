@@ -11,6 +11,7 @@ const communityFeed = defineCollection({
     date: z.coerce.date(),
     author: z.string().optional(),
     contentType: z.string().optional(),
+    isStandup: z.boolean().optional(),
   }),
 });
 
@@ -18,7 +19,17 @@ const builtWithMaui = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/built-with-maui' }),
 });
 
+const communityStandup = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/community-standup' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    liveUrl: z.string().url().optional(),
+  }),
+});
+
 export const collections = {
   'community-feed': communityFeed,
   'built-with-maui': builtWithMaui,
+  'community-standup': communityStandup,
 };

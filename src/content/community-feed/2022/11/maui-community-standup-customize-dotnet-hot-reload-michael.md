@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Customize .NET Hot Reload with Michael!"
 link: https://www.youtube.com/watch?v=iucQi6fdYnM
 description: "David Ortinau hosts a MAUI Community Standup on customizing .NET Hot Reload, featuring Michael."

@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - .NET MAUI 4, 9, 12, 16, 18, 35"
 link: https://www.youtube.com/watch?v=lSZ10eoq_qQ
 description: "David Ortinau hosts a .NET MAUI Community Standup covering a fast-moving set of updates and milestones across .NET MAUI releases and improvements."

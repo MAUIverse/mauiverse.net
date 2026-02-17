@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Learn about GrialKit with the UXDivers team!"
 link: https://www.youtube.com/watch?v=ArCWms3kpbU
 description: "David Ortinau hosts a MAUI Community Standup with the UXDivers team to learn about GrialKit and building polished MAUI UI."

@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Polished UI for .NET MAUI with Telerik"
 link: https://www.youtube.com/watch?v=Ysn2Sw_x89s
 description: "David Ortinau hosts a MAUI Community Standup on building polished MAUI UI with Telerik."

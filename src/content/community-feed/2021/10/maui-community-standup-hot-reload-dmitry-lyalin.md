@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Dmitry Lyalin warms us up to .NET Hot Reload. Plus: Sweeky!"
 link: https://www.youtube.com/watch?v=cEoSkHZlKa4
 description: "David Ortinau hosts a MAUI Community Standup on .NET Hot Reload with Dmitry Lyalin, plus updates with Sweeky."

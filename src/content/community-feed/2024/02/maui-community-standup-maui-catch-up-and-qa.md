@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - MAUI Catch-up and Q+A!"
 link: https://www.youtube.com/watch?v=IQbJPm1VBkg
 description: "David Ortinau hosts a .NET MAUI Community Standup catch-up session with Q&A, covering recent updates and answering community questions."

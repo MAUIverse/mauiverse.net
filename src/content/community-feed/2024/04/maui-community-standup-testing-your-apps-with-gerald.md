@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Testing your apps with Gerald"
 link: https://www.youtube.com/watch?v=N9XTh3fLJVs
 description: "David Ortinau hosts a .NET MAUI Community Standup with Gerald Versluis, focused on strategies and tools for testing your .NET MAUI apps."

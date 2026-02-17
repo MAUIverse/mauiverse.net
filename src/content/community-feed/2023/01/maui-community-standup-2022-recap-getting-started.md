@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - 2022 Recap and Getting Started with MAUI!"
 link: https://www.youtube.com/watch?v=M_BPHi_NkqI
 description: "David Ortinau hosts a MAUI Community Standup recapping 2022 and sharing guidance for getting started with .NET MAUI."

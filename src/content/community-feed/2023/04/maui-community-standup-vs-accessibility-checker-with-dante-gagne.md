@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - VS Accessibility Checker with Dante Gagne"
 link: https://www.youtube.com/watch?v=qeWB8DwP-dQ
 description: "David Ortinau hosts a .NET MAUI Community Standup with Dante Gagne, focusing on Visual Studio’s Accessibility Checker and building more accessible apps."

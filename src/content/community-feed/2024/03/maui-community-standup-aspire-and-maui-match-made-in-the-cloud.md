@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup: Aspire & MAUI - A match made in the cloud!"
 link: https://www.youtube.com/watch?v=b58K9vBjlIM
 description: "David Ortinau hosts a .NET MAUI Community Standup exploring how .NET Aspire can pair with .NET MAUI, especially for cloud-connected apps and modern dev workflows."

@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup: #XamarinGaveMe and Rachel guest visit!"
 link: https://www.youtube.com/watch?v=xa1o7aa2Yig
 description: "David Ortinau hosts a .NET MAUI Community Standup celebrating #XamarinGaveMe and featuring a guest visit from Rachel, with community stories and updates."

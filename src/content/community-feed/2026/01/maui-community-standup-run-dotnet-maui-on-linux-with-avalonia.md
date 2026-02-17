@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Run .NET MAUI on Linux with Avalonia"
 link: https://www.youtube.com/watch?v=hjtQp9kEMH8
 description: A Community Standup episode on running .NET MAUI apps on Linux using Avalonia.

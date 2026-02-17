@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - .NET MAUI LAUNCH PARTY!!!!"
 link: https://www.youtube.com/watch?v=TCvZPwkvNH4
 description: "David Ortinau hosts the .NET MAUI Community Standup launch party celebrating MAUI’s release and community momentum."

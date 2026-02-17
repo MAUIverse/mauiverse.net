@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - .NET MAUI + Amazing TitleBars"
 link: https://www.youtube.com/watch?v=WMR9xTUnPa8
 description: "David Ortinau hosts a .NET MAUI Community Standup highlighting TitleBar customization and UI polish opportunities for .NET MAUI apps."

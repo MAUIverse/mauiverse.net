@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Agent Maui: Copilot Pro-tips for devs"
 link: https://www.youtube.com/watch?v=sCgvmPNIzbM
 description: "David Ortinau hosts a .NET MAUI Community Standup about Agent Maui, sharing Copilot pro-tips and practical ways to use AI tooling in day-to-day development."

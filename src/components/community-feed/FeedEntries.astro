@@ -6,9 +6,11 @@ import { extractYouTubeVideoId, getYouTubeThumbnailUrl } from '../../utils/youtu
 
 interface Props {
   entries: CollectionEntry<'community-feed'>[];
+  showAuthor?: boolean;
+  actionLabel?: string;
 }
 
-const { entries } = Astro.props;
+const { entries, showAuthor = true, actionLabel } = Astro.props;
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
@@ -63,7 +65,7 @@ function hasBody(entry: { body?: string }): boolean {
               </a>
             )}
             <p class="text-muted-light text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
-              {entry.data.author && (
+              {showAuthor && entry.data.author && (
                 <span class="inline-flex items-center gap-1.5">
                   <img
                     src={getAuthorImageSrc(entry.data.author, 64)}
@@ -76,7 +78,7 @@ function hasBody(entry: { body?: string }): boolean {
                   <span>{getAuthorDisplayName(entry.data.author)}</span>
                 </span>
               )}
-              {entry.data.author && <span class="text-muted-light">·</span>}
+              {showAuthor && entry.data.author && <span class="text-muted-light">·</span>}
               <time datetime={entry.data.date.toISOString()}>
                 {entry.data.date.toLocaleDateString('en-US', {
                   year: 'numeric',
@@ -91,7 +93,7 @@ function hasBody(entry: { body?: string }): boolean {
                 href={detailUrl}
                 class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
               >
-                {hasContent ? 'Read more' : 'Watch'}
+                {actionLabel ?? (hasContent ? 'Read more' : 'Watch')}
               </a>
             ) : (
               <a

@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - .NET 10 Announcements Roundup"
 link: https://www.youtube.com/watch?v=LuA4WbZY7tw
 description: The MAUI Community Standup rounds up the .NET 10 announcements and what they mean for MAUI developers.

@@ -1,4 +1,5 @@
 ---
+isStandup: true
 title: ".NET MAUI Community Standup - Mixed Reality and MAUI with Ed Charbeneau"
 link: https://www.youtube.com/watch?v=EaQ4myKhaLk
 description: "David Ortinau hosts a .NET MAUI Community Standup with Ed Charbeneau, discussing Mixed Reality and how it intersects with building .NET MAUI apps."
