@@ -81,6 +81,11 @@ const authorTuples: [string, string, string?][] = [
   ['bradystroud', 'Brady Stroud'],
   ['liamelliott', 'Liam Elliott'],
   ['damianantonowicz', 'Damian Antonowicz'],
+  ['luismts', 'Luis Matos'],
+  ['Kapusch', 'Jean-Emmanuel BAILLAT'],
+  ['damiendoumer', 'Damien Doumer'],
+  ['Char0394', 'Charlin Agramonte'],
+  ['saamerm', 'Saamer Mansoor'],
   ['dotnetMAUIPodcast', 'The .NET MAUI Podcast', '/img/contributors/dotnetMAUIPodcast.jpg'],
 ];
 
