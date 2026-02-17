@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import FeedEntries from '../../../components/community-feed/FeedEntries.astro';
 import Pagination from '../../../components/community-feed/Pagination.astro';
+import { getAuthorDisplayName, getAuthorImageSrc, getAuthorKeys } from '../../../data/authors';
 
 export async function getStaticPaths() {
   const pageSize = 15;
@@ -29,6 +30,7 @@ export async function getStaticPaths() {
 }
 
 const { entries, currentPage, totalPages } = Astro.props;
+const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5);
 ---
 
 <BaseLayout
@@ -54,6 +56,65 @@ const { entries, currentPage, totalPages } = Astro.props;
       <p class="text-muted text-base text-md mb-12 max-w-2xl">
         Notable moments, packages, projects, and celebrations from the MAUIverse community.
       </p>
+      <a
+        href="/community-feed/rss.xml"
+        class="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:text-brand-extra hover:underline"
+        aria-label="Subscribe to Community Feed via RSS"
+      >
+        Subscribe via RSS
+      </a>
+
+      <a
+        href="/community-contributors/"
+        class="mb-8 block rounded-lg border border-edge bg-surface p-6 shadow-sm transition hover:bg-surface-alt"
+      >
+        <span class="flex items-center gap-6 text-sm font-semibold text-muted whitespace-nowrap max-w-full">
+          <span class="flex-shrink-0">Meet the Community Contributors &rarr;</span>
+          <span
+            class="inline-flex min-w-0 flex-1 items-center justify-end gap-6 flex-nowrap overflow-hidden"
+            data-contributor-avatar-row
+            aria-hidden="true"
+          >
+            {avatarKeys.map((githubUsername) => (
+              <img
+                src={getAuthorImageSrc(githubUsername, 64)}
+                alt={getAuthorDisplayName(githubUsername)}
+                width="32"
+                height="32"
+                class="h-8 w-8 rounded-full flex-shrink-0"
+                data-contributor-avatar
+                loading="lazy"
+              />
+            ))}
+          </span>
+        </span>
+      </a>
+
+      <script>
+        const avatarRows = Array.from(document.querySelectorAll('[data-contributor-avatar-row]'));
+
+        function fitAvatarsToRow() {
+          for (const row of avatarRows) {
+            const avatars = Array.from(row.querySelectorAll('[data-contributor-avatar]'));
+            if (avatars.length === 0) continue;
+
+            const rowStyles = window.getComputedStyle(row);
+            const gap = Number.parseFloat(rowStyles.columnGap || '0') || 0;
+            const avatarWidth = avatars[0].getBoundingClientRect().width;
+            if (avatarWidth <= 0) continue;
+
+            const availableWidth = row.clientWidth;
+            const fitCount = Math.max(0, Math.floor((availableWidth + gap) / (avatarWidth + gap)));
+
+            avatars.forEach((avatar, index) => {
+              avatar.classList.toggle('hidden', index >= fitCount);
+            });
+          }
+        }
+
+        fitAvatarsToRow();
+        window.addEventListener('resize', fitAvatarsToRow);
+      </script>
 
       <FeedEntries entries={entries} />
       <Pagination currentPage={currentPage} totalPages={totalPages} />
