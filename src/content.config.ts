@@ -38,9 +38,30 @@ const toolkitStandup = defineCollection({
   }),
 });
 
+const communityContributors = defineCollection({
+  loader: glob({ pattern: '**/*.{yaml,yml}', base: './src/content/community-contributors' }),
+  schema: z.object({
+    gitHubUsername: z.string(),
+    displayName: z.string(),
+    internalProfileURL: z.string(),
+    bskyUrl: z.string().optional(),
+    twitterUrl: z.string().optional(),
+    instagramUrl: z.string().optional(),
+    linkedInUrl: z.string().optional(),
+    youTubeUrl: z.string().optional(),
+    tikTokUrl: z.string().optional(),
+    blogUrl: z.string().optional(),
+    blogRSSFeedUrl: z.string().optional(),
+    podcastWebsiteUrl: z.string().optional(),
+    podcastRssUrl: z.string().optional(),
+    twitchProfileUrl: z.string().optional(),
+  }),
+});
+
 export const collections = {
   'community-feed': communityFeed,
   'built-with-maui': builtWithMaui,
   'community-standup': communityStandup,
   'toolkit-standup': toolkitStandup,
+  'community-contributors': communityContributors,
 };
