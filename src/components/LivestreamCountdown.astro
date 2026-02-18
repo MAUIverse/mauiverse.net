@@ -3,14 +3,28 @@ import { getCollection } from 'astro:content';
 
 interface Props {
   variant?: 'full' | 'compact';
+  collection?: 'community-standup' | 'toolkit-standup';
+  channelUrl?: string;
+  channelName?: string;
+  defaultTitle?: string;
 }
 
-const { variant = 'full' } = Astro.props;
+const {
+  variant = 'full',
+  collection = 'community-standup',
+  channelUrl = 'https://www.youtube.com/@dotnet',
+  channelName = '.NET Foundation YouTube Channel',
+  defaultTitle = '.NET MAUI Community Toolkit Standup',
+} = Astro.props;
 
-const CHANNEL_URL = 'https://www.youtube.com/@dotnet';
+const CHANNEL_URL = channelUrl;
 const STREAM_DURATION_MS = 60 * 60 * 1000; // 1 hour
 
-const allEpisodes = (await getCollection('community-standup'))
+const rawCollection = collection === 'toolkit-standup'
+  ? await getCollection('toolkit-standup')
+  : await getCollection('community-standup');
+
+const allEpisodes = rawCollection
   .map((e) => ({
     title: e.data.title,
     date: e.data.date.toISOString(),
@@ -32,6 +46,7 @@ const isCompact = variant === 'compact';
   data-episodes={JSON.stringify(allEpisodes)}
   data-channel-url={CHANNEL_URL}
   data-stream-duration={STREAM_DURATION_MS}
+  data-default-title={defaultTitle}
 >
   {isCompact ? (
     <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
@@ -43,7 +58,7 @@ const isCompact = variant === 'compact';
         <h2 class="text-brand-dark font-header font-bold text-lg">Community Standup</h2>
       </div>
       <p class="livestream-title text-muted text-sm mb-2">
-        {nextEpisode ? nextEpisode.title : '.NET MAUI Community Toolkit Standup'}
+        {nextEpisode ? nextEpisode.title : defaultTitle}
       </p>
       <p class="livestream-date text-muted-light text-xs mb-3">
         {nextEpisode
@@ -77,7 +92,7 @@ const isCompact = variant === 'compact';
           { 'hidden': hasLiveUrl },
         ]}
       >
-        .NET Foundation YouTube Channel
+        {channelName}
         <span aria-hidden="true">&rarr;</span>
       </a>
     </div>
@@ -90,7 +105,7 @@ const isCompact = variant === 'compact';
         </span>
       </div>
       <h2 class="livestream-title text-brand-dark font-header font-bold text-2xl md:text-3xl mb-2">
-        {nextEpisode ? nextEpisode.title : '.NET MAUI Community Toolkit Standup'}
+        {nextEpisode ? nextEpisode.title : defaultTitle}
       </h2>
       <p class="livestream-date text-muted text-base mb-6">
         {nextEpisode
@@ -142,7 +157,7 @@ const isCompact = variant === 'compact';
           { 'hidden': hasLiveUrl },
         ]}
       >
-        .NET Foundation YouTube Channel
+        {channelName}
         <span aria-hidden="true">&rarr;</span>
       </a>
     </div>
@@ -157,6 +172,7 @@ const isCompact = variant === 'compact';
     const episodes = JSON.parse(root.getAttribute('data-episodes') || '[]');
     const channelUrl = root.getAttribute('data-channel-url') || '';
     const streamDuration = parseInt(root.getAttribute('data-stream-duration') || '3600000', 10);
+    const fallbackTitle = root.getAttribute('data-default-title') || '.NET MAUI Community Toolkit Standup';
 
     const liveBadge = root.querySelector('.livestream-live-badge');
     const titleEl = root.querySelector('.livestream-title');
@@ -219,7 +235,7 @@ const isCompact = variant === 'compact';
       const ep = findCurrentEpisode(now);
 
       if (!ep) {
-        if (titleEl) titleEl.textContent = '.NET MAUI Community Toolkit Standup';
+        if (titleEl) titleEl.textContent = fallbackTitle;
         if (dateEl) dateEl.textContent = 'Check back soon for the next stream';
         if (isCompact && timerEl) timerEl.textContent = '';
         if (isFullGrid) {

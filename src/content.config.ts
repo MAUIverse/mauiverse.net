@@ -12,6 +12,7 @@ const communityFeed = defineCollection({
     author: z.string().optional(),
     contentType: z.string().optional(),
     isStandup: z.boolean().optional(),
+    isToolkitStandup: z.boolean().optional(),
   }),
 });
 
@@ -28,8 +29,18 @@ const communityStandup = defineCollection({
   }),
 });
 
+const toolkitStandup = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/toolkit-standup' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    liveUrl: z.string().url().optional(),
+  }),
+});
+
 export const collections = {
   'community-feed': communityFeed,
   'built-with-maui': builtWithMaui,
   'community-standup': communityStandup,
+  'toolkit-standup': toolkitStandup,
 };

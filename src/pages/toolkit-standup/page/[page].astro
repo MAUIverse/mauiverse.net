@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import LivestreamCountdown from '../../../components/LivestreamCountdown.astro';
+import FeedEntries from '../../../components/community-feed/FeedEntries.astro';
+import Pagination from '../../../components/community-feed/Pagination.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pageSize = 8;
+  const entries = (await getCollection('community-feed'))
+    .filter((e) => e.data.contentType === 'toolkit-standup')
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+  const totalPages = Math.max(1, Math.ceil(entries.length / pageSize));
+  const paths: Array<{
+    params: { page: string };
+    props: { entries: typeof entries; currentPage: number; totalPages: number };
+  }> = [];
+
+  for (let currentPage = 2; currentPage <= totalPages; currentPage++) {
+    const start = (currentPage - 1) * pageSize;
+    const pageEntries = entries.slice(start, start + pageSize);
+    paths.push({
+      params: { page: String(currentPage) },
+      props: { entries: pageEntries, currentPage, totalPages },
+    });
+  }
+
+  return paths;
+}
+
+const { entries, currentPage, totalPages } = Astro.props;
+---
+
+<BaseLayout
+  title={`Toolkit Standup (Page ${currentPage})`}
+  description=".NET MAUI Community Toolkit monthly standup — past episodes."
+>
+  <div class="min-h-screen">
+    <div class="container mx-auto max-w-4xl px-4 py-16 md:py-24 space-y-16 md:space-y-20">
+      <!-- Countdown Hero -->
+      <section>
+        <p class="text-brand font-bold mb-4 text-sm font-header uppercase tracking-wide text-center">
+          Toolkit Standup
+        </p>
+        <LivestreamCountdown
+          variant="full"
+          collection="toolkit-standup"
+          channelUrl="https://www.youtube.com/@dotnetfdn"
+          channelName=".NET Foundation YouTube Channel"
+          defaultTitle=".NET MAUI Community Toolkit Standup"
+        />
+      </section>
+
+      <!-- Past Standups -->
+      <section>
+        <h2 class="text-brand-dark font-header font-bold text-xl mb-6">Past Standups</h2>
+        <FeedEntries entries={entries} showAuthor={false} actionLabel="Watch" />
+        <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/toolkit-standup" />
+      </section>
+    </div>
+  </div>
+</BaseLayout>

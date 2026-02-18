@@ -4,6 +4,7 @@ link: https://www.youtube.com/watch?v=NOzFWrVfopo
 description: The .NET MAUI Community Toolkit team shares updates, demos, and what’s shipping next.
 date: 2026-01-09
 author: dotnet-foundation
+isToolkitStandup: true
 ---
 
 Monthly standups are one of the best ways to keep up with what’s new in the **.NET MAUI Community Toolkit**—features, fixes, and the “why” behind them.
