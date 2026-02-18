@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { extractYouTubeVideoId, getYouTubeEmbedUrl } from '../utils/youtube';
 
 interface Props {
   variant?: 'full' | 'compact';
@@ -7,6 +8,7 @@ interface Props {
   channelUrl?: string;
   channelName?: string;
   defaultTitle?: string;
+  showYouTubeEmbed?: boolean;
 }
 
 const {
@@ -15,6 +17,7 @@ const {
   channelUrl = 'https://www.youtube.com/@dotnet',
   channelName = '.NET Foundation YouTube Channel',
   defaultTitle = '.NET MAUI Community Toolkit Standup',
+  showYouTubeEmbed = false,
 } = Astro.props;
 
 const CHANNEL_URL = channelUrl;
@@ -38,7 +41,15 @@ const nextEpisode = allEpisodes.find(
 );
 
 const hasLiveUrl = !!nextEpisode?.liveUrl;
+const nextEpisodeYouTubeVideoId = nextEpisode?.liveUrl
+  ? extractYouTubeVideoId(nextEpisode.liveUrl)
+  : null;
+const hasYouTubeLiveUrl = !!nextEpisodeYouTubeVideoId;
+const nextEpisodeEmbedUrl = nextEpisodeYouTubeVideoId
+  ? getYouTubeEmbedUrl(nextEpisodeYouTubeVideoId)
+  : null;
 const isCompact = variant === 'compact';
+const compactHeading = collection === 'toolkit-standup' ? 'Toolkit Standup' : 'Community Standup';
 ---
 
 <div
@@ -47,6 +58,7 @@ const isCompact = variant === 'compact';
   data-channel-url={CHANNEL_URL}
   data-stream-duration={STREAM_DURATION_MS}
   data-default-title={defaultTitle}
+  data-show-youtube-embed={showYouTubeEmbed}
 >
   {isCompact ? (
     <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
@@ -55,7 +67,7 @@ const isCompact = variant === 'compact';
           <span class="h-2 w-2 rounded-full bg-white animate-pulse" aria-hidden="true"></span>
           Live
         </span>
-        <h2 class="text-brand-dark font-header font-bold text-lg">Community Standup</h2>
+        <h2 class="text-brand-dark font-header font-bold text-lg">{compactHeading}</h2>
       </div>
       <p class="livestream-title text-muted text-sm mb-2">
         {nextEpisode ? nextEpisode.title : defaultTitle}
@@ -68,6 +80,23 @@ const isCompact = variant === 'compact';
       <div class="livestream-timer text-brand-dark font-header font-bold text-2xl tabular-nums mb-4" aria-live="polite">
         --:--:--
       </div>
+      {showYouTubeEmbed && (
+        <div
+          class:list={[
+            'livestream-embed mb-4 overflow-hidden rounded-lg border border-edge bg-surface-alt shadow-sm',
+            { 'hidden': !hasYouTubeLiveUrl },
+          ]}
+        >
+          <iframe
+            class="livestream-embed-frame aspect-video h-full w-full"
+            src={nextEpisodeEmbedUrl ?? undefined}
+            title={`YouTube livestream for ${nextEpisode?.title ?? defaultTitle}`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      )}
       <a
         href={nextEpisode?.liveUrl ?? CHANNEL_URL}
         target="_blank"
@@ -81,7 +110,7 @@ const isCompact = variant === 'compact';
         <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
         </svg>
-        Watch Now
+        Join In on YouTube
       </a>
       <a
         href={CHANNEL_URL}
@@ -133,6 +162,23 @@ const isCompact = variant === 'compact';
           <span class="text-muted-light text-xs sm:text-sm uppercase tracking-wide mt-1">Secs</span>
         </div>
       </div>
+      {showYouTubeEmbed && (
+        <div
+          class:list={[
+            'livestream-embed mx-auto mb-6 max-w-3xl overflow-hidden rounded-lg border border-edge bg-surface-alt shadow-sm',
+            { 'hidden': !hasYouTubeLiveUrl },
+          ]}
+        >
+          <iframe
+            class="livestream-embed-frame aspect-video h-full w-full"
+            src={nextEpisodeEmbedUrl ?? undefined}
+            title={`YouTube livestream for ${nextEpisode?.title ?? defaultTitle}`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      )}
       <a
         href={nextEpisode?.liveUrl ?? CHANNEL_URL}
         target="_blank"
@@ -146,7 +192,7 @@ const isCompact = variant === 'compact';
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
         </svg>
-        Watch Now
+        Join In on YouTube
       </a>
       <a
         href={CHANNEL_URL}
@@ -173,12 +219,15 @@ const isCompact = variant === 'compact';
     const channelUrl = root.getAttribute('data-channel-url') || '';
     const streamDuration = parseInt(root.getAttribute('data-stream-duration') || '3600000', 10);
     const fallbackTitle = root.getAttribute('data-default-title') || '.NET MAUI Community Toolkit Standup';
+    const showYouTubeEmbed = root.getAttribute('data-show-youtube-embed') === 'true';
 
     const liveBadge = root.querySelector('.livestream-live-badge');
     const titleEl = root.querySelector('.livestream-title');
     const dateEl = root.querySelector('.livestream-date');
     const watchBtn = root.querySelector('.livestream-watch-btn');
     const channelLink = root.querySelector('.livestream-channel-link');
+    const embedWrapper = root.querySelector('.livestream-embed');
+    const embedFrame = root.querySelector('.livestream-embed-frame');
 
     const timerEl = root.querySelector('.livestream-timer');
     const daysEl = root.querySelector('.livestream-days');
@@ -217,8 +266,47 @@ const isCompact = variant === 'compact';
       });
     }
 
-    function updateLink(ep, isLive) {
+    function extractYouTubeVideoId(url) {
+      if (!url || typeof url !== 'string') return null;
+
+      try {
+        const parsed = new URL(url);
+
+        if (parsed.hostname === 'youtu.be') {
+          const id = parsed.pathname.slice(1).split('/')[0];
+          return /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : null;
+        }
+
+        if (
+          parsed.hostname === 'www.youtube.com' ||
+          parsed.hostname === 'youtube.com' ||
+          parsed.hostname === 'm.youtube.com'
+        ) {
+          const v = parsed.searchParams.get('v');
+          if (v && /^[a-zA-Z0-9_-]{11}$/.test(v)) return v;
+
+          const pathParts = parsed.pathname.split('/').filter(Boolean);
+          const id =
+            (pathParts[0] === 'embed' ||
+              pathParts[0] === 'shorts' ||
+              pathParts[0] === 'live') &&
+            pathParts[1]
+              ? pathParts[1].split('?')[0]
+              : null;
+
+          if (id && /^[a-zA-Z0-9_-]{11}$/.test(id)) return id;
+        }
+
+        return null;
+      } catch {
+        return null;
+      }
+    }
+
+    function updateLink(ep) {
       const hasLive = !!(ep && ep.liveUrl);
+      const videoId = hasLive ? extractYouTubeVideoId(ep.liveUrl) : null;
+      const hasEmbed = showYouTubeEmbed && !!videoId;
 
       if (watchBtn) {
         watchBtn.classList.toggle('hidden', !hasLive);
@@ -227,6 +315,23 @@ const isCompact = variant === 'compact';
 
       if (channelLink) {
         channelLink.classList.toggle('hidden', hasLive);
+      }
+
+      if (embedWrapper) {
+        embedWrapper.classList.toggle('hidden', !hasEmbed);
+      }
+
+      if (embedFrame) {
+        if (hasEmbed && videoId) {
+          const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
+          if (embedFrame.getAttribute('src') !== embedUrl) {
+            embedFrame.setAttribute('src', embedUrl);
+          }
+          embedFrame.setAttribute('title', `YouTube livestream for ${ep.title || fallbackTitle}`);
+        } else {
+          embedFrame.removeAttribute('src');
+          embedFrame.setAttribute('title', 'YouTube livestream');
+        }
       }
     }
 
@@ -244,7 +349,7 @@ const isCompact = variant === 'compact';
           if (minsEl) minsEl.textContent = '--';
           if (secsEl) secsEl.textContent = '--';
         }
-        updateLink(null, false);
+        updateLink(null);
         if (liveBadge) liveBadge.classList.add('hidden');
         return;
       }
@@ -265,7 +370,7 @@ const isCompact = variant === 'compact';
         liveBadge.classList.toggle('hidden', !isLive);
       }
 
-      updateLink(ep, isLive);
+      updateLink(ep);
 
       if (isLive) {
         if (isCompact && timerEl) timerEl.textContent = 'LIVE';
