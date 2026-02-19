@@ -106,6 +106,30 @@ Without a token, sync still runs unauthenticated (lower GitHub rate limits).
 
 	- `SYNCFUSION_MAUI_TOOLKIT_CONTRIBUTOR_SYNC_STRICT=1 npm run build`
 
+## NuGet author badge sync
+
+NuGet author badges are sourced from the NuGet search endpoint using each community contributor `gitHubUsername` as an `owner:` query and synced at build-time.
+
+- Sync script: `scripts/fetch-nuget-authors.mjs`
+- Generated local dataset: `src/data/nuget-authors.generated.ts`
+- Badge rendering accessor: `isNugetAuthor(...)` in `src/data/authors.ts`
+
+### Refresh behavior and fallback
+
+- `npm run dev` and `npm run build` both trigger sync via `predev`/`prebuild`.
+- On sync failure, build/dev uses the existing generated dataset when present.
+- If no generated dataset exists and sync fails, the command fails fast.
+
+### Force refresh and strict mode
+
+- Force fresh network sync (fail if NuGet API is unavailable):
+
+	- `NUGET_AUTHOR_SYNC_FORCE_REFRESH=1 npm run build`
+
+- Enforce strict behavior (never fall back to stale generated data):
+
+	- `NUGET_AUTHOR_SYNC_STRICT=1 npm run build`
+
 ## Community contributors
 
 Contributor profiles live in `src/content/community-contributors/` as one YAML file per author.

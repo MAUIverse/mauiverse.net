@@ -5,6 +5,7 @@ import {
   getAuthorGitHubUrl,
   isMauiContributor,
   isMauiToolkitContributor,
+  isNugetAuthor,
   isSyncfusionMauiToolkitContributor,
   isSameAuthorKey,
 } from '../../data/authors';
@@ -18,9 +19,11 @@ const { githubUsername, displayName } = Astro.props;
 const githubUrl = getAuthorGitHubUrl(githubUsername);
 const isMauiContributorProfile = isMauiContributor(githubUsername);
 const isMauiToolkitContributorProfile = isMauiToolkitContributor(githubUsername);
+const isNugetAuthorProfile = isNugetAuthor(githubUsername);
 const isSyncfusionMauiToolkitContributorProfile = isSyncfusionMauiToolkitContributor(githubUsername);
 const mauiRepoUrl = 'https://github.com/dotnet/maui';
 const mauiToolkitRepoUrl = 'https://github.com/CommunityToolkit/Maui';
+const nugetProfileUrl = `https://www.nuget.org/profiles/${githubUsername}`;
 const syncfusionMauiToolkitRepoUrl = 'https://github.com/syncfusion/maui-toolkit';
 const contributionBadgeClass =
   'mb-2 inline-flex items-center rounded-full border border-edge bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-dark transition-colors hover:bg-edge hover:text-brand-extraDark';
@@ -99,6 +102,16 @@ const profileLinks = [
           class={contributionBadgeClass}
         >
           Community Toolkit Contributor
+        </a>
+      )}
+      {isNugetAuthorProfile && (
+        <a
+          href={nugetProfileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={contributionBadgeClass}
+        >
+          nuget author
         </a>
       )}
       {isSyncfusionMauiToolkitContributorProfile && (

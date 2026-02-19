@@ -3,14 +3,15 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "predev": "npm run fetch:built-with-maui && npm run fetch:maui-contributors && npm run fetch:maui-toolkit-contributors && npm run fetch:syncfusion-maui-toolkit-contributors",
+    "predev": "npm run fetch:built-with-maui && npm run fetch:maui-contributors && npm run fetch:maui-toolkit-contributors && npm run fetch:syncfusion-maui-toolkit-contributors && npm run fetch:nuget-authors",
     "dev": "astro dev",
     "start": "astro dev",
     "fetch:built-with-maui": "node scripts/fetch-built-with-maui.mjs",
     "fetch:maui-contributors": "node scripts/fetch-maui-contributors.mjs",
     "fetch:maui-toolkit-contributors": "node scripts/fetch-maui-toolkit-contributors.mjs",
     "fetch:syncfusion-maui-toolkit-contributors": "node scripts/fetch-syncfusion-maui-toolkit-contributors.mjs",
-    "prebuild": "npm run fetch:built-with-maui && npm run fetch:maui-contributors && npm run fetch:maui-toolkit-contributors && npm run fetch:syncfusion-maui-toolkit-contributors",
+    "fetch:nuget-authors": "node scripts/fetch-nuget-authors.mjs",
+    "prebuild": "npm run fetch:built-with-maui && npm run fetch:maui-contributors && npm run fetch:maui-toolkit-contributors && npm run fetch:syncfusion-maui-toolkit-contributors && npm run fetch:nuget-authors",
     "build": "astro build",
     "preview": "astro preview"
   },

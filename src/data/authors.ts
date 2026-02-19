@@ -1,5 +1,6 @@
 import { mauiContributorUsernames } from './maui-contributors.generated';
 import { mauiToolkitContributorUsernames } from './maui-toolkit-contributors.generated';
+import { nugetAuthorUsernames } from './nuget-authors.generated';
 import { syncfusionMauiToolkitContributorUsernames } from './syncfusion-maui-toolkit-contributors.generated';
 
 /**
@@ -152,6 +153,19 @@ export function isSyncfusionMauiToolkitContributor(githubUsername: string): bool
   const contributorLogin =
     syncfusionMauiToolkitContributorUsernameOverrides[normalizedKey] ?? normalizedKey;
   return syncfusionMauiToolkitContributorUsernameSet.has(contributorLogin);
+}
+
+const nugetAuthorUsernameSet = new Set(nugetAuthorUsernames.map((username) => username.toLowerCase()));
+
+const nugetAuthorUsernameOverrides: Record<string, string> = {
+  // Add known aliases here if a profile username differs from contributor login.
+  // 'local-profile-key': 'github-login'
+};
+
+export function isNugetAuthor(githubUsername: string): boolean {
+  const normalizedKey = resolveAuthorKey(githubUsername).toLowerCase();
+  const contributorLogin = nugetAuthorUsernameOverrides[normalizedKey] ?? normalizedKey;
+  return nugetAuthorUsernameSet.has(contributorLogin);
 }
 
 export function isSameAuthorKey(leftKey: string, rightKey: string): boolean {
