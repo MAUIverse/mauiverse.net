@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import FeedEntries from '../../../../components/community-feed/FeedEntries.astro';
+import Pagination from '../../../../components/community-feed/Pagination.astro';
+import ContributorProfileHeader from '../../../../components/community-contributors/ContributorProfileHeader.astro';
+import { buildPaginatedStaticPaths, paginateEntries } from '../../../../utils/pagination';
+import {
+  getAuthorKeys,
+  getAuthorDisplayName,
+  isSameAuthorKey,
+} from '../../../../data/authors';
+
+export async function getStaticPaths() {
+  const pageSize = 12;
+  const entries = (await getCollection('community-feed')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );
+
+  const paths = [];
+
+  for (const githubUsername of getAuthorKeys()) {
+    const displayName = getAuthorDisplayName(githubUsername);
+    const contributorEntries = entries.filter(
+      (entry) => entry.data.author && isSameAuthorKey(entry.data.author, githubUsername)
+    );
+    const { pages, totalPages } = paginateEntries(contributorEntries, pageSize);
+
+    paths.push(
+      ...buildPaginatedStaticPaths(pages, totalPages, (page) => ({
+        params: { githubUsername, page: String(page.currentPage) },
+        props: { githubUsername, displayName },
+      }))
+    );
+  }
+
+  return paths;
+}
+
+const { githubUsername, displayName, entries, currentPage, totalPages } = Astro.props;
+const basePath = `/community-contributors/${encodeURIComponent(githubUsername)}`;
+---
+
+<BaseLayout
+  title={`${displayName} (Page ${currentPage}) | Community Contributors | MAUIverse`}
+  description={`Community Feed contributions from ${displayName}.`}
+>
+  <style is:global>
+    html,
+    body {
+      height: auto;
+      overflow: auto;
+    }
+  </style>
+
+  <section class="min-h-screen px-0 py-24">
+    <div class="container mx-auto max-w-4xl px-4">
+      <a href="/community-contributors/" class="mb-6 inline-block text-sm font-medium text-brand hover:underline">
+        ← Back to Community Contributors
+      </a>
+
+      <ContributorProfileHeader githubUsername={githubUsername} displayName={displayName} />
+
+      <section aria-labelledby="contributor-feed-heading">
+        <h2 id="contributor-feed-heading" class="mb-6 text-2xl font-header font-bold text-brand-dark">
+          Community Feed Contributions
+        </h2>
+        <FeedEntries entries={entries} />
+        <Pagination currentPage={currentPage} totalPages={totalPages} basePath={basePath} />
+      </section>
+    </div>
+  </section>
+</BaseLayout>

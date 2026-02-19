@@ -4,14 +4,15 @@ import LivestreamCountdown from '../../components/LivestreamCountdown.astro';
 import FeedEntries from '../../components/community-feed/FeedEntries.astro';
 import Pagination from '../../components/community-feed/Pagination.astro';
 import { getCollection } from 'astro:content';
+import { paginateEntries } from '../../utils/pagination';
 
 const standupEntries = (await getCollection('community-feed'))
   .filter((e) => e.data.isStandup)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const pageSize = 8;
-const totalPages = Math.max(1, Math.ceil(standupEntries.length / pageSize));
-const pageEntries = standupEntries.slice(0, pageSize);
+const { pages, totalPages } = paginateEntries(standupEntries, pageSize);
+const pageEntries = pages[0]?.entries ?? [];
 ---
 
 <BaseLayout

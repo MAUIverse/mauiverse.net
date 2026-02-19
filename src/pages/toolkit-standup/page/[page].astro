@@ -4,6 +4,7 @@ import LivestreamCountdown from '../../../components/LivestreamCountdown.astro';
 import FeedEntries from '../../../components/community-feed/FeedEntries.astro';
 import Pagination from '../../../components/community-feed/Pagination.astro';
 import { getCollection } from 'astro:content';
+import { buildPaginatedStaticPaths, paginateEntries } from '../../../utils/pagination';
 
 export async function getStaticPaths() {
   const pageSize = 8;
@@ -11,22 +12,11 @@ export async function getStaticPaths() {
     .filter((e) => e.data.contentType === 'toolkit-standup')
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-  const totalPages = Math.max(1, Math.ceil(entries.length / pageSize));
-  const paths: Array<{
-    params: { page: string };
-    props: { entries: typeof entries; currentPage: number; totalPages: number };
-  }> = [];
+  const { pages, totalPages } = paginateEntries(entries, pageSize);
 
-  for (let currentPage = 2; currentPage <= totalPages; currentPage++) {
-    const start = (currentPage - 1) * pageSize;
-    const pageEntries = entries.slice(start, start + pageSize);
-    paths.push({
-      params: { page: String(currentPage) },
-      props: { entries: pageEntries, currentPage, totalPages },
-    });
-  }
-
-  return paths;
+  return buildPaginatedStaticPaths(pages, totalPages, (page) => ({
+    params: { page: String(page.currentPage) },
+  }));
 }
 
 const { entries, currentPage, totalPages } = Astro.props;

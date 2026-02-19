@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import FeedEntries from '../../components/community-feed/FeedEntries.astro';
 import Pagination from '../../components/community-feed/Pagination.astro';
+import { paginateEntries } from '../../utils/pagination';
 import {
   getAuthorDisplayName,
   getAuthorImageSrc,
@@ -15,8 +16,8 @@ const entries = (await getCollection('community-feed')).sort(
 );
 
 const pageSize = 15;
-const totalPages = Math.max(1, Math.ceil(entries.length / pageSize));
-const pageEntries = entries.slice(0, pageSize);
+const { pages, totalPages } = paginateEntries(entries, pageSize);
+const pageEntries = pages[0]?.entries ?? [];
 const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5);
 ---
 
