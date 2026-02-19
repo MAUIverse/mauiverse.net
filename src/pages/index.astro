@@ -38,17 +38,79 @@ function truncateTitle(title: string): string {
         </p>
       </section>
 
+      <!-- Community Feed -->
+      <section class="grid grid-cols-1 gap-6 lg:gap-8 items-stretch">
+        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-6 lg:gap-8 items-stretch">
+            <div class="flex flex-col min-w-0">
+              <h2 class="text-brand-dark text-2xl font-header font-bold mb-7">
+                Latest from the Community Contributors
+              </h2>
+              <ul class="space-y-3 flex-1 min-w-0" aria-label="Latest community feed entries">
+                {latestEntries.map((entry) => {
+                  const detailUrl = `/community-feed/${entry.id}/`;
+                  return (
+                    <li class="flex items-center gap-2 min-w-0 flex-nowrap">
+                      {entry.data.author ? (
+                        <a
+                          href={detailUrl}
+                          class="flex items-center gap-1.5 flex-shrink-0"
+                          aria-hidden="true"
+                        >
+                          <img
+                            src={getAuthorImageSrc(entry.data.author, 64)}
+                            alt=""
+                            width="24"
+                            height="24"
+                            class="h-6 w-6 rounded-full flex-shrink-0"
+                            loading="lazy"
+                          />
+                          <span class="text-sm font-medium text-brand-dark whitespace-nowrap">
+                            {getAuthorDisplayName(entry.data.author)}
+                          </span>
+                        </a>
+                      ) : null}
+                      <a
+                        href={detailUrl}
+                        class="text-muted text-sm truncate min-w-0 flex-1 hover:text-brand transition-colors"
+                      >
+                        {truncateTitle(entry.data.title)}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            <div class="min-w-0 flex flex-col text-left h-full lg:pt-12">
+              <p class="text-muted mb-4 min-w-0">
+                A collation of moments, packages, projects, podcasts, and celebrations from the MAUIverse community.
+              </p>
+              <p class="min-w-0 text-muted">
+                Read the feed here, or subscribe by RSS.
+              </p>
+              <a
+                href="/community-feed/"
+                class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark mt-auto"
+              >
+                View full feed
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Community Standup -->
-      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+      <section class="grid grid-cols-1 lg:grid-cols-[1fr_1.8fr] gap-6 lg:gap-8 items-stretch">
         <LivestreamCountdown variant="compact" />
         <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm flex flex-col justify-center">
           <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Community Standup</h2>
           <p class="text-muted mb-4">
-            The .NET MAUI Community Toolkit monthly standup — project updates, Q&amp;A, and community
-            contributions, live on YouTube.
+            The .NET MAUI monthly community standup — project updates, Q&amp;A, and community
+            contributions, live on YouTube and Twitch.
           </p>
           <p class="text-muted-light text-sm mb-4">
-            Every 1st Thursday &middot; 12:00 PM PT / 3:00 PM ET / 8:00 PM UTC
+            Every 1st Thursday &middot; 10:00 AM PT / 1:00 PM ET / 6:00 PM UTC
           </p>
           <a
             href="/community-standup/"
@@ -59,84 +121,66 @@ function truncateTitle(title: string): string {
         </div>
       </section>
 
-      <!-- Community Feed -->
-      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm flex flex-col min-w-0">
-          <h2 class="text-brand-dark font-header font-bold text-lg mb-3">Latest from the Community</h2>
-          <ul class="space-y-3 flex-1 min-w-0" aria-label="Latest community feed entries">
-            {latestEntries.map((entry) => {
-              const detailUrl = `/community-feed/${entry.id}/`;
-              return (
-                <li class="flex items-center gap-2 min-w-0 flex-nowrap">
-                  {entry.data.author ? (
-                    <a
-                      href={detailUrl}
-                      class="flex items-center gap-1.5 flex-shrink-0"
-                      aria-hidden="true"
-                    >
-                      <img
-                        src={getAuthorImageSrc(entry.data.author, 64)}
-                        alt=""
-                        width="24"
-                        height="24"
-                        class="h-6 w-6 rounded-full flex-shrink-0"
-                        loading="lazy"
-                      />
-                      <span class="text-sm font-medium text-brand-dark whitespace-nowrap">
-                        {getAuthorDisplayName(entry.data.author)}
-                      </span>
-                    </a>
-                  ) : null}
-                  <a
-                    href={detailUrl}
-                    class="text-muted text-sm truncate min-w-0 flex-1 hover:text-brand transition-colors"
-                  >
-                    {truncateTitle(entry.data.title)}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div class="min-w-0 rounded-lg border border-edge bg-surface p-6 shadow-sm flex flex-col justify-center">
-          <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Community Feed</h2>
-          <p class="text-muted mb-4 min-w-0">
-            A collation of moments, packages, projects, podcasts, and celebrations from the MAUIverse community.
+      <!-- Community Toolkit Standup -->
+      <section class="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] gap-6 lg:gap-8 items-stretch">
+        
+        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm flex flex-col justify-center">
+          <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Community Toolkit Standup</h2>
+          <p class="text-muted mb-4">
+            The .NET MAUI Community Toolkit monthly standup — toolkit updates, Q&amp;A, and roadmap
+            discussions, live on YouTube and Twitch.
           </p>
-          <p class="min-w-0 text-muted">
-            Read the feed here, or subscribe by RSS.
+          <p class="text-muted-light text-sm mb-4">
+            Every 1st Thursday &middot; 12:00 PM PT / 3:00 PM ET / 8:00 PM UTC
           </p>
           <a
-            href="/community-feed/"
-            class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark mt-2"
+            href="/toolkit-standup/"
+            class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
           >
-            View full feed
+            View all episodes
           </a>
         </div>
+        <LivestreamCountdown
+          variant="compact"
+          collection="toolkit-standup"
+          channelUrl="https://www.youtube.com/@NETFoundation"
+          channelName=".NET Foundation YouTube Channel"
+          defaultTitle=".NET MAUI Community Toolkit Standup"
+        />
       </section>
 
       <!-- Discord -->
-      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-        <div class="lg:col-span-2 rounded-lg border border-edge bg-surface p-6 shadow-sm flex flex-col justify-center order-2 lg:order-1">
-          <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Join us on Discord</h2>
-          <p class="text-muted mb-4">
-            Chat with other MAUI developers, get help, share what you're building, and stay in the
-            loop with the community.
-          </p>
-          <p class="text-muted mb-4">
-            Come say hi 👋
-          </p>
-          <a
-            href={DISCORD_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
-          >
-            Open Discord
-          </a>
-        </div>
-        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm flex flex-col justify-center order-1 lg:order-2">
-          <img src="/img/discord.jpg" alt="Discord" class="w-full h-auto rounded" loading="lazy">
+      <section class="grid grid-cols-1 gap-6 lg:gap-8 items-stretch">
+        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-center">
+            <div class="lg:col-span-2 order-2 lg:order-1 text-left">
+              <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Join us on Discord</h2>
+              <p class="text-muted mb-4">
+                Chat with other MAUI developers, get help, share what you're building, and stay in the
+                loop with the community.
+              </p>
+              <p class="text-muted mb-4">
+                Come say hi 👋
+              </p>
+              <a
+                href={DISCORD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
+              >
+                Open Discord
+              </a>
+            </div>
+
+            <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+              <img
+                src="/img/discord.jpg"
+                alt="Discord"
+                class="w-full max-w-sm h-auto rounded"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

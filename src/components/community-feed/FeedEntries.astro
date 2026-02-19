@@ -1,6 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { getAuthorDisplayName, getAuthorImageSrc } from '../../data/authors';
+import {
+  getAuthorDisplayName,
+  getAuthorImageSrc,
+  getInternalContributorProfileHref,
+} from '../../data/authors';
 import { isGitHubUrl } from '../../utils/link';
 import { extractYouTubeVideoId, getYouTubeThumbnailUrl } from '../../utils/youtube';
 
@@ -15,6 +19,7 @@ const { entries, showAuthor = true, actionLabel } = Astro.props;
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
 }
+
 ---
 
 <ul class="space-y-8" aria-label="Community feed posts">
@@ -23,6 +28,10 @@ function hasBody(entry: { body?: string }): boolean {
     const videoId = extractYouTubeVideoId(entry.data.link);
     const isInternal = hasContent || videoId;
     const detailUrl = `/community-feed/${entry.id}/`;
+    const authorProfileHref = entry.data.author
+      ? getInternalContributorProfileHref(entry.data.author)
+      : null;
+    const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.author) : null;
     return (
       <li class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
         <div class={`flex gap-3 ${videoId ? 'flex-row gap-6' : 'flex-col'}`}>
@@ -66,17 +75,35 @@ function hasBody(entry: { body?: string }): boolean {
             )}
             <p class="text-muted-light text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
               {showAuthor && entry.data.author && (
-                <span class="inline-flex items-center gap-1.5">
-                  <img
-                    src={getAuthorImageSrc(entry.data.author, 64)}
-                    alt=""
-                    width="24"
-                    height="24"
-                    class="h-6 w-6 rounded-full inline-block align-middle"
-                    loading="lazy"
-                  />
-                  <span>{getAuthorDisplayName(entry.data.author)}</span>
-                </span>
+                authorProfileHref ? (
+                  <a
+                    href={authorProfileHref}
+                    class="inline-flex items-center gap-1.5 hover:underline"
+                    aria-label={`View ${authorDisplayName}'s profile`}
+                  >
+                    <img
+                      src={getAuthorImageSrc(entry.data.author, 64)}
+                      alt=""
+                      width="24"
+                      height="24"
+                      class="h-6 w-6 rounded-full inline-block align-middle"
+                      loading="lazy"
+                    />
+                    <span>{authorDisplayName}</span>
+                  </a>
+                ) : (
+                  <span class="inline-flex items-center gap-1.5">
+                    <img
+                      src={getAuthorImageSrc(entry.data.author, 64)}
+                      alt=""
+                      width="24"
+                      height="24"
+                      class="h-6 w-6 rounded-full inline-block align-middle"
+                      loading="lazy"
+                    />
+                    <span>{authorDisplayName}</span>
+                  </span>
+                )
               )}
               {showAuthor && entry.data.author && <span class="text-muted-light">·</span>}
               <time datetime={entry.data.date.toISOString()}>

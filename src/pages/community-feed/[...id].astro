@@ -1,7 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
-import { getAuthorDisplayName, getAuthorImageSrc } from '../../data/authors';
+import {
+  getAuthorDisplayName,
+  getAuthorImageSrc,
+  getInternalContributorProfileHref,
+} from '../../data/authors';
 import { isGitHubUrl } from '../../utils/link';
 import {
   extractYouTubeVideoId,
@@ -27,6 +31,10 @@ const withBody = hasBody(entry);
 const showDetailPage = withBody || videoId;
 const rendered = withBody ? await render(entry) : null;
 const Content = rendered?.Content ?? null;
+const authorProfileHref = entry.data.author
+  ? getInternalContributorProfileHref(entry.data.author)
+  : null;
+const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.author) : null;
 ---
 
 {showDetailPage ? (
@@ -57,21 +65,36 @@ const Content = rendered?.Content ?? null;
               })}
             </time>
           </p>
-          {entry.data.author && (
-            <div class="flex items-center gap-3">
-              <img
-                src={getAuthorImageSrc(entry.data.author, 96)}
-                alt=""
-                width="48"
-                height="48"
-                class="h-12 w-12 rounded-full"
-                loading="lazy"
-              />
-              <span class="text-brand-dark font-medium">
-                {getAuthorDisplayName(entry.data.author)}
-              </span>
-            </div>
-          )}
+          {entry.data.author &&
+            (authorProfileHref ? (
+              <a
+                href={authorProfileHref}
+                class="inline-flex items-center gap-3 text-brand-dark font-medium hover:underline"
+                aria-label={`View ${authorDisplayName}'s profile`}
+              >
+                <img
+                  src={getAuthorImageSrc(entry.data.author, 96)}
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="h-12 w-12 rounded-full"
+                  loading="lazy"
+                />
+                <span>{authorDisplayName}</span>
+              </a>
+            ) : (
+              <div class="flex items-center gap-3">
+                <img
+                  src={getAuthorImageSrc(entry.data.author, 96)}
+                  alt=""
+                  width="48"
+                  height="48"
+                  class="h-12 w-12 rounded-full"
+                  loading="lazy"
+                />
+                <span class="text-brand-dark font-medium">{authorDisplayName}</span>
+              </div>
+            ))}
         </header>
 
         {videoId && (

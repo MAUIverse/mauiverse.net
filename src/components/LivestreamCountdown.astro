@@ -15,8 +15,8 @@ const {
   variant = 'full',
   collection = 'community-standup',
   channelUrl = 'https://www.youtube.com/@dotnet',
-  channelName = '.NET Foundation YouTube Channel',
-  defaultTitle = '.NET MAUI Community Toolkit Standup',
+  channelName = '.NET YouTube Channel',
+  defaultTitle = '.NET MAUI Community Standup',
   showYouTubeEmbed = false,
 } = Astro.props;
 
@@ -49,7 +49,7 @@ const nextEpisodeEmbedUrl = nextEpisodeYouTubeVideoId
   ? getYouTubeEmbedUrl(nextEpisodeYouTubeVideoId)
   : null;
 const isCompact = variant === 'compact';
-const compactHeading = collection === 'toolkit-standup' ? 'Toolkit Standup' : 'Community Standup';
+const compactHeading = collection === 'toolkit-standup' ? 'Community Toolkit Standup' : 'Community Standup';
 ---
 
 <div
@@ -212,198 +212,197 @@ const compactHeading = collection === 'toolkit-standup' ? 'Toolkit Standup' : 'C
 
 <script>
   (() => {
-    const root = document.querySelector('.livestream-countdown');
-    if (!root) return;
+    const roots = Array.from(document.querySelectorAll('.livestream-countdown'));
+    if (!roots.length) return;
 
-    const episodes = JSON.parse(root.getAttribute('data-episodes') || '[]');
-    const channelUrl = root.getAttribute('data-channel-url') || '';
-    const streamDuration = parseInt(root.getAttribute('data-stream-duration') || '3600000', 10);
-    const fallbackTitle = root.getAttribute('data-default-title') || '.NET MAUI Community Toolkit Standup';
-    const showYouTubeEmbed = root.getAttribute('data-show-youtube-embed') === 'true';
+    roots.forEach((root) => {
+      const episodes = JSON.parse(root.getAttribute('data-episodes') || '[]');
+      const channelUrl = root.getAttribute('data-channel-url') || '';
+      const streamDuration = parseInt(root.getAttribute('data-stream-duration') || '3600000', 10);
+      const fallbackTitle = root.getAttribute('data-default-title') || '.NET MAUI Community Toolkit Standup';
+      const showYouTubeEmbed = root.getAttribute('data-show-youtube-embed') === 'true';
 
-    const liveBadge = root.querySelector('.livestream-live-badge');
-    const titleEl = root.querySelector('.livestream-title');
-    const dateEl = root.querySelector('.livestream-date');
-    const watchBtn = root.querySelector('.livestream-watch-btn');
-    const channelLink = root.querySelector('.livestream-channel-link');
-    const embedWrapper = root.querySelector('.livestream-embed');
-    const embedFrame = root.querySelector('.livestream-embed-frame');
+      const liveBadge = root.querySelector('.livestream-live-badge');
+      const titleEl = root.querySelector('.livestream-title');
+      const dateEl = root.querySelector('.livestream-date');
+      const watchBtn = root.querySelector('.livestream-watch-btn');
+      const channelLink = root.querySelector('.livestream-channel-link');
+      const embedWrapper = root.querySelector('.livestream-embed');
+      const embedFrame = root.querySelector('.livestream-embed-frame');
 
-    const timerEl = root.querySelector('.livestream-timer');
-    const daysEl = root.querySelector('.livestream-days');
-    const hoursEl = root.querySelector('.livestream-hours');
-    const minsEl = root.querySelector('.livestream-mins');
-    const secsEl = root.querySelector('.livestream-secs');
+      const timerEl = root.querySelector('.livestream-timer');
+      const daysEl = root.querySelector('.livestream-days');
+      const hoursEl = root.querySelector('.livestream-hours');
+      const minsEl = root.querySelector('.livestream-mins');
+      const secsEl = root.querySelector('.livestream-secs');
 
-    const isCompact = !!timerEl;
-    const isFullGrid = !!daysEl;
+      const isCompact = !!timerEl;
+      const isFullGrid = !!daysEl;
 
-    function findCurrentEpisode(now) {
-      return episodes.find((ep) => {
-        const start = new Date(ep.date).getTime();
-        return start + streamDuration > now;
-      }) || null;
-    }
-
-    function pad(n) {
-      return String(n).padStart(2, '0');
-    }
-
-    function formatLocalDate(isoDate) {
-      return new Date(isoDate).toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      });
-    }
-
-    function formatLocalTime(isoDate) {
-      return new Date(isoDate).toLocaleTimeString('en-US', {
-        hour: 'numeric',
-        minute: '2-digit',
-        timeZoneName: 'short',
-      });
-    }
-
-    function extractYouTubeVideoId(url) {
-      if (!url || typeof url !== 'string') return null;
-
-      try {
-        const parsed = new URL(url);
-
-        if (parsed.hostname === 'youtu.be') {
-          const id = parsed.pathname.slice(1).split('/')[0];
-          return /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : null;
-        }
-
-        if (
-          parsed.hostname === 'www.youtube.com' ||
-          parsed.hostname === 'youtube.com' ||
-          parsed.hostname === 'm.youtube.com'
-        ) {
-          const v = parsed.searchParams.get('v');
-          if (v && /^[a-zA-Z0-9_-]{11}$/.test(v)) return v;
-
-          const pathParts = parsed.pathname.split('/').filter(Boolean);
-          const id =
-            (pathParts[0] === 'embed' ||
-              pathParts[0] === 'shorts' ||
-              pathParts[0] === 'live') &&
-            pathParts[1]
-              ? pathParts[1].split('?')[0]
-              : null;
-
-          if (id && /^[a-zA-Z0-9_-]{11}$/.test(id)) return id;
-        }
-
-        return null;
-      } catch {
-        return null;
-      }
-    }
-
-    function updateLink(ep) {
-      const hasLive = !!(ep && ep.liveUrl);
-      const videoId = hasLive ? extractYouTubeVideoId(ep.liveUrl) : null;
-      const hasEmbed = showYouTubeEmbed && !!videoId;
-
-      if (watchBtn) {
-        watchBtn.classList.toggle('hidden', !hasLive);
-        if (hasLive) watchBtn.setAttribute('href', ep.liveUrl);
+      function findCurrentEpisode(now) {
+        return episodes.find((ep) => {
+          const start = new Date(ep.date).getTime();
+          return start + streamDuration > now;
+        }) || null;
       }
 
-      if (channelLink) {
-        channelLink.classList.toggle('hidden', hasLive);
+      function pad(n) {
+        return String(n).padStart(2, '0');
       }
 
-      if (embedWrapper) {
-        embedWrapper.classList.toggle('hidden', !hasEmbed);
+      function formatLocalDate(isoDate) {
+        return new Date(isoDate).toLocaleDateString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        });
       }
 
-      if (embedFrame) {
-        if (hasEmbed && videoId) {
-          const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
-          if (embedFrame.getAttribute('src') !== embedUrl) {
-            embedFrame.setAttribute('src', embedUrl);
+      function formatLocalTime(isoDate) {
+        return new Date(isoDate).toLocaleTimeString('en-US', {
+          hour: 'numeric',
+          minute: '2-digit',
+          timeZoneName: 'short',
+        });
+      }
+
+      function extractYouTubeVideoId(url) {
+        if (!url || typeof url !== 'string') return null;
+        try {
+          const parsed = new URL(url);
+
+          if (parsed.hostname === 'youtu.be') {
+            const id = parsed.pathname.slice(1).split('/')[0];
+            return /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : null;
           }
-          embedFrame.setAttribute('title', `YouTube livestream for ${ep.title || fallbackTitle}`);
-        } else {
-          embedFrame.removeAttribute('src');
-          embedFrame.setAttribute('title', 'YouTube livestream');
+
+          if (
+            parsed.hostname === 'www.youtube.com' ||
+            parsed.hostname === 'youtube.com' ||
+            parsed.hostname === 'm.youtube.com'
+          ) {
+            const v = parsed.searchParams.get('v');
+            if (v && /^[a-zA-Z0-9_-]{11}$/.test(v)) return v;
+
+            const pathParts = parsed.pathname.split('/').filter(Boolean);
+            const id =
+              (pathParts[0] === 'embed' ||
+                pathParts[0] === 'shorts' ||
+                pathParts[0] === 'live') &&
+              pathParts[1]
+                ? pathParts[1].split('?')[0]
+                : null;
+
+            if (id && /^[a-zA-Z0-9_-]{11}$/.test(id)) return id;
+          }
+
+          return null;
+        } catch {
+          return null;
         }
       }
-    }
 
-    function tick() {
-      const now = Date.now();
-      const ep = findCurrentEpisode(now);
+      function updateLink(ep) {
+        const hasLive = !!(ep && ep.liveUrl);
+        const videoId = hasLive ? extractYouTubeVideoId(ep.liveUrl) : null;
+        const hasEmbed = showYouTubeEmbed && !!videoId;
 
-      if (!ep) {
-        if (titleEl) titleEl.textContent = fallbackTitle;
-        if (dateEl) dateEl.textContent = 'Check back soon for the next stream';
-        if (isCompact && timerEl) timerEl.textContent = '';
+        if (watchBtn) {
+          watchBtn.classList.toggle('hidden', !hasLive);
+          if (hasLive) watchBtn.setAttribute('href', ep.liveUrl);
+        }
+
+        if (channelLink) {
+          channelLink.classList.toggle('hidden', hasLive);
+          if (!hasLive && channelUrl) channelLink.setAttribute('href', channelUrl);
+        }
+
+        if (embedWrapper) {
+          embedWrapper.classList.toggle('hidden', !hasEmbed);
+        }
+
+        if (embedFrame) {
+          if (hasEmbed && videoId) {
+            const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
+            if (embedFrame.getAttribute('src') !== embedUrl) {
+              embedFrame.setAttribute('src', embedUrl);
+            }
+            embedFrame.setAttribute('title', `YouTube livestream for ${ep.title || fallbackTitle}`);
+          } else {
+            embedFrame.removeAttribute('src');
+            embedFrame.setAttribute('title', 'YouTube livestream');
+          }
+        }
+      }
+
+      function tick() {
+        const now = Date.now();
+        const ep = findCurrentEpisode(now);
+
+        if (!ep) {
+          if (titleEl) titleEl.textContent = fallbackTitle;
+          if (dateEl) dateEl.textContent = 'Check back soon for the next stream';
+          if (isCompact && timerEl) timerEl.textContent = '';
+          if (isFullGrid) {
+            if (daysEl) daysEl.textContent = '--';
+            if (hoursEl) hoursEl.textContent = '--';
+            if (minsEl) minsEl.textContent = '--';
+            if (secsEl) secsEl.textContent = '--';
+          }
+          updateLink(null);
+          if (liveBadge) liveBadge.classList.add('hidden');
+          return;
+        }
+
+        const start = new Date(ep.date).getTime();
+        const isLive = now >= start && now < start + streamDuration;
+        const diff = Math.max(0, start - now);
+
+        if (titleEl) titleEl.textContent = ep.title;
+        if (dateEl) {
+          dateEl.textContent = isLive
+            ? `Started at ${formatLocalTime(ep.date)}`
+            : `${formatLocalDate(ep.date)} at ${formatLocalTime(ep.date)}`;
+        }
+
+        if (liveBadge) liveBadge.classList.toggle('hidden', !isLive);
+
+        updateLink(ep);
+
+        if (isLive) {
+          if (isCompact && timerEl) timerEl.textContent = 'LIVE';
+          if (isFullGrid) {
+            if (daysEl) daysEl.textContent = '00';
+            if (hoursEl) hoursEl.textContent = '00';
+            if (minsEl) minsEl.textContent = '00';
+            if (secsEl) secsEl.textContent = '00';
+          }
+          return;
+        }
+
+        const totalSecs = Math.floor(diff / 1000);
+        const d = Math.floor(totalSecs / 86400);
+        const h = Math.floor((totalSecs % 86400) / 3600);
+        const m = Math.floor((totalSecs % 3600) / 60);
+        const s = totalSecs % 60;
+
+        if (isCompact && timerEl) {
+          timerEl.textContent = d > 0
+            ? `${d}d ${pad(h)}:${pad(m)}:${pad(s)}`
+            : `${pad(h)}:${pad(m)}:${pad(s)}`;
+        }
+
         if (isFullGrid) {
-          if (daysEl) daysEl.textContent = '--';
-          if (hoursEl) hoursEl.textContent = '--';
-          if (minsEl) minsEl.textContent = '--';
-          if (secsEl) secsEl.textContent = '--';
+          if (daysEl) daysEl.textContent = pad(d);
+          if (hoursEl) hoursEl.textContent = pad(h);
+          if (minsEl) minsEl.textContent = pad(m);
+          if (secsEl) secsEl.textContent = pad(s);
         }
-        updateLink(null);
-        if (liveBadge) liveBadge.classList.add('hidden');
-        return;
       }
 
-      const start = new Date(ep.date).getTime();
-      const isLive = now >= start && now < start + streamDuration;
-      const diff = Math.max(0, start - now);
-
-      if (titleEl) titleEl.textContent = ep.title;
-
-      if (dateEl) {
-        dateEl.textContent = isLive
-          ? `Started at ${formatLocalTime(ep.date)}`
-          : `${formatLocalDate(ep.date)} at ${formatLocalTime(ep.date)}`;
-      }
-
-      if (liveBadge) {
-        liveBadge.classList.toggle('hidden', !isLive);
-      }
-
-      updateLink(ep);
-
-      if (isLive) {
-        if (isCompact && timerEl) timerEl.textContent = 'LIVE';
-        if (isFullGrid) {
-          if (daysEl) daysEl.textContent = '00';
-          if (hoursEl) hoursEl.textContent = '00';
-          if (minsEl) minsEl.textContent = '00';
-          if (secsEl) secsEl.textContent = '00';
-        }
-        return;
-      }
-
-      const totalSecs = Math.floor(diff / 1000);
-      const d = Math.floor(totalSecs / 86400);
-      const h = Math.floor((totalSecs % 86400) / 3600);
-      const m = Math.floor((totalSecs % 3600) / 60);
-      const s = totalSecs % 60;
-
-      if (isCompact && timerEl) {
-        timerEl.textContent = d > 0
-          ? `${d}d ${pad(h)}:${pad(m)}:${pad(s)}`
-          : `${pad(h)}:${pad(m)}:${pad(s)}`;
-      }
-
-      if (isFullGrid) {
-        if (daysEl) daysEl.textContent = pad(d);
-        if (hoursEl) hoursEl.textContent = pad(h);
-        if (minsEl) minsEl.textContent = pad(m);
-        if (secsEl) secsEl.textContent = pad(s);
-      }
-    }
-
-    tick();
-    setInterval(tick, 1000);
+      tick();
+      window.setInterval(tick, 1000);
+    });
   })();
 </script>

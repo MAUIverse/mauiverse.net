@@ -3,7 +3,12 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import FeedEntries from '../../../components/community-feed/FeedEntries.astro';
 import Pagination from '../../../components/community-feed/Pagination.astro';
-import { getAuthorDisplayName, getAuthorImageSrc, getAuthorKeys } from '../../../data/authors';
+import {
+  getAuthorDisplayName,
+  getAuthorImageSrc,
+  getAuthorKeys,
+  getInternalContributorProfileHref,
+} from '../../../data/authors';
 
 export async function getStaticPaths() {
   const pageSize = 15;
@@ -64,31 +69,57 @@ const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5);
         Subscribe via RSS
       </a>
 
-      <a
-        href="/community-contributors/"
+      <div
         class="mb-8 block rounded-lg border border-edge bg-surface p-6 shadow-sm transition hover:bg-surface-alt"
       >
         <span class="flex items-center gap-6 text-sm font-semibold text-muted whitespace-nowrap max-w-full">
-          <span class="flex-shrink-0">Meet the Community Contributors &rarr;</span>
+          <a href="/community-contributors/" class="flex-shrink-0 hover:underline">
+            Meet the Community Contributors &rarr;
+          </a>
           <span
             class="inline-flex min-w-0 flex-1 items-center justify-end gap-6 flex-nowrap overflow-hidden"
             data-contributor-avatar-row
             aria-hidden="true"
           >
-            {avatarKeys.map((githubUsername) => (
-              <img
-                src={getAuthorImageSrc(githubUsername, 64)}
-                alt={getAuthorDisplayName(githubUsername)}
-                width="32"
-                height="32"
-                class="h-8 w-8 rounded-full flex-shrink-0"
-                data-contributor-avatar
-                loading="lazy"
-              />
-            ))}
+            {avatarKeys.map((githubUsername) => {
+              const profileHref = getInternalContributorProfileHref(githubUsername);
+              return profileHref ? (
+                <a
+                  href={profileHref}
+                  aria-label={`View ${getAuthorDisplayName(githubUsername)}'s profile`}
+                  title={getAuthorDisplayName(githubUsername)}
+                  class="inline-flex h-8 w-8 flex-shrink-0"
+                  data-contributor-avatar
+                >
+                  <img
+                    src={getAuthorImageSrc(githubUsername, 64)}
+                    alt={getAuthorDisplayName(githubUsername)}
+                    width="32"
+                    height="32"
+                    class="block h-full w-full rounded-full"
+                    loading="lazy"
+                  />
+                </a>
+              ) : (
+                <span
+                  class="inline-flex h-8 w-8 flex-shrink-0"
+                  data-contributor-avatar
+                  title={getAuthorDisplayName(githubUsername)}
+                >
+                  <img
+                    src={getAuthorImageSrc(githubUsername, 64)}
+                    alt={getAuthorDisplayName(githubUsername)}
+                    width="32"
+                    height="32"
+                    class="block h-full w-full rounded-full"
+                    loading="lazy"
+                  />
+                </span>
+              );
+            })}
           </span>
         </span>
-      </a>
+      </div>
 
       <script>
         const avatarRows = Array.from(document.querySelectorAll('[data-contributor-avatar-row]'));
@@ -99,7 +130,7 @@ const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5);
             if (avatars.length === 0) continue;
 
             const rowStyles = window.getComputedStyle(row);
-            const gap = Number.parseFloat(rowStyles.columnGap || '0') || 0;
+            const gap = Number.parseFloat(rowStyles.columnGap || rowStyles.gap || '0') || 0;
             const avatarWidth = avatars[0].getBoundingClientRect().width;
             if (avatarWidth <= 0) continue;
 

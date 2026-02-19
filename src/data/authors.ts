@@ -127,6 +127,13 @@ export function getAuthorGitHubUrl(githubUsername: string): string | null {
   return `https://github.com/${githubUsername}`;
 }
 
+/** Internal community contributor profile URL, or null when the author key is not known. */
+export function getInternalContributorProfileHref(githubUsername: string): string | null {
+  const key = resolveAuthorKey(githubUsername);
+  if (!(key in authorDisplayNames)) return null;
+  return `/community-contributors/${encodeURIComponent(key)}/`;
+}
+
 /** All author keys (for contributor listing and static paths). */
 export function getAuthorKeys(): string[] {
   return authorTuples.map(([key]) => key);
