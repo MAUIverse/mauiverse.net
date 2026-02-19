@@ -1,6 +1,41 @@
 # mauiverse.net
 Powering the mauiverse.net website
 
+## Website contributor badge sync
+
+Website contributor badges are sourced from the GitHub contributors API for `MAUIverse/mauiverse.net` and synced at build-time.
+
+- Sync script: `scripts/fetch-mauiverse-website-contributors.mjs`
+- Generated local dataset: `src/data/mauiverse-website-contributors.generated.ts`
+- Badge rendering accessor: `isWebsiteContributor(...)` in `src/data/authors.ts`
+
+### Token setup
+
+For authenticated rate limits, set one of:
+
+- `MAUIVERSE_WEBSITE_CONTRIBUTORS_GITHUB_TOKEN` (preferred)
+- `MAUI_CONTRIBUTORS_GITHUB_TOKEN`
+- `GITHUB_TOKEN`
+- `GH_TOKEN`
+
+Without a token, sync still runs unauthenticated (lower GitHub rate limits).
+
+### Refresh behavior and fallback
+
+- `npm run dev` and `npm run build` both trigger sync via `predev`/`prebuild`.
+- On sync failure, build/dev uses the existing generated dataset when present.
+- If no generated dataset exists and sync fails, the command fails fast.
+
+### Force refresh and strict mode
+
+- Force fresh network sync (fail if API is unavailable):
+
+	- `MAUIVERSE_WEBSITE_CONTRIBUTOR_SYNC_FORCE_REFRESH=1 npm run build`
+
+- Enforce strict behavior (never fall back to stale generated data):
+
+	- `MAUIVERSE_WEBSITE_CONTRIBUTOR_SYNC_STRICT=1 npm run build`
+
 ## .NET MAUI contributor badge sync
 
 MAUI contributor badges are sourced from the GitHub contributors API for `dotnet/maui` and synced at build-time.
@@ -34,6 +69,41 @@ Without a token, sync still runs unauthenticated (lower GitHub rate limits).
 - Enforce strict behavior (never fall back to stale generated data):
 
 	- `MAUI_CONTRIBUTOR_SYNC_STRICT=1 npm run build`
+
+## .NET MAUI Docs contributor badge sync
+
+Docs contributor badges are sourced from the GitHub contributors API for `dotnet/docs-maui` and synced at build-time.
+
+- Sync script: `scripts/fetch-docs-maui-contributors.mjs`
+- Generated local dataset: `src/data/docs-maui-contributors.generated.ts`
+- Badge rendering accessor: `isDocsMauiContributor(...)` in `src/data/authors.ts`
+
+### Token setup
+
+For authenticated rate limits, set one of:
+
+- `DOCS_MAUI_CONTRIBUTORS_GITHUB_TOKEN` (preferred)
+- `MAUI_CONTRIBUTORS_GITHUB_TOKEN`
+- `GITHUB_TOKEN`
+- `GH_TOKEN`
+
+Without a token, sync still runs unauthenticated (lower GitHub rate limits).
+
+### Refresh behavior and fallback
+
+- `npm run dev` and `npm run build` both trigger sync via `predev`/`prebuild`.
+- On sync failure, build/dev uses the existing generated dataset when present.
+- If no generated dataset exists and sync fails, the command fails fast.
+
+### Force refresh and strict mode
+
+- Force fresh network sync (fail if API is unavailable):
+
+	- `DOCS_MAUI_CONTRIBUTOR_SYNC_FORCE_REFRESH=1 npm run build`
+
+- Enforce strict behavior (never fall back to stale generated data):
+
+	- `DOCS_MAUI_CONTRIBUTOR_SYNC_STRICT=1 npm run build`
 
 ## .NET MAUI Community Toolkit contributor badge sync
 
@@ -142,7 +212,8 @@ Use this schema for each contributor file:
 ```yaml
 gitHubUsername: ""
 displayName: ""
-internalProfileURL: ""
+avatarImagePath: ""
+disableGitHubProfileLink: false
 bskyUrl: ""
 twitterUrl: ""
 instagramUrl: ""
@@ -155,3 +226,9 @@ podcastWebsiteUrl: ""
 podcastRssUrl: ""
 twitchProfileUrl: ""
 ```
+
+Author metadata used by feed rendering is generated from this contributor YAML content:
+
+- Generation script: `scripts/generate-authors-from-community-contributors.mjs`
+- Generated snapshot (committed): `src/data/authors.generated.ts`
+- Runs automatically via `predev` and `prebuild`

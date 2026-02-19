@@ -43,7 +43,8 @@ const communityContributors = defineCollection({
   schema: z.object({
     gitHubUsername: z.string(),
     displayName: z.string(),
-    internalProfileURL: z.string(),
+    avatarImagePath: z.string().optional(),
+    disableGitHubProfileLink: z.boolean().optional(),
     bskyUrl: z.string().optional(),
     twitterUrl: z.string().optional(),
     instagramUrl: z.string().optional(),

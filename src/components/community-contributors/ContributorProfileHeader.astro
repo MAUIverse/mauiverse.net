@@ -3,10 +3,12 @@ import { getCollection } from 'astro:content';
 import {
   getAuthorImageSrc,
   getAuthorGitHubUrl,
+  isDocsMauiContributor,
   isMauiContributor,
   isMauiToolkitContributor,
   isNugetAuthor,
   isSyncfusionMauiToolkitContributor,
+  isWebsiteContributor,
   isSameAuthorKey,
 } from '../../data/authors';
 
@@ -18,11 +20,15 @@ interface Props {
 const { githubUsername, displayName } = Astro.props;
 const githubUrl = getAuthorGitHubUrl(githubUsername);
 const isMauiContributorProfile = isMauiContributor(githubUsername);
+const isDocsMauiContributorProfile = isDocsMauiContributor(githubUsername);
 const isMauiToolkitContributorProfile = isMauiToolkitContributor(githubUsername);
 const isNugetAuthorProfile = isNugetAuthor(githubUsername);
 const isSyncfusionMauiToolkitContributorProfile = isSyncfusionMauiToolkitContributor(githubUsername);
+const isWebsiteContributorProfile = isWebsiteContributor(githubUsername);
 const mauiRepoUrl = 'https://github.com/dotnet/maui';
+const docsMauiRepoUrl = 'https://github.com/dotnet/docs-maui';
 const mauiToolkitRepoUrl = 'https://github.com/CommunityToolkit/Maui';
+const websiteRepoUrl = 'https://github.com/MAUIverse/mauiverse.net';
 const nugetProfileUrl = `https://www.nuget.org/profiles/${githubUsername}`;
 const syncfusionMauiToolkitRepoUrl = 'https://github.com/syncfusion/maui-toolkit';
 const contributionBadgeClass =
@@ -82,7 +88,7 @@ const profileLinks = [
     />
     <div>
       <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-muted-light">
-        Community Contributor
+        Contributor Profile
       </p>
       {isMauiContributorProfile && (
         <a
@@ -94,6 +100,16 @@ const profileLinks = [
           MAUI Contributor
         </a>
       )}
+      {isDocsMauiContributorProfile && (
+        <a
+          href={docsMauiRepoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={contributionBadgeClass}
+        >
+          Docs Contributor
+        </a>
+      )}
       {isMauiToolkitContributorProfile && (
         <a
           href={mauiToolkitRepoUrl}
@@ -102,6 +118,16 @@ const profileLinks = [
           class={contributionBadgeClass}
         >
           Community Toolkit Contributor
+        </a>
+      )}
+      {isWebsiteContributorProfile && (
+        <a
+          href={websiteRepoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={contributionBadgeClass}
+        >
+          Website Contributor
         </a>
       )}
       {isNugetAuthorProfile && (

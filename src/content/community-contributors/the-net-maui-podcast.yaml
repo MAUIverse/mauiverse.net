@@ -1,6 +1,7 @@
 gitHubUsername: "dotnetMAUIPodcast"
 displayName: "The .NET MAUI Podcast"
-internalProfileURL: "/community-contributors/dotnetMAUIPodcast/"
+avatarImagePath: "/img/contributors/dotnetMAUIPodcast.jpg"
+disableGitHubProfileLink: true
 bskyUrl: ""
 twitterUrl: ""
 instagramUrl: ""
