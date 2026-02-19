@@ -35,6 +35,14 @@ const authorProfileHref = entry.data.author
   ? getInternalContributorProfileHref(entry.data.author)
   : null;
 const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.author) : null;
+const shareUrl = entry.data.link || Astro.url.href;
+const shareTitle = entry.data.title;
+const shareText = entry.data.description || entry.data.title;
+const encodedShareUrl = encodeURIComponent(shareUrl);
+const encodedShareTitle = encodeURIComponent(shareTitle);
+const encodedShareText = encodeURIComponent(shareText);
+const encodedShareEmailBody = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
+const encodedBskyText = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
 ---
 
 {showDetailPage ? (
@@ -65,36 +73,161 @@ const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.au
               })}
             </time>
           </p>
-          {entry.data.author &&
-            (authorProfileHref ? (
-              <a
-                href={authorProfileHref}
-                class="inline-flex items-center gap-3 text-brand-dark font-medium hover:underline"
-                aria-label={`View ${authorDisplayName}'s profile`}
-              >
-                <img
-                  src={getAuthorImageSrc(entry.data.author, 96)}
-                  alt=""
-                  width="48"
-                  height="48"
-                  class="h-12 w-12 rounded-full"
-                  loading="lazy"
-                />
-                <span>{authorDisplayName}</span>
-              </a>
-            ) : (
-              <div class="flex items-center gap-3">
-                <img
-                  src={getAuthorImageSrc(entry.data.author, 96)}
-                  alt=""
-                  width="48"
-                  height="48"
-                  class="h-12 w-12 rounded-full"
-                  loading="lazy"
-                />
-                <span class="text-brand-dark font-medium">{authorDisplayName}</span>
+          <div class="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+            {entry.data.author &&
+              (authorProfileHref ? (
+                <a
+                  href={authorProfileHref}
+                  class="inline-flex w-fit shrink-0 items-center gap-3 text-brand-dark font-medium hover:underline"
+                  aria-label={`View ${authorDisplayName}'s profile`}
+                >
+                  <img
+                    src={getAuthorImageSrc(entry.data.author, 96)}
+                    alt=""
+                    width="48"
+                    height="48"
+                    class="h-12 w-12 rounded-full"
+                    loading="lazy"
+                  />
+                  <span>{authorDisplayName}</span>
+                </a>
+              ) : (
+                <div class="flex w-fit shrink-0 items-center gap-3">
+                  <img
+                    src={getAuthorImageSrc(entry.data.author, 96)}
+                    alt=""
+                    width="48"
+                    height="48"
+                    class="h-12 w-12 rounded-full"
+                    loading="lazy"
+                  />
+                  <span class="text-brand-dark font-medium">{authorDisplayName}</span>
+                </div>
+              ))}
+
+            <section
+              class="w-full rounded-lg border border-edge bg-surface p-3 md:ml-auto md:max-w-xl"
+              aria-label="Share this post"
+              data-share-root
+              data-share-url={shareUrl}
+              data-share-title={shareTitle}
+              data-share-text={shareText}
+            >
+              <div class="flex items-center gap-3 overflow-x-auto whitespace-nowrap">
+                <p class="shrink-0 text-sm font-semibold text-brand-dark">Share this post</p>
+                <div class="flex items-center gap-2">
+                <button
+                  type="button"
+                  class="hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  data-web-share
+                  aria-label="Share using your browser"
+                  title="Share"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-current">
+                    <path d="M18 16.1a3.9 3.9 0 0 0-2.9 1.3l-5-2.5a4 4 0 0 0 0-2l5-2.5A4 4 0 1 0 14 7.5l-5 2.5a4 4 0 1 0 0 4l5 2.5A4 4 0 1 0 18 16.1Z" />
+                  </svg>
+                  <span class="sr-only">Share</span>
+                </button>
+
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedShareUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share on LinkedIn"
+                  title="Share on LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-current">
+                    <path d="M5.3 8.2H2.1V22h3.2V8.2ZM3.7 2A1.9 1.9 0 1 0 3.8 6a1.9 1.9 0 0 0-.1-4ZM22 13.9c0-4.2-2.2-6.2-5.2-6.2-2.4 0-3.5 1.3-4.1 2.3V8.2H9.5c0 1.2 0 13.8 0 13.8h3.2v-7.7c0-.4 0-.8.1-1.1.3-.8 1-1.6 2.2-1.6 1.6 0 2.3 1.2 2.3 3V22H22v-8.1Z" />
+                  </svg>
+                  <span class="sr-only">Share on LinkedIn</span>
+                </a>
+
+                <a
+                  href={`https://bsky.app/intent/compose?text=${encodedBskyText}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share on Bluesky"
+                  title="Share on Bluesky"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-current">
+                    <path d="M5.8 4.2C8 5.8 10.4 9 12 12.2c1.6-3.2 4-6.4 6.2-8 1.6-1.1 4.2-2 4.2.9 0 .6-.4 5.1-.7 5.8-.8 2.5-3.6 3.1-6.1 2.7 4.4.8 5.5 3.5 3.1 6.2-4.6 5.2-6.6-1.3-7.1-3-.1-.3-.1-.4-.3-.4s-.2.1-.3.4c-.5 1.7-2.5 8.2-7.1 3-2.4-2.7-1.3-5.4 3.1-6.2-2.5.4-5.3-.2-6.1-2.7-.3-.7-.7-5.2-.7-5.8 0-2.9 2.6-2 4.2-.9Z" />
+                  </svg>
+                  <span class="sr-only">Share on Bluesky</span>
+                </a>
+
+                <a
+                  href={`https://twitter.com/intent/tweet?url=${encodedShareUrl}&text=${encodedShareText}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share on X"
+                  title="Share on X"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-current">
+                    <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.2l-4.9-6.9L6 22H2.8l7.2-8.3L.8 2H7l4.4 6.2L18.9 2Zm-1.1 18h1.7L6 3.9H4.2L17.8 20Z" />
+                  </svg>
+                  <span class="sr-only">Share on X</span>
+                </a>
+
+                <a
+                  href={`https://www.reddit.com/submit?url=${encodedShareUrl}&title=${encodedShareTitle}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share on Reddit"
+                  title="Share on Reddit"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-current">
+                    <path d="M14.6 9.6a2 2 0 0 1 1.9-1.5 2 2 0 1 1-1.3 3.4 5.8 5.8 0 0 0-3-1l.7-3.1 2.1.5a1.4 1.4 0 1 1 .3-1.4l-3-.7a.7.7 0 0 0-.9.5l-.8 3.7a6.8 6.8 0 0 0-3.5 1 2 2 0 1 1-.6.8 5.8 5.8 0 0 0-1.4 3.7c0 2.8 3 5 6.8 5s6.8-2.2 6.8-5a5.8 5.8 0 0 0-1.2-3.5ZM8.9 14.3a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2Zm6.4 0a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2Zm-6.6 2.9a.7.7 0 0 1 1-.9 3.9 3.9 0 0 0 2.5.8 3.9 3.9 0 0 0 2.5-.8.7.7 0 0 1 1 .9 5.2 5.2 0 0 1-3.5 1.2 5.2 5.2 0 0 1-3.5-1.2Z" />
+                  </svg>
+                  <span class="sr-only">Share on Reddit</span>
+                </a>
+
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodedShareUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share on Facebook"
+                  title="Share on Facebook"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-current">
+                    <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.2-1.5 1.5-1.5h1.7V5a22.5 22.5 0 0 0-2.5-.1c-2.5 0-4.1 1.5-4.1 4.3V11H7.4v3h2.7v8h3.4Z" />
+                  </svg>
+                  <span class="sr-only">Share on Facebook</span>
+                </a>
+
+                <a
+                  href={`mailto:?subject=${encodedShareTitle}&body=${encodedShareEmailBody}`}
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share by email"
+                  title="Share by email"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-current">
+                    <path d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm3-1a1 1 0 0 0-.8.4L12 11l6.8-5.6A1 1 0 0 0 18 5H6Zm13 2.1-6.4 5.3a1 1 0 0 1-1.2 0L5 7.1V18a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7.1Z" />
+                  </svg>
+                  <span class="sr-only">Share by email</span>
+                </a>
+
+                <button
+                  type="button"
+                  class="hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  data-copy-link
+                  aria-label="Copy link"
+                  title="Copy link"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-current">
+                    <path d="M9 8a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-1v-2h1a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v1H9V8Zm-3 4a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-6Zm3-1a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H9Z" />
+                  </svg>
+                  <span class="sr-only">Copy link</span>
+                </button>
+                </div>
               </div>
-            ))}
+              <p class="sr-only" aria-live="polite" data-share-status></p>
+            </section>
+          </div>
         </header>
 
         {videoId && (
@@ -161,6 +294,69 @@ const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.au
         </p>
       </div>
     </article>
+
+    <script is:inline>
+      (() => {
+        const shareRoot = document.querySelector('[data-share-root]');
+        if (!shareRoot) return;
+
+        const shareUrl = shareRoot.getAttribute('data-share-url') || window.location.href;
+        const shareTitle = shareRoot.getAttribute('data-share-title') || document.title;
+        const shareText = shareRoot.getAttribute('data-share-text') || shareTitle;
+        const webShareButton = shareRoot.querySelector('[data-web-share]');
+        const copyLinkButton = shareRoot.querySelector('[data-copy-link]');
+        const statusNode = shareRoot.querySelector('[data-share-status]');
+
+        const setStatus = (value) => {
+          if (statusNode) {
+            statusNode.textContent = value;
+          }
+        };
+
+        if (webShareButton && typeof navigator.share === 'function') {
+          webShareButton.classList.remove('hidden');
+          webShareButton.addEventListener('click', async () => {
+            try {
+              await navigator.share({
+                title: shareTitle,
+                text: shareText,
+                url: shareUrl,
+              });
+              setStatus('Share sheet opened.');
+            } catch (error) {
+              if (error instanceof DOMException && error.name === 'AbortError') {
+                return;
+              }
+              setStatus('Unable to open the share sheet.');
+            }
+          });
+        }
+
+        if (copyLinkButton) {
+          copyLinkButton.classList.remove('hidden');
+          copyLinkButton.addEventListener('click', async () => {
+            try {
+              if (navigator.clipboard?.writeText) {
+                await navigator.clipboard.writeText(shareUrl);
+              } else {
+                const input = document.createElement('input');
+                input.value = shareUrl;
+                input.setAttribute('readonly', '');
+                input.style.position = 'absolute';
+                input.style.left = '-9999px';
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                input.remove();
+              }
+              setStatus('Link copied to clipboard.');
+            } catch {
+              setStatus('Unable to copy link.');
+            }
+          });
+        }
+      })();
+    </script>
   </BaseLayout>
 ) : (
   <BaseLayout title={`${entry.data.title} | MAUIverse`}>
