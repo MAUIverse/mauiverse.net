@@ -3,6 +3,9 @@ import { getCollection } from 'astro:content';
 import {
   getAuthorImageSrc,
   getAuthorGitHubUrl,
+  isMauiContributor,
+  isMauiToolkitContributor,
+  isSyncfusionMauiToolkitContributor,
   isSameAuthorKey,
 } from '../../data/authors';
 
@@ -13,6 +16,14 @@ interface Props {
 
 const { githubUsername, displayName } = Astro.props;
 const githubUrl = getAuthorGitHubUrl(githubUsername);
+const isMauiContributorProfile = isMauiContributor(githubUsername);
+const isMauiToolkitContributorProfile = isMauiToolkitContributor(githubUsername);
+const isSyncfusionMauiToolkitContributorProfile = isSyncfusionMauiToolkitContributor(githubUsername);
+const mauiRepoUrl = 'https://github.com/dotnet/maui';
+const mauiToolkitRepoUrl = 'https://github.com/CommunityToolkit/Maui';
+const syncfusionMauiToolkitRepoUrl = 'https://github.com/syncfusion/maui-toolkit';
+const contributionBadgeClass =
+  'mb-2 inline-flex items-center rounded-full border border-edge bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-dark transition-colors hover:bg-edge hover:text-brand-extraDark';
 
 const contributorProfile = (await getCollection('community-contributors')).find((entry) =>
   isSameAuthorKey(entry.data.gitHubUsername, githubUsername)
@@ -70,6 +81,36 @@ const profileLinks = [
       <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-muted-light">
         Community Contributor
       </p>
+      {isMauiContributorProfile && (
+        <a
+          href={mauiRepoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={contributionBadgeClass}
+        >
+          MAUI Contributor
+        </a>
+      )}
+      {isMauiToolkitContributorProfile && (
+        <a
+          href={mauiToolkitRepoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={contributionBadgeClass}
+        >
+          Community Toolkit Contributor
+        </a>
+      )}
+      {isSyncfusionMauiToolkitContributorProfile && (
+        <a
+          href={syncfusionMauiToolkitRepoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={contributionBadgeClass}
+        >
+          Syncfusion Toolkit Contributor
+        </a>
+      )}
       <h1 class="mb-3 text-3xl font-header font-bold text-brand-dark">
         {displayName}
       </h1>

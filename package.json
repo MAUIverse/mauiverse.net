@@ -3,11 +3,14 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "predev": "npm run fetch:built-with-maui",
+    "predev": "npm run fetch:built-with-maui && npm run fetch:maui-contributors && npm run fetch:maui-toolkit-contributors && npm run fetch:syncfusion-maui-toolkit-contributors",
     "dev": "astro dev",
     "start": "astro dev",
     "fetch:built-with-maui": "node scripts/fetch-built-with-maui.mjs",
-    "prebuild": "npm run fetch:built-with-maui",
+    "fetch:maui-contributors": "node scripts/fetch-maui-contributors.mjs",
+    "fetch:maui-toolkit-contributors": "node scripts/fetch-maui-toolkit-contributors.mjs",
+    "fetch:syncfusion-maui-toolkit-contributors": "node scripts/fetch-syncfusion-maui-toolkit-contributors.mjs",
+    "prebuild": "npm run fetch:built-with-maui && npm run fetch:maui-contributors && npm run fetch:maui-toolkit-contributors && npm run fetch:syncfusion-maui-toolkit-contributors",
     "build": "astro build",
     "preview": "astro preview"
   },

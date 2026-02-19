@@ -1,3 +1,7 @@
+import { mauiContributorUsernames } from './maui-contributors.generated';
+import { mauiToolkitContributorUsernames } from './maui-toolkit-contributors.generated';
+import { syncfusionMauiToolkitContributorUsernames } from './syncfusion-maui-toolkit-contributors.generated';
+
 /**
  * Author entries: [githubUsername, displayName, imagePath?].
  * When imagePath is present, the username is a placeholder and GitHub profile links are not shown.
@@ -102,6 +106,52 @@ for (const [key, displayName, imagePath] of authorTuples) {
 
 function resolveAuthorKey(githubUsername: string): string {
   return authorKeyLookup[githubUsername.toLowerCase()] ?? githubUsername;
+}
+
+const mauiContributorUsernameSet = new Set(
+  mauiContributorUsernames.map((username) => username.toLowerCase())
+);
+
+const mauiContributorUsernameOverrides: Record<string, string> = {
+  // Add known aliases here if a profile username differs from contributor login.
+  // 'local-profile-key': 'github-login'
+};
+
+export function isMauiContributor(githubUsername: string): boolean {
+  const normalizedKey = resolveAuthorKey(githubUsername).toLowerCase();
+  const contributorLogin = mauiContributorUsernameOverrides[normalizedKey] ?? normalizedKey;
+  return mauiContributorUsernameSet.has(contributorLogin);
+}
+
+const mauiToolkitContributorUsernameSet = new Set(
+  mauiToolkitContributorUsernames.map((username) => username.toLowerCase())
+);
+
+const mauiToolkitContributorUsernameOverrides: Record<string, string> = {
+  // Add known aliases here if a profile username differs from contributor login.
+  // 'local-profile-key': 'github-login'
+};
+
+export function isMauiToolkitContributor(githubUsername: string): boolean {
+  const normalizedKey = resolveAuthorKey(githubUsername).toLowerCase();
+  const contributorLogin = mauiToolkitContributorUsernameOverrides[normalizedKey] ?? normalizedKey;
+  return mauiToolkitContributorUsernameSet.has(contributorLogin);
+}
+
+const syncfusionMauiToolkitContributorUsernameSet = new Set(
+  syncfusionMauiToolkitContributorUsernames.map((username) => username.toLowerCase())
+);
+
+const syncfusionMauiToolkitContributorUsernameOverrides: Record<string, string> = {
+  // Add known aliases here if a profile username differs from contributor login.
+  // 'local-profile-key': 'github-login'
+};
+
+export function isSyncfusionMauiToolkitContributor(githubUsername: string): boolean {
+  const normalizedKey = resolveAuthorKey(githubUsername).toLowerCase();
+  const contributorLogin =
+    syncfusionMauiToolkitContributorUsernameOverrides[normalizedKey] ?? normalizedKey;
+  return syncfusionMauiToolkitContributorUsernameSet.has(contributorLogin);
 }
 
 export function isSameAuthorKey(leftKey: string, rightKey: string): boolean {
