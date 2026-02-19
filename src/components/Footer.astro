@@ -3,18 +3,42 @@
 ---
 <footer class="border-t border-edge bg-surface">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
-    <p class="text-sm text-muted-light">
-      &copy; {new Date().getFullYear()} MAUIverse
-      <span class="mx-1.5 text-edge">&middot;</span>
-      <a
-        href="https://github.com/MAUIverse/mauiverse.net/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-muted-light transition-colors hover:text-brand"
-      >
-        View on GitHub
-      </a>
-    </p>
+    <div>
+      <p class="text-sm text-muted-light">
+        &copy; {new Date().getFullYear()} MAUIverse
+        <span class="mx-1.5 text-edge">&middot;</span>
+        <a
+          href="https://github.com/MAUIverse/mauiverse.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-muted-light transition-colors hover:text-brand"
+        >
+          View on GitHub
+        </a>
+        <a
+          href="https://bsky.app/profile/mauiverse.net"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ml-4 inline-flex align-middle text-muted-light transition-colors hover:text-brand"
+          aria-label="MAUIverse on Bluesky"
+          title="MAUIverse on Bluesky"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-bluesky"
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+          >
+            <path
+              d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948"
+            ></path>
+          </svg>
+        </a>
+      </p>
+    </div>
 
     <button
       id="theme-toggle"
@@ -69,15 +93,20 @@
     const label = document.getElementById('theme-label');
     if (!toggle || !sunIcon || !moonIcon || !label) return;
 
+    const toggleEl = toggle;
+    const sunIconEl = sunIcon;
+    const moonIconEl = moonIcon;
+    const labelEl = label;
+
     function updateUI() {
       const isDark = document.documentElement.classList.contains('dark');
-      sunIcon.classList.toggle('hidden', !isDark);
-      moonIcon.classList.toggle('hidden', isDark);
-      label.textContent = isDark ? 'Light mode' : 'Dark mode';
-      toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      sunIconEl.classList.toggle('hidden', !isDark);
+      moonIconEl.classList.toggle('hidden', isDark);
+      labelEl.textContent = isDark ? 'Light mode' : 'Dark mode';
+      toggleEl.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
     }
 
-    toggle.addEventListener('click', () => {
+    toggleEl.addEventListener('click', () => {
       const isDark = document.documentElement.classList.toggle('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
       updateUI();

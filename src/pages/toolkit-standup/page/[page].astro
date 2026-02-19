@@ -9,7 +9,7 @@ import { buildPaginatedStaticPaths, paginateEntries } from '../../../utils/pagin
 export async function getStaticPaths() {
   const pageSize = 8;
   const entries = (await getCollection('community-feed'))
-    .filter((e) => e.data.contentType === 'toolkit-standup')
+    .filter((e) => e.data.isToolkitStandup === true)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
   const { pages, totalPages } = paginateEntries(entries, pageSize);
