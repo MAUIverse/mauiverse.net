@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import FeedEntries from '../../../../components/community-feed/FeedEntries.astro';
-import Pagination from '../../../../components/community-feed/Pagination.astro';
 import ContributorProfileHeader from '../../../../components/community-contributors/ContributorProfileHeader.astro';
-import { buildPaginatedStaticPaths, paginateEntries } from '../../../../utils/pagination';
+import ContributorFeedSection from '../../../../components/community-contributors/ContributorFeedSection.astro';
+import { paginateAndBuildStaticPaths } from '../../../../utils/pagination';
 import {
   getAuthorKeys,
   getAuthorDisplayName,
@@ -24,10 +23,8 @@ export async function getStaticPaths() {
     const contributorEntries = entries.filter(
       (entry) => entry.data.author && isSameAuthorKey(entry.data.author, githubUsername)
     );
-    const { pages, totalPages } = paginateEntries(contributorEntries, pageSize);
-
     paths.push(
-      ...buildPaginatedStaticPaths(pages, totalPages, (page) => ({
+      ...paginateAndBuildStaticPaths(contributorEntries, pageSize, (page) => ({
         params: { githubUsername, page: String(page.currentPage) },
         props: { githubUsername, displayName },
       }))
@@ -44,15 +41,8 @@ const basePath = `/community-contributors/${encodeURIComponent(githubUsername)}`
 <BaseLayout
   title={`${displayName} (Page ${currentPage}) | Community Contributors | MAUIverse`}
   description={`Community Feed contributions from ${displayName}.`}
+  allowPageScroll={true}
 >
-  <style is:global>
-    html,
-    body {
-      height: auto;
-      overflow: auto;
-    }
-  </style>
-
   <section class="min-h-screen px-0 py-24">
     <div class="container mx-auto max-w-4xl px-4">
       <a href="/community-contributors/" class="mb-6 inline-block text-sm font-medium text-brand hover:underline">
@@ -60,14 +50,12 @@ const basePath = `/community-contributors/${encodeURIComponent(githubUsername)}`
       </a>
 
       <ContributorProfileHeader githubUsername={githubUsername} displayName={displayName} />
-
-      <section aria-labelledby="contributor-feed-heading">
-        <h2 id="contributor-feed-heading" class="mb-6 text-2xl font-header font-bold text-brand-dark">
-          Community Feed Contributions
-        </h2>
-        <FeedEntries entries={entries} />
-        <Pagination currentPage={currentPage} totalPages={totalPages} basePath={basePath} />
-      </section>
+      <ContributorFeedSection
+        entries={entries}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        basePath={basePath}
+      />
     </div>
   </section>
 </BaseLayout>

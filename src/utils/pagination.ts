@@ -65,3 +65,19 @@ export function buildPaginatedStaticPaths<
 
   return paths;
 }
+
+export function paginateAndBuildStaticPaths<
+  TEntry,
+  TParams extends Record<string, string>,
+  TExtraProps extends Record<string, unknown> = {},
+>(
+  entries: TEntry[],
+  pageSize: number,
+  mapPage: (page: PaginationSlice<TEntry>) => {
+    params: TParams;
+    props?: TExtraProps;
+  }
+): PaginatedStaticPath<TParams, TEntry, TExtraProps>[] {
+  const { pages, totalPages } = paginateEntries(entries, pageSize);
+  return buildPaginatedStaticPaths(pages, totalPages, mapPage);
+}

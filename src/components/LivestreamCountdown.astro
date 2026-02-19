@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { extractYouTubeVideoId, getYouTubeEmbedUrl } from '../utils/youtube';
+import { formatLongWeekdayDateUS } from '../utils/date';
 
 interface Props {
   variant?: 'full' | 'compact';
@@ -74,7 +75,7 @@ const compactHeading = collection === 'toolkit-standup' ? 'Community Toolkit Sta
       </p>
       <p class="livestream-date text-muted-light text-xs mb-3">
         {nextEpisode
-          ? `Next stream: ${new Date(nextEpisode.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`
+          ? `Next stream: ${formatLongWeekdayDateUS(nextEpisode.date)}`
           : 'Check back soon for the next stream'}
       </p>
       <div class="livestream-timer text-brand-dark font-header font-bold text-2xl tabular-nums mb-4" aria-live="polite">
@@ -138,7 +139,7 @@ const compactHeading = collection === 'toolkit-standup' ? 'Community Toolkit Sta
       </h2>
       <p class="livestream-date text-muted text-base mb-6">
         {nextEpisode
-          ? `${new Date(nextEpisode.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`
+          ? `${formatLongWeekdayDateUS(nextEpisode.date)}`
           : 'Check back soon for the next stream'}
       </p>
       <div class="livestream-timer-grid flex justify-center gap-3 sm:gap-5 mb-8" aria-live="polite">
@@ -211,12 +212,21 @@ const compactHeading = collection === 'toolkit-standup' ? 'Community Toolkit Sta
 </div>
 
 <script>
+  import { formatLongWeekdayDateUS, formatTimeWithZoneUS } from '../utils/date';
+  import { extractYouTubeVideoId, getYouTubeEmbedUrl } from '../utils/youtube';
+
   (() => {
     const roots = Array.from(document.querySelectorAll('.livestream-countdown'));
     if (!roots.length) return;
 
+    type Episode = {
+      title: string;
+      date: string;
+      liveUrl: string | null;
+    };
+
     roots.forEach((root) => {
-      const episodes = JSON.parse(root.getAttribute('data-episodes') || '[]');
+      const episodes = JSON.parse(root.getAttribute('data-episodes') || '[]') as Episode[];
       const channelUrl = root.getAttribute('data-channel-url') || '';
       const streamDuration = parseInt(root.getAttribute('data-stream-duration') || '3600000', 10);
       const fallbackTitle = root.getAttribute('data-default-title') || '.NET MAUI Community Toolkit Standup';
@@ -239,78 +249,26 @@ const compactHeading = collection === 'toolkit-standup' ? 'Community Toolkit Sta
       const isCompact = !!timerEl;
       const isFullGrid = !!daysEl;
 
-      function findCurrentEpisode(now) {
+      function findCurrentEpisode(now: number): Episode | null {
         return episodes.find((ep) => {
           const start = new Date(ep.date).getTime();
           return start + streamDuration > now;
         }) || null;
       }
 
-      function pad(n) {
+      function pad(n: number): string {
         return String(n).padStart(2, '0');
       }
 
-      function formatLocalDate(isoDate) {
-        return new Date(isoDate).toLocaleDateString('en-US', {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        });
-      }
-
-      function formatLocalTime(isoDate) {
-        return new Date(isoDate).toLocaleTimeString('en-US', {
-          hour: 'numeric',
-          minute: '2-digit',
-          timeZoneName: 'short',
-        });
-      }
-
-      function extractYouTubeVideoId(url) {
-        if (!url || typeof url !== 'string') return null;
-        try {
-          const parsed = new URL(url);
-
-          if (parsed.hostname === 'youtu.be') {
-            const id = parsed.pathname.slice(1).split('/')[0];
-            return /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : null;
-          }
-
-          if (
-            parsed.hostname === 'www.youtube.com' ||
-            parsed.hostname === 'youtube.com' ||
-            parsed.hostname === 'm.youtube.com'
-          ) {
-            const v = parsed.searchParams.get('v');
-            if (v && /^[a-zA-Z0-9_-]{11}$/.test(v)) return v;
-
-            const pathParts = parsed.pathname.split('/').filter(Boolean);
-            const id =
-              (pathParts[0] === 'embed' ||
-                pathParts[0] === 'shorts' ||
-                pathParts[0] === 'live') &&
-              pathParts[1]
-                ? pathParts[1].split('?')[0]
-                : null;
-
-            if (id && /^[a-zA-Z0-9_-]{11}$/.test(id)) return id;
-          }
-
-          return null;
-        } catch {
-          return null;
-        }
-      }
-
-      function updateLink(ep) {
-        const hasLive = !!(ep && ep.liveUrl);
-        const videoId = hasLive ? extractYouTubeVideoId(ep.liveUrl) : null;
+      function updateLink(ep: Episode | null) {
+        const liveUrl = ep?.liveUrl ?? null;
+        const hasLive = !!liveUrl;
+        const videoId = liveUrl ? extractYouTubeVideoId(liveUrl) : null;
         const hasEmbed = showYouTubeEmbed && !!videoId;
 
         if (watchBtn) {
           watchBtn.classList.toggle('hidden', !hasLive);
-          if (hasLive) watchBtn.setAttribute('href', ep.liveUrl);
+          if (liveUrl) watchBtn.setAttribute('href', liveUrl);
         }
 
         if (channelLink) {
@@ -324,11 +282,11 @@ const compactHeading = collection === 'toolkit-standup' ? 'Community Toolkit Sta
 
         if (embedFrame) {
           if (hasEmbed && videoId) {
-            const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
+            const embedUrl = getYouTubeEmbedUrl(videoId);
             if (embedFrame.getAttribute('src') !== embedUrl) {
               embedFrame.setAttribute('src', embedUrl);
             }
-            embedFrame.setAttribute('title', `YouTube livestream for ${ep.title || fallbackTitle}`);
+            embedFrame.setAttribute('title', `YouTube livestream for ${ep?.title || fallbackTitle}`);
           } else {
             embedFrame.removeAttribute('src');
             embedFrame.setAttribute('title', 'YouTube livestream');
@@ -362,8 +320,8 @@ const compactHeading = collection === 'toolkit-standup' ? 'Community Toolkit Sta
         if (titleEl) titleEl.textContent = ep.title;
         if (dateEl) {
           dateEl.textContent = isLive
-            ? `Started at ${formatLocalTime(ep.date)}`
-            : `${formatLocalDate(ep.date)} at ${formatLocalTime(ep.date)}`;
+            ? `Started at ${formatTimeWithZoneUS(ep.date)}`
+            : `${formatLongWeekdayDateUS(ep.date)} at ${formatTimeWithZoneUS(ep.date)}`;
         }
 
         if (liveBadge) liveBadge.classList.toggle('hidden', !isLive);

@@ -1,9 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import FeedEntries from '../../components/community-feed/FeedEntries.astro';
-import Pagination from '../../components/community-feed/Pagination.astro';
 import ContributorProfileHeader from '../../components/community-contributors/ContributorProfileHeader.astro';
+import ContributorFeedSection from '../../components/community-contributors/ContributorFeedSection.astro';
 import { paginateEntries } from '../../utils/pagination';
 import {
   getAuthorKeys,
@@ -33,15 +32,8 @@ const pageEntries = pages[0]?.entries ?? [];
 <BaseLayout
   title={`${displayName} | Community Contributors | MAUIverse`}
   description={`Community Feed contributions from ${displayName}.`}
+  allowPageScroll={true}
 >
-  <style is:global>
-    html,
-    body {
-      height: auto;
-      overflow: auto;
-    }
-  </style>
-
   <section class="min-h-screen px-0 py-24">
     <div class="container mx-auto max-w-4xl px-4">
       <a href="/community-contributors/" class="mb-6 inline-block text-sm font-medium text-brand hover:underline">
@@ -49,22 +41,12 @@ const pageEntries = pages[0]?.entries ?? [];
       </a>
 
       <ContributorProfileHeader githubUsername={githubUsername} displayName={displayName} />
-
-      <section aria-labelledby="contributor-feed-heading">
-        <h2 id="contributor-feed-heading" class="mb-6 text-2xl font-header font-bold text-brand-dark">
-          Community Feed Contributions
-        </h2>
-        {pageEntries.length > 0 ? (
-          <>
-            <FeedEntries entries={pageEntries} />
-            <Pagination currentPage={1} totalPages={totalPages} basePath={basePath} />
-          </>
-        ) : (
-          <p class="rounded-lg border border-dashed border-edge bg-surface p-6 text-muted-light">
-            No Community Feed entries are available yet for this contributor.
-          </p>
-        )}
-      </section>
+      <ContributorFeedSection
+        entries={pageEntries}
+        currentPage={1}
+        totalPages={totalPages}
+        basePath={basePath}
+      />
     </div>
   </section>
 </BaseLayout>

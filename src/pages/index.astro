@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LivestreamCountdown from '../components/LivestreamCountdown.astro';
+import PrimaryLinkButton from '../components/PrimaryLinkButton.astro';
+import NewsletterSignupForm from '../components/NewsletterSignupForm.astro';
 import { getCollection } from 'astro:content';
 import { getAuthorDisplayName, getAuthorImageSrc } from '../data/authors';
 
@@ -16,14 +18,7 @@ function truncateTitle(title: string): string {
   return title.slice(0, maxTitleLength).trim() + '…';
 }
 ---
-<BaseLayout title="Welcome to the MAUIverse" description="Welcome to the MAUIverse">
-  <style is:global>
-    html,
-    body {
-      height: auto;
-      overflow: auto;
-    }
-  </style>
+<BaseLayout title="Welcome to the MAUIverse" description="Welcome to the MAUIverse" allowPageScroll={true}>
 
   <div class="min-h-screen">
     <div class="container mx-auto max-w-6xl px-4 py-16 md:py-24 space-y-16 md:space-y-24">
@@ -89,12 +84,9 @@ function truncateTitle(title: string): string {
               <p class="min-w-0 text-muted">
                 Read the feed here, or subscribe by RSS.
               </p>
-              <a
-                href="/community-feed/"
-                class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark mt-auto"
-              >
+              <PrimaryLinkButton href="/community-feed/" className="mt-auto">
                 View full feed
-              </a>
+              </PrimaryLinkButton>
             </div>
           </div>
         </div>
@@ -112,12 +104,9 @@ function truncateTitle(title: string): string {
           <p class="text-muted-light text-sm mb-4">
             Every 1st Thursday &middot; 10:00 AM PT / 1:00 PM ET / 6:00 PM UTC
           </p>
-          <a
-            href="/community-standup/"
-            class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
-          >
+          <PrimaryLinkButton href="/community-standup/">
             View all episodes
-          </a>
+          </PrimaryLinkButton>
         </div>
       </section>
 
@@ -133,12 +122,9 @@ function truncateTitle(title: string): string {
           <p class="text-muted-light text-sm mb-4">
             Every 1st Thursday &middot; 12:00 PM PT / 3:00 PM ET / 8:00 PM UTC
           </p>
-          <a
-            href="/toolkit-standup/"
-            class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
-          >
+          <PrimaryLinkButton href="/toolkit-standup/">
             View all episodes
-          </a>
+          </PrimaryLinkButton>
         </div>
         <LivestreamCountdown
           variant="compact"
@@ -162,14 +148,9 @@ function truncateTitle(title: string): string {
               <p class="text-muted mb-4">
                 Come say hi 👋
               </p>
-              <a
-                href={DISCORD_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
-              >
+              <PrimaryLinkButton href={DISCORD_URL} target="_blank" rel="noopener noreferrer">
                 Open Discord
-              </a>
+              </PrimaryLinkButton>
             </div>
 
             <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
@@ -200,71 +181,7 @@ function truncateTitle(title: string): string {
           </p>
         </div>
         <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
-          <form
-            method="post"
-            action="https://sendfox.com/form/m79vql/1rzrlz"
-            class="sendfox-form max-w-md mx-auto relative"
-            id="1rzrlz"
-            data-async="true"
-            data-recaptcha="true"
-          >
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label for="sendfox_form_name_home" class="block text-sm font-medium text-brand-dark mb-1">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  id="sendfox_form_name_home"
-                  placeholder="First Name"
-                  name="first_name"
-                  required
-                  class="w-full px-4 py-2.5 border border-edge rounded-md bg-surface-alt text-brand-dark placeholder-muted-light focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
-                />
-              </div>
-              <div>
-                <label
-                  for="sendfox_form_last_name_home"
-                  class="block text-sm font-medium text-brand-dark mb-1"
-                >
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  id="sendfox_form_last_name_home"
-                  placeholder="Last Name"
-                  name="last_name"
-                  required
-                  class="w-full px-4 py-2.5 border border-edge rounded-md bg-surface-alt text-brand-dark placeholder-muted-light focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
-                />
-              </div>
-            </div>
-            <div class="mb-5">
-              <label for="sendfox_form_email_home" class="block text-sm font-medium text-brand-dark mb-1">
-                Email
-              </label>
-              <input
-                type="email"
-                id="sendfox_form_email_home"
-                placeholder="Email"
-                name="email"
-                required
-                class="w-full px-4 py-2.5 border border-edge rounded-md bg-surface-alt text-brand-dark placeholder-muted-light focus:ring-2 focus:ring-brand focus:border-brand outline-none transition"
-              />
-            </div>
-            <div class="absolute left-[-5000px]" aria-hidden="true">
-              <input type="text" name="a_password" tabindex="-1" value="" autocomplete="off" />
-            </div>
-            <p class="text-sm text-muted-light mb-4">
-              The form is protected by <a href="/privacy" class="text-brand hover:underline">reCAPTCHA</a>.
-            </p>
-            <button
-              type="submit"
-              class="w-full sm:w-auto border-2 border-brand-extra bg-brand-extra text-white font-bold px-8 py-3 rounded-full text-md hover:bg-brand-extraDark hover:border-brand-extraDark transition"
-            >
-              Subscribe
-            </button>
-          </form>
+          <NewsletterSignupForm variant="home" />
         </div>
       </section>
     </div>

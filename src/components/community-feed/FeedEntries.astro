@@ -7,6 +7,8 @@ import {
 } from '../../data/authors';
 import { isGitHubUrl } from '../../utils/link';
 import { extractYouTubeVideoId, getYouTubeThumbnailUrl } from '../../utils/youtube';
+import { formatLongDateUS } from '../../utils/date';
+import PrimaryLinkButton from '../PrimaryLinkButton.astro';
 
 interface Props {
   entries: CollectionEntry<'community-feed'>[];
@@ -107,30 +109,18 @@ function hasBody(entry: { body?: string }): boolean {
               )}
               {showAuthor && entry.data.author && <span class="text-muted-light">·</span>}
               <time datetime={entry.data.date.toISOString()}>
-                {entry.data.date.toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
+                {formatLongDateUS(entry.data.date)}
               </time>
             </p>
             <p class="text-muted text-base">{entry.data.description}</p>
             {isInternal ? (
-              <a
-                href={detailUrl}
-                class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
-              >
+              <PrimaryLinkButton href={detailUrl}>
                 {actionLabel ?? (hasContent ? 'Read more' : 'Watch')}
-              </a>
+              </PrimaryLinkButton>
             ) : (
-              <a
-                href={entry.data.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
-              >
+              <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
                 {isGitHubUrl(entry.data.link) ? 'View on GitHub' : 'Visit link'}
-              </a>
+              </PrimaryLinkButton>
             )}
           </div>
           {videoId && (

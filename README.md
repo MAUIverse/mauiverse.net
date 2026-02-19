@@ -5,8 +5,8 @@ Powering the mauiverse.net website
 
 Start here:
 
-- `CONTRIBUTING.md`
-- `docs/contributing/README.md`
+- [CONTRIBUTING.md](./CONTRIBUTING.md)
+- [docs/contributing/README.md](./docs/contributing/README.md)
 
 ## Website contributor badge sync
 

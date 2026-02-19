@@ -3,13 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import FeedEntries from '../../components/community-feed/FeedEntries.astro';
 import Pagination from '../../components/community-feed/Pagination.astro';
+import CommunityFeedIntroPanel from '../../components/community-feed/CommunityFeedIntroPanel.astro';
 import { paginateEntries } from '../../utils/pagination';
-import {
-  getAuthorDisplayName,
-  getAuthorImageSrc,
-  getAuthorKeys,
-  getInternalContributorProfileHref,
-} from '../../data/authors';
 
 const entries = (await getCollection('community-feed')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -18,117 +13,16 @@ const entries = (await getCollection('community-feed')).sort(
 const pageSize = 15;
 const { pages, totalPages } = paginateEntries(entries, pageSize);
 const pageEntries = pages[0]?.entries ?? [];
-const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5);
 ---
 
 <BaseLayout
   title="Community Feed | MAUIverse"
   description="Notable moments, packages, projects, and celebrations from the MAUIverse community."
+  allowPageScroll={true}
 >
-  <style is:global>
-    html,
-    body {
-      height: auto;
-      overflow: auto;
-    }
-  </style>
-
   <section class="py-24 px-0 min-h-screen">
     <div class="container max-w-4xl mx-auto px-4">
-      <p class="text-brand font-bold mb-4 text-xl font-header uppercase">
-        From the community
-      </p>
-      <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
-        Community Feed
-      </h1>
-      <p class="text-muted text-base text-md mb-12 max-w-2xl">
-        Notable moments, packages, projects, and celebrations from the MAUIverse community.
-      </p>
-      <a
-        href="/community-feed/rss.xml"
-        class="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:text-brand-extra hover:underline"
-        aria-label="Subscribe to Community Feed via RSS"
-      >
-        Subscribe via RSS
-      </a>
-
-      <div
-        class="mb-8 block rounded-lg border border-edge bg-surface p-6 shadow-sm transition hover:bg-surface-alt"
-      >
-        <span class="flex items-center gap-6 text-sm font-semibold text-muted whitespace-nowrap max-w-full">
-          <a href="/community-contributors/" class="flex-shrink-0 hover:underline">
-            Meet the Community Contributors &rarr;
-          </a>
-          <span
-            class="inline-flex min-w-0 flex-1 items-center justify-end gap-6 flex-nowrap overflow-hidden"
-            data-contributor-avatar-row
-            aria-hidden="true"
-          >
-            {avatarKeys.map((githubUsername) => {
-              const profileHref = getInternalContributorProfileHref(githubUsername);
-              return profileHref ? (
-                <a
-                  href={profileHref}
-                  aria-label={`View ${getAuthorDisplayName(githubUsername)}'s profile`}
-                  title={getAuthorDisplayName(githubUsername)}
-                  class="inline-flex h-8 w-8 flex-shrink-0"
-                  data-contributor-avatar
-                >
-                  <img
-                    src={getAuthorImageSrc(githubUsername, 64)}
-                    alt={getAuthorDisplayName(githubUsername)}
-                    width="32"
-                    height="32"
-                    class="block h-full w-full rounded-full"
-                    loading="lazy"
-                  />
-                </a>
-              ) : (
-                <span
-                  class="inline-flex h-8 w-8 flex-shrink-0"
-                  data-contributor-avatar
-                  title={getAuthorDisplayName(githubUsername)}
-                >
-                  <img
-                    src={getAuthorImageSrc(githubUsername, 64)}
-                    alt={getAuthorDisplayName(githubUsername)}
-                    width="32"
-                    height="32"
-                    class="block h-full w-full rounded-full"
-                    loading="lazy"
-                  />
-                </span>
-              );
-            })}
-          </span>
-        </span>
-      </div>
-
-      <script>
-        const avatarRows = Array.from(document.querySelectorAll('[data-contributor-avatar-row]'));
-
-        function fitAvatarsToRow() {
-          for (const row of avatarRows) {
-            const avatars = Array.from(row.querySelectorAll('[data-contributor-avatar]'));
-            if (avatars.length === 0) continue;
-
-            const rowStyles = window.getComputedStyle(row);
-            const gap = Number.parseFloat(rowStyles.columnGap || rowStyles.gap || '0') || 0;
-            const avatarWidth = avatars[0].getBoundingClientRect().width;
-            if (avatarWidth <= 0) continue;
-
-            const availableWidth = row.clientWidth;
-            const fitCount = Math.max(0, Math.floor((availableWidth + gap) / (avatarWidth + gap)));
-
-            avatars.forEach((avatar, index) => {
-              avatar.classList.toggle('hidden', index >= fitCount);
-            });
-          }
-        }
-
-        fitAvatarsToRow();
-        window.addEventListener('resize', fitAvatarsToRow);
-      </script>
+      <CommunityFeedIntroPanel />
 
       <FeedEntries entries={pageEntries} />
       <Pagination currentPage={1} totalPages={totalPages} />

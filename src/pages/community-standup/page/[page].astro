@@ -4,7 +4,7 @@ import LivestreamCountdown from '../../../components/LivestreamCountdown.astro';
 import FeedEntries from '../../../components/community-feed/FeedEntries.astro';
 import Pagination from '../../../components/community-feed/Pagination.astro';
 import { getCollection } from 'astro:content';
-import { buildPaginatedStaticPaths, paginateEntries } from '../../../utils/pagination';
+import { paginateAndBuildStaticPaths } from '../../../utils/pagination';
 
 export async function getStaticPaths() {
   const pageSize = 8;
@@ -12,9 +12,7 @@ export async function getStaticPaths() {
     .filter((e) => e.data.isStandup)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-  const { pages, totalPages } = paginateEntries(entries, pageSize);
-
-  return buildPaginatedStaticPaths(pages, totalPages, (page) => ({
+  return paginateAndBuildStaticPaths(entries, pageSize, (page) => ({
     params: { page: String(page.currentPage) },
   }));
 }

@@ -11,6 +11,8 @@ import {
   extractYouTubeVideoId,
   getYouTubeEmbedUrl,
 } from '../../utils/youtube';
+import { formatLongDateUS } from '../../utils/date';
+import PrimaryLinkButton from '../../components/PrimaryLinkButton.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('community-feed');
@@ -49,15 +51,8 @@ const encodedBskyText = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
   <BaseLayout
     title={`${entry.data.title} | Community Feed | MAUIverse`}
     description={entry.data.description}
+    allowPageScroll={true}
   >
-    <style is:global>
-      html,
-      body {
-        height: auto;
-        overflow: auto;
-      }
-    </style>
-
     <article class="py-24 px-0 min-h-screen text-brand-dark">
       <div class="container max-w-3xl mx-auto px-4">
         <header class="mb-8">
@@ -66,11 +61,7 @@ const encodedBskyText = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
           </h1>
           <p class="text-muted-light text-sm mb-4">
             <time datetime={entry.data.date.toISOString()}>
-              {entry.data.date.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
+              {formatLongDateUS(entry.data.date)}
             </time>
           </p>
           <div class="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
@@ -255,32 +246,17 @@ const encodedBskyText = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
 
         <p class="mt-8">
           {videoId ? (
-            <a
-              href={entry.data.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
-            >
+            <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
               Watch on YouTube
-            </a>
+            </PrimaryLinkButton>
           ) : isGitHubUrl(entry.data.link) ? (
-            <a
-              href={entry.data.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
-            >
+            <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
               View on GitHub
-            </a>
+            </PrimaryLinkButton>
           ) : (
-            <a
-              href={entry.data.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
-            >
+            <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
               View Source →
-            </a>
+            </PrimaryLinkButton>
           )}
         </p>
 

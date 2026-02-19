@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PrimaryLinkButton from '../../components/PrimaryLinkButton.astro';
 ---
 <BaseLayout
   title="Discord | MAUIverse"
@@ -22,14 +23,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         >
           Back to home
         </a>
-        <a
+        <PrimaryLinkButton
           href="https://discord.gg/HzVbds6Q8x"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-8 py-3 text-sm md:text-base font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
+          size="md"
+          className="text-sm md:text-base"
         >
           Open Discord
-        </a>
+        </PrimaryLinkButton>
       </div>
     </div>
   </section>
