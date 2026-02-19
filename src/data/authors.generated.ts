@@ -142,7 +142,7 @@ export const authorEntries = [
   },
   {
     key: "hprez21",
-    displayName: "Hector Perez Rojas",
+    displayName: "Héctor Pérez ",
   },
   {
     key: "icebeam7",
