@@ -1,6 +1,13 @@
 # mauiverse.net
 Powering the mauiverse.net website
 
+## Contributor documentation
+
+Start here:
+
+- `CONTRIBUTING.md`
+- `docs/contributing/README.md`
+
 ## Website contributor badge sync
 
 Website contributor badges are sourced from the GitHub contributors API for `MAUIverse/mauiverse.net` and synced at build-time.
@@ -79,6 +86,8 @@ Docs contributor badges are sourced from the GitHub contributors API for `dotnet
 - Badge rendering accessor: `isDocsMauiContributor(...)` in `src/data/authors.ts`
 
 ### Token setup
+
+If you experience missing contributor images during development, you are likely hitting GitHub rate limits.
 
 For authenticated rate limits, set one of:
 
@@ -204,7 +213,7 @@ NuGet author badges are sourced from the NuGet search endpoint using each commun
 
 Contributor profiles live in `src/content/community-contributors/` as one YAML file per author.
 
-- Filename format: use the contributor display name as kebab-case (for example, `tony-edwards.yaml`).
+- Filename format: use the contributor `gitHubUsername` as the filename (for example, `tonyedwards.yaml`).
 - Canonical identifier: keep `gitHubUsername` as the source of truth for author identity and feed author matching.
 
 Use this schema for each contributor file:
