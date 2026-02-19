@@ -1,9 +1,48 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Redirecting...">
-  <Fragment slot="head">
-    <meta http-equiv="refresh" content="0; URL='https://discord.gg/HzVbds6Q8x'" />
-  </Fragment>
-  <p>If you are not redirected automatically, follow this <a href="https://discord.gg/HzVbds6Q8x">link</a>.</p>
+<BaseLayout
+  title="Discord | MAUIverse"
+  description="Join the MAUIverse Discord community."
+>
+  <section class="discord-hero flex items-center justify-center px-4">
+    <div class="w-full max-w-3xl text-center rounded-lg border border-edge bg-surface p-8 md:p-12 shadow-sm">
+      <p class="text-brand font-bold mb-3 text-lg font-header uppercase">Join the conversation</p>
+      <h1 class="text-brand-dark text-4xl md:text-5xl font-header font-bold uppercase mb-4">
+        MAUIverse Discord
+      </h1>
+      <p class="text-muted text-base md:text-lg max-w-2xl mx-auto mb-8">
+        Meet other .NET MAUI developers, ask questions, share your projects, and stay connected with the community.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+        <a
+          href="/"
+          class="inline-flex items-center justify-center rounded-full border-2 border-edge px-8 py-3 text-sm md:text-base font-bold text-muted transition hover:border-brand hover:text-brand"
+        >
+          Back to home
+        </a>
+        <a
+          href="https://discord.gg/HzVbds6Q8x"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-8 py-3 text-sm md:text-base font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark"
+        >
+          Open Discord
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .discord-hero {
+      min-height: calc(100vh - 4rem);
+    }
+
+    @supports (height: 100dvh) {
+      .discord-hero {
+        min-height: calc(100dvh - 4rem);
+      }
+    }
+  </style>
 </BaseLayout>
