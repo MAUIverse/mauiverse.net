@@ -87,6 +87,7 @@ const authorTuples: [string, string, string?][] = [
   ['Char0394', 'Charlin Agramonte'],
   ['saamerm', 'Saamer Mansoor'],
   ['SirJohnK', 'Johan Svensson'],
+  ['kubaflo', 'Jakub Florkowski'],
   ['dotnetMAUIPodcast', 'The .NET MAUI Podcast', '/img/contributors/dotnetMAUIPodcast.jpg'],
 ];
 
