@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { extractYouTubeVideoId } from '../../utils/youtube';
 import { formatLongDateUS } from '../../utils/date';
-import { getAuthorDisplayName } from '../../data/authors';
+import { getAuthorDisplayName, getAuthorImageSrc } from '../../data/authors';
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
@@ -45,6 +45,7 @@ const searchRecords = searchableEntries.map((entry) => {
     dateLabel: formatLongDateUS(entry.data.date),
     authorKey,
     authorLabel: authorKey ? getAuthorDisplayName(authorKey) : '',
+    authorImageSrc: authorKey ? getAuthorImageSrc(authorKey, 48) : '',
     contentType,
     isStandup: Boolean(entry.data.isStandup),
     isToolkitStandup: Boolean(entry.data.isToolkitStandup),
@@ -99,11 +100,11 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
           </fieldset>
 
           <fieldset>
-            <legend class="text-sm font-semibold text-brand-dark mb-2">Flags</legend>
+            <legend class="text-sm font-semibold text-brand-dark mb-2">Standups</legend>
             <div class="flex flex-wrap gap-2">
               <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
                 <input type="checkbox" class="h-4 w-4" data-filter="isStandup" />
-                <span>Standup</span>
+                <span>Community Standup</span>
               </label>
               <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
                 <input type="checkbox" class="h-4 w-4" data-filter="isToolkitStandup" />
@@ -172,6 +173,53 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
         return new Set(checkboxes.filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value));
       }
 
+      function enforceContentTypeSelection(changedCheckbox) {
+        if (!changedCheckbox?.checked) {
+          return;
+        }
+
+        if (standupCheckbox) {
+          standupCheckbox.checked = false;
+        }
+
+        if (toolkitCheckbox) {
+          toolkitCheckbox.checked = false;
+        }
+
+        const selectedValue = changedCheckbox.value;
+        if (selectedValue === 'unknown') {
+          return;
+        }
+
+        for (const checkbox of typeCheckboxes) {
+          if (checkbox === changedCheckbox) {
+            continue;
+          }
+
+          if (checkbox.value !== 'unknown') {
+            checkbox.checked = false;
+          }
+        }
+      }
+
+      function enforceStandupSelection(changedCheckbox) {
+        if (!changedCheckbox?.checked) {
+          return;
+        }
+
+        for (const checkbox of typeCheckboxes) {
+          checkbox.checked = false;
+        }
+
+        if (changedCheckbox === standupCheckbox && toolkitCheckbox) {
+          toolkitCheckbox.checked = false;
+        }
+
+        if (changedCheckbox === toolkitCheckbox && standupCheckbox) {
+          standupCheckbox.checked = false;
+        }
+      }
+
       function matchesToggles(record, selectedTypes, requireStandup, requireToolkitStandup) {
         if (selectedTypes.size && !selectedTypes.has(record.contentType)) {
           return false;
@@ -204,7 +252,7 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
         resultsList.innerHTML = items
           .map(({ record, excerpt }) => {
             const authorHtml = record.authorLabel
-              ? `<span>${escapeHtml(record.authorLabel)} · </span>`
+              ? `<span class="inline-flex items-center gap-1.5"><img src="${record.authorImageSrc}" alt="" width="20" height="20" class="h-5 w-5 rounded-full" loading="lazy" /><span>${escapeHtml(record.authorLabel)}</span></span><span aria-hidden="true" class="text-muted-light">·</span>`
               : '';
 
             const excerptHtml = excerpt
@@ -216,7 +264,7 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
                 <a href="${record.url}" class="text-brand-dark text-xl font-header font-bold hover:text-brand transition-colors">
                   ${escapeHtml(record.title)}
                 </a>
-                <p class="mt-2 text-muted-light text-sm">
+                <p class="mt-2 text-muted-light text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
                   ${authorHtml}<time datetime="${record.dateISO}">${escapeHtml(record.dateLabel)}</time>
                 </p>
                 <div class="mt-3">${excerptHtml}</div>
@@ -315,10 +363,22 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
 
       queryInput.addEventListener('input', queueSearch);
       for (const checkbox of typeCheckboxes) {
-        checkbox.addEventListener('change', searchAndRender);
+        checkbox.addEventListener('change', (event) => {
+          const changedCheckbox = event.currentTarget;
+          enforceContentTypeSelection(changedCheckbox);
+          searchAndRender();
+        });
       }
-      standupCheckbox?.addEventListener('change', searchAndRender);
-      toolkitCheckbox?.addEventListener('change', searchAndRender);
+      standupCheckbox?.addEventListener('change', (event) => {
+        const changedCheckbox = event.currentTarget;
+        enforceStandupSelection(changedCheckbox);
+        searchAndRender();
+      });
+      toolkitCheckbox?.addEventListener('change', (event) => {
+        const changedCheckbox = event.currentTarget;
+        enforceStandupSelection(changedCheckbox);
+        searchAndRender();
+      });
 
       searchAndRender();
     })();
