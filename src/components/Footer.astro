@@ -1,43 +1,88 @@
 ---
-// Site footer with dark/light mode toggle.
+// Site footer with navigation links and dark/light mode toggle.
 ---
 <footer class="border-t border-edge bg-surface">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
-    <div>
-      <p class="text-sm text-muted-light">
-        &copy; {new Date().getFullYear()} MAUIverse
-        <span class="mx-1.5 text-edge">&middot;</span>
-        <a
-          href="https://github.com/MAUIverse/mauiverse.net/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-light transition-colors hover:text-brand"
-        >
-          View on GitHub
-        </a>
-        <a
-          href="https://bsky.app/profile/mauiverse.net"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="ml-4 inline-flex align-middle text-muted-light transition-colors hover:text-brand"
-          aria-label="MAUIverse on Bluesky"
-          title="MAUIverse on Bluesky"
-        >
-          <i class="fa-brands fa-bluesky" aria-hidden="true"></i>
-        </a>
-      </p>
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Community</h3>
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a href="/community-feed/" class="text-sm text-muted transition-colors hover:text-brand">Contributor Feed</a>
+          </li>
+          <li>
+            <a href="/community-contributors/" class="text-sm text-muted transition-colors hover:text-brand">Community Contributors</a>
+          </li>
+          <li>
+            <a href="/built-with-maui/" class="text-sm text-muted transition-colors hover:text-brand">Built with MAUI</a>
+          </li>
+          <li>
+            <a href="/newsletter" class="text-sm text-muted transition-colors hover:text-brand">Newsletter</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Shows</h3>
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a href="/community-standup/" class="text-sm text-muted transition-colors hover:text-brand">Community Standup</a>
+          </li>
+          <li>
+            <a href="/toolkit-standup/" class="text-sm text-muted transition-colors hover:text-brand">Toolkit Standup</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Repository Contributors</h3>
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a href="/repo-contributors/maui/" class="text-sm text-muted transition-colors hover:text-brand">.NET MAUI</a>
+          </li>
+          <li>
+            <a href="/repo-contributors/community-toolkit/" class="text-sm text-muted transition-colors hover:text-brand">Community Toolkit</a>
+          </li>
+          <li>
+            <a href="/repo-contributors/syncfusion-toolkit/" class="text-sm text-muted transition-colors hover:text-brand">Syncfusion Toolkit</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Connect</h3>
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a href="/discord/" target="_blank" rel="noopener noreferrer" class="text-sm text-muted transition-colors hover:text-brand">Discord</a>
+          </li>
+          <li>
+            <a href="https://bsky.app/profile/mauiverse.net" target="_blank" rel="noopener noreferrer" class="text-sm text-muted transition-colors hover:text-brand">Bluesky</a>
+          </li>
+          <li>
+            <a href="https://github.com/MAUIverse/mauiverse.net/" target="_blank" rel="noopener noreferrer" class="text-sm text-muted transition-colors hover:text-brand">GitHub</a>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <button
-      id="theme-toggle"
-      type="button"
-      class="inline-flex items-center gap-2 rounded-full border border-edge bg-surface-alt px-3 py-1.5 text-sm font-medium text-muted transition-colors hover:text-brand-dark"
-      aria-label="Toggle dark mode"
-    >
-      <i id="theme-icon-sun" class="fa-solid fa-sun hidden h-4 w-4" aria-hidden="true"></i>
-      <i id="theme-icon-moon" class="fa-solid fa-moon hidden h-4 w-4" aria-hidden="true"></i>
-      <span id="theme-label"></span>
-    </button>
+    <div class="mt-10 flex items-center justify-between border-t border-edge pt-6">
+      <div>
+        <p class="text-sm text-muted-light">
+          &copy; {new Date().getFullYear()} MAUIverse
+        </p>
+      </div>
+
+      <button
+        id="theme-toggle"
+        type="button"
+        class="inline-flex items-center gap-2 rounded-full border border-edge bg-surface-alt px-3 py-1.5 text-sm font-medium text-muted transition-colors hover:text-brand-dark"
+        aria-label="Toggle dark mode"
+      >
+        <i id="theme-icon-sun" class="fa-solid fa-sun hidden h-4 w-4" aria-hidden="true"></i>
+        <i id="theme-icon-moon" class="fa-solid fa-moon hidden h-4 w-4" aria-hidden="true"></i>
+        <span id="theme-label"></span>
+      </button>
+    </div>
   </div>
 </footer>
 

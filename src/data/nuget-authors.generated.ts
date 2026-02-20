@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const nugetAuthorSource = "https://azuresearch-usnc.nuget.org/query?q=owner:<github-username>&prerelease=false&take=1";
-export const nugetAuthorFetchedAt = "2026-02-20T08:56:33.771Z";
+export const nugetAuthorFetchedAt = "2026-02-20T09:28:33.880Z";
 export const nugetAuthorUsernames = [
   "abhayprince",
   "adospace",

@@ -150,3 +150,18 @@ export function getInternalContributorProfileHref(githubUsername: string): strin
 export function getAuthorKeys(): string[] {
   return authorEntries.map(({ key }) => key);
 }
+
+/** All contributor usernames for dotnet/maui. */
+export function getMauiContributorUsernames(): string[] {
+  return [...mauiContributorUsernames];
+}
+
+/** All contributor usernames for CommunityToolkit/Maui. */
+export function getMauiToolkitContributorUsernames(): string[] {
+  return [...mauiToolkitContributorUsernames];
+}
+
+/** All contributor usernames for syncfusion/maui-toolkit. */
+export function getSyncfusionMauiToolkitContributorUsernames(): string[] {
+  return [...syncfusionMauiToolkitContributorUsernames];
+}
