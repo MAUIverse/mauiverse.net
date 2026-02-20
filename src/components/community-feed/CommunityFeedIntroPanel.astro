@@ -5,19 +5,34 @@ import {
   getAuthorKeys,
   getInternalContributorProfileHref,
 } from '../../data/authors';
+import PrimaryLinkButton from '../PrimaryLinkButton.astro';
 
 const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5);
 ---
 
-<p class="text-brand font-bold mb-4 text-xl font-header uppercase">
-  From the community
-</p>
-<h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
-  Contributor Feed
-</h1>
-<p class="text-muted text-base text-md mb-12 max-w-2xl">
-  Notable moments, packages, projects, and celebrations from the MAUIverse community.
-</p>
+<div class="mb-10 flex flex-col gap-6 md:flex-row md:items-stretch md:gap-8">
+  <div class="md:basis-3/5 md:max-w-2xl">
+    <p class="text-brand font-bold mb-4 text-xl font-header uppercase">
+      From the community
+    </p>
+    <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
+      Contributor Feed
+    </h1>
+    <p class="text-muted text-base text-md max-w-2xl">
+      Notable moments, packages, projects, and celebrations from the MAUIverse community.
+    </p>
+  </div>
+
+  <aside class="w-full rounded-lg border border-edge bg-surface p-6 md:basis-2/5 md:shrink-0 md:flex md:flex-col md:justify-between">
+    <div>
+      <p class="text-sm text-muted mb-3">Looking for something specific?</p>
+      <p class="text-sm text-muted-light mb-4">Search articles, tutorials, videos, and podcasts from the MAUIverse contributors.</p>
+    </div>
+    <PrimaryLinkButton href="/community-feed/search" className="w-full justify-center">
+      Search
+    </PrimaryLinkButton>
+  </aside>
+</div>
 <a
   href="/community-feed/rss.xml"
   class="mb-8 inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:text-brand-extra hover:underline"
