@@ -23,15 +23,9 @@
         href="/community-feed/"
         class="text-sm font-semibold text-muted transition-colors hover:text-brand"
       >
-        Community Feed
+        Contributor Feed
       </a>
 
-      <a
-        href="/built-with-maui/"
-        class="text-sm font-semibold text-muted transition-colors hover:text-brand"
-      >
-        Built with MAUI
-      </a>
       <a
       href="/community-standup/"
       class="text-sm font-semibold text-muted transition-colors hover:text-brand"
@@ -44,6 +38,12 @@
     >
       Toolkit Standup
     </a>
+    <a
+        href="/built-with-maui/"
+        class="text-sm font-semibold text-muted transition-colors hover:text-brand"
+      >
+        Built with MAUI
+      </a>
       <a
         href="/newsletter"
         class="text-sm font-semibold text-muted transition-colors hover:text-brand"
@@ -68,20 +68,7 @@
       aria-controls="mobile-menu"
       aria-expanded="false"
     >
-      <svg
-        class="h-6 w-6"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <line x1="4" y1="6" x2="20" y2="6"></line>
-        <line x1="4" y1="12" x2="20" y2="12"></line>
-        <line x1="4" y1="18" x2="20" y2="18"></line>
-      </svg>
+      <i class="fa-solid fa-bars h-6 w-6" aria-hidden="true"></i>
     </button>
   </div>
 </header>
@@ -134,7 +121,7 @@
     const menu = document.getElementById('mobile-menu');
     if (!(button instanceof HTMLButtonElement) || !(menu instanceof HTMLElement)) return;
 
-    const setOpen = (open) => {
+    const setOpen = (open: boolean) => {
       menu.classList.toggle('hidden', !open);
       button.setAttribute('aria-expanded', String(open));
       button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');

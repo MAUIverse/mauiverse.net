@@ -4,28 +4,45 @@ import {
   getAuthorKeys,
   getAuthorDisplayName,
   getAuthorImageSrc,
+  isDocsMauiContributor,
+  isMauiContributor,
+  isMauiToolkitContributor,
+  isNugetAuthor,
+  isSyncfusionMauiToolkitContributor,
+  isWebsiteContributor,
 } from '../../data/authors';
 
 type Contributor = {
   githubUsername: string;
   displayName: string;
+  contributionTypes: string[];
 };
 
-function shuffleContributors(contributors: Contributor[]): Contributor[] {
-  const shuffled = [...contributors];
-  for (let index = shuffled.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
-  }
-  return shuffled;
-}
-
-const contributors = shuffleContributors(
-  getAuthorKeys().map((githubUsername) => ({
+const contributors = getAuthorKeys()
+  .map((githubUsername) => ({
     githubUsername,
     displayName: getAuthorDisplayName(githubUsername),
+    contributionTypes: [
+      isMauiContributor(githubUsername) ? 'maui' : null,
+      isDocsMauiContributor(githubUsername) ? 'docs' : null,
+      isMauiToolkitContributor(githubUsername) ? 'community-toolkit' : null,
+      isWebsiteContributor(githubUsername) ? 'website' : null,
+      isNugetAuthor(githubUsername) ? 'nuget' : null,
+      isSyncfusionMauiToolkitContributor(githubUsername) ? 'syncfusion-toolkit' : null,
+    ].filter((contributionType): contributionType is string => Boolean(contributionType)),
   }))
-);
+  .sort((leftContributor, rightContributor) =>
+    leftContributor.displayName.localeCompare(rightContributor.displayName)
+  );
+
+const contributionFilters = [
+  { key: 'maui', label: '.NET MAUI' },
+  { key: 'community-toolkit', label: 'Community Toolkit' },
+  { key: 'nuget', label: 'Nuget Packages' },
+  { key: 'syncfusion-toolkit', label: 'Syncfusion Toolkit' },
+  { key: 'docs', label: 'Documentation' },
+  { key: 'website', label: 'MAUIVerse Website' },
+];
 ---
 
 <BaseLayout
@@ -47,9 +64,62 @@ const contributors = shuffleContributors(
         Contributions are curated by the community from accross the internet. Featuring here does not necessarily mean the individual is a MAUIverse member.
       </p>
 
-      <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4" aria-label="Community Contributors">
+      <div class="mb-8 rounded-lg border border-edge bg-surface p-6 shadow-sm">
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,24rem)_1fr] lg:items-start">
+          <div>
+            <label for="contributor-search" class="mb-2 block text-sm font-semibold text-brand-dark">
+              Search contributors
+            </label>
+            <div class="relative">
+              <input
+                id="contributor-search"
+                type="text"
+                placeholder="Search by name or GitHub username"
+                class="w-full rounded-lg border border-edge bg-surface px-4 py-3 pr-12 text-base text-brand-dark placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                data-contributor-search-input
+              />
+              <button
+                type="button"
+                class="absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full p-2 text-muted transition hover:text-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                aria-label="Clear search"
+                data-contributor-search-clear
+              >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <fieldset data-contributor-filter-group>
+            <legend class="mb-2 text-sm font-semibold text-brand-dark">Contributes to:</legend>
+            <div class="flex flex-wrap gap-2">
+              {contributionFilters.map((filter) => (
+                <label class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-edge bg-surface px-3 py-2 text-sm text-muted transition hover:text-brand">
+                  <input
+                    type="checkbox"
+                    value={filter.key}
+                    class="h-4 w-4 rounded border-edge text-brand focus:ring-brand"
+                    data-contributor-filter-checkbox
+                  />
+                  <span>{filter.label}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <ul
+        class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        aria-label="Community Contributors"
+        data-contributor-grid
+      >
         {contributors.map((contributor) => (
-          <li class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+          <li
+            class="rounded-lg border border-edge bg-surface p-6 shadow-sm"
+            data-contributor-card
+            data-search-text={`${contributor.displayName.toLowerCase()} ${contributor.githubUsername.toLowerCase()}`}
+            data-contribution-types={contributor.contributionTypes.join(' ')}
+          >
             <div class="flex h-full flex-col items-center text-center">
               <img
                 src={getAuthorImageSrc(contributor.githubUsername, 256)}
@@ -70,6 +140,70 @@ const contributors = shuffleContributors(
           </li>
         ))}
       </ul>
+      <p class="mt-6 hidden text-base text-muted" data-contributor-no-results>
+        No contributors found.
+      </p>
     </div>
   </section>
+
+  <script is:inline>
+    (() => {
+      const searchInput = document.querySelector('[data-contributor-search-input]');
+      const clearButton = document.querySelector('[data-contributor-search-clear]');
+      const contributionFilterCheckboxes = Array.from(
+        document.querySelectorAll('[data-contributor-filter-checkbox]')
+      );
+      const contributorCards = Array.from(document.querySelectorAll('[data-contributor-card]'));
+      const noResultsMessage = document.querySelector('[data-contributor-no-results]');
+
+      if (!(searchInput instanceof HTMLInputElement) || !(clearButton instanceof HTMLButtonElement) || !noResultsMessage) {
+        return;
+      }
+
+      const applyFilter = () => {
+        const query = searchInput.value.trim().toLowerCase();
+        const selectedContributionFilters = contributionFilterCheckboxes
+          .filter((checkbox) => checkbox instanceof HTMLInputElement && checkbox.checked)
+          .map((checkbox) =>
+            checkbox instanceof HTMLInputElement ? checkbox.value : ''
+          )
+          .filter((value) => value.length > 0);
+        let visibleContributorCount = 0;
+
+        contributorCards.forEach((card) => {
+          const searchText = card.getAttribute('data-search-text') ?? '';
+          const contributionTypes = (card.getAttribute('data-contribution-types') ?? '')
+            .split(' ')
+            .filter(Boolean);
+          const matchesSearch = searchText.includes(query);
+          const matchesContributionFilters =
+            selectedContributionFilters.length === 0 ||
+            selectedContributionFilters.every((selectedFilter) =>
+              contributionTypes.includes(selectedFilter)
+            );
+          const matchesFilters = matchesSearch && matchesContributionFilters;
+          card.classList.toggle('hidden', !matchesFilters);
+          if (matchesFilters) {
+            visibleContributorCount += 1;
+          }
+        });
+
+        noResultsMessage.classList.toggle('hidden', visibleContributorCount > 0);
+        clearButton.classList.toggle('hidden', query.length === 0);
+      };
+
+      searchInput.addEventListener('input', applyFilter);
+      contributionFilterCheckboxes.forEach((checkbox) => {
+        if (checkbox instanceof HTMLInputElement) {
+          checkbox.addEventListener('change', applyFilter);
+        }
+      });
+      clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        applyFilter();
+        searchInput.focus();
+      });
+      applyFilter();
+    })();
+  </script>
 </BaseLayout>

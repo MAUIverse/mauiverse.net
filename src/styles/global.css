@@ -46,6 +46,16 @@
   body {
     @apply bg-brand-light text-brand-dark antialiased;
   }
+
+  i.fa-solid,
+  i.fa-regular,
+  i.fa-brands {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    vertical-align: middle;
+  }
 }
 
 /* Hide reCAPTCHA badge */

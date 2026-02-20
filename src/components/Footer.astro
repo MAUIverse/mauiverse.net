@@ -23,19 +23,7 @@
           aria-label="MAUIverse on Bluesky"
           title="MAUIverse on Bluesky"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-bluesky"
-            viewBox="0 0 16 16"
-            aria-hidden="true"
-          >
-            <path
-              d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948"
-            ></path>
-          </svg>
+          <i class="fa-brands fa-bluesky" aria-hidden="true"></i>
         </a>
       </p>
     </div>
@@ -46,40 +34,8 @@
       class="inline-flex items-center gap-2 rounded-full border border-edge bg-surface-alt px-3 py-1.5 text-sm font-medium text-muted transition-colors hover:text-brand-dark"
       aria-label="Toggle dark mode"
     >
-      <svg
-        id="theme-icon-sun"
-        class="hidden h-4 w-4"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <circle cx="12" cy="12" r="5"></circle>
-        <line x1="12" y1="1" x2="12" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="23"></line>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-        <line x1="1" y1="12" x2="3" y2="12"></line>
-        <line x1="21" y1="12" x2="23" y2="12"></line>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-      </svg>
-      <svg
-        id="theme-icon-moon"
-        class="hidden h-4 w-4"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-      </svg>
+      <i id="theme-icon-sun" class="fa-solid fa-sun hidden h-4 w-4" aria-hidden="true"></i>
+      <i id="theme-icon-moon" class="fa-solid fa-moon hidden h-4 w-4" aria-hidden="true"></i>
       <span id="theme-label"></span>
     </button>
   </div>
