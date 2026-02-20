@@ -53,7 +53,13 @@ export function getStaticPaths() {
 
 type Props = RepoDefinition;
 
-const { repoLabel, repoUrl, usernames, description } = Astro.props;
+const { repoSlug, repoLabel, repoUrl, usernames, description } = Astro.props;
+
+const repoFilters = [
+  { slug: 'maui', label: '.NET MAUI' },
+  { slug: 'community-toolkit', label: 'Community Toolkit' },
+  { slug: 'syncfusion-toolkit', label: 'Syncfusion Toolkit' },
+];
 
 type ContributorCard = {
   username: string;
@@ -111,6 +117,24 @@ const contributors: ContributorCard[] = usernames
       </p>
 
       <div class="mb-8 rounded-lg border border-edge bg-surface p-6 shadow-sm">
+        <fieldset class="mb-5">
+          <legend class="text-sm font-semibold text-brand-dark mb-2">Repository</legend>
+          <div class="flex flex-wrap gap-2">
+            {repoFilters.map((filter) => (
+              <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
+                <input
+                  type="checkbox"
+                  class="h-4 w-4"
+                  data-repo-filter
+                  data-repo-slug={filter.slug}
+                  checked={filter.slug === repoSlug}
+                />
+                <span>{filter.label}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
         <div>
           <label for="contributor-search" class="mb-2 block text-sm font-semibold text-brand-dark">
             Search contributors
@@ -176,6 +200,26 @@ const contributors: ContributorCard[] = usernames
 
   <script is:inline>
     (() => {
+      const repoCheckboxes = Array.from(document.querySelectorAll('[data-repo-filter]'));
+      repoCheckboxes.forEach((checkbox) => {
+        if (!(checkbox instanceof HTMLInputElement)) return;
+        checkbox.addEventListener('change', () => {
+          if (!checkbox.checked) {
+            checkbox.checked = true;
+            return;
+          }
+          repoCheckboxes.forEach((other) => {
+            if (other !== checkbox && other instanceof HTMLInputElement) {
+              other.checked = false;
+            }
+          });
+          const slug = checkbox.getAttribute('data-repo-slug');
+          if (slug) {
+            window.location.href = '/repo-contributors/' + slug + '/';
+          }
+        });
+      });
+
       const searchInput = document.querySelector('[data-contributor-search-input]');
       const clearButton = document.querySelector('[data-contributor-search-clear]');
       const contributorCards = Array.from(document.querySelectorAll('[data-contributor-card]'));

@@ -341,6 +341,10 @@ export const authorEntries = [
     displayName: "Uno Platform",
   },
   {
+    key: "vhugogarcia",
+    displayName: "Victor Hugo Garcia",
+  },
+  {
     key: "VladislavAntonyuk",
     displayName: "Vladislav Antonyuk",
   },
