@@ -115,10 +115,32 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
         </div>
       </div>
 
-      <p class="text-sm text-muted mb-4" data-results-status>
-        Showing all searchable community feed entries.
-      </p>
-      <ul class="space-y-6" data-results-list aria-live="polite"></ul>
+      <div class="flex flex-wrap items-center gap-3 rounded-lg border border-edge bg-surface px-4 py-3 shadow-sm mb-8" data-search-toolbar>
+        <span class="text-xs text-muted-light" data-results-status>Showing all searchable community feed entries.</span>
+        <div class="ml-auto flex items-center gap-1 rounded-md border border-edge bg-surface-alt p-0.5" role="radiogroup" aria-label="View mode">
+          <button
+            type="button"
+            class="inline-flex h-8 w-8 items-center justify-center rounded text-sm transition data-[active]:bg-brand-extra data-[active]:text-white text-muted hover:text-brand"
+            data-search-view="column"
+            data-active
+            aria-label="Column view"
+            title="Column view"
+          >
+            <i class="fa-solid fa-list" aria-hidden="true"></i>
+          </button>
+          <button
+            type="button"
+            class="inline-flex h-8 w-8 items-center justify-center rounded text-sm transition data-[active]:bg-brand-extra data-[active]:text-white text-muted hover:text-brand"
+            data-search-view="grid"
+            aria-label="Grid view"
+            title="Grid view"
+          >
+            <i class="fa-solid fa-table-cells" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <div data-results-region aria-live="polite"></div>
     </div>
   </section>
 
@@ -127,13 +149,15 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
     (() => {
       const recordsScript = document.getElementById('community-feed-search-records');
       const queryInput = document.getElementById('search-query');
-      const resultsList = document.querySelector('[data-results-list]');
+      const resultsRegion = document.querySelector('[data-results-region]');
       const status = document.querySelector('[data-results-status]');
+      const viewButtons = Array.from(document.querySelectorAll('[data-search-view]'));
+      let viewMode = 'column';
       const typeCheckboxes = Array.from(document.querySelectorAll('input[data-filter="contentType"]'));
       const standupCheckbox = document.querySelector('input[data-filter="isStandup"]');
       const toolkitCheckbox = document.querySelector('input[data-filter="isToolkitStandup"]');
 
-      if (!recordsScript || !queryInput || !resultsList || !status) {
+      if (!recordsScript || !queryInput || !resultsRegion || !status) {
         return;
       }
 
@@ -236,11 +260,48 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
         return true;
       }
 
+      function renderColumnCard(record, excerpt) {
+        const authorHtml = record.authorLabel
+          ? `<span class="inline-flex items-center gap-1.5"><img src="${record.authorImageSrc}" alt="" width="20" height="20" class="h-5 w-5 rounded-full" loading="lazy" /><span>${escapeHtml(record.authorLabel)}</span></span><span aria-hidden="true" class="text-muted-light">\u00b7</span>`
+          : '';
+        const excerptHtml = excerpt
+          ? `<p class="text-muted text-base">${excerpt}</p>`
+          : `<p class="text-muted text-base">${escapeHtml(record.description)}</p>`;
+        return `
+          <li class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+            <a href="${record.url}" class="text-brand-dark text-xl font-header font-bold hover:text-brand transition-colors">${escapeHtml(record.title)}</a>
+            <p class="mt-2 text-muted-light text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
+              ${authorHtml}<time datetime="${record.dateISO}">${escapeHtml(record.dateLabel)}</time>
+            </p>
+            <div class="mt-3">${excerptHtml}</div>
+            <p class="mt-5">
+              <a href="${record.url}" class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:border-brand-extraDark hover:bg-brand-extraDark">Read more</a>
+            </p>
+          </li>`;
+      }
+
+      function renderGridCard(record, excerpt) {
+        const descText = excerpt
+          ? excerpt.replace(/<[^>]*>/g, '')
+          : escapeHtml(record.description);
+        const authorHtml = record.authorLabel
+          ? `<img src="${record.authorImageSrc}" alt="" width="20" height="20" class="h-5 w-5 rounded-full inline-block" loading="lazy" /><span>${escapeHtml(record.authorLabel)}</span><span class="text-muted-light" aria-hidden="true">\u00b7</span>`
+          : '';
+        return `
+          <li class="rounded-lg border border-edge bg-surface p-4 shadow-sm flex flex-col">
+            <a href="${record.url}" class="text-brand-dark text-base font-header font-bold hover:text-brand transition-colors line-clamp-2 mb-2">${escapeHtml(record.title)}</a>
+            <p class="text-muted-light text-xs flex flex-wrap items-center gap-x-1.5 gap-y-1 mb-2">
+              ${authorHtml}<time datetime="${record.dateISO}">${escapeHtml(record.dateLabel)}</time>
+            </p>
+            <p class="text-muted text-sm line-clamp-2">${descText}</p>
+          </li>`;
+      }
+
       function renderResults(items, query, totalPool) {
         if (!items.length) {
-          resultsList.innerHTML = '';
+          resultsRegion.innerHTML = '';
           status.textContent = query
-            ? `No results for “${query}” with the selected filters.`
+            ? `No results for \u201c${query}\u201d with the selected filters.`
             : 'No entries match the selected filters.';
           return;
         }
@@ -249,32 +310,13 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
           ? `Showing ${items.length} matching results from ${totalPool} searchable entries.`
           : `Showing ${items.length} entries that match the selected filters.`;
 
-        resultsList.innerHTML = items
-          .map(({ record, excerpt }) => {
-            const authorHtml = record.authorLabel
-              ? `<span class="inline-flex items-center gap-1.5"><img src="${record.authorImageSrc}" alt="" width="20" height="20" class="h-5 w-5 rounded-full" loading="lazy" /><span>${escapeHtml(record.authorLabel)}</span></span><span aria-hidden="true" class="text-muted-light">·</span>`
-              : '';
-
-            const excerptHtml = excerpt
-              ? `<p class="text-muted text-base">${excerpt}</p>`
-              : `<p class="text-muted text-base">${escapeHtml(record.description)}</p>`;
-
-            return `
-              <li class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
-                <a href="${record.url}" class="text-brand-dark text-xl font-header font-bold hover:text-brand transition-colors">
-                  ${escapeHtml(record.title)}
-                </a>
-                <p class="mt-2 text-muted-light text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
-                  ${authorHtml}<time datetime="${record.dateISO}">${escapeHtml(record.dateLabel)}</time>
-                </p>
-                <div class="mt-3">${excerptHtml}</div>
-                <p class="mt-5">
-                  <a href="${record.url}" class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:border-brand-extraDark hover:bg-brand-extraDark">Read more</a>
-                </p>
-              </li>
-            `;
-          })
-          .join('');
+        let html;
+        if (viewMode === 'grid') {
+          html = `<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">${items.map(({ record, excerpt }) => renderGridCard(record, excerpt)).join('')}</ul>`;
+        } else {
+          html = `<ul class="space-y-6">${items.map(({ record, excerpt }) => renderColumnCard(record, excerpt)).join('')}</ul>`;
+        }
+        resultsRegion.innerHTML = html;
       }
 
       async function ensurePagefindLoaded() {
@@ -346,7 +388,7 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
           renderResults(scopedResults, query, allRecords.length);
         } catch (error) {
           console.error(error);
-          resultsList.innerHTML = '';
+          resultsRegion.innerHTML = '';
           status.textContent = 'Search index is not ready yet. Try again in a moment.';
         }
       }
@@ -379,6 +421,20 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
         enforceStandupSelection(changedCheckbox);
         searchAndRender();
       });
+
+      for (const btn of viewButtons) {
+        btn.addEventListener('click', () => {
+          viewMode = btn.getAttribute('data-search-view');
+          for (const b of viewButtons) {
+            if (b === btn) {
+              b.setAttribute('data-active', '');
+            } else {
+              b.removeAttribute('data-active');
+            }
+          }
+          searchAndRender();
+        });
+      }
 
       searchAndRender();
     })();

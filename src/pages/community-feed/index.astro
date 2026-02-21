@@ -4,11 +4,27 @@ import { getCollection } from 'astro:content';
 import FeedEntries from '../../components/community-feed/FeedEntries.astro';
 import Pagination from '../../components/community-feed/Pagination.astro';
 import CommunityFeedIntroPanel from '../../components/community-feed/CommunityFeedIntroPanel.astro';
+import FeedToolbar from '../../components/community-feed/FeedToolbar.astro';
 import { paginateEntries } from '../../utils/pagination';
 
 const entries = (await getCollection('community-feed')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+function normalizeContentType(value?: string): string {
+  if (!value) return 'unknown';
+  const normalized = value.trim().replace(/^'+|'+$/g, '').toLowerCase();
+  return normalized || 'unknown';
+}
+
+function toLabel(value: string): string {
+  if (value === 'unknown') return 'Unknown';
+  return value.replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+const contentTypes = Array.from(
+  new Set(entries.map((e) => normalizeContentType(e.data.contentType)))
+).sort((a, b) => toLabel(a).localeCompare(toLabel(b)));
 
 const pageSize = 15;
 const { pages, totalPages } = paginateEntries(entries, pageSize);
@@ -24,8 +40,16 @@ const pageEntries = pages[0]?.entries ?? [];
     <div class="container max-w-4xl mx-auto px-4">
       <CommunityFeedIntroPanel />
 
-      <FeedEntries entries={pageEntries} />
-      <Pagination currentPage={1} totalPages={totalPages} />
+      <FeedToolbar contentTypes={contentTypes} position="top" totalEntries={entries.length} currentPage={1} totalPages={totalPages} />
+
+      <div data-feed-region class="mb-12">
+        <FeedEntries entries={pageEntries} />
+        <Pagination currentPage={1} totalPages={totalPages} />
+      </div>
+
+      <FeedToolbar contentTypes={contentTypes} position="bottom" totalEntries={entries.length} currentPage={1} totalPages={totalPages} />
     </div>
   </section>
+
+  <script src="../../scripts/feed-controller.js"></script>
 </BaseLayout>

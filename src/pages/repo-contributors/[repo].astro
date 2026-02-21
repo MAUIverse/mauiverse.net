@@ -20,6 +20,20 @@ interface RepoDefinition {
 export function getStaticPaths() {
   const repos: RepoDefinition[] = [
     {
+      repoSlug: 'all',
+      repoLabel: 'All Repository',
+      repoUrl: '',
+      usernames: [
+        ...new Set([
+          ...getMauiContributorUsernames(),
+          ...getMauiToolkitContributorUsernames(),
+          ...getSyncfusionMauiToolkitContributorUsernames(),
+        ]),
+      ],
+      description:
+        'These individuals have contributed to one or more repositories in the .NET MAUI ecosystem, including the framework itself, the Community Toolkit, and the Syncfusion Toolkit.',
+    },
+    {
       repoSlug: 'maui',
       repoLabel: '.NET MAUI',
       repoUrl: 'https://github.com/dotnet/maui',
@@ -56,6 +70,7 @@ type Props = RepoDefinition;
 const { repoSlug, repoLabel, repoUrl, usernames, description } = Astro.props;
 
 const repoFilters = [
+  { slug: 'all', label: 'All' },
   { slug: 'maui', label: '.NET MAUI' },
   { slug: 'community-toolkit', label: 'Community Toolkit' },
   { slug: 'syncfusion-toolkit', label: 'Syncfusion Toolkit' },
@@ -117,45 +132,46 @@ const contributors: ContributorCard[] = usernames
       </p>
 
       <div class="mb-8 rounded-lg border border-edge bg-surface p-6 shadow-sm">
-        <fieldset class="mb-5">
-          <legend class="text-sm font-semibold text-brand-dark mb-2">Repository</legend>
-          <div class="flex flex-wrap gap-2">
-            {repoFilters.map((filter) => (
-              <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
-                <input
-                  type="checkbox"
-                  class="h-4 w-4"
-                  data-repo-filter
-                  data-repo-slug={filter.slug}
-                  checked={filter.slug === repoSlug}
-                />
-                <span>{filter.label}</span>
-              </label>
-            ))}
+        <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <label for="contributor-search" class="mb-2 block text-sm font-semibold text-brand-dark">
+              Search contributors
+            </label>
+            <div class="relative max-w-sm">
+              <input
+                id="contributor-search"
+                type="text"
+                placeholder="Search by name or username"
+                class="w-full rounded-lg border border-edge bg-surface px-4 py-3 pr-12 text-base text-brand-dark placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                data-contributor-search-input
+              />
+              <button
+                type="button"
+                class="absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full p-2 text-muted transition hover:text-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                aria-label="Clear search"
+                data-contributor-search-clear
+              >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
-        </fieldset>
 
-        <div>
-          <label for="contributor-search" class="mb-2 block text-sm font-semibold text-brand-dark">
-            Search contributors
-          </label>
-          <div class="relative max-w-sm">
-            <input
-              id="contributor-search"
-              type="text"
-              placeholder="Search by name or username"
-              class="w-full rounded-lg border border-edge bg-surface px-4 py-3 pr-12 text-base text-brand-dark placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
-              data-contributor-search-input
-            />
-            <button
-              type="button"
-              class="absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full p-2 text-muted transition hover:text-brand focus:outline-none focus:ring-1 focus:ring-brand"
-              aria-label="Clear search"
-              data-contributor-search-clear
-            >
-              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
-          </div>
+          <fieldset class="">
+            <div class="flex flex-wrap justify-end gap-2">
+              {repoFilters.map((filter) => (
+                <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
+                  <input
+                    type="checkbox"
+                    class="h-4 w-4"
+                    data-repo-filter
+                    data-repo-slug={filter.slug}
+                    checked={filter.slug === repoSlug}
+                  />
+                  <span>{filter.label}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
         </div>
       </div>
 
