@@ -1,0 +1,133 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import {
+  getAuthorDisplayName,
+  getAuthorImageSrc,
+  getInternalContributorProfileHref,
+} from '../../data/authors';
+import { isGitHubUrl } from '../../utils/link';
+import { extractYouTubeVideoId, getYouTubeThumbnailUrl } from '../../utils/youtube';
+import { formatLongDateUS } from '../../utils/date';
+import PrimaryLinkButton from '../PrimaryLinkButton.astro';
+
+interface Props {
+  entries: CollectionEntry<'community-feed'>[];
+  showAuthor?: boolean;
+  actionLabel?: string;
+}
+
+const { entries, showAuthor = true, actionLabel } = Astro.props;
+
+function hasBody(entry: { body?: string }): boolean {
+  return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
+}
+
+---
+
+<ul class="space-y-8" aria-label="Community feed posts">
+  {entries.map((entry) => {
+    const hasContent = hasBody(entry);
+    const videoId = extractYouTubeVideoId(entry.data.link);
+    const isInternal = hasContent || videoId;
+    const detailUrl = `/community-feed/${entry.id}/`;
+    const authorProfileHref = entry.data.author
+      ? getInternalContributorProfileHref(entry.data.author)
+      : null;
+    const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.author) : null;
+    return (
+      <li class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+        <div class={`flex gap-3 ${videoId ? 'flex-row gap-6' : 'flex-col'}`}>
+          <div class="flex flex-1 flex-col gap-3 min-w-0">
+            {isInternal ? (
+              <a
+                href={detailUrl}
+                class="text-brand-dark text-xl font-header font-bold hover:text-brand transition-colors"
+              >
+                {entry.data.title}
+              </a>
+            ) : (
+              <a
+                href={entry.data.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-brand-dark text-xl font-header font-bold hover:text-brand transition-colors inline-flex items-center gap-2"
+              >
+                {entry.data.title}
+                <span
+                  class="inline-block text-muted-light"
+                  aria-hidden="true"
+                  title="External link"
+                >
+                  <i class="fa-solid fa-arrow-up-right-from-square h-4 w-4" aria-hidden="true"></i>
+                </span>
+              </a>
+            )}
+            <p class="text-muted-light text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
+              {showAuthor && entry.data.author && (
+                authorProfileHref ? (
+                  <a
+                    href={authorProfileHref}
+                    class="inline-flex items-center gap-1.5 hover:underline"
+                    aria-label={`View ${authorDisplayName}'s profile`}
+                  >
+                    <img
+                      src={getAuthorImageSrc(entry.data.author, 64)}
+                      alt=""
+                      width="24"
+                      height="24"
+                      class="h-6 w-6 rounded-full inline-block align-middle"
+                      loading="lazy"
+                    />
+                    <span>{authorDisplayName}</span>
+                  </a>
+                ) : (
+                  <span class="inline-flex items-center gap-1.5">
+                    <img
+                      src={getAuthorImageSrc(entry.data.author, 64)}
+                      alt=""
+                      width="24"
+                      height="24"
+                      class="h-6 w-6 rounded-full inline-block align-middle"
+                      loading="lazy"
+                    />
+                    <span>{authorDisplayName}</span>
+                  </span>
+                )
+              )}
+              {showAuthor && entry.data.author && <span class="text-muted-light">·</span>}
+              <time datetime={entry.data.date.toISOString()}>
+                {formatLongDateUS(entry.data.date)}
+              </time>
+            </p>
+            <p class="text-muted text-base">{entry.data.description}</p>
+            {isInternal ? (
+              <PrimaryLinkButton href={detailUrl}>
+                {actionLabel ?? (hasContent ? 'Read more' : 'Watch')}
+              </PrimaryLinkButton>
+            ) : (
+              <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
+                {isGitHubUrl(entry.data.link) ? 'View on GitHub' : 'Visit link'}
+              </PrimaryLinkButton>
+            )}
+          </div>
+          {videoId && (
+            <a
+              href={detailUrl}
+              class="flex-shrink-0 block w-64 sm:w-72 rounded overflow-hidden border border-edge aspect-video"
+              aria-hidden="true"
+            >
+              <img
+                src={getYouTubeThumbnailUrl(videoId)}
+                alt=""
+                width="320"
+                height="180"
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </a>
+          )}
+        </div>
+      </li>
+    );
+  })}
+</ul>

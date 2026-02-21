@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  getAuthorDisplayName,
+  getAuthorImageSrc,
+  getInternalContributorProfileHref,
+  getMauiContributorUsernames,
+  getMauiToolkitContributorUsernames,
+  getSyncfusionMauiToolkitContributorUsernames,
+} from '../../data/authors';
+
+interface RepoDefinition {
+  repoSlug: string;
+  repoLabel: string;
+  repoUrl: string;
+  usernames: string[];
+  description: string;
+}
+
+export function getStaticPaths() {
+  const repos: RepoDefinition[] = [
+    {
+      repoSlug: 'all',
+      repoLabel: 'All Repository',
+      repoUrl: '',
+      usernames: [
+        ...new Set([
+          ...getMauiContributorUsernames(),
+          ...getMauiToolkitContributorUsernames(),
+          ...getSyncfusionMauiToolkitContributorUsernames(),
+        ]),
+      ],
+      description:
+        'These individuals have contributed to one or more repositories in the .NET MAUI ecosystem, including the framework itself, the Community Toolkit, and the Syncfusion Toolkit.',
+    },
+    {
+      repoSlug: 'maui',
+      repoLabel: '.NET MAUI',
+      repoUrl: 'https://github.com/dotnet/maui',
+      usernames: getMauiContributorUsernames(),
+      description:
+        'These individuals have contributed code, documentation fixes, and improvements directly to the .NET MAUI framework. Every pull request, bug fix, and enhancement makes .NET MAUI better for everyone.',
+    },
+    {
+      repoSlug: 'community-toolkit',
+      repoLabel: '.NET MAUI Community Toolkit',
+      repoUrl: 'https://github.com/CommunityToolkit/Maui',
+      usernames: getMauiToolkitContributorUsernames(),
+      description:
+        'These individuals have contributed to the .NET MAUI Community Toolkit, providing controls, converters, behaviors, and other essential building blocks that extend the .NET MAUI platform.',
+    },
+    {
+      repoSlug: 'syncfusion-toolkit',
+      repoLabel: 'Syncfusion Toolkit for .NET MAUI',
+      repoUrl: 'https://github.com/syncfusion/maui-toolkit',
+      usernames: getSyncfusionMauiToolkitContributorUsernames(),
+      description:
+        'These individuals have contributed to the Syncfusion Toolkit for .NET MAUI, an open-source project that brings high-quality UI components to the .NET MAUI ecosystem.',
+    },
+  ];
+
+  return repos.map((repo) => ({
+    params: { repo: repo.repoSlug },
+    props: repo,
+  }));
+}
+
+type Props = RepoDefinition;
+
+const { repoSlug, repoLabel, repoUrl, usernames, description } = Astro.props;
+
+const repoFilters = [
+  { slug: 'all', label: 'All' },
+  { slug: 'maui', label: '.NET MAUI' },
+  { slug: 'community-toolkit', label: 'Community Toolkit' },
+  { slug: 'syncfusion-toolkit', label: 'Syncfusion Toolkit' },
+];
+
+type ContributorCard = {
+  username: string;
+  displayName: string;
+  avatarSrc: string;
+  href: string;
+};
+
+const contributors: ContributorCard[] = usernames
+  .map((username) => {
+    const internalHref = getInternalContributorProfileHref(username);
+    return {
+      username,
+      displayName: getAuthorDisplayName(username),
+      avatarSrc: getAuthorImageSrc(username, 256),
+      href: internalHref ?? `https://github.com/${username}`,
+      hasProfile: internalHref !== null,
+    };
+  })
+  .sort((a, b) => {
+    if (a.hasProfile !== b.hasProfile) return a.hasProfile ? -1 : 1;
+    return a.displayName.localeCompare(b.displayName);
+  });
+---
+
+<BaseLayout
+  title={`${repoLabel} Contributors | MAUIverse`}
+  description={`Meet the contributors to the ${repoLabel} repository. The community is grateful for every contribution to the ecosystem.`}
+  allowPageScroll={true}
+>
+  <section class="min-h-screen px-0 py-24">
+    <div class="container mx-auto max-w-6xl px-4">
+      <p class="mb-4 text-xl font-header font-bold uppercase text-brand">
+        Repository Contributors
+      </p>
+      <h1 class="mb-4 text-4xl font-header font-bold uppercase text-brand-dark">
+        {repoLabel} Contributors
+      </h1>
+      <p class="mb-4 max-w-3xl text-base text-muted">
+        The community is grateful for every contribution to the .NET MAUI ecosystem.
+        {description}
+      </p>
+      <p class="mb-4 max-w-3xl text-base text-muted">
+        <a
+          href={repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-brand hover:underline"
+        >
+          View the {repoLabel} repository on GitHub &rarr;
+        </a>
+      </p>
+      <p class="mb-12 text-sm font-semibold text-muted-light">
+        {contributors.length} contributors
+      </p>
+
+      <div class="mb-8 rounded-lg border border-edge bg-surface p-6 shadow-sm">
+        <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <label for="contributor-search" class="mb-2 block text-sm font-semibold text-brand-dark">
+              Search contributors
+            </label>
+            <div class="relative max-w-sm">
+              <input
+                id="contributor-search"
+                type="text"
+                placeholder="Search by name or username"
+                class="w-full rounded-lg border border-edge bg-surface px-4 py-3 pr-12 text-base text-brand-dark placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                data-contributor-search-input
+              />
+              <button
+                type="button"
+                class="absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full p-2 text-muted transition hover:text-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                aria-label="Clear search"
+                data-contributor-search-clear
+              >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <fieldset class="">
+            <div class="flex flex-wrap justify-end gap-2">
+              {repoFilters.map((filter) => (
+                <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
+                  <input
+                    type="checkbox"
+                    class="h-4 w-4"
+                    data-repo-filter
+                    data-repo-slug={filter.slug}
+                    checked={filter.slug === repoSlug}
+                  />
+                  <span>{filter.label}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <ul
+        class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        aria-label={`${repoLabel} Contributors`}
+        data-contributor-grid
+      >
+        {contributors.map((contributor) => (
+          <li
+            class="rounded-lg border border-edge bg-surface p-6 shadow-sm"
+            data-contributor-card
+            data-search-text={`${contributor.displayName.toLowerCase()} ${contributor.username.toLowerCase()}`}
+          >
+            <div class="flex h-full flex-col items-center text-center">
+              <img
+                src={contributor.avatarSrc}
+                alt={`${contributor.displayName} profile picture`}
+                width="96"
+                height="96"
+                class="mb-4 h-24 w-24 rounded-full"
+                loading="lazy"
+              />
+              <h2 class="mb-4 text-lg font-semibold text-brand-dark">{contributor.displayName}</h2>
+              <a
+                href={contributor.href}
+                target={contributor.href.startsWith('/') ? undefined : '_blank'}
+                rel={contributor.href.startsWith('/') ? undefined : 'noopener noreferrer'}
+                class="mt-auto inline-flex w-full items-center justify-center rounded-full border border-edge bg-surface px-4 py-2 text-sm font-semibold text-muted transition hover:bg-surface-alt hover:text-brand"
+              >
+                {contributor.href.startsWith('/') ? 'View Profile' : 'View on GitHub'}
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-6 hidden text-base text-muted" data-contributor-no-results>
+        No contributors found.
+      </p>
+    </div>
+  </section>
+
+  <script is:inline>
+    (() => {
+      const repoCheckboxes = Array.from(document.querySelectorAll('[data-repo-filter]'));
+      repoCheckboxes.forEach((checkbox) => {
+        if (!(checkbox instanceof HTMLInputElement)) return;
+        checkbox.addEventListener('change', () => {
+          if (!checkbox.checked) {
+            checkbox.checked = true;
+            return;
+          }
+          repoCheckboxes.forEach((other) => {
+            if (other !== checkbox && other instanceof HTMLInputElement) {
+              other.checked = false;
+            }
+          });
+          const slug = checkbox.getAttribute('data-repo-slug');
+          if (slug) {
+            window.location.href = '/repo-contributors/' + slug + '/';
+          }
+        });
+      });
+
+      const searchInput = document.querySelector('[data-contributor-search-input]');
+      const clearButton = document.querySelector('[data-contributor-search-clear]');
+      const contributorCards = Array.from(document.querySelectorAll('[data-contributor-card]'));
+      const noResultsMessage = document.querySelector('[data-contributor-no-results]');
+
+      if (
+        !(searchInput instanceof HTMLInputElement) ||
+        !(clearButton instanceof HTMLButtonElement) ||
+        !noResultsMessage
+      ) {
+        return;
+      }
+
+      const applyFilter = () => {
+        const query = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        contributorCards.forEach((card) => {
+          const searchText = card.getAttribute('data-search-text') ?? '';
+          const matches = searchText.includes(query);
+          card.classList.toggle('hidden', !matches);
+          if (matches) visibleCount += 1;
+        });
+
+        noResultsMessage.classList.toggle('hidden', visibleCount > 0);
+        clearButton.classList.toggle('hidden', query.length === 0);
+      };
+
+      searchInput.addEventListener('input', applyFilter);
+      clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        applyFilter();
+        searchInput.focus();
+      });
+      applyFilter();
+    })();
+  </script>
+</BaseLayout>

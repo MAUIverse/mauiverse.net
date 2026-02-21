@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import ContributorProfileHeader from '../../components/community-contributors/ContributorProfileHeader.astro';
+import ContributorFeedSection from '../../components/community-contributors/ContributorFeedSection.astro';
+import { paginateEntries } from '../../utils/pagination';
+import {
+  getAuthorKeys,
+  getAuthorDisplayName,
+  isSameAuthorKey,
+} from '../../data/authors';
+
+export async function getStaticPaths() {
+  return getAuthorKeys().map((githubUsername) => ({
+    params: { githubUsername },
+    props: { githubUsername, displayName: getAuthorDisplayName(githubUsername) },
+  }));
+}
+
+const { githubUsername, displayName } = Astro.props;
+const pageSize = 12;
+const basePath = `/community-contributors/${encodeURIComponent(githubUsername)}`;
+
+const contributorEntries = (await getCollection('community-feed'))
+  .filter((entry) => entry.data.author && isSameAuthorKey(entry.data.author, githubUsername))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const { pages, totalPages } = paginateEntries(contributorEntries, pageSize);
+const pageEntries = pages[0]?.entries ?? [];
+---
+
+<BaseLayout
+  title={`${displayName} | Community Contributors | MAUIverse`}
+  description={`Community Feed contributions from ${displayName}.`}
+  allowPageScroll={true}
+>
+  <section class="min-h-screen px-0 py-24">
+    <div class="container mx-auto max-w-4xl px-4">
+      <a href="/community-contributors/" class="mb-6 inline-block text-sm font-medium text-brand hover:underline">
+        ← Back to Community Contributors
+      </a>
+
+      <ContributorProfileHeader githubUsername={githubUsername} displayName={displayName} />
+      <ContributorFeedSection
+        entries={pageEntries}
+        currentPage={1}
+        totalPages={totalPages}
+        basePath={basePath}
+      />
+    </div>
+  </section>
+</BaseLayout>

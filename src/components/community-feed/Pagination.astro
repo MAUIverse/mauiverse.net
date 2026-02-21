@@ -1,0 +1,111 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  basePath?: string;
+}
+
+const { currentPage, totalPages, basePath = '/community-feed' } = Astro.props;
+
+type PageToken = number | '…';
+
+function getTokens(current: number, total: number): PageToken[] {
+  if (total <= 1) return [1];
+  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+
+  const tokens: PageToken[] = [1];
+  const start = Math.max(2, current - 2);
+  const end = Math.min(total - 1, current + 2);
+
+  if (start > 2) tokens.push('…');
+  for (let i = start; i <= end; i++) tokens.push(i);
+  if (end < total - 1) tokens.push('…');
+
+  tokens.push(total);
+  return tokens;
+}
+
+function hrefForPage(page: number): string {
+  const root = basePath.replace(/\/$/, '');
+  return page === 1 ? `${root}/` : `${root}/page/${page}/`;
+}
+
+const tokens = getTokens(currentPage, totalPages);
+const prevHref = currentPage > 1 ? hrefForPage(currentPage - 1) : null;
+const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
+---
+
+{totalPages > 1 && (
+  <nav class="mt-12 flex items-center justify-center" aria-label="Pagination">
+    <ul class="flex items-center gap-2 flex-wrap justify-center">
+      <li>
+        {prevHref ? (
+          <a
+            href={prevHref}
+            rel="prev"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface text-muted hover:bg-surface-alt hover:text-brand transition"
+            aria-label="Previous page"
+            title="Previous page"
+          >
+            <i class="fa-solid fa-chevron-left h-5 w-5" aria-hidden="true"></i>
+          </a>
+        ) : (
+          <span
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface-alt text-muted-light opacity-50"
+            aria-disabled="true"
+            title="Previous page"
+          >
+            <i class="fa-solid fa-chevron-left h-5 w-5" aria-hidden="true"></i>
+          </span>
+        )}
+      </li>
+
+      {tokens.map((token) => (
+        <li>
+          {token === '…' ? (
+            <span class="px-2 text-muted-light select-none" aria-hidden="true">
+              …
+            </span>
+          ) : token === currentPage ? (
+            <span
+              class="inline-flex h-10 min-w-10 items-center justify-center rounded-md bg-brand-extra px-3 text-white font-semibold"
+              aria-current="page"
+            >
+              {token}
+            </span>
+          ) : (
+            <a
+              href={hrefForPage(token)}
+              class="inline-flex h-10 min-w-10 items-center justify-center rounded-md border border-edge bg-surface px-3 text-muted hover:bg-surface-alt hover:text-brand transition"
+              aria-label={`Go to page ${token}`}
+            >
+              {token}
+            </a>
+          )}
+        </li>
+      ))}
+
+      <li>
+        {nextHref ? (
+          <a
+            href={nextHref}
+            rel="next"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface text-muted hover:bg-surface-alt hover:text-brand transition"
+            aria-label="Next page"
+            title="Next page"
+          >
+            <i class="fa-solid fa-chevron-right h-5 w-5" aria-hidden="true"></i>
+          </a>
+        ) : (
+          <span
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface-alt text-muted-light opacity-50"
+            aria-disabled="true"
+            title="Next page"
+          >
+            <i class="fa-solid fa-chevron-right h-5 w-5" aria-hidden="true"></i>
+          </span>
+        )}
+      </li>
+    </ul>
+  </nav>
+)}

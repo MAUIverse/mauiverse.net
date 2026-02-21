@@ -1,0 +1,41 @@
+---
+type AboutItem = {
+  label: string;
+  value: string;
+  href?: string;
+  spanTwoCols?: boolean;
+};
+
+interface Props {
+  title?: string;
+  items: AboutItem[];
+}
+
+const { title = 'About the Standup', items } = Astro.props;
+---
+
+<section class="rounded-lg border border-edge bg-surface p-6 md:p-8 shadow-sm">
+  <h2 class="text-brand-dark font-header font-bold text-xl mb-4">{title}</h2>
+  <p class="text-muted mb-4">
+    <slot />
+  </p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+    {items.map((item) => (
+      <div class:list={['rounded-md bg-surface-alt p-4', { 'sm:col-span-2': item.spanTwoCols }]}>
+        <span class="block text-muted-light text-xs uppercase tracking-wide mb-1">{item.label}</span>
+        {item.href ? (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-brand font-semibold hover:underline"
+          >
+            {item.value}
+          </a>
+        ) : (
+          <span class="text-brand-dark font-semibold">{item.value}</span>
+        )}
+      </div>
+    ))}
+  </div>
+</section>

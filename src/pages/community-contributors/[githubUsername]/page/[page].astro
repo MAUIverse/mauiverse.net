@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import ContributorProfileHeader from '../../../../components/community-contributors/ContributorProfileHeader.astro';
+import ContributorFeedSection from '../../../../components/community-contributors/ContributorFeedSection.astro';
+import { paginateAndBuildStaticPaths } from '../../../../utils/pagination';
+import {
+  getAuthorKeys,
+  getAuthorDisplayName,
+  isSameAuthorKey,
+} from '../../../../data/authors';
+
+export async function getStaticPaths() {
+  const pageSize = 12;
+  const entries = (await getCollection('community-feed')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );
+
+  const paths = [];
+
+  for (const githubUsername of getAuthorKeys()) {
+    const displayName = getAuthorDisplayName(githubUsername);
+    const contributorEntries = entries.filter(
+      (entry) => entry.data.author && isSameAuthorKey(entry.data.author, githubUsername)
+    );
+    paths.push(
+      ...paginateAndBuildStaticPaths(contributorEntries, pageSize, (page) => ({
+        params: { githubUsername, page: String(page.currentPage) },
+        props: { githubUsername, displayName },
+      }))
+    );
+  }
+
+  return paths;
+}
+
+const { githubUsername, displayName, entries, currentPage, totalPages } = Astro.props;
+const basePath = `/community-contributors/${encodeURIComponent(githubUsername)}`;
+---
+
+<BaseLayout
+  title={`${displayName} (Page ${currentPage}) | Community Contributors | MAUIverse`}
+  description={`Community Feed contributions from ${displayName}.`}
+  allowPageScroll={true}
+>
+  <section class="min-h-screen px-0 py-24">
+    <div class="container mx-auto max-w-4xl px-4">
+      <a href="/community-contributors/" class="mb-6 inline-block text-sm font-medium text-brand hover:underline">
+        ← Back to Community Contributors
+      </a>
+
+      <ContributorProfileHeader githubUsername={githubUsername} displayName={displayName} />
+      <ContributorFeedSection
+        entries={entries}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        basePath={basePath}
+      />
+    </div>
+  </section>
+</BaseLayout>

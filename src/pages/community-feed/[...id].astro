@@ -1,0 +1,341 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import {
+  getAuthorDisplayName,
+  getAuthorImageSrc,
+  getInternalContributorProfileHref,
+} from '../../data/authors';
+import { isGitHubUrl } from '../../utils/link';
+import {
+  extractYouTubeVideoId,
+  getYouTubeEmbedUrl,
+} from '../../utils/youtube';
+import { formatLongDateUS } from '../../utils/date';
+import PrimaryLinkButton from '../../components/PrimaryLinkButton.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('community-feed');
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+
+function hasBody(entry: { body?: string }): boolean {
+  return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
+}
+
+const videoId = extractYouTubeVideoId(entry.data.link);
+const withBody = hasBody(entry);
+const showDetailPage = withBody || videoId;
+const rendered = withBody ? await render(entry) : null;
+const Content = rendered?.Content ?? null;
+const authorProfileHref = entry.data.author
+  ? getInternalContributorProfileHref(entry.data.author)
+  : null;
+const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.author) : null;
+const shareUrl = entry.data.link || Astro.url.href;
+const shareTitle = entry.data.title;
+const shareText = entry.data.description || entry.data.title;
+const encodedShareUrl = encodeURIComponent(shareUrl);
+const encodedShareTitle = encodeURIComponent(shareTitle);
+const encodedShareText = encodeURIComponent(shareText);
+const encodedShareEmailBody = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
+const encodedBskyText = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
+---
+
+{showDetailPage ? (
+  <BaseLayout
+    title={`${entry.data.title} | Community Feed | MAUIverse`}
+    description={entry.data.description}
+    allowPageScroll={true}
+  >
+    <article class="py-24 px-0 min-h-screen text-brand-dark" data-pagefind-body>
+      <div class="container max-w-3xl mx-auto px-4">
+        <header class="mb-8">
+          <h1 class="text-brand-dark text-3xl md:text-4xl font-header font-bold mb-4">
+            {entry.data.title}
+          </h1>
+          <p class="text-muted-light text-sm mb-4">
+            <time datetime={entry.data.date.toISOString()}>
+              {formatLongDateUS(entry.data.date)}
+            </time>
+          </p>
+          <div class="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+            {entry.data.author &&
+              (authorProfileHref ? (
+                <a
+                  href={authorProfileHref}
+                  class="inline-flex w-fit shrink-0 items-center gap-3 text-brand-dark font-medium hover:underline"
+                  aria-label={`View ${authorDisplayName}'s profile`}
+                >
+                  <img
+                    src={getAuthorImageSrc(entry.data.author, 96)}
+                    alt=""
+                    width="48"
+                    height="48"
+                    class="h-12 w-12 rounded-full"
+                    loading="lazy"
+                  />
+                  <span>{authorDisplayName}</span>
+                </a>
+              ) : (
+                <div class="flex w-fit shrink-0 items-center gap-3">
+                  <img
+                    src={getAuthorImageSrc(entry.data.author, 96)}
+                    alt=""
+                    width="48"
+                    height="48"
+                    class="h-12 w-12 rounded-full"
+                    loading="lazy"
+                  />
+                  <span class="text-brand-dark font-medium">{authorDisplayName}</span>
+                </div>
+              ))}
+
+            <section
+              class="w-full rounded-lg border border-edge bg-surface p-3 md:ml-auto md:w-fit"
+              aria-label="Share this post"
+              data-share-root
+              data-share-url={shareUrl}
+              data-share-title={shareTitle}
+              data-share-text={shareText}
+            >
+              <div class="flex items-center gap-3 overflow-x-auto whitespace-nowrap">
+                <p class="shrink-0 text-sm font-semibold text-brand-dark">Share:</p>
+                <div class="flex items-center gap-2">
+                <button
+                  type="button"
+                  class="hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  data-web-share
+                  aria-label="Share using your browser"
+                  title="Share"
+                >
+                  <i class="fa-solid fa-share-nodes h-5 w-5" aria-hidden="true"></i>
+                  <span class="sr-only">Share</span>
+                </button>
+
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedShareUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share on LinkedIn"
+                  title="Share on LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin-in h-5 w-5" aria-hidden="true"></i>
+                  <span class="sr-only">Share on LinkedIn</span>
+                </a>
+
+                <a
+                  href={`https://bsky.app/intent/compose?text=${encodedBskyText}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share on Bluesky"
+                  title="Share on Bluesky"
+                >
+                  <i class="fa-brands fa-bluesky h-5 w-5" aria-hidden="true"></i>
+                  <span class="sr-only">Share on Bluesky</span>
+                </a>
+
+                <a
+                  href={`https://twitter.com/intent/tweet?url=${encodedShareUrl}&text=${encodedShareText}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share on X"
+                  title="Share on X"
+                >
+                  <i class="fa-brands fa-x-twitter h-5 w-5" aria-hidden="true"></i>
+                  <span class="sr-only">Share on X</span>
+                </a>
+
+                <a
+                  href={`https://www.reddit.com/submit?url=${encodedShareUrl}&title=${encodedShareTitle}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share on Reddit"
+                  title="Share on Reddit"
+                >
+                  <i class="fa-brands fa-reddit-alien h-5 w-5" aria-hidden="true"></i>
+                  <span class="sr-only">Share on Reddit</span>
+                </a>
+
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodedShareUrl}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share on Facebook"
+                  title="Share on Facebook"
+                >
+                  <i class="fa-brands fa-facebook-f h-5 w-5" aria-hidden="true"></i>
+                  <span class="sr-only">Share on Facebook</span>
+                </a>
+
+                <a
+                  href={`mailto:?subject=${encodedShareTitle}&body=${encodedShareEmailBody}`}
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  aria-label="Share by email"
+                  title="Share by email"
+                >
+                  <i class="fa-solid fa-envelope h-5 w-5" aria-hidden="true"></i>
+                  <span class="sr-only">Share by email</span>
+                </a>
+
+                <button
+                  type="button"
+                  class="hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  data-copy-link
+                  aria-label="Copy link"
+                  title="Copy link"
+                >
+                  <i class="fa-solid fa-copy h-5 w-5" aria-hidden="true"></i>
+                  <span class="sr-only">Copy link</span>
+                </button>
+                </div>
+              </div>
+              <p class="sr-only" aria-live="polite" data-share-status></p>
+            </section>
+          </div>
+        </header>
+
+        {videoId && (
+          <div class="mb-8 w-full" style="position: relative; padding-top: 56.25%;">
+            <iframe
+              title="YouTube video"
+              src={getYouTubeEmbedUrl(videoId)}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              class="rounded border border-edge"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+            />
+          </div>
+        )}
+
+        {withBody && Content ? (
+          <div
+            class="prose prose-slate dark:prose-invert max-w-none prose-headings:text-brand-dark prose-headings:font-header prose-headings:font-bold prose-headings:mt-10 prose-headings:mb-4 prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-p:my-5 prose-p:leading-relaxed prose-ul:my-5 prose-ol:my-5 prose-li:my-2 prose-li:leading-relaxed prose-ul:pl-6 prose-ol:pl-6 prose-blockquote:border-brand/30 prose-blockquote:text-muted"
+          >
+            <Content />
+          </div>
+        ) : videoId ? (
+          <p class="text-muted text-base">{entry.data.description}</p>
+        ) : null}
+
+        <p class="mt-8">
+          {videoId ? (
+            <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
+              Watch on YouTube
+            </PrimaryLinkButton>
+          ) : isGitHubUrl(entry.data.link) ? (
+            <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
+              View on GitHub
+            </PrimaryLinkButton>
+          ) : (
+            <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
+              View Source →
+            </PrimaryLinkButton>
+          )}
+        </p>
+
+        <p class="mt-8">
+          <a
+            href="/community-feed/"
+            class="text-brand font-medium hover:underline"
+          >
+            ← Back to Community Feed
+          </a>
+        </p>
+      </div>
+    </article>
+
+    <script is:inline>
+      (() => {
+        const shareRoot = document.querySelector('[data-share-root]');
+        if (!shareRoot) return;
+
+        const shareUrl = shareRoot.getAttribute('data-share-url') || window.location.href;
+        const shareTitle = shareRoot.getAttribute('data-share-title') || document.title;
+        const shareText = shareRoot.getAttribute('data-share-text') || shareTitle;
+        const webShareButton = shareRoot.querySelector('[data-web-share]');
+        const copyLinkButton = shareRoot.querySelector('[data-copy-link]');
+        const statusNode = shareRoot.querySelector('[data-share-status]');
+
+        const setStatus = (value) => {
+          if (statusNode) {
+            statusNode.textContent = value;
+          }
+        };
+
+        if (webShareButton && typeof navigator.share === 'function') {
+          webShareButton.classList.remove('hidden');
+          webShareButton.addEventListener('click', async () => {
+            try {
+              await navigator.share({
+                title: shareTitle,
+                text: shareText,
+                url: shareUrl,
+              });
+              setStatus('Share sheet opened.');
+            } catch (error) {
+              if (error instanceof DOMException && error.name === 'AbortError') {
+                return;
+              }
+              setStatus('Unable to open the share sheet.');
+            }
+          });
+        }
+
+        if (copyLinkButton) {
+          copyLinkButton.classList.remove('hidden');
+          copyLinkButton.addEventListener('click', async () => {
+            try {
+              if (navigator.clipboard?.writeText) {
+                await navigator.clipboard.writeText(shareUrl);
+              } else {
+                const input = document.createElement('input');
+                input.value = shareUrl;
+                input.setAttribute('readonly', '');
+                input.style.position = 'absolute';
+                input.style.left = '-9999px';
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                input.remove();
+              }
+              setStatus('Link copied to clipboard.');
+            } catch {
+              setStatus('Unable to copy link.');
+            }
+          });
+        }
+      })();
+    </script>
+  </BaseLayout>
+) : (
+  <BaseLayout title={`${entry.data.title} | MAUIverse`}>
+    <Fragment slot="head">
+      <meta http-equiv="refresh" content={`0; URL='${entry.data.link}'`} />
+    </Fragment>
+    <div class="py-24 px-4 min-h-screen flex flex-col items-center justify-center">
+      <p class="text-brand-dark mb-4">Redirecting to the linked page…</p>
+      <a
+        href={entry.data.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-brand font-medium hover:underline"
+      >
+        Click here if you are not redirected
+      </a>
+      <a href="/community-feed/" class="mt-4 text-muted-light hover:underline">
+        ← Back to Community Feed
+      </a>
+    </div>
+  </BaseLayout>
+)}

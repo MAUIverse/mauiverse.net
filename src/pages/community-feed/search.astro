@@ -1,0 +1,442 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { extractYouTubeVideoId } from '../../utils/youtube';
+import { formatLongDateUS } from '../../utils/date';
+import { getAuthorDisplayName, getAuthorImageSrc } from '../../data/authors';
+
+function hasBody(entry: { body?: string }): boolean {
+  return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
+}
+
+function normalizeContentType(value?: string): string {
+  if (!value) {
+    return 'unknown';
+  }
+
+  const normalized = value.trim().replace(/^'+|'+$/g, '').toLowerCase();
+  return normalized || 'unknown';
+}
+
+function toLabel(value: string): string {
+  if (value === 'unknown') {
+    return 'Unknown';
+  }
+
+  return value.replace(/[-_]+/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+const entries = (await getCollection('community-feed')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const searchableEntries = entries.filter((entry) => hasBody(entry) || Boolean(extractYouTubeVideoId(entry.data.link)));
+
+const searchRecords = searchableEntries.map((entry) => {
+  const detailUrl = `/community-feed/${entry.id}/`;
+  const contentType = normalizeContentType(entry.data.contentType);
+  const authorKey = entry.data.author?.trim().toLowerCase() || '';
+
+  return {
+    url: detailUrl,
+    title: entry.data.title,
+    description: entry.data.description,
+    dateISO: entry.data.date.toISOString(),
+    dateLabel: formatLongDateUS(entry.data.date),
+    authorKey,
+    authorLabel: authorKey ? getAuthorDisplayName(authorKey) : '',
+    authorImageSrc: authorKey ? getAuthorImageSrc(authorKey, 48) : '',
+    contentType,
+    isStandup: Boolean(entry.data.isStandup),
+    isToolkitStandup: Boolean(entry.data.isToolkitStandup),
+  };
+});
+
+const contentTypes = Array.from(new Set(searchRecords.map((record) => record.contentType))).sort((a, b) =>
+  toLabel(a).localeCompare(toLabel(b))
+);
+
+const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
+---
+
+<BaseLayout
+  title="Search Contributions | Community Feed | MAUIverse"
+  description="Search community feed items by keyword, content type, and standup flags."
+  allowPageScroll={true}
+>
+  <section class="py-24 px-0 min-h-screen">
+    <div class="container max-w-4xl mx-auto px-4">
+      <div class="mb-10">
+        <p class="text-brand font-bold mb-4 text-xl font-header uppercase">Community Feed</p>
+        <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
+          Search Contributions
+        </h1>
+        <p class="text-muted text-base max-w-2xl">
+          Search the content of community feed entries and refine results using contribution metadata.
+        </p>
+      </div>
+
+      <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm mb-8" data-search-root>
+        <label for="search-query" class="block text-sm font-semibold text-brand-dark mb-2">Search text</label>
+        <input
+          id="search-query"
+          type="search"
+          class="w-full rounded-md border border-edge bg-surface-alt px-4 py-3 text-base text-brand-dark placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-brand/40"
+          placeholder="Search community feed content"
+          autocomplete="off"
+        />
+
+        <div class="mt-6 grid gap-5 md:grid-cols-2">
+          <fieldset>
+            <legend class="text-sm font-semibold text-brand-dark mb-2">Content type</legend>
+            <div class="flex flex-wrap gap-2">
+              {contentTypes.map((contentType) => (
+                <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
+                  <input type="checkbox" value={contentType} class="h-4 w-4" data-filter="contentType" />
+                  <span>{toLabel(contentType)}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="text-sm font-semibold text-brand-dark mb-2">Standups</legend>
+            <div class="flex flex-wrap gap-2">
+              <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
+                <input type="checkbox" class="h-4 w-4" data-filter="isStandup" />
+                <span>Community Standup</span>
+              </label>
+              <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
+                <input type="checkbox" class="h-4 w-4" data-filter="isToolkitStandup" />
+                <span>Toolkit Standup</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 rounded-lg border border-edge bg-surface px-4 py-3 shadow-sm mb-8" data-search-toolbar>
+        <span class="text-xs text-muted-light" data-results-status>Showing all searchable community feed entries.</span>
+        <div class="ml-auto flex items-center gap-1 rounded-md border border-edge bg-surface-alt p-0.5" role="radiogroup" aria-label="View mode">
+          <button
+            type="button"
+            class="inline-flex h-8 w-8 items-center justify-center rounded text-sm transition data-[active]:bg-brand-extra data-[active]:text-white text-muted hover:text-brand"
+            data-search-view="column"
+            data-active
+            aria-label="Column view"
+            title="Column view"
+          >
+            <i class="fa-solid fa-list" aria-hidden="true"></i>
+          </button>
+          <button
+            type="button"
+            class="inline-flex h-8 w-8 items-center justify-center rounded text-sm transition data-[active]:bg-brand-extra data-[active]:text-white text-muted hover:text-brand"
+            data-search-view="grid"
+            aria-label="Grid view"
+            title="Grid view"
+          >
+            <i class="fa-solid fa-table-cells" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <div data-results-region aria-live="polite"></div>
+    </div>
+  </section>
+
+  <script type="application/json" id="community-feed-search-records" set:html={recordsJson}></script>
+  <script is:inline>
+    (() => {
+      const recordsScript = document.getElementById('community-feed-search-records');
+      const queryInput = document.getElementById('search-query');
+      const resultsRegion = document.querySelector('[data-results-region]');
+      const status = document.querySelector('[data-results-status]');
+      const viewButtons = Array.from(document.querySelectorAll('[data-search-view]'));
+      let viewMode = 'column';
+      const typeCheckboxes = Array.from(document.querySelectorAll('input[data-filter="contentType"]'));
+      const standupCheckbox = document.querySelector('input[data-filter="isStandup"]');
+      const toolkitCheckbox = document.querySelector('input[data-filter="isToolkitStandup"]');
+
+      if (!recordsScript || !queryInput || !resultsRegion || !status) {
+        return;
+      }
+
+      const allRecords = JSON.parse(recordsScript.textContent ?? '[]');
+      const byUrl = new Map(allRecords.map((record) => [normalizeUrl(record.url), record]));
+      let pagefindModule = null;
+      let debounceTimer = null;
+
+      function normalizeUrl(url) {
+        if (!url) {
+          return '/';
+        }
+
+        let normalized = url.trim();
+
+        if (!normalized.startsWith('/')) {
+          normalized = `/${normalized}`;
+        }
+
+        if (!normalized.endsWith('/')) {
+          normalized = `${normalized}/`;
+        }
+
+        return normalized;
+      }
+
+      function escapeHtml(value) {
+        return value
+          .replaceAll('&', '&amp;')
+          .replaceAll('<', '&lt;')
+          .replaceAll('>', '&gt;')
+          .replaceAll('"', '&quot;')
+          .replaceAll("'", '&#39;');
+      }
+
+      function selectedValues(checkboxes) {
+        return new Set(checkboxes.filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value));
+      }
+
+      function enforceContentTypeSelection(changedCheckbox) {
+        if (!changedCheckbox?.checked) {
+          return;
+        }
+
+        if (standupCheckbox) {
+          standupCheckbox.checked = false;
+        }
+
+        if (toolkitCheckbox) {
+          toolkitCheckbox.checked = false;
+        }
+
+        const selectedValue = changedCheckbox.value;
+        if (selectedValue === 'unknown') {
+          return;
+        }
+
+        for (const checkbox of typeCheckboxes) {
+          if (checkbox === changedCheckbox) {
+            continue;
+          }
+
+          if (checkbox.value !== 'unknown') {
+            checkbox.checked = false;
+          }
+        }
+      }
+
+      function enforceStandupSelection(changedCheckbox) {
+        if (!changedCheckbox?.checked) {
+          return;
+        }
+
+        for (const checkbox of typeCheckboxes) {
+          checkbox.checked = false;
+        }
+
+        if (changedCheckbox === standupCheckbox && toolkitCheckbox) {
+          toolkitCheckbox.checked = false;
+        }
+
+        if (changedCheckbox === toolkitCheckbox && standupCheckbox) {
+          standupCheckbox.checked = false;
+        }
+      }
+
+      function matchesToggles(record, selectedTypes, requireStandup, requireToolkitStandup) {
+        if (selectedTypes.size && !selectedTypes.has(record.contentType)) {
+          return false;
+        }
+
+        if (requireStandup && !record.isStandup) {
+          return false;
+        }
+
+        if (requireToolkitStandup && !record.isToolkitStandup) {
+          return false;
+        }
+
+        return true;
+      }
+
+      function renderColumnCard(record, excerpt) {
+        const authorHtml = record.authorLabel
+          ? `<span class="inline-flex items-center gap-1.5"><img src="${record.authorImageSrc}" alt="" width="20" height="20" class="h-5 w-5 rounded-full" loading="lazy" /><span>${escapeHtml(record.authorLabel)}</span></span><span aria-hidden="true" class="text-muted-light">\u00b7</span>`
+          : '';
+        const excerptHtml = excerpt
+          ? `<p class="text-muted text-base">${excerpt}</p>`
+          : `<p class="text-muted text-base">${escapeHtml(record.description)}</p>`;
+        return `
+          <li class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+            <a href="${record.url}" class="text-brand-dark text-xl font-header font-bold hover:text-brand transition-colors">${escapeHtml(record.title)}</a>
+            <p class="mt-2 text-muted-light text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
+              ${authorHtml}<time datetime="${record.dateISO}">${escapeHtml(record.dateLabel)}</time>
+            </p>
+            <div class="mt-3">${excerptHtml}</div>
+            <p class="mt-5">
+              <a href="${record.url}" class="inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:border-brand-extraDark hover:bg-brand-extraDark">Read more</a>
+            </p>
+          </li>`;
+      }
+
+      function renderGridCard(record, excerpt) {
+        const descText = excerpt
+          ? excerpt.replace(/<[^>]*>/g, '')
+          : escapeHtml(record.description);
+        const authorHtml = record.authorLabel
+          ? `<img src="${record.authorImageSrc}" alt="" width="20" height="20" class="h-5 w-5 rounded-full inline-block" loading="lazy" /><span>${escapeHtml(record.authorLabel)}</span><span class="text-muted-light" aria-hidden="true">\u00b7</span>`
+          : '';
+        return `
+          <li class="rounded-lg border border-edge bg-surface p-4 shadow-sm flex flex-col">
+            <a href="${record.url}" class="text-brand-dark text-base font-header font-bold hover:text-brand transition-colors line-clamp-2 mb-2">${escapeHtml(record.title)}</a>
+            <p class="text-muted-light text-xs flex flex-wrap items-center gap-x-1.5 gap-y-1 mb-2">
+              ${authorHtml}<time datetime="${record.dateISO}">${escapeHtml(record.dateLabel)}</time>
+            </p>
+            <p class="text-muted text-sm line-clamp-2">${descText}</p>
+          </li>`;
+      }
+
+      function renderResults(items, query, totalPool) {
+        if (!items.length) {
+          resultsRegion.innerHTML = '';
+          status.textContent = query
+            ? `No results for \u201c${query}\u201d with the selected filters.`
+            : 'No entries match the selected filters.';
+          return;
+        }
+
+        status.textContent = query
+          ? `Showing ${items.length} matching results from ${totalPool} searchable entries.`
+          : `Showing ${items.length} entries that match the selected filters.`;
+
+        let html;
+        if (viewMode === 'grid') {
+          html = `<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">${items.map(({ record, excerpt }) => renderGridCard(record, excerpt)).join('')}</ul>`;
+        } else {
+          html = `<ul class="space-y-6">${items.map(({ record, excerpt }) => renderColumnCard(record, excerpt)).join('')}</ul>`;
+        }
+        resultsRegion.innerHTML = html;
+      }
+
+      async function ensurePagefindLoaded() {
+        if (pagefindModule) {
+          return pagefindModule;
+        }
+
+        pagefindModule = await import('/pagefind/pagefind.js');
+        return pagefindModule;
+      }
+
+      async function searchAndRender() {
+        const query = queryInput.value.trim();
+        const selectedTypes = selectedValues(typeCheckboxes);
+        const requireStandup = Boolean(standupCheckbox?.checked);
+        const requireToolkitStandup = Boolean(toolkitCheckbox?.checked);
+
+        if (!query) {
+          const filtered = allRecords
+            .filter((record) =>
+              matchesToggles(
+                record,
+                selectedTypes,
+                requireStandup,
+                requireToolkitStandup
+              )
+            )
+            .map((record) => ({ record, excerpt: '' }));
+
+          renderResults(filtered, '', allRecords.length);
+          return;
+        }
+
+        try {
+          status.textContent = 'Searching…';
+          const pagefind = await ensurePagefindLoaded();
+          const search = await pagefind.search(query);
+          const dataResults = await Promise.all(
+            search.results.map(async (result) => {
+              const data = await result.data();
+              return { url: normalizeUrl(data.url), excerpt: data.excerpt || '', score: result.score || 0 };
+            })
+          );
+
+          const scopedResults = dataResults
+            .map((item) => {
+              const record = byUrl.get(item.url);
+              if (!record) {
+                return null;
+              }
+
+              return {
+                record,
+                excerpt: item.excerpt,
+                score: item.score,
+              };
+            })
+            .filter(Boolean)
+            .filter((item) =>
+              matchesToggles(
+                item.record,
+                selectedTypes,
+                requireStandup,
+                requireToolkitStandup
+              )
+            )
+            .sort((a, b) => b.score - a.score);
+
+          renderResults(scopedResults, query, allRecords.length);
+        } catch (error) {
+          console.error(error);
+          resultsRegion.innerHTML = '';
+          status.textContent = 'Search index is not ready yet. Try again in a moment.';
+        }
+      }
+
+      function queueSearch() {
+        if (debounceTimer) {
+          window.clearTimeout(debounceTimer);
+        }
+
+        debounceTimer = window.setTimeout(() => {
+          searchAndRender();
+        }, 120);
+      }
+
+      queryInput.addEventListener('input', queueSearch);
+      for (const checkbox of typeCheckboxes) {
+        checkbox.addEventListener('change', (event) => {
+          const changedCheckbox = event.currentTarget;
+          enforceContentTypeSelection(changedCheckbox);
+          searchAndRender();
+        });
+      }
+      standupCheckbox?.addEventListener('change', (event) => {
+        const changedCheckbox = event.currentTarget;
+        enforceStandupSelection(changedCheckbox);
+        searchAndRender();
+      });
+      toolkitCheckbox?.addEventListener('change', (event) => {
+        const changedCheckbox = event.currentTarget;
+        enforceStandupSelection(changedCheckbox);
+        searchAndRender();
+      });
+
+      for (const btn of viewButtons) {
+        btn.addEventListener('click', () => {
+          viewMode = btn.getAttribute('data-search-view');
+          for (const b of viewButtons) {
+            if (b === btn) {
+              b.setAttribute('data-active', '');
+            } else {
+              b.removeAttribute('data-active');
+            }
+          }
+          searchAndRender();
+        });
+      }
+
+      searchAndRender();
+    })();
+  </script>
+</BaseLayout>

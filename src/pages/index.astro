@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LivestreamCountdown from '../components/LivestreamCountdown.astro';
+import PrimaryLinkButton from '../components/PrimaryLinkButton.astro';
+import NewsletterSignupForm from '../components/NewsletterSignupForm.astro';
+import { getCollection } from 'astro:content';
+import { getAuthorDisplayName, getAuthorImageSrc } from '../data/authors';
+
+const latestEntries = (await getCollection('community-feed'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5);
+
+const DISCORD_URL = '/discord/';
+const maxTitleLength = 50;
+
+function truncateTitle(title: string): string {
+  if (title.length <= maxTitleLength) return title;
+  return title.slice(0, maxTitleLength).trim() + '…';
+}
+---
+<BaseLayout title="Welcome to the MAUIverse" description="Welcome to the MAUIverse" allowPageScroll={true}>
+
+  <div class="min-h-screen">
+    <div class="container mx-auto max-w-6xl px-4 py-16 md:py-24 space-y-16 md:space-y-24">
+      <!-- Hero -->
+      <section class="text-center">
+        <h1 class="text-brand-dark text-4xl md:text-5xl font-header font-bold mb-4 uppercase">
+          MAUIverse
+        </h1>
+        <p class="text-muted text-lg md:text-xl max-w-2xl mx-auto">
+          The community home for .NET MAUI developers. Whether you're building cross&#8209;platform apps,
+          sharing packages, or celebrating wins—you're welcome.
+        </p>
+      </section>
+
+      <!-- Community Feed -->
+      <section class="grid grid-cols-1 gap-6 lg:gap-8 items-stretch">
+        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-[1.35fr_1fr] gap-6 lg:gap-8 items-stretch">
+            <div class="flex flex-col min-w-0">
+              <h2 class="text-brand-dark text-2xl font-header font-bold mb-7">
+                Latest from the Community Contributors
+              </h2>
+              <ul class="space-y-3 flex-1 min-w-0" aria-label="Latest community feed entries">
+                {latestEntries.map((entry) => {
+                  const detailUrl = `/community-feed/${entry.id}/`;
+                  return (
+                    <li class="flex items-center gap-2 min-w-0 flex-nowrap">
+                      {entry.data.author ? (
+                        <a
+                          href={detailUrl}
+                          class="flex items-center gap-1.5 flex-shrink-0"
+                          aria-hidden="true"
+                        >
+                          <img
+                            src={getAuthorImageSrc(entry.data.author, 64)}
+                            alt=""
+                            width="24"
+                            height="24"
+                            class="h-6 w-6 rounded-full flex-shrink-0"
+                            loading="lazy"
+                          />
+                          <span class="text-sm font-medium text-brand-dark whitespace-nowrap">
+                            {getAuthorDisplayName(entry.data.author)}
+                          </span>
+                        </a>
+                      ) : null}
+                      <a
+                        href={detailUrl}
+                        class="text-muted text-sm truncate min-w-0 flex-1 hover:text-brand transition-colors"
+                      >
+                        {truncateTitle(entry.data.title)}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            <div class="min-w-0 flex flex-col text-left h-full lg:pt-12">
+              <p class="text-muted mb-4 min-w-0">
+                A collation of moments, packages, projects, podcasts, and celebrations from the MAUIverse community.
+              </p>
+              <p class="min-w-0 text-muted">
+                Read the feed here, or subscribe by RSS.
+              </p>
+              <PrimaryLinkButton href="/community-feed/" className="mt-auto">
+                View full feed
+              </PrimaryLinkButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community Standup -->
+      <section class="grid grid-cols-1 lg:grid-cols-[1fr_1.8fr] gap-6 lg:gap-8 items-stretch">
+        <LivestreamCountdown variant="compact" />
+        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm flex flex-col justify-center">
+          <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Community Standup</h2>
+          <p class="text-muted mb-4">
+            The .NET MAUI monthly community standup — project updates, Q&amp;A, and community
+            contributions, live on YouTube and Twitch.
+          </p>
+          <p class="text-muted-light text-sm mb-4">
+            Every 1st Thursday &middot; 10:00 AM PT / 1:00 PM ET / 6:00 PM UTC
+          </p>
+          <PrimaryLinkButton href="/community-standup/">
+            View all episodes
+          </PrimaryLinkButton>
+        </div>
+      </section>
+
+      <!-- Community Toolkit Standup -->
+      <section class="grid grid-cols-1 lg:grid-cols-[1.8fr_1fr] gap-6 lg:gap-8 items-stretch">
+        
+        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm flex flex-col justify-center">
+          <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Community Toolkit Standup</h2>
+          <p class="text-muted mb-4">
+            The .NET MAUI Community Toolkit monthly standup — toolkit updates, Q&amp;A, and roadmap
+            discussions, live on YouTube and Twitch.
+          </p>
+          <p class="text-muted-light text-sm mb-4">
+            Every 1st Thursday &middot; 12:00 PM PT / 3:00 PM ET / 8:00 PM UTC
+          </p>
+          <PrimaryLinkButton href="/toolkit-standup/">
+            View all episodes
+          </PrimaryLinkButton>
+        </div>
+        <LivestreamCountdown
+          variant="compact"
+          collection="toolkit-standup"
+          channelUrl="https://www.youtube.com/@NETFoundation"
+          channelName=".NET Foundation YouTube Channel"
+          defaultTitle=".NET MAUI Community Toolkit Standup"
+        />
+      </section>
+
+      <!-- Discord -->
+      <section class="grid grid-cols-1 gap-6 lg:gap-8 items-stretch">
+        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-center">
+            <div class="lg:col-span-2 order-2 lg:order-1 text-left">
+              <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Join us on Discord</h2>
+              <p class="text-muted mb-4">
+                Chat with other MAUI developers, get help, share what you're building, and stay in the
+                loop with the community.
+              </p>
+              <p class="text-muted mb-4">
+                Come say hi 👋
+              </p>
+              <PrimaryLinkButton href={DISCORD_URL} target="_blank" rel="noopener noreferrer">
+                Open Discord
+              </PrimaryLinkButton>
+            </div>
+
+            <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+              <img
+                src="/img/discord.jpg"
+                alt="Discord"
+                class="w-full max-w-sm h-auto rounded"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm flex flex-col justify-center">
+          <p class="text-brand font-bold mb-2 text-lg font-header uppercase">
+            Stay in the loop
+          </p>
+          <h2 class="text-brand-dark text-2xl font-header font-bold mb-2">Newsletter</h2>
+          <p class="text-muted">
+            Stay in touch with MAUIverse via curated highlights from the community.
+            <span class="italic block mt-1">No spam. Ever.</span>
+          </p>
+          <p class="text-muted-light text-sm mt-3">
+            A monthly collation of the community feed delivered to your inbox.
+          </p>
+        </div>
+        <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+          <NewsletterSignupForm variant="home" />
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdn.sendfox.com/js/form.js" charset="utf-8" defer></script>
+</BaseLayout>

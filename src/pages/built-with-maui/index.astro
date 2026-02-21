@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEntry, render } from 'astro:content';
+
+const entry = await getEntry('built-with-maui', 'apps');
+
+if (!entry) {
+  throw new Error(
+    'Missing built-with-maui content. Run `npm run fetch:built-with-maui` before building.'
+  );
+}
+
+const { Content } = await render(entry);
+const sourceRepoUrl = 'https://github.com/jfversluis/built-with-maui';
+---
+
+<BaseLayout
+  title="Built with MAUI | MAUIverse"
+  description="A list of real-world apps built with .NET MAUI."
+  allowPageScroll={true}
+>
+  <section class="min-h-screen py-20">
+    <div class="container mx-auto max-w-6xl px-4">
+      <div class="mb-8 rounded-lg border border-edge bg-surface p-6">
+        <p class="text-sm text-muted">
+          Built an app with .NET MAUI?
+          <a
+            href={sourceRepoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-semibold text-brand hover:underline"
+          >
+            Add your app here &rarr;
+          </a>
+        </p>
+      </div>
+
+      <article class="prose dark:prose-invert max-w-none prose-a:text-brand hover:prose-a:underline">
+        <Content />
+      </article>
+    </div>
+  </section>
+</BaseLayout>

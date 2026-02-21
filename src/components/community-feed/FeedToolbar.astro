@@ -1,0 +1,91 @@
+---
+interface Props {
+  contentTypes: string[];
+  position?: 'top' | 'bottom';
+  totalEntries?: number;
+  currentPage?: number;
+  totalPages?: number;
+}
+
+const {
+  contentTypes,
+  position = 'top',
+  totalEntries = 0,
+  currentPage = 1,
+  totalPages = 1,
+} = Astro.props;
+
+function toLabel(value: string): string {
+  if (value === 'unknown') return 'Unknown';
+  return value.replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+const initialStatus = `${totalEntries} entries · Page ${currentPage} of ${totalPages}`;
+---
+
+<div
+  class="flex flex-wrap items-center gap-3 rounded-lg border border-edge bg-surface px-4 py-3 shadow-sm mb-8"
+  data-feed-toolbar
+  data-toolbar-position={position}
+>
+  {/* Left group: content type + status */}
+  <select
+    class="h-9 rounded-md border border-edge bg-surface-alt px-3 pr-8 text-sm text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand/40 cursor-pointer"
+    data-type-filter
+    aria-label="Filter by content type"
+  >
+    <option value="">All types</option>
+    {contentTypes.map((ct) => (
+      <option value={ct}>{toLabel(ct)}</option>
+    ))}
+  </select>
+
+  <span class="text-xs text-muted-light" data-feed-status>{initialStatus}</span>
+
+  {/* Spacer to push right group */}
+  <div class="ml-auto flex flex-wrap items-center gap-3">
+    {/* Page size toggle */}
+    <div class="flex items-center gap-1 rounded-md border border-edge bg-surface-alt p-0.5" role="radiogroup" aria-label="Posts per page">
+      <button
+        type="button"
+        class="inline-flex h-8 min-w-[2.5rem] items-center justify-center rounded px-2 text-sm font-medium transition data-[active]:bg-brand-extra data-[active]:text-white text-muted hover:text-brand"
+        data-page-size="small"
+        data-active
+        aria-label="Show fewer posts per page"
+      >
+        <span data-size-label="small">12</span>
+      </button>
+      <button
+        type="button"
+        class="inline-flex h-8 min-w-[2.5rem] items-center justify-center rounded px-2 text-sm font-medium transition data-[active]:bg-brand-extra data-[active]:text-white text-muted hover:text-brand"
+        data-page-size="large"
+        aria-label="Show more posts per page"
+      >
+        <span data-size-label="large">24</span>
+      </button>
+    </div>
+
+    {/* View toggle: column / grid */}
+    <div class="flex items-center gap-1 rounded-md border border-edge bg-surface-alt p-0.5" role="radiogroup" aria-label="View mode">
+      <button
+        type="button"
+        class="inline-flex h-8 w-8 items-center justify-center rounded text-sm transition data-[active]:bg-brand-extra data-[active]:text-white text-muted hover:text-brand"
+        data-view-toggle="column"
+        data-active
+        aria-label="Column view"
+        title="Column view"
+      >
+        <i class="fa-solid fa-list" aria-hidden="true"></i>
+      </button>
+      <button
+        type="button"
+        class="inline-flex h-8 w-8 items-center justify-center rounded text-sm transition data-[active]:bg-brand-extra data-[active]:text-white text-muted hover:text-brand"
+        data-view-toggle="grid"
+        aria-label="Grid view"
+        title="Grid view"
+      >
+        <i class="fa-solid fa-table-cells" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>

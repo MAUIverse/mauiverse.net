@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import FeedEntries from '../../../components/community-feed/FeedEntries.astro';
+import Pagination from '../../../components/community-feed/Pagination.astro';
+import CommunityFeedIntroPanel from '../../../components/community-feed/CommunityFeedIntroPanel.astro';
+import FeedToolbar from '../../../components/community-feed/FeedToolbar.astro';
+import { paginateAndBuildStaticPaths } from '../../../utils/pagination';
+
+export async function getStaticPaths() {
+  function normalizeContentType(value?: string): string {
+    if (!value) return 'unknown';
+    const normalized = value.trim().replace(/^'+|'+$/g, '').toLowerCase();
+    return normalized || 'unknown';
+  }
+
+  function toLabel(value: string): string {
+    if (value === 'unknown') return 'Unknown';
+    return value.replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  }
+
+  const pageSize = 15;
+  const entries = (await getCollection('community-feed')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );
+
+  const contentTypes = Array.from(
+    new Set(entries.map((e) => normalizeContentType(e.data.contentType)))
+  ).sort((a, b) => toLabel(a).localeCompare(toLabel(b)));
+
+  return paginateAndBuildStaticPaths(entries, pageSize, (page) => ({
+    params: { page: String(page.currentPage) },
+    props: { contentTypes, totalEntries: entries.length },
+  }));
+}
+
+const { entries, currentPage, totalPages, contentTypes, totalEntries } = Astro.props;
+---
+
+<BaseLayout
+  title={`Community Feed (Page ${currentPage}) | MAUIverse`}
+  description="Notable moments, packages, projects, and celebrations from the MAUIverse community."
+  allowPageScroll={true}
+>
+  <section class="py-24 px-0 min-h-screen">
+    <div class="container max-w-4xl mx-auto px-4">
+      <CommunityFeedIntroPanel />
+
+      <FeedToolbar contentTypes={contentTypes} position="top" totalEntries={totalEntries} currentPage={currentPage} totalPages={totalPages} />
+
+      <div data-feed-region>
+        <FeedEntries entries={entries} />
+        <Pagination currentPage={currentPage} totalPages={totalPages} />
+      </div>
+
+      <FeedToolbar contentTypes={contentTypes} position="bottom" totalEntries={totalEntries} currentPage={currentPage} totalPages={totalPages} />
+    </div>
+  </section>
+
+  <script src="../../../scripts/feed-controller.js"></script>
+</BaseLayout>

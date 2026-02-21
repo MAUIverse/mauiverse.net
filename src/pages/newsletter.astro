@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSignupForm from '../components/NewsletterSignupForm.astro';
+---
+
+<BaseLayout
+  title="Newsletter | MAUIverse"
+  description="Subscribe to the MAUIverse newsletter for updates."
+  allowPageScroll={true}
+>
+  <section id="newsletter" class="py-24 px-0 min-h-screen">
+    <div class="container max-w-4xl mx-auto px-4 text-center">
+      <p class="text-brand font-bold mb-4 text-xl font-header uppercase">
+        Stay in the loop
+      </p>
+      <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
+        Newsletter
+      </h1>
+      <p class="text-muted text-base text-md mb-10 max-w-2xl mx-auto">
+        Stay in touch with MAUIverse, and get notified first about community updates and more.
+        <br />
+        <span class="text-muted text-base text-md mb-10 italic">No spam. Ever.</span>
+      </p>
+
+      <NewsletterSignupForm variant="newsletter" />
+    </div>
+  </section>
+  <script src="https://cdn.sendfox.com/js/form.js" charset="utf-8" defer></script>
+</BaseLayout>

@@ -1,0 +1,118 @@
+---
+// Site footer with navigation links and dark/light mode toggle.
+---
+<footer class="border-t border-edge bg-surface">
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Community</h3>
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a href="/community-feed/" class="text-sm text-muted transition-colors hover:text-brand">Contributor Feed</a>
+          </li>
+          <li>
+            <a href="/community-contributors/" class="text-sm text-muted transition-colors hover:text-brand">Community Contributors</a>
+          </li>
+          <li>
+            <a href="/built-with-maui/" class="text-sm text-muted transition-colors hover:text-brand">Built with MAUI</a>
+          </li>
+          <li>
+            <a href="/newsletter" class="text-sm text-muted transition-colors hover:text-brand">Newsletter</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Shows</h3>
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a href="/community-standup/" class="text-sm text-muted transition-colors hover:text-brand">Community Standup</a>
+          </li>
+          <li>
+            <a href="/toolkit-standup/" class="text-sm text-muted transition-colors hover:text-brand">Toolkit Standup</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Repository Contributors</h3>
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a href="/repo-contributors/maui/" class="text-sm text-muted transition-colors hover:text-brand">.NET MAUI</a>
+          </li>
+          <li>
+            <a href="/repo-contributors/community-toolkit/" class="text-sm text-muted transition-colors hover:text-brand">Community Toolkit</a>
+          </li>
+          <li>
+            <a href="/repo-contributors/syncfusion-toolkit/" class="text-sm text-muted transition-colors hover:text-brand">Syncfusion Toolkit</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Connect</h3>
+        <ul class="flex flex-col gap-2">
+          <li>
+            <a href="/discord/" target="_blank" rel="noopener noreferrer" class="text-sm text-muted transition-colors hover:text-brand">Discord</a>
+          </li>
+          <li>
+            <a href="https://bsky.app/profile/mauiverse.net" target="_blank" rel="noopener noreferrer" class="text-sm text-muted transition-colors hover:text-brand">Bluesky</a>
+          </li>
+          <li>
+            <a href="https://github.com/MAUIverse/mauiverse.net/" target="_blank" rel="noopener noreferrer" class="text-sm text-muted transition-colors hover:text-brand">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-10 flex items-center justify-between border-t border-edge pt-6">
+      <div>
+        <p class="text-sm text-muted-light">
+          &copy; {new Date().getFullYear()} MAUIverse
+        </p>
+      </div>
+
+      <button
+        id="theme-toggle"
+        type="button"
+        class="inline-flex items-center gap-2 rounded-full border border-edge bg-surface-alt px-3 py-1.5 text-sm font-medium text-muted transition-colors hover:text-brand-dark"
+        aria-label="Toggle dark mode"
+      >
+        <i id="theme-icon-sun" class="fa-solid fa-sun hidden h-4 w-4" aria-hidden="true"></i>
+        <i id="theme-icon-moon" class="fa-solid fa-moon hidden h-4 w-4" aria-hidden="true"></i>
+        <span id="theme-label"></span>
+      </button>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (() => {
+    const toggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('theme-icon-sun');
+    const moonIcon = document.getElementById('theme-icon-moon');
+    const label = document.getElementById('theme-label');
+    if (!toggle || !sunIcon || !moonIcon || !label) return;
+
+    const toggleEl = toggle;
+    const sunIconEl = sunIcon;
+    const moonIconEl = moonIcon;
+    const labelEl = label;
+
+    function updateUI() {
+      const isDark = document.documentElement.classList.contains('dark');
+      sunIconEl.classList.toggle('hidden', !isDark);
+      moonIconEl.classList.toggle('hidden', isDark);
+      labelEl.textContent = isDark ? 'Light mode' : 'Dark mode';
+      toggleEl.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    toggleEl.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateUI();
+    });
+
+    updateUI();
+  })();
+</script>

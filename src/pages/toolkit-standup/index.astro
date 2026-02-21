@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LivestreamCountdown from '../../components/LivestreamCountdown.astro';
+import FeedEntries from '../../components/community-feed/FeedEntries.astro';
+import Pagination from '../../components/community-feed/Pagination.astro';
+import StandupAboutCard from '../../components/standup/StandupAboutCard.astro';
+import { getCollection } from 'astro:content';
+import { paginateEntries } from '../../utils/pagination';
+
+const standupEntries = (await getCollection('community-feed'))
+  .filter((e) => e.data.isToolkitStandup === true)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const pageSize = 8;
+const { pages, totalPages } = paginateEntries(standupEntries, pageSize);
+const pageEntries = pages[0]?.entries ?? [];
+---
+
+<BaseLayout
+  title="Community Toolkit Standup"
+  description=".NET MAUI Community Toolkit Standup — live on the .NET Foundation YouTube Channel every 1st Thursday."
+>
+  <div class="min-h-screen">
+    <div class="container mx-auto max-w-4xl px-4 py-16 md:py-24 space-y-16 md:space-y-20">
+      <!-- Countdown Hero -->
+      <section>
+        <p class="text-brand font-bold mb-4 text-sm font-header uppercase tracking-wide text-center">
+          Community Toolkit Standup
+        </p>
+        <LivestreamCountdown
+          variant="full"
+          showYouTubeEmbed={true}
+          collection="toolkit-standup"
+          channelUrl="https://www.youtube.com/@NETFoundation"
+          channelName=".NET Foundation YouTube Channel"
+          defaultTitle=".NET MAUI Community Toolkit Standup"
+        />
+      </section>
+
+      <!-- About -->
+      <StandupAboutCard
+        items={[
+          { label: 'Frequency', value: '1st Thursday of every month' },
+          { label: 'Time', value: '12:00 PM PT / 3:00 PM ET / 8:00 PM UTC' },
+          { label: 'YouTube', value: '.NET Foundation YouTube Channel', href: 'https://www.youtube.com/@dotnetfdn' },
+          { label: 'Focus', value: 'Community Toolkit updates, Q&A, and roadmap' },
+          { label: 'Content', value: 'Toolkit updates, Q&A, community discussions', spanTwoCols: true },
+        ]}
+      >
+        The <strong class="text-brand-dark">.NET MAUI Community Toolkit monthly standup</strong> is
+        a 1-hour session live-streamed on the .NET Foundation YouTube channel. Each standup covers
+        toolkit updates, community discussions, and roadmap planning.
+      </StandupAboutCard>
+
+      <!-- Past Standups -->
+      {pageEntries.length > 0 && (
+        <section>
+          <h2 class="text-brand-dark font-header font-bold text-xl mb-6">Past Standups</h2>
+          <FeedEntries entries={pageEntries} showAuthor={false} actionLabel="Watch" />
+          <Pagination currentPage={1} totalPages={totalPages} basePath="/toolkit-standup" />
+        </section>
+      )}
+    </div>
+  </div>
+</BaseLayout>

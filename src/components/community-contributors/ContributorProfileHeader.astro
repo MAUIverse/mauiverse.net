@@ -1,0 +1,209 @@
+---
+import { getCollection } from 'astro:content';
+import {
+  getAuthorImageSrc,
+  getAuthorGitHubUrl,
+  isDocsMauiContributor,
+  isMauiContributor,
+  isMauiToolkitContributor,
+  isNugetAuthor,
+  isSyncfusionMauiToolkitContributor,
+  isWebsiteContributor,
+  isSameAuthorKey,
+} from '../../data/authors';
+
+interface Props {
+  githubUsername: string;
+  displayName: string;
+}
+
+const { githubUsername, displayName } = Astro.props;
+const githubUrl = getAuthorGitHubUrl(githubUsername);
+const contributorRssUrl = `/community-contributors/${encodeURIComponent(githubUsername)}/rss.xml`;
+const isMauiContributorProfile = isMauiContributor(githubUsername);
+const isDocsMauiContributorProfile = isDocsMauiContributor(githubUsername);
+const isMauiToolkitContributorProfile = isMauiToolkitContributor(githubUsername);
+const isNugetAuthorProfile = isNugetAuthor(githubUsername);
+const isSyncfusionMauiToolkitContributorProfile = isSyncfusionMauiToolkitContributor(githubUsername);
+const isWebsiteContributorProfile = isWebsiteContributor(githubUsername);
+const mauiRepoUrl = 'https://github.com/dotnet/maui';
+const docsMauiRepoUrl = 'https://github.com/dotnet/docs-maui';
+const mauiToolkitRepoUrl = 'https://github.com/CommunityToolkit/Maui';
+const websiteRepoUrl = 'https://github.com/MAUIverse/mauiverse.net';
+const nugetProfileUrl = `https://www.nuget.org/profiles/${githubUsername}`;
+const syncfusionMauiToolkitRepoUrl = 'https://github.com/syncfusion/maui-toolkit';
+const contributionBadgeClass =
+  'mb-2 inline-flex items-center rounded-full border border-edge bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-dark transition-colors hover:bg-edge hover:text-brand-extraDark';
+
+const contributorProfile = (await getCollection('community-contributors')).find((entry) =>
+  isSameAuthorKey(entry.data.gitHubUsername, githubUsername)
+);
+
+const hasLink = (value?: string) => Boolean(value && value.trim().length > 0);
+
+const profileLinks = [
+  githubUrl ? { label: 'GitHub', href: githubUrl, icon: 'github' } : null,
+  hasLink(contributorProfile?.data.bskyUrl)
+    ? { label: 'Bluesky', href: contributorProfile!.data.bskyUrl!, icon: 'bsky' }
+    : null,
+  hasLink(contributorProfile?.data.twitterUrl)
+    ? { label: 'Twitter', href: contributorProfile!.data.twitterUrl!, icon: 'twitter' }
+    : null,
+  hasLink(contributorProfile?.data.instagramUrl)
+    ? { label: 'Instagram', href: contributorProfile!.data.instagramUrl!, icon: 'instagram' }
+    : null,
+  hasLink(contributorProfile?.data.linkedInUrl)
+    ? { label: 'LinkedIn', href: contributorProfile!.data.linkedInUrl!, icon: 'linkedin' }
+    : null,
+  hasLink(contributorProfile?.data.youTubeUrl)
+    ? { label: 'YouTube', href: contributorProfile!.data.youTubeUrl!, icon: 'youtube' }
+    : null,
+  hasLink(contributorProfile?.data.tikTokUrl)
+    ? { label: 'TikTok', href: contributorProfile!.data.tikTokUrl!, icon: 'tiktok' }
+    : null,
+  hasLink(contributorProfile?.data.blogUrl)
+    ? { label: 'Blog', href: contributorProfile!.data.blogUrl!, icon: 'blog' }
+    : null,
+  hasLink(contributorProfile?.data.podcastWebsiteUrl)
+    ? {
+        label: 'Podcast',
+        href: contributorProfile!.data.podcastWebsiteUrl!,
+        icon: 'podcast',
+      }
+    : null,
+  hasLink(contributorProfile?.data.twitchProfileUrl)
+    ? { label: 'Twitch', href: contributorProfile!.data.twitchProfileUrl!, icon: 'twitch' }
+    : null,
+].filter((link): link is { label: string; href: string; icon: string } => Boolean(link));
+---
+
+<header class="mb-10 rounded-lg border border-edge bg-surface p-8 shadow-sm">
+    <div class="flex flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
+      <img
+        src={getAuthorImageSrc(githubUsername, 320)}
+        alt={`${displayName} profile picture`}
+        width="128"
+        height="128"
+        class="h-32 w-32 rounded-full"
+        loading="lazy"
+      />
+      <div class="w-full flex-1">
+        <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-muted-light">
+          Contributor Profile
+        </p>
+        {isMauiContributorProfile && (
+          <a
+            href={mauiRepoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={contributionBadgeClass}
+          >
+            MAUI Contributor
+          </a>
+        )}
+        {isDocsMauiContributorProfile && (
+          <a
+            href={docsMauiRepoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={contributionBadgeClass}
+          >
+            Docs Contributor
+          </a>
+        )}
+        {isMauiToolkitContributorProfile && (
+          <a
+            href={mauiToolkitRepoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={contributionBadgeClass}
+          >
+            Community Toolkit Contributor
+          </a>
+        )}
+        {isWebsiteContributorProfile && (
+          <a
+            href={websiteRepoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={contributionBadgeClass}
+          >
+            Website Contributor
+          </a>
+        )}
+        {isNugetAuthorProfile && (
+          <a
+            href={nugetProfileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={contributionBadgeClass}
+          >
+            nuget author
+          </a>
+        )}
+        {isSyncfusionMauiToolkitContributorProfile && (
+          <a
+            href={syncfusionMauiToolkitRepoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={contributionBadgeClass}
+          >
+            Syncfusion Toolkit Contributor
+          </a>
+        )}
+        <h1 class="mb-3 text-3xl font-header font-bold text-brand-dark">
+          {displayName}
+        </h1>
+        {githubUrl ? (
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-base font-medium text-brand hover:underline"
+          >
+            {displayName} on GitHub
+          </a>
+        ) : (
+          <span class="text-base text-muted-light">{displayName}</span>
+        )}
+
+        <div class="mt-4 flex w-full flex-wrap items-center gap-3" aria-label="Profile links">
+          {profileLinks.length > 0 && (
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
+              {profileLinks.map((link) => (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  title={link.label}
+                  class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                >
+                  {link.icon === 'github' && <i class="fa-brands fa-github h-5 w-5" aria-hidden="true"></i>}
+                  {link.icon === 'bsky' && <i class="fa-brands fa-bluesky h-5 w-5" aria-hidden="true"></i>}
+                  {link.icon === 'twitter' && <i class="fa-brands fa-x-twitter h-5 w-5" aria-hidden="true"></i>}
+                  {link.icon === 'instagram' && <i class="fa-brands fa-instagram h-5 w-5" aria-hidden="true"></i>}
+                  {link.icon === 'linkedin' && <i class="fa-brands fa-linkedin-in h-5 w-5" aria-hidden="true"></i>}
+                  {link.icon === 'youtube' && <i class="fa-brands fa-youtube h-5 w-5" aria-hidden="true"></i>}
+                  {link.icon === 'tiktok' && <i class="fa-brands fa-tiktok h-5 w-5" aria-hidden="true"></i>}
+                  {link.icon === 'blog' && <i class="fa-solid fa-blog h-5 w-5" aria-hidden="true"></i>}
+                  {link.icon === 'podcast' && <i class="fa-solid fa-podcast h-5 w-5" aria-hidden="true"></i>}
+                  {link.icon === 'twitch' && <i class="fa-brands fa-twitch h-5 w-5" aria-hidden="true"></i>}
+                </a>
+              ))}
+            </div>
+          )}
+
+          <a
+            href={contributorRssUrl}
+            class="ml-auto inline-flex items-center justify-center gap-2 rounded-full border border-orange-500 bg-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:border-orange-600 hover:bg-orange-600"
+            aria-label={`Subscribe to ${displayName}'s feed via RSS`}
+            title="Subscribe via RSS"
+          >
+            <i class="fa-solid fa-rss" aria-hidden="true"></i>
+            <span>Subscribe via RSS</span>
+          </a>
+        </div>
+      </div>
+    </div>
+</header>
