@@ -4,7 +4,7 @@ link: https://youtu.be/CfodwPUSfSg?si=qmKwSkAnVhynGnuX
 description: Watch how Red Point combines Unity and .NET MAUI to deliver a 3D climbing experience with native app capabilities.
 date: 2024-07-10
 author: matthewrdev
-contentType: youtube
+contentType: video
 ---
 
 Matthew Robbins and Matt Goldman walk through the architecture behind Red Point, a hybrid app that mixes Unity 3D with .NET MAUI.

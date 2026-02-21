@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=nGvUN8aDpEg
 description: Tony Edwards presents a creative .NET MAUI project that combines MIDI controller input, audience-driven gameplay, and bird-song-inspired data. The talk demonstrates how MAUI can orchestrate interactive experiences by blending hardware events, data signals, and responsive UI behavior.
 date: 2025-06-07
 author: tonyedwardspz
-contentType: youtube
+contentType: video
 ---
 
 This is a fun and technical example of stretching .NET MAUI into interactive event experiences.

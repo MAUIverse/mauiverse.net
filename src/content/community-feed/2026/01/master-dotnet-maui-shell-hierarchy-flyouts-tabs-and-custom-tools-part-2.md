@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=JruAgOVa0GI
 description: This video shows how to organize Shell navigation with FlyoutItems and Tabs so utility-heavy .NET MAUI apps stay clean and discoverable. Hector Perez Rojas demonstrates grouping tools into meaningful sections and testing the hierarchy as features grow.
 date: 2026-01-20
 author: hprez21
-contentType: youtube
+contentType: video
 ---
 
 As your app adds more tools and screens, navigation can become noisy fast.

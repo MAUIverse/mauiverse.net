@@ -3,8 +3,8 @@ title: "Building Your Next App with .NET MAUI"
 link: https://www.youtube.com/watch?v=6qrQax2Jqnw
 description: David Ortinau presents how MAUI enables modern cross-platform app development across mobile and desktop.
 date: 2021-05-14
-author: hot33331
-contentType: youtube
+author: davidortinau
+contentType: video
 ---
 
 In this talk, David Ortinau introduces MAUI's direction, productivity improvements, and unified development model.

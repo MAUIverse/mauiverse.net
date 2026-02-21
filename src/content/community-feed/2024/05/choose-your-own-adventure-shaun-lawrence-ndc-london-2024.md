@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=c5vRqRkLP3E
 description: Shaun Lawrence shares a practical, scenario-driven session on making better engineering choices in modern .NET development, including cross-platform trade-offs relevant to MAUI teams. The talk focuses on architecture decisions, workflow direction, and how to pick the next technical step with confidence as projects evolve.
 date: 2024-05-06
 author: bijington
-contentType: youtube
+contentType: video
 ---
 
 This NDC London session takes a decision-driven approach to software development, where each technical choice leads to different outcomes.

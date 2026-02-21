@@ -5,7 +5,7 @@ description: "Welcome to the first monthly livestream of. the .NET MAUI Communit
 date: 2021-08-05
 author: dotnet-foundation
 isToolkitStandup: true
-contentType: youtube
+contentType: video
 ---
 
 Welcome to the first monthly livestream of. the .NET MAUI Community Toolkit Standup! We will be sharing our work on the Xamarin Community Toolkit + MAUI Community Toolkit and our plans for the next few months!

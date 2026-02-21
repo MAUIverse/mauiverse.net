@@ -5,7 +5,7 @@ description: "Join us for our monthly standup for the .NET MAUI Community Toolki
 date: 2022-02-03
 author: dotnet-foundation
 isToolkitStandup: true
-contentType: youtube
+contentType: video
 ---
 
 Join us for our monthly standup for the .NET MAUI Community Toolkit!

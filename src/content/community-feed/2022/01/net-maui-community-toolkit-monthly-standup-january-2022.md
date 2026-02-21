@@ -5,7 +5,7 @@ description: "The .NET MAUI Community Toolkit is a community-created library tha
 date: 2022-01-06
 author: dotnet-foundation
 isToolkitStandup: true
-contentType: youtube
+contentType: video
 ---
 
 The .NET MAUI Community Toolkit is a community-created library that contains .NET MAUI Extensions, Advanced UI/UX Controls, Effects, and Behaviors to help make your life as a .NET MAUI developer easier.

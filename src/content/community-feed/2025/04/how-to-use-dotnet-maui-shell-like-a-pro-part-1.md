@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=bCe5JGQq9l0
 description: This first installment introduces a practical foundation for building .NET MAUI apps with Shell, from page setup through navigation basics. Hector Perez Rojas also highlights customization essentials so your app structure is clean from day one.
 date: 2025-04-28
 author: hprez21
-contentType: youtube
+contentType: video
 ---
 
 If you want a solid starting point for Shell-based apps, this video lays out the core pieces in a beginner-friendly but production-aware way.

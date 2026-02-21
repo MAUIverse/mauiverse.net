@@ -5,7 +5,7 @@ description: "Join us for our monthly team standup as we discuss the current hap
 date: 2022-12-01
 author: dotnet-foundation
 isToolkitStandup: true
-contentType: youtube
+contentType: video
 ---
 
 Join us for our monthly team standup as we discuss the current happenings in the .NET MAUI Community Toolkit! <https://github.com/CommunityToolkit/Maui>

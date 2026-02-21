@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=GPYq_riny4g
 description: Shaun Lawrence shows how .NET MAUI can be used to build game experiences and discusses practical lessons from his sliding puzzle game series. The video highlights architecture and implementation techniques that help you ship gameplay features while staying productive across platforms.
 date: 2023-09-02
 author: bijington
-contentType: youtube
+contentType: video
 ---
 
 This session answers a common question directly: yes, you can build games with .NET MAUI.

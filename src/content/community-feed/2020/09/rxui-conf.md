@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=FjqZbkZYOzw&t=11329s
 description: Shane Neuville joins RxUI Conf with sessions spanning ReactiveUI patterns, ecosystem integrations, and community Q&A.
 date: 2020-09-19
 author: PureWeen
-contentType: youtube
+contentType: video
 ---
 
 This conference recording includes talks and demos around ReactiveUI and related cross-platform app development topics.

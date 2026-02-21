@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=PGdihJt1pzA
 description: Watch David Platt discuss practical UX perspective and patterns in the context of .NET MAUI UI July.
 date: 2024-07-05
 author: plattski
-contentType: youtube
+contentType: video
 ---
 
 David Platt shares UX-focused ideas for building better .NET MAUI experiences in a short MAUI UI July session.

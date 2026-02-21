@@ -5,7 +5,7 @@ description: "Watch \".NET MAUI Community Toolkit Monthly Standup - September 20
 date: 2021-09-02
 author: dotnet-foundation
 isToolkitStandup: true
-contentType: youtube
+contentType: video
 ---
 
 Watch on YouTube: <https://www.youtube.com/watch?v=b7wVk4Udi_U>

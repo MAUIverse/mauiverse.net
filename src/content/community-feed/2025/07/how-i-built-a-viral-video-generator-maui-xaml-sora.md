@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=UNdUQ6aBBJE
 description: Hector Perez Rojas demonstrates a .NET MAUI app that turns prompts into short videos using Sora with an Azure OpenAI-backed workflow. You’ll see how XAML + MVVM, prompt enhancement, secure settings, and media playback come together in one production-style flow.
 date: 2025-07-29
 author: hprez21
-contentType: youtube
+contentType: video
 ---
 
 This is a practical build focused on combining AI capabilities with a polished .NET MAUI user experience.

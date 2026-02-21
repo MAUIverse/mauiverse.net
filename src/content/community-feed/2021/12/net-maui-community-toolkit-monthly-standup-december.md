@@ -5,7 +5,7 @@ description: "Join the maintainers of the .NET MAUI Community Toolkit as we revi
 date: 2021-12-02
 author: dotnet-foundation
 isToolkitStandup: true
-contentType: youtube
+contentType: video
 ---
 
 Join the maintainers of the .NET MAUI Community Toolkit as we review the updates from last month!

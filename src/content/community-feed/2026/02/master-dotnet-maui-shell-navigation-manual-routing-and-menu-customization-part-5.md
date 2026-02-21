@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=O2bQ-yMuhLM
 description: Hector Perez Rojas shows how to move beyond default Shell behavior and design explicit navigation routes for larger .NET MAUI apps. You’ll see how manual routing, hierarchical paths, and customized menu items can make navigation clearer, safer, and easier to evolve.
 date: 2026-02-17
 author: hprez21
-contentType: youtube
+contentType: video
 ---
 
 If Shell navigation has ever felt too “automatic” for your app, this session helps you take control.

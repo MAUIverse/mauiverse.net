@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=TOrPsmPNS6A
 description: In this ABPConf session, Shaun Lawrence explores building games in .NET MAUI with a practical Orbit-powered approach. You’ll get a clear, implementation-focused walkthrough of game architecture choices that help MAUI projects stay flexible and scalable.
 date: 2024-06-24
 author: bijington
-contentType: youtube
+contentType: video
 ---
 
 If you want another solid real-world perspective on MAUI game development, this conference talk is worth your time.

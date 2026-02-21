@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=G04D9yzPWMY
 description: Hector Perez Rojas builds a shared AI image generator experience across Blazor Web and .NET MAUI Hybrid from one codebase mindset. The session covers shared UI and logic, OpenAI/Azure OpenAI integration, and key setup details needed to make the app run smoothly across targets.
 date: 2025-08-06
 author: hprez21
-contentType: youtube
+contentType: video
 ---
 
 This guide explores a practical cross-platform architecture where Blazor Web and .NET MAUI Hybrid work together instead of competing approaches.

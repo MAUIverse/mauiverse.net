@@ -5,7 +5,7 @@ description: "Join us as we review recent updates and upcoming changes to the .N
 date: 2022-06-02
 author: dotnet-foundation
 isToolkitStandup: true
-contentType: youtube
+contentType: video
 ---
 
 Join us as we review recent updates and upcoming changes to the .NET MAUI Community Toolkit!

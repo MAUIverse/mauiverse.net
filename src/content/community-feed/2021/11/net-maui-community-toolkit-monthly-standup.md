@@ -5,7 +5,7 @@ description: "https://github.com/CommunityToolkit/Maui The .NET MAUI Community T
 date: 2021-11-04
 author: dotnet-foundation
 isToolkitStandup: true
-contentType: youtube
+contentType: video
 ---
 
 <https://github.com/CommunityToolkit/Maui>

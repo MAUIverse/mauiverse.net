@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=CjIJh5p5twA
 description: Shaun Lawrence shares how he approached building a game engine in .NET MAUI and where MAUI fits in game-oriented architecture decisions. The session blends platform fundamentals with practical implementation guidance so you can move from experimentation to a working game foundation.
 date: 2022-07-16
 author: bijington
-contentType: youtube
+contentType: video
 ---
 
 If you want to understand how far you can push .NET MAUI beyond line-of-business apps, this talk is a great deep dive.

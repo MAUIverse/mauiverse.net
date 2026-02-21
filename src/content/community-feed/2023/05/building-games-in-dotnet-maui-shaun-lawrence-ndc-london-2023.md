@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=zCeGMsta5bY
 description: This NDC London talk introduces a practical path to building games in .NET MAUI using Orbit as a cross-platform engine option. Shaun Lawrence explains the core game-building workflow so MAUI developers can move from app UI patterns into interactive gameplay architecture.
 date: 2023-05-20
 author: bijington
-contentType: youtube
+contentType: video
 ---
 
 Curious whether .NET MAUI can support game development workflows? This session gives you a grounded, practical look.
