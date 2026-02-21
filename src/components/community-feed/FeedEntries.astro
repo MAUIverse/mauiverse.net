@@ -36,8 +36,8 @@ function hasBody(entry: { body?: string }): boolean {
     const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.author) : null;
     return (
       <li class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
-        <div class={`flex gap-3 ${videoId ? 'flex-row gap-6' : 'flex-col'}`}>
-          <div class="flex flex-1 flex-col gap-3 min-w-0">
+        <div class={`flex gap-3 ${videoId ? 'flex-col gap-4 sm:flex-row sm:gap-6' : 'flex-col'}`}>
+          <div class={`flex flex-1 flex-col gap-3 min-w-0 ${videoId ? 'order-2 sm:order-1' : ''}`}>
             {isInternal ? (
               <a
                 href={detailUrl}
@@ -113,7 +113,7 @@ function hasBody(entry: { body?: string }): boolean {
           {videoId && (
             <a
               href={detailUrl}
-              class="flex-shrink-0 block w-64 sm:w-72 rounded overflow-hidden border border-edge aspect-video"
+              class="order-1 sm:order-2 flex-shrink-0 block w-full sm:w-72 rounded overflow-hidden border border-edge aspect-video"
               aria-hidden="true"
             >
               <img
