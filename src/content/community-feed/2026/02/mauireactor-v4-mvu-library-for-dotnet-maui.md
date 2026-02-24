@@ -11,7 +11,7 @@ MauiReactor v4 marks a major milestone for one of the most established MVU optio
 
 After a long journey from Xamarin.Forms to modern .NET MAUI, this release focuses on helping developers stay in pure C# while keeping UI code declarative, state-driven, and easy to iterate on.
 
-### WCheck out the repo to learn
+### Check out the repo to learn
 
 - How MauiReactor applies the **MVU (Model-View-Update)** pattern on top of .NET MAUI.
 - Why component-based, pure C# UI can feel familiar to teams coming from React or Flutter-style workflows.
