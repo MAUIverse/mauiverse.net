@@ -25,6 +25,7 @@ export function formatTimeWithZoneUS(input: DateInput): string {
   return toDate(input).toLocaleTimeString('en-US', {
     hour: 'numeric',
     minute: '2-digit',
+    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     timeZoneName: 'short',
   });
 }
