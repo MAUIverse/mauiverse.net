@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "create:author": "node scripts/create-author.mjs",
     "predev": "npm run generate:authors && npm run fetch:built-with-maui && npm run fetch:maui-contributors && npm run fetch:docs-maui-contributors && npm run fetch:maui-toolkit-contributors && npm run fetch:syncfusion-maui-toolkit-contributors && npm run fetch:mauiverse-website-contributors && npm run fetch:nuget-authors",
     "dev": "astro dev",
     "start": "astro dev",

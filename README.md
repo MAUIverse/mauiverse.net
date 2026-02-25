@@ -224,6 +224,27 @@ displayName: ""
 avatarImagePath: ""
 disableGitHubProfileLink: false
 bskyUrl: ""
+# Adding a New Author
+
+To add a new community contributor (author), use the automated script:
+
+```sh
+npm run create:author -- <githubUsername>
+```
+
+This will create a new YAML file in `src/content/community-contributors/` named `<githubUsername>.yaml` with the required structure. If a file with that name already exists, the script will not overwrite it.
+
+## Example Author YAML
+
+Below is an example of an author file. **Required fields** are marked, all others are optional:
+
+```yaml
+# Required
+gitHubUsername: "octocat"         # GitHub username (used for filename and identification)
+displayName: "Octo Cat"           # Display name for the contributor
+
+# Optional
+bskyUrl: ""
 twitterUrl: ""
 instagramUrl: ""
 linkedInUrl: ""
@@ -234,6 +255,16 @@ blogRSSFeedUrl: ""
 podcastWebsiteUrl: ""
 podcastRssUrl: ""
 twitchProfileUrl: ""
+```
+
+**Required fields:**
+- `gitHubUsername`: The contributor's GitHub username (used for the filename and as a unique key).
+- `displayName`: The name to display on the site.
+
+**Optional fields:**
+- Social and content links (leave blank if not applicable).
+
+After running the script, edit the new file to fill in the display name and any relevant links.
 ```
 
 Author metadata used by feed rendering is generated from this contributor YAML content:
