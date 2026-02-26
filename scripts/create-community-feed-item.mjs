@@ -98,11 +98,10 @@ try {
   process.exit(1);
 }
 
-const yyyy = dateObj.getFullYear();
+const yyyy = String(dateObj.getFullYear());
 const mm = String(dateObj.getMonth() + 1).padStart(2, '0');
-const folder = `${yyyy}-${mm}`;
 const filename = `${slug}.md`;
-const targetDir = path.resolve('src/content/community-feed', folder);
+const targetDir = path.resolve('src/content/community-feed', yyyy, mm);
 const targetPath = path.join(targetDir, filename);
 
 if (!fs.existsSync(targetDir)) {
