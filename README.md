@@ -1,3 +1,35 @@
+# Adding a Community Feed Item
+
+To add a new community feed item (blog post, news, etc.), use the automated script:
+
+```sh
+npm run create:feed-item -- "Your Blog Post Title" [YYYY-MM-DD]
+```
+
+- The first argument is the post title (required).
+- The second argument is an optional date (defaults to today if omitted).
+
+This will create a new markdown file in `src/content/community-feed/<YYYY-MM>/` with a URL-friendly filename based on the title. The file will include frontmatter with the original title and date.
+
+## Example Feed Item Markdown
+
+```markdown
+---
+title: "My Awesome Blog Post"   # Required: The original post title
+date: "2026-02-25"              # Required: Date in YYYY-MM-DD format
+---
+
+<!-- Add your content here -->
+```
+
+**Required fields:**
+- `title`: The original blog post title (from the command argument)
+- `date`: The date for the post (from argument or current date)
+
+**Optional:**
+- Content/body of the post (add after file creation)
+
+After running the script, edit the new file to add your post content.
 # mauiverse.net
 Powering the mauiverse.net website
 
@@ -224,6 +256,27 @@ displayName: ""
 avatarImagePath: ""
 disableGitHubProfileLink: false
 bskyUrl: ""
+# Adding a New Author
+
+To add a new community contributor (author), use the automated script:
+
+```sh
+npm run create:author -- <githubUsername>
+```
+
+This will create a new YAML file in `src/content/community-contributors/` named `<githubUsername>.yaml` with the required structure. If a file with that name already exists, the script will not overwrite it.
+
+## Example Author YAML
+
+Below is an example of an author file. **Required fields** are marked, all others are optional:
+
+```yaml
+# Required
+gitHubUsername: "octocat"         # GitHub username (used for filename and identification)
+displayName: "Octo Cat"           # Display name for the contributor
+
+# Optional
+bskyUrl: ""
 twitterUrl: ""
 instagramUrl: ""
 linkedInUrl: ""
@@ -234,6 +287,16 @@ blogRSSFeedUrl: ""
 podcastWebsiteUrl: ""
 podcastRssUrl: ""
 twitchProfileUrl: ""
+```
+
+**Required fields:**
+- `gitHubUsername`: The contributor's GitHub username (used for the filename and as a unique key).
+- `displayName`: The name to display on the site.
+
+**Optional fields:**
+- Social and content links (leave blank if not applicable).
+
+After running the script, edit the new file to fill in the display name and any relevant links.
 ```
 
 Author metadata used by feed rendering is generated from this contributor YAML content:
