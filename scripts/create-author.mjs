@@ -2,6 +2,13 @@
 // scripts/create-author.mjs
 // Usage: node scripts/create-author.mjs <githubUsername>
 // Creates a new author YAML file in src/content/community-contributors/
+/**
+ * Script: create-author
+ * Purpose: Create a new author YAML file for community contributors.
+ *
+ * Usage:
+ *   npm run create:author -- <githubUsername>
+ */
 
 import fs from 'fs';
 import path from 'path';

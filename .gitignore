@@ -26,3 +26,6 @@ npm-debug.log*
 
 #
 .playwright-mcp/
+
+# Temp workspace files
+.tmp/

@@ -1,3 +1,35 @@
+# Adding a Community Feed Item
+
+To add a new community feed item (blog post, news, etc.), use the automated script:
+
+```sh
+npm run create:feed-item -- "Your Blog Post Title" [YYYY-MM-DD]
+```
+
+- The first argument is the post title (required).
+- The second argument is an optional date (defaults to today if omitted).
+
+This will create a new markdown file in `src/content/community-feed/<YYYY-MM>/` with a URL-friendly filename based on the title. The file will include frontmatter with the original title and date.
+
+## Example Feed Item Markdown
+
+```markdown
+---
+title: "My Awesome Blog Post"   # Required: The original post title
+date: "2026-02-25"              # Required: Date in YYYY-MM-DD format
+---
+
+<!-- Add your content here -->
+```
+
+**Required fields:**
+- `title`: The original blog post title (from the command argument)
+- `date`: The date for the post (from argument or current date)
+
+**Optional:**
+- Content/body of the post (add after file creation)
+
+After running the script, edit the new file to add your post content.
 # mauiverse.net
 Powering the mauiverse.net website
 
