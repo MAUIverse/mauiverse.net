@@ -1,43 +1,28 @@
 # Author profiles
 
-## Location
+Use this page to add or update contributor profiles.
 
-Author profiles are YAML files in `src/content/community-contributors/`.
+## Add a new author (scripted)
 
-## Canonical identity key
-
-`gitHubUsername` is the primary key for contributor identity across the site.
-
-It is used for:
-
-- feed author matching
-- contributor profile routes
-- contributor badge checks
-- generated author lookup data
-
-Once published, treat `gitHubUsername` as immutable unless you are performing an intentional migration.
-
-## Filename convention
-
-Use the GitHub username for the profile filename:
-
-```text
-src/content/community-contributors/<github-username>.yaml
+```sh
+npm run create:author -- <githubUsername>
 ```
 
-Example:
+### Parameters
+
+- `<githubUsername>` (required): canonical identity key and file name source.
+
+### Generated file location
 
 ```text
-src/content/community-contributors/tonyedwards.yaml
+src/content/community-contributors/<githubusername>.yaml
 ```
 
-## Profile schema
+### Example generated file
 
 ```yaml
-gitHubUsername: ""
+gitHubUsername: "octocat"
 displayName: ""
-avatarImagePath: ""
-disableGitHubProfileLink: false
 bskyUrl: ""
 twitterUrl: ""
 instagramUrl: ""
@@ -51,34 +36,18 @@ podcastRssUrl: ""
 twitchProfileUrl: ""
 ```
 
-## Minimal valid profile example
+## Update an existing author
 
-```yaml
-gitHubUsername: "tonyedwards"
-displayName: "Tony Edwards"
-avatarImagePath: "/img/contributors/tony-edwards.jpg"
-disableGitHubProfileLink: false
-bskyUrl: ""
-twitterUrl: ""
-instagramUrl: ""
-linkedInUrl: ""
-youTubeUrl: ""
-tikTokUrl: ""
-blogUrl: ""
-blogRSSFeedUrl: ""
-podcastWebsiteUrl: ""
-podcastRssUrl: ""
-twitchProfileUrl: ""
-```
+Edit the matching YAML file in `src/content/community-contributors/`.
 
-## Update guidance
+Recommended workflow:
 
-- Keep `gitHubUsername` stable.
-- Update `displayName` and social links as needed.
-- Keep empty optional fields as empty strings for consistency.
-- Prefer repository-hosted avatar paths under `public/img/contributors/`.
+1. Keep `gitHubUsername` unchanged.
+2. Update `displayName` and links.
+3. Run `npm run dev` and verify author card/profile rendering.
+4. Open a PR with a short summary.
 
-## Next reading
+## Related docs
 
-- [Automation pipeline](./automation.md)
-- [Troubleshooting](./troubleshooting.md)
+- [Contributor guide](./README.md)
+- [Feed items](./content-posts.md)

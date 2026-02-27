@@ -1,23 +1,22 @@
 # Contributing to mauiverse.net
 
-Thanks for helping grow the .NET MAUI community content ecosystem.
+Most contributions start with one of these goals:
 
-## Start with contributor docs
+- Run the website locally
+- Add a new author
+- Add a new community feed item
+- Update an existing author or feed item
 
-Use the contributor documentation hub:
+Use the contributor guide:
 
-- [Contributor documentation](./docs/contributing/README.md)
+- [docs/contributing/README.md](./docs/contributing/README.md)
 
-## Common contribution paths
+## Pull request flow
 
-- Add a feed post: [Add content posts](./docs/contributing/content-posts.md)
-- Add or update an author profile: [Author profiles](./docs/contributing/authors.md)
-- Understand reserved standup metadata fields: [Standup flags and protected fields](./docs/contributing/standup-flags.md)
-- Learn generated data + CI behavior: [Automation pipeline](./docs/contributing/automation.md)
-- Fix contribution issues quickly: [Troubleshooting contributions](./docs/contributing/troubleshooting.md)
+1. Create a branch from `main`.
+2. Make your content or author updates.
+3. Run `npm run dev` and verify your change renders correctly.
+4. Commit with a clear message describing the user-facing change.
+5. Open a PR with a short summary and file list.
 
-## Contribution principles
-
-- Use `gitHubUsername` as the canonical author identity key.
-- Keep docs links relative so they work on GitHub and local clones.
-- Keep schema and docs aligned when introducing metadata changes.
+Keep `gitHubUsername` stable for existing authors unless you are intentionally doing a migration.
