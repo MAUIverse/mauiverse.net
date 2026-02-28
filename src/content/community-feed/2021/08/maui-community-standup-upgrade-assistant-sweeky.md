@@ -5,6 +5,9 @@ link: https://www.youtube.com/watch?v=oIQfrUfIovk
 description: "David Ortinau hosts a MAUI Community Standup on using the .NET Upgrade Assistant to move projects toward MAUI, featuring Sweeky."
 date: 2021-08-05
 author: davidortinau
+featuring:
+    - maddymontaquila
+    - Sweekriti91
 ---
 
 Migrating existing apps is often the hard part. This standup focuses on getting “to MAUI” using the **.NET Upgrade Assistant**, plus practical guidance from guests like Sweeky.

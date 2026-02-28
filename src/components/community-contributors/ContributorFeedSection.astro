@@ -2,15 +2,27 @@
 import type { CollectionEntry } from 'astro:content';
 import FeedEntries from '../community-feed/FeedEntries.astro';
 import Pagination from '../community-feed/Pagination.astro';
+import { isSameAuthorKey } from '../../data/authors';
 
 interface Props {
+  githubUsername: string;
   entries: CollectionEntry<'community-feed'>[];
   currentPage: number;
   totalPages: number;
   basePath: string;
 }
 
-const { entries, currentPage, totalPages, basePath } = Astro.props;
+const { githubUsername, entries, currentPage, totalPages, basePath } = Astro.props;
+const compactEntryIds = entries
+  .filter((entry) => {
+    const isAuthoredByContributor =
+      entry.data.author && isSameAuthorKey(entry.data.author, githubUsername);
+    if (isAuthoredByContributor) return false;
+    return (entry.data.featuring ?? []).some((featuredAuthor) =>
+      isSameAuthorKey(featuredAuthor, githubUsername)
+    );
+  })
+  .map((entry) => entry.id);
 ---
 
 <section aria-labelledby="contributor-feed-heading">
@@ -19,7 +31,12 @@ const { entries, currentPage, totalPages, basePath } = Astro.props;
   </h2>
   {entries.length > 0 ? (
     <>
-      <FeedEntries entries={entries} />
+      <FeedEntries
+        entries={entries}
+        compactEntryIds={compactEntryIds}
+        compactLabel="Featured in"
+        compactActionLabel="View post"
+      />
       <Pagination currentPage={currentPage} totalPages={totalPages} basePath={basePath} />
     </>
   ) : (

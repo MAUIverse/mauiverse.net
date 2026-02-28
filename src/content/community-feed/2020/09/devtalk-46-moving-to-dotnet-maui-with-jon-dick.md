@@ -3,7 +3,9 @@ title: "DevTalk 46: Moving to .NET MAUI (Jon Dick)"
 link: https://kerry.lothrop.de/devtalk-46-jon-dick/
 description: Jon Dick discusses what was coming next for MAUI and the transition path from Xamarin.
 date: 2020-09-21
-author: Redth
+author: lothrop
+featuring:
+    - Redth
 contentType: podcast
 ---
 

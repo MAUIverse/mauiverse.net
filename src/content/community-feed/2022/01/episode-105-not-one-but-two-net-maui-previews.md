@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/105
 description: "Show Notes Can you believe there were 2 .NET MAUI previews since our last episode?"
 date: 2022-01-21
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
+    - davidortinau
 contentType: podcast
 ---
 

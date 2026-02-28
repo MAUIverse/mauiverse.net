@@ -4,6 +4,9 @@ link: https://www.dotnetmauipodcast.com/99
 description: "We have a special show today where we're going to learn all about Azure IoT and a Xamarin app that helps you explore it."
 date: 2021-09-24
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
 contentType: podcast
 ---
 

@@ -4,6 +4,7 @@ link: https://www.youtube.com/watch?v=xPI8hLpyc5k
 description: Gerald Versluis walks through using C# expressions in XAML—reducing converter boilerplate and making bindings more explicit.
 date: 2026-02-09
 author: jfversluis
+contentType: video
 ---
 
 Converters have always been one of those “necessary… until they aren’t” parts of XAML UI work.

@@ -4,6 +4,9 @@ link: https://www.dotnetmauipodcast.com/104
 description: "Another customer success story!"
 date: 2022-01-14
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
 contentType: podcast
 ---
 

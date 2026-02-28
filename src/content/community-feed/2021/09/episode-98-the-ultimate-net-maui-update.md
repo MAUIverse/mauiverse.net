@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/98
 description: "Show Notes .NET 6 release candidate is out ..."
 date: 2021-09-17
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
+    - davidortinau
 contentType: podcast
 ---
 

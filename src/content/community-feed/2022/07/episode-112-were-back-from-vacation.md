@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/112
 description: "Show Notes We may have missed a month out on vacation - but we're back better than ever with the latest installment of the .NET MAUI podcast!"
 date: 2022-07-22
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
+    - davidortinau
 contentType: podcast
 ---
 

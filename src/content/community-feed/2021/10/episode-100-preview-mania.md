@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/100
 description: "Show Notes All the previews and release candidates you could ever want."
 date: 2021-10-15
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
+    - davidortinau
 contentType: podcast
 ---
 

@@ -3,7 +3,9 @@ title: "DevTalk 80: Best Practices for XAML (Leomaris Reyes)"
 link: https://kerry.lothrop.de/devtalk-80-leomaris-reyes/
 description: Leomaris Reyes shares practical XAML practices for Xamarin.Forms and .NET MAUI teams.
 date: 2022-04-18
-author: LeomarisReyes
+author: lothrop
+featuring:
+    - LeomarisReyes
 contentType: podcast
 ---
 

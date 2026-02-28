@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/107
 description: "Show Notes Can you believe we're on .NET MAUI Preview 13?"
 date: 2022-02-18
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
+    - davidortinau
 contentType: podcast
 ---
 
