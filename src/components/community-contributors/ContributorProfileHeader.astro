@@ -33,7 +33,7 @@ const websiteRepoUrl = 'https://github.com/MAUIverse/mauiverse.net';
 const nugetProfileUrl = `https://www.nuget.org/profiles/${githubUsername}`;
 const syncfusionMauiToolkitRepoUrl = 'https://github.com/syncfusion/maui-toolkit';
 const contributionBadgeClass =
-  'mb-2 inline-flex items-center rounded-full border border-edge bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-dark transition-colors hover:bg-edge hover:text-brand-extraDark';
+  'mb-2 inline-flex items-center rounded-full border border-edge/40 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-dark transition-colors hover:border-brand/40 hover:text-brand';
 
 const contributorProfile = (await getCollection('community-contributors')).find((entry) =>
   isSameAuthorKey(entry.data.gitHubUsername, githubUsername)
@@ -77,7 +77,7 @@ const profileLinks = [
 ].filter((link): link is { label: string; href: string; icon: string } => Boolean(link));
 ---
 
-<header class="mb-10 rounded-lg border border-edge bg-surface p-8 shadow-sm">
+<header class="mb-10">
     <div class="flex flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
       <img
         src={getAuthorImageSrc(githubUsername, 320)}
@@ -177,7 +177,7 @@ const profileLinks = [
                   rel="noopener noreferrer"
                   aria-label={link.label}
                   title={link.label}
-                  class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                  class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-edge/40 text-brand transition hover:bg-brand hover:text-white"
                 >
                   {link.icon === 'github' && <i class="fa-brands fa-github h-5 w-5" aria-hidden="true"></i>}
                   {link.icon === 'bsky' && <i class="fa-brands fa-bluesky h-5 w-5" aria-hidden="true"></i>}

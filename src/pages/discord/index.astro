@@ -6,32 +6,40 @@ import PrimaryLinkButton from '../../components/PrimaryLinkButton.astro';
   title="Discord | MAUIverse"
   description="Join the MAUIverse Discord community."
 >
-  <section class="discord-hero flex items-center justify-center px-4">
-    <div class="w-full max-w-3xl text-center rounded-lg border border-edge bg-surface p-8 md:p-12 shadow-sm">
-      <p class="text-brand font-bold mb-3 text-lg font-header uppercase">Join the conversation</p>
-      <h1 class="text-brand-dark text-4xl md:text-5xl font-header font-bold mb-4">
+  <section class="discord-hero flex items-center justify-center px-6 relative z-10">
+    <div class="w-full max-w-2xl text-center">
+      <div class="fade-in w-28 h-28 md:w-36 md:h-36 rounded-3xl mx-auto mb-10 relative">
+        <img
+          src="/img/discord.jpg"
+          alt="Discord community"
+          class="w-full h-full rounded-3xl object-cover"
+          loading="lazy"
+        />
+        <div class="absolute -inset-3 rounded-3xl bg-purple-500/20 blur-xl -z-10"></div>
+      </div>
+      <p class="fade-in fade-in-d1 text-brand font-bold mb-4 text-sm font-header uppercase tracking-[0.2em]">Join the conversation</p>
+      <h1 class="fade-in fade-in-d1 text-gradient text-5xl md:text-7xl font-header font-bold mb-5">
         MAUIverse Discord
       </h1>
-      <p class="text-muted text-base md:text-lg max-w-2xl mx-auto mb-8">
+      <p class="fade-in fade-in-d2 text-muted text-lg md:text-xl max-w-lg mx-auto mb-10 leading-relaxed">
         Meet other .NET MAUI developers, ask questions, share your projects, and stay connected with the community.
       </p>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-        <a
-          href="/"
-          class="inline-flex items-center justify-center rounded-full border-2 border-edge px-8 py-3 text-sm md:text-base font-bold text-muted transition hover:border-brand hover:text-brand"
-        >
-          Back to home
-        </a>
+      <div class="fade-in fade-in-d3 flex flex-col sm:flex-row items-center justify-center gap-4">
         <PrimaryLinkButton
           href="https://discord.gg/HzVbds6Q8x"
           target="_blank"
           rel="noopener noreferrer"
           size="md"
-          className="text-sm md:text-base"
         >
           Open Discord
         </PrimaryLinkButton>
+        <a
+          href="/"
+          class="inline-flex items-center justify-center rounded-full border border-edge px-8 py-3.5 text-lg font-semibold text-brand-dark transition-colors hover:border-brand/40 hover:text-brand"
+        >
+          Back to home
+        </a>
       </div>
     </div>
   </section>

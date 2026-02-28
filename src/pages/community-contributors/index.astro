@@ -50,21 +50,25 @@ const contributionFilters = [
   description="Discover the people contributing to the MAUIverse Community Feed."
   allowPageScroll={true}
 >
-  <section class="min-h-screen px-0 py-24">
-    <div class="container mx-auto max-w-6xl px-4">
-      <p class="mb-4 text-xl font-header font-bold uppercase text-brand">
+  <section class="min-h-screen px-0 py-24 md:py-32 relative z-10">
+    <div class="container mx-auto max-w-6xl px-6">
+      <div class="fade-in">
+      <p class="mb-4 text-sm font-header font-bold uppercase tracking-[0.2em] text-brand">
         From the community
       </p>
-      <h1 class="mb-4 text-4xl font-header font-bold uppercase text-brand-dark">
+      <h1 class="mb-5 text-gradient text-4xl md:text-6xl font-header font-bold">
         Community Contributors
       </h1>
-      <p class="mb-12 max-w-2xl text-base text-muted">
+      <p class="mb-12 max-w-2xl text-lg text-muted leading-relaxed">
         Meet the people who share projects, tips, and package launches via across the MAUIverse Feed.
         </br>
         Contributions are curated by the community from accross the internet. Featuring here does not necessarily mean the individual is a MAUIverse member.
       </p>
+      </div>
 
-      <div class="mb-8 rounded-lg border border-edge bg-surface p-6 shadow-sm">
+      <div class="divider-gradient mb-10"></div>
+
+      <div class="reveal mb-8">
         <div class="grid gap-6 lg:grid-cols-[minmax(0,24rem)_1fr] lg:items-start">
           <div>
             <label for="contributor-search" class="mb-2 block text-sm font-semibold text-brand-dark">
@@ -75,7 +79,7 @@ const contributionFilters = [
                 id="contributor-search"
                 type="text"
                 placeholder="Search by name or GitHub username"
-                class="w-full rounded-lg border border-edge bg-surface px-4 py-3 pr-12 text-base text-brand-dark placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                class="w-full rounded-md border border-edge/50 bg-surface-alt px-4 py-3 pr-12 text-base text-brand-dark placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
                 data-contributor-search-input
               />
               <button
@@ -93,7 +97,7 @@ const contributionFilters = [
             <legend class="mb-2 text-sm font-semibold text-brand-dark">Contributes to:</legend>
             <div class="flex flex-wrap gap-2">
               {contributionFilters.map((filter) => (
-                <label class="inline-flex cursor-pointer items-center gap-2 rounded-md border border-edge bg-surface px-3 py-2 text-sm text-muted transition hover:text-brand">
+                <label class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-edge/40 px-3 py-2 text-sm text-muted transition hover:border-brand/40 hover:text-brand">
                   <input
                     type="checkbox"
                     value={filter.key}
@@ -109,18 +113,18 @@ const contributionFilters = [
       </div>
 
       <ul
-        class="grid grid-cols-2 gap-6 lg:grid-cols-4"
+        class="reveal grid grid-cols-2 gap-8 lg:grid-cols-4"
         aria-label="Community Contributors"
         data-contributor-grid
       >
         {contributors.map((contributor) => (
           <li
-            class="rounded-lg border border-edge bg-surface p-6 shadow-sm"
+            class="text-center hover-glow rounded-xl p-4"
             data-contributor-card
             data-search-text={`${contributor.displayName.toLowerCase()} ${contributor.githubUsername.toLowerCase()}`}
             data-contribution-types={contributor.contributionTypes.join(' ')}
           >
-            <div class="flex h-full flex-col items-center text-center">
+            <div class="flex h-full flex-col items-center">
               <img
                 src={getAuthorImageSrc(contributor.githubUsername, 256)}
                 alt={`${contributor.displayName} profile picture`}
@@ -132,9 +136,9 @@ const contributionFilters = [
               <h2 class="mb-4 text-lg font-semibold text-brand-dark">{contributor.displayName}</h2>
               <a
                 href={`/community-contributors/${contributor.githubUsername}/`}
-                class="mt-auto inline-flex w-full items-center justify-center rounded-full border border-edge bg-surface px-4 py-2 text-sm font-semibold text-muted transition hover:bg-surface-alt hover:text-brand"
+                class="mt-auto text-sm font-semibold text-brand hover:underline"
               >
-                View Contributor
+                View Profile →
               </a>
             </div>
           </li>

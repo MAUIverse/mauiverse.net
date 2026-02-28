@@ -125,6 +125,10 @@ export const authorEntries = [
     disableGitHubProfileLink: true,
   },
   {
+    key: "drasticactions",
+    displayName: "Tim Miller",
+  },
+  {
     key: "eschimmel",
     displayName: "Ed Schimmel",
   },

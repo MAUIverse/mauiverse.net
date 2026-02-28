@@ -23,7 +23,8 @@ const sizeClass = size === 'md' ? 'px-8 py-3 text-base' : 'px-6 py-2.5 text-sm';
   target={target}
   rel={rel}
   class:list={[
-    'inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark',
+    'inline-flex w-fit items-center justify-center rounded-full font-semibold text-white transition-all duration-200',
+    'bg-brand-extra hover:bg-brand-extraDark active:bg-brand-extraDark',
     sizeClass,
     className,
   ]}

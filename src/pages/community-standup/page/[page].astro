@@ -25,10 +25,10 @@ const { entries, currentPage, totalPages } = Astro.props;
   description=".NET MAUI Community Toolkit monthly standup — past episodes."
 >
   <div class="min-h-screen">
-    <div class="container mx-auto max-w-4xl px-4 py-16 md:py-24 space-y-16 md:space-y-20">
+    <div class="container mx-auto max-w-4xl px-6 py-24 md:py-32 space-y-20 md:space-y-28">
       <!-- Countdown Hero -->
-      <section>
-        <p class="text-brand font-bold mb-4 text-sm font-header uppercase tracking-wide text-center">
+      <section class="text-center">
+        <p class="text-brand font-bold mb-4 text-sm font-header uppercase tracking-[0.2em]">
           Community Standup
         </p>
         <LivestreamCountdown variant="full" />
@@ -36,7 +36,7 @@ const { entries, currentPage, totalPages } = Astro.props;
 
       <!-- Past Standups -->
       <section>
-        <h2 class="text-brand-dark font-header font-bold text-xl mb-6">Past Standups</h2>
+        <h2 class="text-brand-dark font-header font-bold text-2xl mb-6">Past Standups</h2>
         <FeedEntries entries={entries} showAuthor={false} actionLabel="Watch" />
         <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/community-standup" />
       </section>

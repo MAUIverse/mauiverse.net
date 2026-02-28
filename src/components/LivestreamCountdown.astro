@@ -62,15 +62,14 @@ const compactHeading = collection === 'toolkit-standup' ? 'Community Toolkit Sta
   data-show-youtube-embed={showYouTubeEmbed}
 >
   {isCompact ? (
-    <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+    <div class="">
       <div class="flex items-center gap-2 mb-3">
         <span class="livestream-live-badge hidden inline-flex items-center gap-1.5 rounded-full bg-red-600 px-2.5 py-0.5 text-xs font-bold text-white uppercase tracking-wide">
           <span class="h-2 w-2 rounded-full bg-white animate-pulse" aria-hidden="true"></span>
           Live
         </span>
-        <h2 class="text-brand-dark font-header font-bold text-lg">{compactHeading}</h2>
       </div>
-      <p class="livestream-title text-muted text-sm mb-2">
+      <p class="livestream-title text-muted text-sm mb-1">
         {nextEpisode ? nextEpisode.title : defaultTitle}
       </p>
       <p class="livestream-date text-muted-light text-xs mb-3">
@@ -78,13 +77,13 @@ const compactHeading = collection === 'toolkit-standup' ? 'Community Toolkit Sta
           ? `Next stream: ${formatLongWeekdayDateUS(nextEpisode.date)}`
           : 'Check back soon for the next stream'}
       </p>
-      <div class="livestream-timer text-brand-dark font-header font-bold text-2xl tabular-nums mb-4" aria-live="polite">
+      <div class="livestream-timer text-brand font-header font-bold text-3xl tabular-nums mb-3" aria-live="polite">
         --:--:--
       </div>
       {showYouTubeEmbed && (
         <div
           class:list={[
-            'livestream-embed mb-4 overflow-hidden rounded-lg border border-edge bg-surface-alt shadow-sm',
+            'livestream-embed mb-4 overflow-hidden rounded-lg',
             { 'hidden': !hasYouTubeLiveUrl },
           ]}
         >
@@ -164,7 +163,7 @@ const compactHeading = collection === 'toolkit-standup' ? 'Community Toolkit Sta
       {showYouTubeEmbed && (
         <div
           class:list={[
-            'livestream-embed mx-auto mb-6 max-w-3xl overflow-hidden rounded-lg border border-edge bg-surface-alt shadow-sm',
+            'livestream-embed mx-auto mb-6 max-w-3xl overflow-hidden rounded-lg',
             { 'hidden': !hasYouTubeLiveUrl },
           ]}
         >

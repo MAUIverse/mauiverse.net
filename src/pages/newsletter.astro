@@ -8,21 +8,23 @@ import NewsletterSignupForm from '../components/NewsletterSignupForm.astro';
   description="Subscribe to the MAUIverse newsletter for updates."
   allowPageScroll={true}
 >
-  <section id="newsletter" class="py-24 px-0 min-h-screen">
-    <div class="container max-w-4xl mx-auto px-4 text-center">
-      <p class="text-brand font-bold mb-4 text-xl font-header uppercase">
+  <section id="newsletter" class="py-28 md:py-40 px-6 min-h-screen flex items-start justify-center relative z-10">
+    <div class="max-w-md mx-auto text-center">
+      <p class="fade-in text-brand text-sm font-semibold uppercase tracking-[0.2em] mb-4">
         Stay in the loop
       </p>
-      <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
+      <h1 class="fade-in fade-in-d1 text-gradient text-4xl md:text-6xl font-header font-bold mb-5">
         Newsletter
       </h1>
-      <p class="text-muted text-base text-md mb-10 max-w-2xl mx-auto">
+      <p class="fade-in fade-in-d2 text-muted text-lg md:text-xl mb-12 leading-relaxed">
         Stay in touch with MAUIverse, and get notified first about community updates and more.
         <br />
-        <span class="text-muted text-base text-md mb-10 italic">No spam. Ever.</span>
+        <span class="italic">No spam. Ever.</span>
       </p>
 
-      <NewsletterSignupForm variant="newsletter" />
+      <div class="fade-in fade-in-d3 text-left">
+        <NewsletterSignupForm variant="newsletter" />
+      </div>
     </div>
   </section>
   <script src="https://cdn.sendfox.com/js/form.js" charset="utf-8" defer></script>

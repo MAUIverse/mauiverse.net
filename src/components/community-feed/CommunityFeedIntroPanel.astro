@@ -9,15 +9,15 @@ import {
 const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5).slice(0, 12);
 ---
 
-<div class="mb-10 flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
+<div class="fade-in mb-12 flex flex-col gap-8 md:flex-row md:items-start md:gap-10">
   <div class="md:basis-3/5 md:max-w-2xl">
-    <p class="text-brand font-bold mb-4 text-xl font-header uppercase">
+    <p class="text-brand font-bold mb-4 text-sm font-header uppercase tracking-[0.2em]">
       From the community
     </p>
-    <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
+    <h1 class="text-gradient text-4xl md:text-6xl font-header font-bold mb-5">
       Contributor Feed
     </h1>
-    <p class="text-muted text-base text-md max-w-2xl">
+    <p class="text-muted text-lg md:text-xl max-w-2xl leading-relaxed">
       Notable moments, packages, projects, and celebrations from the MAUIverse community.
     </p>
     <div class="flex justify-start mt-4">
@@ -33,7 +33,7 @@ const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5).slice(0, 12);
     </div>
   </div>
 
-  <aside class="w-full rounded-lg border border-edge bg-surface p-6 md:basis-2/5 md:shrink-0">
+  <aside class="w-full md:basis-2/5 md:shrink-0">
     <div class="grid grid-cols-6 gap-3 justify-items-center">
       {avatarKeys.map((githubUsername) => {
         const profileHref = getInternalContributorProfileHref(githubUsername);
@@ -76,16 +76,11 @@ const avatarKeys = getAuthorKeys().sort(() => Math.random() - 0.5).slice(0, 12);
   </aside>
 </div>
 
-<div class="mb-8 block rounded-lg border border-edge bg-surface p-6 shadow-sm">
-  <div class="flex flex-col md:flex-row md:items-center">
-    <div class="md:w-3/4">
-      <p class="text-sm text-muted">Looking for something specific?</p>
-      <p class="text-sm text-muted-light mt-1">Search articles, tutorials, videos, and podcasts from the MAUIverse contributors.</p>
-    </div>
-    <div class="md:w-1/4 flex justify-end mt-4 md:mt-0">
-      <a href="/community-feed/search" class="text-sm font-semibold text-brand hover:underline">
-        Search &rarr;
-      </a>
-    </div>
+<div class="mb-8 flex items-center justify-between border-b border-edge/30 pb-4">
+  <div>
+    <p class="text-sm text-muted">Looking for something specific?</p>
   </div>
+  <a href="/community-feed/search" class="text-sm font-semibold text-brand hover:underline">
+    Search &rarr;
+  </a>
 </div>

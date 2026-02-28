@@ -105,15 +105,16 @@ const contributors: ContributorCard[] = usernames
   description={`Meet the contributors to the ${repoLabel} repository. The community is grateful for every contribution to the ecosystem.`}
   allowPageScroll={true}
 >
-  <section class="min-h-screen px-0 py-24">
-    <div class="container mx-auto max-w-6xl px-4">
-      <p class="mb-4 text-xl font-header font-bold uppercase text-brand">
+  <section class="min-h-screen px-0 py-24 md:py-32 relative z-10">
+    <div class="container mx-auto max-w-6xl px-6">
+      <div class="fade-in">
+      <p class="mb-4 text-sm font-header font-bold uppercase tracking-[0.2em] text-brand">
         Repository Contributors
       </p>
-      <h1 class="mb-4 text-4xl font-header font-bold uppercase text-brand-dark">
+      <h1 class="mb-5 text-gradient text-4xl md:text-6xl font-header font-bold">
         {repoLabel} Contributors
       </h1>
-      <p class="mb-4 max-w-3xl text-base text-muted">
+      <p class="mb-4 max-w-3xl text-lg text-muted leading-relaxed">
         The community is grateful for every contribution to the .NET MAUI ecosystem.
         {description}
       </p>
@@ -130,8 +131,11 @@ const contributors: ContributorCard[] = usernames
       <p class="mb-12 text-sm font-semibold text-muted-light">
         {contributors.length} contributors
       </p>
+      </div>
 
-      <div class="mb-8 rounded-lg border border-edge bg-surface p-6 shadow-sm">
+      <div class="divider-gradient mb-10"></div>
+
+      <div class="reveal mb-8">
         <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <label for="contributor-search" class="mb-2 block text-sm font-semibold text-brand-dark">
@@ -142,7 +146,7 @@ const contributors: ContributorCard[] = usernames
                 id="contributor-search"
                 type="text"
                 placeholder="Search by name or username"
-                class="w-full rounded-lg border border-edge bg-surface px-4 py-3 pr-12 text-base text-brand-dark placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                class="w-full rounded-md border border-edge/50 bg-surface-alt px-4 py-3 pr-12 text-base text-brand-dark placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
                 data-contributor-search-input
               />
               <button
@@ -156,10 +160,10 @@ const contributors: ContributorCard[] = usernames
             </div>
           </div>
 
-          <fieldset class="">
+          <fieldset>
             <div class="flex flex-wrap justify-end gap-2">
               {repoFilters.map((filter) => (
-                <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
+                <label class="inline-flex items-center gap-2 rounded-full border border-edge/40 px-3 py-1.5 text-sm text-muted cursor-pointer hover:border-brand/40 hover:text-brand transition-colors">
                   <input
                     type="checkbox"
                     class="h-4 w-4"
@@ -176,17 +180,17 @@ const contributors: ContributorCard[] = usernames
       </div>
 
       <ul
-        class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        class="reveal grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
         aria-label={`${repoLabel} Contributors`}
         data-contributor-grid
       >
         {contributors.map((contributor) => (
           <li
-            class="rounded-lg border border-edge bg-surface p-6 shadow-sm"
+            class="text-center hover-glow rounded-xl p-4"
             data-contributor-card
             data-search-text={`${contributor.displayName.toLowerCase()} ${contributor.username.toLowerCase()}`}
           >
-            <div class="flex h-full flex-col items-center text-center">
+            <div class="flex h-full flex-col items-center">
               <img
                 src={contributor.avatarSrc}
                 alt={`${contributor.displayName} profile picture`}
@@ -200,9 +204,9 @@ const contributors: ContributorCard[] = usernames
                 href={contributor.href}
                 target={contributor.href.startsWith('/') ? undefined : '_blank'}
                 rel={contributor.href.startsWith('/') ? undefined : 'noopener noreferrer'}
-                class="mt-auto inline-flex w-full items-center justify-center rounded-full border border-edge bg-surface px-4 py-2 text-sm font-semibold text-muted transition hover:bg-surface-alt hover:text-brand"
+                class="mt-auto text-sm font-semibold text-brand hover:underline"
               >
-                {contributor.href.startsWith('/') ? 'View Profile' : 'View on GitHub'}
+                {contributor.href.startsWith('/') ? 'View Profile →' : 'View on GitHub →'}
               </a>
             </div>
           </li>

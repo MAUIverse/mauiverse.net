@@ -19,23 +19,26 @@ const sourceRepoUrl = 'https://github.com/jfversluis/built-with-maui';
   description="A list of real-world apps built with .NET MAUI."
   allowPageScroll={true}
 >
-  <section class="min-h-screen py-20">
-    <div class="container mx-auto max-w-6xl px-4">
-      <div class="mb-8 rounded-lg border border-edge bg-surface p-6">
-        <p class="text-sm text-muted">
-          Built an app with .NET MAUI?
+  <section class="min-h-screen py-24 md:py-32 relative z-10">
+    <div class="container mx-auto max-w-6xl px-6">
+      <div class="page-hero !px-0 !text-left">
+        <h1 class="text-gradient">Built with MAUI</h1>
+        <p class="subtitle !mx-0">
+          Real-world apps built with .NET MAUI.
           <a
             href={sourceRepoUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="font-semibold text-brand hover:underline"
           >
-            Add your app here &rarr;
+            Add yours &rarr;
           </a>
         </p>
       </div>
 
-      <article class="prose dark:prose-invert max-w-none prose-a:text-brand hover:prose-a:underline">
+      <div class="divider-gradient mb-12"></div>
+
+      <article class="reveal prose dark:prose-invert max-w-none prose-a:text-brand hover:prose-a:underline prose-headings:text-brand-dark prose-headings:font-header prose-img:rounded-xl">
         <Content />
       </article>
     </div>

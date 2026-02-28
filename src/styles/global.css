@@ -4,42 +4,33 @@
 
 @layer base {
   :root {
-    /* Page background */
-    --color-brand-light: 249 250 251;     /* gray-50 */
-    /* Primary text */
-    --color-brand-dark: 15 23 42;         /* slate-900 */
-    /* Brand accent */
-    --color-brand: 139 92 246;            /* violet-500 */
-    /* CTA / buttons */
-    --color-brand-extra: 124 58 237;      /* violet-600 */
-    --color-brand-extraDark: 109 40 217;  /* violet-700 */
+    --color-brand-light: 8 5 28;
+    --color-brand-dark: 237 233 254;
+    --color-brand: 168 120 255;
+    --color-brand-extra: 147 85 255;
+    --color-brand-extraDark: 126 58 242;
 
-    /* Card / raised surfaces */
-    --color-surface: 255 255 255;         /* white */
-    --color-surface-alt: 243 244 246;     /* gray-100 */
-    /* Secondary body text */
-    --color-muted: 55 65 81;             /* gray-700 */
-    --color-muted-light: 107 114 128;    /* gray-500 */
-    /* Borders / dividers */
-    --color-edge: 229 231 235;           /* gray-200 */
+    --color-surface: 14 10 40;
+    --color-surface-alt: 22 16 56;
+    --color-muted: 180 175 210;
+    --color-muted-light: 130 125 165;
+    --color-edge: 40 35 70;
   }
 
   .dark {
-    --color-brand-light: 3 7 24;          /* ~slate-950 with purple tint */
-    --color-brand-dark: 243 244 246;      /* gray-100 */
-    --color-brand: 167 139 250;           /* violet-400 */
-    --color-brand-extra: 139 92 246;      /* violet-500 */
-    --color-brand-extraDark: 124 58 237;  /* violet-600 */
-
-    --color-surface: 15 20 42;            /* slate-900 with slight purple */
-    --color-surface-alt: 25 32 58;        /* slate-800 with slight purple */
-    --color-muted: 209 213 219;           /* gray-300 */
-    --color-muted-light: 156 163 175;     /* gray-400 */
-    --color-edge: 51 60 85;              /* slate-700 with slight purple */
+    --color-brand-light: 8 5 28;
+    --color-brand-dark: 237 233 254;
+    --color-brand: 168 120 255;
+    --color-brand-extra: 147 85 255;
+    --color-brand-extraDark: 126 58 242;
+    --color-surface: 14 10 40;
+    --color-surface-alt: 22 16 56;
+    --color-muted: 180 175 210;
+    --color-muted-light: 130 125 165;
+    --color-edge: 40 35 70;
   }
 
-  html,
-  body {
+  html, body {
     @apply m-0 p-0 w-full min-h-full;
   }
 
@@ -47,9 +38,7 @@
     @apply bg-brand-light text-brand-dark antialiased;
   }
 
-  i.fa-solid,
-  i.fa-regular,
-  i.fa-brands {
+  i.fa-solid, i.fa-regular, i.fa-brands {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -58,8 +47,104 @@
   }
 }
 
-/* Hide reCAPTCHA badge */
-.grecaptcha-badge,
-#grecaptcha-badge {
+@layer components {
+  .fade-in {
+    animation: fadeIn 0.6s ease both;
+  }
+  .fade-in-d1 { animation-delay: 0.1s; }
+  .fade-in-d2 { animation-delay: 0.2s; }
+  .fade-in-d3 { animation-delay: 0.3s; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Scroll-triggered reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-d1 { transition-delay: 0.1s; }
+  .reveal-d2 { transition-delay: 0.2s; }
+  .reveal-d3 { transition-delay: 0.3s; }
+
+  /* Page hero pattern — large centered intro */
+  .page-hero {
+    @apply relative z-10 text-center px-6 pt-20 pb-16 md:pt-28 md:pb-20;
+  }
+  .page-hero h1 {
+    @apply text-4xl md:text-6xl font-header font-bold mb-5 leading-tight;
+  }
+  .page-hero .subtitle {
+    @apply text-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed;
+  }
+
+  /* Hover glow on interactive items */
+  .hover-glow {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(168, 120, 255, 0.12);
+    transform: translateY(-2px);
+  }
+
+  /* Subtle divider with gradient */
+  .divider-gradient {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168, 120, 255, 0.3), transparent);
+  }
+
+  /* Starfield — kept but subtle */
+  .starfield {
+    position: relative;
+    overflow: hidden;
+  }
+  .starfield::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.5) 50%, transparent 50%),
+      radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.35) 50%, transparent 50%),
+      radial-gradient(1.2px 1.2px at 42% 8%, rgba(200,180,255,0.5) 50%, transparent 50%),
+      radial-gradient(1px 1px at 55% 50%, rgba(255,255,255,0.3) 50%, transparent 50%),
+      radial-gradient(1px 1px at 72% 18%, rgba(255,255,255,0.45) 50%, transparent 50%),
+      radial-gradient(1px 1px at 88% 60%, rgba(200,180,255,0.4) 50%, transparent 50%),
+      radial-gradient(1px 1px at 15% 70%, rgba(255,255,255,0.3) 50%, transparent 50%),
+      radial-gradient(1px 1px at 60% 80%, rgba(200,180,255,0.35) 50%, transparent 50%),
+      radial-gradient(1px 1px at 92% 35%, rgba(255,255,255,0.4) 50%, transparent 50%),
+      radial-gradient(1px 1px at 5% 90%, rgba(255,255,255,0.25) 50%, transparent 50%),
+      radial-gradient(1px 1px at 78% 88%, rgba(255,255,255,0.3) 50%, transparent 50%),
+      radial-gradient(1px 1px at 35% 55%, rgba(255,255,255,0.2) 50%, transparent 50%);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, #c084fc 0%, #a78bfa 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Nav pills */
+  .nav-pill {
+    @apply px-3.5 py-1.5 text-sm text-muted/80 rounded-full transition-all duration-200;
+  }
+  .nav-pill:hover {
+    @apply text-brand-dark bg-surface/60;
+  }
+  .nav-pill-active {
+    @apply text-brand-dark bg-surface/80;
+  }
+}
+
+.grecaptcha-badge, #grecaptcha-badge {
   visibility: hidden;
 }

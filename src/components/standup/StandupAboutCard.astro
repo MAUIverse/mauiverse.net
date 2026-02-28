@@ -14,14 +14,14 @@ interface Props {
 const { title = 'About the Standup', items } = Astro.props;
 ---
 
-<section class="rounded-lg border border-edge bg-surface p-6 md:p-8 shadow-sm">
+<section class="py-2">
   <h2 class="text-brand-dark font-header font-bold text-xl mb-4">{title}</h2>
-  <p class="text-muted mb-4">
+  <p class="text-muted mb-6">
     <slot />
   </p>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
     {items.map((item) => (
-      <div class:list={['rounded-md bg-surface-alt p-4', { 'sm:col-span-2': item.spanTwoCols }]}>
+      <div class:list={['border-b border-edge/30 pb-4', { 'sm:col-span-2': item.spanTwoCols }]}>
         <span class="block text-muted-light text-xs uppercase tracking-wide mb-1">{item.label}</span>
         {item.href ? (
           <a
