@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/118
 description: "Show Notes It's been a little bit..."
 date: 2023-04-28
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
+    - davidortinau
 contentType: podcast
 ---
 

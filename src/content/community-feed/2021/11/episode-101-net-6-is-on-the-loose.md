@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/101
 description: "Show Notes James, David, and Matt go over .NET 6 and .NET Conf and all the goodness!"
 date: 2021-11-19
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
+    - davidortinau
 contentType: podcast
 ---
 

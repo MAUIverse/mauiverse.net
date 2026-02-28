@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/110
 description: "Show Notes .NET MAUI RC is here."
 date: 2022-04-15
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
+    - davidortinau
 contentType: podcast
 ---
 

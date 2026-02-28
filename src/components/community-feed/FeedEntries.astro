@@ -14,9 +14,20 @@ interface Props {
   entries: CollectionEntry<'community-feed'>[];
   showAuthor?: boolean;
   actionLabel?: string;
+  compactEntryIds?: string[];
+  compactLabel?: string;
+  compactActionLabel?: string;
 }
 
-const { entries, showAuthor = true, actionLabel } = Astro.props;
+const {
+  entries,
+  showAuthor = true,
+  actionLabel,
+  compactEntryIds = [],
+  compactLabel = 'Featured in',
+  compactActionLabel = 'View post',
+} = Astro.props;
+const compactEntryIdSet = new Set(compactEntryIds);
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
@@ -29,11 +40,60 @@ function hasBody(entry: { body?: string }): boolean {
     const hasContent = hasBody(entry);
     const videoId = extractYouTubeVideoId(entry.data.link);
     const isInternal = hasContent || videoId;
+    const isCompactEntry = compactEntryIdSet.has(entry.id);
     const detailUrl = `/community-feed/${entry.id}/`;
     const authorProfileHref = entry.data.author
       ? getInternalContributorProfileHref(entry.data.author)
       : null;
     const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.author) : null;
+
+    if (isCompactEntry) {
+      const compactHref = isInternal ? detailUrl : entry.data.link;
+      const isExternalCompactLink = !isInternal;
+      return (
+        <li class="rounded-lg border border-edge bg-surface px-4 py-3 shadow-sm">
+          <div class="flex items-center justify-between gap-3">
+            <div class="min-w-0">
+              <p class="text-[11px] font-semibold uppercase tracking-wide text-muted-light">
+                {compactLabel}
+              </p>
+              {isInternal ? (
+                <a
+                  href={detailUrl}
+                  class="mt-1 block text-base font-header font-bold text-brand-dark transition-colors hover:text-brand"
+                >
+                  {entry.data.title}
+                </a>
+              ) : (
+                <a
+                  href={entry.data.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-1 inline-flex items-center gap-2 text-base font-header font-bold text-brand-dark transition-colors hover:text-brand"
+                >
+                  {entry.data.title}
+                  <span class="inline-block text-muted-light" aria-hidden="true" title="External link">
+                    <i class="fa-solid fa-arrow-up-right-from-square h-3.5 w-3.5" aria-hidden="true"></i>
+                  </span>
+                </a>
+              )}
+              <p class="mt-1 text-sm text-muted-light">
+                <time datetime={entry.data.date.toISOString()}>{formatLongDateUS(entry.data.date)}</time>
+              </p>
+            </div>
+            <PrimaryLinkButton
+              href={compactHref}
+              className="ml-3 shrink-0 whitespace-nowrap"
+              target={isExternalCompactLink ? '_blank' : undefined}
+              rel={isExternalCompactLink ? 'noopener noreferrer' : undefined}
+            >
+              {compactActionLabel}
+            </PrimaryLinkButton>
+          </div>
+        </li>
+      );
+    }
+
     return (
       <li class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
         <div class={`flex gap-3 ${videoId ? 'flex-col gap-4 sm:flex-row sm:gap-6' : 'flex-col'}`}>

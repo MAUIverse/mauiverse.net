@@ -3,7 +3,9 @@ title: "DevTalk 81: Building Mobile Games with .NET MAUI (Shaun Lawrence)"
 link: https://kerry.lothrop.de/devtalk-81-shaun-lawrence/
 description: Shaun Lawrence joins DevTalk to discuss building mobile games with modern .NET tooling.
 date: 2022-05-16
-author: bijington
+author: lothrop
+featuring:
+    - bijington
 contentType: podcast
 ---
 

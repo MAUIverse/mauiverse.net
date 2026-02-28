@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/109
 description: "Show Notes Another month, another step closer to the .NET MAUI GA!"
 date: 2022-03-18
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
+    - davidortinau
 contentType: podcast
 ---
 

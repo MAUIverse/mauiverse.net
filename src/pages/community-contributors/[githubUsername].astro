@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import ContributorProfileHeader from '../../components/community-contributors/ContributorProfileHeader.astro';
 import ContributorFeedSection from '../../components/community-contributors/ContributorFeedSection.astro';
 import { paginateEntries } from '../../utils/pagination';
@@ -20,9 +20,20 @@ export async function getStaticPaths() {
 const { githubUsername, displayName } = Astro.props;
 const pageSize = 12;
 const basePath = `/community-contributors/${encodeURIComponent(githubUsername)}`;
+type CommunityFeedEntry = CollectionEntry<'community-feed'>;
+
+function isAuthoredByContributor(entry: CommunityFeedEntry): boolean {
+  return Boolean(entry.data.author && isSameAuthorKey(entry.data.author, githubUsername));
+}
+
+function isFeaturedContributor(entry: CommunityFeedEntry): boolean {
+  return (entry.data.featuring ?? []).some((featuredAuthor) =>
+    isSameAuthorKey(featuredAuthor, githubUsername)
+  );
+}
 
 const contributorEntries = (await getCollection('community-feed'))
-  .filter((entry) => entry.data.author && isSameAuthorKey(entry.data.author, githubUsername))
+  .filter((entry) => isAuthoredByContributor(entry) || isFeaturedContributor(entry))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const { pages, totalPages } = paginateEntries(contributorEntries, pageSize);
@@ -42,6 +53,7 @@ const pageEntries = pages[0]?.entries ?? [];
 
       <ContributorProfileHeader githubUsername={githubUsername} displayName={displayName} />
       <ContributorFeedSection
+        githubUsername={githubUsername}
         entries={pageEntries}
         currentPage={1}
         totalPages={totalPages}

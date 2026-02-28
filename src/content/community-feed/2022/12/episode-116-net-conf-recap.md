@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/116
 description: "Show Notes .NET Conf happened, it was amazing, and David, James and Matt will bring you up to date!"
 date: 2022-12-09
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
+    - davidortinau
 contentType: podcast
 ---
 

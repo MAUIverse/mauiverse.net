@@ -4,6 +4,10 @@ link: https://www.youtube.com/watch?v=RiSXhHQOT1s
 description: The .NET MAUI Community Toolkit team is back with the February 2026 standup—updates, demos, and Q&A.
 date: 2026-02-06
 author: dotnet-foundation
+featuring:
+    - TheCodeTraveler
+    - VladislavAntonyuk
+    - ne0rrmatrix
 isToolkitStandup: true
 ---
 

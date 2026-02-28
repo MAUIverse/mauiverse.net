@@ -4,6 +4,9 @@ link: https://www.dotnetmauipodcast.com/108
 description: "Another customer success story - this time a Xamarin app that helps those in the construction industry with mental health."
 date: 2022-03-11
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
 contentType: podcast
 ---
 

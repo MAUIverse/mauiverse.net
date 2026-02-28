@@ -4,6 +4,9 @@ link: https://www.dotnetmauipodcast.com/106
 description: "We're back at it again with a customer success story."
 date: 2022-02-04
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
 contentType: podcast
 ---
 

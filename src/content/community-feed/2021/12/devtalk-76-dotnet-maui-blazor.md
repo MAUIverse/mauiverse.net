@@ -3,7 +3,9 @@ title: "DevTalk 76: .NET MAUI Blazor (Daniel Hindrikes)"
 link: https://kerry.lothrop.de/devtalk-76-daniel-hindrikes/
 description: Daniel Hindrikes discusses MAUI Blazor and hybrid development opportunities on DevTalk.
 date: 2021-12-27
-author: dhindrik
+author: lothrop
+featuring:
+    - dhindrik
 contentType: podcast
 ---
 

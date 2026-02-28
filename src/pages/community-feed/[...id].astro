@@ -37,6 +37,17 @@ const authorProfileHref = entry.data.author
   ? getInternalContributorProfileHref(entry.data.author)
   : null;
 const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.author) : null;
+const featuredAuthors = (entry.data.featuring ?? [])
+  .map((githubUsername) => {
+    const profileHref = getInternalContributorProfileHref(githubUsername);
+    if (!profileHref) return null;
+    return {
+      githubUsername,
+      profileHref,
+      displayName: getAuthorDisplayName(githubUsername),
+    };
+  })
+  .filter((author): author is NonNullable<typeof author> => author !== null);
 const shareUrl = entry.data.link || Astro.url.href;
 const shareTitle = entry.data.title;
 const shareText = entry.data.description || entry.data.title;
@@ -64,59 +75,64 @@ const encodedBskyText = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
               {formatLongDateUS(entry.data.date)}
             </time>
           </p>
-          <div class="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
-            {entry.data.author &&
-              (authorProfileHref ? (
-                <a
-                  href={authorProfileHref}
-                  class="inline-flex w-fit shrink-0 items-center gap-3 text-brand-dark font-medium hover:underline"
-                  aria-label={`View ${authorDisplayName}'s profile`}
-                >
-                  <img
-                    src={getAuthorImageSrc(entry.data.author, 96)}
-                    alt=""
-                    width="48"
-                    height="48"
-                    class="h-12 w-12 rounded-full"
-                    loading="lazy"
-                  />
-                  <span>{authorDisplayName}</span>
-                </a>
-              ) : (
-                <div class="flex w-fit shrink-0 items-center gap-3">
-                  <img
-                    src={getAuthorImageSrc(entry.data.author, 96)}
-                    alt=""
-                    width="48"
-                    height="48"
-                    class="h-12 w-12 rounded-full"
-                    loading="lazy"
-                  />
-                  <span class="text-brand-dark font-medium">{authorDisplayName}</span>
+          <div class="mt-8 flex flex-col gap-4">
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+              {entry.data.author && (
+                <div class="w-fit shrink-0">
+                {entry.data.author &&
+                  (authorProfileHref ? (
+                    <a
+                      href={authorProfileHref}
+                      class="inline-flex w-fit items-center gap-3 text-brand-dark font-medium hover:underline"
+                      aria-label={`View ${authorDisplayName}'s profile`}
+                    >
+                      <img
+                        src={getAuthorImageSrc(entry.data.author, 96)}
+                        alt=""
+                        width="48"
+                        height="48"
+                        class="h-12 w-12 rounded-full"
+                        loading="lazy"
+                      />
+                      <span>{authorDisplayName}</span>
+                    </a>
+                  ) : (
+                    <div class="flex w-fit items-center gap-3">
+                      <img
+                        src={getAuthorImageSrc(entry.data.author, 96)}
+                        alt=""
+                        width="48"
+                        height="48"
+                        class="h-12 w-12 rounded-full"
+                        loading="lazy"
+                      />
+                      <span class="text-brand-dark font-medium">{authorDisplayName}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              )}
 
-            <section
-              class="w-full rounded-lg border border-edge bg-surface p-3 md:ml-auto md:w-fit"
-              aria-label="Share this post"
-              data-share-root
-              data-share-url={shareUrl}
-              data-share-title={shareTitle}
-              data-share-text={shareText}
-            >
-              <div class="flex items-center gap-3 overflow-x-auto whitespace-nowrap">
-                <p class="shrink-0 text-sm font-semibold text-brand-dark">Share:</p>
-                <div class="flex items-center gap-2">
-                <button
-                  type="button"
-                  class="hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
-                  data-web-share
-                  aria-label="Share using your browser"
-                  title="Share"
-                >
-                  <i class="fa-solid fa-share-nodes h-5 w-5" aria-hidden="true"></i>
-                  <span class="sr-only">Share</span>
-                </button>
+              <section
+                class="w-full rounded-lg border border-edge bg-surface p-3 md:ml-auto md:w-fit"
+                aria-label="Share this post"
+                data-share-root
+                data-share-url={shareUrl}
+                data-share-title={shareTitle}
+                data-share-text={shareText}
+              >
+                <div class="flex items-center gap-3 overflow-x-auto whitespace-nowrap">
+                  <p class="shrink-0 text-sm font-semibold text-brand-dark">Share:</p>
+                  <div class="flex items-center gap-2">
+                  <button
+                    type="button"
+                    class="hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                    data-web-share
+                    aria-label="Share using your browser"
+                    title="Share"
+                  >
+                    <i class="fa-solid fa-share-nodes h-5 w-5" aria-hidden="true"></i>
+                    <span class="sr-only">Share</span>
+                  </button>
 
                 <a
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedShareUrl}`}
@@ -188,20 +204,48 @@ const encodedBskyText = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
                   <span class="sr-only">Share by email</span>
                 </a>
 
-                <button
-                  type="button"
-                  class="hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
-                  data-copy-link
-                  aria-label="Copy link"
-                  title="Copy link"
-                >
-                  <i class="fa-solid fa-copy h-5 w-5" aria-hidden="true"></i>
-                  <span class="sr-only">Copy link</span>
-                </button>
+                  <button
+                    type="button"
+                    class="hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-edge bg-surface text-brand transition hover:bg-brand hover:text-white"
+                    data-copy-link
+                    aria-label="Copy link"
+                    title="Copy link"
+                  >
+                    <i class="fa-solid fa-copy h-5 w-5" aria-hidden="true"></i>
+                    <span class="sr-only">Copy link</span>
+                  </button>
+                  </div>
+                </div>
+                <p class="sr-only" aria-live="polite" data-share-status></p>
+              </section>
+            </div>
+
+            {featuredAuthors.length > 0 && (
+              <div>
+                <p class="mb-2 text-[11px] font-semibold uppercase tracking-wide text-muted-light">
+                  Featuring
+                </p>
+                <div class="flex flex-wrap gap-2.5">
+                  {featuredAuthors.map((featuredAuthor) => (
+                    <a
+                      href={featuredAuthor.profileHref}
+                      class="inline-flex items-center gap-2 rounded-full border border-edge bg-surface px-2.5 py-1.5 text-sm text-brand-dark transition hover:border-brand/40 hover:text-brand"
+                      aria-label={`View ${featuredAuthor.displayName}'s profile`}
+                    >
+                      <img
+                        src={getAuthorImageSrc(featuredAuthor.githubUsername, 64)}
+                        alt=""
+                        width="28"
+                        height="28"
+                        class="h-7 w-7 rounded-full"
+                        loading="lazy"
+                      />
+                      {featuredAuthor.displayName}
+                    </a>
+                  ))}
                 </div>
               </div>
-              <p class="sr-only" aria-live="polite" data-share-status></p>
-            </section>
+            )}
           </div>
         </header>
 

@@ -4,6 +4,9 @@ link: https://www.youtube.com/watch?v=NOzFWrVfopo
 description: The .NET MAUI Community Toolkit team shares updates, demos, and what’s shipping next.
 date: 2026-01-09
 author: dotnet-foundation
+featuring:
+    - ne0rrmatrix
+    - TheCodeTraveler
 isToolkitStandup: true
 ---
 

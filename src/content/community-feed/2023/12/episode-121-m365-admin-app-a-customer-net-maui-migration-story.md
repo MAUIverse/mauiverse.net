@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/121
 description: "Show Notes The M365 Admin app is used to administer M365 tenants on the go."
 date: 2023-12-15
 author: dotnetMauiPodcast
+featuring:
+    - codemillmatt
+    - jamesmontemagno
+    - davidortinau
 contentType: podcast
 ---
 

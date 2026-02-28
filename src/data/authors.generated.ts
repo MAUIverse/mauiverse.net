@@ -11,6 +11,14 @@ export const authorEntries = [
     displayName: "Adolfo Marinucci",
   },
   {
+    key: "AgustinBonilla",
+    displayName: "Agustin Bonilla",
+  },
+  {
+    key: "albyrock87",
+    displayName: "Alberto Aldegheri",
+  },
+  {
     key: "Alexgoon",
     displayName: "Alexander Russkov",
   },
@@ -53,6 +61,10 @@ export const authorEntries = [
   {
     key: "CliffAgius",
     displayName: "Clifford Agius",
+  },
+  {
+    key: "codemillmatt",
+    displayName: "Matt Soucoup",
   },
   {
     key: "codrinamerigo",
@@ -117,6 +129,10 @@ export const authorEntries = [
     displayName: "Ed Schimmel",
   },
   {
+    key: "EstebanP-dev",
+    displayName: "Juan Esteban Navia",
+  },
+  {
     key: "ewerspej",
     displayName: "Julian Ewers-Peters",
   },
@@ -137,6 +153,10 @@ export const authorEntries = [
     displayName: "Gulam Ali H.",
   },
   {
+    key: "HorusSoftwareUY",
+    displayName: "Horus Software",
+  },
+  {
     key: "hot33331",
     displayName: "Tobias Hoppenthaler",
   },
@@ -147,6 +167,10 @@ export const authorEntries = [
   {
     key: "icebeam7",
     displayName: "Luis Antonio Beltran Prieto",
+  },
+  {
+    key: "ihassantariq",
+    displayName: "Hafiz Muhammad Hassan",
   },
   {
     key: "ilija2407",
@@ -209,6 +233,10 @@ export const authorEntries = [
     displayName: "Liam Elliott",
   },
   {
+    key: "lothrop",
+    displayName: "Kerry W. Lothrop",
+  },
+  {
     key: "luismts",
     displayName: "Luis Matos",
   },
@@ -257,6 +285,10 @@ export const authorEntries = [
     displayName: "Naweed Akram",
   },
   {
+    key: "ne0rrmatrix",
+    displayName: "James Crutchley",
+  },
+  {
     key: "NickA55",
     displayName: "Nick Alonge",
   },
@@ -299,6 +331,14 @@ export const authorEntries = [
   {
     key: "SirJohnK",
     displayName: "Johan Svensson",
+  },
+  {
+    key: "SkJonko",
+    displayName: "Antonis Kotis ",
+  },
+  {
+    key: "StephaneDelcroix",
+    displayName: "Stéphane Delcroix",
   },
   {
     key: "sthewissen",

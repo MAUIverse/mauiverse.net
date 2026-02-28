@@ -10,6 +10,7 @@ const communityFeed = defineCollection({
     description: z.string(),
     date: z.coerce.date(),
     author: z.string().optional(),
+    featuring: z.array(z.string()).optional(),
     contentType: z.string().optional(),
     isStandup: z.boolean().optional(),
     isToolkitStandup: z.boolean().optional(),
