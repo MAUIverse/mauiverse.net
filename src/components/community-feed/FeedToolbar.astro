@@ -24,13 +24,13 @@ const initialStatus = `${totalEntries} entries · Page ${currentPage} of ${total
 ---
 
 <div
-  class="flex flex-wrap items-center gap-3 rounded-lg border border-edge bg-surface px-4 py-3 shadow-sm mb-8"
+  class="flex flex-wrap items-center gap-3 border-b border-edge/30 px-0 py-4 mb-8"
   data-feed-toolbar
   data-toolbar-position={position}
 >
   {/* Left group: content type + status */}
   <select
-    class="h-9 rounded-md border border-edge bg-surface-alt px-3 pr-8 text-sm text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand/40 cursor-pointer"
+    class="h-9 rounded-md border border-edge/40 bg-transparent px-3 pr-8 text-sm text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand/40 cursor-pointer"
     data-type-filter
     aria-label="Filter by content type"
   >
@@ -45,7 +45,7 @@ const initialStatus = `${totalEntries} entries · Page ${currentPage} of ${total
   {/* Spacer to push right group */}
   <div class="ml-auto flex flex-wrap items-center gap-3">
     {/* Page size toggle */}
-    <div class="flex items-center gap-1 rounded-md border border-edge bg-surface-alt p-0.5" role="radiogroup" aria-label="Posts per page">
+    <div class="flex items-center gap-1 rounded-md border border-edge/40 bg-transparent p-0.5" role="radiogroup" aria-label="Posts per page">
       <button
         type="button"
         class="inline-flex h-8 min-w-[2.5rem] items-center justify-center rounded px-2 text-sm font-medium transition data-[active]:bg-brand-extra data-[active]:text-white text-muted hover:text-brand"
@@ -66,7 +66,7 @@ const initialStatus = `${totalEntries} entries · Page ${currentPage} of ${total
     </div>
 
     {/* View toggle: column / grid */}
-    <div class="flex items-center gap-1 rounded-md border border-edge bg-surface-alt p-0.5" role="radiogroup" aria-label="View mode">
+    <div class="flex items-center gap-1 rounded-md border border-edge/40 bg-transparent p-0.5" role="radiogroup" aria-label="View mode">
       <button
         type="button"
         class="inline-flex h-8 w-8 items-center justify-center rounded text-sm transition data-[active]:bg-brand-extra data-[active]:text-white text-muted hover:text-brand"

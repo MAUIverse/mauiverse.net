@@ -1,65 +1,71 @@
 ---
 // Site footer with navigation links and dark/light mode toggle.
 ---
-<footer class="border-t border-edge bg-surface">
-  <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+<footer class="border-t border-edge/50">
+  <div class="mx-auto max-w-6xl px-6 py-12">
     <div class="grid grid-cols-2 gap-8 sm:grid-cols-2 lg:grid-cols-4">
       <div>
-        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Community</h3>
-        <ul class="flex flex-col gap-2">
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-brand">Community</h3>
+        <ul class="flex flex-col gap-2.5">
           <li>
-            <a href="/community-feed/" class="text-sm text-muted transition-colors hover:text-brand">Contributor Feed</a>
+            <a href="/community-feed/" class="text-sm text-muted transition-colors duration-200 hover:text-brand">Contributor Feed</a>
           </li>
           <li>
-            <a href="/community-contributors/" class="text-sm text-muted transition-colors hover:text-brand">Community Contributors</a>
+            <a href="/community-contributors/" class="text-sm text-muted transition-colors duration-200 hover:text-brand">Community Contributors</a>
           </li>
           <li>
-            <a href="/built-with-maui/" class="text-sm text-muted transition-colors hover:text-brand">Built with MAUI</a>
+            <a href="/built-with-maui/" class="text-sm text-muted transition-colors duration-200 hover:text-brand">Built with MAUI</a>
           </li>
           <li>
-            <a href="/newsletter" class="text-sm text-muted transition-colors hover:text-brand">Newsletter</a>
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Shows</h3>
-        <ul class="flex flex-col gap-2">
-          <li>
-            <a href="/community-standup/" class="text-sm text-muted transition-colors hover:text-brand">Community Standup</a>
-          </li>
-          <li>
-            <a href="/toolkit-standup/" class="text-sm text-muted transition-colors hover:text-brand">Toolkit Standup</a>
+            <a href="/newsletter" class="text-sm text-muted transition-colors duration-200 hover:text-brand">Newsletter</a>
           </li>
         </ul>
       </div>
 
       <div>
-        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Repository Contributors</h3>
-        <ul class="flex flex-col gap-2">
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-brand">Shows</h3>
+        <ul class="flex flex-col gap-2.5">
           <li>
-            <a href="/repo-contributors/maui/" class="text-sm text-muted transition-colors hover:text-brand">.NET MAUI</a>
+            <a href="/community-standup/" class="text-sm text-muted transition-colors duration-200 hover:text-brand">Community Standup</a>
           </li>
           <li>
-            <a href="/repo-contributors/community-toolkit/" class="text-sm text-muted transition-colors hover:text-brand">Community Toolkit</a>
-          </li>
-          <li>
-            <a href="/repo-contributors/syncfusion-toolkit/" class="text-sm text-muted transition-colors hover:text-brand">Syncfusion Toolkit</a>
+            <a href="/toolkit-standup/" class="text-sm text-muted transition-colors duration-200 hover:text-brand">Toolkit Standup</a>
           </li>
         </ul>
       </div>
 
       <div>
-        <h3 class="mb-3 text-sm font-bold uppercase tracking-wide text-brand-dark">Connect</h3>
-        <ul class="flex flex-col gap-2">
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-brand">Repository Contributors</h3>
+        <ul class="flex flex-col gap-2.5">
           <li>
-            <a href="/discord/" target="_blank" rel="noopener noreferrer" class="text-sm text-muted transition-colors hover:text-brand">Discord</a>
+            <a href="/repo-contributors/maui/" class="text-sm text-muted transition-colors duration-200 hover:text-brand">.NET MAUI</a>
           </li>
           <li>
-            <a href="https://bsky.app/profile/mauiverse.net" target="_blank" rel="noopener noreferrer" class="text-sm text-muted transition-colors hover:text-brand">Bluesky</a>
+            <a href="/repo-contributors/community-toolkit/" class="text-sm text-muted transition-colors duration-200 hover:text-brand">Community Toolkit</a>
           </li>
           <li>
-            <a href="https://github.com/MAUIverse/mauiverse.net/" target="_blank" rel="noopener noreferrer" class="text-sm text-muted transition-colors hover:text-brand">GitHub</a>
+            <a href="/repo-contributors/syncfusion-toolkit/" class="text-sm text-muted transition-colors duration-200 hover:text-brand">Syncfusion Toolkit</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-brand">Connect</h3>
+        <ul class="flex flex-col gap-2.5">
+          <li>
+            <a href="/discord/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-muted transition-colors duration-200 hover:text-brand">
+              <i class="fa-brands fa-discord" aria-hidden="true"></i> Discord
+            </a>
+          </li>
+          <li>
+            <a href="https://bsky.app/profile/mauiverse.net" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-muted transition-colors duration-200 hover:text-brand">
+              <i class="fa-brands fa-bluesky" aria-hidden="true"></i> Bluesky
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/MAUIverse/mauiverse.net/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-muted transition-colors duration-200 hover:text-brand">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
           </li>
         </ul>
       </div>
@@ -75,7 +81,7 @@
       <button
         id="theme-toggle"
         type="button"
-        class="inline-flex items-center gap-2 rounded-full border border-edge bg-surface-alt px-3 py-1.5 text-sm font-medium text-muted transition-colors hover:text-brand-dark"
+        class="inline-flex items-center gap-2 rounded-full border border-edge bg-surface-alt px-4 py-2 text-sm font-medium text-muted transition-all duration-300 hover:text-brand hover:border-brand/30 hover:shadow-sm"
         aria-label="Toggle dark mode"
       >
         <i id="theme-icon-sun" class="fa-solid fa-sun hidden h-4 w-4" aria-hidden="true"></i>

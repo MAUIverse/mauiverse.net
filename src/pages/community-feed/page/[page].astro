@@ -42,8 +42,8 @@ const { entries, currentPage, totalPages, contentTypes, totalEntries } = Astro.p
   description="Notable moments, packages, projects, and celebrations from the MAUIverse community."
   allowPageScroll={true}
 >
-  <section class="py-24 px-0 min-h-screen">
-    <div class="container max-w-4xl mx-auto px-4">
+  <section class="py-24 md:py-32 px-0 min-h-screen">
+    <div class="container max-w-4xl mx-auto px-6">
       <CommunityFeedIntroPanel />
 
       <FeedToolbar contentTypes={contentTypes} position="top" totalEntries={totalEntries} currentPage={currentPage} totalPages={totalPages} />

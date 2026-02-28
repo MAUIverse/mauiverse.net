@@ -53,10 +53,30 @@ const { title, description = 'Welcome to the MAUIverse', allowPageScroll = false
   <body class="min-h-screen flex flex-col">
     <Header />
 
-    <main class="pt-16 flex-1">
+    <main class="pt-16 flex-1 starfield relative">
+      <!-- Nebula orbs -->
+      <div class="absolute top-[5%] left-[15%] w-[450px] h-[450px] bg-purple-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+      <div class="absolute top-[35%] right-[10%] w-[350px] h-[350px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div class="absolute top-[65%] left-[5%] w-[300px] h-[300px] bg-violet-600/8 rounded-full blur-[100px] pointer-events-none"></div>
+      <div class="absolute top-[85%] right-[20%] w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
       <slot />
     </main>
 
     <Footer />
+
+    <script is:inline>
+      (function() {
+        var observer = new IntersectionObserver(
+          function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+          },
+          { threshold: 0.02, rootMargin: '0px 0px -5% 0px' }
+        );
+        document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+      })();
+    </script>
   </body>
 </html>

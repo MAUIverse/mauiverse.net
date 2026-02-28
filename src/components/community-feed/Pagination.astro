@@ -43,7 +43,7 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
           <a
             href={prevHref}
             rel="prev"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface text-muted hover:bg-surface-alt hover:text-brand transition"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge/40 text-muted hover:text-brand transition"
             aria-label="Previous page"
             title="Previous page"
           >
@@ -51,7 +51,7 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
           </a>
         ) : (
           <span
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface-alt text-muted-light opacity-50"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md text-muted-light opacity-50"
             aria-disabled="true"
             title="Previous page"
           >
@@ -76,7 +76,7 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
           ) : (
             <a
               href={hrefForPage(token)}
-              class="inline-flex h-10 min-w-10 items-center justify-center rounded-md border border-edge bg-surface px-3 text-muted hover:bg-surface-alt hover:text-brand transition"
+              class="inline-flex h-10 min-w-10 items-center justify-center rounded-md border border-edge/40 px-3 text-muted hover:text-brand transition"
               aria-label={`Go to page ${token}`}
             >
               {token}
@@ -90,7 +90,7 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
           <a
             href={nextHref}
             rel="next"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface text-muted hover:bg-surface-alt hover:text-brand transition"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge/40 text-muted hover:text-brand transition"
             aria-label="Next page"
             title="Next page"
           >
@@ -98,7 +98,7 @@ const nextHref = currentPage < totalPages ? hrefForPage(currentPage + 1) : null;
           </a>
         ) : (
           <span
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-edge bg-surface-alt text-muted-light opacity-50"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md text-muted-light opacity-50"
             aria-disabled="true"
             title="Next page"
           >

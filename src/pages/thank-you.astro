@@ -8,61 +8,59 @@ import PrimaryLinkButton from '../components/PrimaryLinkButton.astro';
   description="Thank you for subscribing to the MAUIverse newsletter."
   allowPageScroll={true}
 >
-  <section id="thank-you" class="py-24 px-0 min-h-screen">
-    <div class="container max-w-4xl mx-auto px-4">
-      <div class="rounded-lg border border-edge bg-surface p-8 md:p-10 shadow-sm text-center">
-        <p class="text-brand font-bold mb-3 text-lg font-header uppercase">
-          You're in 🎉
-        </p>
+  <section id="thank-you" class="py-28 md:py-40 px-6 min-h-screen relative z-10">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="fade-in text-brand font-bold mb-4 text-sm font-header uppercase tracking-[0.2em]">
+        You're in 🎉
+      </p>
 
-        <h1 class="text-brand-dark text-4xl md:text-5xl uppercase font-header font-bold mb-4">
-          Thanks for subscribing
-        </h1>
+      <h1 class="fade-in fade-in-d1 text-gradient text-4xl md:text-6xl font-header font-bold mb-5">
+        Thanks for subscribing
+      </h1>
 
-        <p class="text-muted text-base md:text-lg max-w-2xl mx-auto mb-3">
-          Welcome to the MAUIverse newsletter. You&rsquo;ll get curated community updates from across .NET MAUI,
-          including standout projects, ecosystem news, learning resources, and upcoming events.
-        </p>
+      <p class="fade-in fade-in-d2 text-muted text-lg md:text-xl max-w-xl mx-auto mb-4 leading-relaxed">
+        Welcome to the MAUIverse newsletter. You&rsquo;ll get curated community updates from across .NET MAUI,
+        including standout projects, ecosystem news, learning resources, and upcoming events.
+      </p>
 
-        <p class="text-muted-light text-sm md:text-base max-w-2xl mx-auto mb-10">
-          Think of it as your monthly DevRel digest: signal over noise, with practical links you can use right away.
-        </p>
+      <p class="text-muted-light text-base max-w-xl mx-auto mb-14 leading-relaxed">
+        Think of it as your monthly DevRel digest: signal over noise, with practical links you can use right away.
+      </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left mb-10">
-          <div class="rounded-lg border border-edge bg-brand-light p-5">
-            <h2 class="text-brand-dark text-lg font-header font-bold mb-2">What happens next</h2>
-            <ul class="text-muted text-sm space-y-2 list-disc pl-5">
-              <li>Watch for a confirmation email in your inbox.</li>
-              <li>Add MAUIverse to your contacts so updates stay out of spam.</li>
-              <li>Your first digest lands in the next newsletter cycle.</li>
-            </ul>
-          </div>
-
-          <div class="rounded-lg border border-edge bg-brand-light p-5">
-            <h2 class="text-brand-dark text-lg font-header font-bold mb-2">In the meantime</h2>
-            <ul class="text-muted text-sm space-y-2 list-disc pl-5">
-              <li>Browse recent highlights from the community feed.</li>
-              <li>Join the Discord and connect with other MAUI developers.</li>
-              <li>Catch up on standup episodes and roadmap discussions.</li>
-            </ul>
-          </div>
+      <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-12 text-left mb-14 max-w-xl mx-auto">
+        <div>
+          <h2 class="text-brand-dark text-lg font-header font-bold mb-3">What happens next</h2>
+          <ul class="text-muted text-sm space-y-2 list-disc pl-5">
+            <li>Watch for a confirmation email in your inbox.</li>
+            <li>Add MAUIverse to your contacts so updates stay out of spam.</li>
+            <li>Your first digest lands in the next newsletter cycle.</li>
+          </ul>
         </div>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <PrimaryLinkButton href="/community-feed/">Explore Community Feed</PrimaryLinkButton>
-          <a
-            href="/discord/"
-            class="inline-flex items-center justify-center rounded bg-brand-extra px-4 py-2 text-sm font-medium text-white hover:bg-brand-extraDark transition-colors"
-          >
-            Join Discord
-          </a>
-          <a
-            href="/"
-            class="inline-flex items-center justify-center rounded border border-edge px-4 py-2 text-sm font-medium text-brand-dark hover:bg-brand-light transition-colors"
-          >
-            Back to Home
-          </a>
+        <div>
+          <h2 class="text-brand-dark text-lg font-header font-bold mb-3">In the meantime</h2>
+          <ul class="text-muted text-sm space-y-2 list-disc pl-5">
+            <li>Browse recent highlights from the community feed.</li>
+            <li>Join the Discord and connect with other MAUI developers.</li>
+            <li>Catch up on standup episodes and roadmap discussions.</li>
+          </ul>
         </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <PrimaryLinkButton href="/community-feed/">Explore Community Feed</PrimaryLinkButton>
+        <a
+          href="/discord/"
+          class="inline-flex items-center justify-center rounded-full border border-edge px-6 py-2.5 text-sm font-semibold text-brand-dark transition-colors hover:border-brand/40 hover:text-brand"
+        >
+          Join Discord
+        </a>
+        <a
+          href="/"
+          class="inline-flex items-center justify-center rounded-full border border-edge px-6 py-2.5 text-sm font-semibold text-brand-dark transition-colors hover:border-brand/40 hover:text-brand"
+        >
+          Back to Home
+        </a>
       </div>
     </div>
   </section>

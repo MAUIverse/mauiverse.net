@@ -64,24 +64,24 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
   description="Search community feed items by keyword, content type, and standup flags."
   allowPageScroll={true}
 >
-  <section class="py-24 px-0 min-h-screen">
-    <div class="container max-w-4xl mx-auto px-4">
-      <div class="mb-10">
-        <p class="text-brand font-bold mb-4 text-xl font-header uppercase">Community Feed</p>
-        <h1 class="text-brand-dark text-4xl md:text-4xl uppercase font-header font-bold mb-4">
+  <section class="py-24 md:py-32 px-0 min-h-screen">
+    <div class="container max-w-4xl mx-auto px-6">
+      <div class="fade-in mb-10">
+        <p class="text-brand font-bold mb-4 text-sm font-header uppercase tracking-[0.2em]">Community Feed</p>
+        <h1 class="text-gradient text-4xl md:text-6xl font-header font-bold mb-5">
           Search Contributions
         </h1>
-        <p class="text-muted text-base max-w-2xl">
+        <p class="text-muted text-lg md:text-xl max-w-2xl leading-relaxed">
           Search the content of community feed entries and refine results using contribution metadata.
         </p>
       </div>
 
-      <div class="rounded-lg border border-edge bg-surface p-6 shadow-sm mb-8" data-search-root>
+      <div class="mb-8" data-search-root>
         <label for="search-query" class="block text-sm font-semibold text-brand-dark mb-2">Search text</label>
         <input
           id="search-query"
           type="search"
-          class="w-full rounded-md border border-edge bg-surface-alt px-4 py-3 text-base text-brand-dark placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-brand/40"
+          class="w-full rounded-md border border-edge/50 bg-surface-alt px-4 py-3 text-base text-brand-dark placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-brand/40"
           placeholder="Search community feed content"
           autocomplete="off"
         />
@@ -91,7 +91,7 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
             <legend class="text-sm font-semibold text-brand-dark mb-2">Content type</legend>
             <div class="flex flex-wrap gap-2">
               {contentTypes.map((contentType) => (
-                <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
+                <label class="inline-flex items-center gap-2 rounded-full border border-edge/40 px-3 py-1.5 text-sm text-muted cursor-pointer hover:border-brand/40 hover:text-brand transition-colors">
                   <input type="checkbox" value={contentType} class="h-4 w-4" data-filter="contentType" />
                   <span>{toLabel(contentType)}</span>
                 </label>
@@ -102,11 +102,11 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
           <fieldset>
             <legend class="text-sm font-semibold text-brand-dark mb-2">Standups</legend>
             <div class="flex flex-wrap gap-2">
-              <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
+              <label class="inline-flex items-center gap-2 rounded-full border border-edge/40 px-3 py-1.5 text-sm text-muted cursor-pointer hover:border-brand/40 hover:text-brand transition-colors">
                 <input type="checkbox" class="h-4 w-4" data-filter="isStandup" />
                 <span>Community Standup</span>
               </label>
-              <label class="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-sm text-muted cursor-pointer hover:bg-surface-alt">
+              <label class="inline-flex items-center gap-2 rounded-full border border-edge/40 px-3 py-1.5 text-sm text-muted cursor-pointer hover:border-brand/40 hover:text-brand transition-colors">
                 <input type="checkbox" class="h-4 w-4" data-filter="isToolkitStandup" />
                 <span>Toolkit Standup</span>
               </label>
@@ -115,7 +115,7 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
         </div>
       </div>
 
-      <div class="flex flex-wrap items-center gap-3 rounded-lg border border-edge bg-surface px-4 py-3 shadow-sm mb-8" data-search-toolbar>
+      <div class="flex flex-wrap items-center gap-3 border-b border-edge/30 px-0 py-4 mb-8" data-search-toolbar>
         <span class="text-xs text-muted-light" data-results-status>Showing all searchable community feed entries.</span>
         <div class="ml-auto flex items-center gap-1 rounded-md border border-edge bg-surface-alt p-0.5" role="radiogroup" aria-label="View mode">
           <button
@@ -268,7 +268,7 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
           ? `<p class="text-muted text-base">${excerpt}</p>`
           : `<p class="text-muted text-base">${escapeHtml(record.description)}</p>`;
         return `
-          <li class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+          <li class="border-b border-edge/30 pb-8 last:border-0">
             <a href="${record.url}" class="text-brand-dark text-xl font-header font-bold hover:text-brand transition-colors">${escapeHtml(record.title)}</a>
             <p class="mt-2 text-muted-light text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
               ${authorHtml}<time datetime="${record.dateISO}">${escapeHtml(record.dateLabel)}</time>
@@ -288,7 +288,7 @@ const recordsJson = JSON.stringify(searchRecords).replace(/</g, '\\u003c');
           ? `<img src="${record.authorImageSrc}" alt="" width="20" height="20" class="h-5 w-5 rounded-full inline-block" loading="lazy" /><span>${escapeHtml(record.authorLabel)}</span><span class="text-muted-light" aria-hidden="true">\u00b7</span>`
           : '';
         return `
-          <li class="rounded-lg border border-edge bg-surface p-4 shadow-sm flex flex-col">
+          <li class="border-b border-edge/30 pb-6 last:border-0">
             <a href="${record.url}" class="text-brand-dark text-base font-header font-bold hover:text-brand transition-colors line-clamp-2 mb-2">${escapeHtml(record.title)}</a>
             <p class="text-muted-light text-xs flex flex-wrap items-center gap-x-1.5 gap-y-1 mb-2">
               ${authorHtml}<time datetime="${record.dateISO}">${escapeHtml(record.dateLabel)}</time>
