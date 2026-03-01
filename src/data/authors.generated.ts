@@ -119,10 +119,6 @@ export const authorEntries = [
     displayName: "Diego Rivero",
   },
   {
-    key: "dirivero",
-    displayName: "Diego Rivero",
-  },
-  {
     key: "dotnet",
     displayName: ".NET",
   },

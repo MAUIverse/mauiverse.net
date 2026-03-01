@@ -1,5 +1,4 @@
 import type { APIRoute } from 'astro';
-import { getCollection } from 'astro:content';
 import {
   getAuthorDisplayName,
   getAuthorImageSrc,
@@ -8,6 +7,7 @@ import {
 import { extractYouTubeVideoId, getYouTubeThumbnailUrl } from '../../utils/youtube';
 import { isGitHubUrl } from '../../utils/link';
 import { formatLongDateUS } from '../../utils/date';
+import { getUnifiedFeedEntries, isToolkitStandupEntry } from '../../data/feed';
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
@@ -20,9 +20,7 @@ function normalizeContentType(value?: string): string {
 }
 
 export const GET: APIRoute = async () => {
-  const entries = (await getCollection('community-feed')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-  );
+  const entries = await getUnifiedFeedEntries();
 
   const records = entries.map((entry) => {
     const videoId = extractYouTubeVideoId(entry.data.link);
@@ -50,6 +48,7 @@ export const GET: APIRoute = async () => {
       hasBody: withBody,
       isInternal,
       isGitHub: isGitHubUrl(entry.data.link),
+      isToolkitStandup: isToolkitStandupEntry(entry),
     };
   });
 

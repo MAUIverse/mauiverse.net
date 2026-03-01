@@ -1,7 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
 import { extractYouTubeVideoId, getYouTubeEmbedUrl } from '../utils/youtube';
 import { formatLongWeekdayDateUS } from '../utils/date';
+import livestreamSchedules from '../config/livestream-schedules.json';
 
 interface Props {
   variant?: 'full' | 'compact';
@@ -24,15 +24,19 @@ const {
 const CHANNEL_URL = channelUrl;
 const STREAM_DURATION_MS = 60 * 60 * 1000; // 1 hour
 
-const rawCollection = collection === 'toolkit-standup'
-  ? await getCollection('toolkit-standup')
-  : await getCollection('community-standup');
+const scheduleKey = collection === 'toolkit-standup' ? 'toolkitStandup' : 'communityStandup';
+type LivestreamScheduleEpisode = {
+  title: string;
+  date: string;
+  liveUrl?: string;
+};
+const rawCollection = (livestreamSchedules[scheduleKey].episodes ?? []) as LivestreamScheduleEpisode[];
 
 const allEpisodes = rawCollection
   .map((e) => ({
-    title: e.data.title,
-    date: e.data.date.toISOString(),
-    liveUrl: e.data.liveUrl ?? null,
+    title: e.title,
+    date: e.date,
+    liveUrl: e.liveUrl ?? null,
   }))
   .sort((a, b) => new Date(a.date).valueOf() - new Date(b.date).valueOf());
 
@@ -50,7 +54,6 @@ const nextEpisodeEmbedUrl = nextEpisodeYouTubeVideoId
   ? getYouTubeEmbedUrl(nextEpisodeYouTubeVideoId)
   : null;
 const isCompact = variant === 'compact';
-const compactHeading = collection === 'toolkit-standup' ? 'Community Toolkit Standup' : 'Community Standup';
 ---
 
 <div

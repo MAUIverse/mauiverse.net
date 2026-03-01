@@ -1,0 +1,58 @@
+{
+  "communityStandup": {
+    "episodes": [
+      {
+        "title": ".NET MAUI Community Standup - March 2026",
+        "date": "2026-03-05T19:00:00Z"
+      },
+      {
+        "title": ".NET MAUI Community Standup - April 2026",
+        "date": "2026-04-02T19:00:00Z"
+      },
+      {
+        "title": ".NET MAUI Community Standup - May 2026",
+        "date": "2026-05-07T19:00:00Z"
+      },
+      {
+        "title": ".NET MAUI Community Standup - June 2026",
+        "date": "2026-06-04T19:00:00Z"
+      },
+      {
+        "title": ".NET MAUI Community Standup - July 2026",
+        "date": "2026-07-02T19:00:00Z"
+      },
+      {
+        "title": ".NET MAUI Community Standup - August 2026",
+        "date": "2026-08-06T19:00:00Z"
+      }
+    ]
+  },
+  "toolkitStandup": {
+    "episodes": [
+      {
+        "title": ".NET MAUI Community Toolkit Standup - March 2026",
+        "date": "2026-03-05T20:00:00Z"
+      },
+      {
+        "title": ".NET MAUI Community Toolkit Standup - April 2026",
+        "date": "2026-04-02T20:00:00Z"
+      },
+      {
+        "title": ".NET MAUI Community Toolkit Standup - May 2026",
+        "date": "2026-05-07T20:00:00Z"
+      },
+      {
+        "title": ".NET MAUI Community Toolkit Standup - June 2026",
+        "date": "2026-06-04T20:00:00Z"
+      },
+      {
+        "title": ".NET MAUI Community Toolkit Standup - July 2026",
+        "date": "2026-07-02T20:00:00Z"
+      },
+      {
+        "title": ".NET MAUI Community Toolkit Standup - August 2026",
+        "date": "2026-08-06T20:00:00Z"
+      }
+    ]
+  }
+}

@@ -1,11 +1,11 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
 import {
   getAuthorDisplayName,
   getAuthorKeys,
   isSameAuthorKey,
 } from '../../../data/authors';
 import { extractYouTubeVideoId } from '../../../utils/youtube';
+import { getUnifiedFeedEntries } from '../../../data/feed';
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
@@ -23,7 +23,7 @@ export async function GET(context: {
   props: { githubUsername: string; displayName: string };
 }) {
   const { githubUsername, displayName } = context.props;
-  const entries = (await getCollection('community-feed'))
+  const entries = (await getUnifiedFeedEntries())
     .filter((entry) => entry.data.author && isSameAuthorKey(entry.data.author, githubUsername))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 

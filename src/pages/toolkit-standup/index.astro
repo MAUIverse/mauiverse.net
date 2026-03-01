@@ -7,8 +7,7 @@ import StandupAboutCard from '../../components/standup/StandupAboutCard.astro';
 import { getCollection } from 'astro:content';
 import { paginateEntries } from '../../utils/pagination';
 
-const standupEntries = (await getCollection('community-feed'))
-  .filter((e) => e.data.isToolkitStandup === true)
+const standupEntries = (await getCollection('toolkit-standup'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const pageSize = 8;

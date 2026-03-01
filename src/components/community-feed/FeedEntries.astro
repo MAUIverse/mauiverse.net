@@ -11,7 +11,7 @@ import { formatLongDateUS } from '../../utils/date';
 import PrimaryLinkButton from '../PrimaryLinkButton.astro';
 
 interface Props {
-  entries: CollectionEntry<'community-feed'>[];
+  entries: Array<CollectionEntry<'community-feed'> | CollectionEntry<'toolkit-standup'>>;
   showAuthor?: boolean;
   actionLabel?: string;
   compactEntryIds?: string[];

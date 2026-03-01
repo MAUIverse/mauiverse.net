@@ -1,15 +1,13 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
 import { extractYouTubeVideoId } from '../../utils/youtube';
+import { getUnifiedFeedEntries } from '../../data/feed';
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
 }
 
 export async function GET(context: { site: string | undefined }) {
-  const entries = (await getCollection('community-feed')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-  );
+  const entries = await getUnifiedFeedEntries();
 
   const site = context.site ?? 'https://mauiverse.net';
   const baseUrl = typeof site === 'string' ? site.replace(/\/$/, '') : 'https://mauiverse.net';

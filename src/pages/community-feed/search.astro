@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
 import { extractYouTubeVideoId } from '../../utils/youtube';
 import { formatLongDateUS } from '../../utils/date';
 import { getAuthorDisplayName, getAuthorImageSrc } from '../../data/authors';
+import { getUnifiedFeedEntries, isToolkitStandupEntry } from '../../data/feed';
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
@@ -26,9 +26,7 @@ function toLabel(value: string): string {
   return value.replace(/[-_]+/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
-const entries = (await getCollection('community-feed')).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+const entries = await getUnifiedFeedEntries();
 
 const searchableEntries = entries.filter((entry) => hasBody(entry) || Boolean(extractYouTubeVideoId(entry.data.link)));
 
@@ -47,8 +45,8 @@ const searchRecords = searchableEntries.map((entry) => {
     authorLabel: authorKey ? getAuthorDisplayName(authorKey) : '',
     authorImageSrc: authorKey ? getAuthorImageSrc(authorKey, 48) : '',
     contentType,
-    isStandup: Boolean(entry.data.isStandup),
-    isToolkitStandup: Boolean(entry.data.isToolkitStandup),
+    isStandup: entry.collection === 'community-feed' && Boolean(entry.data.isStandup),
+    isToolkitStandup: isToolkitStandupEntry(entry),
   };
 });
 

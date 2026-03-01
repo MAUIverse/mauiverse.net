@@ -1,15 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
 import FeedEntries from '../../components/community-feed/FeedEntries.astro';
 import Pagination from '../../components/community-feed/Pagination.astro';
 import CommunityFeedIntroPanel from '../../components/community-feed/CommunityFeedIntroPanel.astro';
 import FeedToolbar from '../../components/community-feed/FeedToolbar.astro';
 import { paginateEntries } from '../../utils/pagination';
+import { getUnifiedFeedEntries } from '../../data/feed';
 
-const entries = (await getCollection('community-feed')).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+const entries = await getUnifiedFeedEntries();
 
 function normalizeContentType(value?: string): string {
   if (!value) return 'unknown';

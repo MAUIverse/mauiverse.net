@@ -22,7 +22,6 @@ const communityFeed = defineCollection({
     featuring: z.array(authorHandleSchema).optional(),
     contentType: z.string().optional(),
     isStandup: z.boolean().optional(),
-    isToolkitStandup: z.boolean().optional(),
   }),
 });
 
@@ -43,8 +42,12 @@ const toolkitStandup = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/toolkit-standup' }),
   schema: z.object({
     title: z.string(),
+    link: z.string().url(),
+    description: z.string(),
     date: z.coerce.date(),
-    liveUrl: z.string().url().optional(),
+    author: authorHandleSchema.optional(),
+    featuring: z.array(authorHandleSchema).optional(),
+    contentType: z.literal('video'),
   }),
 });
 

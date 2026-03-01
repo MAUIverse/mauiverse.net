@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import {
   getAuthorDisplayName,
   getAuthorImageSrc,
@@ -13,9 +13,10 @@ import {
 } from '../../utils/youtube';
 import { formatLongDateUS } from '../../utils/date';
 import PrimaryLinkButton from '../../components/PrimaryLinkButton.astro';
+import { getUnifiedFeedEntries } from '../../data/feed';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('community-feed');
+  const entries = await getUnifiedFeedEntries();
   return entries.map((entry) => ({
     params: { id: entry.id },
     props: { entry },

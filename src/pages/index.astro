@@ -3,12 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import LivestreamCountdown from '../components/LivestreamCountdown.astro';
 import PrimaryLinkButton from '../components/PrimaryLinkButton.astro';
 import NewsletterSignupForm from '../components/NewsletterSignupForm.astro';
-import { getCollection } from 'astro:content';
 import { getAuthorDisplayName, getAuthorImageSrc } from '../data/authors';
+import { getUnifiedFeedEntries } from '../data/feed';
 
-const latestEntries = (await getCollection('community-feed'))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 5);
+const latestEntries = (await getUnifiedFeedEntries()).slice(0, 5);
 
 const DISCORD_URL = '/discord/';
 const maxTitleLength = 50;
@@ -27,7 +25,7 @@ function truncateTitle(title: string): string {
       <p class="fade-in text-brand text-sm md:text-base font-semibold tracking-[0.25em] uppercase mb-6">
         The .NET MAUI Community
       </p>
-      <h1 class="fade-in fade-in-d1 text-gradient text-4xl sm:text-6xl md:text-9xl font-header font-extrabold tracking-tight leading-none mb-8">
+      <h1 class="fade-in fade-in-d1 text-gradient text-5xl sm:text-6xl md:text-9xl font-header font-extrabold tracking-tight leading-none mb-8">
         MAUIverse
       </h1>
       <p class="fade-in fade-in-d2 text-muted text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed">

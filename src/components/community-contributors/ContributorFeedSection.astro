@@ -8,7 +8,7 @@ import { isSameAuthorKey } from '../../data/authors';
 interface Props {
   githubUsername: string;
   displayName: string;
-  entries: CollectionEntry<'community-feed'>[];
+  entries: Array<CollectionEntry<'community-feed'> | CollectionEntry<'toolkit-standup'>>;
   currentPage: number;
   totalPages: number;
   basePath: string;
