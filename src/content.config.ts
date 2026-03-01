@@ -21,7 +21,6 @@ const communityFeed = defineCollection({
     author: authorHandleSchema.optional(),
     featuring: z.array(authorHandleSchema).optional(),
     contentType: z.string().optional(),
-    isStandup: z.boolean().optional(),
   }),
 });
 
@@ -33,8 +32,12 @@ const communityStandup = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/community-standup' }),
   schema: z.object({
     title: z.string(),
+    link: z.string().url(),
+    description: z.string(),
     date: z.coerce.date(),
-    liveUrl: z.string().url().optional(),
+    author: authorHandleSchema.optional(),
+    featuring: z.array(authorHandleSchema).optional(),
+    contentType: z.string().optional(),
   }),
 });
 

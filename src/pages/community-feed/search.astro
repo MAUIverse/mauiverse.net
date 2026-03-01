@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { extractYouTubeVideoId } from '../../utils/youtube';
 import { formatLongDateUS } from '../../utils/date';
 import { getAuthorDisplayName, getAuthorImageSrc } from '../../data/authors';
-import { getUnifiedFeedEntries, isToolkitStandupEntry } from '../../data/feed';
+import { getUnifiedFeedEntries, isCommunityStandupEntry, isToolkitStandupEntry } from '../../data/feed';
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
@@ -45,7 +45,7 @@ const searchRecords = searchableEntries.map((entry) => {
     authorLabel: authorKey ? getAuthorDisplayName(authorKey) : '',
     authorImageSrc: authorKey ? getAuthorImageSrc(authorKey, 48) : '',
     contentType,
-    isStandup: entry.collection === 'community-feed' && Boolean(entry.data.isStandup),
+    isStandup: isCommunityStandupEntry(entry),
     isToolkitStandup: isToolkitStandupEntry(entry),
   };
 });

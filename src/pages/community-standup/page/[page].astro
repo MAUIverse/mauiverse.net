@@ -8,8 +8,7 @@ import { paginateAndBuildStaticPaths } from '../../../utils/pagination';
 
 export async function getStaticPaths() {
   const pageSize = 8;
-  const entries = (await getCollection('community-feed'))
-    .filter((e) => e.data.isStandup)
+  const entries = (await getCollection('community-standup'))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
   return paginateAndBuildStaticPaths(entries, pageSize, (page) => ({
