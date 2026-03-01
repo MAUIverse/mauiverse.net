@@ -3,7 +3,7 @@ title: "Episode 125: Hello Xcode 16 & .NET 9 RC 2"
 link: https://www.dotnetmauipodcast.com/125
 description: "The latest in greatest for .NET MAUI is here with .NET 9 RC 2 which comes with plenty of awesome enhancements for mobile and desktop developers."
 date: 2024-10-18
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - jamesmontemagno
     - codemillmatt

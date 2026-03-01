@@ -3,7 +3,7 @@ title: "Delete bin and obj Folders in .NET MAUI"
 link: https://dev.to/vhugogarcia/delete-bin-and-obj-folders-in-net-maui-3j1e
 description: "A Visual Studio Code extension streamlines cleaning build artifacts in .NET MAUI projects by providing a right-click context menu option to delete bin and obj folders. This simple tool saves time resolving mysterious build issues and cache problems."
 date: 2025-01-27
-author: victor-hugo-garcia
+author: vhugogarcia
 contentType: article
 ---
 

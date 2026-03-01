@@ -3,7 +3,7 @@ title: "Episode 114: .NET MAUI in .NET 7 RC 1 - Wha?!?"
 link: https://www.dotnetmauipodcast.com/114
 description: "Show Notes Can you believe it?"
 date: 2022-09-23
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

@@ -4,6 +4,11 @@ link: https://www.youtube.com/watch?v=Oxm_io0k1dY
 description: "https://github.com/CommunityToolkit/Maui The .NET MAUI Community Toolkit is a collection of common elements for development with .NET MAUI that developers tend to replicate across multiple apps. It simplifies and demonstrates common developer tasks when building apps with .NET MAUI."
 date: 2021-11-04
 author: dotnet-foundation
+featuring:
+    - TheCodeTraveler
+    - bijington
+    - pictos
+    - jsuarezruiz
 isToolkitStandup: true
 contentType: video
 ---

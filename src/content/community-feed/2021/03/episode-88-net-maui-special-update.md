@@ -3,7 +3,7 @@ title: "Episode 88: .NET MAUI Special Update"
 link: https://www.dotnetmauipodcast.com/88
 description: "Matt and James are joined by David Ortinau for a special update on .NET MAUI. Plus a whole lot of other updates on new releases of Visual Studio for Mac and Windows."
 date: 2021-03-12
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

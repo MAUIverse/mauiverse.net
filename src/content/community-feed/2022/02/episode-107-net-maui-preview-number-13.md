@@ -3,7 +3,7 @@ title: "Episode 107: .NET MAUI Preview ... Number 13!"
 link: https://www.dotnetmauipodcast.com/107
 description: "Show Notes Can you believe we're on .NET MAUI Preview 13?"
 date: 2022-02-18
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

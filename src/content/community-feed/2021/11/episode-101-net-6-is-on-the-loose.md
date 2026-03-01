@@ -3,7 +3,7 @@ title: "Episode 101: .NET 6 Is On The Loose"
 link: https://www.dotnetmauipodcast.com/101
 description: "Show Notes James, David, and Matt go over .NET 6 and .NET Conf and all the goodness!"
 date: 2021-11-19
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

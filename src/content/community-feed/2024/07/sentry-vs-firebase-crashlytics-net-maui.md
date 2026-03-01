@@ -3,7 +3,7 @@ title: "Mastering Error Insights in .NET MAUI: Sentry vs. Firebase Crashlytics"
 link: https://dev.to/vhugogarcia/mastering-error-insights-in-net-maui-sentry-vs-firebase-crashlytics-5aj3
 description: "Sentry outperforms Firebase Crashlytics for .NET MAUI error monitoring by providing full .NET stack traces, custom contexts, breadcrumbs, and better debugging insights. The comparison guides developers in choosing effective error tracking solutions."
 date: 2024-07-22
-author: victor-hugo-garcia
+author: vhugogarcia
 contentType: article
 ---
 

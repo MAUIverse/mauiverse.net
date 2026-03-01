@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename);
 
 const contributorsDir = path.resolve(__dirname, '../src/content/community-contributors');
 const outputPath = path.resolve(__dirname, '../src/data/authors.generated.ts');
+const snippetsOutputPath = path.resolve(__dirname, '../.vscode/author-frontmatter.code-snippets');
 
 function parseYamlValue(rawValue) {
   const value = rawValue.trim();
@@ -66,6 +67,46 @@ function toEntryLiteral(entry) {
   return `  {\n${lines.join('\n')}\n  }`;
 }
 
+function normalizeLookupText(value) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
+function buildAuthorSnippetPrefixes(entry) {
+  const normalizedDisplayName = normalizeLookupText(entry.displayName);
+  const nameTokens = normalizedDisplayName.match(/[a-z0-9]+/g) ?? [];
+  const firstName = nameTokens[0];
+  const compactDisplayName = nameTokens.join('');
+
+  const prefixes = [
+    entry.key,
+    entry.key.toLowerCase(),
+    firstName,
+    compactDisplayName,
+  ].filter((prefix) => typeof prefix === 'string' && prefix.length > 0);
+
+  return [...new Set(prefixes)];
+}
+
+function buildAuthorSnippets(authorEntries) {
+  const snippets = {};
+
+  for (const entry of authorEntries) {
+    const snippetName = `Author: ${entry.displayName} (${entry.key})`;
+
+    snippets[snippetName] = {
+      scope: 'markdown',
+      prefix: buildAuthorSnippetPrefixes(entry),
+      body: entry.key,
+      description: `Insert author handle '${entry.key}' for ${entry.displayName}`,
+    };
+  }
+
+  return snippets;
+}
+
 async function main() {
   const files = (await fs.readdir(contributorsDir))
     .filter((name) => name.endsWith('.yaml') || name.endsWith('.yml'))
@@ -117,8 +158,15 @@ async function main() {
     .map((entry) => toEntryLiteral(entry))
     .join(',\n')}\n] as const;\n`;
 
+  const snippets = buildAuthorSnippets(authorEntries);
+  const snippetsContents = `${JSON.stringify(snippets, null, 2)}\n`;
+
   await fs.writeFile(outputPath, fileContents, 'utf8');
+  await fs.mkdir(path.dirname(snippetsOutputPath), { recursive: true });
+  await fs.writeFile(snippetsOutputPath, snippetsContents, 'utf8');
+
   console.log(`Generated ${outputPath} with ${authorEntries.length} author entries.`);
+  console.log(`Generated ${snippetsOutputPath} with ${authorEntries.length} author snippets.`);
 }
 
 await main();

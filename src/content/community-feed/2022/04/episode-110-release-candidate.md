@@ -3,7 +3,7 @@ title: "Episode 110: RELEASE CANDIDATE!"
 link: https://www.dotnetmauipodcast.com/110
 description: "Show Notes .NET MAUI RC is here."
 date: 2022-04-15
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

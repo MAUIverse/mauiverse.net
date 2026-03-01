@@ -3,7 +3,7 @@ title: "Episode 94: MORE .NET MAUI"
 link: https://www.dotnetmauipodcast.com/94
 description: "Build has come and gone and there's so much goodness to talk about with .NET MAUI - and David Ortinau is back to fill us all in."
 date: 2021-06-11
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

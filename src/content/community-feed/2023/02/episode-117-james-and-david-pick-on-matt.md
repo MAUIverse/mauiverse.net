@@ -3,7 +3,11 @@ title: "Episode 117: James and David Pick on Matt"
 link: https://www.dotnetmauipodcast.com/117
 description: "Show Notes In addition to some good natured ribbing - James, Matt & David talk about the latest and greatest in .NET MAUI development."
 date: 2023-02-04
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
+featuring:
+    - jamesmontemagno
+    - davidortinau
+    - codemillmatt
 contentType: podcast
 ---
 

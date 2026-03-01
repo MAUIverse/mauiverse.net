@@ -3,7 +3,7 @@ title: "Episode 105: Not One But Two .NET MAUI Previews!"
 link: https://www.dotnetmauipodcast.com/105
 description: "Show Notes Can you believe there were 2 .NET MAUI previews since our last episode?"
 date: 2022-01-21
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

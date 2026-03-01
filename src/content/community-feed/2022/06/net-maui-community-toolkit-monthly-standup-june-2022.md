@@ -4,6 +4,11 @@ link: https://www.youtube.com/watch?v=t3g_NrQfE8g
 description: "Join us as we review recent updates and upcoming changes to the .NET MAUI Community Toolkit!"
 date: 2022-06-02
 author: dotnet-foundation
+featuring:
+    - pictos
+    - bijington
+    - TheCodeTraveler
+    - vladislavantonyuk
 isToolkitStandup: true
 contentType: video
 ---

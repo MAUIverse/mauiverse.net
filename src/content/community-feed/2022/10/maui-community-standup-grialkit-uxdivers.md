@@ -5,6 +5,10 @@ link: https://www.youtube.com/watch?v=ArCWms3kpbU
 description: "David Ortinau hosts a MAUI Community Standup with the UXDivers team to learn about GrialKit and building polished MAUI UI."
 date: 2022-10-06
 author: davidortinau
+featuring:
+    - maddymontaquila
+    - dirivero
+    - pablogermano
 ---
 
 GrialKit has long been a popular way to accelerate UI in the Xamarin.Forms world, and this standup brings that conversation into the MAUI era with the **UXDivers** team.

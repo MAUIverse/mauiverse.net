@@ -3,7 +3,7 @@ title: "Solving .NET MAUI Issues on macOS Sequoia with Visual Studio Code and XC
 link: https://dev.to/vhugogarcia/solving-net-maui-issues-on-macos-sequoia-with-visual-studio-code-and-xcode-16-3ljd
 description: "macOS Sequoia and XCode 16 initially broke .NET MAUI compatibility, requiring workarounds until official support arrived. This guide documents solutions including downgrading XCode, managing provisioning profiles, and disabling XAML Hot Reload."
 date: 2024-09-19
-author: victor-hugo-garcia
+author: vhugogarcia
 contentType: article
 ---
 

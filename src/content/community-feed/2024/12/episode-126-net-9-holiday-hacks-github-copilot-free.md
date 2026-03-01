@@ -3,7 +3,7 @@ title: "Episode 126: .NET 9, Holiday Hacks, & GitHub Copilot Free"
 link: https://www.dotnetmauipodcast.com/126
 description: ".NET 9 is officially here!"
 date: 2024-12-23
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - jamesmontemagno
     - codemillmatt

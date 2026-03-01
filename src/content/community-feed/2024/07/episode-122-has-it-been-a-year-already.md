@@ -3,7 +3,7 @@ title: "Episode 122: Has it been a year already?"
 link: https://www.dotnetmauipodcast.com/122
 description: "Show Notes C# Azure Search Sample with MAUI!"
 date: 2024-07-12
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 contentType: podcast
 ---
 

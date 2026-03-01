@@ -3,7 +3,7 @@ title: "Remove iOS Navigation Bar Separator in .NET MAUI"
 link: https://dev.to/vhugogarcia/remove-ios-navigation-bar-separator-in-net-maui-1ma1
 description: "Custom handlers in .NET MAUI enable removal of iOS navigation bar separators when using Shell. Platform-specific code modifies UINavigationBarAppearance to create seamless, edge-to-edge navigation experiences."
 date: 2024-01-17
-author: victor-hugo-garcia
+author: vhugogarcia
 contentType: article
 ---
 

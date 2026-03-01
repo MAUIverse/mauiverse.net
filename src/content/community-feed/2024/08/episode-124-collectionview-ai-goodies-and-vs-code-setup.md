@@ -3,7 +3,7 @@ title: "Episode 124: CollectionView++, AI Goodies, and VS Code Setup"
 link: https://www.dotnetmauipodcast.com/124
 description: "It's time for another .NET MAUI Podcast with James, David, and Matt!"
 date: 2024-08-26
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - jamesmontemagno
     - codemillmatt

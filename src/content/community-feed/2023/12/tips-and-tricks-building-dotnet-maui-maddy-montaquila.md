@@ -1,5 +1,5 @@
 ---
-title: "Tips and tricks for building your .NET MAUI apps - Maddy Montaquila"
+title: "Tips and tricks for building your .NET MAUI apps"
 link: https://www.youtube.com/watch?v=Hxks6CSSlK4
 description: Maddy Montaquila shares practical tips and tricks for building .NET MAUI apps, focusing on patterns that improve developer productivity and app quality.
 date: 2023-12-02

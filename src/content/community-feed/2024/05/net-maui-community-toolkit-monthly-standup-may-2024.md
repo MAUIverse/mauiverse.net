@@ -4,6 +4,10 @@ link: https://www.youtube.com/watch?v=IGkjMS4Bbts
 description: "Join us as we discuss the current happenings in the .NET MAUI Community Toolkit! https://github.com/CommunityToolkit/Maui/wiki/Monthly-Standups"
 date: 2024-05-03
 author: dotnet-foundation
+featuring:
+    - cliffagius
+    - bijington
+    - TheCodeTraveler
 isToolkitStandup: true
 contentType: video
 ---

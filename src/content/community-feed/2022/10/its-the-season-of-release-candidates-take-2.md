@@ -3,7 +3,10 @@ title: "It's the season of release candidates (take 2)"
 link: https://www.dotnetmauipodcast.com/115-2
 description: "Show Notes With .NET 7 around the corner, we're putting the finishing touches on everything in preparation - tune in to find out more!"
 date: 2022-10-21
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
+featuring:
+    - davidortinau
+    - jamesmontemagno
 contentType: podcast
 ---
 

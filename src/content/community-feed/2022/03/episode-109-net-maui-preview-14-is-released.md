@@ -3,7 +3,7 @@ title: "Episode 109: .NET MAUI (preview 14) is Released!"
 link: https://www.dotnetmauipodcast.com/109
 description: "Show Notes Another month, another step closer to the .NET MAUI GA!"
 date: 2022-03-18
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

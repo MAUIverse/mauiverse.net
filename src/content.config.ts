@@ -1,6 +1,15 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { authorEntries } from './data/authors.generated';
+
+const authorKeys = authorEntries.map((entry) => entry.key) as [
+  (typeof authorEntries)[number]['key'],
+  ...(typeof authorEntries)[number]['key'][]
+];
+const legacyAuthorKeys = [] as const;
+const validAuthorKeys = [...authorKeys, ...legacyAuthorKeys] as const;
+const authorHandleSchema = z.union([z.enum(validAuthorKeys), z.string()]);
 
 const communityFeed = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/community-feed' }),
@@ -9,8 +18,8 @@ const communityFeed = defineCollection({
     link: z.string().url(),
     description: z.string(),
     date: z.coerce.date(),
-    author: z.string().optional(),
-    featuring: z.array(z.string()).optional(),
+    author: authorHandleSchema.optional(),
+    featuring: z.array(authorHandleSchema).optional(),
     contentType: z.string().optional(),
     isStandup: z.boolean().optional(),
     isToolkitStandup: z.boolean().optional(),

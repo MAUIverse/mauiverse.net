@@ -3,7 +3,7 @@ title: "Episode 111: Aloha .NET MAUI"
 link: https://www.dotnetmauipodcast.com/111
 description: "Show Notes It's out - it's GA - move all your apps now."
 date: 2022-05-24
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

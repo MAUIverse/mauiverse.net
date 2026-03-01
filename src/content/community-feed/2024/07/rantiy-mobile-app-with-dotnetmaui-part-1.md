@@ -1,9 +1,9 @@
 ---
 title: "Rantiy, Mobile App with .NET MAUI - Part 1"
-link: https://danielmonetelli.github.io/blog/posts/rantiy-mobile-app-with-dotnetmaui-part-1/
+link: https://danielmonettelli.github.io/blog/posts/rantiy-mobile-app-with-dotnetmaui-part-1/
 description: Daniel Monettelli introduces the Rantiy app and shares UI/UX tooling and implementation techniques used to accelerate .NET MAUI development.
 date: 2024-07-28
-author: danielmonetelli
+author: danielmonettelli
 contentType: article
 ---
 

@@ -3,7 +3,7 @@ title: "Align the Button Text in .NET MAUI"
 link: https://dev.to/vhugogarcia/align-the-button-text-in-net-maui-1900
 description: "Platform-specific button text alignment in .NET MAUI requires custom handlers leveraging native iOS and Android controls. This guide demonstrates creating reusable handlers for precise text positioning across platforms."
 date: 2025-01-09
-author: victor-hugo-garcia
+author: vhugogarcia
 contentType: article
 ---
 

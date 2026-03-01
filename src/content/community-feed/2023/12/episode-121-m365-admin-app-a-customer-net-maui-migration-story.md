@@ -3,7 +3,7 @@ title: "Episode 121: M365 Admin App: A Customer .NET MAUI Migration Story"
 link: https://www.dotnetmauipodcast.com/121
 description: "Show Notes The M365 Admin app is used to administer M365 tenants on the go."
 date: 2023-12-15
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

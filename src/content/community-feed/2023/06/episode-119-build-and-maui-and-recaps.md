@@ -3,7 +3,7 @@ title: "Episode 119: Build and MAUI and Recaps"
 link: https://www.dotnetmauipodcast.com/119
 description: "Show Notes Microsoft Build just happened - tune in to hear David's, James', and Matt's thoughts!"
 date: 2023-06-23
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

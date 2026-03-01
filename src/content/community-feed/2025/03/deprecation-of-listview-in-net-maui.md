@@ -3,7 +3,7 @@ title: "Deprecation of ListView in .NET MAUI"
 link: https://dev.to/vhugogarcia/deprecation-of-listview-in-net-maui-cga
 description: "Microsoft announced ListView's deprecation in .NET 10, encouraging developers to migrate to CollectionView for better performance and flexibility. This guide provides step-by-step migration patterns including template conversion, selection handling, and SwipeView alternatives."
 date: 2025-03-29
-author: victor-hugo-garcia
+author: vhugogarcia
 contentType: article
 ---
 

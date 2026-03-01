@@ -3,7 +3,7 @@ title: ".NET MAUI: Archive and Publish using Visual Studio Code"
 link: https://dev.to/vhugogarcia/net-maui-archive-and-publish-using-visual-studio-code-3dh2
 description: "Visual Studio Code enables complete .NET MAUI build and publish workflows for iOS and Android using command-line tools. This guide covers archiving apps with proper signing, uploading to stores, and managing platform-specific configurations."
 date: 2024-01-19
-author: victor-hugo-garcia
+author: vhugogarcia
 contentType: article
 ---
 

@@ -265,6 +265,10 @@ export const authorEntries = [
     displayName: "Matt Johnson-Pint",
   },
   {
+    key: "mattleibow",
+    displayName: "Matthew Leibowitz",
+  },
+  {
     key: "MaxMa04",
     displayName: "Max Mannstein",
   },
@@ -307,6 +311,10 @@ export const authorEntries = [
   {
     key: "plattski",
     displayName: "David Platt",
+  },
+  {
+    key: "praeclarum",
+    displayName: "Frank A. Krueger ",
   },
   {
     key: "PureWeen",
@@ -363,6 +371,10 @@ export const authorEntries = [
   {
     key: "TheCodeTraveler",
     displayName: "Brandon Minnick",
+  },
+  {
+    key: "tije709",
+    displayName: "TJ Lambert",
   },
   {
     key: "tkapa",

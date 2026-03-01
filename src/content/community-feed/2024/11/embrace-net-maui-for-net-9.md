@@ -3,7 +3,7 @@ title: "Stay Ahead of the Curve: Embrace .NET MAUI for .NET 9"
 link: https://dev.to/vhugogarcia/stay-ahead-of-the-curve-embrace-net-maui-for-net-9-5ad5
 description: ".NET MAUI for .NET 9 brings performance improvements, new controls like HybridWebView, and enhanced platform features. Despite being an STS release, the frequent update cycle of mobile development makes upgrading practical and beneficial."
 date: 2024-11-12
-author: victor-hugo-garcia
+author: vhugogarcia
 contentType: article
 ---
 

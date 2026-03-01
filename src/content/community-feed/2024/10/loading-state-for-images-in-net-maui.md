@@ -3,7 +3,7 @@ title: "Loading State for Images in .NET MAUI"
 link: https://dev.to/vhugogarcia/loading-state-for-images-in-net-maui-28ng
 description: "Control reference bindings in .NET MAUI enable elegant loading indicators for images across all platforms. By binding to the Image control's IsLoading property, developers can provide visual feedback during image fetching operations."
 date: 2024-10-31
-author: victor-hugo-garcia
+author: vhugogarcia
 contentType: article
 ---
 

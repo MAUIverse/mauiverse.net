@@ -3,7 +3,7 @@ title: "Episode 100: Preview-Mania"
 link: https://www.dotnetmauipodcast.com/100
 description: "Show Notes All the previews and release candidates you could ever want."
 date: 2021-10-15
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

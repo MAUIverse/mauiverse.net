@@ -3,7 +3,7 @@ title: "ObservableRangeCollection in .NET MAUI"
 link: https://dev.to/vhugogarcia/observablerangecollection-in-net-maui-k9j
 description: "ObservableRangeCollection extends standard collections with automatic change notifications, ideal for .NET MAUI UI updates. This extension provides performance benefits over standard ObservableCollection for bulk operations while maintaining real-time binding."
 date: 2024-04-16
-author: victor-hugo-garcia
+author: vhugogarcia
 contentType: article
 ---
 

@@ -3,7 +3,7 @@ title: "Episode 97: The New .NET MAUI Podcast"
 link: https://www.dotnetmauipodcast.com/97
 description: "Show Notes Can you believe it - the Xamarin Podcast is now the .NET MAUI Podcast?!?"
 date: 2021-08-20
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

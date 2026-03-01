@@ -3,7 +3,7 @@ title: ".NET MAUI: Update NuGet Packages using Visual Studio Code"
 link: https://dev.to/vhugogarcia/net-maui-update-nuget-packages-using-visual-studio-code-32al
 description: "The dotnet-outdated CLI tool identifies outdated NuGet packages in .NET MAUI projects within VS Code, color-coding updates by severity. Manual .csproj editing completes the lightweight package management workflow without heavy IDE extensions."
 date: 2024-01-29
-author: victor-hugo-garcia
+author: vhugogarcia
 contentType: article
 ---
 

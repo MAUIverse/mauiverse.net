@@ -3,7 +3,7 @@ title: "Episode 120: Polaris : A Customer Migration Story"
 link: https://www.dotnetmauipodcast.com/120
 description: "Migrate your Xamarin.iOS Binding Library"
 date: 2023-10-06
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno

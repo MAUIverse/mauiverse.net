@@ -3,7 +3,7 @@ title: "Episode 113: The Season of .NET MAUI"
 link: https://www.dotnetmauipodcast.com/113
 description: "Show Notes Whether it's summer or winter where you live, one thing is for certain - it's the season of .NET MAUI!"
 date: 2022-08-26
-author: dotnetMauiPodcast
+author: dotnetMAUIPodcast
 featuring:
     - codemillmatt
     - jamesmontemagno
