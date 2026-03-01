@@ -5,6 +5,8 @@ link: https://www.youtube.com/watch?v=LuA4WbZY7tw
 description: The MAUI Community Standup rounds up the .NET 10 announcements and what they mean for MAUI developers.
 date: 2025-12-05
 author: davidortinau
+featuring:
+    - jfversluis
 ---
 
 Big platform announcements can be noisy—this Community Standup helps translate them into what matters for **.NET MAUI** devs.

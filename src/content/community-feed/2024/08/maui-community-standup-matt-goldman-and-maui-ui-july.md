@@ -5,6 +5,10 @@ link: https://www.youtube.com/watch?v=mQq6_mhtbH4
 description: "David Ortinau hosts a .NET MAUI Community Standup with Matt Goldman, discussing MAUI UI July and UI-focused tips for building better MAUI apps."
 date: 2024-08-02
 author: davidortinau
+featuring:
+    - tije709
+    - matt-goldman
+contentType: video
 ---
 
 MAUI UI July is all about sharpening UI skills and sharing patterns—this episode highlights that spirit with Matt Goldman.

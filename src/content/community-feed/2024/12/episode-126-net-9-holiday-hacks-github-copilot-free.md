@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/126
 description: ".NET 9 is officially here!"
 date: 2024-12-23
 author: dotnetMauiPodcast
+featuring:
+    - jamesmontemagno
+    - codemillmatt
+    - davidortinau
 contentType: podcast
 ---
 

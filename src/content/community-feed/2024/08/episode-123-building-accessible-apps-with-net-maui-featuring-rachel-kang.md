@@ -4,6 +4,9 @@ link: https://www.dotnetmauipodcast.com/123
 description: "Show Notes Rachel Kang, .NET MAUI Program Manager, joins the podcast to talk about all things accessibility for .NET MAUI developers."
 date: 2024-08-16
 author: dotnetMauiPodcast
+featuring:
+    - jamesmontemagno
+    - rachelkang
 contentType: podcast
 ---
 

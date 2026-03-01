@@ -76,7 +76,7 @@ const encodedBskyText = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
             </time>
           </p>
           <div class="mt-8 flex flex-col gap-4">
-            <div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-6">
+            <div class="flex flex-col gap-4 md:flex-row md:flex-wrap md:items-center md:gap-6">
               {entry.data.author && (
                 <div class="w-fit shrink-0">
                 {entry.data.author &&
@@ -220,7 +220,7 @@ const encodedBskyText = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
             </section>
 
             {featuredAuthors.length > 0 && (
-              <div>
+              <div class="md:basis-full">
                 <p class="mb-2 text-[11px] font-semibold uppercase tracking-wide text-muted-light">
                   Featuring
                 </p>
@@ -245,9 +245,7 @@ const encodedBskyText = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
                 </div>
               </div>
             )}
-                </div>
-              </div>
-            )}
+            }
           </div>
         </header>
 

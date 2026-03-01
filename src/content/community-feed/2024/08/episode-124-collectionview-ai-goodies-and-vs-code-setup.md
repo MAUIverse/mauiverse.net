@@ -4,6 +4,10 @@ link: https://www.dotnetmauipodcast.com/124
 description: "It's time for another .NET MAUI Podcast with James, David, and Matt!"
 date: 2024-08-26
 author: dotnetMauiPodcast
+featuring:
+    - jamesmontemagno
+    - codemillmatt
+    - davidortinau
 contentType: podcast
 ---
 
