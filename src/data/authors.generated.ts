@@ -47,6 +47,10 @@ export const authorEntries = [
     displayName: "Shaun Lawrence",
   },
   {
+    key: "borrillis",
+    displayName: "Michael Cummings ",
+  },
+  {
     key: "bradystroud",
     displayName: "Brady Stroud",
   },
@@ -107,6 +111,14 @@ export const authorEntries = [
     displayName: "Daniel Hindrikes",
   },
   {
+    key: "dianasoltani",
+    displayName: "Diana Soltani",
+  },
+  {
+    key: "dirivero",
+    displayName: "Diego Rivero",
+  },
+  {
     key: "dirivero",
     displayName: "Diego Rivero",
   },
@@ -127,6 +139,10 @@ export const authorEntries = [
   {
     key: "drasticactions",
     displayName: "Tim Miller",
+  },
+  {
+    key: "EdCharbeneau",
+    displayName: "Ed Charbeneau ",
   },
   {
     key: "eschimmel",
@@ -225,6 +241,10 @@ export const authorEntries = [
     displayName: "Hubert Graham",
   },
   {
+    key: "kphillpotts",
+    displayName: "Kym Phillpotts ",
+  },
+  {
     key: "kubaflo",
     displayName: "Jakub Florkowski",
   },
@@ -301,6 +321,14 @@ export const authorEntries = [
     displayName: "Nick Alonge",
   },
   {
+    key: "olekssokol",
+    displayName: "Oleksii Sokol ",
+  },
+  {
+    key: "pablogermano",
+    displayName: "Pablo Germano",
+  },
+  {
     key: "PaulAndersonS",
     displayName: "Paul Anderson",
   },
@@ -329,6 +357,10 @@ export const authorEntries = [
     displayName: "Jonathan Dick",
   },
   {
+    key: "rmarinho",
+    displayName: "Rui Marinho",
+  },
+  {
     key: "roubachof",
     displayName: "Jean-Marie Alfonsi",
   },
@@ -349,6 +381,10 @@ export const authorEntries = [
     displayName: "Antonis Kotis ",
   },
   {
+    key: "spadapet",
+    displayName: "Peter Spada",
+  },
+  {
     key: "StephaneDelcroix",
     displayName: "Stéphane Delcroix",
   },
@@ -367,6 +403,10 @@ export const authorEntries = [
   {
     key: "taublast",
     displayName: "Nick Kovalsky",
+  },
+  {
+    key: "techcat18",
+    displayName: "Kostiantyn Bondarenko",
   },
   {
     key: "TheCodeTraveler",
