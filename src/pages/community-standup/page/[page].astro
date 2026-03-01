@@ -37,7 +37,7 @@ const { entries, currentPage, totalPages } = Astro.props;
       <!-- Past Standups -->
       <section>
         <h2 class="text-brand-dark font-header font-bold text-2xl mb-6">Past Standups</h2>
-        <FeedEntries entries={entries} showAuthor={false} actionLabel="Watch" />
+        <FeedEntries entries={entries} actionLabel="Watch" />
         <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/community-standup" />
       </section>
     </div>

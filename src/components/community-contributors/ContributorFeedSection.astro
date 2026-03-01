@@ -1,18 +1,30 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import FeedEntries from '../community-feed/FeedEntries.astro';
 import Pagination from '../community-feed/Pagination.astro';
 import { isSameAuthorKey } from '../../data/authors';
 
 interface Props {
   githubUsername: string;
+  displayName: string;
   entries: CollectionEntry<'community-feed'>[];
   currentPage: number;
   totalPages: number;
   basePath: string;
 }
 
-const { githubUsername, entries, currentPage, totalPages, basePath } = Astro.props;
+const { githubUsername, displayName, entries, currentPage, totalPages, basePath } = Astro.props;
+const normalizedDisplayName = displayName.trim();
+const contributorProfile = (await getCollection('community-contributors')).find((entry) =>
+  isSameAuthorKey(entry.data.gitHubUsername, githubUsername)
+);
+const hasAvatarImagePath = Boolean(contributorProfile?.data.avatarImagePath?.trim());
+const firstName = normalizedDisplayName.split(/\s+/).find((part) => part.length > 0);
+const feedName = hasAvatarImagePath
+  ? normalizedDisplayName
+  : firstName ?? normalizedDisplayName;
+const heading = `${feedName}'s Feed`;
 const compactEntryIds = entries
   .filter((entry) => {
     const isAuthoredByContributor =
@@ -27,7 +39,7 @@ const compactEntryIds = entries
 
 <section aria-labelledby="contributor-feed-heading">
   <h2 id="contributor-feed-heading" class="mb-6 text-2xl font-header font-bold text-brand-dark">
-    Contibutor Feed
+    {heading}
   </h2>
   {entries.length > 0 ? (
     <>

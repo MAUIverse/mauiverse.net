@@ -154,18 +154,7 @@ const profileLinks = [
         <h1 class="mb-3 text-3xl font-header font-bold text-brand-dark">
           {displayName}
         </h1>
-        {githubUrl ? (
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-base font-medium text-brand hover:underline"
-          >
-            {displayName} on GitHub
-          </a>
-        ) : (
-          <span class="text-base text-muted-light">{displayName}</span>
-        )}
+        
 
         <div class="mt-4 flex w-full flex-wrap items-center gap-3" aria-label="Profile links">
           {profileLinks.length > 0 && (

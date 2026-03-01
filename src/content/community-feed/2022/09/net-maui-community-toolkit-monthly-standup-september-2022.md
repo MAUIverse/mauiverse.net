@@ -4,7 +4,7 @@ link: https://www.youtube.com/watch?v=Jehqf7B8zzQ
 description: "Join us as we discuss the current happenings in the .NET MAUI Community Toolkit!"
 date: 2022-09-01
 author: dotnet-foundation
-featured:
+featuring:
     - jfversluis
     - pictos
     - vladislavantonyuk

@@ -58,6 +58,7 @@ const basePath = `/community-contributors/${encodeURIComponent(githubUsername)}`
       <ContributorProfileHeader githubUsername={githubUsername} displayName={displayName} />
       <ContributorFeedSection
         githubUsername={githubUsername}
+        displayName={displayName}
         entries={entries}
         currentPage={currentPage}
         totalPages={totalPages}
