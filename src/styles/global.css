@@ -4,17 +4,16 @@
 
 @layer base {
   :root {
-    --color-brand-light: 8 5 28;
-    --color-brand-dark: 237 233 254;
-    --color-brand: 168 120 255;
-    --color-brand-extra: 147 85 255;
-    --color-brand-extraDark: 126 58 242;
-
-    --color-surface: 14 10 40;
-    --color-surface-alt: 22 16 56;
-    --color-muted: 180 175 210;
-    --color-muted-light: 130 125 165;
-    --color-edge: 40 35 70;
+    --color-brand-light: 249 250 251;     /* gray-50 */
+    --color-brand-dark: 15 23 42;         /* slate-900 */
+    --color-brand: 139 92 246;            /* violet-500 */
+    --color-brand-extra: 124 58 237;      /* violet-600 */
+    --color-brand-extraDark: 109 40 217;  /* violet-700 */
+    --color-surface: 255 255 255;         /* white */
+    --color-surface-alt: 243 244 246;     /* gray-100 */
+    --color-muted: 55 65 81;             /* gray-700 */
+    --color-muted-light: 107 114 128;    /* gray-500 */
+    --color-edge: 229 231 235;           /* gray-200 */
   }
 
   .dark {
