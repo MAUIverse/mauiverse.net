@@ -3,7 +3,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { extractYouTubeVideoId } from '../../utils/youtube';
 import { formatLongDateUS } from '../../utils/date';
 import { getAuthorDisplayName, getAuthorImageSrc } from '../../data/authors';
-import { getUnifiedFeedEntries, isCommunityStandupEntry, isToolkitStandupEntry } from '../../data/feed';
+import {
+  getUnifiedFeedEntries,
+  isCommunityStandupEntry,
+  isEventEntry,
+  isToolkitStandupEntry,
+} from '../../data/feed';
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
@@ -28,7 +33,9 @@ function toLabel(value: string): string {
 
 const entries = await getUnifiedFeedEntries();
 
-const searchableEntries = entries.filter((entry) => hasBody(entry) || Boolean(extractYouTubeVideoId(entry.data.link)));
+const searchableEntries = entries.filter(
+  (entry) => hasBody(entry) || Boolean(extractYouTubeVideoId(entry.data.link)) || isEventEntry(entry)
+);
 
 const searchRecords = searchableEntries.map((entry) => {
   const detailUrl = `/community-feed/${entry.id}/`;

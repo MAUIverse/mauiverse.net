@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContributorProfileHeader from '../../components/community-contributors/ContributorProfileHeader.astro';
 import ContributorFeedSection from '../../components/community-contributors/ContributorFeedSection.astro';
 import { paginateEntries } from '../../utils/pagination';
-import { getUnifiedFeedEntries, type UnifiedFeedEntry } from '../../data/feed';
+import { getFeaturingAuthorKeys, getUnifiedFeedEntries, type UnifiedFeedEntry } from '../../data/feed';
 import {
   getAuthorKeys,
   getAuthorDisplayName,
@@ -26,7 +26,7 @@ function isAuthoredByContributor(entry: UnifiedFeedEntry): boolean {
 }
 
 function isFeaturedContributor(entry: UnifiedFeedEntry): boolean {
-  return (entry.data.featuring ?? []).some((featuredAuthor) =>
+  return getFeaturingAuthorKeys(entry).some((featuredAuthor) =>
     isSameAuthorKey(featuredAuthor, githubUsername)
   );
 }

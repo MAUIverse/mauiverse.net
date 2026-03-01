@@ -3,7 +3,7 @@ import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import ContributorProfileHeader from '../../../../components/community-contributors/ContributorProfileHeader.astro';
 import ContributorFeedSection from '../../../../components/community-contributors/ContributorFeedSection.astro';
 import { paginateAndBuildStaticPaths } from '../../../../utils/pagination';
-import { getUnifiedFeedEntries, type UnifiedFeedEntry } from '../../../../data/feed';
+import { getFeaturingAuthorKeys, getUnifiedFeedEntries, type UnifiedFeedEntry } from '../../../../data/feed';
 import {
   getAuthorKeys,
   getAuthorDisplayName,
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
     const isAuthoredByContributor = (entry: UnifiedFeedEntry) =>
       Boolean(entry.data.author && isSameAuthorKey(entry.data.author, githubUsername));
     const isFeaturedContributor = (entry: UnifiedFeedEntry) =>
-      (entry.data.featuring ?? []).some((featuredAuthor) =>
+      getFeaturingAuthorKeys(entry).some((featuredAuthor) =>
         isSameAuthorKey(featuredAuthor, githubUsername)
       );
     const contributorEntries = entries.filter(

@@ -1,16 +1,14 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import FeedEntries from '../community-feed/FeedEntries.astro';
 import Pagination from '../community-feed/Pagination.astro';
 import { isSameAuthorKey } from '../../data/authors';
+import { getFeaturingAuthorKeys, type UnifiedFeedEntry } from '../../data/feed';
 
 interface Props {
   githubUsername: string;
   displayName: string;
-  entries: Array<
-    CollectionEntry<'community-feed'> | CollectionEntry<'community-standup'> | CollectionEntry<'toolkit-standup'>
-  >;
+  entries: UnifiedFeedEntry[];
   currentPage: number;
   totalPages: number;
   basePath: string;
@@ -32,7 +30,7 @@ const compactEntryIds = entries
     const isAuthoredByContributor =
       entry.data.author && isSameAuthorKey(entry.data.author, githubUsername);
     if (isAuthoredByContributor) return false;
-    return (entry.data.featuring ?? []).some((featuredAuthor) =>
+    return getFeaturingAuthorKeys(entry).some((featuredAuthor) =>
       isSameAuthorKey(featuredAuthor, githubUsername)
     );
   })

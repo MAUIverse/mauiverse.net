@@ -59,6 +59,10 @@ export const authorEntries = [
     displayName: "Calin Ciurariu",
   },
   {
+    key: "CarlSargunar",
+    displayName: "Carl Sargunar",
+  },
+  {
     key: "Char0394",
     displayName: "Charlin Agramonte",
   },
@@ -85,6 +89,10 @@ export const authorEntries = [
   {
     key: "damiendoumer",
     displayName: "Damien Doumer",
+  },
+  {
+    key: "danardelean",
+    displayName: "Dan Ardelean",
   },
   {
     key: "danielmonettelli",
@@ -169,6 +177,10 @@ export const authorEntries = [
     displayName: "Gulam Ali H.",
   },
   {
+    key: "gbarkerz",
+    displayName: "Guy Barker",
+  },
+  {
     key: "HorusSoftwareUY",
     displayName: "Horus Software",
   },
@@ -241,6 +253,10 @@ export const authorEntries = [
     displayName: "Kym Phillpotts ",
   },
   {
+    key: "krdmllr",
+    displayName: "Konrad Müller",
+  },
+  {
     key: "kubaflo",
     displayName: "Jakub Florkowski",
   },
@@ -257,8 +273,16 @@ export const authorEntries = [
     displayName: "Kerry W. Lothrop",
   },
   {
+    key: "LuceCarter",
+    displayName: "Luce Carter",
+  },
+  {
     key: "luismts",
     displayName: "Luis Matos",
+  },
+  {
+    key: "mackayn",
+    displayName: "Norman Mackay ",
   },
   {
     key: "maddymontaquila",
@@ -285,6 +309,10 @@ export const authorEntries = [
     displayName: "Matthew Leibowitz",
   },
   {
+    key: "MauiDay",
+    displayName: "MAUI Day",
+  },
+  {
     key: "MaxMa04",
     displayName: "Max Mannstein",
   },
@@ -295,6 +323,10 @@ export const authorEntries = [
   {
     key: "michaelstonis",
     displayName: "Michael Stonis",
+  },
+  {
+    key: "MikeCodesDotNET",
+    displayName: "Mike James",
   },
   {
     key: "morning4coffe-dev",
@@ -355,6 +387,10 @@ export const authorEntries = [
   {
     key: "rmarinho",
     displayName: "Rui Marinho",
+  },
+  {
+    key: "rogihee",
+    displayName: "Rogier van der Hee ",
   },
   {
     key: "roubachof",

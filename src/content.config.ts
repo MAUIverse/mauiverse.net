@@ -54,6 +54,23 @@ const toolkitStandup = defineCollection({
   }),
 });
 
+const event = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/event' }),
+  schema: z.object({
+    title: z.string(),
+    link: z.string().url(),
+    description: z.string(),
+    date: z.coerce.date(),
+    location: z.string(),
+    speakers: z.array(authorHandleSchema),
+    team: z.array(authorHandleSchema),
+    author: authorHandleSchema.optional(),
+    featuring: z.array(authorHandleSchema).optional(),
+    contentType: z.literal('event'),
+    slug: z.string().optional(),
+  }),
+});
+
 const communityContributors = defineCollection({
   loader: glob({ pattern: '**/*.{yaml,yml}', base: './src/content/community-contributors' }),
   schema: z.object({
@@ -80,5 +97,6 @@ export const collections = {
   'built-with-maui': builtWithMaui,
   'community-standup': communityStandup,
   'toolkit-standup': toolkitStandup,
+  'event': event,
   'community-contributors': communityContributors,
 };

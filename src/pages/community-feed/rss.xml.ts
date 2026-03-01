@@ -1,6 +1,6 @@
 import rss from '@astrojs/rss';
 import { extractYouTubeVideoId } from '../../utils/youtube';
-import { getUnifiedFeedEntries } from '../../data/feed';
+import { getUnifiedFeedEntries, isEventEntry } from '../../data/feed';
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
@@ -20,7 +20,7 @@ export async function GET(context: { site: string | undefined }) {
     items: entries.map((entry) => {
       const hasContent = hasBody(entry);
       const videoId = extractYouTubeVideoId(entry.data.link);
-      const isInternal = hasContent || videoId;
+      const isInternal = hasContent || videoId || isEventEntry(entry);
       const link = isInternal
         ? `${baseUrl}/community-feed/${entry.id}/`
         : entry.data.link;

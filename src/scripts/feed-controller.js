@@ -94,13 +94,10 @@
   }
 
   function renderAuthor(entry) {
-    if (!entry.authorKey) return '';
+    if (!entry.authorKey || !entry.authorProfileHref) return '';
     const img = `<img src="${esc(entry.authorImageSrc)}" alt="" width="24" height="24" class="h-6 w-6 rounded-full inline-block align-middle" loading="lazy" />`;
     const name = esc(entry.authorLabel);
-    const inner = `<span class="inline-flex items-center gap-1.5">${img}<span>${name}</span></span>`;
-    const linked = entry.authorProfileHref
-      ? `<a href="${esc(entry.authorProfileHref)}" class="inline-flex items-center gap-1.5 hover:underline" aria-label="View ${name}'s profile">${img}<span>${name}</span></a>`
-      : inner;
+    const linked = `<a href="${esc(entry.authorProfileHref)}" class="inline-flex items-center gap-1.5 hover:underline" aria-label="View ${name}'s profile">${img}<span>${name}</span></a>`;
     return `${linked}<span class="text-muted-light" aria-hidden="true">·</span>`;
   }
 
@@ -108,7 +105,7 @@
     const btnClass =
       'inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark';
     if (entry.isInternal) {
-      const label = entry.hasBody ? 'Read more' : 'Watch';
+      const label = entry.isEvent ? 'View details' : entry.hasBody ? 'Read more' : 'Watch';
       return `<a href="/community-feed/${esc(entry.id)}/" class="${btnClass}">${label}</a>`;
     }
     const label = entry.isGitHub ? 'View on GitHub' : 'Visit link';
@@ -166,7 +163,7 @@
         ${thumbnail}
         <a href="${esc(href)}"${target} class="text-brand-dark text-base font-header font-bold hover:text-brand transition-colors line-clamp-2 mb-2">${esc(entry.title)}</a>
         <p class="text-muted-light text-xs flex flex-wrap items-center gap-x-1.5 gap-y-1 mb-2">
-          ${entry.authorKey ? `<img src="${esc(entry.authorImageSrc)}" alt="" width="20" height="20" class="h-5 w-5 rounded-full inline-block" loading="lazy" /><span>${esc(entry.authorLabel)}</span><span class="text-muted-light" aria-hidden="true">·</span>` : ''}
+          ${entry.authorKey && entry.authorProfileHref ? `<img src="${esc(entry.authorImageSrc)}" alt="" width="20" height="20" class="h-5 w-5 rounded-full inline-block" loading="lazy" /><span>${esc(entry.authorLabel)}</span><span class="text-muted-light" aria-hidden="true">·</span>` : ''}
           <time datetime="${entry.dateISO}">${esc(entry.dateLabel)}</time>
         </p>
         <p class="text-muted text-sm line-clamp-2">${esc(entry.description)}</p>

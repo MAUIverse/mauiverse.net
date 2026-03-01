@@ -3,20 +3,27 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 export type UnifiedFeedEntry =
   | CollectionEntry<'community-feed'>
   | CollectionEntry<'community-standup'>
-  | CollectionEntry<'toolkit-standup'>;
+  | CollectionEntry<'toolkit-standup'>
+  | CollectionEntry<'event'>;
 
 export function sortFeedEntriesByDateDesc<T extends { data: { date: Date } }>(entries: T[]): T[] {
   return entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
 export async function getUnifiedFeedEntries(): Promise<UnifiedFeedEntry[]> {
-  const [communityEntries, communityStandupEntries, toolkitEntries] = await Promise.all([
+  const [communityEntries, communityStandupEntries, toolkitEntries, eventEntries] = await Promise.all([
     getCollection('community-feed'),
     getCollection('community-standup'),
     getCollection('toolkit-standup'),
+    getCollection('event'),
   ]);
 
-  return sortFeedEntriesByDateDesc([...communityEntries, ...communityStandupEntries, ...toolkitEntries]);
+  return sortFeedEntriesByDateDesc([
+    ...communityEntries,
+    ...communityStandupEntries,
+    ...toolkitEntries,
+    ...eventEntries,
+  ]);
 }
 
 export function isToolkitStandupEntry(entry: UnifiedFeedEntry): boolean {
@@ -25,4 +32,28 @@ export function isToolkitStandupEntry(entry: UnifiedFeedEntry): boolean {
 
 export function isCommunityStandupEntry(entry: UnifiedFeedEntry): boolean {
   return entry.collection === 'community-standup';
+}
+
+export function isEventEntry(entry: UnifiedFeedEntry): boolean {
+  return entry.collection === 'event';
+}
+
+export function getFeaturingAuthorKeys(entry: UnifiedFeedEntry): string[] {
+  const baseFeaturing = entry.data.featuring ?? [];
+  const eventPeople =
+    entry.collection === 'event'
+      ? [...entry.data.speakers, ...entry.data.team]
+      : [];
+  const combined = [...baseFeaturing, ...eventPeople].map((value) => value.trim()).filter(Boolean);
+  const seen = new Set<string>();
+  const unique: string[] = [];
+
+  for (const value of combined) {
+    const normalized = value.toLowerCase();
+    if (seen.has(normalized)) continue;
+    seen.add(normalized);
+    unique.push(value);
+  }
+
+  return unique;
 }

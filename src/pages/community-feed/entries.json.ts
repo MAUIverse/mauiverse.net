@@ -7,7 +7,7 @@ import {
 import { extractYouTubeVideoId, getYouTubeThumbnailUrl } from '../../utils/youtube';
 import { isGitHubUrl } from '../../utils/link';
 import { formatLongDateUS } from '../../utils/date';
-import { getUnifiedFeedEntries, isToolkitStandupEntry } from '../../data/feed';
+import { getUnifiedFeedEntries, isEventEntry, isToolkitStandupEntry } from '../../data/feed';
 
 function hasBody(entry: { body?: string }): boolean {
   return Boolean(typeof entry.body === 'string' && entry.body.trim().length > 0);
@@ -25,7 +25,7 @@ export const GET: APIRoute = async () => {
   const records = entries.map((entry) => {
     const videoId = extractYouTubeVideoId(entry.data.link);
     const withBody = hasBody(entry);
-    const isInternal = withBody || !!videoId;
+    const isInternal = withBody || !!videoId || isEventEntry(entry);
     const authorKey = entry.data.author?.trim().toLowerCase() || '';
     const authorProfileHref = authorKey
       ? getInternalContributorProfileHref(authorKey)
@@ -49,6 +49,7 @@ export const GET: APIRoute = async () => {
       isInternal,
       isGitHub: isGitHubUrl(entry.data.link),
       isToolkitStandup: isToolkitStandupEntry(entry),
+      isEvent: isEventEntry(entry),
     };
   });
 

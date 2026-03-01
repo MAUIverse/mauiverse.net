@@ -1,5 +1,4 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import {
   getAuthorDisplayName,
   getAuthorImageSrc,
@@ -9,11 +8,10 @@ import { isGitHubUrl } from '../../utils/link';
 import { extractYouTubeVideoId, getYouTubeThumbnailUrl } from '../../utils/youtube';
 import { formatLongDateUS } from '../../utils/date';
 import PrimaryLinkButton from '../PrimaryLinkButton.astro';
+import { getFeaturingAuthorKeys, isEventEntry, type UnifiedFeedEntry } from '../../data/feed';
 
 interface Props {
-  entries: Array<
-    CollectionEntry<'community-feed'> | CollectionEntry<'community-standup'> | CollectionEntry<'toolkit-standup'>
-  >;
+  entries: UnifiedFeedEntry[];
   showAuthor?: boolean;
   actionLabel?: string;
   compactEntryIds?: string[];
@@ -41,24 +39,35 @@ function hasBody(entry: { body?: string }): boolean {
   {entries.map((entry) => {
     const hasContent = hasBody(entry);
     const videoId = extractYouTubeVideoId(entry.data.link);
-    const isInternal = hasContent || videoId;
+    const isInternal = hasContent || videoId || isEventEntry(entry);
     const isCompactEntry = compactEntryIdSet.has(entry.id);
     const detailUrl = `/community-feed/${entry.id}/`;
     const authorProfileHref = entry.data.author
       ? getInternalContributorProfileHref(entry.data.author)
       : null;
     const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.author) : null;
-    const featuredAuthors = (entry.data.featuring ?? [])
+    const hasVisibleAuthor = Boolean(showAuthor && entry.data.author && authorProfileHref);
+    const featuredAuthors = getFeaturingAuthorKeys(entry)
       .filter(
         (githubUsername) =>
           !entry.data.author ||
           githubUsername.trim().toLowerCase() !== entry.data.author.trim().toLowerCase()
       )
-      .map((githubUsername) => ({
-        githubUsername,
-        profileHref: getInternalContributorProfileHref(githubUsername),
-        displayName: getAuthorDisplayName(githubUsername),
-      }));
+      .map((githubUsername) => {
+        const profileHref = getInternalContributorProfileHref(githubUsername);
+        if (!profileHref) return null;
+        return {
+          githubUsername,
+          profileHref,
+          displayName: getAuthorDisplayName(githubUsername),
+        };
+      })
+      .filter(
+        (
+          featuredAuthor
+        ): featuredAuthor is { githubUsername: string; profileHref: string; displayName: string } =>
+          featuredAuthor !== null
+      );
     const hasFeaturedAuthors = featuredAuthors.length > 0;
 
     if (isCompactEntry) {
@@ -137,15 +146,14 @@ function hasBody(entry: { body?: string }): boolean {
               </a>
             )}
             <p class="text-muted-light text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
-              {showAuthor && entry.data.author && (
-                authorProfileHref ? (
+              {hasVisibleAuthor && (
                   <a
                     href={authorProfileHref}
                     class="inline-flex items-center gap-1.5 hover:underline mr-2 mt-1"
                     aria-label={`View ${authorDisplayName}'s profile`}
                   >
                     <img
-                      src={getAuthorImageSrc(entry.data.author, 64)}
+                      src={getAuthorImageSrc(entry.data.author!, 64)}
                       alt=""
                       width="24"
                       height="24"
@@ -154,54 +162,27 @@ function hasBody(entry: { body?: string }): boolean {
                     />
                     <span>{authorDisplayName}</span>
                   </a>
-                ) : (
-                  <span class="inline-flex items-center gap-1.5 mr-2 mt-1">
+              )}
+              {showAuthor && featuredAuthors.map((featuredAuthor) => (
+                <>
+                  <a
+                    href={featuredAuthor.profileHref}
+                    class="inline-flex items-center gap-1.5 hover:underline mr-2 mt-1"
+                    aria-label={`View ${featuredAuthor.displayName}'s profile`}
+                  >
                     <img
-                      src={getAuthorImageSrc(entry.data.author, 64)}
+                      src={getAuthorImageSrc(featuredAuthor.githubUsername, 64)}
                       alt=""
                       width="24"
                       height="24"
                       class="h-6 w-6 rounded-full inline-block align-middle"
                       loading="lazy"
                     />
-                    <span>{authorDisplayName}</span>
-                  </span>
-                )
-              )}
-              {showAuthor && featuredAuthors.map((featuredAuthor, index) => (
-                <>
-                  {featuredAuthor.profileHref ? (
-                    <a
-                      href={featuredAuthor.profileHref}
-                      class="inline-flex items-center gap-1.5 hover:underline mr-2 mt-1"
-                      aria-label={`View ${featuredAuthor.displayName}'s profile`}
-                    >
-                      <img
-                        src={getAuthorImageSrc(featuredAuthor.githubUsername, 64)}
-                        alt=""
-                        width="24"
-                        height="24"
-                        class="h-6 w-6 rounded-full inline-block align-middle"
-                        loading="lazy"
-                      />
-                      <span>{featuredAuthor.displayName}</span>
-                    </a>
-                  ) : (
-                    <span class="inline-flex items-center gap-1.5 mr-2 mt-1">
-                      <img
-                        src={getAuthorImageSrc(featuredAuthor.githubUsername, 64)}
-                        alt=""
-                        width="24"
-                        height="24"
-                        class="h-6 w-6 rounded-full inline-block align-middle"
-                        loading="lazy"
-                      />
-                      <span>{featuredAuthor.displayName}</span>
-                    </span>
-                  )}
+                    <span>{featuredAuthor.displayName}</span>
+                  </a>
                 </>
               ))}
-              {showAuthor && (entry.data.author || hasFeaturedAuthors) && !hasFeaturedAuthors && (
+              {showAuthor && (hasVisibleAuthor || hasFeaturedAuthors) && !hasFeaturedAuthors && (
                 <span class="text-muted-light mr-2 mt-1">·</span>
               )}
               <time
@@ -215,7 +196,7 @@ function hasBody(entry: { body?: string }): boolean {
             <p class="text-muted text-base">{entry.data.description}</p>
             {isInternal ? (
               <PrimaryLinkButton href={detailUrl}>
-                {actionLabel ?? (hasContent ? 'Read more' : 'Watch')}
+                {actionLabel ?? (isEventEntry(entry) ? 'View details' : hasContent ? 'Read more' : 'Watch')}
               </PrimaryLinkButton>
             ) : (
               <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
@@ -226,7 +207,7 @@ function hasBody(entry: { body?: string }): boolean {
           {videoId && (
             <a
               href={detailUrl}
-              class="order-1 sm:order-2 flex-shrink-0 block w-full sm:w-72 rounded overflow-hidden aspect-video"
+              class="order-1 sm:order-2 flex-shrink-0 block w-full sm:w-72 rounded overflow-hidden"
               aria-hidden="true"
             >
               <img
@@ -234,7 +215,7 @@ function hasBody(entry: { body?: string }): boolean {
                 alt=""
                 width="320"
                 height="180"
-                class="w-full object-cover"
+                class="w-full object-cover object-center"
                 loading="lazy"
               />
             </a>

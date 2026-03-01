@@ -13,7 +13,7 @@ import {
 } from '../../utils/youtube';
 import { formatLongDateUS } from '../../utils/date';
 import PrimaryLinkButton from '../../components/PrimaryLinkButton.astro';
-import { getUnifiedFeedEntries } from '../../data/feed';
+import { getFeaturingAuthorKeys, getUnifiedFeedEntries, isEventEntry } from '../../data/feed';
 
 export async function getStaticPaths() {
   const entries = await getUnifiedFeedEntries();
@@ -31,14 +31,14 @@ function hasBody(entry: { body?: string }): boolean {
 
 const videoId = extractYouTubeVideoId(entry.data.link);
 const withBody = hasBody(entry);
-const showDetailPage = withBody || videoId;
+const showDetailPage = withBody || videoId || isEventEntry(entry);
 const rendered = withBody ? await render(entry) : null;
 const Content = rendered?.Content ?? null;
 const authorProfileHref = entry.data.author
   ? getInternalContributorProfileHref(entry.data.author)
   : null;
 const authorDisplayName = entry.data.author ? getAuthorDisplayName(entry.data.author) : null;
-const featuredAuthors = (entry.data.featuring ?? [])
+const featuredAuthors = getFeaturingAuthorKeys(entry)
   .map((githubUsername) => {
     const profileHref = getInternalContributorProfileHref(githubUsername);
     if (!profileHref) return null;
@@ -277,6 +277,10 @@ const encodedBskyText = encodeURIComponent(`${shareText}\n\n${shareUrl}`);
           {videoId ? (
             <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
               Watch on YouTube
+            </PrimaryLinkButton>
+          ) : isEventEntry(entry) ? (
+            <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
+              Official event page
             </PrimaryLinkButton>
           ) : isGitHubUrl(entry.data.link) ? (
             <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
