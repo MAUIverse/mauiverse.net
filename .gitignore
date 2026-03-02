@@ -29,4 +29,3 @@ npm-debug.log*
 
 # Temp workspace files
 .tmp/
-built-with-maui-*.png
