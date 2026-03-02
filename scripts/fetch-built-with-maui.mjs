@@ -4,7 +4,6 @@ import { dirname, resolve } from 'node:path';
 
 const SOURCE_URL =
   'https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md';
-const MD_OUTPUT_PATH = resolve(process.cwd(), 'src/content/built-with-maui/apps.md');
 const TS_OUTPUT_PATH = resolve(process.cwd(), 'src/data/built-with-maui-apps.generated.ts');
 const SECTION_HEADING = '## Apps built with .NET MAUI';
 
@@ -21,7 +20,6 @@ const ICON_CONCURRENCY = 6;
 async function hasExistingDataset() {
   try {
     await access(TS_OUTPUT_PATH, constants.F_OK);
-    await access(MD_OUTPUT_PATH, constants.F_OK);
     return true;
   } catch {
     return false;
@@ -228,28 +226,6 @@ async function fetchAllIcons(apps) {
 }
 
 // ---------------------------------------------------------------------------
-// Generate the markdown content file (backward compat)
-// ---------------------------------------------------------------------------
-
-function replaceIconLinks(markdown) {
-  const iconLabelMap = {
-    android: 'Android',
-    ios: 'iOS',
-    windows: 'Windows',
-    website: 'Website',
-    github: 'GitHub',
-  };
-  return markdown.replace(
-    /\[\s*<img[^>]*src="assets\/([^"./]+)\.png"[^>]*>\s*\]\((https?:\/\/[^)\s]+)\)/gi,
-    (_match, iconName, url) => {
-      const key = String(iconName).toLowerCase();
-      const label = iconLabelMap[key] ?? 'Link';
-      return `[${label}](${url})`;
-    }
-  );
-}
-
-// ---------------------------------------------------------------------------
 // Build the generated TypeScript file
 // ---------------------------------------------------------------------------
 
@@ -312,20 +288,6 @@ async function run() {
   await mkdir(dirname(TS_OUTPUT_PATH), { recursive: true });
   await writeFile(TS_OUTPUT_PATH, buildTsOutput(apps), 'utf8');
   console.log(`Wrote ${TS_OUTPUT_PATH}`);
-
-  const mdAppsSection = replaceIconLinks(appsSection);
-  const fetchedAt = new Date().toISOString();
-  const mdOutput = `---
-title: Apps built with .NET MAUI
-source: ${SOURCE_URL}
-fetchedAt: ${fetchedAt}
----
-
-${mdAppsSection}
-`;
-  await mkdir(dirname(MD_OUTPUT_PATH), { recursive: true });
-  await writeFile(MD_OUTPUT_PATH, mdOutput, 'utf8');
-  console.log(`Wrote ${MD_OUTPUT_PATH}`);
 }
 
 run().catch((error) => {
