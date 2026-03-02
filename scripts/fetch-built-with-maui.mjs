@@ -124,23 +124,88 @@ function extractGooglePlayPackage(url) {
   return match ? match[1] : null;
 }
 
-async function fetchIosData(appId) {
+// Quick iTunes API check for iPad screenshots only (web scraping misses dynamically loaded iPad galleries)
+async function fetchIpadScreenshotsFromApi(appId) {
   try {
     const res = await fetch(`https://itunes.apple.com/lookup?id=${appId}`, {
       signal: AbortSignal.timeout(8000),
     });
-    if (!res.ok) return { icon: null, screenshots: {} };
+    if (!res.ok) return [];
     const data = await res.json();
-    if (data.results && data.results.length > 0) {
-      const r = data.results[0];
-      const screenshots = {};
-      if (r.screenshotUrls && r.screenshotUrls.length > 0) screenshots.iphone = r.screenshotUrls;
-      if (r.ipadScreenshotUrls && r.ipadScreenshotUrls.length > 0) screenshots.ipad = r.ipadScreenshotUrls;
-      return {
-        icon: r.artworkUrl512 ?? r.artworkUrl100 ?? null,
-        screenshots,
-      };
+    if (data.results?.[0]?.ipadScreenshotUrls?.length > 0) {
+      return data.results[0].ipadScreenshotUrls;
     }
+  } catch {
+    // Silently skip
+  }
+  return [];
+}
+
+async function fetchIosData(iosUrl) {
+  try {
+    const res = await fetch(iosUrl, {
+      signal: AbortSignal.timeout(10000),
+      headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
+    });
+    if (!res.ok) return { icon: null, screenshots: {} };
+    const html = await res.text();
+
+    // Extract icon: find an AppIcon base path and use 512x512bb.jpg
+    const iconBaseMatch = html.match(
+      /https:\/\/is\d+-ssl\.mzstatic\.com\/image\/thumb\/[^"\\}\s)]*?AppIcon[^"\\}\s)]*?\.(png|jpg)\//i
+    );
+    const icon = iconBaseMatch ? iconBaseMatch[0] + '512x512bb.jpg' : null;
+
+    // Extract screenshot base paths from Purple* URLs in embedded data
+    // Each URL appears at multiple sizes — deduplicate by base path (up to .png/ or .jpg/)
+    const basePathSet = new Set();
+    const urlRegex = /https:\/\/is\d+-ssl\.mzstatic\.com\/image\/thumb\/Purple[^"\\}\s)]*?\.(png|jpg)\//gi;
+    let match;
+    while ((match = urlRegex.exec(html)) !== null) {
+      if (/Placeholder|AppIcon|appicon/i.test(match[0])) continue;
+      basePathSet.add(match[0]);
+    }
+
+    // Classify by filename (device name in screenshot path)
+    const iphone = [];
+    const ipad = [];
+    const unclassified = [];
+    for (const basePath of basePathSet) {
+      if (/iPhone/i.test(basePath)) iphone.push(basePath + '392x696bb.png');
+      else if (/iPad/i.test(basePath)) ipad.push(basePath + '576x768bb.png');
+      else unclassified.push(basePath);
+    }
+
+    // For unclassified URLs, use the grid-type in the rendered HTML as a hint
+    if (unclassified.length > 0) {
+      const hasPhoneGrid = html.includes('grid-type-ScreenshotPhone');
+      const hasTabletGrid = html.includes('grid-type-ScreenshotTablet');
+      for (const basePath of unclassified) {
+        // Check if this URL appears inside a ScreenshotPhone or ScreenshotTablet grid
+        const shortPath = basePath.slice(basePath.indexOf('/thumb/') + 7, basePath.length - 1);
+        const urlIdx = html.indexOf(shortPath);
+        if (urlIdx > -1) {
+          const preceding = html.slice(Math.max(0, urlIdx - 2000), urlIdx);
+          if (preceding.lastIndexOf('ScreenshotTablet') > preceding.lastIndexOf('ScreenshotPhone')) {
+            ipad.push(basePath + '576x768bb.png');
+            continue;
+          }
+          if (preceding.lastIndexOf('ScreenshotPhone') > preceding.lastIndexOf('ScreenshotTablet')) {
+            iphone.push(basePath + '392x696bb.png');
+            continue;
+          }
+        }
+        // Default: if phone grid exists, treat as phone; otherwise skip
+        if (hasPhoneGrid && !hasTabletGrid) iphone.push(basePath + '392x696bb.png');
+        else if (hasTabletGrid && !hasPhoneGrid) ipad.push(basePath + '576x768bb.png');
+        else iphone.push(basePath + '392x696bb.png'); // default to phone
+      }
+    }
+
+    const screenshots = {};
+    if (iphone.length > 0) screenshots.iphone = iphone;
+    if (ipad.length > 0) screenshots.ipad = ipad;
+    return { icon, screenshots };
   } catch {
     // Silently skip
   }
@@ -245,62 +310,22 @@ async function fetchGooglePlayData(packageId) {
   return { icon: null, screenshots: {} };
 }
 
-async function fetchIosWebScreenshots(iosUrl) {
-  try {
-    const res = await fetch(iosUrl, {
-      signal: AbortSignal.timeout(10000),
-      headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
-    });
-    if (!res.ok) return {};
-    const html = await res.text();
-
-    // Extract PurpleSource screenshot URLs from embedded data
-    // URLs appear as both templates ({w}x{h}) and rendered (300x650bb.webp)
-    // Capture the base path up to and including the filename (.png/ or .jpg/)
-    const basePathSet = new Set();
-    const urlRegex = /https:\/\/is\d+-ssl\.mzstatic\.com\/image\/thumb\/PurpleSource[^"\\}]*?\.(png|jpg)\//gi;
-    let match;
-    while ((match = urlRegex.exec(html)) !== null) {
-      const basePath = match[0]; // includes trailing /
-      // Skip placeholders and icons
-      if (/Placeholder|appicon|AppIcon/i.test(basePath)) continue;
-      basePathSet.add(basePath);
-    }
-    if (basePathSet.size === 0) return {};
-
-    const iphone = [];
-    const ipad = [];
-    for (const basePath of basePathSet) {
-      if (/iPhone/i.test(basePath)) iphone.push(basePath + '392x696bb.png');
-      else if (/iPad/i.test(basePath)) ipad.push(basePath + '576x768bb.png');
-    }
-
-    const screenshots = {};
-    if (iphone.length > 0) screenshots.iphone = iphone;
-    if (ipad.length > 0) screenshots.ipad = ipad;
-    return screenshots;
-  } catch {
-    // Silently skip
-  }
-  return {};
-}
-
 async function fetchStoreDataForApp(app) {
   let icon = null;
   let screenshots = {};
 
-  // Try iOS first (iTunes API is more reliable for icons + screenshots)
+  // Scrape App Store web page for icon + screenshots
   if (app.platforms.ios) {
-    const appId = extractIosAppId(app.platforms.ios);
-    if (appId) {
-      const iosData = await fetchIosData(appId);
-      if (iosData.icon) icon = iosData.icon;
-      Object.assign(screenshots, iosData.screenshots);
-    }
-    // Fall back to scraping the App Store web page when API has no screenshots
-    if (!screenshots.iphone && !screenshots.ipad) {
-      const webScreenshots = await fetchIosWebScreenshots(app.platforms.ios);
-      Object.assign(screenshots, webScreenshots);
+    const iosData = await fetchIosData(app.platforms.ios);
+    if (iosData.icon) icon = iosData.icon;
+    Object.assign(screenshots, iosData.screenshots);
+    // iPad gallery is loaded dynamically — supplement via iTunes API if missing
+    if (!screenshots.ipad) {
+      const appId = extractIosAppId(app.platforms.ios);
+      if (appId) {
+        const ipadUrls = await fetchIpadScreenshotsFromApi(appId);
+        if (ipadUrls.length > 0) screenshots.ipad = ipadUrls;
+      }
     }
   }
 
