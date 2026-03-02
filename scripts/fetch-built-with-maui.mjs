@@ -245,6 +245,46 @@ async function fetchGooglePlayData(packageId) {
   return { icon: null, screenshots: {} };
 }
 
+async function fetchIosWebScreenshots(iosUrl) {
+  try {
+    const res = await fetch(iosUrl, {
+      signal: AbortSignal.timeout(10000),
+      headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
+    });
+    if (!res.ok) return {};
+    const html = await res.text();
+
+    // Extract PurpleSource screenshot URLs from embedded data
+    // URLs appear as both templates ({w}x{h}) and rendered (300x650bb.webp)
+    // Capture the base path up to and including the filename (.png/ or .jpg/)
+    const basePathSet = new Set();
+    const urlRegex = /https:\/\/is\d+-ssl\.mzstatic\.com\/image\/thumb\/PurpleSource[^"\\}]*?\.(png|jpg)\//gi;
+    let match;
+    while ((match = urlRegex.exec(html)) !== null) {
+      const basePath = match[0]; // includes trailing /
+      // Skip placeholders and icons
+      if (/Placeholder|appicon|AppIcon/i.test(basePath)) continue;
+      basePathSet.add(basePath);
+    }
+    if (basePathSet.size === 0) return {};
+
+    const iphone = [];
+    const ipad = [];
+    for (const basePath of basePathSet) {
+      if (/iPhone/i.test(basePath)) iphone.push(basePath + '392x696bb.png');
+      else if (/iPad/i.test(basePath)) ipad.push(basePath + '576x768bb.png');
+    }
+
+    const screenshots = {};
+    if (iphone.length > 0) screenshots.iphone = iphone;
+    if (ipad.length > 0) screenshots.ipad = ipad;
+    return screenshots;
+  } catch {
+    // Silently skip
+  }
+  return {};
+}
+
 async function fetchStoreDataForApp(app) {
   let icon = null;
   let screenshots = {};
@@ -256,6 +296,11 @@ async function fetchStoreDataForApp(app) {
       const iosData = await fetchIosData(appId);
       if (iosData.icon) icon = iosData.icon;
       Object.assign(screenshots, iosData.screenshots);
+    }
+    // Fall back to scraping the App Store web page when API has no screenshots
+    if (!screenshots.iphone && !screenshots.ipad) {
+      const webScreenshots = await fetchIosWebScreenshots(app.platforms.ios);
+      Object.assign(screenshots, webScreenshots);
     }
   }
 

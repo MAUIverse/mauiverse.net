@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const builtWithMauiSource = "https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md";
-export const builtWithMauiFetchedAt = "2026-03-02T19:04:55.927Z";
+export const builtWithMauiFetchedAt = "2026-03-02T19:17:46.921Z";
 
 export type BuiltWithMauiApp = {
   name: string;
@@ -134,6 +134,9 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "downloads": "100 + downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/9d/43/329d4398-9b95-8c8a-e649-92267b1d6cda/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
     "screenshots": {
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/75/25/09/752509cc-de6f-7c9d-48c9-cebd485f9357/Bicicreteiro_BR_Ipad.png/576x768bb.png"
+      ],
       "android": [
         "https://play-lh.googleusercontent.com/0ssVjCVuwixJT1tt2kCqUk84yKv7-kGlTPIsyWlYI8-FOejjOHZBepsiWmC4XqJS8g=w600-h1200",
         "https://play-lh.googleusercontent.com/Flq4AdOV_-Zwjv5AfAwTPYnt_289EWzwjamxQ8UsegI9ExhHnh46lzbx3PkwR2xr_vw=w600-h1200",
@@ -274,6 +277,18 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "downloads": "1K+ downloads",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/41/d5/d9/41d5d925-e2da-1ff7-1463-777681096026/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/75/0d/df750db4-a1c4-9326-ddb0-6e1539a6b55e/iPhone_11_Pro_Max_Screenshot_1.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/a5/2c/80a52ce6-ccc6-da7f-2bac-b88dbbd90484/iPhone_11_Pro_Max_Screenshot_2.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bc/1c/27/bc1c27f1-b60c-09bb-76c9-f8471b50edee/iPhone_11_Pro_Max_Screenshot_3.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ab/87/a6/ab87a629-33ae-0184-7538-1bfa57b1eec4/iPhone_11_Pro_Max_Screenshot_4.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d7/5e/80/d75e8013-8802-69a7-f616-04fa82fac7ff/iPhone_11_Pro_Max_Screenshot_5.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c0/02/15/c00215bb-1cc4-0c00-57f5-a868bf684fa0/iPhone_11_Pro_Max_Screenshot_6.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8c/0e/96/8c0e9604-52cb-b179-cf88-c6568ea75046/iPhone_11_Pro_Max_Screenshot_7.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/24/c5/52/24c5520a-3d5e-300d-bb99-0744588c0e1b/iPhone_11_Pro_Max_Screenshot_8.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/49/23/2149232d-0c5b-daac-94f0-13a1f2523a69/iPhone_11_Pro_Max_Screenshot_9.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/1e/0e/281e0e2a-0146-c2b8-bf6a-a7e8704696e6/iPhone_11_Pro_Max_Screenshot_10.png/392x696bb.png"
+      ],
       "android": [
         "https://play-lh.googleusercontent.com/hz3BHHcBtI4tI17sSzQT64g0TA_yOKUNSqfmx8VESDZiWG-nbUIIYoNrfeMDPXiITRA=w600-h1200",
         "https://play-lh.googleusercontent.com/6X6hXQRW9OaK8XTIJnBwt_z0TZ3AVyieCaJQoKrov0uz1bLkfeFF9UWCkHe_J5xH_Ug=w600-h1200",
@@ -691,6 +706,15 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "downloads": "100+ downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5e/24/d4/5e24d4ce-3fd1-295e-b1ff-c90f4adb84e3/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/61/f8/5161f82a-6f77-7745-1367-e4586ebe76e9/iPad_Pro_Page1.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2d/71/79/2d7179b6-cae9-4a58-d36e-415c2ad2dab9/iPad_Pro_Page2.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/41/24/a3/4124a309-b4be-c5dc-63df-aff82b9e79be/iPad_Pro_Page3.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/55/1d/07/551d07fd-a2ab-e55e-8b77-995d4c9df43f/iPad_Pro_Page4.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/88/5e/5d885ed8-08a9-6bdc-3fae-b6f80ddb495f/iPad_Pro_Page5.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/4f/ff/904fff5e-8b75-8500-4919-7fe41e979199/iPad_Pro_Page6.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/76/50/9a/76509a22-7669-46ab-86b9-ea4aa266c9ce/iPad_Pro_Page7.png/576x768bb.png"
+      ],
       "android": [
         "https://play-lh.googleusercontent.com/XZ7p_mQt6HyPFhMNbZWT21BigrT3Y6MiXnn6BURrBjzJO5BupYPY3T82LcwmYcjT1g=w600-h1200",
         "https://play-lh.googleusercontent.com/uoo9g5TchRH8T7ZAqrKS55mNs85SDNPSv5MD4k3eS3ToTRfzdF1UbxP4yAOcgaVfsA=w600-h1200",
@@ -1334,6 +1358,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "downloads": "400 (Google Play) + 1k+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/31/46/19/3146191e-540f-d6b4-4362-a499503b0eff/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/8d/f2/b78df27c-9890-508c-9392-2a23104858cd/10_Lists_iPad.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/95/8e/57/958e5738-f07e-bcb5-3d23-57dc8e5898f3/11_List_iPad.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1d/89/22/1d892209-e943-f8af-739c-a3abcfc2731c/12_Item_iPad.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/fb/ae/8efbae20-0b1b-074a-e510-f3fb8269a8bb/13_Move_Copy_iPad.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/93/74/4d/93744d8c-4da3-2116-08a6-6af757ce9d48/14_Dark_Mode_iPad.png/576x768bb.png"
+      ],
       "android": [
         "https://play-lh.googleusercontent.com/m8j9CZjYvTlpM2ce6fENZwGbiQFWPWAxhrdH6oKtgYKyS27mm7Hq2ZDVB-M2MUiJtoo=w600-h1200",
         "https://play-lh.googleusercontent.com/ErBMHQ93M0Xk53Unj94oB31hGi0aCeXQuvY1pDwvoRMWTOtQK-emhU39vDDX6yxHizjG=w600-h1200",
@@ -1739,6 +1770,30 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "downloads": "15+ (Google Play) 25+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a9/83/8d/a9838d4a-a6be-5f2c-fc5c-7891bda4f888/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/97/d7/5a97d72f-7d3b-6bb8-87f3-5679bb9554d1/Simulator_Screenshot_-_iPhone_15_Pro_Max_-_2025-05-20_at_11.22.53.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/47/a7/c7/47a7c74e-9837-89c3-e1db-fd965462be45/Simulator_Screenshot_-_iPhone_15_Pro_Max_-_2025-05-20_at_11.22.58.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/52/ab/3e52ab20-81c0-f595-5f3d-b1b6fcc6a6c2/Simulator_Screenshot_-_iPhone_15_Pro_Max_-_2025-05-20_at_11.23.15.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/74/05/107405f4-b561-7da5-03e8-83ac11482901/Simulator_Screenshot_-_iPhone_15_Pro_Max_-_2025-05-20_at_11.23.59.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2e/36/e1/2e36e18b-a4d9-dc24-9b8a-21973ac9c479/Simulator_Screenshot_-_iPhone_15_Pro_Max_-_2025-05-20_at_11.23.26.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/15/44/2c154450-dbaf-042e-5388-9ff4576c66bd/Simulator_Screenshot_-_iPhone_15_Pro_Max_-_2025-05-20_at_11.23.48.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dc/8d/20/dc8d209f-a94c-51cc-b2b2-b72d25f82509/Simulator_Screenshot_-_iPhone_15_Pro_Max_-_2025-05-20_at_11.22.02.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8c/4c/d9/8c4cd90d-0155-cfbe-a901-00fbacda08a8/Simulator_Screenshot_-_iPhone_15_Pro_Max_-_2025-05-20_at_11.22.11.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/72/28/42/72284218-1a97-a588-7221-8ce4fc5bbb5d/Simulator_Screenshot_-_iPhone_15_Pro_Max_-_2025-05-20_at_11.23.43.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/31/a1/f2/31a1f254-b778-baff-1bd1-56ad1fe8336c/Simulator_Screenshot_-_iPhone_15_Pro_Max_-_2025-05-20_at_11.23.36.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/81/d3/7b/81d37b0f-ae27-7fb1-b93f-d5d108d255be/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M4_U0029_-_2025-05-20_at_12.22.47.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d4/05/0b/d4050bbb-f302-6f9f-e22f-078bdbe00184/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M4_U0029_-_2025-05-20_at_12.25.02.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/c9/0b/9fc90bd2-90d7-3d7a-3211-4907e8519d13/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M4_U0029_-_2025-05-20_at_12.24.57.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/12/1e/0f/121e0f1f-2319-31f3-1951-d976370b0175/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M4_U0029_-_2025-05-20_at_12.24.33.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d2/a6/a9/d2a6a92c-7a61-60d2-b8d1-99f037f199ac/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M4_U0029_-_2025-05-20_at_12.25.09.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/94/2e/96/942e963d-6565-b33e-f165-31a3f04b33cd/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M4_U0029_-_2025-05-20_at_12.23.21.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/68/2e/9f682e55-6340-c08f-28a1-7afbcf4a5b88/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M4_U0029_-_2025-05-20_at_12.23.29.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cc/3a/b5/cc3ab519-6245-c6ec-5698-b235f7081005/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M4_U0029_-_2025-05-20_at_12.22.42.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/4d/74/684d74f4-97d5-b244-a59d-329271ebf20e/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M4_U0029_-_2025-05-20_at_12.24.42.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b5/15/4e/b5154eb4-8edd-646a-acfb-67e52ea29e1a/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M4_U0029_-_2025-05-20_at_12.24.27.png/576x768bb.png"
+      ],
       "android": [
         "https://play-lh.googleusercontent.com/UiHe30kEWF-gB_visud3SC6ZFTugOpyM3Ga1IfDyUaWSUWT68W-n2HwX9Q42LiGqZsg=w600-h1200",
         "https://play-lh.googleusercontent.com/qHn4_swo6RtaFhmfxvVaqwa1TidNWzC6Vr7HZ_hzvDd0Ia8vM6B6Oc8Di0fDyO7_J8E=w600-h1200",
@@ -1763,6 +1818,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "downloads": "50+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c4/63/7a/c4637a8c-5b2c-6787-f718-d112f1f1706d/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
     "screenshots": {
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/93/11/ee/9311ee2e-4217-e2ff-3db8-d4965adce3e6/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M5_U0029_-_2026-02-24_at_20.35.34.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/85/f4/2d/85f42d79-792f-32f3-1d2b-392289158581/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M5_U0029_-_2026-02-24_at_20.34.39.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a1/98/37/a19837c9-fe1e-8539-f86f-8cf947db61a1/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M5_U0029_-_2026-02-24_at_20.34.32.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b8/34/6c/b8346ca6-7f28-2722-97b6-c475d7866b04/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M5_U0029_-_2026-02-24_at_20.34.49.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9a/22/d7/9a22d7fb-b317-173a-0163-e10d7b551deb/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M5_U0029_-_2026-02-24_at_20.35.04.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/c4/a7/cbc4a79d-4462-3e91-ae77-abd4ba6afe87/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M5_U0029_-_2026-02-24_at_20.35.40.png/576x768bb.png"
+      ],
       "android": [
         "https://play-lh.googleusercontent.com/rD8Z9n4KaHLJKjrp2Gm-0zfw71GgRGJdDgqurH1Zf0C_yQybe3HzN2eC3QDmJINsVEc=w600-h1200",
         "https://play-lh.googleusercontent.com/_wauBTm5l35a3bK6z-w31W8xrCUhvEFY3TRM3zdcneNH271yn8AfJzp6Smh3jhxMTg=w600-h1200",
@@ -1789,6 +1852,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "downloads": "100K+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/96/7f/e8967f69-45f9-fc69-b007-dcc5584ba6a7/AppIcons-0-1x_U007epad-0-0-0-8-0-0-85-220-0.png/512x512bb.jpg",
     "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1d/75/41/1d754176-d525-cdfe-9d2a-c05265f8084d/Simulator_Screenshot_-_iPhone_16_Pro_Max_-_2026-02-04_at_16.42.02.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9f/d3/1b/9fd31be6-c44d-f33f-c1aa-3ed866e92b5c/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M5_U0029_-_2026-01-30_at_22.55.07.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/d8/d1/68d8d15e-702b-f874-6639-751dbfcb53f9/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M5_U0029_-_2026-01-30_at_22.55.58.png/576x768bb.png"
+      ],
       "android": [
         "https://play-lh.googleusercontent.com/Ls-vTvAXmAMG9XT_9obmP9viMvOIr7sUVF9XS_Q94rTNsiFcAM_ZPJ6Qbbva6pswZQ=w600-h1200",
         "https://play-lh.googleusercontent.com/gvS1Uj2cmG82o-o5zo5jAqtJF8G8wQ5D9RAUyhGMFlo65ITRhhWFAV7erDvDX53thVY=w600-h1200",
