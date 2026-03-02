@@ -223,7 +223,7 @@ const clientApps = apps.map((app) => ({
     aria-label="App details"
   >
     <div
-      class="relative my-8 w-full max-w-2xl rounded-2xl border border-edge/40 bg-surface p-6 shadow-2xl sm:p-8"
+      class="relative my-8 w-full max-w-3xl rounded-2xl border border-edge/40 bg-surface p-6 shadow-2xl sm:p-8"
       data-app-modal-content
     >
       <button
@@ -255,7 +255,7 @@ const clientApps = apps.map((app) => ({
         <h3 class="mb-3 text-sm font-semibold text-brand-dark">
           <i class="fa-solid fa-images mr-2 text-brand/60" aria-hidden="true"></i>Screenshots
         </h3>
-        <div data-app-modal-screenshots class="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-thin"></div>
+        <div data-app-modal-screenshots class="-mx-6 flex gap-3 overflow-x-auto px-6 pb-3 snap-x snap-mandatory scrollbar-thin sm:-mx-8 sm:px-8"></div>
       </div>
     </div>
   </div>
@@ -369,7 +369,7 @@ const clientApps = apps.map((app) => ({
             img.src = url;
             img.alt = app.name + ' screenshot';
             img.loading = 'lazy';
-            img.className = 'h-64 w-auto flex-shrink-0 snap-start rounded-lg border border-edge/30 shadow-sm';
+            img.className = 'w-[45%] flex-shrink-0 snap-start rounded-lg border border-edge/30 shadow-sm';
             modalScreenshots.appendChild(img);
           });
         } else {
