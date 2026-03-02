@@ -329,20 +329,31 @@ const clientApps = apps.map((app) => ({
       applyFilter();
 
       // ── Modal ──
+      var pendingScreenshotLoads = [];
+
       function getInitials(name) {
         return name.split(/[\s-]+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+      }
+
+      function escapeHtml(str) {
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
       }
 
       function openModal(index) {
         const app = clientApps[index];
         if (!app) return;
 
+        // Cancel any in-flight screenshot loads from previous modal
+        pendingScreenshotLoads.forEach(function(it) { it.cancelled = true; it.img.onload = null; it.img.onerror = null; it.img.removeAttribute('src'); });
+        pendingScreenshotLoads = [];
+
         // Icon
         if (app.iconUrl) {
-          var initials = getInitials(app.name);
+          var initials = escapeHtml(getInitials(app.name));
+          var safeName = escapeHtml(app.name);
           modalIcon.innerHTML = '<div class="relative" style="width:4.5rem;height:4.5rem">' +
             '<div class="flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md" style="width:4.5rem;height:4.5rem">' + initials + '</div>' +
-            '<img alt="' + app.name + ' app icon" width="72" height="72" class="absolute inset-0 rounded-2xl shadow-md opacity-0 transition-opacity duration-300" style="width:4.5rem;height:4.5rem" />' +
+            '<img alt="' + safeName + ' app icon" width="72" height="72" class="absolute inset-0 rounded-2xl shadow-md opacity-0 transition-opacity duration-300" style="width:4.5rem;height:4.5rem" />' +
             '</div>';
           var modalImg = modalIcon.querySelector('img');
           var modalPlaceholder = modalIcon.querySelector('[class*="from-brand"]');
@@ -350,14 +361,19 @@ const clientApps = apps.map((app) => ({
           modalImg.onerror = function() { modalImg.remove(); };
           modalImg.src = app.iconUrl;
         } else {
-          modalIcon.innerHTML = '<div class="flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md" style="width:4.5rem;height:4.5rem">' + getInitials(app.name) + '</div>';
+          var fallbackInitials = escapeHtml(getInitials(app.name));
+          modalIcon.innerHTML = '<div class="flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md" style="width:4.5rem;height:4.5rem">' + fallbackInitials + '</div>';
         }
 
         // Text
         modalName.textContent = app.name;
-        modalDownloads.innerHTML = app.downloads
-          ? '<i class="fa-solid fa-download mr-1 text-brand/60"></i>' + app.downloads
-          : '';
+        modalDownloads.textContent = '';
+        if (app.downloads) {
+          var dlIcon = document.createElement('i');
+          dlIcon.className = 'fa-solid fa-download mr-1 text-brand/60';
+          modalDownloads.appendChild(dlIcon);
+          modalDownloads.appendChild(document.createTextNode(app.downloads));
+        }
         modalDescription.textContent = app.description;
 
         // Platform links
@@ -400,14 +416,19 @@ const clientApps = apps.map((app) => ({
 
           var renderScreenshots = function(urls) {
             modalScreenshots.innerHTML = '';
+            // Cancel previous tab's loads
+            pendingScreenshotLoads.forEach(function(it) { it.cancelled = true; it.img.onload = null; it.img.onerror = null; it.img.removeAttribute('src'); });
+            pendingScreenshotLoads = [];
             var ssQueue = [];
             var ssActive = 0;
             var loadNextSS = function() {
               while (ssActive < 2 && ssQueue.length > 0) {
                 var item = ssQueue.shift();
+                if (item.cancelled) continue;
                 ssActive++;
                 (function(it) {
                   it.img.onload = function() {
+                    if (it.cancelled) return;
                     it.img.classList.remove('opacity-0');
                     it.img.classList.add('opacity-100');
                     it.wrapper.classList.remove('animate-pulse', 'w-40', 'bg-gradient-to-br', 'from-brand/10', 'to-brand-extra/10');
@@ -416,11 +437,12 @@ const clientApps = apps.map((app) => ({
                     setTimeout(loadNextSS, 200);
                   };
                   it.img.onerror = function() {
+                    if (it.cancelled) return;
                     ssActive--;
                     if (it.retries < 2) {
                       it.retries++;
                       it.img.removeAttribute('src');
-                      setTimeout(function() { ssQueue.push(it); loadNextSS(); }, 1000 * it.retries);
+                      setTimeout(function() { if (!it.cancelled) { ssQueue.push(it); loadNextSS(); } }, 1000 * it.retries);
                     } else {
                       it.wrapper.remove();
                       setTimeout(loadNextSS, 200);
@@ -439,7 +461,9 @@ const clientApps = apps.map((app) => ({
               img.className = 'h-72 w-auto rounded-lg border border-edge/30 shadow-sm opacity-0 transition-opacity duration-300';
               wrapper.appendChild(img);
               modalScreenshots.appendChild(wrapper);
-              ssQueue.push({ img: img, wrapper: wrapper, url: url, retries: 0 });
+              var item = { img: img, wrapper: wrapper, url: url, retries: 0, cancelled: false };
+              ssQueue.push(item);
+              pendingScreenshotLoads.push(item);
             });
             loadNextSS();
           };
@@ -478,7 +502,8 @@ const clientApps = apps.map((app) => ({
       cards.forEach(function(card) {
         card.addEventListener('click', function(e) {
           // Don't open modal if clicking a link inside the card
-          if (e.target.closest('a')) return;
+          var el = e.target instanceof Element ? e.target : e.target.parentElement;
+          if (el && el.closest('a')) return;
           var index = parseInt(card.getAttribute('data-app-index') ?? '-1', 10);
           openModal(index);
         });

@@ -201,7 +201,9 @@ async function fetchIosData(iosUrl) {
           ipad.push(basePath + '576x768bb.png'); continue;
         }
         // Fallback: use grid-type context from HTML
-        const shortPath = basePath.slice(basePath.indexOf('/thumb/') + 7, basePath.length - 1);
+        const thumbIdx = basePath.indexOf('/thumb/');
+        if (thumbIdx === -1) { iphone.push(basePath + '392x696bb.png'); continue; }
+        const shortPath = basePath.slice(thumbIdx + 7, basePath.length - 1);
         const urlIdx = html.indexOf(shortPath);
         if (urlIdx > -1) {
           const preceding = html.slice(Math.max(0, urlIdx - 2000), urlIdx);
@@ -247,7 +249,7 @@ async function getImageDimensions(url) {
       }
     }
     // WebP: RIFF container
-    if (ct.includes('webp') && buf.length > 30 && buf.slice(0, 4).toString() === 'RIFF') {
+    if (ct.includes('webp') && buf.length >= 30 && buf.slice(0, 4).toString() === 'RIFF') {
       return { w: buf.readUInt16LE(26) & 0x3FFF, h: buf.readUInt16LE(28) & 0x3FFF };
     }
   } catch {
