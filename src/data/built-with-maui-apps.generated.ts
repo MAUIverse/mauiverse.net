@@ -2,13 +2,14 @@
 // Do not edit manually.
 
 export const builtWithMauiSource = "https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md";
-export const builtWithMauiFetchedAt = "2026-03-02T15:53:50.889Z";
+export const builtWithMauiFetchedAt = "2026-03-02T16:33:09.629Z";
 
 export type BuiltWithMauiApp = {
   name: string;
   description: string;
   downloads: string;
   iconUrl: string | null;
+  screenshots: string[];
   platforms: {
     ios?: string;
     android?: string;
@@ -24,6 +25,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Audio Converter with Advance Audio Controls for iOS & macOS",
     "downloads": "50K+ (App Store)",
     "iconUrl": null,
+    "screenshots": [],
     "platforms": {
       "ios": "https://apps.apple.com/us/app/audio-converter-mp3-extractor/id6446039142"
     }
@@ -33,6 +35,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "With the Azure mobile app, monitor Azure resources like VMs and web apps on the go from your iOS or Android device.",
     "downloads": "Millions of downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/77/44/50/774450a9-74c5-b32c-121d-e3976ebca3cb/AppIcons-0-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ef/91/31/ef9131e8-03ab-f4bf-17ed-c21f9d0a7b95/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/34/c3/fd/34c3fdba-9fce-966e-8fba-af212b199e5b/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/88/2f/1a/882f1a7b-8ffb-1c96-98cb-9bd027070dc5/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/d2/a5/05d2a503-955f-ee85-233f-96adb0d8ea61/mzl.dfmbbngt.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fc/50/3d/fc503d07-30c8-5ca1-4c33-1b7a4cb38421/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/90/34/e6/9034e657-c713-731a-95c1-cdfd3fa252c0/mzl.odyuebqe.png/392x696bb.png"
+    ],
     "platforms": {
       "ios": "https://itunes.apple.com/us/app/microsoft-azure/id1219013620?ls=1&mt=8",
       "android": "https://play.google.com/store/apps/details?id=com.microsoft.azure"
@@ -43,6 +53,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "An app that alert when the device battery reach a low level or when it reaches a sufficient level of charge, in order to avoid battery stressing and prolong its life.",
     "downloads": "100+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/SZX1VsZeaKKYTJzKjDLf2WYjyWaJ8izllgkHmb0AMnsjwGeKpTlOUr3Acm0nGFvN888",
+    "screenshots": [],
     "platforms": {
       "website": "https://github.com/giuseppe-guerra/BatteryMonitor",
       "android": "https://play.google.com/store/apps/details?id=com.toyokenstudio.batterymonitor"
@@ -53,6 +64,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Personal mailbox in which you receive digital mail from the government of the Netherlands.",
     "downloads": "3.6M+ (Google Play) <br />3M+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/71/3d/53/713d5323-35b5-4941-33fa-7139a7c4b23a/appicon_ios-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/92/ee/07/92ee0780-e6cf-1800-b374-b8908345ab30/3f3afc3f-9b42-4548-8d0d-add2a11d0bf6_1242x2208.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/4d/09/b2/4d09b20e-f032-5fd4-1070-35371ccb9c6c/467c2a84-dba4-4f30-bd17-0946feb2ece4_1242x2208.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/72/13/fd/7213fd5b-6d1b-e2c6-10e8-5c02ec0007bf/34d7a4d2-53b9-418a-9bf6-d98ddae48423_1242x2208.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/b6/cc/4d/b6cc4d5d-8ef0-4171-106e-c114ff228852/95e45d6c-de56-4f2d-9f3e-4259406ba2dc_1242x2208.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/28/66/e4/2866e44d-defb-2ab0-2266-1a4e396e563b/85c5336e-1775-418a-a774-b0a8b0610523_1242x2208.png/392x696bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=nl.rijksoverheid.mbb.pub&hl=en-US",
       "ios": "https://apps.apple.com/gb/app/digid/id1384987408?l=en-US"
@@ -63,6 +81,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Bicicreteiro is a complete platform for cyclists that integrates a social network, marketplace, and safety features. It allows users to share training sessions with live tracking, create product stores, and receive news via newsletter. It uses AI to help identify stolen bikes. Additional features are available through subscriptions and donations integrated with app stores.",
     "downloads": "100 + downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/9d/43/329d4398-9b95-8c8a-e649-92267b1d6cda/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "website": "https://bicicreteiro.com",
       "android": "https://play.google.com/store/apps/details?id=app.bicicreteiro",
@@ -74,6 +93,9 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Open source BluOs NAD remote. Like the official BluOS Controller this app serves as a universal remote for all BluOS-enabled wireless hi-res music systems.",
     "downloads": "13K + downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/29/7e/46/297e46df-096c-fe54-96d5-98ad0c051d64/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/86/38/22/8638228b-b0fd-e5b0-3a79-74480c5a01bc/92218b79-a916-46df-9dcd-c67b0faa0d35_2024-02-29_03-10-47-.png/392x696bb.png"
+    ],
     "platforms": {
       "github": "https://github.com/crwsolutions/BluOsNadRemote",
       "android": "https://play.google.com/store/apps/details?id=nl.crwsolutions.bluosnadremote",
@@ -85,6 +107,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "This app is used by LEGO enthousiasts and it's a tool to help you organize all your LEGO sets when all bricks are mixed up in a big box. It helps you to keep track of all bricks you've collected and which ones are still missing",
     "downloads": "150K+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/fIUeZsRan9hMB-0X_S64xjtoEjM4hCv7GpECQt1n3-SUWQbFFnBx15jUGaFHkJPEMPUfmurxKwupbl9kafL-6Q",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.psychosoft.brick_manager"
     }
@@ -94,6 +117,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The Career Atlas mobile app offers a detailed personality analysis to help you discover the career that best fits your profile.",
     "downloads": "10+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/Pif20MYAHDNi4CBjDYteNHz_NL04peQPg-FNj_4XU1JjwWGz_fzR3lU8D2d_unYx-A",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.fmglib.myanalysis"
     }
@@ -103,6 +127,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "End sleepless nights! Help your baby relax and fall into a peaceful sleep with Colic Baby Sleeping Sounds.",
     "downloads": "10K+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/EBgC3nLVjvUKCm7o8To1XfEpiSOsQzkSg1fI4g_rWgu8oFd7Ac6RntymWuPpgvnQ24I",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.kodfab.bes&hl=en"
     }
@@ -112,6 +137,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "CycleProCut is a powerful cycling app built for riders who want to train smarter and push harder. Create personalized training plans, simulate performance outcomes, and analyze advanced ride metrics. With intuitive setup, integrated fitness tools, and no login required, CycleProCut transforms your pocket into a pro-level cycling coach.",
     "downloads": "1K+ downloads",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/41/d5/d9/41d5d925-e2da-1ff7-1463-777681096026/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "ios": "https://apps.apple.com/app/id6698868765",
       "android": "https://play.google.com/store/apps/details?id=pro.bikesport.cycleprocut"
@@ -122,6 +148,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Your go-to destination for all things dad jokes, with a user-friendly interface and cozy design.",
     "downloads": "100+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/jD1ot8NaEmsmGHSgfojAyoaayHps6vA3Vxi10dJ-RaZ1IbdjJXfkYYh8mD7AK2Y15sc",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.barkerbg001.dad_jokes_galore&hl=en-US"
     }
@@ -131,6 +158,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Dutch government authentication app for all government services, to be used by Dutch citizens.",
     "downloads": "11M+ (Google Play) <br />8M+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/02/a6/4b/02a64b29-3c90-b07f-50cc-81c555db91df/appicon-1x_U007epad-0-1-85-220-0.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/89/57/5d89577a-7fcd-d6cb-d7ae-3c37b51c5d31/1d80b2ee-3a2b-41c4-a67e-59054cbe60b4_Screenshot_01.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/48/4d/77/484d77a2-6ea1-3a74-bec5-118ee823e38e/9cc6c67e-a49e-4c9a-b842-8b56c8421946_Screenshot_02.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6f/79/eb/6f79eb76-2271-4755-9934-433a1627e5be/d1d959cb-259e-4919-a9e4-e2638074ff08_Screenshot_03.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/db/db/4f/dbdb4f55-6646-54c6-ece8-c516fbf3e40a/c642fd1f-00f0-4d6a-8257-0ad2762fbc31_Screenshot_04.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/b6/20/d9b620c4-ebd8-49cd-4cde-bddb36c4b9a3/dcd1031e-972c-47d5-8fdb-ebca3c35597c_Screenshot_05.png/392x696bb.png"
+    ],
     "platforms": {
       "website": "https://www.digid.nl/en/login-methods/digid-app/",
       "android": "https://play.google.com/store/apps/details?id=nl.rijksoverheid.digid.pub&hl=en-US",
@@ -142,6 +176,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "EliteMobile allows TR attorneys to capture, edit, and post client's billing time. Users get real-time insights into time entry status and can access important client's and matter's information from different systems all in one place.",
     "downloads": "5k+ downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/28/f4/25/28f42527-c894-330b-9877-7c1b98b3f1c7/AppIcons-0-0-1x_U007emarketing-0-11-0-0-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/8f/60/54/8f60540d-958b-d043-c5ab-8ad98a34a007/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/c2/ac/6d/c2ac6d89-4a4f-6b42-d852-5d9f5de50cb8/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/1c/db/11/1cdb1189-0b5a-2646-7fe1-88318a1109a7/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/5e/1f/8b/5e1f8b5e-f7fd-bc98-5297-27b824178f3c/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/7e/5f/bd/7e5fbd1f-50ab-e06c-be43-b1909838840e/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/82/eb/89/82eb899c-b584-bb44-563e-5ea2a7594d43/pr_source.png/392x696bb.png"
+    ],
     "platforms": {
       "website": "https://www.thomsonreuters.com/en.html",
       "android": "https://play.google.com/store/apps/details?id=com.thomsonreuters.elitemobile&hl=en&gl=US",
@@ -153,6 +195,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Elk 49 presents a fresh take on a classic puzzle game concept.",
     "downloads": "10K+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/eFM1z7OB0gsPP-V82BIeSZrZA0PFhknam7siLlPjbu2R08gHtjTbj80q6R4caY_AdQ",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.pekspro.elk49&hl=en"
     }
@@ -162,6 +205,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Epub Reader that allows you to read Epub formatted ebooks and connect and download ebooks from Calibre Content servers. Supports variable fonts sizes, font types, is paginated by default, works on Windows, and Android. iOS and MacOS support coming soon!",
     "downloads": "(Google Play  & MS App store)",
     "iconUrl": "https://play-lh.googleusercontent.com/StDEkYlmInSOokMmsk6DkgQrjXwtgunI_E58StgfSrEKpZVgF1GRFedpg_3s9ee_Mr0",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.companyname.epubreader",
       "windows": "https://apps.microsoft.com/detail/9n3t9qnkk7vx?hl=en-GB&gl=CA"
@@ -172,6 +216,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Mobile Client for MantisBT : Track, Manage, Monitor your bugs/tickets on the go! KEY FEATURES: Ticketboard Dashboard Mode for Quick Summary & Quick Tickets, Organize & Easy Ticket Management via API Token, Refreshed WebMode with Dark/Light Support, and much more.., Its a great productivity tool & a perfect MantisBT client (offered by Thenetspider Digital Solutions)",
     "downloads": "20+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/rzEwC-3jOhzQyJWFgtCgGeuu1USQRlSlBHj_UJKidwmdAhn_EycCiCle_fzjHncf8GPL",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.thenetspider.ether"
     }
@@ -181,6 +226,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Expenmo offers a solution for shared expenses.",
     "downloads": "500+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/BAadGJiZfLk6OGrOaVFHMavQI4sj6693J58OGITuUgQ-WJJvZYQLejymbzH1PryAB3Y",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.HomeAsync.Expenmo&hl=en"
     }
@@ -190,6 +236,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Finance Planner: Your Journey to Financial Freedom (F.I.R.E.). The app is a compact yet powerful tool for anyone consciously working toward a life with more freedom and fewer financial worries. Easily map out your income, expenses, and savings goals, and gain clear insight into your progress toward financial independence.",
     "downloads": "50+ downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/43/6d/5b/436d5b44-4ea8-6f3f-484d-97838fd3ea1b/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=nl.crwsolutions.CalcApi.Mobile",
       "ios": "https://apps.apple.com/us/app/finance-planner/id6743322133"
@@ -200,6 +247,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "HD Fishing Maps for US Coastal & Great Lakes.  Up your fishing game using HD Bathymetry to find new fishing spots including wrecks, reefs, ledges, and rock piles.",
     "downloads": "1k+ downloads (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/49/50/15/4950158f-293c-8637-cbe3-0796a391129d/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "website": "https://www.fishfathom.com",
       "ios": "https://apps.apple.com/us/app/fishfathom/id6448895341"
@@ -210,6 +258,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Ad-free gaming news app.",
     "downloads": "20K+ downloads (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/19/ea/91/19ea91c7-262b-9aba-8088-806638fad399/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.bricefriha.aresgaming&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
       "ios": "https://apps.apple.com/us/app/gamhub-gaming-news-updates/id1595571591"
@@ -220,6 +269,12 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "GnollHack is a remastered and enhanced version of the classic roguelike game NetHack, one of the most iconic games developed in 1980s and 1990s.",
     "downloads": "10K+ downloads (Google Play) <br /> 8K+ downloads (App Store) <br /> 800+ downloads (Steam)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6f/71/ea/6f71eadc-57e2-7b87-5424-cb2d7810a7b3/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/6f/61/106f61fc-8a66-605c-b01f-6f3142974eab/8347ce2c-4796-4c30-9ed8-e6c50d053948_screenshot-55-4.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/a0/2c/cea02cc7-fc34-ec1f-e58f-dd3cacc252c5/cb65cc7d-73d9-4543-8927-16bb42fe95ac_screenshot-55-8.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f5/2d/b2/f52db2e4-1eab-4d6b-0504-7d5f03459bff/6e66e1a0-a0e2-4b8d-9024-7d2c70e11c67_screenshot-55-9.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/49/e8/7b49e8ce-8f33-699a-8b58-43cc89f9ed89/09fd1b82-78f3-482c-babc-805771a013a6_screenshot-55-10.png/406x228bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.soundmindentertainment.gnollhack",
       "ios": "https://apps.apple.com/app/gnollhack/id1626979951",
@@ -231,6 +286,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Guitar Fretboard app is designed to help you learn scales, memorize the fretboard and train your ear.",
     "downloads": "10K+ downloads (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/9d/34/249d3418-d912-b025-13de-240fab7b0769/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/60/25/9a/60259a45-6249-dc24-c422-44cf9c7a05c7/2ed18cc6-1280-4a59-972b-ce1a2d6e5af7_S1.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/80/2d/16/802d168d-70f4-5abd-9385-16a4cc06e179/7fb8bea3-016a-4713-8087-d29f8782ba41_S2.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7d/96/9e/7d969e6d-b611-cbc8-6a6c-b0ff506a7ff4/3d65779a-fdb7-47fc-8897-fbbdcce68c00_S3.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/60/e5/9e/60e59e89-5a6c-94f4-f467-5fac98fcbc70/edf96bc8-efc0-4b8b-8f8d-8da43199d4d5_S4.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/bd/58/65bd5855-1545-85d3-e45b-3e5810bc2f6d/e089775e-357b-4bac-b15d-67595fbc7007_S5.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/24/a3/98/24a39847-0b17-9686-885c-93c026fa32b1/37de70bf-3c41-4513-a26f-300e9f7bdc92_S6.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/f9/8c/c8f98c0a-4b55-e6c5-8da2-fed5492a1bb9/654a7586-dee1-4b4b-b928-6510e465347c_S7.png/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a6/94/26/a6942650-0c24-5508-df6c-5c4ef42ea94f/5ed4ef43-4067-4db8-882d-eee2397c0433_S8.png/406x228bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.slaverygames.guitarfretboard&hl=en",
       "ios": "https://apps.apple.com/us/app/guitar-fretboard-scales/id1623791852?l=en-US"
@@ -241,6 +306,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Amateur radio logging app with templates for HF, POTA, Contest, and SWL. Includes offline tools like Grid Calculator, Azimuth Calculator, Q-Codes, and ITU Prefixes. Full ADIF import/export.",
     "downloads": "1500+ paid downloads (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/03/dc/fb/03dcfb56-8300-4887-7f8c-6b606863fec3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.mircules.HAM.QuickLog",
       "ios": "https://apps.apple.com/us/app/mircules-ham-quicklog/id939665753"
@@ -251,6 +317,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Here'n'There is an AI-powered app that helps you discover activities and events you'll actually enjoy. Instead of browsing endless lists, the app learns your preferences and recommends personalized experiences—making it easier to spend your time doing what you love.",
     "downloads": "100+ downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5e/24/d4/5e24d4ce-3fd1-295e-b1ff-c90f4adb84e3/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.ebnet.herenthere",
       "ios": "https://apps.apple.com/de/app/herenthere/id6737746907"
@@ -261,6 +328,10 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A desktop accessibility tool that allows users to type efficiently with one hand by dynamically reflecting keyboard keys, improving speed, reach, and accuracy.",
     "downloads": "+1K",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1f/7a/94/1f7a9493-4599-9c78-413e-111a4b8cc873/keyboardy_logo-1x_U007emarketing-0-6-0-85-220-0.png/512x512bb.png",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ba/43/42/ba43425e-42bd-1348-2f73-5e5418c06710/Mac_-_1.png/800x500bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/16/b1/b716b1e5-b649-59dd-cc6e-85ed7028991f/g2758.png/800x500bb.jpg"
+    ],
     "platforms": {
       "website": "https://keyboardy.net",
       "windows": "https://apps.microsoft.com/detail/9p2sbxxxx9w7",
@@ -272,6 +343,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Real Time GPS tracker.",
     "downloads": "20K+ paid downloads (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/39/d4/fa/39d4fa31-0507-fbdf-d901-2b530d1d028f/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.wovenobjects.locatoweb&hl=en",
       "ios": "https://apps.apple.com/us/app/locatoweb/id541093617?ls=1"
@@ -282,6 +354,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Lohnbits is the all-inclusive, carefree package for payroll accounting.",
     "downloads": "8K+ (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/19/fd/6d/19fd6d24-560d-da02-cdff-324f1440dcff/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/63/18/72/63187243-794d-b78f-cba2-5693d9cc8f0c/aef08446-3a2a-45ed-8dbd-2d9bd1be22af_Lohnbits_Screenshot_01_5-5.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9d/7b/19/9d7b19d1-6689-1a3a-502e-f10b36c60447/Dashboard_5_5.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/40/e9/5d/40e95d5c-7017-a64f-b5e4-048099a928ae/Sick_5_5.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/03/08/ce030887-7236-cc7b-5762-15627cbd143f/Calendar_5_5.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/6b/9f/f06b9f57-2e39-b6a2-e964-de00be46d877/Documents_5_5.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f8/ec/04/f8ec04af-c0cc-10b6-9121-38da9e580a48/Travel_5_5.png/392x696bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=lohnbits.android&hl=en",
       "ios": "https://apps.apple.com/de/app/lohnbits/id1537955707?l=en-GB"
@@ -292,6 +372,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The official Longines Equestrian App, the ultimate companion for equestrian enthusiasts and participants of events sponsored by Longines.",
     "downloads": "1000+",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f2/73/d7/f273d7da-1472-4324-9a75-9fe493d58a17/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e0/4b/8f/e04b8fe7-62a0-9628-9f16-a2da8e785254/2464bd87-d20e-4645-a94f-4e34fdde40f3_EN-5_5inch-1.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/f7/af/14f7af98-bbe6-64d4-cd05-84287341dfc4/6a850ac0-b541-4be8-b4c7-1e9275354b80_EN-5_5inch-2.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/9b/19/219b19a8-6e4c-b025-3f3f-9b5203dce428/61079d4a-3d04-4592-bc27-ab4ad6d11456_EN-5_5inch-5.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/b2/56/00b256a0-20bf-b936-fcac-edd640646bb1/23415e4e-648c-4c07-830f-58ed189b646c_EN-5_5inch-6.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1c/6e/0f/1c6e0f8e-6a2d-2737-49df-935ab345a342/a6216979-edfe-44d3-8b9e-8aeea1d49ff1_EN-5_5inch-3.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/74/23/2f/74232f62-1f89-9ca3-9807-d729c9b90eeb/be6ed5d3-c650-473c-a76c-e6aa255764c6_EN-5_5inch-4.png/392x696bb.png"
+    ],
     "platforms": {
       "website": "https://public.hippodata.net",
       "android": "https://play.google.com/store/apps/details?id=com.longines.equestrian",
@@ -303,6 +391,17 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The KinesiaU™ motor assessment system is a validated, low-cost prescription medical app for individuals to measure their Parkinson’s disease and essential tremor symptoms using an iPhone or Android smartphone and smartwatch. The system tracks tremors, slowness, and dyskinesia as well as therapies and activities in user-friendly reports. These can help patients and clinicians make better care decisions and identify therapies and activities to improve their symptoms.",
     "downloads": "Unknown (HIPAA Compliance)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/77/7b/77/777b773c-4f0b-bb41-4b68-12a9b95f7156/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1a/0e/1b/1a0e1bed-ed95-99ab-48f1-1555649df1d3/0414cfb4-28e2-4646-b307-77a2e80d9cbd_IMG_0002.PNG/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/64/88/a9/6488a921-bade-95ed-03b3-2f24ebe33fc2/ee1eac1a-e8d6-4790-bf32-11a62fefeed8_IMG_0007.PNG/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8f/b7/e4/8fb7e4eb-61c9-e6f2-0001-f27ceb39046d/37ee26c5-81fa-4a1b-b75c-293f1a8e9d51_IMG_0009.PNG/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/48/f0/0c/48f00c08-fe90-0c81-4089-bd3d0617a02b/38c4dff9-6d8e-4db2-8ce1-ab0f93a8259d_IMG_0008.PNG/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/5d/82/7b5d82d1-85f5-67c8-6a54-7b6a08ec11a1/749df88d-71bc-4466-9d5a-c495cd1ea70b_IMG_0006.PNG/406x228bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/98/31/1c/98311c0a-7a3e-317a-8a17-a2da1750a343/dd4e5b9e-3151-4501-a80b-c1e939689073_IMG_0010.PNG/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/24/80/e6/2480e6b4-5e2e-7bd3-bc45-8f02e47a10f6/b651340a-7e2e-4bdd-9bfa-9222ece13733_IMG_0011.PNG/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/92/26/3e922697-e3bc-7b83-7068-eace61af92a8/58c829ed-a886-41f2-9ccf-e9d4d20e8269_IMG_0013.PNG/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/66/eb/6b/66eb6ba6-93b2-48fc-a1bf-ffa9df6f6d59/29bc407a-aaa6-4ae7-b63e-97cf9acefeb1_IMG_0014.PNG/392x696bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.GLNT.KinesiaU",
       "ios": "https://apps.apple.com/us/app/kinesiau/id1528265341"
@@ -313,6 +412,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Lithuanian maps application.",
     "downloads": "500+ (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/56/f7/9b/56f79b45-c499-88a0-688b-577dbbc05ec8/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/search?q=maps.lt&c=apps",
       "ios": "https://apps.apple.com/lt/app/maps-lt/id840766166?uo=2"
@@ -323,6 +423,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "MenuDish converts boring text-based restaurant menus into digital ones with high-quality dish images.",
     "downloads": "100+ (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/6d/9a/7a6d9a9e-0f49-5a8b-c109-796e6dab98ba/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=ai.menupix",
       "ios": "https://apps.apple.com/app/menudish/id6621264757"
@@ -333,6 +434,18 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "DX spot viewer for ham radio operators. Connects to web clusters or DXSpider telnet servers. Shows spots across MF/HF/VHF/UHF bands with callsign lookups and QRZ integration.",
     "downloads": "1000+ paid downloads (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d3/f7/61/d3f7616e-ca9a-4d32-f4e1-1b88c6f7097c/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/24/42/30/2442309f-ee9a-6607-95da-d6660e03b1fc/tns.gblrnuzo.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/42/b2/d6/42b2d600-cfd5-f201-16a0-2f6149e9ffb5/tns.vywtvxoz.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/4a/dc/c0/4adcc0d8-8023-11f0-16e8-792c7d626767/tns.fzdhicbr.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/60/7d/16/607d16ba-5bab-860c-544b-c37fe95ca7a0/tns.scpzfwer.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/bd/66/bd/bd66bdc5-b7bc-efa8-b21e-713c21001b4f/812420e1-1e0e-44b9-9ff1-e04731d2e215_Simulator_Screen_Shot_-_iPhone_8_Plus_-_2021-12-17_at_15.28.05.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/70/45/01/70450137-3bff-c3bc-ed52-349ea8962e48/419c981d-a992-471e-9125-8aa02ee45262_Simulator_Screen_Shot_-_iPhone_8_Plus_-_2021-12-17_at_15.29.23.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/05/69/b9/0569b9ce-c99b-2355-7e2c-dd0d6e71e90f/ce0fb001-d4f2-4da0-8c1e-c63501f58bf0_Simulator_Screen_Shot_-_iPhone_8_Plus_-_2021-12-17_at_15.29.36.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/8e/5e/3d/8e5e3d61-3811-de9d-ce98-0c64eb10d1c6/469adeb6-cf5b-4923-a4e2-4d79e9bcdb89_EN_-_web__Screenshot_-_iPhone_8_Plus_-_2023-08-06_at_15.28.17.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/f8/e2/25/f8e22587-fdc5-9972-ec20-2bea4faaa72f/f32fcf3f-e474-4cfb-810b-b7bf401c2267_EN_-_telnet_Screenshot_-_iPhone_8_Plus_-_2023-08-06_at_15.27.57.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/c4/01/cc/c401ccac-c421-6da8-5174-72d5abf7ad16/eb2baa5a-42db-4895-9877-fb990773afab_EN_-_server_list__Screenshot_-_iPhone_8_Plus_-_2023-08-06_at_15.28.11.png/392x696bb.png"
+    ],
     "platforms": {
       "ios": "https://apps.apple.com/app/mircules-dx-cluster/id595659818"
     }
@@ -342,6 +455,18 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Personal finance app similar to Microsoft Money and Quicken. Cash and investment accounts, splits, cryptocurrencies, flexible cloneable reports, budgets, etc.",
     "downloads": "10K+ (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0c/21/d7/0c21d7eb-29ea-3e18-4a9d-3dbcac022431/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/a7/16/9e/a7169eb6-b29e-17af-00ac-878fdba80e90/33da4b8c-6eae-404e-ad4d-bd51ecd95535_2019-03-14_09-54-13-PM.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/e4/16/cc/e416cc4d-b119-3593-74d2-0d717eaefffd/cd987452-e905-41ff-9d74-435755dc91e2_2019-03-14_09-54-46-PM.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/76/04/1b/76041b80-526a-63e7-1f43-e1b1384635f7/7a8aaf31-9ef7-42b3-9b5f-57b6232d8313_2019-03-14_09-54-20-PM.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/b3/0b/9a/b30b9a65-1438-13e9-4206-0e19ef844135/c4f3108e-f37a-455c-8bc7-d68854da1e5e_2019-03-14_10-02-03-PM.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/7b/15/0a/7b150af5-8436-d449-1146-bbdeae3de305/27c36302-9e65-46d2-94f9-6e762792d6bd_2019-03-14_09-54-41-PM.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/b1/9a/39/b19a3972-8071-d4d8-5a3e-f6946db8565b/a7d630dd-31d3-4580-a35a-c3418e0ca422_2019-03-14_09-54-56-PM.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/3a/cc/3d/3acc3dfc-e920-a9a0-24f2-3bc9e2350149/8ab9a511-bfe4-4cfc-850b-7372ac0c15f4_2019-03-14_09-59-37-PM.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/90/71/6b/90716b99-abb2-b3b1-7995-80b1b3d90b49/a56857bd-25c5-42c4-850c-85324c952857_2019-03-14_10-00-08-PM.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/79/9f/d5/799fd528-313d-953a-b420-7acde5cb94f0/eda13228-7c32-41ea-add9-fa315b8d5958_2019-03-14_10-01-49-PM.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/c6/5f/be/c65fbe6c-d76e-68bb-ce0f-332c2ddfd189/e74a5bc9-605b-4d56-bee3-9826badeea8b_2019-03-14_10-03-04-PM.png/392x696bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.ktechsystems.moneytrackerpro",
       "ios": "https://apps.apple.com/us/app/money-tracker-infinite/id1643407103",
@@ -353,6 +478,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A free translator and Morse Code learning app.",
     "downloads": "1M+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/uZo5_4F3yFkxAJ88IrnHhszoIaXt7_uR2zaGW1cQLq3BmvjLKEjF7ai2BXGk338v4Nw",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=holecek.pavel.MorseCode",
       "windows": "https://www.microsoft.com/store/apps/9PNBC68XDHR0",
@@ -364,6 +490,17 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "An intuitive public transportation solution for a common problem that we all face, to travel easier, relaxed and faster without issues! Free app. Developed for Poland.",
     "downloads": "1000+ downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c5/b8/5d/c5b85dd2-8257-ed92-1926-a22228f4a11b/appicon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/a0/6e/1fa06e5f-4305-0327-c36b-cd7c0d59b6dc/6d1796a8-6ab6-4d6b-b601-102283af6d26_1111_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.08.44.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/20/7e/8e207ea2-a713-85b0-9195-a294498c4bc9/2fedf484-91aa-451f-8704-43cf286cc845_2222_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.09.36.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f1/1d/ea/f11dea5f-ce5d-c139-9fbc-db4c87f646da/74891aba-0320-4a7e-818f-b14cd5120fba_33333_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.18.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/38/68/40386843-bf4c-cba7-c7c2-f0d6dbf4b6fa/e928d9e0-bddb-42f3-bbac-5819b2099d4b_44444_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.25.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/9b/80/a79b80eb-b5f3-e55a-009f-064295fd3488/69b92978-0ff7-4a25-83bb-778d401951f0_55555_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.01.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/d5/1a/73d51afd-bc5e-6531-e23f-202db555c83e/016c02d6-725a-427a-9855-e34c0994945d_6666_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.10.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c7/58/94/c75894e1-5327-1e84-948e-ac717b8f78af/4a87f42d-509f-4af0-9955-e634703e0e6c_77777_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_22.34.09.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d5/e7/f8/d5e7f866-70ee-23ce-956b-bf7269861097/b97e0826-21ca-4689-a488-b1438fd4975b_88888_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_22.32.24.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/56/f7/fc56f777-4065-d879-83af-72995d2feccf/0ef645e8-c451-474d-bb13-480e4c9b9509_9999_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_22.40.23.png/392x696bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.cheapeasesoftware.mrkanarski",
       "website": "https://MrKanarski.com",
@@ -375,6 +512,18 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Muslim Pillars is a free Islamic application that provides many features such as prayer times, Quran, and many more for free.",
     "downloads": "10K+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a0/d6/3a/a0d63a18-5e36-1658-7359-9311a8108043/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/db/a1/15dba156-dd3c-f23c-ed0f-d573c5f6a72c/cb77b35e-daf5-4f59-aa81-7abe049a6b5e_1.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/57/06/495706ad-ebd1-5104-0e0e-5e61afbeb304/13ba298d-6096-485c-84fc-1fe479ced6a1_2.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cd/0b/89/cd0b8977-2999-fb1d-9b7d-e2dec02d5182/16db3ff0-df51-4ca5-aa58-90aaaed23f40_3.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1a/f3/c3/1af3c31b-d5bc-9199-8009-a8432c9bc171/c42c29d3-5743-49a1-9536-b5fddb09b360_4.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/44/33/20/443320ed-5799-3e53-f6f1-93950c02ded1/d96ede21-5b91-458c-9831-a2864dc3455c_5.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0a/5c/91/0a5c91f5-d25a-b96e-cd45-afc51c528839/8c2f1e29-4631-4b81-a050-75826a78f93f_6.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c5/f8/7c/c5f87cdd-835b-be3b-79e6-a64bce83b252/e3019389-1567-48f8-9d62-dc7628cdfab2_7.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/d8/4e/3fd84e6d-3b7e-8ed0-09e8-54c3fdeb03cf/8803b487-efa2-493c-8cf3-dd25f48822f0_8.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/1a/6a/ff1a6adb-5ae5-848c-dd28-212ed9ab837f/3e3cb298-d957-4066-9d5f-6316add12cd9_9.jpg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/51/98/03/51980383-660d-1f0d-7236-d62e8fb53d1f/81ccf173-bb95-4045-b4f0-bc766ce0ad86_Appearance_00000.jpg/392x696bb.jpg"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.AZEE.wquran&hl=en",
       "ios": "https://apps.apple.com/us/app/id1529761608?l=en-US"
@@ -385,6 +534,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A clean, simple, and powerful way to manage your car's health, fuel economy, and service history, all in one place for Android & Windows",
     "downloads": "36K+ (Google Play)  710 (Windows store)",
     "iconUrl": "https://play-lh.googleusercontent.com/pCMGZY31nEK3uwwHdqWSjQoDjaYKK-uVfNGudmbWQBU760J98TNJ5K-Gpwb7MimTwIQ",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.MyCarService.mycarservice&hl=en",
       "windows": "https://apps.microsoft.com/detail/9nn4j90pxm9w?hl=en-US&gl=US"
@@ -395,6 +545,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Nomalys Origin is a mobile and desktop app that connects to your company's IT systems (CRM, ERP, BI, etc.) and gives you real-time, intuitive access to customer data, reports, and opportunities, helping teams boost efficiency and responsiveness on the go.",
     "downloads": "15K + downloads (Google Play + App Store + MS Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/68/55/4e/68554ee7-e4f8-f401-cafc-39ae636ba708/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple30/v4/6f/bc/5a/6fbc5adb-8e08-b766-c514-71c7f15cf06e/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple4/v4/e8/5b/9b/e85b9b48-705d-6f04-42a9-386a4d5f7cde/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple20/v4/e3/19/2f/e3192f36-4141-58b2-09fe-b7f407ede1a6/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple5/v4/27/02/7e/27027ec5-0823-78a7-5955-adcc371cd9aa/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple4/v4/c3/c5/35/c3c53517-84ed-a715-ca10-6e0c712533e8/pr_source.png/392x696bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.nomalys",
       "ios": "https://apps.apple.com/fr/app/nomalys-origin/id380475770",
@@ -406,6 +563,18 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Notezilla is a notes and reminders app that syncs with Notezilla on Windows which is a leading, highly rated sticky notes app.",
     "downloads": "10K + downloads (Google Play + App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/65/41/ac/6541ac28-4165-4b65-7286-75c4445076c5/icon_logo-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/04/66/f3046626-60b7-7199-f8e9-30438bb8fcc9/b26748ff-ba6d-49d1-9264-3c961c14413a_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.56.51.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dc/a4/30/dca43048-85c0-cedc-d65f-2aaf2f42a0db/f9b5580b-d81d-4b92-b37c-06089b1b6711_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.06.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/45/b8/5a45b88f-af0d-40b5-bd0e-eb811957de82/29be0ac3-5093-4361-a780-2b13e4957c6d_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.20.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/37/ae/71/37ae71f9-8ce8-ae77-4faf-4c6a40f65140/54c2dc6d-a6f2-4fe7-81cb-3d71418a7acc_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.56.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8d/8b/d5/8d8bd522-3b1e-d61a-4316-295e12d759c1/559a5837-20d1-47d9-9af5-21d706487bbc_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.29.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/c6/ed/33c6edd4-759d-790e-4358-da8e7f6983e2/b330fffb-0454-4043-a145-ae2fbb8fda77_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.32.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/33/7a/83/337a833e-b932-90e4-a856-ba5ad9b6ca2d/aae47eed-085d-4cc5-9a38-7132134de133_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.32.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0d/b4/f5/0db4f55c-4394-62ae-2ec9-1fea97574996/a68b450e-b760-475d-bf58-69e59f8a0f4d_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.11.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/17/09/20/170920d5-ee35-edfb-0fa0-7d5403ed5906/9ac42d97-1586-4c98-9693-9f1a65d284ca_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.13.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b8/65/fa/b865fa3e-f279-20ac-cbad-98db2cb7421e/95db958a-9a95-4c7c-9f59-a1371bc4c4ae_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.18.png/392x696bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.conceptworld.notezilla",
       "ios": "https://apps.apple.com/us/app/notezilla-notes-reminders/id964449712"
@@ -416,6 +585,15 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The OVPay app is used for public transportation payments in the Netherlands.",
     "downloads": "100K+ downloads (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d4/fd/a6/d4fda6a9-fd52-5e7f-0772-1ba1a795b059/AppIcon-1x_U007emarketing-0-8-0-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/38/e8/53/38e8532b-d292-2c5d-1dc8-370a392f9920/f304e620-e055-4413-b89f-7f9821155c45_5.5_image-1_EN.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/c2/fe/22/c2fe2236-c58c-d9f3-d5b3-e064076adb1d/a5dd37fa-df9b-4a6d-8f31-b74fb01fef30_5.5_image-2_EN.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/2f/80/9f/2f809f83-7fe7-9f5f-c505-9af5bc30185e/f7423a5b-2076-48bb-8cf0-f6c67b2ff28f_5.5_image-3_EN.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/0b/fd/d0/0bfdd0d4-fbcc-eeb5-34bb-bcfb39ce7202/87edbda7-4540-454a-b50d-9e61e930b41b_5.5_image-4_EN.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/9c/21/23/9c2123ec-9946-855e-aafa-9036fb574970/a9a46ece-4aa0-4b8b-a34e-8a5fdb7fac8d_5.5_image-5_EN.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/71/c8/f2/71c8f226-799d-06bf-4b22-232fa4ff8f1d/22e5f270-1ff8-40ed-a6e0-5527f8025558_5.5_image-6_EN.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/9d/0c/58/9d0c58ed-6489-1256-5cd9-18507e907657/85e56a5c-c242-4709-936a-a22a49614a5a_5.5_image-7_EN.png/392x696bb.png"
+    ],
     "platforms": {
       "website": "https://www.ovpay.nl/en",
       "android": "https://play.google.com/store/apps/details?id=nl.tls.ovpay&hl=en",
@@ -427,6 +605,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "An event-planning app designed to streamline invitations, gift coordination, and RSVPs for events like birthdays, weddings, and more. Built with .NET MAUI and Azure.",
     "downloads": "100+ (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/85/f4/36/85f43632-a712-8d31-666e-859e6b459bcd/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "ios": "https://apps.apple.com/app/id6503934962",
       "android": "https://play.google.com/store/apps/details?id=se.arcticfusion.partyfellow",
@@ -438,6 +617,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Podcast Tracker is the best way to manage your podcast library on phone or tablet!",
     "downloads": "1M+ downloads (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/00/0d/e9/000de900-550f-80e3-b036-f376ec75717e/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/ba/5a/fe/ba5afedd-6827-98fb-e445-b79780f6474a/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/b7/b7/ee/b7b7ee00-fc36-40f3-1296-03e89e7c60fe/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/2b/19/8d/2b198df0-5f92-a6de-d137-70e252c83ce9/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/0a/2d/68/0a2d6894-6545-86d3-f949-6002c29a605c/pr_source.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/35/63/45/3563453d-59ab-e01e-3a6f-f1e5fb0742c7/pr_source.png/392x696bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.jonathanantoine.Podcasts&hl=en",
       "ios": "https://apps.apple.com/bb/app/podcasts-tracker/id1450382384?l=en-US"
@@ -448,6 +634,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "An app for personal trainers to manage their students, as well as their training and dietary needs. As a user, you will find a friendly interface to help you carry out gym workouts and manage your diet.",
     "downloads": "10+ downloads",
     "iconUrl": "https://play-lh.googleusercontent.com/8Til8eKITFhj8Y_nYQMHGaO08zZbWF5ETwEl9nf6xA2krXwTgh-jBMnXOHJzdfVFhZc",
+    "screenshots": [],
     "platforms": {
       "website": "https://proshapehub.com/",
       "android": "https://play.google.com/store/apps/details?id=com.fivehigh.proshape",
@@ -459,6 +646,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A simple todo list manager with reusable lists and items",
     "downloads": "400 (Google Play) + 1k+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/31/46/19/3146191e-540f-d6b4-4362-a499503b0eff/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.epjapps.simple.modern.list.relist",
       "ios": "https://apps.apple.com/us/app/re-list/id1551656021"
@@ -469,6 +657,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The ultimate rock climbing companion app.",
     "downloads": "10k+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/36/89/ef/3689efc1-10cb-dd86-e2e5-8913e89d5557/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.alphaoutdoors.redpoint",
       "ios": "https://apps.apple.com/au/app/red-point/id1670082950"
@@ -479,6 +668,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A free, very simple, and a privacy-friendly trip registration for the Netherlands to easily keep track of the mileage for business and/or private car use.",
     "downloads": "1k+ (Apple)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e7/84/3d/e7843d74-1f56-6406-e9cb-23b4bd9bc7e6/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d5/a6/12/d5a612fc-0a07-dc55-c778-e985d801114b/e81c2405-8ce0-4738-8de1-5927f0894072_image1.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/a0/ce/9fa0ce65-6fc4-9594-1223-bea4b7382569/bf2cff88-52a9-42a6-a632-f25e42dc6991_image2.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/85/a0/ba85a066-c1c8-7de2-aad9-9d5dd476fe51/9de2d1fb-dda3-4220-a0ec-3294d2a24a00_image3.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/25/18/6e2518d5-372a-1baa-0df4-0a0670d06b87/9aa2bd7a-9bf8-43f4-af56-7c601abaab63_image4.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7e/f3/9c/7ef39c2b-b37f-2d0e-d441-b0a33a29f3e4/8035c25a-9601-4f1c-88db-df8eac4ddc6f_image5.png/392x696bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.mrijntjes.ritlogger",
       "ios": "https://apps.apple.com/nl/app/ritlogger-rittenregistratie/id6479636230"
@@ -489,6 +685,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "News Reader, Filter & Alerts.",
     "downloads": "Unknown",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d5/4c/24/d54c24bc-f4fd-aa4e-df0b-fa9d479c5ef7/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "windows": "https://apps.microsoft.com/detail/9mwhll3bbx9f?hl=en-us",
       "ios": "https://apps.apple.com/us/app/rss-radar/id6496271582?l=en-US"
@@ -499,6 +696,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Workout app for indoor training.",
     "downloads": "1K+ (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/08/83/ea/0883eac6-54d1-ae9e-38d3-1b0514c15ff8/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "website": "https://satis.fit/",
       "android": "https://play.google.com/store/apps/details?id=com.satisfit.app",
@@ -510,6 +708,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Sequential Cards tests your memory! 🃏 Play offline, open cards in order, and win!",
     "downloads": "10+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/DFmTI5NNcvYBjW5g-URP3qU2QksO9rIYhwlmhqPZEB7C1qoe4Y_CCjUR7b8j5GHuMX0",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.fmglib.numberpathgame"
     }
@@ -519,6 +718,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Sharp Words combines Wordle and crosswords to offer a unique twist.",
     "downloads": "10+ (Google Play)",
     "iconUrl": null,
+    "screenshots": [],
     "platforms": {
       "website": "https://sharpwordswebsite.z13.web.core.windows.net/",
       "android": "https://play.google.com/store/apps/details?id=com.npt.sharpwords&hl=en",
@@ -530,6 +730,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Minimalist Launcher for a Focused Life - with Widget Support",
     "downloads": "500+ (App Store)",
     "iconUrl": null,
+    "screenshots": [],
     "platforms": {
       "ios": "https://apps.apple.com/us/app/simply-dumb/id6636494471"
     }
@@ -539,6 +740,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The best apnea app to improve the breath-holding time for freediving, scuba diving and spearfishing with 5 different apnea tables types.",
     "downloads": "50K+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4f/65/7c/4f657c0f-eebb-da1b-775e-835beedfdd62/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/be/42/b7/be42b761-ccd0-9fb6-a740-2770e9872530/40424998-5eb4-4464-ae85-11fe8eb7329f_iOS_screen_5.5_01.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/05/fe/fd/05fefd39-d12b-5808-c4ae-42426bfee4d0/7639012f-6303-42b0-9841-b4f4b5f2ec53_iOS_screen_5.5_07.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/f1/35/cd/f135cd4e-9c43-6089-cfbb-6d209b51fb9f/8a376913-75be-4b71-bddb-1e5ba3eeca6b_iOS_screen_5.5_02.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/1a/ce/ae/1aceaebc-8eba-8ac3-32fe-fd3088532635/53bd653e-69bc-4a77-af1b-2a28ff4dc72a_iOS_screen_5.5_03.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/ac/19/c6/ac19c6f8-8629-9b3f-a178-41e6690bc22d/9168369a-cf3d-477b-acb1-16777f197dcb_iOS_screen_5.5_04.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/2f/29/00/2f2900ed-6a44-f88d-47e7-dd4c9a0136e6/a8395c9a-731b-4e22-816f-623e4964cc24_iOS_screen_5.5_05.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/f0/70/73/f070735f-4727-9ace-90e8-d8fb6970a4f6/3e3c1dfa-f0b5-41c2-8ec1-b8ad3d229852_iOS_screen_5.5_06.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/f9/83/e3/f983e3a8-d8fd-aca8-a16d-0ddc1be5a727/f8c7da67-b4c7-44d0-ab16-7bb049d0672a_iOS_screen_5.5_07.png/392x696bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.squarecrowdapps.stamina&hl=en",
       "ios": "https://apps.apple.com/us/app/stamina-apnea-trainer/id994874491?l=en-US"
@@ -549,6 +760,12 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Sueca is a trick tacking card game popular among Portuguese speaking people.",
     "downloads": "150K+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f2/8c/52/f28c525b-19ca-e812-e24d-feec2afd4fa8/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/52/41/1c/52411cc4-340d-91b0-9236-dd1788a999a0/fca8bf49-dea7-4c05-bcf7-76b45b1e7757_AssetsiOS15.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/f6/57/ca/f657ca01-9bce-d040-f6c1-abbfa30bfba1/fdef63bf-3a66-42c4-a098-041e6732cee9_AssetsiOS25.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/f3/42/f2/f342f283-876d-487f-f4eb-4ce37f020d8e/a31926bd-f037-490d-9754-39b772d46133_AssetsiOS35.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/53/1f/1e/531f1ecb-84f8-edf7-9154-b9500f092dff/75a12612-2fe8-4600-970b-92cde2981d00_AssetsiOS45.png/392x696bb.png"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.TiagoInteractive.Sueca",
       "ios": "https://apps.apple.com/us/app/sueca-portuguesa-2022/id1638754579"
@@ -559,6 +776,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Sunshine Coast Council App – Your Connection to Local Services.",
     "downloads": "500+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0b/01/e6/0b01e698-7a0e-154f-75e4-71531bd7be29/sccicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "website": "https://www.sunshinecoast.qld.gov.au/council/contact-council/site-help/scc-app",
       "android": "https://play.google.com/store/apps/details?id=com.sunshinecoastcouncil.scc.app&hl=en",
@@ -570,6 +788,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Learn English and American culture through videos",
     "downloads": "500+ (Google Play)",
     "iconUrl": null,
+    "screenshots": [],
     "platforms": {
       "website": "https://swipelore.com/",
       "android": "https://play.google.com/store/apps/details?id=com.companyname.swiplore.mobileapp&hl=en",
@@ -581,6 +800,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Discover public transport in Torino with ease! Take It Easy Torino helps you track arrivals in real-time, set smart alarms, and plan your trips smoothly. Whether you're a local or a visitor, our app ensures you never miss your ride again.",
     "downloads": "100+ (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/g31M58BL1Er_z_9sEaLU6StlciFGyECEZww0y06JouOE8Zqz4nKtpdYj1hHNuPZFsr4",
+    "screenshots": [],
     "platforms": {
       "website": "https://davomelkumyan40.github.io/TakeItEasy.github.io",
       "android": "https://play.google.com/store/apps/details?id=com.takeiteasy.torino.app&pcampaignid=web_share"
@@ -591,6 +811,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Explore the movements of the Earth's tectonic plates from 600 million years ago to 200 million years in the future. Select a land mass and watch its movement as you scroll through the years.",
     "downloads": "10+ (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/dV01uQlL6inxWz2lJ4m7IAor_m4PnOl732Tmg0YRUVKgClu-_i3V342_1MMWRJ2wUA",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.companyname.tectonicplatesmaui"
     }
@@ -600,6 +821,18 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Learn music instruments from scratch",
     "downloads": "12 Mio (Apple App Store & Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a7/10/23/a71023b8-8d1e-f4a1-dd3e-fa4304661844/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/27/91/74/279174e0-6eb4-f24e-6caf-f77d0c4d9869/5d861ff2-d3c1-4a41-b424-6c05a18bd8e8_en_wind_iphone55_01.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/1b/4e/c11b4e0a-a27a-7fe5-d2a5-d182a2bcd06e/f71e42fc-c8d2-4f5f-85af-7c623f90df5d_en_wind_iphone55_02.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/7a/4b/4f7a4be7-7e24-10b4-e0ba-34df27078519/4d72df29-dfc3-4f10-95c7-a397d36eb34e_en_wind_iphone55_03.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/4f/e0/674fe010-440d-db72-838d-4e62c14e1cb9/8e08c8fa-2a1f-42c6-8a3f-623f85b6b157_en_wind_iphone55_04.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b3/85/ca/b385ca84-6692-3e2d-fe84-555a821c3203/e20629ee-23f3-474b-b8a4-74957228fcda_en_wind_iphone55_05.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8b/10/57/8b10577d-f78f-6369-10ae-e9c3e173e9a8/211fdc47-af5a-4a4b-b466-9b1825cb32e9_en_wind_iphone55_06.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/82/4c/f3824cb1-dd1d-6d04-fd35-f55706c72689/79ea90f2-c5eb-447a-928a-96cca5f14067_en_wind_iphone55_07.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2f/c9/96/2fc9961f-8c60-c2a6-a1fc-ca4b34c8d568/0bab23d8-d4e2-4d1e-b5c6-9739d9fb3f1b_en_wind_iphone55_08.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0c/db/68/0cdb68be-3135-be29-fa85-bbc19236ad64/f6319f53-d61e-4d14-b8ca-7232b125ecc0_en_wind_iphone55_09.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/8d/f6/808df650-6f25-09e7-2427-bff619fb7d71/03ae33e7-7e28-409b-8285-c56bc64989f2_en_wind_iphone55_10.png/392x696bb.png"
+    ],
     "platforms": {
       "ios": "https://apps.apple.com/us/app/tonestro-music-lessons/id1365630760",
       "android": "https://play.google.com/store/apps/details?id=at.funmusic.sepp.mobile"
@@ -610,6 +843,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Travel Expense Tracker App with Online-First Offline Accesible Approach. Manage Trips, Expeses, Expense Categories. Online Data Store, Offline Data Access",
     "downloads": "15+ (Google Play) 25+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a9/83/8d/a9838d4a-a6be-5f2c-fc5c-7891bda4f888/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.abhayprince.travelexpensetracker",
       "ios": "https://apps.apple.com/in/app/travel-expense-tracker-lite/id6746136868"
@@ -620,6 +854,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Trip tracking app with statistics",
     "downloads": "50+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c4/63/7a/c4637a8c-5b2c-6787-f718-d112f1f1706d/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "website": "https://tripsta.app/",
       "android": "https://play.google.com/store/apps/details?id=com.universley.tripsta&hl=en",
@@ -631,6 +866,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "TV Show Tracker let you discover, track and comment your favorite TV shows & movies.",
     "downloads": "100K+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/96/7f/e8967f69-45f9-fc69-b007-dcc5584ba6a7/AppIcons-0-1x_U007epad-0-0-0-8-0-0-85-220-0.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.jonathanantoine.TVST&hl=en",
       "ios": "https://apps.apple.com/nl/app/tv-show-tracker-trakt-client/id1228141510?l=en-US"
@@ -641,6 +877,12 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Expense Tracker for Couples",
     "downloads": "100+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9d/db/d4/9ddbd43b-4308-7e42-6d40-e518ddfaea49/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/03/13/1a/03131acf-cc03-d1f5-a995-4dc2a4b56c77/b3150eb8-16cb-4056-9605-13342cbbba17_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.52.54.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/af/68/60/af68608b-4835-0d4f-fecf-206c08ad58b4/a6e9746f-b047-4b6b-b86c-43be7b323108_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.53.10.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/4b/68/104b6897-3b27-75a1-cb5b-98cb242cdcbd/0504f7cf-dd8c-4548-b367-3e43f51ae20b_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.53.26.png/392x696bb.png",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/cf/8b/49cf8b41-9ec9-00ff-6055-d1b6c50693b1/9ec35ae2-f174-4a22-92dd-91a7808bcab5_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.53.38.png/392x696bb.png"
+    ],
     "platforms": {
       "website": "https://www.williambelle.co/apps/unity-pay",
       "android": "https://play.google.com/store/apps/details?id=co.williambelle.unitypay&hl=en&hl=en",
@@ -652,6 +894,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Dutch social security and employment agency.",
     "downloads": "100K+ (Google Play) 100K+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e4/ef/8e/e4ef8e74-1488-da63-2ec3-94ab82490185/appicon_ios-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=nl.uwv.app&hl=nl",
       "ios": "https://apps.apple.com/nl/app/uwv/id1478274972"
@@ -662,6 +905,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Video Converter with Advance Video Controls for iOS & macOS",
     "downloads": "70K+ (App Store)",
     "iconUrl": null,
+    "screenshots": [],
     "platforms": {
       "ios": "https://apps.apple.com/us/app/video-converter-mp4-to-audio/id1620778262"
     }
@@ -671,6 +915,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Explore the globe like never before with World Explorer. Our AI-powered app gives you in-depth insights about any place worldwide, provides a comprehensive description, and recommends local attractions with your personalized travel guide.",
     "downloads": "100K+ (Microsoft Store + Google Play)",
     "iconUrl": null,
+    "screenshots": [],
     "platforms": {
       "website": "https://world-explorer.azurewebsites.net",
       "android": "https://play.google.com/store/apps/details?id=com.vladislavantonyuk.worldexplorer",
@@ -682,6 +927,11 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A dive log that interfaces via Bluetooth with most dive computers. In French for now.",
     "downloads": "9K (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/66/db/47/66db47ba-9e44-d33c-da45-54da0d6613b7/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "screenshots": [
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/7c/2b/437c2b4e-f88d-d769-15ce-02e4140bb0db/8a4d7511-d2e3-4369-9176-4de5209ac7cd_1.jpeg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/22/77/de/2277de4d-846a-af82-c565-42f14120a5a6/1ad7a8c9-cf17-400e-a515-ff0ad4f5b249_2.jpeg/392x696bb.jpg",
+      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/ed/6a/b5ed6aab-d689-d61c-d931-484fe3983511/f69c3a1d-1666-4db1-9d13-545c4778a471_3.jpeg/392x696bb.jpg"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.dopnet.yourdive",
       "ios": "https://apps.apple.com/app/yourdive/id1469175226?platform=iphone"

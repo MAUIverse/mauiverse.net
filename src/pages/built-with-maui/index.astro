@@ -28,6 +28,16 @@ function getInitials(name: string): string {
     .join('')
     .toUpperCase();
 }
+
+// Serialize app data for client-side modal (only fields needed)
+const clientApps = apps.map((app) => ({
+  name: app.name,
+  description: app.description,
+  downloads: app.downloads,
+  iconUrl: app.iconUrl,
+  screenshots: app.screenshots,
+  platforms: app.platforms,
+}));
 ---
 
 <BaseLayout
@@ -115,12 +125,16 @@ function getInitials(name: string): string {
         aria-label="Apps built with .NET MAUI"
         data-app-grid
       >
-        {apps.map((app) => (
+        {apps.map((app, idx) => (
           <li
-            class="group hover-glow flex flex-col rounded-xl border border-edge/40 bg-surface p-5 transition"
+            class="group hover-glow flex cursor-pointer flex-col rounded-xl border border-edge/40 bg-surface p-5 transition"
             data-app-card
+            data-app-index={idx}
             data-search-text={`${app.name.toLowerCase()} ${app.description.toLowerCase()}`}
             data-platforms={Object.keys(app.platforms).join(' ')}
+            role="button"
+            tabindex="0"
+            aria-label={`View details for ${app.name}`}
           >
             {/* Card header: icon + name + downloads */}
             <div class="mb-4 flex items-start gap-4">
@@ -156,23 +170,25 @@ function getInitials(name: string): string {
               {app.description}
             </p>
 
-            {/* Platform links */}
-            <div class="mt-auto flex flex-wrap gap-2">
-              {Object.entries(app.platforms).map(([key, url]) => {
-                const meta = platformMeta[key];
-                if (!meta) return null;
-                return (
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition ${meta.colorClass}`}
-                  >
-                    <i class={meta.icon} aria-hidden="true"></i>
-                    {meta.label}
-                  </a>
-                );
-              })}
+            {/* Platform links + expand hint */}
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <div class="flex flex-wrap gap-2">
+                {Object.entries(app.platforms).map(([key, url]) => {
+                  const meta = platformMeta[key];
+                  if (!meta) return null;
+                  return (
+                    <span class={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${meta.colorClass}`}>
+                      <i class={meta.icon} aria-hidden="true"></i>
+                      {meta.label}
+                    </span>
+                  );
+                })}
+              </div>
+              {app.screenshots.length > 0 && (
+                <span class="flex-shrink-0 text-xs text-muted/60">
+                  <i class="fa-solid fa-images mr-1" aria-hidden="true"></i>{app.screenshots.length}
+                </span>
+              )}
             </div>
           </li>
         ))}
@@ -198,7 +214,53 @@ function getInitials(name: string): string {
     </div>
   </section>
 
-  <script is:inline>
+  {/* ── Detail Modal ── */}
+  <div
+    class="fixed inset-0 z-50 hidden items-start justify-center overflow-y-auto bg-black/50 p-4 backdrop-blur-sm sm:p-8"
+    data-app-modal
+    role="dialog"
+    aria-modal="true"
+    aria-label="App details"
+  >
+    <div
+      class="relative my-8 w-full max-w-2xl rounded-2xl border border-edge/40 bg-surface p-6 shadow-2xl sm:p-8"
+      data-app-modal-content
+    >
+      <button
+        type="button"
+        class="absolute right-4 top-4 rounded-full p-2 text-muted transition hover:bg-surface-alt hover:text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand"
+        aria-label="Close"
+        data-app-modal-close
+      >
+        <i class="fa-solid fa-xmark text-lg" aria-hidden="true"></i>
+      </button>
+
+      {/* Modal header */}
+      <div class="mb-6 flex items-start gap-5 pr-10">
+        <div data-app-modal-icon class="flex-shrink-0"></div>
+        <div class="min-w-0 flex-1">
+          <h2 data-app-modal-name class="text-2xl font-bold text-brand-dark"></h2>
+          <p data-app-modal-downloads class="mt-1 text-sm text-muted"></p>
+        </div>
+      </div>
+
+      {/* Full description */}
+      <p data-app-modal-description class="mb-6 text-base leading-relaxed text-muted"></p>
+
+      {/* Platform links */}
+      <div data-app-modal-platforms class="mb-6 flex flex-wrap gap-2"></div>
+
+      {/* Screenshots */}
+      <div data-app-modal-screenshots-section class="hidden">
+        <h3 class="mb-3 text-sm font-semibold text-brand-dark">
+          <i class="fa-solid fa-images mr-2 text-brand/60" aria-hidden="true"></i>Screenshots
+        </h3>
+        <div data-app-modal-screenshots class="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-thin"></div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ clientApps, platformMeta }}>
     (() => {
       const searchInput = document.querySelector('[data-app-search-input]');
       const clearButton = document.querySelector('[data-app-search-clear]');
@@ -207,10 +269,23 @@ function getInitials(name: string): string {
       const noResults = document.querySelector('[data-app-no-results]');
       const visibleCount = document.querySelector('[data-app-visible-count]');
 
-      if (!(searchInput instanceof HTMLInputElement) || !(clearButton instanceof HTMLButtonElement) || !noResults) {
+      // Modal elements
+      const modal = document.querySelector('[data-app-modal]');
+      const modalContent = document.querySelector('[data-app-modal-content]');
+      const modalClose = document.querySelector('[data-app-modal-close]');
+      const modalIcon = document.querySelector('[data-app-modal-icon]');
+      const modalName = document.querySelector('[data-app-modal-name]');
+      const modalDownloads = document.querySelector('[data-app-modal-downloads]');
+      const modalDescription = document.querySelector('[data-app-modal-description]');
+      const modalPlatforms = document.querySelector('[data-app-modal-platforms]');
+      const modalScreenshotsSection = document.querySelector('[data-app-modal-screenshots-section]');
+      const modalScreenshots = document.querySelector('[data-app-modal-screenshots]');
+
+      if (!(searchInput instanceof HTMLInputElement) || !(clearButton instanceof HTMLButtonElement) || !noResults || !modal) {
         return;
       }
 
+      // ── Filtering ──
       const applyFilter = () => {
         const query = searchInput.value.trim().toLowerCase();
         const selectedPlatforms = filterCheckboxes
@@ -246,6 +321,106 @@ function getInitials(name: string): string {
         searchInput.focus();
       });
       applyFilter();
+
+      // ── Modal ──
+      function getInitials(name) {
+        return name.split(/[\s-]+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+      }
+
+      function openModal(index) {
+        const app = clientApps[index];
+        if (!app) return;
+
+        // Icon
+        if (app.iconUrl) {
+          modalIcon.innerHTML = '<img src="' + app.iconUrl + '" alt="' + app.name + ' app icon" width="72" height="72" class="h-18 w-18 rounded-2xl shadow-md" />';
+        } else {
+          modalIcon.innerHTML = '<div class="flex h-18 w-18 items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md">' + getInitials(app.name) + '</div>';
+        }
+
+        // Text
+        modalName.textContent = app.name;
+        modalDownloads.innerHTML = app.downloads
+          ? '<i class="fa-solid fa-download mr-1 text-brand/60"></i>' + app.downloads
+          : '';
+        modalDescription.textContent = app.description;
+
+        // Platform links
+        modalPlatforms.innerHTML = '';
+        Object.entries(app.platforms).forEach(function(entry) {
+          var key = entry[0], url = entry[1];
+          var meta = platformMeta[key];
+          if (!meta) return;
+          var a = document.createElement('a');
+          a.href = url;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.className = 'inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium transition ' + meta.colorClass;
+          a.innerHTML = '<i class="' + meta.icon + '"></i>' + meta.label;
+          modalPlatforms.appendChild(a);
+        });
+
+        // Screenshots
+        if (app.screenshots && app.screenshots.length > 0) {
+          modalScreenshotsSection.classList.remove('hidden');
+          modalScreenshots.innerHTML = '';
+          app.screenshots.forEach(function(url) {
+            var img = document.createElement('img');
+            img.src = url;
+            img.alt = app.name + ' screenshot';
+            img.loading = 'lazy';
+            img.className = 'h-64 w-auto flex-shrink-0 snap-start rounded-lg border border-edge/30 shadow-sm';
+            modalScreenshots.appendChild(img);
+          });
+        } else {
+          modalScreenshotsSection.classList.add('hidden');
+        }
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        modalClose.focus();
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      // Card click handlers
+      cards.forEach(function(card) {
+        card.addEventListener('click', function(e) {
+          // Don't open modal if clicking a link inside the card
+          if (e.target.closest('a')) return;
+          var index = parseInt(card.getAttribute('data-app-index') ?? '-1', 10);
+          openModal(index);
+        });
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            var index = parseInt(card.getAttribute('data-app-index') ?? '-1', 10);
+            openModal(index);
+          }
+        });
+      });
+
+      // Close modal handlers
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) {
+        if (!modalContent.contains(e.target)) closeModal();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+      });
     })();
   </script>
+
+  <style>
+    .h-18 { height: 4.5rem; }
+    .w-18 { width: 4.5rem; }
+    .scrollbar-thin::-webkit-scrollbar { height: 6px; }
+    .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+    .scrollbar-thin::-webkit-scrollbar-thumb { background: rgb(var(--color-edge)); border-radius: 3px; }
+  </style>
 </BaseLayout>

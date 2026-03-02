@@ -78,6 +78,7 @@ function parseTableRow(row) {
     description: description.trim(),
     downloads: downloads.trim(),
     iconUrl: null,
+    screenshots: [],
     platforms,
   };
 }
@@ -123,20 +124,24 @@ function extractGooglePlayPackage(url) {
   return match ? match[1] : null;
 }
 
-async function fetchIosIcon(appId) {
+async function fetchIosData(appId) {
   try {
     const res = await fetch(`https://itunes.apple.com/lookup?id=${appId}`, {
       signal: AbortSignal.timeout(8000),
     });
-    if (!res.ok) return null;
+    if (!res.ok) return { icon: null, screenshots: [] };
     const data = await res.json();
     if (data.results && data.results.length > 0) {
-      return data.results[0].artworkUrl512 ?? data.results[0].artworkUrl100 ?? null;
+      const r = data.results[0];
+      return {
+        icon: r.artworkUrl512 ?? r.artworkUrl100 ?? null,
+        screenshots: r.screenshotUrls ?? [],
+      };
     }
   } catch {
     // Silently skip
   }
-  return null;
+  return { icon: null, screenshots: [] };
 }
 
 async function fetchGooglePlayIcon(packageId) {
@@ -157,37 +162,40 @@ async function fetchGooglePlayIcon(packageId) {
   return null;
 }
 
-async function fetchIconForApp(app) {
-  // Try iOS first (iTunes API is more reliable)
+async function fetchStoreDataForApp(app) {
+  // Try iOS first (iTunes API is more reliable and gives screenshots)
   if (app.platforms.ios) {
     const appId = extractIosAppId(app.platforms.ios);
     if (appId) {
-      const icon = await fetchIosIcon(appId);
-      if (icon) return icon;
+      const data = await fetchIosData(appId);
+      if (data.icon) return data;
     }
   }
-  // Fall back to Google Play
+  // Fall back to Google Play for icon only
   if (app.platforms.android) {
     const packageId = extractGooglePlayPackage(app.platforms.android);
     if (packageId) {
       const icon = await fetchGooglePlayIcon(packageId);
-      if (icon) return icon;
+      if (icon) return { icon, screenshots: [] };
     }
   }
-  return null;
+  return { icon: null, screenshots: [] };
 }
 
-async function fetchAllIcons(apps) {
+async function fetchAllStoreData(apps) {
   // Process in batches to avoid overwhelming APIs
   const results = [...apps];
   for (let i = 0; i < results.length; i += ICON_CONCURRENCY) {
     const batch = results.slice(i, i + ICON_CONCURRENCY);
-    const icons = await Promise.all(batch.map((app) => fetchIconForApp(app)));
+    const storeData = await Promise.all(batch.map((app) => fetchStoreDataForApp(app)));
     for (let j = 0; j < batch.length; j++) {
-      results[i + j] = { ...results[i + j], iconUrl: icons[j] };
+      results[i + j] = {
+        ...results[i + j],
+        iconUrl: storeData[j].icon,
+        screenshots: storeData[j].screenshots,
+      };
     }
     if (i + ICON_CONCURRENCY < results.length) {
-      // Small delay between batches
       await new Promise((r) => setTimeout(r, 200));
     }
   }
@@ -235,6 +243,7 @@ export type BuiltWithMauiApp = {
   description: string;
   downloads: string;
   iconUrl: string | null;
+  screenshots: string[];
   platforms: {
     ios?: string;
     android?: string;
@@ -272,11 +281,12 @@ async function run() {
   let apps = parseAppsTable(appsSection);
   console.log(`Parsed ${apps.length} apps from upstream table.`);
 
-  // Fetch icons from app stores
-  console.log('Fetching app store icons…');
-  apps = await fetchAllIcons(apps);
+  // Fetch icons and screenshots from app stores
+  console.log('Fetching app store data (icons + screenshots)…');
+  apps = await fetchAllStoreData(apps);
   const iconCount = apps.filter((a) => a.iconUrl).length;
-  console.log(`Fetched icons for ${iconCount}/${apps.length} apps.`);
+  const screenshotCount = apps.filter((a) => a.screenshots.length > 0).length;
+  console.log(`Fetched icons for ${iconCount}/${apps.length} apps, screenshots for ${screenshotCount}/${apps.length} apps.`);
 
   // Write generated TypeScript data
   await mkdir(dirname(TS_OUTPUT_PATH), { recursive: true });
