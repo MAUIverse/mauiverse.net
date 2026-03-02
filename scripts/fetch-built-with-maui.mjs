@@ -76,7 +76,7 @@ function parseTableRow(row) {
   return {
     name,
     description: description.trim(),
-    downloads: downloads.trim(),
+    downloads: downloads.trim().replace(/<br\s*\/?>/gi, ' · '),
     iconUrl: null,
     screenshots: [],
     platforms,
@@ -144,42 +144,69 @@ async function fetchIosData(appId) {
   return { icon: null, screenshots: [] };
 }
 
-async function fetchGooglePlayIcon(packageId) {
+async function fetchGooglePlayData(packageId) {
   try {
     const res = await fetch(
       `https://play.google.com/store/apps/details?id=${packageId}&hl=en`,
-      { signal: AbortSignal.timeout(8000) }
+      {
+        signal: AbortSignal.timeout(10000),
+        headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36' },
+      }
     );
-    if (!res.ok) return null;
+    if (!res.ok) return { icon: null, screenshots: [] };
     const html = await res.text();
-    // Extract og:image meta tag
+
+    // Extract icon from og:image meta tag
     const ogMatch = html.match(/<meta\s+property="og:image"\s+content="([^"]+)"/i)
       ?? html.match(/<meta\s+content="([^"]+)"\s+property="og:image"/i);
-    if (ogMatch) return ogMatch[1];
+    const icon = ogMatch ? ogMatch[1] : null;
+
+    // Extract screenshot URLs from srcset attributes
+    // Portrait phone screenshots use =w480-h960, landscape use =w1052-h592
+    const screenshotSet = new Set();
+    const srcsetRegex = /srcset="(https:\/\/play-lh\.googleusercontent\.com\/[^=]+)=w(?:480-h960|1052-h592)\b/g;
+    let match;
+    while ((match = srcsetRegex.exec(html)) !== null) {
+      screenshotSet.add(match[1]);
+    }
+    // Remove the icon base URL from screenshots (it often appears in both)
+    const iconBase = icon?.replace(/=[^=]*$/, '');
+    if (iconBase) screenshotSet.delete(iconBase);
+    // Re-request at a good display size and deduplicate
+    const screenshots = [...screenshotSet].map((base) => base + '=w600-h1200');
+
+    return { icon, screenshots };
   } catch {
     // Silently skip
   }
-  return null;
+  return { icon: null, screenshots: [] };
 }
 
 async function fetchStoreDataForApp(app) {
-  // Try iOS first (iTunes API is more reliable and gives screenshots)
+  let icon = null;
+  let screenshots = [];
+
+  // Try iOS first (iTunes API is more reliable for icons + screenshots)
   if (app.platforms.ios) {
     const appId = extractIosAppId(app.platforms.ios);
     if (appId) {
-      const data = await fetchIosData(appId);
-      if (data.icon) return data;
+      const iosData = await fetchIosData(appId);
+      if (iosData.icon) icon = iosData.icon;
+      if (iosData.screenshots.length > 0) screenshots = iosData.screenshots;
     }
   }
-  // Fall back to Google Play for icon only
-  if (app.platforms.android) {
+
+  // Try Google Play for missing icon or screenshots
+  if (app.platforms.android && (!icon || screenshots.length === 0)) {
     const packageId = extractGooglePlayPackage(app.platforms.android);
     if (packageId) {
-      const icon = await fetchGooglePlayIcon(packageId);
-      if (icon) return { icon, screenshots: [] };
+      const gpData = await fetchGooglePlayData(packageId);
+      if (!icon && gpData.icon) icon = gpData.icon;
+      if (screenshots.length === 0 && gpData.screenshots.length > 0) screenshots = gpData.screenshots;
     }
   }
-  return { icon: null, screenshots: [] };
+
+  return { icon, screenshots };
 }
 
 async function fetchAllStoreData(apps) {

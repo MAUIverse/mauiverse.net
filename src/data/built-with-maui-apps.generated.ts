@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const builtWithMauiSource = "https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md";
-export const builtWithMauiFetchedAt = "2026-03-02T16:33:09.629Z";
+export const builtWithMauiFetchedAt = "2026-03-02T17:06:25.004Z";
 
 export type BuiltWithMauiApp = {
   name: string;
@@ -53,7 +53,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "An app that alert when the device battery reach a low level or when it reaches a sufficient level of charge, in order to avoid battery stressing and prolong its life.",
     "downloads": "100+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/SZX1VsZeaKKYTJzKjDLf2WYjyWaJ8izllgkHmb0AMnsjwGeKpTlOUr3Acm0nGFvN888",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/QvuUe9uvS4SaOV7evQLq-Yi9CwY70QjkKPoEEKBLeUllXaOo3DD502aqCfi1-HZf-z4=w600-h1200",
+      "https://play-lh.googleusercontent.com/MNBaHPrUhJ30ZipmCS-HzJ2zMqN2os32fC9jUXt-4YIafOcuDc_8RAPbAEd9Th4p3cja=w600-h1200",
+      "https://play-lh.googleusercontent.com/WA8RDB7Vq8rbSs7ATnmSkjZ3nsV6CqzrlJhNWD2VTl7g5dNHD-Tor5R5gfwIsoe2m1sv=w600-h1200",
+      "https://play-lh.googleusercontent.com/vpDax3pVakaFPQmkcXAz8suubWvHmo-JmwJXmv4B51t4BEAP2nyBcmFYy8QGH1hphGA=w600-h1200",
+      "https://play-lh.googleusercontent.com/cpfq4xUMRHwOTj7Nvw38QGO8dbW9GrFBpH3oboqlc3MljmoiPOtarZ7y2YOAdMx8UE0=w600-h1200",
+      "https://play-lh.googleusercontent.com/k8naDUSymAqM9ICQ19eUv3gjbeiO-SqUS9TnTaX-C5yOyp7xoisJNp-tq5PowiiuQgg=w600-h1200"
+    ],
     "platforms": {
       "website": "https://github.com/giuseppe-guerra/BatteryMonitor",
       "android": "https://play.google.com/store/apps/details?id=com.toyokenstudio.batterymonitor"
@@ -62,7 +69,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
   {
     "name": "Berichtenbox",
     "description": "Personal mailbox in which you receive digital mail from the government of the Netherlands.",
-    "downloads": "3.6M+ (Google Play) <br />3M+ (App Store)",
+    "downloads": "3.6M+ (Google Play)  · 3M+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/71/3d/53/713d5323-35b5-4941-33fa-7139a7c4b23a/appicon_ios-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
     "screenshots": [
       "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/92/ee/07/92ee0780-e6cf-1800-b374-b8908345ab30/3f3afc3f-9b42-4548-8d0d-add2a11d0bf6_1242x2208.png/392x696bb.png",
@@ -81,7 +88,24 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Bicicreteiro is a complete platform for cyclists that integrates a social network, marketplace, and safety features. It allows users to share training sessions with live tracking, create product stores, and receive news via newsletter. It uses AI to help identify stolen bikes. Additional features are available through subscriptions and donations integrated with app stores.",
     "downloads": "100 + downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/9d/43/329d4398-9b95-8c8a-e649-92267b1d6cda/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/0ssVjCVuwixJT1tt2kCqUk84yKv7-kGlTPIsyWlYI8-FOejjOHZBepsiWmC4XqJS8g=w600-h1200",
+      "https://play-lh.googleusercontent.com/Flq4AdOV_-Zwjv5AfAwTPYnt_289EWzwjamxQ8UsegI9ExhHnh46lzbx3PkwR2xr_vw=w600-h1200",
+      "https://play-lh.googleusercontent.com/eeYIAC5QNjbNNFHITwJqlX7h7NgVorYDrwuBVzPJiO9oZKnhLP3igS3Mgb9nM31NrA=w600-h1200",
+      "https://play-lh.googleusercontent.com/WcbZ9Xdx8zYJFupe1PkNQRk3q-EEkjZLTatWWZjiKlMpyu1sWJFhmUu9OzGG1DrYHbI=w600-h1200",
+      "https://play-lh.googleusercontent.com/J5rQmPm4GA3vmLMF0HuC2qgIPb8JdqLD7N6yagjxSJwM847dhXlwf3fWNHzt1RZ9ByI=w600-h1200",
+      "https://play-lh.googleusercontent.com/QT5Odya9DL_IHmIpV5qmPs9pM3GMTMaLc27IY9d7EKGrCZAMMyvv2EWN0Ee25Pt6ig=w600-h1200",
+      "https://play-lh.googleusercontent.com/0XgFP6rG8KIYVqTy1zPM1Pp4qukhZmWosMhbTK-KhatXzUyRfO5wkC4hU6h_blXc4A=w600-h1200",
+      "https://play-lh.googleusercontent.com/stMUg6RSVfAEHbzUKJqZ4HWhUu35SzOOFnY0BUtV4UWxiy6RA5pr8RvxEME-nVcij0E=w600-h1200",
+      "https://play-lh.googleusercontent.com/W8T3k9hE8JhTw6R-lBmxA8qS91WGMebM5sXKtLdLVGXpuLwESwmZvWgbURBnDnecGQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/2i6dnpECSt5EkOUION-xrBcHBQW8EovzEvwpHP4wVWa0GsJaXrJsAGg3jzEwYuxdezE=w600-h1200",
+      "https://play-lh.googleusercontent.com/MQ5PqHP_dLmU1AR9Dje6YsFAVACJ9rPwtFdgqDWVV8Vrxzbes4vBXhFBpJQSpTh1hL4=w600-h1200",
+      "https://play-lh.googleusercontent.com/OonRcT94ZS_Rt5L7P0U_XVNtUA2ImCcJtnGQWmlo7on15muV0MbVJQw1iAJwwgqrN1yn=w600-h1200",
+      "https://play-lh.googleusercontent.com/1RZVkaCvhU1PScJor_MJRcvSOW90QneqNSrQa6o3qoJKndaoOdjzGGfPiHQmyxpO7ko=w600-h1200",
+      "https://play-lh.googleusercontent.com/f3G6bz8PgJzCdWZP8pewVoH4uaUsRExv4VLqYzRYF-_TPdcZCI580-UrfP5jXYUCfA=w600-h1200",
+      "https://play-lh.googleusercontent.com/RkiyCkubdU336R7xia6tJvkeiXllA2e9Z-udxJiHQgkl5INhTArdYHpMO11lYPqYtIs=w600-h1200",
+      "https://play-lh.googleusercontent.com/uhnNtQSG-axVKp5puv1fm3p2mCP5fNDPi24dww0VdQOSVIoUTzXfQo0ITlnuvXqyqg=w600-h1200"
+    ],
     "platforms": {
       "website": "https://bicicreteiro.com",
       "android": "https://play.google.com/store/apps/details?id=app.bicicreteiro",
@@ -107,7 +131,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "This app is used by LEGO enthousiasts and it's a tool to help you organize all your LEGO sets when all bricks are mixed up in a big box. It helps you to keep track of all bricks you've collected and which ones are still missing",
     "downloads": "150K+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/fIUeZsRan9hMB-0X_S64xjtoEjM4hCv7GpECQt1n3-SUWQbFFnBx15jUGaFHkJPEMPUfmurxKwupbl9kafL-6Q",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/RIVxoi60Dm4XrUqlk_Veo1p2yce7ESHB9qKEqOhmK1V_3SvrxeF4oOOhQd_csIlyRMx9h3eXanauwb2MNlXk=w600-h1200",
+      "https://play-lh.googleusercontent.com/7ceu0qsb6wiM8jrFABymTEG-VUFh5WJa_bvvr1LEkhBtEzP3TF1z8tV839DG6GBrEVwxHi0cyw4pZ93qc741=w600-h1200",
+      "https://play-lh.googleusercontent.com/A7OukOKDY5p37SdMS1321qXINiBn825q_eczlfcqMddcSCN_iAVFYX1NDXHHaVk4C3cIbciLrZbi97hBDGx3-A=w600-h1200",
+      "https://play-lh.googleusercontent.com/YLgHoADBNnIY2sW-0lU_wIVKtMwUYesD22Wrv3WFzm8BBYTqgwfa9-xO94AODxS3h4ycwXwQjZ0jXTNViUHoTw=w600-h1200",
+      "https://play-lh.googleusercontent.com/nglafFRzZV7l0PQRV2mjm33ua3y4oJo9UvRDBCmT9WWy31uuKYes6fnRCx3upIk46jQiKpydd4svmE2avJ5Xdw=w600-h1200",
+      "https://play-lh.googleusercontent.com/ukITzmwl78DyLSmWSJPj67benXwvYHgte-eNnCb5kISgDcafQkl5oIQAVH9PmLVawC4i5CFwJC5Sw3d2759X=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.psychosoft.brick_manager"
     }
@@ -117,7 +148,23 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The Career Atlas mobile app offers a detailed personality analysis to help you discover the career that best fits your profile.",
     "downloads": "10+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/Pif20MYAHDNi4CBjDYteNHz_NL04peQPg-FNj_4XU1JjwWGz_fzR3lU8D2d_unYx-A",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/O2IFTGibQSYuZ1mOzVMdA2ai7ELxAN1qHyvvL7yMUWLs151SpKIz0dBbb8TpaD3LSPO-=w600-h1200",
+      "https://play-lh.googleusercontent.com/myVH0v1DVltDZ4Ispk2nIH6TgKOEd1oDHGK7e1mhwZ3WVErtyB4QzAgU9dPxuV1WvUJo=w600-h1200",
+      "https://play-lh.googleusercontent.com/kp3CaHWvwYW9PebbiLjCOgaOfAUULXIN4lwLO8mKwCVcbgUk79r9stw0NL2UV3cLvYMQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/5WLz91n9VOUgkF-QsIy73vHEeRfHpLtodzPEmIfDdNY9pE5d9gkxhmKAQwfY5aJ_9g=w600-h1200",
+      "https://play-lh.googleusercontent.com/fYWweFHymyaDdFGFSJgnVTwrUVjj5J3Q_lfFftCDc6m2ZnrdEpz0L1XuG-l-SPgZkQU=w600-h1200",
+      "https://play-lh.googleusercontent.com/mM0mXTUPNjbyxOwfG5yCEiiiam52V23qvQC3eoLgTjTxBKJREUH1QpEp5sGehjm66SY=w600-h1200",
+      "https://play-lh.googleusercontent.com/uLR3TaiquneHekGU5HoeyjHhblMW0pstxztIlglrdsfK-nA1EPKZPwPQT4J6QOhluro=w600-h1200",
+      "https://play-lh.googleusercontent.com/X9GIkOeyrAcWFDBAC7Q7vb6Q9xFijPzpf2Jcr1J1OwP3ObQnw102qukMI8-AuhPsuE4=w600-h1200",
+      "https://play-lh.googleusercontent.com/UyerW-ZkHCE9AtGNI0Oown9Uyacp8Oqk17UsFt-SiKIAkMw2JBn0bX50_5EdftwO6gkx=w600-h1200",
+      "https://play-lh.googleusercontent.com/1srDn0z7WhYhbvO--hqegiW7dxakA_oZmi-tosxjGHDN3T5kApTm78VeBWhF1RT0BhGv=w600-h1200",
+      "https://play-lh.googleusercontent.com/zEGv9yc8Mgf_lVAKI9oJzjG4TpvSk7Vdrr1BO2MsGMlJ814bZb-lCPdHfb69v0XQBwo=w600-h1200",
+      "https://play-lh.googleusercontent.com/QDaXJx2_xeUWx-WmNh1xZDj7ig0jk1Orc9bgSrxfKE3prEV4KwTW299FC1O4c6W-oMk=w600-h1200",
+      "https://play-lh.googleusercontent.com/6fBNco8jHd_aWK4edBoNTng5nVXTpCkjiW_b-iwEiyWOVURYvmeFc357Lpt3Z9rvQsM=w600-h1200",
+      "https://play-lh.googleusercontent.com/Nap7KELr2pIyX3_kDBjotbQX4_yBvlp1eWzVLW4vizA4OmN_6jlAlZmmCeeagteeiS8=w600-h1200",
+      "https://play-lh.googleusercontent.com/6a-44wX0UH_REZh7V1mVe-4B_xrDgx7CcoluPIRGmNeOzabEIKcl7dDrD6bdFu7MGS8=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.fmglib.myanalysis"
     }
@@ -127,7 +174,30 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "End sleepless nights! Help your baby relax and fall into a peaceful sleep with Colic Baby Sleeping Sounds.",
     "downloads": "10K+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/EBgC3nLVjvUKCm7o8To1XfEpiSOsQzkSg1fI4g_rWgu8oFd7Ac6RntymWuPpgvnQ24I",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/CPWY1f_29Cyu-AhdZhjtnC_RowJopV05-CvWSsAGK4dkB9YTvRXmHgAvqKiCTtYRyZ8=w600-h1200",
+      "https://play-lh.googleusercontent.com/eXSi1s7ZRXKLnY2sF8mQK8VztZSNxeSzzN5kHCiylmyInubptbdS4reRT2Xm6oKKks4=w600-h1200",
+      "https://play-lh.googleusercontent.com/GCL522hgfdkqAPbHPKB6Pma8mxej_cpE3HRgBMvsqusztKFBiDW0Ti5oLw6v5Xza1ul-=w600-h1200",
+      "https://play-lh.googleusercontent.com/hRCZrHxnaLtWHV4krz7nRt5BwpTK8-PhXGw_eLIMPh1lH-5QVXRM3SPCVlAddi1BgbKl=w600-h1200",
+      "https://play-lh.googleusercontent.com/vaTDsznPj4GRRb0SreTpf84Gy2jyHXPyF-yEwR-tk-rl_hph8gukttyadb3Zxprx16zJ=w600-h1200",
+      "https://play-lh.googleusercontent.com/xMAA_ZHwJR8mlv31QGEuGQJcFO2yx6FZEZe1QvWtjsQ4mYcmd_T1l_44ERHDevrI3Xi3=w600-h1200",
+      "https://play-lh.googleusercontent.com/x77QJXjdI6pqNcDntbRq5F08E_IvcY_0EzhAQWIsYJK4h4zi6ybTjvT-vj4_1jrH60k=w600-h1200",
+      "https://play-lh.googleusercontent.com/DsbO7N-9zGK_5WKY9P01aZuY_-G5csfHxIAgLcNbVMT-1EhfWDGgLThegAtSmGLbU3uQNgyeAxTwogiQs1U6iA=w600-h1200",
+      "https://play-lh.googleusercontent.com/qgDhonUXcMjfjnR7ASgF168rZnNbabthW1mP7ag57w8i39oi9bFv8BwQ_Or1T8XH=w600-h1200",
+      "https://play-lh.googleusercontent.com/g6oV0Bn_VYYfWymMu3ZE1oxbip_bhHzVqy7LFyFecIYgRRp0XJyz_IIN9C1YRzVwYw=w600-h1200",
+      "https://play-lh.googleusercontent.com/QXEY1ezOjRY1YC71QJFi5Oy-xqx5ZT7BFCcYWlbJoD4BRpqefDi_WzXklxwPbjUaGg=w600-h1200",
+      "https://play-lh.googleusercontent.com/PcJI4Pj5RWOAeKVbnemeHutevicgNkmoHfT0j87Z75o-Uu4sQMTVYHTiLLls5MYRwg=w600-h1200",
+      "https://play-lh.googleusercontent.com/lVK1jRfI5YEjdcBRDNzgp6PSiGzB0nIyjMXLXM3sTG3eG85U4UxJEn-hfayeUhmMtY8l=w600-h1200",
+      "https://play-lh.googleusercontent.com/udxC3pCjYWWnkKKWObk39homIMKNsTCIywgRfmpnWRlu0YY5-qHcapT1uhyJRluEfEs=w600-h1200",
+      "https://play-lh.googleusercontent.com/RV6z0uOwutsID9PA4ghXbnljxfZKlFPl9fzMPXzhT7diMOE7YLiMOpcsGN7Lxgs0mw=w600-h1200",
+      "https://play-lh.googleusercontent.com/wgUwEi_hwU-j1ecRiMNhH4d341n3Czw9oDZdzivG2WNMzp1Cy3Z7VLHUegl4CFCCzpc=w600-h1200",
+      "https://play-lh.googleusercontent.com/qfFJAonbnEN-XGE2HvBWm5IJIOZA-TbQYdtUAEgWPCHWPZ3jVVyjXwgzFLyWiK6BBOM=w600-h1200",
+      "https://play-lh.googleusercontent.com/BL2nPoOQg9uoi0d1aeKdnczeVFvnHdLqcg96iaJdQUUI47taw4qK8thTjLwgur1ZGA=w600-h1200",
+      "https://play-lh.googleusercontent.com/kmyv2kFzy0MZcNW-6sY8eu-xYtNIvB80991Ir76vUkMqYwqH4h91RrgCk97ObRU5B15D=w600-h1200",
+      "https://play-lh.googleusercontent.com/PZOpw4x_rl4VMKNyCeJn_LK1FYhx5hdkKLMuMdBFiiiOJH_c6-W6V-EaiCT2TVX_u6E=w600-h1200",
+      "https://play-lh.googleusercontent.com/UjcsW3-8PM4PKK5HmkG_PA6I8lA4veQqasJEUq-Xf4k528wdL_SqERaq85mPkobafS4=w600-h1200",
+      "https://play-lh.googleusercontent.com/eddInwIU8WC8qMhO3S0m_mrNDWq2PR-jTY1qsOQEwFryvJEJxE7n5r7sxQLrqS5MWg=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.kodfab.bes&hl=en"
     }
@@ -137,7 +207,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "CycleProCut is a powerful cycling app built for riders who want to train smarter and push harder. Create personalized training plans, simulate performance outcomes, and analyze advanced ride metrics. With intuitive setup, integrated fitness tools, and no login required, CycleProCut transforms your pocket into a pro-level cycling coach.",
     "downloads": "1K+ downloads",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/41/d5/d9/41d5d925-e2da-1ff7-1463-777681096026/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/hz3BHHcBtI4tI17sSzQT64g0TA_yOKUNSqfmx8VESDZiWG-nbUIIYoNrfeMDPXiITRA=w600-h1200",
+      "https://play-lh.googleusercontent.com/6X6hXQRW9OaK8XTIJnBwt_z0TZ3AVyieCaJQoKrov0uz1bLkfeFF9UWCkHe_J5xH_Ug=w600-h1200",
+      "https://play-lh.googleusercontent.com/w87a3a9481SmolWbF7z1opUjMCGwE6X1yhMRwLIJjGweYDJodKJTX3Y8bMKlBzcddJ8=w600-h1200",
+      "https://play-lh.googleusercontent.com/lz8nU6Zmwl3NfxZ9Ln4oawtq87TpaFq0kC7p2ycspTSFxTNT8s72ciMbge73QKc18Zg=w600-h1200",
+      "https://play-lh.googleusercontent.com/D0ctOcQBeuMZKR4Kqgye_ofBmUQQEdQxIKdLwj9RzVAJazOqGpDqnjQQ_YWOiEAwYnk=w600-h1200",
+      "https://play-lh.googleusercontent.com/1iZOG85TBb47LwUfag8gl-iVD8kpa2ru5ub7kXYW_73WeWEeR05i-pk-Pg-CAXKoBZU=w600-h1200",
+      "https://play-lh.googleusercontent.com/V-bZGwUCDEUNmJ8TlXKBv6n61BJXQBtnv9fIzYIfEFVrtnJwhxk_YElfLKOhMTFWIlw=w600-h1200",
+      "https://play-lh.googleusercontent.com/fImEV40cyx8JBGDukR__kCd-gOX3ELkcWxwf0zRQAEYAbleVnZTdH4d_a4h3_gbPcA=w600-h1200"
+    ],
     "platforms": {
       "ios": "https://apps.apple.com/app/id6698868765",
       "android": "https://play.google.com/store/apps/details?id=pro.bikesport.cycleprocut"
@@ -148,7 +227,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Your go-to destination for all things dad jokes, with a user-friendly interface and cozy design.",
     "downloads": "100+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/jD1ot8NaEmsmGHSgfojAyoaayHps6vA3Vxi10dJ-RaZ1IbdjJXfkYYh8mD7AK2Y15sc",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/1CiFHPZwB_RzemFPTFmng6Xu83oXQE1Gt-lvVp2HwXJUC3rbc9UwUPv1zYZ-iFEVu5w=w600-h1200",
+      "https://play-lh.googleusercontent.com/qPscxLPI7bpN1Sl4JwqfbgX4dN_zJfuOELDi9-ZBzjsUj4uT-cx1M4uJDzE70tyHMgs=w600-h1200",
+      "https://play-lh.googleusercontent.com/WW2ORRTZmrQpCBvGxvt4QyRGMVC1xx4w0KbseX_lYJ6JV6ljtlml7l7m9WvATDtwJWw=w600-h1200",
+      "https://play-lh.googleusercontent.com/2GHcPMszLStwgFS0TcDAtcVxfaOeyEaVsuOsdb79OShjiQTCG1aGD87H5DtPtns2FHM=w600-h1200",
+      "https://play-lh.googleusercontent.com/MtcTko1cRxl1gmFRqSKSvLCj4mCvh0D6oyqM0GpLTXZB1Sst8TIfIN5tHLXkja0_vg=w600-h1200",
+      "https://play-lh.googleusercontent.com/j7PGpFANqEzfFMJcpWsSOlpnXqZHFPVEMCzlWHSbfse9jg3Z7aqbm-1wgkPgfHOesg=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.barkerbg001.dad_jokes_galore&hl=en-US"
     }
@@ -156,7 +242,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
   {
     "name": "DigiD",
     "description": "Dutch government authentication app for all government services, to be used by Dutch citizens.",
-    "downloads": "11M+ (Google Play) <br />8M+ (App Store)",
+    "downloads": "11M+ (Google Play)  · 8M+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/02/a6/4b/02a64b29-3c90-b07f-50cc-81c555db91df/appicon-1x_U007epad-0-1-85-220-0.png/512x512bb.jpg",
     "screenshots": [
       "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/89/57/5d89577a-7fcd-d6cb-d7ae-3c37b51c5d31/1d80b2ee-3a2b-41c4-a67e-59054cbe60b4_Screenshot_01.png/392x696bb.png",
@@ -195,7 +281,18 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Elk 49 presents a fresh take on a classic puzzle game concept.",
     "downloads": "10K+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/eFM1z7OB0gsPP-V82BIeSZrZA0PFhknam7siLlPjbu2R08gHtjTbj80q6R4caY_AdQ",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/lbVT0k_2ILLv7PD9mYuk8xdgyGLbUL46_PMgv-_nGNRAo83QNzO2v0TXi0rz_-JVY6U=w600-h1200",
+      "https://play-lh.googleusercontent.com/kiKPS9Z0X407nGFsm0s95nZP6wDf9DyqRL2IEGWiNsyh87eJbYaKPyGIME8v-AGfheI=w600-h1200",
+      "https://play-lh.googleusercontent.com/QJowLcDw4NQ7Oj4hYmgRbj66B3YUdg2FDmUwIs8u1mIJ9bETkpEMw5r3pQoWmmutXJw=w600-h1200",
+      "https://play-lh.googleusercontent.com/qZ9u1afEKRYG942j-CRjILM_1PaMRFsD0M7N49P6Q0etwL5X7NI8vHd_fvFe0jJHPA=w600-h1200",
+      "https://play-lh.googleusercontent.com/EDMwbY7BwZ2aSRoe3sSu_fap48NNIPGsarcb8f-GsCwz4zrEDOMlZkLQMvJ44YbgaA=w600-h1200",
+      "https://play-lh.googleusercontent.com/iU6_ALDv8UIJ3wNZdjozdN72j5C9edT0Ib-NAhFgjm0BNilrLcTg5BWEGR5lAZhE1_I=w600-h1200",
+      "https://play-lh.googleusercontent.com/OMy6rk25uS0RUXORj-P-1p7Su_QISNkkzyvGoCgkko2tpwxfmahvmuu2uChsWvqJqw=w600-h1200",
+      "https://play-lh.googleusercontent.com/XWh17qBwXgDvTAthwxndLE9xGObe8d2_ZHnIEfdC-0d_g2myaoPhwElyQC81yjxNEg=w600-h1200",
+      "https://play-lh.googleusercontent.com/zpy8m83iubGcN_BGfD_qgv3hneJv2QqIbXuBHEcQYRejn30k3sEf6T4dRGGFVdOk02f4=w600-h1200",
+      "https://play-lh.googleusercontent.com/XzrF6VOO9RAmJl8HjpOVYeLgvS9Ya7Hk46M87GOkTFTJwqth717NzVKNGongmYMsURw=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.pekspro.elk49&hl=en"
     }
@@ -205,7 +302,21 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Epub Reader that allows you to read Epub formatted ebooks and connect and download ebooks from Calibre Content servers. Supports variable fonts sizes, font types, is paginated by default, works on Windows, and Android. iOS and MacOS support coming soon!",
     "downloads": "(Google Play  & MS App store)",
     "iconUrl": "https://play-lh.googleusercontent.com/StDEkYlmInSOokMmsk6DkgQrjXwtgunI_E58StgfSrEKpZVgF1GRFedpg_3s9ee_Mr0",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/rR6VVWxLMFqEbGzAgPvVBzZiL2lVkYMU0OUwIW7f47yNhxbPev4MqAc49vBDn69DY2iB=w600-h1200",
+      "https://play-lh.googleusercontent.com/e1ptR-zneAYtpqZounKNqvxhLuuZIWJl4HOILKwy0y7dHMn_9bUBDbigukP4RHNCY8I=w600-h1200",
+      "https://play-lh.googleusercontent.com/YkQErCqmJqOmAh3GdQmpEk0A_KbV1PSUQDqkDZr2Uliax3WNNHQCm0-hibyyvL5pib8=w600-h1200",
+      "https://play-lh.googleusercontent.com/lqTiLvk6JUpSyqxlUjJEqr3jdpDP0-bwfRC9yL7mlCyI1maaqp3bq7ycpTqyNvh1zPI=w600-h1200",
+      "https://play-lh.googleusercontent.com/cYXGY1vPctFgETXqNhYlYU8pSMomXjmOBMBMRcPkRbk7vTen3bj_VG8KsEODGlDMKw=w600-h1200",
+      "https://play-lh.googleusercontent.com/o7HKFGVsjeKRiu0flj4MNTg1RIM6wrIl9OoIbbIb6dnpVXzD8LGURBncrX1qgvcRTA=w600-h1200",
+      "https://play-lh.googleusercontent.com/RGm97LVZCZyxMQeYgVTevDqhtnpbNIh-DTlbLJXzeQmnHpzytNjxN9uMmdf-gAaumjM=w600-h1200",
+      "https://play-lh.googleusercontent.com/6Tm3QaSr3I9qMDgzIdmr4h-gRj9fYTuzxcfs6hYZIwMtuCtYbxkSDf2mp1zWoNQk1w=w600-h1200",
+      "https://play-lh.googleusercontent.com/zO7Uomn85gJj1mtm1UQrkISFL3l3B5rEGKqigTAUlyTXxs7TVDer0ZG9vcM75hIz-_4=w600-h1200",
+      "https://play-lh.googleusercontent.com/d9kjTp-sW-yfhCzF0x-EXZdMhkoZvizoFDpT3A6PFK3dGxKh7wc0WEIY6bwZ35VyL3U=w600-h1200",
+      "https://play-lh.googleusercontent.com/Gu_a-vgVJFHFGOkBtUBJRa6xDbH215-u9OzfBQVd9VXqKQ2gPvw-C5UXglFGcbr58A=w600-h1200",
+      "https://play-lh.googleusercontent.com/aIzhlsvP5EHXWwLl5g4Cy9C2FrtcdPnLuHXAWY3qO8dubHS9biajNFUIHS6rOAcJvw=w600-h1200",
+      "https://play-lh.googleusercontent.com/adpDRYGUMm4RpMAOdY0-aQjDOrgptwnVuALsAOkjUsatJYBP8_ohdK8ZEjncZaj75zM=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.companyname.epubreader",
       "windows": "https://apps.microsoft.com/detail/9n3t9qnkk7vx?hl=en-GB&gl=CA"
@@ -216,7 +327,32 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Mobile Client for MantisBT : Track, Manage, Monitor your bugs/tickets on the go! KEY FEATURES: Ticketboard Dashboard Mode for Quick Summary & Quick Tickets, Organize & Easy Ticket Management via API Token, Refreshed WebMode with Dark/Light Support, and much more.., Its a great productivity tool & a perfect MantisBT client (offered by Thenetspider Digital Solutions)",
     "downloads": "20+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/rzEwC-3jOhzQyJWFgtCgGeuu1USQRlSlBHj_UJKidwmdAhn_EycCiCle_fzjHncf8GPL",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/6Aa0a-bmiPj7YiygzV-uxPwWgsZQzZylQkUnKEFd3bIpIlgXyex72YJPOU9tTeMdvg=w600-h1200",
+      "https://play-lh.googleusercontent.com/RcAlwvA0TsSK3CnZws1HAR_9LTgfZLl5rOmvTCslfV-CcfzwG6HVD86AiLrj2C2Hxbnp=w600-h1200",
+      "https://play-lh.googleusercontent.com/dc_NF2ryIcFaGrocL2NqBYxH6vayNn5sCJqICwc2zF6DbKgqJVA9AzXv5Mm1QmLgr8c=w600-h1200",
+      "https://play-lh.googleusercontent.com/qhVN6mdOb8z7F6IrOJmkNNQwvwovDMoLGS7g87ENlXAA2C6LSx6eiAv3x0lt0Tev9Hc=w600-h1200",
+      "https://play-lh.googleusercontent.com/CSQ3HH-c8D_Sheb3sp1-9rOHXF72bCmFqBvHc57MgN3Lz7VxhNm4XTqJvj-tbVguE2Iv=w600-h1200",
+      "https://play-lh.googleusercontent.com/R1pjxNwRoPhkOjkJQ_t7IPAIiMhODKjXsK-FjPzDs_dtNucph7gFRBSavuDOCu345PA=w600-h1200",
+      "https://play-lh.googleusercontent.com/teFbkC0PLTVe_m-ya2jImwH1PR_Jwz-PH5rd_0onhGdFfajEuvEyDtvGU35jK9xr3BM=w600-h1200",
+      "https://play-lh.googleusercontent.com/xzufrWXl5QViyhxvRXSzdhF8A3kjXQk5EMyqCz87vsAsxYg-0PFs8NeGWnA37ko7uA=w600-h1200",
+      "https://play-lh.googleusercontent.com/UfL1zFtbZuHCVUs4vIr_n31aTK0vCaS_20zWyH_Jq2Vzg59j0cEZNK-SvV2tUTDp2uY=w600-h1200",
+      "https://play-lh.googleusercontent.com/uIPh800sYoxuNzLdUN1edObhPfx3yvSau21lo77wLGnCPRmmecssPwM6CLzky_rlAzQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/LkeCcjp9n_KifVbCkM5CBhvWTFNJs6z-_Sw7lM-Ik8Dg4farbRyTGhDVUXGyYDhvqg=w600-h1200",
+      "https://play-lh.googleusercontent.com/dQrAdSac74JIFweiOC0s11eexGt8AK9_dn5Ujyfc6ZMjqpglHiZm2V5HD24a88QYjw=w600-h1200",
+      "https://play-lh.googleusercontent.com/_-iZxizUtS31Nmv730pPyQflajI733nlOuKwT4yU8sxFE90U705E7hPGS2NSxKIMXyj-=w600-h1200",
+      "https://play-lh.googleusercontent.com/W8VwcYYkYONOroaOZ-Wyui7dYSIeTbigXaLR-hBzj0cPna9e-R5TJmO59GnCF7yM0w=w600-h1200",
+      "https://play-lh.googleusercontent.com/RaLvFX0rhDvsVNOlathdOLb58AoeWvjma4sQ1OpsrmWD00vyELU8MM0lUNDlzfnzd4vg=w600-h1200",
+      "https://play-lh.googleusercontent.com/QcFWssx9SXC0zRe50elVONwtTY5mBmElP0cJRadQUzvLvRZAIuyNgNGS_DW0hzTqXjo=w600-h1200",
+      "https://play-lh.googleusercontent.com/P7PW_8X5ArLtI4tS-TTUv17SLGK92sa8eCMJRj3wCax-YU2C5UU8FZGU-jH0YPsHpjI=w600-h1200",
+      "https://play-lh.googleusercontent.com/UAt5vKLpfozr48H7XTOlDhTqGnkcxUtT8TQPLQsQfvswxHb0sJzXGiEvhQYamVdpHJ0=w600-h1200",
+      "https://play-lh.googleusercontent.com/HR4ci22pK92CQZ8KiNRtUhUKrQH2BUlZoRkkMPXfUvU196r2Bzchkc2wIq2sJVjrfjs=w600-h1200",
+      "https://play-lh.googleusercontent.com/3gYdIxghFX749-LsMjRB1g5UwQ-DuXNjL9YFEQ3CpMbNoJtPorrkiqQGtx1Jl5rauA=w600-h1200",
+      "https://play-lh.googleusercontent.com/vfa2Ahn53bBYjelms2ZESvQWxg3m586rrxCx8JltLb5FxbCTzGP0jXHV30KGfvBkTxc=w600-h1200",
+      "https://play-lh.googleusercontent.com/hJna2W2SvHTBkMs5rp14GrRpL7bwHNQpSb5_iotZ5MrdJY3dTZK2k3kBZkUuRTZUrRkk=w600-h1200",
+      "https://play-lh.googleusercontent.com/PvVpOBoOMq5DyjR4s0QYVMXQxM6A2LZFo7saSRb2xvAIx17ThPPTtRxTFk221RqZhQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/ouMEIotQl1JqRaM12TMA1DZ8MajMcTN_I0yHn7nrgqJaZ0eOhRKBCPBAS-tFiqiGsg=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.thenetspider.ether"
     }
@@ -226,7 +362,27 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Expenmo offers a solution for shared expenses.",
     "downloads": "500+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/BAadGJiZfLk6OGrOaVFHMavQI4sj6693J58OGITuUgQ-WJJvZYQLejymbzH1PryAB3Y",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/ydY4jLAVkdL0GRYjizw_YeRxpWZ0neOMoSuhjIuKD1zWApJ2QjF2S62bFazKzqqZPwpu=w600-h1200",
+      "https://play-lh.googleusercontent.com/yHiCdJwPDwNpvdEdgJfC4tDl8oQAkNVCksu7QSR2tJAo8VbuVnhoupMKkJ9FtczFkQA=w600-h1200",
+      "https://play-lh.googleusercontent.com/DHfeITeO-JT7bQl5GOw5mZkmSfrRlLxYeziWex76XHcoXPt1vz7DAdef4c4_gspfrg=w600-h1200",
+      "https://play-lh.googleusercontent.com/CpkjU14LZBoac9DOpQDys-RqxJwRGIae1DdUPqcEBEZTu_dUoTlTe6gf0x_nFmm-Mvs=w600-h1200",
+      "https://play-lh.googleusercontent.com/46_RdSaLUq6fXmYZlHoDGmlu6yx4SHIUgMz4nXe8JBG63J15kQ7jSg3TXD_qT8KLjsA=w600-h1200",
+      "https://play-lh.googleusercontent.com/wis530zQhmFOxgiAbQI4XhsD9Qx5amfqla8u_A67hqVXJejBilF5tibju6rO_e0Ejk4=w600-h1200",
+      "https://play-lh.googleusercontent.com/CRZD_an0gw_R6_bcMhoHyOZST3WyM-gLEo_3tK73Ire0wqxHL7rsTHxCutj9qq9Db9s=w600-h1200",
+      "https://play-lh.googleusercontent.com/S2Qb0DYX35GPXF1VqkHqN-UGLTKYIPSXqfOgBBokRZB0ygcKGeyIM6u5zHVnF8XPWqID=w600-h1200",
+      "https://play-lh.googleusercontent.com/j_2k9Fd6cqI61mKYN1hnv4Z229sPAwBrAPuOxX35T_T5SfhNeNwhwXqgmz_J7CPsFK8=w600-h1200",
+      "https://play-lh.googleusercontent.com/XVVdDcmEsapwib2mUFWCfHmswWlftrY1L4T6tluyzUVz2vHTPeCGXPHCrnONDCf1zms=w600-h1200",
+      "https://play-lh.googleusercontent.com/d0hJsP7Bmys4yiLL344ePKQoJDzYbeNBI8VL4Ghg7oLuGaxNyg1tJPn7BZ4yO35LrA=w600-h1200",
+      "https://play-lh.googleusercontent.com/lg_xHgsX0nHU10NQ5jGqhKCxXqlRjjT6tZR9w0bSFlhn_mQu7kMJvkhLV9yxZWMY1w=w600-h1200",
+      "https://play-lh.googleusercontent.com/tChrelGtsnK5OlbqWJdK48ZDQdfdSLaeUAdZzgtdIbodwodCqLhF_XF2pY_fBQJjgOs=w600-h1200",
+      "https://play-lh.googleusercontent.com/1EtNAKQ3lEpbFEo7J82zA8-Ar-NDByPlHpA8vG1yLJMqht0MqXRsHYXh06n8cdQZ4A=w600-h1200",
+      "https://play-lh.googleusercontent.com/mmFdnqhYjQQe40aBSn1Ed1ZIlmojXy6A-v5jUflE8jJE0iVoP6vFBLYX_3Wt1kxnPg=w600-h1200",
+      "https://play-lh.googleusercontent.com/n6MfA7tvz9Clw7micREYrC706Ns7O_6eb6vGW5NuI2U2xCHqdwx_KxawxvqWDWv5aQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/inGQyQnkiNjC5Qh8xQV2ZTdQ355tkw-Xz88cjrI1hOHHXl1bQT6bAp3MEbhLpbPxjWM=w600-h1200",
+      "https://play-lh.googleusercontent.com/hH8BPLVkIcvNm_FNfEo17ENFXUtS5QRHb93oqHttt0FXshyhsRKk-4KF2j01ZUVBfzew=w600-h1200",
+      "https://play-lh.googleusercontent.com/yxGPrRXfD_zlmKQ3WEXLPMdmEO_tVV9DL8PJ8cjJ2STvP6Min_TB4dXAQ8ai0JiKmAk=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.HomeAsync.Expenmo&hl=en"
     }
@@ -236,7 +392,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Finance Planner: Your Journey to Financial Freedom (F.I.R.E.). The app is a compact yet powerful tool for anyone consciously working toward a life with more freedom and fewer financial worries. Easily map out your income, expenses, and savings goals, and gain clear insight into your progress toward financial independence.",
     "downloads": "50+ downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/43/6d/5b/436d5b44-4ea8-6f3f-484d-97838fd3ea1b/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/bsmybY2R7OFI6KfCXI7CNyBrWvulCoTB_ldaBHgJlopgkjSLkTQ4zCHhjLoFPuOgkGiYD-9qhwR-49nt2nWijMQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/T95BubgV_wzLnRgR0nusMrpPPxiHRNelHyBwLRKS6YwAck49etXdu8GJq6P5-hJLvgjvxF2gDKBofF9Hrg83mg=w600-h1200",
+      "https://play-lh.googleusercontent.com/Baba17o1RXsEvVus0Ll8UvHQXcgSoWnzCCkX9gmf7Dt04KPHp6IL7flItFwinJVgzi9CTMc0BnhTaorC-CfkAA=w600-h1200",
+      "https://play-lh.googleusercontent.com/87L_lL9XlaJEMO28jkmbOmBlZTnRNkDate1ZajJA_ACKiLbwGZPahG0fTNwC1ioNx0F6NPy6CefsgQ4b7c-7=w600-h1200",
+      "https://play-lh.googleusercontent.com/EcKEHhQW9zuAn1OZnxdMsGqJfSaLMoqtM82ni9dVyreP2f0DuirvozVPxJdEAOD6kvLUaAFk35rwVSPieF2rkT0=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=nl.crwsolutions.CalcApi.Mobile",
       "ios": "https://apps.apple.com/us/app/finance-planner/id6743322133"
@@ -258,7 +420,23 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Ad-free gaming news app.",
     "downloads": "20K+ downloads (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/19/ea/91/19ea91c7-262b-9aba-8088-806638fad399/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/rs0sa786FvVMsABygQMaW3zKUKzWJhg9vKpK_b_bKNRsI412dHcjCKq8z68amg_-Amas=w600-h1200",
+      "https://play-lh.googleusercontent.com/IJNTwUtTicUHlA5sQhW_FvyW_JGREDmoUNHw7GIqpwF_tF6O3ZtpX1vdz_1aokm77Hc=w600-h1200",
+      "https://play-lh.googleusercontent.com/a9E9nC8qxGxRfZ29HOqPJMennJ2R_rEHiI9CQCdl7NQ_F80xZBEEi-SMya_xUZI_wr0=w600-h1200",
+      "https://play-lh.googleusercontent.com/NerwThXFISOFww9pV2E8iBBNd221fySHo6GJovSy3necJh7VrivSH5xgKX4bEV-mY-w=w600-h1200",
+      "https://play-lh.googleusercontent.com/RNjDZYms9NDDKraBu4REJVVWm6mHwan8wNYKpH6dekdAN3plHcnQZx3WsW0T26Vy8D8=w600-h1200",
+      "https://play-lh.googleusercontent.com/kFG3MD956rWm6XmdZZ9HsMW8DRN_iSrHizPbGey97Ay95oAciM5eknfZdejbaJL0fzI=w600-h1200",
+      "https://play-lh.googleusercontent.com/Ivbi1j24KwEqs1xHq5sgJk3pN6pyiqiKqDzxCj8_ZxmZxP2Z4ogwoshN1KtUR2OZJnS_=w600-h1200",
+      "https://play-lh.googleusercontent.com/RotE9nRaGdYu_1exTUkyOavu0Vq9HFc6uy1gd6l0dP1nmuRRSKk5f_4SZqcXaaeTp7s6=w600-h1200",
+      "https://play-lh.googleusercontent.com/MlidGa2TQlymxHrX4_jJ7AriaO1yhbstL0_Suf1UMl9DRR9xdfPu2mCCaAGt_q5BnaA=w600-h1200",
+      "https://play-lh.googleusercontent.com/43cy-EtfcVAo99TFhCljxYzJ8NaA28jMamvV_J0LWjZXX7iiLgzzlW16mwgWWe5xfA=w600-h1200",
+      "https://play-lh.googleusercontent.com/t5IRVEn5ZUHQ2pT3p8SBf0WcJd5NaE9-Vs6Rq0x6bXS06dpOWY3BW47MzHmZFB-H0T6c=w600-h1200",
+      "https://play-lh.googleusercontent.com/1YUyL-I_B0OCLxl2MEUn7hvZIxdwHsEnZVfriuqATcSZiPAp5Klr-o_bEXgBPtPsnuc=w600-h1200",
+      "https://play-lh.googleusercontent.com/jgZH9JwwSIaKjDgdxEjL84muliBbl0gO5kk_-ezqnboNUZT2kB8OHnmlKRVgQZZbYQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/r-GPAFSjXRx1U31FwmFvus6_dTewSDLn917GAGp-HOhlXeI4LtDl2odjd-if_fUqmno=w600-h1200",
+      "https://play-lh.googleusercontent.com/KNIAoNaAdV46hQmmJGCgqeR6pQMdnKJS5UJPnwebVOLt0ivcalmGoppMtesqJ7qTHrox=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.bricefriha.aresgaming&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
       "ios": "https://apps.apple.com/us/app/gamhub-gaming-news-updates/id1595571591"
@@ -267,7 +445,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
   {
     "name": "GnollHack",
     "description": "GnollHack is a remastered and enhanced version of the classic roguelike game NetHack, one of the most iconic games developed in 1980s and 1990s.",
-    "downloads": "10K+ downloads (Google Play) <br /> 8K+ downloads (App Store) <br /> 800+ downloads (Steam)",
+    "downloads": "10K+ downloads (Google Play)  ·  8K+ downloads (App Store)  ·  800+ downloads (Steam)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6f/71/ea/6f71eadc-57e2-7b87-5424-cb2d7810a7b3/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": [
       "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/6f/61/106f61fc-8a66-605c-b01f-6f3142974eab/8347ce2c-4796-4c30-9ed8-e6c50d053948_screenshot-55-4.png/392x696bb.png",
@@ -306,7 +484,23 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Amateur radio logging app with templates for HF, POTA, Contest, and SWL. Includes offline tools like Grid Calculator, Azimuth Calculator, Q-Codes, and ITU Prefixes. Full ADIF import/export.",
     "downloads": "1500+ paid downloads (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/03/dc/fb/03dcfb56-8300-4887-7f8c-6b606863fec3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/T6WHk_C3qogHJ0UnOWZ2p4wpWhlv3j5TPuTk7TzIhJzkxqUHicJpi4uwMie0V6qWc3F60e8iVnW6OOiVasnyNBw=w600-h1200",
+      "https://play-lh.googleusercontent.com/a4748wKw5clg4XdW7avBhSMCoq0a1yydrgZoGYV5hiotDbqtMmf5s3Kj4aKt6PzPtOCBnK_JRub9PZX5p-Iq=w600-h1200",
+      "https://play-lh.googleusercontent.com/zuYird3x6_MQj1-fi50hCJv4Ax_pgFMgqjhxZ8-oce9cAOspB36XV1zYR9aK_eOtmac5KnrHfgBP2wFjApKstQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/G3q2C1oEhAaSJhB24tVi4rzLaXWm5XV9OnbtcYLVm8h3Pk_bijAOYy7CFzCcZ1VwKFHbaIfKt3C94JTS9pSjEDI=w600-h1200",
+      "https://play-lh.googleusercontent.com/uq3wLeijEB1GpjjKJXJG6L6jLZrBh9Z_8Sq8iLinXWx8nzJI8kVo1-FobYtlrYkfU8yJZfBzvyAxScyA5yPq=w600-h1200",
+      "https://play-lh.googleusercontent.com/p3V91FRawNtJC9fRKy9ChuB2Mr8bJtcYqJ7DYPedXCWMvFeKi2h6u6Ez5dOy5WohkrExlMqgWtmtYedinQcB=w600-h1200",
+      "https://play-lh.googleusercontent.com/i0bZ_sjvU4HT_gltvn74bcSsfm_Tn4JAcH9YV5We5cXqO_aqbtLVgrauCQMIKDHTTFqJDTvwCpsHxK2Vo1fh_Q=w600-h1200",
+      "https://play-lh.googleusercontent.com/FGELIarEhSoNSKZUcmPlVdVPQV_F1oUa5GDkQ9SAvvZnyfdttladJNbXnoyXUqV9PC8cypYPDZ18IXS1cAfT=w600-h1200",
+      "https://play-lh.googleusercontent.com/Zgdq0DayopuC83ARIyNAM3kJFIxRMBKmE9VtikFguKyN521J9JCqndRDL7hmim3CwjFGdqeCR0eqfFf5YiCQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/GwFrgDlzXP089Uey7WpN4Fqzbvxkqf0YoNC3O4q1nPbH-KTVlg-bnLqYInYHq2NpPKqEE57aL2kn5QXljudBHas=w600-h1200",
+      "https://play-lh.googleusercontent.com/MhKwE8qR1tdRoj1ZsWckpQ9ceUqvClOa12Sej5cBo-T99sDEKlbqx77glAvi3AnP2yHiA3g25t2yEfNfZyxb8g=w600-h1200",
+      "https://play-lh.googleusercontent.com/dyikqweTexVGvyXz2h3s2uMEcjvkp_pVmgW12V8kKgYfBtDM8esOwexkfOHZxDMcJLliM3Cb-O6KxBkOUQC8hQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/X9vGZ_KPFi15RzR6uJw70IfjIdCXROJCxWW4G2MYc6lfGvrVJgk5XRcCXTa5W-ZXThXuNzLrvBhu1FNRjneSPws=w600-h1200",
+      "https://play-lh.googleusercontent.com/s8nRcwgv_YrpN0N8VF-pq4niIDw6IsRD_LFckGbilVdrxFxpLo4ubI4FKkEy-V3-ppyhLLNabNdTM9jdLzh6_Q=w600-h1200",
+      "https://play-lh.googleusercontent.com/08leKQNlrDeKQ2Lmiw3lFcGGQbti6_6NyRSZhPQsZaQUgMELjR6ksvVV8ENZQ4TeqhuxOWiRgFDLlEvN4keR=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.mircules.HAM.QuickLog",
       "ios": "https://apps.apple.com/us/app/mircules-ham-quicklog/id939665753"
@@ -317,7 +511,40 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Here'n'There is an AI-powered app that helps you discover activities and events you'll actually enjoy. Instead of browsing endless lists, the app learns your preferences and recommends personalized experiences—making it easier to spend your time doing what you love.",
     "downloads": "100+ downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5e/24/d4/5e24d4ce-3fd1-295e-b1ff-c90f4adb84e3/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/XZ7p_mQt6HyPFhMNbZWT21BigrT3Y6MiXnn6BURrBjzJO5BupYPY3T82LcwmYcjT1g=w600-h1200",
+      "https://play-lh.googleusercontent.com/uoo9g5TchRH8T7ZAqrKS55mNs85SDNPSv5MD4k3eS3ToTRfzdF1UbxP4yAOcgaVfsA=w600-h1200",
+      "https://play-lh.googleusercontent.com/KK7NxmqeZMvsVBV-iV77nSFaigUdOpOR8YMLFTtvyMh_pKDxR-BEvDt24aUhNI0PrA=w600-h1200",
+      "https://play-lh.googleusercontent.com/azI46GeR4uN9z0Fk4_VQj-7XzrF6Q0XooPbqlkLZIT03Nb7Z80mH_D_7DgNNBkDeJc0=w600-h1200",
+      "https://play-lh.googleusercontent.com/HYx2d_01orkrYmnRePH3ZxFg2dNygP7JTjgYepzGjMxmsnXpA3rTUZlac4yvwwplmRg=w600-h1200",
+      "https://play-lh.googleusercontent.com/oCfIvtCfHrxGjXw_elrwITtCOH2N1lgBQb8e0ucKVu-dRHCBGTna2DCZMOFkf8lygA=w600-h1200",
+      "https://play-lh.googleusercontent.com/uezMDnA9giXcMwPH4y0qjJt6q6OdGAZyZn6A_Pty5o_bqapU58zj-HzUDT_n52iTSal6=w600-h1200",
+      "https://play-lh.googleusercontent.com/fp9I3jEnjFIfytNXCL2KO__TqRCksGVocbr3ckIjCetuppMav1IyMGPYAbYsizwbvHA=w600-h1200",
+      "https://play-lh.googleusercontent.com/HM4BnCH8O15x5hEoobrxkmas2PH-NpJCnfR87ds08iZ5rcBixkOMoP3aIuc57XUUBCI=w600-h1200",
+      "https://play-lh.googleusercontent.com/vCqOtWVYFVHOnKLGb25C8aPAV7QCSFUXBJLiOfIlLpctX2FAYnoDy3_YFRHZb_gF7g=w600-h1200",
+      "https://play-lh.googleusercontent.com/VVUwEXsy30frNpaKbYF8-Hz8WpcmZhXYKvbpizgUUX1WD2_dRE9V-QnmahkxPSL5dA=w600-h1200",
+      "https://play-lh.googleusercontent.com/6LyYhxEdnxaFdVRMis5Zu6MnmmXd2x2O7CgaMgBssl61yZ_nNwPhZmfZV1ALEAEAgw=w600-h1200",
+      "https://play-lh.googleusercontent.com/ZGCr8NVE_nTy6ygpMzUdoVC4beI2UBigo0KLMlaFOAu-1MBlnwE_le-trD9I2hKKUA=w600-h1200",
+      "https://play-lh.googleusercontent.com/CUiTU5w3Z2vzVcysoOkOKeRIjkPXzOPa3-rusJIcQnQ1fYNzb3ERUKxBIw5rhNFZqw=w600-h1200",
+      "https://play-lh.googleusercontent.com/INVVwqJFBnKVKJb-pBxuPDD9TJmH-R98nOqRrs2GHsscOOX3lpXuiQ6I0GgFY5UH6ok8=w600-h1200",
+      "https://play-lh.googleusercontent.com/hY14gjPNgL9BpBkQQSnH8OSm_qfoQRboAih3Lxd_vNLa1UNkasSPLtAI1hT5gEt3Ww=w600-h1200",
+      "https://play-lh.googleusercontent.com/DGy94dA6wA0h9LgjLcno5YPjCrUwIFBex27c21o5I0cDQMQKxc7omBSMT7ewGfn3xLgp=w600-h1200",
+      "https://play-lh.googleusercontent.com/zrEhrOwp5VpoOCyQtORS8QFWSi7HrHYtZzKKh4xHzxUgkkyRxBjuN39m8a1duN9EawU=w600-h1200",
+      "https://play-lh.googleusercontent.com/iSjI1X1M_uXu_Pp9Nv914Lwdqc4N2eoP28nTEXvp1nTq_DGhFfMkT8A7XGxkZoJYAA=w600-h1200",
+      "https://play-lh.googleusercontent.com/Bz5bzWqu7WRg2C9FX4zmUo2tM-7VpLWB9blvoiSFV6Uvj7PUGr9-tDvap8Cpw8QqOZE=w600-h1200",
+      "https://play-lh.googleusercontent.com/v8OQR4eEgPHflG7YlWu-VsXA1j_MScMeN3dUtjB0e8i2nHMkSz1omJ25RZNX_V0MySZP=w600-h1200",
+      "https://play-lh.googleusercontent.com/wusYa4mg9C0EauEUesM31ylTzs0TwtTtwA4YSylbMHPT_ne_E7HrqvPVDJEEZzfsWHhV=w600-h1200",
+      "https://play-lh.googleusercontent.com/jGcWrOF-orH9BkVjsMZMZQpW8rRezdOKC7radarsZ01eYFknbb33rq_tGVHCEzT_mw=w600-h1200",
+      "https://play-lh.googleusercontent.com/0RRyc9UYcgPCeFVoDcDpk6pc96R7tEDbjZbaysBnIQgMI1cBCsG40FKxIrhNgNCAZQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/KM5EX7ysTynfiFDa00O5jLPXVQLzvZnYFPvSewtX-RQg0vHfeZB2xn0QGrrqVweBo3xp=w600-h1200",
+      "https://play-lh.googleusercontent.com/nE8aidI-mVX12tcd4gZzb5H-EpGvU2NBGE0JJX-7jMdnw_h8TTobFcAmQ31R2yZ9y5U=w600-h1200",
+      "https://play-lh.googleusercontent.com/nU0MGuaAiO3Pc37qg2oPSiVgmwGJmEPjp8y2z3S0FQyHmwKUZ7VnffE4PWtBJMWGi5I=w600-h1200",
+      "https://play-lh.googleusercontent.com/Z6ehftxO4PQmUHbO47HzGP98o-XcSJd0RYp4PZosY6iqCuAwpWFfVYsGkfuqvD42PMU=w600-h1200",
+      "https://play-lh.googleusercontent.com/46ojS-4Jv_QlOpWJ34l__iKrzt8GRWX3ZK_qTiij1YwPpxnXBxTPXBzT2MlMahDV2EI=w600-h1200",
+      "https://play-lh.googleusercontent.com/dUFuYT2mmjL9FHi6k_N77VjvmfTmVqb72meba8gvK9aE-4ds5bBh5k2xjbf4T1Bdn40=w600-h1200",
+      "https://play-lh.googleusercontent.com/fsmgJz_A6QkobCcumknv04CCZbb-ZGxGu7xrp01alWN0JWUlH5gveatPkm_5mNOOhQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/b1DhuaQos_L3rCTcs5ocmuJFDXe5TOEq_1iqND9yxhH1W_7dm_AMHSAfatVTYYVlAA=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.ebnet.herenthere",
       "ios": "https://apps.apple.com/de/app/herenthere/id6737746907"
@@ -343,7 +570,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Real Time GPS tracker.",
     "downloads": "20K+ paid downloads (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/39/d4/fa/39d4fa31-0507-fbdf-d901-2b530d1d028f/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/FWlyhAiCQW66AomHnFnAsFGkCOwqN0rJeJaqnR_xTpOLcyY4ius12Z0uWy-j7oQFp9NcHzkOtEonO1T15a2u1Q=w600-h1200",
+      "https://play-lh.googleusercontent.com/lhdJfcIoUsv5j-tcurSBGmbQnwuDwfdyLb_Vd_oAQ7EZK4JsSZYHkRqPex2D57CILOUtcUfBqmd_BptWLo9Y7DQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/dDfGh4HoE-9khDtT9e6ICM1ViQHxCC2se2J8y_AZ5CmgmbQc2GT5E26z6f3BhI38XMStvZ_EmjVf9S8VlfRt=w600-h1200",
+      "https://play-lh.googleusercontent.com/LLXbCZRgGkdUxb5MxGMocNVQL_GSvxzkBHwD5LbmWtH3-PoLmm4fjTFsrHs3tD6ChTLS1qC7ygUG9ycKI3MnbQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/Eqr0tzOv1ijVLbKjTL2o7Ixm1ViHQUOw0sGoSi3ZaA2E-sjagE-KP9OBvpd3MlfDci1WH_wxlheAog-bHl-k-g=w600-h1200",
+      "https://play-lh.googleusercontent.com/Iz0SAvH_HqZBfO1JCzk25v2mNQ75K4_PkCTkGdzHG5zFRTqoF6C3vtjIQI3CI_f4lkqV1Fjp9O1ovvRZTIaSxQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/meNj82H4Mi1jK99tmzrO7ges4ZTZetSzzpH1HkyG8fPDIJ9Bqcqx72xWh1AXJe9beQR5gWTslPfCvVaUgrTHjQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/F40b15Vhimamsu9vTvatpWDjs8dn_3NHsv5VpbPJnQvUXCL3pM67aDGgSY752SIJSONmSjosXZg16qdmqtn8=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.wovenobjects.locatoweb&hl=en",
       "ios": "https://apps.apple.com/us/app/locatoweb/id541093617?ls=1"
@@ -423,7 +659,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "MenuDish converts boring text-based restaurant menus into digital ones with high-quality dish images.",
     "downloads": "100+ (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/6d/9a/7a6d9a9e-0f49-5a8b-c109-796e6dab98ba/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/IRdqI-96XdV_iIQxPzuxgWlQBThj8_vpiv6AX3R4fsYEnAzVYM5zRbajXnW2BtR60iux3O_6_IhKlRPh-nr0nMo=w600-h1200",
+      "https://play-lh.googleusercontent.com/VF2tAnhIOW4-mBNPTSoU0aOv2fEDnOrX-3aWISbXPDhSkhsXpi5j2YnXBiNtW9mI7PoXE5BOW55qikdro49y7A=w600-h1200",
+      "https://play-lh.googleusercontent.com/djXj8H14L25VkipttNMrPM_O1fpv1Xfdv2m5c37tmdvAwXbdVqKl9bP3dbePnSuwU1VX0-ty1-EbVhznyc_R=w600-h1200",
+      "https://play-lh.googleusercontent.com/RVD8RSYwcrNzGxpL8yq3Z34rqHsXHMdUAZv_LueNUGGtBNFbsfXRbkrPX2kEWFmcDyW0tPo7IAQmX7QepW2J=w600-h1200",
+      "https://play-lh.googleusercontent.com/6t8qGmMYb70bpA15zmtfQC-X59cy1w0hLEAPxHetQDiEAF6ZXuYBWpGuMciF6Rfc3Vl6SARHCmUm5DH-nBSvhg=w600-h1200",
+      "https://play-lh.googleusercontent.com/FWT0ewJzMKylDHUDHJFnntS1RBpQaj2o4y8w1tFSl8q6ecsqDz2uLW2MXWf1mHhCOO9KNtDwXTswAkbICyfLuQ=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=ai.menupix",
       "ios": "https://apps.apple.com/app/menudish/id6621264757"
@@ -478,7 +721,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A free translator and Morse Code learning app.",
     "downloads": "1M+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/uZo5_4F3yFkxAJ88IrnHhszoIaXt7_uR2zaGW1cQLq3BmvjLKEjF7ai2BXGk338v4Nw",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/SObYBnjGp5mH-jXodc57OXSdeS8gN5-v7D6SOEp4vz635F0n71fZqFqiUyAGfaSM84-_=w600-h1200",
+      "https://play-lh.googleusercontent.com/q6iAj0AR3uG_3V3kbTGNqEozn9GgK4cS1rnaYK1o2NhBrDBEwfaiKvq28gTaTL6_6_w=w600-h1200",
+      "https://play-lh.googleusercontent.com/QHw0BHAWMTupnBjje8h-pRzqOSv9Q-8unrw2_pX_p1aPXh9fiJ_CLfuSNEL2cnkC5g=w600-h1200",
+      "https://play-lh.googleusercontent.com/034luv9AvmuT6GEs0eWqN4MckeWUZSTlrKVoGbrFt6Ae5puc25H6-OYQWBH4zrlKxA=w600-h1200",
+      "https://play-lh.googleusercontent.com/21td7mUJGGE_jjx0EirL4LeEeAhpViwsHtkHG9nByGqp7MLzeWd_gkN_jS4_RsqXHko=w600-h1200",
+      "https://play-lh.googleusercontent.com/IyFP6OnGsdO6EOZOBEM17F9b8tXaSSJ_C_AbXViCF04fdR9J-CNPAj6lLNCPTJq8pSw=w600-h1200",
+      "https://play-lh.googleusercontent.com/n5iAsE_UOavf4iEBtvQJBSfrn0TxNlCEKwV76EW-xH_59Xj7bBK7eusakcEp97o3Fgo=w600-h1200",
+      "https://play-lh.googleusercontent.com/1o0CfrvAsNj7hFIZKRXq8_I30p8Rc_WCa3OfpjF9L1-anTB8fC179o7FUMcsvaKf-Q0=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=holecek.pavel.MorseCode",
       "windows": "https://www.microsoft.com/store/apps/9PNBC68XDHR0",
@@ -534,7 +786,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A clean, simple, and powerful way to manage your car's health, fuel economy, and service history, all in one place for Android & Windows",
     "downloads": "36K+ (Google Play)  710 (Windows store)",
     "iconUrl": "https://play-lh.googleusercontent.com/pCMGZY31nEK3uwwHdqWSjQoDjaYKK-uVfNGudmbWQBU760J98TNJ5K-Gpwb7MimTwIQ",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/b1yuQ2527Rtx64xi3IdYRgi36SdxiWYj0rCrfAEIw4ws9fCV7DqpuhLqwCHjYTwDkrTFlXhX9fKk416alrgOtA=w600-h1200",
+      "https://play-lh.googleusercontent.com/8tshCqchv6C8uVDFU5luptyW9zMyTi4kLwif3mW-JGJOjdZbDk0DeOm7US4gyebVgwnOrDPQ2h26BqY9gABuxA=w600-h1200",
+      "https://play-lh.googleusercontent.com/vMV7v-YKR9o3i5ajp5VDVBJ9WvEqN_d_HkuvQqcrokP0Q6f_g2R-p1BIDsAGAGBuNFzU0NGh_aJODxjbAPUzIOs=w600-h1200",
+      "https://play-lh.googleusercontent.com/lphUH5utv5bD82Ye4na9ktJ_q8lhr7LRLeXTr2QVTpaNIQ7mbnJAyCC-7BeVIGwaX31xiUFXvGtbJxu_wZWp=w600-h1200",
+      "https://play-lh.googleusercontent.com/vW8JDLI2X52pEPJW5IpUzeVfP8Bxcuim7taJm1SRXxCxJDfdIokme3VJ8gzZ3BJUWBrduuoTtG87ng9MRJc-Erc=w600-h1200",
+      "https://play-lh.googleusercontent.com/nWwHRF-3v5zeTMF0YKiD5sTHNcQdvMxmJKRjmvAjhrYJax0vJr-RmpxXlIYT4kgfC6rudTPZhb76AObOD-vEjg=w600-h1200",
+      "https://play-lh.googleusercontent.com/Ao86kUEcvVT9O296Z0WDFq8NJRbz1Y5purXd3Rt3TBoTmyAHfbOdDFW5L0l2SPeUvK-pTuIHkqB9VsA32pD22xc=w600-h1200",
+      "https://play-lh.googleusercontent.com/K3pnk_ox--b5klXRr-gTSIVvTF95Jw7AaDAxe_yG88Me-yeCYRcqtlLJGl1YG-EAgmhWx0pMK9QOUDOsmk92fA=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.MyCarService.mycarservice&hl=en",
       "windows": "https://apps.microsoft.com/detail/9nn4j90pxm9w?hl=en-US&gl=US"
@@ -605,7 +866,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "An event-planning app designed to streamline invitations, gift coordination, and RSVPs for events like birthdays, weddings, and more. Built with .NET MAUI and Azure.",
     "downloads": "100+ (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/85/f4/36/85f43632-a712-8d31-666e-859e6b459bcd/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/7aIl0fdhDZ78mMcwVv11vLwQGGU3rkOHvWTV72r6CVV56oXwAw5TSQN_gT4RNfF6=w600-h1200",
+      "https://play-lh.googleusercontent.com/uFAkg8cmwbTUnmOE41vUszU_BBdl0M_GKNfHpLw1FTb4TcO_wjZCFnNl9XRonikyQ-U=w600-h1200",
+      "https://play-lh.googleusercontent.com/quBkyAGJSlySp3fYampM7Mib-qKcrEyShB4a5E2micLxGBngWVctU8erd5_DiMgwkqY=w600-h1200",
+      "https://play-lh.googleusercontent.com/_3EGiCEo-yKxRxwxU3rFHT_EekG262Fk0HbW0BwDRBQpaclneqPwX3Wiv6T_UF25cQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/m8aeTabp-w1Tw5cV44MUHDM3Q-uWfprKmo0v9lg0jfo6MlZ6SvelFXwwEFBp1nrCxvp_=w600-h1200",
+      "https://play-lh.googleusercontent.com/Y0Ryen6muiOn85BYzxYm92lAULXhjYYKgFuyl12Sh3lGSP3bjpdavri_x5dRpV4JXGU=w600-h1200",
+      "https://play-lh.googleusercontent.com/1b-eZ-mJgo_F28yP8iqAjsYcU1n-nSp--M1Re7fDnxzkCusCdzIO7wc2_mxjnEAsA8c=w600-h1200",
+      "https://play-lh.googleusercontent.com/PZV3NmV29XB6DI-n6zPy6BkXojolj2exrecvqBbh6Y3LCQo_VhFjqoijzQkmggVd8-s=w600-h1200"
+    ],
     "platforms": {
       "ios": "https://apps.apple.com/app/id6503934962",
       "android": "https://play.google.com/store/apps/details?id=se.arcticfusion.partyfellow",
@@ -634,7 +904,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "An app for personal trainers to manage their students, as well as their training and dietary needs. As a user, you will find a friendly interface to help you carry out gym workouts and manage your diet.",
     "downloads": "10+ downloads",
     "iconUrl": "https://play-lh.googleusercontent.com/8Til8eKITFhj8Y_nYQMHGaO08zZbWF5ETwEl9nf6xA2krXwTgh-jBMnXOHJzdfVFhZc",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/KgM3llk3Ctco7r4sRUlplK7D7t09Fdmt1Gc3yDfk8HAfQyt9hhY8vIAcOC7xbg2i4AydTf3ncXow9iTn_wsjdw=w600-h1200",
+      "https://play-lh.googleusercontent.com/b3Y4CZzHG4LJ-7lrq1fiiJN2r4586PdGvRNfRA_481uxkII-V56joeI7wvcGft-hyBLSoYprvdiVCRCLialN7Q=w600-h1200",
+      "https://play-lh.googleusercontent.com/pkI72NkV2REvxrQrklXGD9_2Vmh0nmJDR2CsfajcfCtR-CTZN9r2kflgY89yxZ3DI8vvkPlyYWbCWjlIOU0T=w600-h1200",
+      "https://play-lh.googleusercontent.com/Y2qUgx632MIhdsTzD1xuJaQvYdnnjbqM-nccCHzFtPtJemUyRKsTAPEPp-GwqdmaCotglmGYSWwfY1IeJfrWdyg=w600-h1200",
+      "https://play-lh.googleusercontent.com/TQMDXY2IuyMMTUPWcEEOa-FH_dt0dk_nLpJmqYhaD2Vvyt1srUjcZuXD5CGcbMYQKvdKBFLnklojkYSJMkZqrA=w600-h1200"
+    ],
     "platforms": {
       "website": "https://proshapehub.com/",
       "android": "https://play.google.com/store/apps/details?id=com.fivehigh.proshape",
@@ -646,7 +922,24 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A simple todo list manager with reusable lists and items",
     "downloads": "400 (Google Play) + 1k+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/31/46/19/3146191e-540f-d6b4-4362-a499503b0eff/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/m8j9CZjYvTlpM2ce6fENZwGbiQFWPWAxhrdH6oKtgYKyS27mm7Hq2ZDVB-M2MUiJtoo=w600-h1200",
+      "https://play-lh.googleusercontent.com/ErBMHQ93M0Xk53Unj94oB31hGi0aCeXQuvY1pDwvoRMWTOtQK-emhU39vDDX6yxHizjG=w600-h1200",
+      "https://play-lh.googleusercontent.com/v-XlZtDx3azVIadn7erUIopxKcjk4LcrnoxT0PhryBfEL_d7mOIqJZV-rOHNpr0RK2Y=w600-h1200",
+      "https://play-lh.googleusercontent.com/AA6e5f4_wzND91Oz0iL_9JsJaIa2cfJInhRdTOz28q5wo7F_SIVuj5YK8OobnlpKJzE=w600-h1200",
+      "https://play-lh.googleusercontent.com/UFmrdLypGYUMho6_6y8hmxQmFotbP3aSjzrZ1Nnad07wE3HMt4s__h448k_F1LB3lQQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/6eEoIqDOWIU7asyNHG2xXZH43m9j0IfqXN65yUhvT7L9Tj9xBtd0-Npi_wOcxlbWf0s=w600-h1200",
+      "https://play-lh.googleusercontent.com/Qv1UWtzSQMxa4miPzv1RHKe6KUf6Ru407hqTxmdCrSYmsfrYQsNZqMYz0k8o9C5wyQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/5O6hGbbB-WC49gLr4VbZ4RgYmpjGx2R6-v6g0C-3f5V40_TmzloutjlCGmzRhEITpFo=w600-h1200",
+      "https://play-lh.googleusercontent.com/iD_0CJEF59p7EmMG-2zrm6lUURQf0jppOvjsbtK7Gb47antsuXISdNu2ZKBfS1e-4KQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/HmonUCURBi7-EFVqw8P3nS4EKkSlRnRRIyjYPdUY6khBo1Tx-_I7ozM9x99Yvcg2NmQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/urxI3DB1xIMRBDNFnVeqvgQM6Hfid1f0UbxvsSH9Y2B1-YXknATnLkmM0ZeYNTaKvQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/AoYjdyZqA8G2J23R10SPW64NYmxMSR6fl-mIzLrJvuDzn0iVkh1W_MB1Cm953NxIj0s=w600-h1200",
+      "https://play-lh.googleusercontent.com/B_lalfJisGxcCZTdS54PZQ3t7NdTyasMD2_5IRGZSJndpmH1NOhkGwG4WH7hMYkTXw=w600-h1200",
+      "https://play-lh.googleusercontent.com/s3_krPS4lv_QHwfyEj-R9xTgLVmApLsM48t36nayr59i_OqjuOW0jgyt1eyppu-8qRuP=w600-h1200",
+      "https://play-lh.googleusercontent.com/T9YEw6YvMOYoCPE_JpPFjEAMcvxiTmXsDKpDZtoAvEmBuE2gr8crwhenGpYzZ8g-Y1mR=w600-h1200",
+      "https://play-lh.googleusercontent.com/GmpzQuNoKsaXdteJhY-6b2aiM9uRh3HmR_uD6suvOtLk09elC0oBtYlkKBm_2K1eAw=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.epjapps.simple.modern.list.relist",
       "ios": "https://apps.apple.com/us/app/re-list/id1551656021"
@@ -657,7 +950,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The ultimate rock climbing companion app.",
     "downloads": "10k+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/36/89/ef/3689efc1-10cb-dd86-e2e5-8913e89d5557/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/fnuwd7FklfbbF0AlfI0R4SWkmrZl2_Oy-ECBjDkWkFbWq3c4aVnO48RICgFRHGWh_2k5zbTPMeUSPkKL6MA=w600-h1200",
+      "https://play-lh.googleusercontent.com/P_vPEDS51C44ogGmhiNdIbd9U306W6lN1SkU_4Hb8i-IsDrd-M34p3KqsFS1SYB8AOsa_k5cOzQWgFkzrTnsMfc=w600-h1200",
+      "https://play-lh.googleusercontent.com/p7iJ92fxFCKf3SDF_v1DNOCPEyhAWZViNXsqU32x4_ZACpz4vfVZHqV8yU9ZINZhv5ST-UaA6QRQWZ5BpSEn4g=w600-h1200",
+      "https://play-lh.googleusercontent.com/q8TkhucNc2dtimPuoGUoSL9DuNaWbdH4uDpfYosGA3M6D8Vl6P4x6P953qMJ4hXTWXjGS6e5R2RGlpAyQQWCTA=w600-h1200",
+      "https://play-lh.googleusercontent.com/GUd2sA0vjG6GJgqdH4mpKC1Ad_-XgAwzufIPfUIU00XJjaT1lFTjcbPWZRqLWVR3kzyB90PoaDx03Hcce6a3-w=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.alphaoutdoors.redpoint",
       "ios": "https://apps.apple.com/au/app/red-point/id1670082950"
@@ -696,7 +995,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Workout app for indoor training.",
     "downloads": "1K+ (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/08/83/ea/0883eac6-54d1-ae9e-38d3-1b0514c15ff8/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/PhnOfj1G-NE9vWBWmpjBLRECa3pWqG0SzEBmKlZMw_n0hH5ELhovWyb667Ctw6Hjbw-jTxCYwKy3pchsltnA=w600-h1200",
+      "https://play-lh.googleusercontent.com/O7tVQJFnP7ZHJmHx3_Fl_FWGzsTX_zYlXl_sThtpezKq8GmgY1Xk_dE6PgN6G_FgXngXh_kJZSSqpdegmtqrAA=w600-h1200",
+      "https://play-lh.googleusercontent.com/_TjcPxDrNQ8j540tu1UI8fArPuOOqlTZYjJwW5aLy2Bhn9pAmOa_uk2J_1QirCsxeBA3fibGjp5hZHvmOPzB=w600-h1200",
+      "https://play-lh.googleusercontent.com/4q0YHhZIoyAjILC88tkMx-XfHQCP1IKxukvcrmkzBfY8StaDmRcMWPXDA77lkkZ9IZ9dBsHOmpZJUyHEftRx=w600-h1200",
+      "https://play-lh.googleusercontent.com/PPIyANglz_5K63iAlFtVOsnot7WTS8JNgOcuHAmPYitEC6_Nx4QmqUI72UfhQZIhje223qzP5fb2k0N_eDl_TN4=w600-h1200",
+      "https://play-lh.googleusercontent.com/V06MGNnx3YQCaMJyYEEWuCwr1c910j8hjgbEULgTOPwExhdHyCEFJ07_ic7hKNLt-8SwF-caaKzPmYcfiGR8Sw=w600-h1200"
+    ],
     "platforms": {
       "website": "https://satis.fit/",
       "android": "https://play.google.com/store/apps/details?id=com.satisfit.app",
@@ -708,7 +1014,28 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Sequential Cards tests your memory! 🃏 Play offline, open cards in order, and win!",
     "downloads": "10+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/DFmTI5NNcvYBjW5g-URP3qU2QksO9rIYhwlmhqPZEB7C1qoe4Y_CCjUR7b8j5GHuMX0",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/A7VesI4KTp2-7S956RxrAJAPAE4xcazaI7-ATxhdoCzr-AYgAfomhrMAtJHxgD1i5wGm9BcVnw9ooK2FBe_b=w600-h1200",
+      "https://play-lh.googleusercontent.com/oXGnGWouvW7TasdgIFRAoGFuPpFownEqPLmr0jaWNMM045I2tdCp4aPndX7iNdpE5Q=w600-h1200",
+      "https://play-lh.googleusercontent.com/P_ia_oXrK_ouPkGrdEvtAu5_WWvZn7xd64Zur8fzM58iWJu98C9Vo1gIifD34zDbsnc=w600-h1200",
+      "https://play-lh.googleusercontent.com/M3PV_a-XUHXCgCfCSn079z3R15-29NTsbLCEuXuVrmvSx1za5dRCVSXVWPUZjMUzdig=w600-h1200",
+      "https://play-lh.googleusercontent.com/fmerc1qoqo93oyApzjePaEmXCXzai4vQ7B0x6UIXXvJThXlUuKknq7lVDKpLsHvfEknZ=w600-h1200",
+      "https://play-lh.googleusercontent.com/vDNyqNlb0jRvcj2fo7TnFyml6OI_AC3DJ-4sfYhf_0KywzAy5Yk7W4crUV4SG8ilmt1vCvt4Yh_3bR-nqKhphQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/R7q37PfnBhhseDovM4D31ia3tumBn4vCC5XfZUw4IAKhJCJ8Fjh-aEjhisnQEpfKXAccilifg5r479ju5rjbyA=w600-h1200",
+      "https://play-lh.googleusercontent.com/nnqNPiD3iLKB-OTGF3ZIK91qNNZ8lHF5kqvkbKQ1PgdutMFZQdilyrbkq1Eb0-qjqi8W9Xi-qJIgtK25U46PsxQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/3uK21yzQvP26-QYu0jn13gTjZCQoYabbE5Vcwr8Br9vdXKP2BWcOUQSG1YQz76q9A-7ADPcvmNFrf5R8H5OM=w600-h1200",
+      "https://play-lh.googleusercontent.com/6H0-bPEQbs0I-IWCR1yv9uNpTgWWp__Ja9igjqyAeIH0ydUSq_yWijKWp3FcoKRxJ_Ul=w600-h1200",
+      "https://play-lh.googleusercontent.com/-QicXcqXcvs_XHFIkz2zKDHmiGxsTec755GqMnX266maYivBuFuWdmFx3dusAHBioA=w600-h1200",
+      "https://play-lh.googleusercontent.com/i9eOTKsl9F4V74fC_UXP4yaplfcphdE3Ef4oOA0GPb1mW-HNSfzmrqS0BJwJX7yTMfh4=w600-h1200",
+      "https://play-lh.googleusercontent.com/byR-_HfW4hNeCpr7nWS-k3VKBN2Rpr3_Y-RCuHsdVQC9e6syrb1MLjDAqgjOME6pLlnUkgRfKCogIUusiWjg6uA=w600-h1200",
+      "https://play-lh.googleusercontent.com/jbmXMNPaPjhp3gp8G9xOSXFDAEa0zyXRNO8G8IDSPFkOzFu8hCVzNYLIi9EB_SDhkQMujf-kCoaFQZU6VyRVEA=w600-h1200",
+      "https://play-lh.googleusercontent.com/eeZ7V3lbjt5FYbxxqz4HRmpbAaeMTAN8iNFitFRDhZHxWhZ8CzIgo6HTzBUJ4iZkCyk=w600-h1200",
+      "https://play-lh.googleusercontent.com/VhygOzc6xqWefqt9zn_BW_Zz3DSpqX0Wu9BlDpMt3BMiSUZ_gGEhg1xetouVD4Ee0joxq9WXZUKH8QVMpujimUg=w600-h1200",
+      "https://play-lh.googleusercontent.com/X9mRsEhWaynk7GZF1RceolVy7ruWVcAUFJxKHIRnuR5uWARt9_N-8RONGwucd_MznTs=w600-h1200",
+      "https://play-lh.googleusercontent.com/0moVLJhNJEtIBz0VVFMb8FvUAEOvzywJNZpafLO2AMKH9_UJKX1d0bBhKxXMpBiRKrtv=w600-h1200",
+      "https://play-lh.googleusercontent.com/9LOEA5SIffrlK_Eu9yvP3HV_djxE6CPpttGJPTmCAyW3J-JaYVkqEnVI-mRZSenbSzk=w600-h1200",
+      "https://play-lh.googleusercontent.com/0YpniJuYY9gYUdfV4swgM5QYbuBo6Hu5bq-vueVctRy5-D-O5FFgejO_ry2Xm25SQ5Q=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.fmglib.numberpathgame"
     }
@@ -776,7 +1103,23 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Sunshine Coast Council App – Your Connection to Local Services.",
     "downloads": "500+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0b/01/e6/0b01e698-7a0e-154f-75e4-71531bd7be29/sccicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/pirpjH3VQyvR-8mHuChPdIz2ZxP8VwDI5L5Zt14rrc5lwZVRClIVDJU63_5zV0omCA=w600-h1200",
+      "https://play-lh.googleusercontent.com/APZN9de3nTd0Gs-hCcSMnja99QhWm5IscJa3wTqKP_myjkIvX4rTf-8xEuvvRwtuw8Sl=w600-h1200",
+      "https://play-lh.googleusercontent.com/0UbM3RJs2A3Tvrbu3UUJ_41rp-H06CEixaQ4ahF-DKOG9yJUR1z6ssjACxYttBytqVQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/XKPOtuBcDuXiy1hI2_Ff40Va7mls-tLfo7uxV6KmTxeQ8r_q-CdlN9_YETx5_drLtw=w600-h1200",
+      "https://play-lh.googleusercontent.com/G_0IZZCcychn-x7UhC-gX1sEoljI-c7aDETdXaaLkTa_EnIkJn2Vi_H_lv5CjLo9dHE=w600-h1200",
+      "https://play-lh.googleusercontent.com/sb88MzngD6irwjxhfnUo_midXqG9xF40kHvtfiJ8mCgbnIA-8ijKJ2cpHbx2Nuz_V34n=w600-h1200",
+      "https://play-lh.googleusercontent.com/sNNzuavSwGOCutibHJEyXb7bgfRdGMT46nEMvqzQAEvTRHnMxoKCkZ4SW_ELqHVa3J7v=w600-h1200",
+      "https://play-lh.googleusercontent.com/O_HbvgmbCRtFUDAkx3YBZhUpN7FgnAutWGCdcqw93hokAM-xj8gnP1aI7RijN_9FmK4=w600-h1200",
+      "https://play-lh.googleusercontent.com/5KkE4Bin79VA-E5zIPaZ8sBZGc6kIoUZyOMIAOXO96KdOiFSYSp6YxEOe4rTNjMbXfE=w600-h1200",
+      "https://play-lh.googleusercontent.com/EG4EVj-ge3PM3VjGmHjxUQXrzkYzo6ZWpViCRPMPQOrjNqHX5ci63oCBPUll-2zanQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/e7DH0dlDr0-KIfvTp-13fI1Q80YwjbV8mMMi1rmU--JJuTqNuqRex26WgjnJ9EfyBaQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/qmPSXmu4SfAswf4p3tOZ8RyJt7lCOTN2co6L_sHzqCu-6AuQZ95TiUDwt-6tusrl6gQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/qdFa0_v-ERrngpiTs1mnozHQrAshVXWGNsfYrKYYMb8lKKSLf7NPyMHLbtJOvAWbmyxG=w600-h1200",
+      "https://play-lh.googleusercontent.com/hT9iVMX4w6H4TDIsGsEQ398t-HtBBhCyBM7UxlXxUF8hzcpEb1CUPuCiwYZt68tym4Q=w600-h1200",
+      "https://play-lh.googleusercontent.com/jUL1yb6qwAkMy94ApKKbnRDtM4pOs6ldbmxPPXqlYpsyuYL9HSvyPJ58J8USEjO-1l8=w600-h1200"
+    ],
     "platforms": {
       "website": "https://www.sunshinecoast.qld.gov.au/council/contact-council/site-help/scc-app",
       "android": "https://play.google.com/store/apps/details?id=com.sunshinecoastcouncil.scc.app&hl=en",
@@ -800,7 +1143,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Discover public transport in Torino with ease! Take It Easy Torino helps you track arrivals in real-time, set smart alarms, and plan your trips smoothly. Whether you're a local or a visitor, our app ensures you never miss your ride again.",
     "downloads": "100+ (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/g31M58BL1Er_z_9sEaLU6StlciFGyECEZww0y06JouOE8Zqz4nKtpdYj1hHNuPZFsr4",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/HB45YV_UDNjCnJWXRnDNU19ez929jNNd2S3IKOFzrcE3yQdfMcCkjUeunCb27SmVyQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/ow3RBrjd2pq7rYzPkyvFZZwelt2qpRh4JnELHr7lY7xAx1FJgIjZZxQvgrnG5R0Ypw=w600-h1200",
+      "https://play-lh.googleusercontent.com/zPAuy7MsVgD412spalQ30JYwKDNHMPo_hgBkuZplleLsFbDExyGgoXxnAm23vrDvTSU=w600-h1200",
+      "https://play-lh.googleusercontent.com/OazCfL1CbZwTuvaB46WmqMNB8qBMqsi_V_dFigfQKlVfASA7f2pTCNfFbGntJfA9Npq2=w600-h1200",
+      "https://play-lh.googleusercontent.com/yhBAXhbfIOqEiey6Z-lc2p8pVScxjA5YqXwRXhX4O4q49sjsFF3BjP1jIjG5MuwULw=w600-h1200",
+      "https://play-lh.googleusercontent.com/WUqSdDiMnPKxbazCUKtxDi4MqRDKgDwv7j0vQ4joRH1lspPSPm5VxSnrp4XMjLVtZqjZ=w600-h1200",
+      "https://play-lh.googleusercontent.com/JplID7O20pjnCciFteQQLhlr9XDrjn7cPzzf7bYbBydcq5Tis5ysEf9imcGYYRNcJq4=w600-h1200",
+      "https://play-lh.googleusercontent.com/FzBA-VBldD04-Iy3SbKu-iOW4jlqMO-hisxh3f5Dq4FRdrh71v0s7a0itfzNqOhGyZk=w600-h1200",
+      "https://play-lh.googleusercontent.com/R-PqwdAtChWoSgXekx9LBPn3awQAmK1jH_f4DTKI3pGKmjDvnQvVNue2FOoXqhkAbQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/EztSD4u7kOH8MP3aIr1NnQGFFb-I-8jMp5FUQjlzSHD6Ot8ii1_Nxy-6pQb4IBAbKWod=w600-h1200",
+      "https://play-lh.googleusercontent.com/u_mINFVSoYa9yX_tC0vL78eh-H0_2rBmQvr7JkTtzXPwsoTgFXz2yPgOFdAunnW_mqk=w600-h1200"
+    ],
     "platforms": {
       "website": "https://davomelkumyan40.github.io/TakeItEasy.github.io",
       "android": "https://play.google.com/store/apps/details?id=com.takeiteasy.torino.app&pcampaignid=web_share"
@@ -811,7 +1166,20 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Explore the movements of the Earth's tectonic plates from 600 million years ago to 200 million years in the future. Select a land mass and watch its movement as you scroll through the years.",
     "downloads": "10+ (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/dV01uQlL6inxWz2lJ4m7IAor_m4PnOl732Tmg0YRUVKgClu-_i3V342_1MMWRJ2wUA",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/atO1GGN5PrOMfpjD8dGEFRuJBdStQIVkjV9zpa2dupgs4rB7d_sQfhX1lSd6HvkBjZA=w600-h1200",
+      "https://play-lh.googleusercontent.com/0N1a_e2VL9vzww1fTJrqeQRQGYz5jHdl9Hsvj6e2J3fm4RfUBS_RhCye0jiKB6c8vvM=w600-h1200",
+      "https://play-lh.googleusercontent.com/mG7iILMEcITBbr-p_1vSdsJUAfB85cC3p9Efh8-jMTXQ5w5MESssiQAh6UlRLq1du83m=w600-h1200",
+      "https://play-lh.googleusercontent.com/T_uzITe1b9KyZaxTNPUTPWmmlOIPvjvL4n4XJZC1nPj6KcBa91bepEtMQSoPSF8h3Q=w600-h1200",
+      "https://play-lh.googleusercontent.com/NtsNueQXQs7GtmACQowg6_5ZxvQRLbNdHozjT8XmEkqfJpdf-2l1Tmr81OXHhviMcLk=w600-h1200",
+      "https://play-lh.googleusercontent.com/l0FXReBHD_OjIAJprvCkfAjPJkJGIVt4CUrbfe-iOctO3ZxhW6o1riMaNtZjyboS0Cc=w600-h1200",
+      "https://play-lh.googleusercontent.com/NEdugyYT3npgsKaNjRXkb1M7btw7Y8KaLbcjVqqd2WLEzT2Astg5Nidshj9nCfQUrvA=w600-h1200",
+      "https://play-lh.googleusercontent.com/eVyTnHiQIspA2EGjy1K8kCn2-ebmMWtxftff0Hm-o9cvM2iX9IBJiiAlNWFOEhzrCgk=w600-h1200",
+      "https://play-lh.googleusercontent.com/dHzKs-ZN-vOmls_MEFUCVS5yfySO79BfsDj1wFE3WKojwjJ7pEUIQpwBTntNA4KSezau=w600-h1200",
+      "https://play-lh.googleusercontent.com/VAlof1vFcjjnj2443suZDyVOCFP8mxN-0PLIaKDUuMBcUjrAfCLHgYRGm7ZlgWrKEA=w600-h1200",
+      "https://play-lh.googleusercontent.com/E7VgRfdiOcQtWbT6PJJgcRSQAsCBfplx2VzdwUC31vht1eCjhT9Pl9fnJSyxQbbQKaM4=w600-h1200",
+      "https://play-lh.googleusercontent.com/w9tGqZhHSOzicgbuMmOuxPk7Uo33qrpEgsJaTlzi4lhJXn_E3sY9DNa3KYS51NvjgVk=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.companyname.tectonicplatesmaui"
     }
@@ -843,7 +1211,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Travel Expense Tracker App with Online-First Offline Accesible Approach. Manage Trips, Expeses, Expense Categories. Online Data Store, Offline Data Access",
     "downloads": "15+ (Google Play) 25+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a9/83/8d/a9838d4a-a6be-5f2c-fc5c-7891bda4f888/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/UiHe30kEWF-gB_visud3SC6ZFTugOpyM3Ga1IfDyUaWSUWT68W-n2HwX9Q42LiGqZsg=w600-h1200",
+      "https://play-lh.googleusercontent.com/qHn4_swo6RtaFhmfxvVaqwa1TidNWzC6Vr7HZ_hzvDd0Ia8vM6B6Oc8Di0fDyO7_J8E=w600-h1200",
+      "https://play-lh.googleusercontent.com/91WNGp3nbWdhbbKw3qzydd8CH4vLpzC_b3wrzAqHNNB9-b8osT5m9amyZU7Jg1Tbs-M=w600-h1200",
+      "https://play-lh.googleusercontent.com/m28DWnvlhMvgN8zKqUk_GX1wnCuZ1HHX-lZkJ3hgIHw2XNE6f-NjiM3PvL7IyRFJrA=w600-h1200",
+      "https://play-lh.googleusercontent.com/l5Ah00oGXtI4Aq5ZYYwhfdulRd8q99TdKdv25S8idv03-CfyNeQtOPCDlsTwQ7Sy8Q=w600-h1200",
+      "https://play-lh.googleusercontent.com/xy_suJFTHKQpC3XM3meGnRurn6jQPLLJvEhrzAEUgv1H5bJFMiWbKMSiEbVw74Kxslnl=w600-h1200",
+      "https://play-lh.googleusercontent.com/Zp6R7pevJnohq35qfAfKV2pezwYycVNMT4lJP9SGHn0mIeQObxCp3ARIfanMG6g_2fM=w600-h1200",
+      "https://play-lh.googleusercontent.com/pCl0V25hmegBmwMp8cJNaXYDtGiEiTt6ibLABpjVpVFhg4DdN76uRtpybWLfSzN61nsn=w600-h1200",
+      "https://play-lh.googleusercontent.com/y_4RrRtqehzdZYnaHNdmGrcfp3Aoz-mN37BzfpweoajGFtSMPFhg9oEDhQ_V4AT74LI=w600-h1200",
+      "https://play-lh.googleusercontent.com/g5NKfTeUlLuTVh86UvxTyMsVHkp9RdfrNRaNIHQi2KhpqtObuYDHkyNYhe5Hfyg2_fE=w600-h1200",
+      "https://play-lh.googleusercontent.com/iNZ0Ykw68FhhtWceE9TP6X1pyLArnqN5di3enDbf1_VpBSASEhvf0a-J5aPvtYBlxx4=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.abhayprince.travelexpensetracker",
       "ios": "https://apps.apple.com/in/app/travel-expense-tracker-lite/id6746136868"
@@ -854,7 +1234,17 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Trip tracking app with statistics",
     "downloads": "50+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c4/63/7a/c4637a8c-5b2c-6787-f718-d112f1f1706d/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/rD8Z9n4KaHLJKjrp2Gm-0zfw71GgRGJdDgqurH1Zf0C_yQybe3HzN2eC3QDmJINsVEc=w600-h1200",
+      "https://play-lh.googleusercontent.com/_wauBTm5l35a3bK6z-w31W8xrCUhvEFY3TRM3zdcneNH271yn8AfJzp6Smh3jhxMTg=w600-h1200",
+      "https://play-lh.googleusercontent.com/xSMvP3c8BNHyEyg9D5ptNUGspftd81j7vHVkD3e9pJCYxFxUQ9HmYTqPWKgcmeb1Yc8=w600-h1200",
+      "https://play-lh.googleusercontent.com/OqBMGS-uKagNvuPMvajoGVrRG3xSv1bq9MMMq0BQdr7MjYRen3JvxckskTpCmmaQwIY=w600-h1200",
+      "https://play-lh.googleusercontent.com/Equ8SiYVZtWdMsk3jRXAGGSNjEPgRc0AspVey_6QX-jMuVYeVkHUZrKl91ytso-9pG8=w600-h1200",
+      "https://play-lh.googleusercontent.com/gBcGnMRw4R-3dGCPGUsZ8hCdOj8AQUjbURI4y7Kt5DZNlEU1DDrSMbFNR65KVAXVFA8=w600-h1200",
+      "https://play-lh.googleusercontent.com/ycDw8uNy27YdE2Bd2IZZEkzJKU5XuGkNIKQAqTWdtLa6YxLqGcGkwByEUlAUTxNa8Uip=w600-h1200",
+      "https://play-lh.googleusercontent.com/HLxTHHX1tA1GzG3Yguo5DQV2dPyk_Azz31e2TDSGammX2sihRD5dbHg-qzI70zJILA=w600-h1200",
+      "https://play-lh.googleusercontent.com/8iLgqByK4WvFKZZPSkuXMS0GAD3o9nj-sy8m8kjkg_b0DdpofkitEPWMYDKuE9U_zMsb=w600-h1200"
+    ],
     "platforms": {
       "website": "https://tripsta.app/",
       "android": "https://play.google.com/store/apps/details?id=com.universley.tripsta&hl=en",
@@ -866,7 +1256,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "TV Show Tracker let you discover, track and comment your favorite TV shows & movies.",
     "downloads": "100K+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/96/7f/e8967f69-45f9-fc69-b007-dcc5584ba6a7/AppIcons-0-1x_U007epad-0-0-0-8-0-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/Ls-vTvAXmAMG9XT_9obmP9viMvOIr7sUVF9XS_Q94rTNsiFcAM_ZPJ6Qbbva6pswZQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/gvS1Uj2cmG82o-o5zo5jAqtJF8G8wQ5D9RAUyhGMFlo65ITRhhWFAV7erDvDX53thVY=w600-h1200",
+      "https://play-lh.googleusercontent.com/RDUrw_Pun0Nw1ptch_z7v7xQGH5PJXC2JaSv0qLk3I1PF8OQkJ0raIBAE6-zT_wTSe8R=w600-h1200",
+      "https://play-lh.googleusercontent.com/CeR3nqT01YPRlwICk2wXga5j2n0johI3dpqonv6fBCi-BFzfO-tcUcaPFG7lbgFA9CA=w600-h1200",
+      "https://play-lh.googleusercontent.com/CjtqpyOwDxcb4rzibZK0kfnbcHn_t_WNQ-_sRguIti4cW-VghemMf1BGwu9FVNYNhWw=w600-h1200",
+      "https://play-lh.googleusercontent.com/uyi6JjIUDi5vZGny37GfALr9rm4ZGv6Ul_Zgv0IXwZ_-GE-3kJDvd80QYxNTZconxCo=w600-h1200",
+      "https://play-lh.googleusercontent.com/DoKmBQdMO0a3TUNerEKlCKdomAE2wn2KScKsb3SvF6ZfCbfLv7XSLAbvhPgEzrak7Gg=w600-h1200",
+      "https://play-lh.googleusercontent.com/PAKlNTvFADAX8JaOsWz3WSdbdhoUchBAoiflb0t0vEfaF5TSVD46BHZ8ppzWNUAg4Wo=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.jonathanantoine.TVST&hl=en",
       "ios": "https://apps.apple.com/nl/app/tv-show-tracker-trakt-client/id1228141510?l=en-US"
@@ -894,7 +1293,32 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Dutch social security and employment agency.",
     "downloads": "100K+ (Google Play) 100K+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e4/ef/8e/e4ef8e74-1488-da63-2ec3-94ab82490185/appicon_ios-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": [
+      "https://play-lh.googleusercontent.com/FByt8SOrnYGJGdTJ3oQ8LGSigvHJMydpBy5_40gTX8jcGMdL7P6DtjYB8dPHpDOMaY8=w600-h1200",
+      "https://play-lh.googleusercontent.com/ascO8IsF6LkyXAnVoCEiyxYa7p0umnvvKeeA2eGGqRn0-B1LIOe7FyWapC6doreA9dIC=w600-h1200",
+      "https://play-lh.googleusercontent.com/PrXOdQV-o-tP3_tmBe1Jy96hFHMqUasNTrnhtzKB7wtE9eujCysRIlg7uRvHbp035A7R=w600-h1200",
+      "https://play-lh.googleusercontent.com/aFnFC9MNXmJ-yQezaAutnAli96hJYTsBfK1nWj9JMN0L7EPcZ0e34iQ2OEGy66MgAQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/zMQzn30GX5XA0IWxxpXTGh8Lh2xnwXRFdXJ1YMWGAYPdyjnGo-pOO6lNoyNTNTk_9sAm=w600-h1200",
+      "https://play-lh.googleusercontent.com/kSo6CcmW9LPTH8qjIg8qnk60aaNmNZEzWYuOaGXoclC1Z2ACrLNZxA3KhWtL3sPfCOA8=w600-h1200",
+      "https://play-lh.googleusercontent.com/XpHD08WTBQPxyYlw7RHfdTs8fs2NxEfIy7CTB0pXmQ7NIdMsYNsSvmS_rgDZBstsBg=w600-h1200",
+      "https://play-lh.googleusercontent.com/yv_4KPotuwFBIXS120qn-UpQBIsvF4jHMXSxSQOtJtV4zYdcAIRIpOBjLjW2uPSzb3w=w600-h1200",
+      "https://play-lh.googleusercontent.com/GF1NDGAvTxwCHlg8TXCPVWi-FLUkXjq7yqzsJ42RBm5bmF4G9THEMtZvDLXFXZsJcGI=w600-h1200",
+      "https://play-lh.googleusercontent.com/XwqhfsWd0O6PFUI-y6varLTJunovVIb-2rNs4kxMS1DLCqV8aaAsYjeOhBoI_la6yA4=w600-h1200",
+      "https://play-lh.googleusercontent.com/GD3NmtsGzlqYpmaFuKKXbk3NCc8kprO16XYj_NBe-n-DWBKvG931WWEpbFXK1EAR4BA=w600-h1200",
+      "https://play-lh.googleusercontent.com/cT7m4kE-7L_AoWfcXx8SoES-GP85HmMGguJUdEJ7PsBfNYrsrStMdMAfz5W9W1rLfeE=w600-h1200",
+      "https://play-lh.googleusercontent.com/AtSXbUKOFcaFaj-0ynLNRX7Cg6HFxq4sUbKlpOPOKk9_SRQpc7ydf7kWdBKYnsPFk4r2=w600-h1200",
+      "https://play-lh.googleusercontent.com/H4YqTtE85Tw5-dI_Lzt0M6S0doGzxl4Dh8JacAUtXNvGLxlHhLpeRxNRIpl0O9tHSUA=w600-h1200",
+      "https://play-lh.googleusercontent.com/dW7wQWjfUPK6BJUUOswJExG6LKg2KGMUlMmmnRobRlHPpurCwfDKU-v_eh1y21bUGVnH=w600-h1200",
+      "https://play-lh.googleusercontent.com/4aeSkKWmiI2J-x9N_m6QGHGmS7c_aQKcb_0qnqzQLci3vGzQmETI4RUlHOWutP-Bvwi0=w600-h1200",
+      "https://play-lh.googleusercontent.com/_Nj_A4GsGOKgkcPxoa-hBHW97cPBFHMn96ZvTJnYozvOxqh13XvreQhhISUIue4NBQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/8LG102MCqhP6vRhGFR06GDQ1RqZcpFqutIjp5hBJuaC1Q8oWBx5rzVvt99zpS5wxlDa5=w600-h1200",
+      "https://play-lh.googleusercontent.com/6oiwjOhMOBx803K-16ONntMg6MDR6XBQUNFyorKDnglrKOh_KT41uCV27_4DBv6PRHc=w600-h1200",
+      "https://play-lh.googleusercontent.com/1uIXELr0ctYqq__VPIk64zg72XUIdrDoo8hRxE7Jp5sd3x8AG_gsVNopZxedtyN3k7s=w600-h1200",
+      "https://play-lh.googleusercontent.com/xTnMSxLR06p0_7qJn7SdlD1t0M21bAVYpm_RwiKDo3tWi4xg6W_gZRzhroY3S3oLBuQ=w600-h1200",
+      "https://play-lh.googleusercontent.com/Vk9ojqCxBthJpvxiI74EJ6F0ysF8uWwkxpByAV3f-Wl1pGyilGoYaJvOk0vjQfMA-w=w600-h1200",
+      "https://play-lh.googleusercontent.com/SUYfwoYnXK48kxQhug2fhudcOqPstZbFy0vwCEvSxyxAs9nBLys7wYuwiWAk8b-HlWE=w600-h1200",
+      "https://play-lh.googleusercontent.com/anRAqpHyzCSpib0ylNFHRBe5cA8p4eLaHFsJ2NlGcPUDhz9x-3BY2P0N3fqym_hG-Ow=w600-h1200"
+    ],
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=nl.uwv.app&hl=nl",
       "ios": "https://apps.apple.com/nl/app/uwv/id1478274972"
