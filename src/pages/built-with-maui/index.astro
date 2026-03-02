@@ -35,7 +35,6 @@ const clientApps = apps.map((app) => ({
   description: app.description,
   downloads: app.downloads,
   iconUrl: app.iconUrl,
-  screenshots: app.screenshots,
   platforms: app.platforms,
 }));
 
@@ -192,11 +191,6 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
                   );
                 })}
               </div>
-              {Object.keys(app.screenshots).length > 0 && (
-                <span class="flex-shrink-0 text-xs text-muted/60">
-                  <i class="fa-solid fa-images mr-1" aria-hidden="true"></i>{Object.values(app.screenshots).reduce((s, a) => s + a.length, 0)}
-                </span>
-              )}
             </div>
           </li>
         ))}
@@ -256,16 +250,7 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
       <p data-app-modal-description class="mb-6 text-base leading-relaxed text-muted"></p>
 
       {/* Platform links */}
-      <div data-app-modal-platforms class="mb-6 flex flex-wrap gap-2"></div>
-
-      {/* Screenshots with device tabs */}
-      <div data-app-modal-screenshots-section class="hidden">
-        <h3 class="mb-3 text-sm font-semibold text-brand-dark">
-          <i class="fa-solid fa-images mr-2 text-brand/60" aria-hidden="true"></i>Screenshots
-        </h3>
-        <div data-app-modal-screenshot-tabs class="mb-3 flex gap-2 overflow-x-auto scrollbar-thin"></div>
-        <div data-app-modal-screenshots class="-mx-6 flex gap-3 overflow-x-auto px-6 pb-3 snap-x snap-mandatory scrollbar-thin sm:-mx-8 sm:px-8"></div>
-      </div>
+      <div data-app-modal-platforms class="mb-2 flex flex-wrap gap-2"></div>
     </div>
   </div>
 
@@ -291,9 +276,6 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
       const modalDownloads = document.querySelector('[data-app-modal-downloads]');
       const modalDescription = document.querySelector('[data-app-modal-description]');
       const modalPlatforms = document.querySelector('[data-app-modal-platforms]');
-      const modalScreenshotsSection = document.querySelector('[data-app-modal-screenshots-section]');
-      const modalScreenshotTabs = document.querySelector('[data-app-modal-screenshot-tabs]');
-      const modalScreenshots = document.querySelector('[data-app-modal-screenshots]');
 
       if (!(searchInput instanceof HTMLInputElement) || !(clearButton instanceof HTMLButtonElement) || !noResults || !modal) {
         return;
@@ -337,8 +319,6 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
       applyFilter();
 
       // ── Modal ──
-      var pendingScreenshotLoads = [];
-
       function getInitials(name) {
         return name.split(/[\s-]+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
       }
@@ -350,10 +330,6 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
       function openModal(index) {
         const app = clientApps[index];
         if (!app) return;
-
-        // Cancel any in-flight screenshot loads from previous modal
-        pendingScreenshotLoads.forEach(function(it) { it.cancelled = true; it.img.onload = null; it.img.onerror = null; it.img.removeAttribute('src'); });
-        pendingScreenshotLoads = [];
 
         // Icon
         if (app.iconUrl) {
@@ -390,7 +366,7 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
           var key = entry[0], url = entry[1];
           var meta = platformMeta[key];
           if (!meta) return;
-          if (!/^https?:\/\//i.test(url)) return; // only allow http(s) URLs
+          if (!/^https?:\/\//i.test(url)) return;
           var a = document.createElement('a');
           a.href = url;
           a.target = '_blank';
@@ -399,101 +375,6 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
           a.innerHTML = '<i class="' + meta.icon + '"></i>' + meta.label;
           modalPlatforms.appendChild(a);
         });
-
-        // Screenshots — with device category tabs
-        var screenshotCategories = app.screenshots || {};
-        var categoryLabels = { iphone: 'iPhone', ipad: 'iPad', android: 'Android', androidTablet: 'Android Tablet', windows: 'Windows' };
-        var categoryKeys = Object.keys(screenshotCategories).filter(function(k) { return screenshotCategories[k].length > 0; });
-
-        if (categoryKeys.length > 0) {
-          modalScreenshotsSection.classList.remove('hidden');
-          modalScreenshotTabs.innerHTML = '';
-          modalScreenshots.innerHTML = '';
-
-          // Build tab buttons (always show, even for single category)
-          modalScreenshotTabs.classList.remove('hidden');
-          categoryKeys.forEach(function(key, i) {
-            var btn = document.createElement('button');
-            btn.type = 'button';
-            btn.textContent = (categoryLabels[key] || key) + ' (' + screenshotCategories[key].length + ')';
-            btn.className = 'rounded-full px-3 py-1 text-xs font-medium transition whitespace-nowrap ' +
-              (i === 0 ? 'bg-brand text-white' : 'bg-surface-alt text-muted hover:text-brand-dark');
-            btn.setAttribute('data-ss-tab', key);
-            btn.addEventListener('click', function() { switchTab(key); });
-            modalScreenshotTabs.appendChild(btn);
-          });
-
-          var renderScreenshots = function(urls) {
-            modalScreenshots.innerHTML = '';
-            // Cancel previous tab's loads
-            pendingScreenshotLoads.forEach(function(it) { it.cancelled = true; it.img.onload = null; it.img.onerror = null; it.img.removeAttribute('src'); });
-            pendingScreenshotLoads = [];
-            var ssQueue = [];
-            var ssActive = 0;
-            var loadNextSS = function() {
-              while (ssActive < 2 && ssQueue.length > 0) {
-                var item = ssQueue.shift();
-                if (item.cancelled) continue;
-                ssActive++;
-                (function(it) {
-                  it.img.onload = function() {
-                    if (it.cancelled) return;
-                    it.img.classList.remove('opacity-0');
-                    it.img.classList.add('opacity-100');
-                    it.wrapper.classList.remove('animate-pulse', 'w-40', 'bg-gradient-to-br', 'from-brand/10', 'to-brand-extra/10');
-                    it.wrapper.classList.add('w-auto');
-                    ssActive--;
-                    setTimeout(loadNextSS, 200);
-                  };
-                  it.img.onerror = function() {
-                    if (it.cancelled) return;
-                    ssActive--;
-                    if (it.retries < 2) {
-                      it.retries++;
-                      it.img.removeAttribute('src');
-                      setTimeout(function() { if (!it.cancelled) { ssQueue.push(it); loadNextSS(); } }, 1000 * it.retries);
-                    } else {
-                      it.wrapper.remove();
-                      setTimeout(loadNextSS, 200);
-                    }
-                  };
-                  it.img.src = it.url;
-                })(item);
-              }
-            };
-            urls.forEach(function(url) {
-              var wrapper = document.createElement('div');
-              wrapper.className = 'h-72 w-40 flex-shrink-0 snap-start rounded-lg bg-gradient-to-br from-brand/10 to-brand-extra/10 animate-pulse';
-              var img = document.createElement('img');
-              img.alt = app.name + ' screenshot';
-              img.referrerPolicy = 'no-referrer';
-              img.className = 'h-72 w-auto rounded-lg border border-edge/30 shadow-sm opacity-0 transition-opacity duration-300';
-              wrapper.appendChild(img);
-              modalScreenshots.appendChild(wrapper);
-              var item = { img: img, wrapper: wrapper, url: url, retries: 0, cancelled: false };
-              ssQueue.push(item);
-              pendingScreenshotLoads.push(item);
-            });
-            loadNextSS();
-          };
-
-          var switchTab = function(key) {
-            // Update active tab styling
-            modalScreenshotTabs.querySelectorAll('[data-ss-tab]').forEach(function(btn) {
-              if (btn.getAttribute('data-ss-tab') === key) {
-                btn.className = 'rounded-full px-3 py-1 text-xs font-medium transition whitespace-nowrap bg-brand text-white';
-              } else {
-                btn.className = 'rounded-full px-3 py-1 text-xs font-medium transition whitespace-nowrap bg-surface-alt text-muted hover:text-brand-dark';
-              }
-            });
-            renderScreenshots(screenshotCategories[key]);
-          };
-
-          // Show first category by default
-          renderScreenshots(screenshotCategories[categoryKeys[0]]);
-        } else {
-          modalScreenshotsSection.classList.add('hidden');
-        }
 
         modal.classList.remove('hidden');
         modal.classList.add('flex');
@@ -597,9 +478,6 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
   <style>
     .h-18 { height: 4.5rem; }
     .w-18 { width: 4.5rem; }
-    .scrollbar-thin::-webkit-scrollbar { height: 6px; }
-    .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
-    .scrollbar-thin::-webkit-scrollbar-thumb { background: rgb(var(--color-edge)); border-radius: 3px; }
 
     /* Hide browser broken-image icon on not-yet-loaded / failed images */
     img[data-lazy-src]:not([src]) {
@@ -610,11 +488,6 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
     }
     img[data-lazy-src][src] {
       visibility: visible;
-    }
-    /* Modal screenshot images: hide broken icon while loading */
-    [data-app-modal-screenshots] img:not([src]),
-    [data-app-modal-screenshots] img.opacity-0 {
-      color: transparent; /* hides alt text */
     }
   </style>
 </BaseLayout>

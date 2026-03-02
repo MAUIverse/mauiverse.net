@@ -50,18 +50,15 @@ function normalizeNestedLinks(markdown) {
 // ---------------------------------------------------------------------------
 
 function parseTableRow(row) {
-  // Split on | but ignore the leading/trailing empties
   const cells = row.split('|').map((c) => c.trim()).filter((_, i, a) => i > 0 && i < a.length);
   if (cells.length < 4) return null;
 
   const [rawName, description, downloads, rawLinks] = cells;
 
-  // Extract bold app name: **Name**
   const nameMatch = rawName.match(/\*\*(.+?)\*\*/);
   const name = nameMatch ? nameMatch[1].trim() : rawName.trim();
   if (!name) return null;
 
-  // Parse platform links from the "More information" cell
   const platforms = {};
   const linkRegex = /\[\s*<img[^>]*src="assets\/([^"./]+)\.png"[^>]*>\s*\]\((https?:\/\/[^)\s]+)\)/gi;
   let match;
@@ -78,7 +75,6 @@ function parseTableRow(row) {
     description: description.trim(),
     downloads: downloads.trim().replace(/<br\s*\/?>/gi, ' · '),
     iconUrl: null,
-    screenshots: {},
     platforms,
   };
 }
@@ -92,11 +88,10 @@ function parseAppsTable(markdown) {
   for (const line of lines) {
     const trimmed = line.trim();
     if (!trimmed.startsWith('|')) {
-      if (inTable) break; // end of table
+      if (inTable) break;
       continue;
     }
     inTable = true;
-    // Skip header row and separator row
     if (!headerSkipped) {
       if (trimmed.includes('---')) {
         headerSkipped = true;
@@ -124,143 +119,39 @@ function extractGooglePlayPackage(url) {
   return match ? match[1] : null;
 }
 
-// iTunes API fallback for iPad screenshots and icon (web scraping misses dynamically loaded iPad galleries and some icons)
-async function fetchItunesApiFallback(appId) {
+async function fetchIosIcon(iosUrl) {
   try {
-    const res = await fetch(`https://itunes.apple.com/lookup?id=${appId}`, {
-      signal: AbortSignal.timeout(8000),
-    });
-    if (!res.ok) return { icon: null, ipadScreenshots: [] };
-    const data = await res.json();
-    const result = data.results?.[0];
-    if (!result) return { icon: null, ipadScreenshots: [] };
-    return {
-      icon: result.artworkUrl512 || result.artworkUrl100 || null,
-      ipadScreenshots: result.ipadScreenshotUrls || [],
-    };
-  } catch {
-    // Silently skip
-  }
-  return { icon: null, ipadScreenshots: [] };
-}
-
-async function fetchIosData(iosUrl) {
-  try {
+    // Try scraping the App Store web page for AppIcon
     const res = await fetch(iosUrl, {
       signal: AbortSignal.timeout(10000),
       headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
     });
-    if (!res.ok) return { icon: null, screenshots: {} };
+    if (!res.ok) return null;
     const html = await res.text();
-
-    // Extract icon: find an AppIcon base path and use 512x512bb.jpg
     const iconBaseMatch = html.match(
       /https:\/\/is\d+-ssl\.mzstatic\.com\/image\/thumb\/[^"\\}\s)]*?AppIcon[^"\\}\s)]*?\.(png|jpg)\//i
     );
-    const icon = iconBaseMatch ? iconBaseMatch[0] + '512x512bb.jpg' : null;
+    if (iconBaseMatch) return iconBaseMatch[0] + '512x512bb.jpg';
 
-    // Extract screenshot base paths from Purple* URLs in embedded data
-    // Each URL appears at multiple sizes — deduplicate by base path (up to .png/ or .jpg/)
-    const basePathSet = new Set();
-    const urlRegex = /https:\/\/is\d+-ssl\.mzstatic\.com\/image\/thumb\/Purple[^"\\}\s)]*?\.(png|jpg)\//gi;
-    let match;
-    while ((match = urlRegex.exec(html)) !== null) {
-      if (/Placeholder|AppIcon|appicon|marketing/i.test(match[0])) continue;
-      basePathSet.add(match[0]);
-    }
-
-    // Classify by filename hints, embedded dimensions, then image dimension probing
-    const iphone = [];
-    const ipad = [];
-    const unclassified = [];
-    for (const basePath of basePathSet) {
-      if (/iPhone/i.test(basePath)) { iphone.push(basePath + '392x696bb.png'); continue; }
-      if (/iPad/i.test(basePath)) { ipad.push(basePath + '576x768bb.png'); continue; }
-      // Check embedded dimensions in filename (e.g. _2732x2048.png)
-      const dimMatch = basePath.match(/_(\d{3,5})x(\d{3,5})\.\w+\/$/);
-      if (dimMatch) {
-        const minDim = Math.min(parseInt(dimMatch[1]), parseInt(dimMatch[2]));
-        if (minDim >= 1400) { ipad.push(basePath + '576x768bb.png'); continue; }
-        iphone.push(basePath + '392x696bb.png'); continue;
-      }
-      unclassified.push(basePath);
-    }
-
-    // For unclassified URLs, probe actual image dimensions via 16px thumbnail
-    if (unclassified.length > 0) {
-      const dimResults = await Promise.all(
-        unclassified.map(bp => getImageDimensions(bp + '16x16bb.jpg'))
-      );
-      for (let i = 0; i < unclassified.length; i++) {
-        const basePath = unclassified[i];
-        const dims = dimResults[i];
-        if (dims) {
-          // Phone ~0.46 (9:19.5), iPad portrait ~0.75 (3:4), iPad landscape ~1.33
-          // Square 0.85-1.15 = logos/icons, skip
-          const ratio = dims.w / dims.h;
-          if (ratio >= 0.85 && ratio <= 1.15) continue; // square — logo/icon, skip
-          if (ratio < 0.65) { iphone.push(basePath + '392x696bb.png'); continue; }
-          ipad.push(basePath + '576x768bb.png'); continue;
-        }
-        // Fallback: use grid-type context from HTML
-        const thumbIdx = basePath.indexOf('/thumb/');
-        if (thumbIdx === -1) { iphone.push(basePath + '392x696bb.png'); continue; }
-        const shortPath = basePath.slice(thumbIdx + 7, basePath.length - 1);
-        const urlIdx = html.indexOf(shortPath);
-        if (urlIdx > -1) {
-          const preceding = html.slice(Math.max(0, urlIdx - 2000), urlIdx);
-          if (preceding.lastIndexOf('ScreenshotTablet') > preceding.lastIndexOf('ScreenshotPhone')) {
-            ipad.push(basePath + '576x768bb.png'); continue;
-          }
-        }
-        iphone.push(basePath + '392x696bb.png');
+    // Fallback: iTunes API
+    const appId = extractIosAppId(iosUrl);
+    if (appId) {
+      const apiRes = await fetch(`https://itunes.apple.com/lookup?id=${appId}`, {
+        signal: AbortSignal.timeout(8000),
+      });
+      if (apiRes.ok) {
+        const data = await apiRes.json();
+        const result = data.results?.[0];
+        if (result) return result.artworkUrl512 || result.artworkUrl100 || null;
       }
     }
-
-    const screenshots = {};
-    if (iphone.length > 0) screenshots.iphone = iphone;
-    if (ipad.length > 0) screenshots.ipad = ipad;
-    return { icon, screenshots };
   } catch {
     // Silently skip
-  }
-  return { icon: null, screenshots: {} };
-}
-
-// Fetch a tiny thumbnail and extract image dimensions from the binary header
-async function getImageDimensions(url) {
-  try {
-    const res = await fetch(url, {
-      signal: AbortSignal.timeout(5000),
-      headers: { 'User-Agent': 'Mozilla/5.0' },
-    });
-    if (!res.ok) return null;
-    const buf = Buffer.from(await res.arrayBuffer());
-    const ct = res.headers.get('content-type') || '';
-
-    // PNG: IHDR chunk at bytes 16-23
-    if (ct.includes('png') && buf.length > 24) {
-      return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
-    }
-    // JPEG: scan for SOF0/SOF2 marker
-    if (ct.includes('jpeg') || ct.includes('jpg')) {
-      for (let i = 0; i < buf.length - 9; i++) {
-        if (buf[i] === 0xFF && (buf[i + 1] === 0xC0 || buf[i + 1] === 0xC2)) {
-          return { w: buf.readUInt16BE(i + 7), h: buf.readUInt16BE(i + 5) };
-        }
-      }
-    }
-    // WebP: RIFF container
-    if (ct.includes('webp') && buf.length >= 30 && buf.slice(0, 4).toString() === 'RIFF') {
-      return { w: buf.readUInt16LE(26) & 0x3FFF, h: buf.readUInt16LE(28) & 0x3FFF };
-    }
-  } catch {
-    // ignore
   }
   return null;
 }
 
-async function fetchGooglePlayData(packageId) {
+async function fetchGooglePlayIcon(packageId) {
   try {
     const res = await fetch(
       `https://play.google.com/store/apps/details?id=${packageId}&hl=en`,
@@ -269,148 +160,60 @@ async function fetchGooglePlayData(packageId) {
         headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36' },
       }
     );
-    if (!res.ok) return { icon: null, screenshots: {} };
+    if (!res.ok) return null;
     const html = await res.text();
-
-    // Extract icon from og:image meta tag
     const ogMatch = html.match(/<meta\s+property="og:image"\s+content="([^"]+)"/i)
       ?? html.match(/<meta\s+content="([^"]+)"\s+property="og:image"/i);
-    const icon = ogMatch ? ogMatch[1] : null;
-
-    // Extract screenshot base URLs from srcset attributes
-    const screenshotSet = new Set();
-    const srcsetRegex = /srcset="(https:\/\/play-lh\.googleusercontent\.com\/[^=]+)=w(?:\d+-h\d+)\b/g;
-    let match;
-    while ((match = srcsetRegex.exec(html)) !== null) {
-      screenshotSet.add(match[1]);
-    }
-    // Remove the icon base URL (it often appears in srcset too)
-    const iconBase = icon?.replace(/=[^=]*$/, '');
-    if (iconBase) screenshotSet.delete(iconBase);
-
-    if (screenshotSet.size === 0) return { icon, screenshots: {} };
-
-    // Classify each screenshot by fetching a tiny thumbnail and checking dimensions
-    const phone = [];
-    const tablet = [];
-    const baseUrls = [...screenshotSet];
-    for (let i = 0; i < baseUrls.length; i += 4) {
-      const batch = baseUrls.slice(i, i + 4);
-      const results = await Promise.allSettled(
-        batch.map(async (base) => {
-          const dims = await getImageDimensions(base + '=s16');
-          return { base, dims };
-        })
-      );
-      for (const r of results) {
-        if (r.status !== 'fulfilled' || !r.value.dims) continue;
-        const { base, dims } = r.value;
-        const ratio = dims.w / dims.h;
-        if (ratio < 0.8) phone.push(base + '=w600-h1200');       // portrait → phone
-        else if (ratio > 1.2) tablet.push(base + '=w600-h1200'); // landscape → tablet
-        // 0.8-1.2 = nearly square → skip (likely icon/badge)
-      }
-      if (i + 4 < baseUrls.length) await new Promise((r) => setTimeout(r, 100));
-    }
-
-    const screenshots = {};
-    if (phone.length > 0) screenshots.android = phone;
-    // Require 2+ tablet screenshots — singletons are almost always feature graphics
-    if (tablet.length >= 2) screenshots.androidTablet = tablet;
-
-    return { icon, screenshots };
+    return ogMatch ? ogMatch[1] : null;
   } catch {
     // Silently skip
   }
-  return { icon: null, screenshots: {} };
+  return null;
 }
 
-async function fetchWindowsStoreData(windowsUrl) {
+async function fetchWindowsStoreIcon(windowsUrl) {
   try {
     const res = await fetch(windowsUrl, {
       signal: AbortSignal.timeout(10000),
       redirect: 'follow',
       headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
     });
-    if (!res.ok) return { icon: null, screenshots: {} };
+    if (!res.ok) return null;
     const html = await res.text();
-
-    // Extract icon from embedded JSON
     const iconMatch = html.match(/"iconUrl":"(https:\/\/store-images\.s-microsoft\.com\/image\/[^"]+)"/);
-    const icon = iconMatch ? iconMatch[1] : null;
-
-    // Extract screenshots from embedded JSON array
-    const screenshots = {};
-    const ssMatch = html.match(/"screenshots":(\[[\s\S]*?\])\s*[,}]/);
-    if (ssMatch) {
-      const ss = JSON.parse(ssMatch[1]);
-      const windowsUrls = ss
-        .filter(s => s.url && /^https:\/\/store-images\.s-microsoft\.com\//.test(s.url))
-        .map(s => s.url);
-      if (windowsUrls.length > 0) screenshots.windows = windowsUrls;
-    }
-
-    return { icon, screenshots };
+    return iconMatch ? iconMatch[1] : null;
   } catch {
     // Silently skip
   }
-  return { icon: null, screenshots: {} };
+  return null;
 }
 
-async function fetchStoreDataForApp(app) {
+async function fetchIconForApp(app) {
   let icon = null;
-  let screenshots = {};
 
-  // Scrape App Store web page for icon + screenshots
   if (app.platforms.ios) {
-    const iosData = await fetchIosData(app.platforms.ios);
-    if (iosData.icon) icon = iosData.icon;
-    Object.assign(screenshots, iosData.screenshots);
-    // iTunes API fallback for missing icon and iPad screenshots
-    if (!icon || !screenshots.ipad) {
-      const appId = extractIosAppId(app.platforms.ios);
-      if (appId) {
-        const apiFallback = await fetchItunesApiFallback(appId);
-        if (!icon && apiFallback.icon) icon = apiFallback.icon;
-        if (!screenshots.ipad && apiFallback.ipadScreenshots.length > 0) {
-          screenshots.ipad = apiFallback.ipadScreenshots;
-        }
-      }
-    }
+    icon = await fetchIosIcon(app.platforms.ios);
   }
 
-  // Try Google Play for missing icon and Android screenshots
-  if (app.platforms.android) {
+  if (!icon && app.platforms.android) {
     const packageId = extractGooglePlayPackage(app.platforms.android);
-    if (packageId) {
-      const gpData = await fetchGooglePlayData(packageId);
-      if (!icon && gpData.icon) icon = gpData.icon;
-      Object.assign(screenshots, gpData.screenshots);
-    }
+    if (packageId) icon = await fetchGooglePlayIcon(packageId);
   }
 
-  // Try Microsoft Store for missing icon and Windows screenshots
-  if (app.platforms.windows && /apps\.microsoft\.com|microsoft\.com\/store/i.test(app.platforms.windows)) {
-    const winData = await fetchWindowsStoreData(app.platforms.windows);
-    if (!icon && winData.icon) icon = winData.icon;
-    Object.assign(screenshots, winData.screenshots);
+  if (!icon && app.platforms.windows && /apps\.microsoft\.com|microsoft\.com\/store/i.test(app.platforms.windows)) {
+    icon = await fetchWindowsStoreIcon(app.platforms.windows);
   }
 
-  return { icon, screenshots };
+  return icon;
 }
 
-async function fetchAllStoreData(apps) {
-  // Process in batches to avoid overwhelming APIs
+async function fetchAllIcons(apps) {
   const results = [...apps];
   for (let i = 0; i < results.length; i += ICON_CONCURRENCY) {
     const batch = results.slice(i, i + ICON_CONCURRENCY);
-    const storeData = await Promise.all(batch.map((app) => fetchStoreDataForApp(app)));
+    const icons = await Promise.all(batch.map((app) => fetchIconForApp(app)));
     for (let j = 0; j < batch.length; j++) {
-      results[i + j] = {
-        ...results[i + j],
-        iconUrl: storeData[j].icon,
-        screenshots: storeData[j].screenshots,
-      };
+      results[i + j] = { ...results[i + j], iconUrl: icons[j] };
     }
     if (i + ICON_CONCURRENCY < results.length) {
       await new Promise((r) => setTimeout(r, 200));
@@ -460,13 +263,6 @@ export type BuiltWithMauiApp = {
   description: string;
   downloads: string;
   iconUrl: string | null;
-  screenshots: {
-    iphone?: string[];
-    ipad?: string[];
-    android?: string[];
-    androidTablet?: string[];
-    windows?: string[];
-  };
   platforms: {
     ios?: string;
     android?: string;
@@ -500,23 +296,18 @@ async function run() {
   const normalized = normalizeNestedLinks(rawMarkdown);
   const appsSection = extractAppsSection(normalized);
 
-  // Parse structured data from the raw table (before icon replacement)
   let apps = parseAppsTable(appsSection);
   console.log(`Parsed ${apps.length} apps from upstream table.`);
 
-  // Fetch icons and screenshots from app stores
-  console.log('Fetching app store data (icons + screenshots)…');
-  apps = await fetchAllStoreData(apps);
+  console.log('Fetching app store icons…');
+  apps = await fetchAllIcons(apps);
   const iconCount = apps.filter((a) => a.iconUrl).length;
-  const screenshotCount = apps.filter((a) => Object.keys(a.screenshots).length > 0).length;
-  console.log(`Fetched icons for ${iconCount}/${apps.length} apps, screenshots for ${screenshotCount}/${apps.length} apps.`);
+  console.log(`Fetched icons for ${iconCount}/${apps.length} apps.`);
 
-  // Write generated TypeScript data
   await mkdir(dirname(TS_OUTPUT_PATH), { recursive: true });
   await writeFile(TS_OUTPUT_PATH, buildTsOutput(apps), 'utf8');
   console.log(`Wrote ${TS_OUTPUT_PATH}`);
 
-  // Write markdown content file (backward compatibility)
   const mdAppsSection = replaceIconLinks(appsSection);
   const fetchedAt = new Date().toISOString();
   const mdOutput = `---
