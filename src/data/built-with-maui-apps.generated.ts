@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const builtWithMauiSource = "https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md";
-export const builtWithMauiFetchedAt = "2026-03-02T20:03:01.813Z";
+export const builtWithMauiFetchedAt = "2026-03-02T20:07:45.338Z";
 
 export type BuiltWithMauiApp = {
   name: string;
@@ -14,6 +14,7 @@ export type BuiltWithMauiApp = {
     ipad?: string[];
     android?: string[];
     androidTablet?: string[];
+    windows?: string[];
   };
   platforms: {
     ios?: string;
@@ -456,6 +457,15 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/cYXGY1vPctFgETXqNhYlYU8pSMomXjmOBMBMRcPkRbk7vTen3bj_VG8KsEODGlDMKw=w600-h1200",
         "https://play-lh.googleusercontent.com/o7HKFGVsjeKRiu0flj4MNTg1RIM6wrIl9OoIbbIb6dnpVXzD8LGURBncrX1qgvcRTA=w600-h1200",
         "https://play-lh.googleusercontent.com/RGm97LVZCZyxMQeYgVTevDqhtnpbNIh-DTlbLJXzeQmnHpzytNjxN9uMmdf-gAaumjM=w600-h1200"
+      ],
+      "windows": [
+        "https://store-images.s-microsoft.com/image/apps.22890.13996004235179563.80be05b6-fc90-4fe7-9458-2ed195ca72e4.1192afea-309a-48e0-b32b-3a0e2a051f40",
+        "https://store-images.s-microsoft.com/image/apps.27124.13996004235179563.80be05b6-fc90-4fe7-9458-2ed195ca72e4.4209f0bc-2b87-475a-b68a-61cd95910c02",
+        "https://store-images.s-microsoft.com/image/apps.48214.13996004235179563.80be05b6-fc90-4fe7-9458-2ed195ca72e4.ff139319-37b8-4dd9-955c-75ccdafacf39",
+        "https://store-images.s-microsoft.com/image/apps.46385.13996004235179563.80be05b6-fc90-4fe7-9458-2ed195ca72e4.733a3f86-d071-4f79-884d-1262a62e22af",
+        "https://store-images.s-microsoft.com/image/apps.12149.13996004235179563.80be05b6-fc90-4fe7-9458-2ed195ca72e4.1b7964fa-0bdb-4928-8a8f-e602429244d9",
+        "https://store-images.s-microsoft.com/image/apps.48966.13996004235179563.80be05b6-fc90-4fe7-9458-2ed195ca72e4.4c49702a-6704-4493-9dc3-6e1e78b68137",
+        "https://store-images.s-microsoft.com/image/apps.62311.13996004235179563.80be05b6-fc90-4fe7-9458-2ed195ca72e4.d525c48f-3587-4d49-8399-c8c1f489984f"
       ]
     },
     "platforms": {
@@ -854,6 +864,10 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
       "ipad": [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ba/43/42/ba43425e-42bd-1348-2f73-5e5418c06710/Mac_-_1.png/576x768bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/16/b1/b716b1e5-b649-59dd-cc6e-85ed7028991f/g2758.png/576x768bb.png"
+      ],
+      "windows": [
+        "https://store-images.s-microsoft.com/image/apps.1408.14556433952264530.f0793a34-70f7-40e0-9213-1f56f6723b88.a7a28ec5-e54d-4bd9-a4d1-30c6cbd26733",
+        "https://store-images.s-microsoft.com/image/apps.17251.14556433952264530.0279c7aa-d4d8-4ddc-9924-ea9a35df3dcf.0d647c12-2824-4745-8a98-711b328c2a2c"
       ]
     },
     "platforms": {
@@ -1148,6 +1162,17 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/92Oi8vER94APxyn_E9mlNROB0agp1fWSQMXLhwa3UrOQQMRARk2Eo34U7FeCyPioWMc=w600-h1200",
         "https://play-lh.googleusercontent.com/QATOBSGo__JY3XXbveGk3buDWEFtfyhDmqQd1X25QeHFwscfc6isyixzSv186a15yA=w600-h1200",
         "https://play-lh.googleusercontent.com/QVUFFdfC5u7mc_V0cOFL8CN1PewAbcTRLJWbUFQo7dSs02w3m9vC57X68bdEfxONGpI=w600-h1200"
+      ],
+      "windows": [
+        "https://store-images.s-microsoft.com/image/apps.12646.14577707204079848.87840cf7-17f2-47c6-af58-f1ce0b8393a9.deb3fe46-955d-40ef-96cf-cf7911806a2c",
+        "https://store-images.s-microsoft.com/image/apps.22415.14577707204079848.87840cf7-17f2-47c6-af58-f1ce0b8393a9.e0b5e575-2881-4ebf-b562-79bd64e84e71",
+        "https://store-images.s-microsoft.com/image/apps.12231.14577707204079848.87840cf7-17f2-47c6-af58-f1ce0b8393a9.f2ab1dc1-8e8d-4dd3-b3b4-27f1085cc8a6",
+        "https://store-images.s-microsoft.com/image/apps.63451.14577707204079848.87840cf7-17f2-47c6-af58-f1ce0b8393a9.4fc6b457-be10-4faa-b757-e668ef596509",
+        "https://store-images.s-microsoft.com/image/apps.44559.14577707204079848.87840cf7-17f2-47c6-af58-f1ce0b8393a9.e9796274-6123-4fe0-9745-005062de3751",
+        "https://store-images.s-microsoft.com/image/apps.42187.14577707204079848.87840cf7-17f2-47c6-af58-f1ce0b8393a9.c85e839d-1e44-4d58-88de-ea0df230b3ab",
+        "https://store-images.s-microsoft.com/image/apps.38570.14577707204079848.87840cf7-17f2-47c6-af58-f1ce0b8393a9.53bae815-827a-4d2d-bc66-6d2651f7e64e",
+        "https://store-images.s-microsoft.com/image/apps.2732.14577707204079848.87840cf7-17f2-47c6-af58-f1ce0b8393a9.777b0271-ad12-4248-b394-2387e01e450f",
+        "https://store-images.s-microsoft.com/image/apps.23662.14577707204079848.87840cf7-17f2-47c6-af58-f1ce0b8393a9.7e9a143a-7ff4-4309-9634-8b75c013d5ca"
       ]
     },
     "platforms": {
@@ -1171,6 +1196,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/IyFP6OnGsdO6EOZOBEM17F9b8tXaSSJ_C_AbXViCF04fdR9J-CNPAj6lLNCPTJq8pSw=w600-h1200",
         "https://play-lh.googleusercontent.com/n5iAsE_UOavf4iEBtvQJBSfrn0TxNlCEKwV76EW-xH_59Xj7bBK7eusakcEp97o3Fgo=w600-h1200",
         "https://play-lh.googleusercontent.com/1o0CfrvAsNj7hFIZKRXq8_I30p8Rc_WCa3OfpjF9L1-anTB8fC179o7FUMcsvaKf-Q0=w600-h1200"
+      ],
+      "windows": [
+        "https://store-images.s-microsoft.com/image/apps.63458.14347383501348521.20c92b2c-bb3c-4178-943b-5553a5cc4bf5.00dbf61d-fe07-4a9e-b2d7-3106c9785392",
+        "https://store-images.s-microsoft.com/image/apps.16765.14347383501348521.20c92b2c-bb3c-4178-943b-5553a5cc4bf5.0adf1996-ee52-4a0c-ac5b-81ca2fcefb01",
+        "https://store-images.s-microsoft.com/image/apps.25719.14347383501348521.20c92b2c-bb3c-4178-943b-5553a5cc4bf5.4e31902f-bf73-4ebf-ba6e-a6bbd10fe456",
+        "https://store-images.s-microsoft.com/image/apps.21627.14347383501348521.20c92b2c-bb3c-4178-943b-5553a5cc4bf5.4fe07778-f4c6-4ebd-adb2-4d95d98ba599",
+        "https://store-images.s-microsoft.com/image/apps.62736.14347383501348521.20c92b2c-bb3c-4178-943b-5553a5cc4bf5.1ce8cff2-a230-4fcd-bd4e-6fb0c606d596",
+        "https://store-images.s-microsoft.com/image/apps.39143.14347383501348521.20c92b2c-bb3c-4178-943b-5553a5cc4bf5.8eeda954-0b85-4283-bf03-5a2585dd25cb",
+        "https://store-images.s-microsoft.com/image/apps.2606.14347383501348521.20c92b2c-bb3c-4178-943b-5553a5cc4bf5.275eedbd-1bd0-4b82-8940-ff63c6462301",
+        "https://store-images.s-microsoft.com/image/apps.49437.14347383501348521.20c92b2c-bb3c-4178-943b-5553a5cc4bf5.7127d60d-ad28-4077-9373-52ec05c03dae"
       ]
     },
     "platforms": {
@@ -1285,6 +1320,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/nWwHRF-3v5zeTMF0YKiD5sTHNcQdvMxmJKRjmvAjhrYJax0vJr-RmpxXlIYT4kgfC6rudTPZhb76AObOD-vEjg=w600-h1200",
         "https://play-lh.googleusercontent.com/Ao86kUEcvVT9O296Z0WDFq8NJRbz1Y5purXd3Rt3TBoTmyAHfbOdDFW5L0l2SPeUvK-pTuIHkqB9VsA32pD22xc=w600-h1200",
         "https://play-lh.googleusercontent.com/K3pnk_ox--b5klXRr-gTSIVvTF95Jw7AaDAxe_yG88Me-yeCYRcqtlLJGl1YG-EAgmhWx0pMK9QOUDOsmk92fA=w600-h1200"
+      ],
+      "windows": [
+        "https://store-images.s-microsoft.com/image/apps.10277.13745361523750338.75cb9705-e7ec-4e0c-b826-ca452ba81c36.4f5db6d3-1f2e-4f7c-a75a-25b6d04ae63a",
+        "https://store-images.s-microsoft.com/image/apps.5112.13745361523750338.9f82fce0-0554-4533-9a16-08b1a1db1d83.d1c6ac9d-3552-4289-bccc-2755cddde11a",
+        "https://store-images.s-microsoft.com/image/apps.26056.13745361523750338.9f82fce0-0554-4533-9a16-08b1a1db1d83.98990f4f-cf5c-4107-ac32-79622c6b67ae",
+        "https://store-images.s-microsoft.com/image/apps.65236.13745361523750338.9f82fce0-0554-4533-9a16-08b1a1db1d83.a12ef838-e79f-49af-a624-f6484d1a1f02",
+        "https://store-images.s-microsoft.com/image/apps.29468.13745361523750338.9f82fce0-0554-4533-9a16-08b1a1db1d83.9a6c75cb-fe3e-4df5-92ef-ed1c26579f2c",
+        "https://store-images.s-microsoft.com/image/apps.46989.13745361523750338.9f82fce0-0554-4533-9a16-08b1a1db1d83.ff5d9e5d-95d3-45b2-b257-108423cfe9af",
+        "https://store-images.s-microsoft.com/image/apps.27135.13745361523750338.9f82fce0-0554-4533-9a16-08b1a1db1d83.1b1187f3-b1b6-4571-ad9e-de120326b4e4",
+        "https://store-images.s-microsoft.com/image/apps.54385.13745361523750338.9f82fce0-0554-4533-9a16-08b1a1db1d83.348aa19a-21f1-4d47-b1cf-1ec7d4e6e333"
       ]
     },
     "platforms": {
@@ -1314,6 +1359,11 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/hOF3Nh9sXYjZWaT7foqbVdEATfrYUK95hz95NcZBzxtyYoeT0lVV6GL_ko0iO7xwoPc=w600-h1200",
         "https://play-lh.googleusercontent.com/8dpgYHaCeZbQW_TTDNdcKmlJlxjjsmO8o90lRbIlVlbPW67grOZ7cOqXmHm8YRsOA9I=w600-h1200",
         "https://play-lh.googleusercontent.com/9FS0eDnM7c4B20UovPfqNnAfnWLi4ERgluMr8KCFVuFk65I4Ar3ov6QJdZ9NLuJEDg=w600-h1200"
+      ],
+      "windows": [
+        "https://store-images.s-microsoft.com/image/apps.30066.13510798886206619.357990fc-8012-4136-bff8-8f2e41b5d861.163018e5-3a0f-432c-b52c-2d245bd0d030",
+        "https://store-images.s-microsoft.com/image/apps.31228.13510798886206619.a7e6bc16-4166-4a10-8599-66a675b44f26.5d0c6da2-e4ec-4415-900c-a09ed5943ada",
+        "https://store-images.s-microsoft.com/image/apps.39253.13510798886206619.e9bbc2bc-973b-43b8-82d5-84232cc4018b.052915b2-8e67-4c05-99c9-a2b7d8a88a98"
       ]
     },
     "platforms": {
@@ -1326,31 +1376,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "name": "Notezilla",
     "description": "Notezilla is a notes and reminders app that syncs with Notezilla on Windows which is a leading, highly rated sticky notes app.",
     "downloads": "10K + downloads (Google Play + App Store)",
-    "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1a/1a/48/1a1a4873-7a26-7059-c6d4-d16ac15150c6/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+    "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/65/41/ac/6541ac28-4165-4b65-7286-75c4445076c5/icon_logo-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
-      "iphone": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/11/2f/5d112f23-a3f7-1b71-a918-bada93676bd9/2c694f1f-c6ee-4f1e-bb23-382037df2d14_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_12.10.00.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dd/25/5d/dd255d2f-7190-5caf-b2f0-6e4f9c877fb2/631cfd44-3d29-4be5-88b8-bc88524c783f_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_12.10.35.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/69/19/02/691902e2-ec51-b575-4c6d-fe1d189fca56/fec523d6-c555-4c58-bec7-da5b01264962_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_12.21.29.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/24/cc/37/24cc3756-00ac-eebd-c0e3-3356fd49e2e5/0c27d796-ee24-41f3-a3d8-ac22ab6ee705_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_13.38.34.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6b/95/54/6b9554e5-c843-c591-ca08-df694a05f8ac/ff76ef85-febd-41b8-84f7-d9090742cc4c_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_18.42.09.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/cd/ba/51cdba1c-e3f6-5ba2-f6bb-9a472e93c62a/cca227ed-0082-47f6-978c-13a1a9501b81_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_13.37.23.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/06/e6/73/06e673d1-b26e-9084-d3ae-0814f1d7c31b/8a171533-0207-4630-95d9-fed384a0f064_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_12.44.46.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0d/ef/17/0def173e-d200-c4cb-d902-afb8bd33e476/251e8e2f-0421-4dc4-91e5-97c8d134100e_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_12.47.04.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/43/a9/2143a9ab-ef72-9862-b746-cc407891fa06/0a342e5a-e87a-448c-a0a5-b415ec7cae42_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_18.42.20.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/aa/cc/69aaccbc-60e2-ebdc-9438-53110e5073b7/2cbb8687-6139-4e3a-a267-8c53e3b6ca75_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_12.44.11.png/392x696bb.png"
-      ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/13/94/55/13945504-f787-6477-41b0-b791b66cc882/66b4f38d-2095-4df2-a631-d9f76c636b4e_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.14.23.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f7/d6/17/f7d6178d-8ca6-37f1-00fe-a30db2b086a9/524e566d-3fcb-4867-8e38-d5b9200f63f9_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.14.54.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f6/26/8f/f6268f74-1853-9347-a8c6-c6f449d403bd/171972d0-60c2-4024-8e5c-adb987f5ea1f_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.14.30.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/62/7b/9e/627b9eae-88c1-9fdb-7400-407c55fed1a5/b0892e6d-8a09-4171-ac16-179f50c21542_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.02.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f0/85/aa/f085aa7a-0558-e250-a185-2c704897ca04/351e2d24-f338-4b18-8561-03f239c4110f_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.15.42.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a1/20/37/a12037a3-3d50-b706-944d-c0872e7e6ac1/2a4811b4-f253-4886-982f-65433a076250_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.17.08.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4a/91/07/4a910786-f2dc-dd93-0d13-abe01f93fb6b/81345e4c-0928-4fb1-9475-623e968071e9_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.45.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/c6/91/9fc691c8-d824-fde8-f1c4-23fdc4aba508/0bdc65e1-a701-4385-84af-3232eb014733_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.15.35.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/06/2f/48/062f48ad-c27f-fd7c-b831-ce1dbe5cbf98/12f2e4bd-acf9-4046-bf4f-a71ae5fb9c97_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.30.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/2d/4b/8f2d4b7e-c5fb-3f13-c3ef-47f92b5015b4/10101dea-14a3-4463-8b75-bf5b694b7e0b_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.24.png/576x768bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1a/d5/cb/1ad5cbf1-1d9d-06f9-1134-187e73246638/75c9f1af-9509-4a70-be3b-d3a678ba134c_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.14.23.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/34/7f/5c/347f5c4d-9375-3031-f787-f4741b3648a3/95ccc095-c54d-41aa-8d32-83a300ea1f87_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.14.54.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7a/61/87/7a6187c0-3e9b-094c-e6a4-a35fb51e6301/638814b8-98fc-4eb1-a3bc-5899d73d3282_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.14.30.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/be/96/99/be96994f-1f08-f064-15b3-1bc8dfde5125/c286d677-f5e2-4cbb-b6f8-b635d72dc83a_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.02.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ef/e8/2f/efe82f78-5344-1301-013d-b10d24c8fe54/c8d46b3d-bb8c-4279-9d17-5e19177f5fc6_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.15.42.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/76/52/68/765268ef-0afe-d687-d945-bd5bb9f92483/510f02ab-bbc5-4e38-889d-3db5525aa088_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.17.08.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ed/8c/b5/ed8cb550-fb18-4677-20e0-d3b709ddd735/23610514-6dc4-4e2c-97b5-a80fed7646d0_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.45.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/41/9f/38/419f38fb-43db-23b4-7e13-5c1903902ad2/9622f920-5c66-414b-8a68-97fad2b19556_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.15.35.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/12/59/b7/1259b76b-63be-959d-aa9b-17c2a4753eec/5b4a43af-cad1-443e-b8a1-5e634dc7ae98_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.24.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/aa/82/b4/aa82b494-c52e-71d7-a6cb-eef19bc7e877/4ef65965-4c90-4c71-b9c3-34932763c6b1_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.30.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/DN_oIJhDU6oDEajERs_Xy7KM7jtMZQcFi08nXeSuQXPnlgZUB9vpm2qyf4Ggplc8ec0=w600-h1200",
@@ -1405,18 +1443,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "downloads": "100+ (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/85/f4/36/85f43632-a712-8d31-666e-859e6b459bcd/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
-      "iphone": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/88/0e/ca/880eca2e-ae0e-3cf3-49c9-3dd618a37d3c/login.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/45/94/8a/45948ab8-055d-b8ef-7a95-187b725812e6/22484725-ae24-4cc0-82cb-182692f26724_ss_startpage.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d0/05/9b/d0059bc3-7a0e-f4d7-1d32-667699a12012/occasionpage_newyears.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1b/d8/53/1bd85388-1fc6-c159-54f7-6b8a480ce18f/invitation.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/86/50/41/865041f6-3926-78a9-63f6-cafefb1b71c7/guestlist.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f7/11/95/f7119500-436a-8eab-954c-ab26d78e5f51/chats.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9d/79/d1/9d79d1c0-c730-cda9-fc53-34c61f4b4ba5/chat.jpg/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0f/70/5e/0f705e55-05cc-93e2-08b4-6dc2c880e75c/wishlist.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2b/d3/b5/2bd3b589-503d-80af-3303-ae144ed8b8d5/gp2.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6b/7e/9d/6b7e9d5d-f1ca-fcb6-4551-497c4ac7945c/gp1.png/392x696bb.png"
-      ],
       "android": [
         "https://play-lh.googleusercontent.com/7aIl0fdhDZ78mMcwVv11vLwQGGU3rkOHvWTV72r6CVV56oXwAw5TSQN_gT4RNfF6=w600-h1200",
         "https://play-lh.googleusercontent.com/uFAkg8cmwbTUnmOE41vUszU_BBdl0M_GKNfHpLw1FTb4TcO_wjZCFnNl9XRonikyQ-U=w600-h1200",
@@ -1638,6 +1664,18 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d3/26/be/d326be82-5853-1207-0fef-f599c3d4c538/Screenshot8.png/576x768bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/5b/28/ac5b2875-34f2-bc32-0a17-faa6c4589c3a/Screenshot9.png/576x768bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/62/bc/af/62bcaf4c-8a01-cbcc-a930-feeae786bd28/Screenshot10.png/576x768bb.png"
+      ],
+      "windows": [
+        "https://store-images.s-microsoft.com/image/apps.33859.13843632245237148.1f09a477-c5e8-4ea1-a88a-2a3c96fe217a.a41f06fe-caf2-41ec-926c-320e6c3f2738",
+        "https://store-images.s-microsoft.com/image/apps.668.13843632245237148.1f09a477-c5e8-4ea1-a88a-2a3c96fe217a.d4bd2f2f-60ed-409c-803d-e17f9b1e2e16",
+        "https://store-images.s-microsoft.com/image/apps.13912.13843632245237148.1f09a477-c5e8-4ea1-a88a-2a3c96fe217a.749eab05-acd7-4cf6-a083-4a333a78ca02",
+        "https://store-images.s-microsoft.com/image/apps.2652.13843632245237148.1f09a477-c5e8-4ea1-a88a-2a3c96fe217a.da543707-0796-4dee-a8b0-272783ed540c",
+        "https://store-images.s-microsoft.com/image/apps.16044.13843632245237148.1f09a477-c5e8-4ea1-a88a-2a3c96fe217a.c335c5b0-b2dc-4e64-8690-be7b47d812ec",
+        "https://store-images.s-microsoft.com/image/apps.63386.13843632245237148.1f09a477-c5e8-4ea1-a88a-2a3c96fe217a.d7d1c943-67c8-449b-9506-6fa548235f20",
+        "https://store-images.s-microsoft.com/image/apps.15002.13843632245237148.1f09a477-c5e8-4ea1-a88a-2a3c96fe217a.98c5a655-e19a-491a-9936-a7c589c9378c",
+        "https://store-images.s-microsoft.com/image/apps.25958.13843632245237148.1f09a477-c5e8-4ea1-a88a-2a3c96fe217a.7635c7b2-e304-4b32-921b-0d8a93016ea0",
+        "https://store-images.s-microsoft.com/image/apps.60285.13843632245237148.1f09a477-c5e8-4ea1-a88a-2a3c96fe217a.d074ea21-baa5-4e45-8b9b-946282d9918b",
+        "https://store-images.s-microsoft.com/image/apps.38389.13843632245237148.1f09a477-c5e8-4ea1-a88a-2a3c96fe217a.e0f78dd1-8f57-42f6-ae59-050ab6c6609f"
       ]
     },
     "platforms": {
@@ -2178,7 +2216,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/4aeSkKWmiI2J-x9N_m6QGHGmS7c_aQKcb_0qnqzQLci3vGzQmETI4RUlHOWutP-Bvwi0=w600-h1200",
         "https://play-lh.googleusercontent.com/_Nj_A4GsGOKgkcPxoa-hBHW97cPBFHMn96ZvTJnYozvOxqh13XvreQhhISUIue4NBQ=w600-h1200",
         "https://play-lh.googleusercontent.com/8LG102MCqhP6vRhGFR06GDQ1RqZcpFqutIjp5hBJuaC1Q8oWBx5rzVvt99zpS5wxlDa5=w600-h1200",
-        "https://play-lh.googleusercontent.com/6oiwjOhMOBx803K-16ONntMg6MDR6XBQUNFyorKDnglrKOh_KT41uCV27_4DBv6PRHc=w600-h1200",
         "https://play-lh.googleusercontent.com/1uIXELr0ctYqq__VPIk64zg72XUIdrDoo8hRxE7Jp5sd3x8AG_gsVNopZxedtyN3k7s=w600-h1200",
         "https://play-lh.googleusercontent.com/xTnMSxLR06p0_7qJn7SdlD1t0M21bAVYpm_RwiKDo3tWi4xg6W_gZRzhroY3S3oLBuQ=w600-h1200",
         "https://play-lh.googleusercontent.com/Vk9ojqCxBthJpvxiI74EJ6F0ysF8uWwkxpByAV3f-Wl1pGyilGoYaJvOk0vjQfMA-w=w600-h1200",
@@ -2205,8 +2242,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "name": "World Explorer",
     "description": "Explore the globe like never before with World Explorer. Our AI-powered app gives you in-depth insights about any place worldwide, provides a comprehensive description, and recommends local attractions with your personalized travel guide.",
     "downloads": "100K+ (Microsoft Store + Google Play)",
-    "iconUrl": null,
-    "screenshots": {},
+    "iconUrl": "https://store-images.s-microsoft.com/image/apps.55011.14082094081963863.ec7afad9-f2a7-464f-a7d5-8a16f9568aa5.085bb48a-8fd8-4e4b-9ed4-45ad1143cf03",
+    "screenshots": {
+      "windows": [
+        "https://store-images.s-microsoft.com/image/apps.881.14082094081963863.e7c5b809-5ba5-4d4e-ae20-99bb2892684d.6b129c79-d3c7-4926-9abf-f93f2efd95df",
+        "https://store-images.s-microsoft.com/image/apps.61393.14082094081963863.e7c5b809-5ba5-4d4e-ae20-99bb2892684d.cb7b9dd3-df4c-4b05-bccf-54f6df7a8335",
+        "https://store-images.s-microsoft.com/image/apps.55177.14082094081963863.e7c5b809-5ba5-4d4e-ae20-99bb2892684d.dca74b93-3f98-4204-ad29-1dc01359a9bd"
+      ]
+    },
     "platforms": {
       "website": "https://world-explorer.azurewebsites.net",
       "android": "https://play.google.com/store/apps/details?id=com.vladislavantonyuk.worldexplorer",

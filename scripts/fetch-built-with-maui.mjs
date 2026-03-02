@@ -321,6 +321,38 @@ async function fetchGooglePlayData(packageId) {
   return { icon: null, screenshots: {} };
 }
 
+async function fetchWindowsStoreData(windowsUrl) {
+  try {
+    const res = await fetch(windowsUrl, {
+      signal: AbortSignal.timeout(10000),
+      redirect: 'follow',
+      headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' },
+    });
+    if (!res.ok) return { icon: null, screenshots: {} };
+    const html = await res.text();
+
+    // Extract icon from embedded JSON
+    const iconMatch = html.match(/"iconUrl":"(https:\/\/store-images\.s-microsoft\.com\/image\/[^"]+)"/);
+    const icon = iconMatch ? iconMatch[1] : null;
+
+    // Extract screenshots from embedded JSON array
+    const screenshots = {};
+    const ssMatch = html.match(/"screenshots":(\[[\s\S]*?\])\s*[,}]/);
+    if (ssMatch) {
+      const ss = JSON.parse(ssMatch[1]);
+      const windowsUrls = ss
+        .filter(s => s.url && /^https:\/\/store-images\.s-microsoft\.com\//.test(s.url))
+        .map(s => s.url);
+      if (windowsUrls.length > 0) screenshots.windows = windowsUrls;
+    }
+
+    return { icon, screenshots };
+  } catch {
+    // Silently skip
+  }
+  return { icon: null, screenshots: {} };
+}
+
 async function fetchStoreDataForApp(app) {
   let icon = null;
   let screenshots = {};
@@ -351,6 +383,13 @@ async function fetchStoreDataForApp(app) {
       if (!icon && gpData.icon) icon = gpData.icon;
       Object.assign(screenshots, gpData.screenshots);
     }
+  }
+
+  // Try Microsoft Store for missing icon and Windows screenshots
+  if (app.platforms.windows && /apps\.microsoft\.com|microsoft\.com\/store/i.test(app.platforms.windows)) {
+    const winData = await fetchWindowsStoreData(app.platforms.windows);
+    if (!icon && winData.icon) icon = winData.icon;
+    Object.assign(screenshots, winData.screenshots);
   }
 
   return { icon, screenshots };
@@ -422,6 +461,7 @@ export type BuiltWithMauiApp = {
     ipad?: string[];
     android?: string[];
     androidTablet?: string[];
+    windows?: string[];
   };
   platforms: {
     ios?: string;

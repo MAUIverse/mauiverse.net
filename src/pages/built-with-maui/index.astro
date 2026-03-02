@@ -377,7 +377,7 @@ const clientApps = apps.map((app) => ({
 
         // Screenshots — with device category tabs
         var screenshotCategories = app.screenshots || {};
-        var categoryLabels = { iphone: 'iPhone', ipad: 'iPad', android: 'Android', androidTablet: 'Android Tablet' };
+        var categoryLabels = { iphone: 'iPhone', ipad: 'iPad', android: 'Android', androidTablet: 'Android Tablet', windows: 'Windows' };
         var categoryKeys = Object.keys(screenshotCategories).filter(function(k) { return screenshotCategories[k].length > 0; });
 
         if (categoryKeys.length > 0) {
