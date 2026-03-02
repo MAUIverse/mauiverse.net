@@ -38,6 +38,10 @@ const clientApps = apps.map((app) => ({
   screenshots: app.screenshots,
   platforms: app.platforms,
 }));
+
+// Safe JSON for embedding in HTML — escape < to prevent </script> breakout
+const safeClientAppsJson = JSON.stringify(clientApps).replace(/</g, '\\u003c');
+const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c');
 ---
 
 <BaseLayout
@@ -265,8 +269,12 @@ const clientApps = apps.map((app) => ({
     </div>
   </div>
 
-  <script is:inline define:vars={{ clientApps, platformMeta }}>
+  <script is:inline type="application/json" id="app-data" set:html={safeClientAppsJson}></script>
+  <script is:inline type="application/json" id="platform-meta-data" set:html={safePlatformMetaJson}></script>
+  <script is:inline>
     (() => {
+      const clientApps = JSON.parse(document.getElementById('app-data').textContent);
+      const platformMeta = JSON.parse(document.getElementById('platform-meta-data').textContent);
       const searchInput = document.querySelector('[data-app-search-input]');
       const clearButton = document.querySelector('[data-app-search-clear]');
       const filterCheckboxes = Array.from(document.querySelectorAll('[data-app-filter-checkbox]'));
@@ -382,6 +390,7 @@ const clientApps = apps.map((app) => ({
           var key = entry[0], url = entry[1];
           var meta = platformMeta[key];
           if (!meta) return;
+          if (!/^https?:\/\//i.test(url)) return; // only allow http(s) URLs
           var a = document.createElement('a');
           a.href = url;
           a.target = '_blank';
