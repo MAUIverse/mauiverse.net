@@ -385,22 +385,18 @@ const clientApps = apps.map((app) => ({
           modalScreenshotTabs.innerHTML = '';
           modalScreenshots.innerHTML = '';
 
-          // Build tab buttons (skip if only one category)
-          if (categoryKeys.length > 1) {
-            modalScreenshotTabs.classList.remove('hidden');
-            categoryKeys.forEach(function(key, i) {
-              var btn = document.createElement('button');
-              btn.type = 'button';
-              btn.textContent = (categoryLabels[key] || key) + ' (' + screenshotCategories[key].length + ')';
-              btn.className = 'rounded-full px-3 py-1 text-xs font-medium transition whitespace-nowrap ' +
-                (i === 0 ? 'bg-brand text-white' : 'bg-surface-alt text-muted hover:text-brand-dark');
-              btn.setAttribute('data-ss-tab', key);
-              btn.addEventListener('click', function() { switchTab(key); });
-              modalScreenshotTabs.appendChild(btn);
-            });
-          } else {
-            modalScreenshotTabs.classList.add('hidden');
-          }
+          // Build tab buttons (always show, even for single category)
+          modalScreenshotTabs.classList.remove('hidden');
+          categoryKeys.forEach(function(key, i) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.textContent = (categoryLabels[key] || key) + ' (' + screenshotCategories[key].length + ')';
+            btn.className = 'rounded-full px-3 py-1 text-xs font-medium transition whitespace-nowrap ' +
+              (i === 0 ? 'bg-brand text-white' : 'bg-surface-alt text-muted hover:text-brand-dark');
+            btn.setAttribute('data-ss-tab', key);
+            btn.addEventListener('click', function() { switchTab(key); });
+            modalScreenshotTabs.appendChild(btn);
+          });
 
           var renderScreenshots = function(urls) {
             modalScreenshots.innerHTML = '';
