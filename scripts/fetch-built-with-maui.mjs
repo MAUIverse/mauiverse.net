@@ -165,7 +165,7 @@ async function fetchIosData(iosUrl) {
     const urlRegex = /https:\/\/is\d+-ssl\.mzstatic\.com\/image\/thumb\/Purple[^"\\}\s)]*?\.(png|jpg)\//gi;
     let match;
     while ((match = urlRegex.exec(html)) !== null) {
-      if (/Placeholder|AppIcon|appicon/i.test(match[0])) continue;
+      if (/Placeholder|AppIcon|appicon|marketing/i.test(match[0])) continue;
       basePathSet.add(match[0]);
     }
 
