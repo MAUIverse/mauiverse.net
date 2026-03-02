@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const builtWithMauiSource = "https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md";
-export const builtWithMauiFetchedAt = "2026-03-02T19:45:58.047Z";
+export const builtWithMauiFetchedAt = "2026-03-02T20:00:37.990Z";
 
 export type BuiltWithMauiApp = {
   name: string;
@@ -289,8 +289,20 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "name": "CycleProCut",
     "description": "CycleProCut is a powerful cycling app built for riders who want to train smarter and push harder. Create personalized training plans, simulate performance outcomes, and analyze advanced ride metrics. With intuitive setup, integrated fitness tools, and no login required, CycleProCut transforms your pocket into a pro-level cycling coach.",
     "downloads": "1K+ downloads",
-    "iconUrl": "https://play-lh.googleusercontent.com/laeyzzFA-f2Cl1nmSDrEKPhMILEaZub--YNOROQYmDJ6U02IfRPxHVWTpmdfQSKX6SgO",
+    "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/41/d5/d9/41d5d925-e2da-1ff7-1463-777681096026/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/75/0d/df750db4-a1c4-9326-ddb0-6e1539a6b55e/iPhone_11_Pro_Max_Screenshot_1.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/a5/2c/80a52ce6-ccc6-da7f-2bac-b88dbbd90484/iPhone_11_Pro_Max_Screenshot_2.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bc/1c/27/bc1c27f1-b60c-09bb-76c9-f8471b50edee/iPhone_11_Pro_Max_Screenshot_3.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ab/87/a6/ab87a629-33ae-0184-7538-1bfa57b1eec4/iPhone_11_Pro_Max_Screenshot_4.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d7/5e/80/d75e8013-8802-69a7-f616-04fa82fac7ff/iPhone_11_Pro_Max_Screenshot_5.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c0/02/15/c00215bb-1cc4-0c00-57f5-a868bf684fa0/iPhone_11_Pro_Max_Screenshot_6.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8c/0e/96/8c0e9604-52cb-b179-cf88-c6568ea75046/iPhone_11_Pro_Max_Screenshot_7.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/24/c5/52/24c5520a-3d5e-300d-bb99-0744588c0e1b/iPhone_11_Pro_Max_Screenshot_8.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/49/23/2149232d-0c5b-daac-94f0-13a1f2523a69/iPhone_11_Pro_Max_Screenshot_9.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/1e/0e/281e0e2a-0146-c2b8-bf6a-a7e8704696e6/iPhone_11_Pro_Max_Screenshot_10.png/392x696bb.png"
+      ],
       "android": [
         "https://play-lh.googleusercontent.com/hz3BHHcBtI4tI17sSzQT64g0TA_yOKUNSqfmx8VESDZiWG-nbUIIYoNrfeMDPXiITRA=w600-h1200",
         "https://play-lh.googleusercontent.com/6X6hXQRW9OaK8XTIJnBwt_z0TZ3AVyieCaJQoKrov0uz1bLkfeFF9UWCkHe_J5xH_Ug=w600-h1200",
@@ -630,8 +642,17 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "name": "GnollHack",
     "description": "GnollHack is a remastered and enhanced version of the classic roguelike game NetHack, one of the most iconic games developed in 1980s and 1990s.",
     "downloads": "10K+ downloads (Google Play)  ·  8K+ downloads (App Store)  ·  800+ downloads (Steam)",
-    "iconUrl": "https://play-lh.googleusercontent.com/BnSNKZoBCTzc7lAICG27mKe03fU80JFH7kRrDbKj3fO56_w7QBjIIDL4UsSkBNNPZ28",
+    "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6f/71/ea/6f71eadc-57e2-7b87-5424-cb2d7810a7b3/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4a/e4/96/4ae496f4-88c0-430c-d70b-fd972763901b/cc496801-eaf0-484a-9e7f-6d5d53cc348b_IMG_0716.PNG/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/99/eb/0e/99eb0e83-fe7e-1bab-7c70-bea9e696d27e/GH_APPSTORE_ASSETS_SCREENCAP_IPAD_001.jpg/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c7/8e/c8/c78ec81a-abdb-742e-11a7-2af441fe53de/GH_APPSTORE_ASSETS_SCREENCAP_IPAD_002.jpg/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0d/e1/4a/0de14a9b-3ebf-ace4-09b3-6c9a45cdb98f/GH_APPSTORE_ASSETS_SCREENCAP_IPAD_003.jpg/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/01/bb/7501bbdd-ed84-d314-0812-2da3bafc7ec8/GH_APPSTORE_ASSETS_SCREENCAP_IPAD_004.jpg/576x768bb.png"
+      ],
       "android": [
         "https://play-lh.googleusercontent.com/c_yKtvxw4RUOgbtp6Xft6D0wPSPyvISiPRuyC6z3ipNgQfQ9ZerahU8qpS2wSb7kHzv337VLiiWF-LF3Y4eE=w600-h1200",
         "https://play-lh.googleusercontent.com/hhVt9eODzIUGuwpMMx8LbDoaujoxP7v8wtNmZZBaHei20etnL4_KuWRHekhuyh-_xp-mzw44LxLYB3GrnAy9=w600-h1200",
@@ -830,7 +851,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "name": "Keyboardy",
     "description": "A desktop accessibility tool that allows users to type efficiently with one hand by dynamically reflecting keyboard keys, improving speed, reach, and accuracy.",
     "downloads": "+1K",
-    "iconUrl": null,
+    "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1f/7a/94/1f7a9493-4599-9c78-413e-111a4b8cc873/keyboardy_logo-1x_U007emarketing-0-6-0-85-220-0.png/512x512bb.png",
     "screenshots": {
       "ipad": [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1f/7a/94/1f7a9493-4599-9c78-413e-111a4b8cc873/keyboardy_logo-1x_U007emarketing-0-6-0-85-220-0.png/576x768bb.png",
@@ -1724,10 +1745,21 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "name": "STAmina Apnea Trainer",
     "description": "The best apnea app to improve the breath-holding time for freediving, scuba diving and spearfishing with 5 different apnea tables types.",
     "downloads": "50K+ (Google Play)",
-    "iconUrl": "https://play-lh.googleusercontent.com/VJl7Ac32JMTx1358zyA1Fc094d5G81Hb75eMSnhLIn9lgNBCJsf1x9YABNa4lc_RISE",
+    "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4f/65/7c/4f657c0f-eebb-da1b-775e-835beedfdd62/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/72/ff/50/72ff50e8-ff44-91a7-c36f-9e7bf0c431df/ffb011e7-de47-4c60-a746-822eea7d972a_iOS_screen_6.5_01.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/07/61/88/0761885d-4bae-1310-2c27-7e518eadfd3c/89a5a8ec-7267-4e2b-b141-0424af96286d_iOS_screen_6.5_07.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/8b/95/63/8b956370-f81c-d838-0e49-c04960b112a8/94bbf7c9-4ccd-47e4-bcb5-9186bb5c033f_iOS_screen_6.5_02.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/9e/2f/56/9e2f5641-af1d-b6ac-62d8-3440b03d5ed4/c603ef93-42b3-4b25-8826-fc62231b8d1d_iOS_screen_6.5_03.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/f4/a3/8f/f4a38f2e-194d-026b-8a77-013a2a1f2527/32d468f3-6957-45f5-8f41-0da11aaa0ace_iOS_screen_6.5_04.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleVideo114/v4/f5/f0/62/f5f0621e-a1b4-765c-d16e-f6ffbc19a52e/Jobf67f2f93-2201-47ac-ab65-9518827f8252-109180583-PreviewImage_preview_image_nonvideo_sdr-Time1612455028803.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/3b/3a/36/3b3a3611-747b-e2f9-92f4-ebf02c4fc8cf/915b1e72-2abc-4f37-8203-d3d30231ac85_iOS_screen_6.5_05.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/90/54/64/90546416-540f-c53a-55b6-ecff7c5fa069/31027fb8-6752-4d4a-91fe-ed758c321b96_iOS_screen_6.5_06.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/ab/c4/23/abc423bc-7247-deb7-d828-7c7ff9aab566/27222aac-6001-4903-bda0-ad7d89ff7643_iOS_screen_6.5_07.png/392x696bb.png"
+      ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/27/c1/56/27c156a6-1995-bc86-7836-89919da98f38/pr_source.png/576x768bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/85/6a/a5/856aa521-c6a6-e33e-f304-cdbf4cc2c934/pr_source.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/0KhydBKYBrbDZMtlCtIk0v1rYhd9X2-OS2gYlBqPGdx6Te_bkO2J1whJ9Qh2F6XQVGO9=w600-h1200",

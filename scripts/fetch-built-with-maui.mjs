@@ -124,21 +124,24 @@ function extractGooglePlayPackage(url) {
   return match ? match[1] : null;
 }
 
-// Quick iTunes API check for iPad screenshots only (web scraping misses dynamically loaded iPad galleries)
-async function fetchIpadScreenshotsFromApi(appId) {
+// iTunes API fallback for iPad screenshots and icon (web scraping misses dynamically loaded iPad galleries and some icons)
+async function fetchItunesApiFallback(appId) {
   try {
     const res = await fetch(`https://itunes.apple.com/lookup?id=${appId}`, {
       signal: AbortSignal.timeout(8000),
     });
-    if (!res.ok) return [];
+    if (!res.ok) return { icon: null, ipadScreenshots: [] };
     const data = await res.json();
-    if (data.results?.[0]?.ipadScreenshotUrls?.length > 0) {
-      return data.results[0].ipadScreenshotUrls;
-    }
+    const result = data.results?.[0];
+    if (!result) return { icon: null, ipadScreenshots: [] };
+    return {
+      icon: result.artworkUrl512 || result.artworkUrl100 || null,
+      ipadScreenshots: result.ipadScreenshotUrls || [],
+    };
   } catch {
     // Silently skip
   }
-  return [];
+  return { icon: null, ipadScreenshots: [] };
 }
 
 async function fetchIosData(iosUrl) {
@@ -327,12 +330,15 @@ async function fetchStoreDataForApp(app) {
     const iosData = await fetchIosData(app.platforms.ios);
     if (iosData.icon) icon = iosData.icon;
     Object.assign(screenshots, iosData.screenshots);
-    // iPad gallery is loaded dynamically — supplement via iTunes API if missing
-    if (!screenshots.ipad) {
+    // iTunes API fallback for missing icon and iPad screenshots
+    if (!icon || !screenshots.ipad) {
       const appId = extractIosAppId(app.platforms.ios);
       if (appId) {
-        const ipadUrls = await fetchIpadScreenshotsFromApi(appId);
-        if (ipadUrls.length > 0) screenshots.ipad = ipadUrls;
+        const apiFallback = await fetchItunesApiFallback(appId);
+        if (!icon && apiFallback.icon) icon = apiFallback.icon;
+        if (!screenshots.ipad && apiFallback.ipadScreenshots.length > 0) {
+          screenshots.ipad = apiFallback.ipadScreenshots;
+        }
       }
     }
   }
