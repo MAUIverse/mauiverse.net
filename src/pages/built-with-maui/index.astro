@@ -338,9 +338,9 @@ const clientApps = apps.map((app) => ({
         // Icon
         if (app.iconUrl) {
           var initials = getInitials(app.name);
-          modalIcon.innerHTML = '<div class="relative h-18 w-18">' +
-            '<div class="flex h-18 w-18 items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md">' + initials + '</div>' +
-            '<img alt="' + app.name + ' app icon" width="72" height="72" class="absolute inset-0 h-18 w-18 rounded-2xl shadow-md opacity-0 transition-opacity duration-300" />' +
+          modalIcon.innerHTML = '<div class="relative" style="width:4.5rem;height:4.5rem">' +
+            '<div class="flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md" style="width:4.5rem;height:4.5rem">' + initials + '</div>' +
+            '<img alt="' + app.name + ' app icon" width="72" height="72" class="absolute inset-0 rounded-2xl shadow-md opacity-0 transition-opacity duration-300" style="width:4.5rem;height:4.5rem" />' +
             '</div>';
           var modalImg = modalIcon.querySelector('img');
           var modalPlaceholder = modalIcon.querySelector('[class*="from-brand"]');
@@ -348,7 +348,7 @@ const clientApps = apps.map((app) => ({
           modalImg.onerror = function() { modalImg.remove(); };
           modalImg.src = app.iconUrl;
         } else {
-          modalIcon.innerHTML = '<div class="flex h-18 w-18 items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md">' + getInitials(app.name) + '</div>';
+          modalIcon.innerHTML = '<div class="flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md" style="width:4.5rem;height:4.5rem">' + getInitials(app.name) + '</div>';
         }
 
         // Text
