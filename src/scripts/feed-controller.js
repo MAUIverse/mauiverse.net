@@ -97,13 +97,13 @@
     if (!entry.authorKey || !entry.authorProfileHref) return '';
     const img = `<img src="${esc(entry.authorImageSrc)}" alt="" width="24" height="24" class="h-6 w-6 rounded-full inline-block align-middle" loading="lazy" />`;
     const name = esc(entry.authorLabel);
-    const linked = `<a href="${esc(entry.authorProfileHref)}" class="inline-flex items-center gap-1.5 hover:underline" aria-label="View ${name}'s profile">${img}<span>${name}</span></a>`;
-    return `${linked}<span class="text-muted-light" aria-hidden="true">·</span>`;
+    const linked = `<a href="${esc(entry.authorProfileHref)}" class="inline-flex items-center gap-1.5 hover:underline mr-2 mt-1" aria-label="View ${name}'s profile">${img}<span>${name}</span></a>`;
+    return `${linked}<span class="text-muted-light mr-2 mt-1" aria-hidden="true">·</span>`;
   }
 
   function renderCTA(entry) {
     const btnClass =
-      'inline-flex w-fit items-center justify-center rounded-full border-2 border-brand-extra bg-brand-extra px-6 py-2.5 text-sm font-bold text-white transition hover:bg-brand-extraDark hover:border-brand-extraDark';
+      'inline-flex w-fit items-center justify-center rounded-full font-semibold text-white transition-all duration-200 bg-brand-extra hover:bg-brand-extraDark active:bg-brand-extraDark px-6 py-2.5 text-sm';
     if (entry.isInternal) {
       const label = entry.isEvent ? 'View details' : entry.hasBody ? 'Read more' : 'Watch';
       return `<a href="/community-feed/${esc(entry.id)}/" class="${btnClass}">${label}</a>`;
@@ -121,22 +121,23 @@
 
   function renderVideoThumb(entry) {
     if (!entry.videoId) return '';
-    return `<a href="/community-feed/${esc(entry.id)}/" class="flex-shrink-0 block w-64 sm:w-72 rounded overflow-hidden border border-edge aspect-video" aria-hidden="true"><img src="${esc(entry.videoThumbnailUrl)}" alt="" width="320" height="180" class="h-full w-full object-cover" loading="lazy" /></a>`;
+    return `<a href="/community-feed/${esc(entry.id)}/" class="order-1 sm:order-2 flex-shrink-0 block w-full sm:w-72 rounded overflow-hidden" aria-hidden="true"><img src="${esc(entry.videoThumbnailUrl)}" alt="" width="320" height="180" class="w-full object-cover object-center" loading="lazy" /></a>`;
   }
 
   /* ------------------------------------------------------------------ */
   /*  Column card (matches FeedEntries.astro)                           */
   /* ------------------------------------------------------------------ */
   function renderColumnCard(entry) {
-    const flexDir = entry.videoId ? 'flex-row gap-6' : 'flex-col';
+    const flexDir = entry.videoId ? 'flex-col gap-4 sm:flex-row sm:gap-6' : 'flex-col';
+    const contentOrder = entry.videoId ? 'order-2 sm:order-1' : '';
     return `
-      <li class="rounded-lg border border-edge bg-surface p-6 shadow-sm">
+      <li class="border-b border-edge/30 pb-8 last:border-0 hover-glow rounded-xl px-4 py-6 -mx-4">
         <div class="flex gap-3 ${flexDir}">
-          <div class="flex flex-1 flex-col gap-3 min-w-0">
+          <div class="flex flex-1 flex-col gap-3 min-w-0 ${contentOrder}">
             ${renderTitle(entry)}
             <p class="text-muted-light text-sm flex flex-wrap items-center gap-x-2 gap-y-1">
               ${renderAuthor(entry)}
-              <time datetime="${entry.dateISO}">${esc(entry.dateLabel)}</time>
+              <time class="mt-1" datetime="${entry.dateISO}">${esc(entry.dateLabel)}</time>
             </p>
             <p class="text-muted text-base">${esc(entry.description)}</p>
             ${renderCTA(entry)}

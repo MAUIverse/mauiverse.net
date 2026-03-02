@@ -6,7 +6,7 @@ date: "2026-02-26"
 author: "jfversluis"
 featuring: 
     - PureWeen
-contentType: "youtube"
+contentType: "video"
 ---
 
 In this video, Gerald Versluis sits down with Shane to explore PolyPilot, Shane’s ambitious project for orchestrating multiple AI coding agents from a single control surface. Built with .NET MAUI and Blazor, PolyPilot provides a cross-platform dashboard where you can spin up, coordinate, and monitor parallel Copilot agents working across different repositories and models.
