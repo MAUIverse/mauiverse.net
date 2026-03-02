@@ -21,6 +21,7 @@ const ICON_CONCURRENCY = 6;
 async function hasExistingDataset() {
   try {
     await access(TS_OUTPUT_PATH, constants.F_OK);
+    await access(MD_OUTPUT_PATH, constants.F_OK);
     return true;
   } catch {
     return false;
@@ -88,7 +89,11 @@ function parseAppsTable(markdown) {
   for (const line of lines) {
     const trimmed = line.trim();
     if (!trimmed.startsWith('|')) {
-      if (inTable) break;
+      if (inTable) {
+        // Allow blank lines within the table; break on headings or non-table content
+        if (trimmed === '' || trimmed.startsWith('#')) { if (trimmed.startsWith('#')) break; continue; }
+        break;
+      }
       continue;
     }
     inTable = true;
@@ -272,7 +277,7 @@ export type BuiltWithMauiApp = {
   };
 };
 
-export const builtWithMauiApps: BuiltWithMauiApp[] = ${appsLiteral} as const;
+export const builtWithMauiApps: BuiltWithMauiApp[] = ${appsLiteral};
 `;
 }
 

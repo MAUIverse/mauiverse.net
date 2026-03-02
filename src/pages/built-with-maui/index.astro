@@ -286,8 +286,7 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
         const query = searchInput.value.trim().toLowerCase();
         const selectedPlatforms = filterCheckboxes
           .filter((cb) => cb instanceof HTMLInputElement && cb.checked)
-          .map((cb) => cb instanceof HTMLInputElement ? cb.value : '')
-          .filter(Boolean);
+          .map((cb) => cb.value);
         let visible = 0;
 
         cards.forEach((card) => {
@@ -319,6 +318,8 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
       applyFilter();
 
       // ── Modal ──
+      var triggerElement = null;
+
       function getInitials(name) {
         return name.split(/[\s-]+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
       }
@@ -330,6 +331,8 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
       function openModal(index) {
         const app = clientApps[index];
         if (!app) return;
+
+        triggerElement = document.activeElement;
 
         // Icon
         if (app.iconUrl) {
@@ -386,6 +389,8 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
         modal.classList.add('hidden');
         modal.classList.remove('flex');
         document.body.style.overflow = '';
+        if (triggerElement && triggerElement.focus) triggerElement.focus();
+        triggerElement = null;
       }
 
       // Card click handlers
@@ -413,6 +418,18 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
       });
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+        // Focus trap: cycle Tab within modal when open
+        if (e.key === 'Tab' && !modal.classList.contains('hidden')) {
+          var focusable = modalContent.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+          if (focusable.length === 0) return;
+          var first = focusable[0];
+          var last = focusable[focusable.length - 1];
+          if (e.shiftKey) {
+            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+          } else {
+            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+          }
+        }
       });
     })();
   </script>
@@ -476,9 +493,6 @@ const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c
   </script>
 
   <style>
-    .h-18 { height: 4.5rem; }
-    .w-18 { width: 4.5rem; }
-
     /* Hide browser broken-image icon on not-yet-loaded / failed images */
     img[data-lazy-src]:not([src]) {
       visibility: hidden;
