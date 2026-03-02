@@ -1,7 +1,7 @@
 ---
 title: Apps built with .NET MAUI
 source: https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md
-fetchedAt: 2026-03-02T09:57:57.707Z
+fetchedAt: 2026-03-02T15:53:50.894Z
 ---
 
 ## Apps built with .NET MAUI
@@ -50,6 +50,7 @@ Do you want to add your own? Please feel free to [open a pull request](https://g
 | **Muslim Pillars** | Muslim Pillars is a free Islamic application that provides many features such as prayer times, Quran, and many more for free. | 10K+ (Google Play) | [Android](https://play.google.com/store/apps/details?id=com.AZEE.wquran&hl=en) [iOS](https://apps.apple.com/us/app/id1529761608?l=en-US) |
 | **My Car Service Car Manage** | A clean, simple, and powerful way to manage your car's health, fuel economy, and service history, all in one place for Android & Windows | 36K+ (Google Play)  710 (Windows store) |[Android](https://play.google.com/store/apps/details?id=com.MyCarService.mycarservice&hl=en) [Windows](https://apps.microsoft.com/detail/9nn4j90pxm9w?hl=en-US&gl=US) |
 | **Nomalys Origin** | Nomalys Origin is a mobile and desktop app that connects to your company's IT systems (CRM, ERP, BI, etc.) and gives you real-time, intuitive access to customer data, reports, and opportunities, helping teams boost efficiency and responsiveness on the go. | 15K + downloads (Google Play + App Store + MS Store) | [Android](https://play.google.com/store/apps/details?id=com.nomalys)  [iOS](https://apps.apple.com/fr/app/nomalys-origin/id380475770) [Windows](https://apps.microsoft.com/detail/9nblggh1zmj8) |
+| **Notezilla** | Notezilla is a notes and reminders app that syncs with Notezilla on Windows which is a leading, highly rated sticky notes app.| 10K + downloads (Google Play + App Store) | [Android](https://play.google.com/store/apps/details?id=com.conceptworld.notezilla)  [iOS](https://apps.apple.com/us/app/notezilla-notes-reminders/id964449712) |
 | **OVPay** | The OVPay app is used for public transportation payments in the Netherlands. | 100K+ downloads (Google Play) | [Website](https://www.ovpay.nl/en) [Android](https://play.google.com/store/apps/details?id=nl.tls.ovpay&hl=en) [iOS](https://apps.apple.com/nl/app/ovpay/id1542164084?l=en-US) |
 | **PartyFellow** | An event-planning app designed to streamline invitations, gift coordination, and RSVPs for events like birthdays, weddings, and more. Built with .NET MAUI and Azure. | 100+ (Google Play & App Store) | [iOS](https://apps.apple.com/app/id6503934962) [Android](https://play.google.com/store/apps/details?id=se.arcticfusion.partyfellow) [Website](https://partyfellow.com) |
 | **Podcasts Player and tracker** | Podcast Tracker is the best way to manage your podcast library on phone or tablet! | 1M+ downloads (Google Play) | [Android](https://play.google.com/store/apps/details?id=com.jonathanantoine.Podcasts&hl=en) [iOS](https://apps.apple.com/bb/app/podcasts-tracker/id1450382384?l=en-US) |

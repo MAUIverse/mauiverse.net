@@ -1,32 +1,202 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { access, mkdir, writeFile } from 'node:fs/promises';
+import { constants } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 const SOURCE_URL =
   'https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md';
-const OUTPUT_PATH = resolve(process.cwd(), 'src/content/built-with-maui/apps.md');
+const MD_OUTPUT_PATH = resolve(process.cwd(), 'src/content/built-with-maui/apps.md');
+const TS_OUTPUT_PATH = resolve(process.cwd(), 'src/data/built-with-maui-apps.generated.ts');
 const SECTION_HEADING = '## Apps built with .NET MAUI';
+
+const forceRefresh = /^(1|true|yes)$/i.test(
+  process.env.BUILT_WITH_MAUI_SYNC_FORCE_REFRESH ?? ''
+);
+
+const ICON_CONCURRENCY = 6;
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+
+async function hasExistingDataset() {
+  try {
+    await access(TS_OUTPUT_PATH, constants.F_OK);
+    return true;
+  } catch {
+    return false;
+  }
+}
 
 function extractAppsSection(markdown) {
   const start = markdown.indexOf(SECTION_HEADING);
   if (start === -1) {
     throw new Error(`Could not find section heading "${SECTION_HEADING}".`);
   }
-
   const rest = markdown.slice(start);
   const nextHeadingMatch = rest.slice(SECTION_HEADING.length).match(/\n##\s+/);
   const end =
     nextHeadingMatch === null
       ? markdown.length
       : start + SECTION_HEADING.length + nextHeadingMatch.index + 1;
-
   return markdown.slice(start, end).trim();
 }
 
 function normalizeNestedLinks(markdown) {
-  // Upstream occasionally contains nested markdown links in a cell:
-  // [label]([https://foo](https://bar)) -> [label](https://bar)
   return markdown.replace(/\]\(\[[^\]]+\]\((https?:\/\/[^)\s]+)\)\)/g, ']($1)');
 }
+
+// ---------------------------------------------------------------------------
+// Parse the markdown table into structured data
+// ---------------------------------------------------------------------------
+
+function parseTableRow(row) {
+  // Split on | but ignore the leading/trailing empties
+  const cells = row.split('|').map((c) => c.trim()).filter((_, i, a) => i > 0 && i < a.length);
+  if (cells.length < 4) return null;
+
+  const [rawName, description, downloads, rawLinks] = cells;
+
+  // Extract bold app name: **Name**
+  const nameMatch = rawName.match(/\*\*(.+?)\*\*/);
+  const name = nameMatch ? nameMatch[1].trim() : rawName.trim();
+  if (!name) return null;
+
+  // Parse platform links from the "More information" cell
+  const platforms = {};
+  const linkRegex = /\[\s*<img[^>]*src="assets\/([^"./]+)\.png"[^>]*>\s*\]\((https?:\/\/[^)\s]+)\)/gi;
+  let match;
+  while ((match = linkRegex.exec(rawLinks)) !== null) {
+    const key = match[1].toLowerCase();
+    const url = match[2];
+    if (['ios', 'android', 'windows', 'website', 'github'].includes(key)) {
+      platforms[key] = url;
+    }
+  }
+
+  return {
+    name,
+    description: description.trim(),
+    downloads: downloads.trim(),
+    iconUrl: null,
+    platforms,
+  };
+}
+
+function parseAppsTable(markdown) {
+  const lines = markdown.split('\n');
+  const apps = [];
+  let inTable = false;
+  let headerSkipped = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed.startsWith('|')) {
+      if (inTable) break; // end of table
+      continue;
+    }
+    inTable = true;
+    // Skip header row and separator row
+    if (!headerSkipped) {
+      if (trimmed.includes('---')) {
+        headerSkipped = true;
+      }
+      continue;
+    }
+    const app = parseTableRow(trimmed);
+    if (app) apps.push(app);
+  }
+
+  return apps;
+}
+
+// ---------------------------------------------------------------------------
+// Fetch app icons from stores
+// ---------------------------------------------------------------------------
+
+function extractIosAppId(url) {
+  const match = url.match(/\/id(\d+)/);
+  return match ? match[1] : null;
+}
+
+function extractGooglePlayPackage(url) {
+  const match = url.match(/[?&]id=([^&]+)/);
+  return match ? match[1] : null;
+}
+
+async function fetchIosIcon(appId) {
+  try {
+    const res = await fetch(`https://itunes.apple.com/lookup?id=${appId}`, {
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data.results && data.results.length > 0) {
+      return data.results[0].artworkUrl512 ?? data.results[0].artworkUrl100 ?? null;
+    }
+  } catch {
+    // Silently skip
+  }
+  return null;
+}
+
+async function fetchGooglePlayIcon(packageId) {
+  try {
+    const res = await fetch(
+      `https://play.google.com/store/apps/details?id=${packageId}&hl=en`,
+      { signal: AbortSignal.timeout(8000) }
+    );
+    if (!res.ok) return null;
+    const html = await res.text();
+    // Extract og:image meta tag
+    const ogMatch = html.match(/<meta\s+property="og:image"\s+content="([^"]+)"/i)
+      ?? html.match(/<meta\s+content="([^"]+)"\s+property="og:image"/i);
+    if (ogMatch) return ogMatch[1];
+  } catch {
+    // Silently skip
+  }
+  return null;
+}
+
+async function fetchIconForApp(app) {
+  // Try iOS first (iTunes API is more reliable)
+  if (app.platforms.ios) {
+    const appId = extractIosAppId(app.platforms.ios);
+    if (appId) {
+      const icon = await fetchIosIcon(appId);
+      if (icon) return icon;
+    }
+  }
+  // Fall back to Google Play
+  if (app.platforms.android) {
+    const packageId = extractGooglePlayPackage(app.platforms.android);
+    if (packageId) {
+      const icon = await fetchGooglePlayIcon(packageId);
+      if (icon) return icon;
+    }
+  }
+  return null;
+}
+
+async function fetchAllIcons(apps) {
+  // Process in batches to avoid overwhelming APIs
+  const results = [...apps];
+  for (let i = 0; i < results.length; i += ICON_CONCURRENCY) {
+    const batch = results.slice(i, i + ICON_CONCURRENCY);
+    const icons = await Promise.all(batch.map((app) => fetchIconForApp(app)));
+    for (let j = 0; j < batch.length; j++) {
+      results[i + j] = { ...results[i + j], iconUrl: icons[j] };
+    }
+    if (i + ICON_CONCURRENCY < results.length) {
+      // Small delay between batches
+      await new Promise((r) => setTimeout(r, 200));
+    }
+  }
+  return results;
+}
+
+// ---------------------------------------------------------------------------
+// Generate the markdown content file (backward compat)
+// ---------------------------------------------------------------------------
 
 function replaceIconLinks(markdown) {
   const iconLabelMap = {
@@ -36,7 +206,6 @@ function replaceIconLinks(markdown) {
     website: 'Website',
     github: 'GitHub',
   };
-
   return markdown.replace(
     /\[\s*<img[^>]*src="assets\/([^"./]+)\.png"[^>]*>\s*\]\((https?:\/\/[^)\s]+)\)/gi,
     (_match, iconName, url) => {
@@ -47,28 +216,87 @@ function replaceIconLinks(markdown) {
   );
 }
 
+// ---------------------------------------------------------------------------
+// Build the generated TypeScript file
+// ---------------------------------------------------------------------------
+
+function buildTsOutput(apps) {
+  const fetchedAt = new Date().toISOString();
+  const appsLiteral = JSON.stringify(apps, null, 2);
+
+  return `// This file is generated by scripts/fetch-built-with-maui.mjs.
+// Do not edit manually.
+
+export const builtWithMauiSource = ${JSON.stringify(SOURCE_URL)};
+export const builtWithMauiFetchedAt = ${JSON.stringify(fetchedAt)};
+
+export type BuiltWithMauiApp = {
+  name: string;
+  description: string;
+  downloads: string;
+  iconUrl: string | null;
+  platforms: {
+    ios?: string;
+    android?: string;
+    windows?: string;
+    website?: string;
+    github?: string;
+  };
+};
+
+export const builtWithMauiApps: BuiltWithMauiApp[] = ${appsLiteral} as const;
+`;
+}
+
+// ---------------------------------------------------------------------------
+// Main
+// ---------------------------------------------------------------------------
+
 async function run() {
+  if (!forceRefresh && (await hasExistingDataset())) {
+    console.log(`Skipping fetch: ${TS_OUTPUT_PATH} already exists. Set BUILT_WITH_MAUI_SYNC_FORCE_REFRESH=true to re-fetch.`);
+    return;
+  }
+
+  console.log('Fetching built-with-maui data…');
   const response = await fetch(SOURCE_URL);
   if (!response.ok) {
     throw new Error(`Failed to fetch markdown: ${response.status} ${response.statusText}`);
   }
 
-  const markdown = await response.text();
-  const appsSection = replaceIconLinks(normalizeNestedLinks(extractAppsSection(markdown)));
-  const fetchedAt = new Date().toISOString();
+  const rawMarkdown = await response.text();
+  const normalized = normalizeNestedLinks(rawMarkdown);
+  const appsSection = extractAppsSection(normalized);
 
-  const output = `---
+  // Parse structured data from the raw table (before icon replacement)
+  let apps = parseAppsTable(appsSection);
+  console.log(`Parsed ${apps.length} apps from upstream table.`);
+
+  // Fetch icons from app stores
+  console.log('Fetching app store icons…');
+  apps = await fetchAllIcons(apps);
+  const iconCount = apps.filter((a) => a.iconUrl).length;
+  console.log(`Fetched icons for ${iconCount}/${apps.length} apps.`);
+
+  // Write generated TypeScript data
+  await mkdir(dirname(TS_OUTPUT_PATH), { recursive: true });
+  await writeFile(TS_OUTPUT_PATH, buildTsOutput(apps), 'utf8');
+  console.log(`Wrote ${TS_OUTPUT_PATH}`);
+
+  // Write markdown content file (backward compatibility)
+  const mdAppsSection = replaceIconLinks(appsSection);
+  const fetchedAt = new Date().toISOString();
+  const mdOutput = `---
 title: Apps built with .NET MAUI
 source: ${SOURCE_URL}
 fetchedAt: ${fetchedAt}
 ---
 
-${appsSection}
+${mdAppsSection}
 `;
-
-  await mkdir(dirname(OUTPUT_PATH), { recursive: true });
-  await writeFile(OUTPUT_PATH, output, 'utf8');
-  console.log(`Wrote ${OUTPUT_PATH}`);
+  await mkdir(dirname(MD_OUTPUT_PATH), { recursive: true });
+  await writeFile(MD_OUTPUT_PATH, mdOutput, 'utf8');
+  console.log(`Wrote ${MD_OUTPUT_PATH}`);
 }
 
 run().catch((error) => {

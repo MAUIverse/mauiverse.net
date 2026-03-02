@@ -1,30 +1,51 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getEntry, render } from 'astro:content';
+import { builtWithMauiApps } from '../../data/built-with-maui-apps.generated';
 
-const entry = await getEntry('built-with-maui', 'apps');
-
-if (!entry) {
-  throw new Error(
-    'Missing built-with-maui content. Run `npm run fetch:built-with-maui` before building.'
-  );
-}
-
-const { Content } = await render(entry);
+const apps = builtWithMauiApps;
 const sourceRepoUrl = 'https://github.com/jfversluis/built-with-maui';
+
+const platformFilters = [
+  { key: 'ios', label: 'iOS', icon: 'fa-brands fa-apple' },
+  { key: 'android', label: 'Android', icon: 'fa-brands fa-android' },
+  { key: 'windows', label: 'Windows', icon: 'fa-brands fa-windows' },
+  { key: 'github', label: 'Open Source', icon: 'fa-brands fa-github' },
+];
+
+const platformMeta: Record<string, { label: string; icon: string; colorClass: string }> = {
+  ios: { label: 'iOS', icon: 'fa-brands fa-apple', colorClass: 'bg-blue-500/10 text-blue-600 hover:bg-blue-500/20' },
+  android: { label: 'Android', icon: 'fa-brands fa-android', colorClass: 'bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20' },
+  windows: { label: 'Windows', icon: 'fa-brands fa-windows', colorClass: 'bg-sky-500/10 text-sky-600 hover:bg-sky-500/20' },
+  website: { label: 'Website', icon: 'fa-solid fa-globe', colorClass: 'bg-gray-500/10 text-gray-600 hover:bg-gray-500/20' },
+  github: { label: 'GitHub', icon: 'fa-brands fa-github', colorClass: 'bg-gray-500/10 text-gray-600 hover:bg-gray-500/20' },
+};
+
+function getInitials(name: string): string {
+  return name
+    .split(/[\s-]+/)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join('')
+    .toUpperCase();
+}
 ---
 
 <BaseLayout
   title="Built with MAUI | MAUIverse"
-  description="A list of real-world apps built with .NET MAUI."
+  description="Discover real-world apps built with .NET MAUI — from indie projects to enterprise solutions used by millions."
   allowPageScroll={true}
 >
   <section class="min-h-screen py-24 md:py-32 relative z-10">
     <div class="container mx-auto max-w-6xl px-6">
-      <div class="page-hero !px-0 !text-left">
-        <h1 class="text-gradient">Built with MAUI</h1>
-        <p class="subtitle !mx-0">
-          Real-world apps built with .NET MAUI.
+      <div class="fade-in">
+        <p class="mb-4 text-sm font-header font-bold uppercase tracking-[0.2em] text-brand">
+          App Showcase
+        </p>
+        <h1 class="mb-5 text-gradient text-4xl md:text-6xl font-header font-bold">
+          Built with MAUI
+        </h1>
+        <p class="mb-12 max-w-2xl text-lg text-muted leading-relaxed">
+          Real-world apps built with .NET MAUI&thinsp;&mdash;&thinsp;from indie side-projects to apps used by millions.
           <a
             href={sourceRepoUrl}
             target="_blank"
@@ -36,11 +57,195 @@ const sourceRepoUrl = 'https://github.com/jfversluis/built-with-maui';
         </p>
       </div>
 
-      <div class="divider-gradient mb-12"></div>
+      <div class="divider-gradient mb-10"></div>
 
-      <article class="reveal prose dark:prose-invert max-w-none prose-a:text-brand hover:prose-a:underline prose-headings:text-brand-dark prose-headings:font-header prose-img:rounded-xl">
-        <Content />
-      </article>
+      {/* ── Search & Filters ── */}
+      <div class="reveal mb-8">
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,24rem)_1fr] lg:items-start">
+          <div>
+            <label for="app-search" class="mb-2 block text-sm font-semibold text-brand-dark">
+              Search apps
+            </label>
+            <div class="relative">
+              <input
+                id="app-search"
+                type="text"
+                placeholder="Search by name or description…"
+                class="w-full rounded-md border border-edge/50 bg-surface-alt px-4 py-3 pr-12 text-base text-brand-dark placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                data-app-search-input
+              />
+              <button
+                type="button"
+                class="absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full p-2 text-muted transition hover:text-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                aria-label="Clear search"
+                data-app-search-clear
+              >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <fieldset data-app-filter-group>
+            <legend class="mb-2 text-sm font-semibold text-brand-dark">Platform:</legend>
+            <div class="flex flex-wrap gap-2">
+              {platformFilters.map((filter) => (
+                <label class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-edge/40 px-3 py-2 text-sm text-muted transition hover:border-brand/40 hover:text-brand">
+                  <input
+                    type="checkbox"
+                    value={filter.key}
+                    class="h-4 w-4 rounded border-edge text-brand focus:ring-brand"
+                    data-app-filter-checkbox
+                  />
+                  <i class={filter.icon} aria-hidden="true"></i>
+                  <span>{filter.label}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        </div>
+
+        <p class="mt-4 text-sm text-muted">
+          Showing <span data-app-visible-count class="font-semibold text-brand-dark">{apps.length}</span> of {apps.length} apps
+        </p>
+      </div>
+
+      {/* ── Card Grid ── */}
+      <ul
+        class="reveal grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        aria-label="Apps built with .NET MAUI"
+        data-app-grid
+      >
+        {apps.map((app) => (
+          <li
+            class="group hover-glow flex flex-col rounded-xl border border-edge/40 bg-surface p-5 transition"
+            data-app-card
+            data-search-text={`${app.name.toLowerCase()} ${app.description.toLowerCase()}`}
+            data-platforms={Object.keys(app.platforms).join(' ')}
+          >
+            {/* Card header: icon + name + downloads */}
+            <div class="mb-4 flex items-start gap-4">
+              {app.iconUrl ? (
+                <img
+                  src={app.iconUrl}
+                  alt={`${app.name} app icon`}
+                  width="56"
+                  height="56"
+                  class="h-14 w-14 flex-shrink-0 rounded-xl shadow-sm"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-lg font-bold text-brand shadow-sm">
+                  {getInitials(app.name)}
+                </div>
+              )}
+              <div class="min-w-0 flex-1">
+                <h2 class="text-lg font-semibold leading-tight text-brand-dark">
+                  {app.name}
+                </h2>
+                {app.downloads && (
+                  <p class="mt-1 text-xs text-muted">
+                    <i class="fa-solid fa-download mr-1 text-brand/60" aria-hidden="true"></i>
+                    {app.downloads}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Description */}
+            <p class="mb-5 flex-1 text-sm leading-relaxed text-muted line-clamp-3">
+              {app.description}
+            </p>
+
+            {/* Platform links */}
+            <div class="mt-auto flex flex-wrap gap-2">
+              {Object.entries(app.platforms).map(([key, url]) => {
+                const meta = platformMeta[key];
+                if (!meta) return null;
+                return (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition ${meta.colorClass}`}
+                  >
+                    <i class={meta.icon} aria-hidden="true"></i>
+                    {meta.label}
+                  </a>
+                );
+              })}
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <p class="mt-6 hidden text-base text-muted" data-app-no-results>
+        No apps found matching your criteria.
+      </p>
+
+      {/* ── Attribution ── */}
+      <p class="mt-12 text-center text-sm text-muted">
+        Data sourced from
+        <a
+          href={sourceRepoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-brand hover:underline"
+        >
+          jfversluis/built-with-maui
+        </a>
+        &thinsp;&middot;&thinsp; Icons from app stores
+      </p>
     </div>
   </section>
+
+  <script is:inline>
+    (() => {
+      const searchInput = document.querySelector('[data-app-search-input]');
+      const clearButton = document.querySelector('[data-app-search-clear]');
+      const filterCheckboxes = Array.from(document.querySelectorAll('[data-app-filter-checkbox]'));
+      const cards = Array.from(document.querySelectorAll('[data-app-card]'));
+      const noResults = document.querySelector('[data-app-no-results]');
+      const visibleCount = document.querySelector('[data-app-visible-count]');
+
+      if (!(searchInput instanceof HTMLInputElement) || !(clearButton instanceof HTMLButtonElement) || !noResults) {
+        return;
+      }
+
+      const applyFilter = () => {
+        const query = searchInput.value.trim().toLowerCase();
+        const selectedPlatforms = filterCheckboxes
+          .filter((cb) => cb instanceof HTMLInputElement && cb.checked)
+          .map((cb) => cb instanceof HTMLInputElement ? cb.value : '')
+          .filter(Boolean);
+        let visible = 0;
+
+        cards.forEach((card) => {
+          const searchText = card.getAttribute('data-search-text') ?? '';
+          const platforms = (card.getAttribute('data-platforms') ?? '').split(' ').filter(Boolean);
+          const matchesSearch = !query || searchText.includes(query);
+          const matchesPlatforms =
+            selectedPlatforms.length === 0 ||
+            selectedPlatforms.every((p) => platforms.includes(p));
+          const show = matchesSearch && matchesPlatforms;
+          card.classList.toggle('hidden', !show);
+          if (show) visible++;
+        });
+
+        noResults.classList.toggle('hidden', visible > 0);
+        clearButton.classList.toggle('hidden', query.length === 0);
+        if (visibleCount) visibleCount.textContent = String(visible);
+      };
+
+      searchInput.addEventListener('input', applyFilter);
+      filterCheckboxes.forEach((cb) => {
+        if (cb instanceof HTMLInputElement) cb.addEventListener('change', applyFilter);
+      });
+      clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        applyFilter();
+        searchInput.focus();
+      });
+      applyFilter();
+    })();
+  </script>
 </BaseLayout>
