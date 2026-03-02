@@ -377,7 +377,7 @@ const clientApps = apps.map((app) => ({
 
         // Screenshots — with device category tabs
         var screenshotCategories = app.screenshots || {};
-        var categoryLabels = { iphone: 'iPhone', ipad: 'iPad', android: 'Android' };
+        var categoryLabels = { iphone: 'iPhone', ipad: 'iPad', android: 'Android', androidTablet: 'Android Tablet' };
         var categoryKeys = Object.keys(screenshotCategories).filter(function(k) { return screenshotCategories[k].length > 0; });
 
         if (categoryKeys.length > 0) {
@@ -402,11 +402,11 @@ const clientApps = apps.map((app) => ({
             modalScreenshotTabs.classList.add('hidden');
           }
 
-          function renderScreenshots(urls) {
+          var renderScreenshots = function(urls) {
             modalScreenshots.innerHTML = '';
             var ssQueue = [];
             var ssActive = 0;
-            function loadNextSS() {
+            var loadNextSS = function() {
               while (ssActive < 2 && ssQueue.length > 0) {
                 var item = ssQueue.shift();
                 ssActive++;
@@ -433,21 +433,22 @@ const clientApps = apps.map((app) => ({
                   it.img.src = it.url;
                 })(item);
               }
-            }
+            };
             urls.forEach(function(url) {
               var wrapper = document.createElement('div');
               wrapper.className = 'h-72 w-40 flex-shrink-0 snap-start rounded-lg bg-gradient-to-br from-brand/10 to-brand-extra/10 animate-pulse';
               var img = document.createElement('img');
               img.alt = app.name + ' screenshot';
+              img.referrerPolicy = 'no-referrer';
               img.className = 'h-72 w-auto rounded-lg border border-edge/30 shadow-sm opacity-0 transition-opacity duration-300';
               wrapper.appendChild(img);
               modalScreenshots.appendChild(wrapper);
               ssQueue.push({ img: img, wrapper: wrapper, url: url, retries: 0 });
             });
             loadNextSS();
-          }
+          };
 
-          function switchTab(key) {
+          var switchTab = function(key) {
             // Update active tab styling
             modalScreenshotTabs.querySelectorAll('[data-ss-tab]').forEach(function(btn) {
               if (btn.getAttribute('data-ss-tab') === key) {
@@ -457,7 +458,7 @@ const clientApps = apps.map((app) => ({
               }
             });
             renderScreenshots(screenshotCategories[key]);
-          }
+          };
 
           // Show first category by default
           renderScreenshots(screenshotCategories[categoryKeys[0]]);

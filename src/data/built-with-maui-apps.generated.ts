@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const builtWithMauiSource = "https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md";
-export const builtWithMauiFetchedAt = "2026-03-02T18:44:53.903Z";
+export const builtWithMauiFetchedAt = "2026-03-02T18:57:20.616Z";
 
 export type BuiltWithMauiApp = {
   name: string;
@@ -57,7 +57,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3d/5e/81/3d5e813e-7ab4-4117-d2bb-157d4e1ed51d/mzl.zpjansen.png/552x414bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/d3pQ90jv8gWhXuivfHislAyzuIBST1pVv9T27yJvABNJ1-DU7lysyT4CJm2TSkekjA=w600-h1200",
         "https://play-lh.googleusercontent.com/s_hkITy2rWLt34dSjVmEGsxXZUiZQVmF-ByZVqTrYkVppiVQZ6-YNe_INM350C8mXw=w600-h1200",
         "https://play-lh.googleusercontent.com/3dalsnttiHqonkrt5su-gnZye3_Nmdn1AbWiP5G2Qk9szRUqNEFiucWcJPUYI-xXuas=w600-h1200",
@@ -78,7 +77,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/SZX1VsZeaKKYTJzKjDLf2WYjyWaJ8izllgkHmb0AMnsjwGeKpTlOUr3Acm0nGFvN888",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/QvuUe9uvS4SaOV7evQLq-Yi9CwY70QjkKPoEEKBLeUllXaOo3DD502aqCfi1-HZf-z4=w600-h1200",
         "https://play-lh.googleusercontent.com/MNBaHPrUhJ30ZipmCS-HzJ2zMqN2os32fC9jUXt-4YIafOcuDc_8RAPbAEd9Th4p3cja=w600-h1200",
         "https://play-lh.googleusercontent.com/WA8RDB7Vq8rbSs7ATnmSkjZ3nsV6CqzrlJhNWD2VTl7g5dNHD-Tor5R5gfwIsoe2m1sv=w600-h1200",
@@ -112,12 +110,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/34/64/f5/3464f545-0a68-60ac-d9ce-52ba92fedec2/0632ebdd-8e4e-41ed-9e40-e780d2adaabe_2732x2048.png/552x414bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/RYzyq0LALPbAAgxx1iTMLkO3Ar4uOtxEjqZUb4rS2fg2DFoukIwfZH6xh-d41jlQmA=w600-h1200",
         "https://play-lh.googleusercontent.com/Njg1LwKietvQdS8fz7TkOtJOFybFv3pUZOCQAvSO8sl2I18EOiwm1dTC3pkq0wyek0E=w600-h1200",
         "https://play-lh.googleusercontent.com/rPEZmrk051gp5RUadi19Ynl_RIuHfICsOyuhuXzXEkGqyOvsXSylIOzQnNSg-jhTpYUA=w600-h1200",
         "https://play-lh.googleusercontent.com/rhnzuMDor6AKikH7Sy4nzxn1Yka3DTtWA6-4cn1-1TDyi2IPtISGLv-DyMgVeKxnf9yR=w600-h1200",
-        "https://play-lh.googleusercontent.com/be7rFVrwc_rA8WdV9_LLLTKkoWH0VMt0KnnRCaiGBhhnnwXMngwqauLVsskVQfEkiuc=w600-h1200",
+        "https://play-lh.googleusercontent.com/be7rFVrwc_rA8WdV9_LLLTKkoWH0VMt0KnnRCaiGBhhnnwXMngwqauLVsskVQfEkiuc=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/Md7ugnzWQNW69N_THJ6CXMwreoVdd4hYsn6aIhs_1PdwP5X4UG39m6efXpbUu8kDuIo=w600-h1200",
         "https://play-lh.googleusercontent.com/Z_r3mJXiU_Q5LvHy0uEiqaiFVak2knNQDyogC8wMese4FoUqx_KHM3N8SCqXMlwDH_Vk=w600-h1200",
         "https://play-lh.googleusercontent.com/89Ytbuu0gx5-F_tIQV0Ma9ufbm6F77uc5-3ctq1xliOWiZl1tYDc-TdtztuJhwpzg78=w600-h1200",
@@ -136,7 +135,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/9d/43/329d4398-9b95-8c8a-e649-92267b1d6cda/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/0ssVjCVuwixJT1tt2kCqUk84yKv7-kGlTPIsyWlYI8-FOejjOHZBepsiWmC4XqJS8g=w600-h1200",
         "https://play-lh.googleusercontent.com/Flq4AdOV_-Zwjv5AfAwTPYnt_289EWzwjamxQ8UsegI9ExhHnh46lzbx3PkwR2xr_vw=w600-h1200",
         "https://play-lh.googleusercontent.com/eeYIAC5QNjbNNFHITwJqlX7h7NgVorYDrwuBVzPJiO9oZKnhLP3igS3Mgb9nM31NrA=w600-h1200",
@@ -174,13 +172,15 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c1/0d/bc/c10dbc78-ff29-7d28-ea5c-24814a5af82c/44025023-b651-44cf-8efb-7998b996130f_2024-02-29_ipad.png/576x768bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/yQChfa9XKlaXMIYTk8w8QwChjT8_SH-_2d2SS-kesw0TLQK1nxtw54bDcoZ09freZJgKrtg4f__is-31Vg=w600-h1200",
         "https://play-lh.googleusercontent.com/XDmVBnlP-ab6SHYvUrzsdCQl0PuVRxliDujUpDc1wXnCoo1q9CDfi6VshuBVElQu1cQ=w600-h1200",
         "https://play-lh.googleusercontent.com/RuPzkY59nVmiA3mOkeZuoK9I8T6BiQ9Rlgi0Tl29HRxWuWwO01WkvYkkw9HrBKfdCkA=w600-h1200",
         "https://play-lh.googleusercontent.com/Zs-akDXAPtSvysHYWm1FcujCKPcrPaK40OZjhf62cPlS7ZaiT6y81XuxScdG8mab9A=w600-h1200",
         "https://play-lh.googleusercontent.com/OVJyQziNP7Tiu7Hk1jXd--VvbLzqFbBbO0cORKNU9TYuWZpof1g_4sjP5WTrQyi8rQ=w600-h1200",
         "https://play-lh.googleusercontent.com/qkFeEvQsuRZwF5cOCGMdd1VEw2w0HJ6N3ytSACdLWasW4Kywna8qaVUU94sYtoTBoNs=w600-h1200",
         "https://play-lh.googleusercontent.com/9R9Vf5LiIW2iPu2FkO9MG8RjGXDgvE2CdX7NIi_nH_maZNnd5NuYg8MXcRXbnyf_Jmg=w600-h1200"
+      ],
+      "androidTablet": [
+        "https://play-lh.googleusercontent.com/yQChfa9XKlaXMIYTk8w8QwChjT8_SH-_2d2SS-kesw0TLQK1nxtw54bDcoZ09freZJgKrtg4f__is-31Vg=w600-h1200"
       ]
     },
     "platforms": {
@@ -196,7 +196,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/fIUeZsRan9hMB-0X_S64xjtoEjM4hCv7GpECQt1n3-SUWQbFFnBx15jUGaFHkJPEMPUfmurxKwupbl9kafL-6Q",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/RIVxoi60Dm4XrUqlk_Veo1p2yce7ESHB9qKEqOhmK1V_3SvrxeF4oOOhQd_csIlyRMx9h3eXanauwb2MNlXk=w600-h1200",
         "https://play-lh.googleusercontent.com/7ceu0qsb6wiM8jrFABymTEG-VUFh5WJa_bvvr1LEkhBtEzP3TF1z8tV839DG6GBrEVwxHi0cyw4pZ93qc741=w600-h1200",
         "https://play-lh.googleusercontent.com/A7OukOKDY5p37SdMS1321qXINiBn825q_eczlfcqMddcSCN_iAVFYX1NDXHHaVk4C3cIbciLrZbi97hBDGx3-A=w600-h1200",
@@ -216,7 +215,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/Pif20MYAHDNi4CBjDYteNHz_NL04peQPg-FNj_4XU1JjwWGz_fzR3lU8D2d_unYx-A",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/O2IFTGibQSYuZ1mOzVMdA2ai7ELxAN1qHyvvL7yMUWLs151SpKIz0dBbb8TpaD3LSPO-=w600-h1200",
         "https://play-lh.googleusercontent.com/myVH0v1DVltDZ4Ispk2nIH6TgKOEd1oDHGK7e1mhwZ3WVErtyB4QzAgU9dPxuV1WvUJo=w600-h1200",
         "https://play-lh.googleusercontent.com/kp3CaHWvwYW9PebbiLjCOgaOfAUULXIN4lwLO8mKwCVcbgUk79r9stw0NL2UV3cLvYMQ=w600-h1200",
@@ -245,7 +243,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/EBgC3nLVjvUKCm7o8To1XfEpiSOsQzkSg1fI4g_rWgu8oFd7Ac6RntymWuPpgvnQ24I",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/CPWY1f_29Cyu-AhdZhjtnC_RowJopV05-CvWSsAGK4dkB9YTvRXmHgAvqKiCTtYRyZ8=w600-h1200",
         "https://play-lh.googleusercontent.com/eXSi1s7ZRXKLnY2sF8mQK8VztZSNxeSzzN5kHCiylmyInubptbdS4reRT2Xm6oKKks4=w600-h1200",
         "https://play-lh.googleusercontent.com/GCL522hgfdkqAPbHPKB6Pma8mxej_cpE3HRgBMvsqusztKFBiDW0Ti5oLw6v5Xza1ul-=w600-h1200",
@@ -281,7 +278,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/41/d5/d9/41d5d925-e2da-1ff7-1463-777681096026/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/hz3BHHcBtI4tI17sSzQT64g0TA_yOKUNSqfmx8VESDZiWG-nbUIIYoNrfeMDPXiITRA=w600-h1200",
         "https://play-lh.googleusercontent.com/6X6hXQRW9OaK8XTIJnBwt_z0TZ3AVyieCaJQoKrov0uz1bLkfeFF9UWCkHe_J5xH_Ug=w600-h1200",
         "https://play-lh.googleusercontent.com/w87a3a9481SmolWbF7z1opUjMCGwE6X1yhMRwLIJjGweYDJodKJTX3Y8bMKlBzcddJ8=w600-h1200",
@@ -304,7 +300,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/jD1ot8NaEmsmGHSgfojAyoaayHps6vA3Vxi10dJ-RaZ1IbdjJXfkYYh8mD7AK2Y15sc",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/1CiFHPZwB_RzemFPTFmng6Xu83oXQE1Gt-lvVp2HwXJUC3rbc9UwUPv1zYZ-iFEVu5w=w600-h1200",
         "https://play-lh.googleusercontent.com/qPscxLPI7bpN1Sl4JwqfbgX4dN_zJfuOELDi9-ZBzjsUj4uT-cx1M4uJDzE70tyHMgs=w600-h1200",
         "https://play-lh.googleusercontent.com/WW2ORRTZmrQpCBvGxvt4QyRGMVC1xx4w0KbseX_lYJ6JV6ljtlml7l7m9WvATDtwJWw=w600-h1200",
@@ -338,12 +333,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/56/b9/49/56b9492a-0ad5-d38d-c1fe-e6cd504d8371/79a0aab2-9cca-4526-b950-88126746eaeb_Screenshot_05.png/552x414bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/_7YEBbiTYAOK-C6iaLFLaTnaDWEl_rs3oPQe4VgwwCeQ72qvtxs2m8QEBvTz37rnew=w600-h1200",
         "https://play-lh.googleusercontent.com/MESjwiwKmxaq2xDEJLLk0lhvPrXGC7jT2YkA4LHmz1OYV4PuVQknHo6SUnbANSkrdnzn=w600-h1200",
         "https://play-lh.googleusercontent.com/rPsEuZdim_WCO01KyKiJSWkIzbzVE70Xj0qZqNusiJwpRgxJKPZJz7cpUTKaUKG3VQ=w600-h1200",
         "https://play-lh.googleusercontent.com/zV19GEBAMoNgjnId1Uc0ErF1N2nRtqS1eU3KMlkCM3t0DJaFqaH2GG12DC3lNjFdx7k=w600-h1200",
-        "https://play-lh.googleusercontent.com/izSwEd5B3UfAzZcVCcWbx2s95kMtdVg8AfPzI9p9sqtOYBGnO9PO4C2b-1G5iySsFpc=w600-h1200",
+        "https://play-lh.googleusercontent.com/izSwEd5B3UfAzZcVCcWbx2s95kMtdVg8AfPzI9p9sqtOYBGnO9PO4C2b-1G5iySsFpc=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/F8GPDehMij9dNRbkuc7S2ACdyQSpqbaN0Q_Xr8KSeTEW199j4DWB_amwdYhAP-e3m50=w600-h1200",
         "https://play-lh.googleusercontent.com/kDOWf6nka0pbty5XNFF-vwqN1hibETAlx8_zV_EEEKiNiZtX5zQN97BwAP5tEi0CAA=w600-h1200",
         "https://play-lh.googleusercontent.com/HDoh4oOy_DqgbJZGRIJp31LTnFNuOZZkHThGe_qZfAswyNU9e7k5ZatysdFQn0rfrxM=w600-h1200",
@@ -376,13 +372,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/2e/9b/4c/2e9b4cbb-0cab-6bee-c13a-579fcb0d8420/pr_source.png/552x414bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/wmbQP7A7UMIki-rT1SgLMz8yX8VzFMyvpDQHhGUKEvEy0Ag3qt_EfIUU5i2qGuWYRxk=w600-h1200",
         "https://play-lh.googleusercontent.com/K04axc50h0ltPgSSwMBYza0ksVr5jzLV6y1jxQeGFAvBqjJElS_I6TJ6jDkoOXoFWuU=w600-h1200",
         "https://play-lh.googleusercontent.com/J1pf3gyZ0dmlkK-z7ju2AOnNSJyUaikvtc5K8F8a7ejXj9mzLDYKP_nOrMtE6uIWtUI=w600-h1200",
         "https://play-lh.googleusercontent.com/3rWXgsHC7sCfFOleFC35uhx4xD_29pehbNdH9Csfh4cAGhhCxSFF5rSf7KCNCdvh720=w600-h1200",
         "https://play-lh.googleusercontent.com/3yKVtmN_wQHsJYHzme0m1LhXG92LL3B5252DL_KXmPMz8PLl5YevX-4vrlWMZbGfxQ=w600-h1200",
-        "https://play-lh.googleusercontent.com/HjdO4EIBA756ycnw-I5W7zxq9AkYEtl-UmH2DrDBYpDWBL2hnlysXGruDgDb26hUlFc=w600-h1200",
+        "https://play-lh.googleusercontent.com/HjdO4EIBA756ycnw-I5W7zxq9AkYEtl-UmH2DrDBYpDWBL2hnlysXGruDgDb26hUlFc=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/Ar0YmPyqogvygSMINx0-wOeDK1AeuA7Q8zXTsQ5IvhFjI7sZUVIy3IDcPLj8WmqPb0jF=w600-h1200",
         "https://play-lh.googleusercontent.com/e6wtidzTybFZ25p-rCHEjT6JFdxGlDLf3YpqZBbfEkK4jBjM6TwRFrYifgeIMT9bGQ=w600-h1200",
         "https://play-lh.googleusercontent.com/abU-ZF4BNC5MI59RBF8jZeTstArTl2ZLTOy3URqGKG6Ww4IT-rm230B7K0jdYPfhjOw=w600-h1200",
@@ -402,12 +399,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/eFM1z7OB0gsPP-V82BIeSZrZA0PFhknam7siLlPjbu2R08gHtjTbj80q6R4caY_AdQ",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/lbVT0k_2ILLv7PD9mYuk8xdgyGLbUL46_PMgv-_nGNRAo83QNzO2v0TXi0rz_-JVY6U=w600-h1200",
         "https://play-lh.googleusercontent.com/kiKPS9Z0X407nGFsm0s95nZP6wDf9DyqRL2IEGWiNsyh87eJbYaKPyGIME8v-AGfheI=w600-h1200",
         "https://play-lh.googleusercontent.com/QJowLcDw4NQ7Oj4hYmgRbj66B3YUdg2FDmUwIs8u1mIJ9bETkpEMw5r3pQoWmmutXJw=w600-h1200",
         "https://play-lh.googleusercontent.com/qZ9u1afEKRYG942j-CRjILM_1PaMRFsD0M7N49P6Q0etwL5X7NI8vHd_fvFe0jJHPA=w600-h1200",
-        "https://play-lh.googleusercontent.com/EDMwbY7BwZ2aSRoe3sSu_fap48NNIPGsarcb8f-GsCwz4zrEDOMlZkLQMvJ44YbgaA=w600-h1200",
+        "https://play-lh.googleusercontent.com/EDMwbY7BwZ2aSRoe3sSu_fap48NNIPGsarcb8f-GsCwz4zrEDOMlZkLQMvJ44YbgaA=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/iU6_ALDv8UIJ3wNZdjozdN72j5C9edT0Ib-NAhFgjm0BNilrLcTg5BWEGR5lAZhE1_I=w600-h1200",
         "https://play-lh.googleusercontent.com/OMy6rk25uS0RUXORj-P-1p7Su_QISNkkzyvGoCgkko2tpwxfmahvmuu2uChsWvqJqw=w600-h1200",
         "https://play-lh.googleusercontent.com/XWh17qBwXgDvTAthwxndLE9xGObe8d2_ZHnIEfdC-0d_g2myaoPhwElyQC81yjxNEg=w600-h1200",
@@ -426,20 +424,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/StDEkYlmInSOokMmsk6DkgQrjXwtgunI_E58StgfSrEKpZVgF1GRFedpg_3s9ee_Mr0",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/rR6VVWxLMFqEbGzAgPvVBzZiL2lVkYMU0OUwIW7f47yNhxbPev4MqAc49vBDn69DY2iB=w600-h1200",
         "https://play-lh.googleusercontent.com/e1ptR-zneAYtpqZounKNqvxhLuuZIWJl4HOILKwy0y7dHMn_9bUBDbigukP4RHNCY8I=w600-h1200",
         "https://play-lh.googleusercontent.com/YkQErCqmJqOmAh3GdQmpEk0A_KbV1PSUQDqkDZr2Uliax3WNNHQCm0-hibyyvL5pib8=w600-h1200",
         "https://play-lh.googleusercontent.com/lqTiLvk6JUpSyqxlUjJEqr3jdpDP0-bwfRC9yL7mlCyI1maaqp3bq7ycpTqyNvh1zPI=w600-h1200",
         "https://play-lh.googleusercontent.com/cYXGY1vPctFgETXqNhYlYU8pSMomXjmOBMBMRcPkRbk7vTen3bj_VG8KsEODGlDMKw=w600-h1200",
         "https://play-lh.googleusercontent.com/o7HKFGVsjeKRiu0flj4MNTg1RIM6wrIl9OoIbbIb6dnpVXzD8LGURBncrX1qgvcRTA=w600-h1200",
-        "https://play-lh.googleusercontent.com/RGm97LVZCZyxMQeYgVTevDqhtnpbNIh-DTlbLJXzeQmnHpzytNjxN9uMmdf-gAaumjM=w600-h1200",
-        "https://play-lh.googleusercontent.com/6Tm3QaSr3I9qMDgzIdmr4h-gRj9fYTuzxcfs6hYZIwMtuCtYbxkSDf2mp1zWoNQk1w=w600-h1200",
-        "https://play-lh.googleusercontent.com/zO7Uomn85gJj1mtm1UQrkISFL3l3B5rEGKqigTAUlyTXxs7TVDer0ZG9vcM75hIz-_4=w600-h1200",
-        "https://play-lh.googleusercontent.com/d9kjTp-sW-yfhCzF0x-EXZdMhkoZvizoFDpT3A6PFK3dGxKh7wc0WEIY6bwZ35VyL3U=w600-h1200",
-        "https://play-lh.googleusercontent.com/Gu_a-vgVJFHFGOkBtUBJRa6xDbH215-u9OzfBQVd9VXqKQ2gPvw-C5UXglFGcbr58A=w600-h1200",
-        "https://play-lh.googleusercontent.com/aIzhlsvP5EHXWwLl5g4Cy9C2FrtcdPnLuHXAWY3qO8dubHS9biajNFUIHS6rOAcJvw=w600-h1200",
-        "https://play-lh.googleusercontent.com/adpDRYGUMm4RpMAOdY0-aQjDOrgptwnVuALsAOkjUsatJYBP8_ohdK8ZEjncZaj75zM=w600-h1200"
+        "https://play-lh.googleusercontent.com/RGm97LVZCZyxMQeYgVTevDqhtnpbNIh-DTlbLJXzeQmnHpzytNjxN9uMmdf-gAaumjM=w600-h1200"
       ]
     },
     "platforms": {
@@ -454,7 +445,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/rzEwC-3jOhzQyJWFgtCgGeuu1USQRlSlBHj_UJKidwmdAhn_EycCiCle_fzjHncf8GPL",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/6Aa0a-bmiPj7YiygzV-uxPwWgsZQzZylQkUnKEFd3bIpIlgXyex72YJPOU9tTeMdvg=w600-h1200",
         "https://play-lh.googleusercontent.com/RcAlwvA0TsSK3CnZws1HAR_9LTgfZLl5rOmvTCslfV-CcfzwG6HVD86AiLrj2C2Hxbnp=w600-h1200",
         "https://play-lh.googleusercontent.com/dc_NF2ryIcFaGrocL2NqBYxH6vayNn5sCJqICwc2zF6DbKgqJVA9AzXv5Mm1QmLgr8c=w600-h1200",
@@ -473,7 +463,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/QcFWssx9SXC0zRe50elVONwtTY5mBmElP0cJRadQUzvLvRZAIuyNgNGS_DW0hzTqXjo=w600-h1200",
         "https://play-lh.googleusercontent.com/P7PW_8X5ArLtI4tS-TTUv17SLGK92sa8eCMJRj3wCax-YU2C5UU8FZGU-jH0YPsHpjI=w600-h1200",
         "https://play-lh.googleusercontent.com/UAt5vKLpfozr48H7XTOlDhTqGnkcxUtT8TQPLQsQfvswxHb0sJzXGiEvhQYamVdpHJ0=w600-h1200",
-        "https://play-lh.googleusercontent.com/HR4ci22pK92CQZ8KiNRtUhUKrQH2BUlZoRkkMPXfUvU196r2Bzchkc2wIq2sJVjrfjs=w600-h1200",
         "https://play-lh.googleusercontent.com/3gYdIxghFX749-LsMjRB1g5UwQ-DuXNjL9YFEQ3CpMbNoJtPorrkiqQGtx1Jl5rauA=w600-h1200",
         "https://play-lh.googleusercontent.com/vfa2Ahn53bBYjelms2ZESvQWxg3m586rrxCx8JltLb5FxbCTzGP0jXHV30KGfvBkTxc=w600-h1200",
         "https://play-lh.googleusercontent.com/hJna2W2SvHTBkMs5rp14GrRpL7bwHNQpSb5_iotZ5MrdJY3dTZK2k3kBZkUuRTZUrRkk=w600-h1200",
@@ -492,7 +481,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/BAadGJiZfLk6OGrOaVFHMavQI4sj6693J58OGITuUgQ-WJJvZYQLejymbzH1PryAB3Y",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/ydY4jLAVkdL0GRYjizw_YeRxpWZ0neOMoSuhjIuKD1zWApJ2QjF2S62bFazKzqqZPwpu=w600-h1200",
         "https://play-lh.googleusercontent.com/yHiCdJwPDwNpvdEdgJfC4tDl8oQAkNVCksu7QSR2tJAo8VbuVnhoupMKkJ9FtczFkQA=w600-h1200",
         "https://play-lh.googleusercontent.com/DHfeITeO-JT7bQl5GOw5mZkmSfrRlLxYeziWex76XHcoXPt1vz7DAdef4c4_gspfrg=w600-h1200",
@@ -500,7 +488,9 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/46_RdSaLUq6fXmYZlHoDGmlu6yx4SHIUgMz4nXe8JBG63J15kQ7jSg3TXD_qT8KLjsA=w600-h1200",
         "https://play-lh.googleusercontent.com/wis530zQhmFOxgiAbQI4XhsD9Qx5amfqla8u_A67hqVXJejBilF5tibju6rO_e0Ejk4=w600-h1200",
         "https://play-lh.googleusercontent.com/CRZD_an0gw_R6_bcMhoHyOZST3WyM-gLEo_3tK73Ire0wqxHL7rsTHxCutj9qq9Db9s=w600-h1200",
-        "https://play-lh.googleusercontent.com/S2Qb0DYX35GPXF1VqkHqN-UGLTKYIPSXqfOgBBokRZB0ygcKGeyIM6u5zHVnF8XPWqID=w600-h1200",
+        "https://play-lh.googleusercontent.com/S2Qb0DYX35GPXF1VqkHqN-UGLTKYIPSXqfOgBBokRZB0ygcKGeyIM6u5zHVnF8XPWqID=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/j_2k9Fd6cqI61mKYN1hnv4Z229sPAwBrAPuOxX35T_T5SfhNeNwhwXqgmz_J7CPsFK8=w600-h1200",
         "https://play-lh.googleusercontent.com/XVVdDcmEsapwib2mUFWCfHmswWlftrY1L4T6tluyzUVz2vHTPeCGXPHCrnONDCf1zms=w600-h1200",
         "https://play-lh.googleusercontent.com/d0hJsP7Bmys4yiLL344ePKQoJDzYbeNBI8VL4Ghg7oLuGaxNyg1tJPn7BZ4yO35LrA=w600-h1200",
@@ -510,7 +500,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/mmFdnqhYjQQe40aBSn1Ed1ZIlmojXy6A-v5jUflE8jJE0iVoP6vFBLYX_3Wt1kxnPg=w600-h1200",
         "https://play-lh.googleusercontent.com/n6MfA7tvz9Clw7micREYrC706Ns7O_6eb6vGW5NuI2U2xCHqdwx_KxawxvqWDWv5aQ=w600-h1200",
         "https://play-lh.googleusercontent.com/inGQyQnkiNjC5Qh8xQV2ZTdQ355tkw-Xz88cjrI1hOHHXl1bQT6bAp3MEbhLpbPxjWM=w600-h1200",
-        "https://play-lh.googleusercontent.com/hH8BPLVkIcvNm_FNfEo17ENFXUtS5QRHb93oqHttt0FXshyhsRKk-4KF2j01ZUVBfzew=w600-h1200",
         "https://play-lh.googleusercontent.com/yxGPrRXfD_zlmKQ3WEXLPMdmEO_tVV9DL8PJ8cjJ2STvP6Min_TB4dXAQ8ai0JiKmAk=w600-h1200"
       ]
     },
@@ -525,7 +514,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/43/6d/5b/436d5b44-4ea8-6f3f-484d-97838fd3ea1b/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/bsmybY2R7OFI6KfCXI7CNyBrWvulCoTB_ldaBHgJlopgkjSLkTQ4zCHhjLoFPuOgkGiYD-9qhwR-49nt2nWijMQ=w600-h1200",
         "https://play-lh.googleusercontent.com/T95BubgV_wzLnRgR0nusMrpPPxiHRNelHyBwLRKS6YwAck49etXdu8GJq6P5-hJLvgjvxF2gDKBofF9Hrg83mg=w600-h1200",
         "https://play-lh.googleusercontent.com/Baba17o1RXsEvVus0Ll8UvHQXcgSoWnzCCkX9gmf7Dt04KPHp6IL7flItFwinJVgzi9CTMc0BnhTaorC-CfkAA=w600-h1200",
@@ -556,7 +544,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/19/ea/91/19ea91c7-262b-9aba-8088-806638fad399/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/rs0sa786FvVMsABygQMaW3zKUKzWJhg9vKpK_b_bKNRsI412dHcjCKq8z68amg_-Amas=w600-h1200",
         "https://play-lh.googleusercontent.com/IJNTwUtTicUHlA5sQhW_FvyW_JGREDmoUNHw7GIqpwF_tF6O3ZtpX1vdz_1aokm77Hc=w600-h1200",
         "https://play-lh.googleusercontent.com/a9E9nC8qxGxRfZ29HOqPJMennJ2R_rEHiI9CQCdl7NQ_F80xZBEEi-SMya_xUZI_wr0=w600-h1200",
@@ -592,11 +579,12 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/49/e8/7b49e8ce-8f33-699a-8b58-43cc89f9ed89/09fd1b82-78f3-482c-babc-805771a013a6_screenshot-55-10.png/406x228bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/1SrNtAwg9PFOhgMJPXehacRTeQNhHhG12Pj1zACHNVmfRfEZA3_oOEmLvRNsmYGeGHpas7sCwyR3y8OT=w600-h1200",
         "https://play-lh.googleusercontent.com/c_yKtvxw4RUOgbtp6Xft6D0wPSPyvISiPRuyC6z3ipNgQfQ9ZerahU8qpS2wSb7kHzv337VLiiWF-LF3Y4eE=w600-h1200",
         "https://play-lh.googleusercontent.com/hhVt9eODzIUGuwpMMx8LbDoaujoxP7v8wtNmZZBaHei20etnL4_KuWRHekhuyh-_xp-mzw44LxLYB3GrnAy9=w600-h1200",
         "https://play-lh.googleusercontent.com/8rEUmsYEatP5HdYTO2mKVJj_M-iOp3CawjKP48mcIV8h8uzbX5Cqdo9aUDpA3XK2lmiQdSurIkiZUnMUyAnF2g=w600-h1200",
-        "https://play-lh.googleusercontent.com/2kLKC982U_Qk1w9wvZ2B55VELhDDsRkTZvSGdZNB2LbdtrgVcXV9VEF8sFYsd6lSHgD8VrR-j5GYCjT-9uyd8w=w600-h1200",
+        "https://play-lh.googleusercontent.com/2kLKC982U_Qk1w9wvZ2B55VELhDDsRkTZvSGdZNB2LbdtrgVcXV9VEF8sFYsd6lSHgD8VrR-j5GYCjT-9uyd8w=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/Mif2lRauj1E-9Vlm7Kl8W9wvlNMl_38aXx2vLgbmnTIcf-Uf3r-KvfCAi-K1pGW3Ho0dXVARm8ESMeS6NJM2Ew=w600-h1200",
         "https://play-lh.googleusercontent.com/C0AyiahwtF3-88T47xv7mwwmpaP019EWibnACjoAUUzbmh8SbyRXSHHBq9uCov4sGraM-g_oezgU-cRqwQ0v=w600-h1200",
         "https://play-lh.googleusercontent.com/kEj8H2JXiUuS0UsgvYN6xWJck1wd2FY2ayvaUVGaAZMEsg5aNG5hrZQSPM6NE3ubhrmsUrTVEPse9QDulVmZUdk=w600-h1200",
@@ -635,8 +623,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e6/9a/e1/e69ae184-acc4-8e31-028f-c4be079fc916/a5bf8a7e-54a4-4eeb-a5fe-7026f53906c0_S7.png/552x414bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/e9/f2/7be9f2db-6c1b-aec9-441d-b5fc9212f56b/3cc5a838-a44e-4e14-929a-7e7269a75579_S8.png/552x414bb.png"
       ],
-      "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/T7BumuofhTMbkLyufN7Hno1oCu5joUiC05MH6G74lr2hFH0HOEFEYWKZc0oteWHz7Jc5=w600-h1200",
         "https://play-lh.googleusercontent.com/CBWfsMxVpjEpVMHp-qpRWCmRKSg4X3SUgkNeBSM_3bGmjVivz1fnsEJ58bB3QtHW8Hbs=w600-h1200",
         "https://play-lh.googleusercontent.com/orxE3r0HQt7FZeXTMKREzwxS7GOq6nTFxPbsdO-Lrun9PYO70jiWUklk4JQCPmQ8v9c=w600-h1200",
@@ -675,14 +662,15 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/03/dc/fb/03dcfb56-8300-4887-7f8c-6b606863fec3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/T6WHk_C3qogHJ0UnOWZ2p4wpWhlv3j5TPuTk7TzIhJzkxqUHicJpi4uwMie0V6qWc3F60e8iVnW6OOiVasnyNBw=w600-h1200",
         "https://play-lh.googleusercontent.com/a4748wKw5clg4XdW7avBhSMCoq0a1yydrgZoGYV5hiotDbqtMmf5s3Kj4aKt6PzPtOCBnK_JRub9PZX5p-Iq=w600-h1200",
         "https://play-lh.googleusercontent.com/zuYird3x6_MQj1-fi50hCJv4Ax_pgFMgqjhxZ8-oce9cAOspB36XV1zYR9aK_eOtmac5KnrHfgBP2wFjApKstQ=w600-h1200",
         "https://play-lh.googleusercontent.com/G3q2C1oEhAaSJhB24tVi4rzLaXWm5XV9OnbtcYLVm8h3Pk_bijAOYy7CFzCcZ1VwKFHbaIfKt3C94JTS9pSjEDI=w600-h1200",
         "https://play-lh.googleusercontent.com/uq3wLeijEB1GpjjKJXJG6L6jLZrBh9Z_8Sq8iLinXWx8nzJI8kVo1-FobYtlrYkfU8yJZfBzvyAxScyA5yPq=w600-h1200",
         "https://play-lh.googleusercontent.com/p3V91FRawNtJC9fRKy9ChuB2Mr8bJtcYqJ7DYPedXCWMvFeKi2h6u6Ez5dOy5WohkrExlMqgWtmtYedinQcB=w600-h1200",
-        "https://play-lh.googleusercontent.com/i0bZ_sjvU4HT_gltvn74bcSsfm_Tn4JAcH9YV5We5cXqO_aqbtLVgrauCQMIKDHTTFqJDTvwCpsHxK2Vo1fh_Q=w600-h1200",
+        "https://play-lh.googleusercontent.com/i0bZ_sjvU4HT_gltvn74bcSsfm_Tn4JAcH9YV5We5cXqO_aqbtLVgrauCQMIKDHTTFqJDTvwCpsHxK2Vo1fh_Q=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/FGELIarEhSoNSKZUcmPlVdVPQV_F1oUa5GDkQ9SAvvZnyfdttladJNbXnoyXUqV9PC8cypYPDZ18IXS1cAfT=w600-h1200",
         "https://play-lh.googleusercontent.com/Zgdq0DayopuC83ARIyNAM3kJFIxRMBKmE9VtikFguKyN521J9JCqndRDL7hmim3CwjFGdqeCR0eqfFf5YiCQ=w600-h1200",
         "https://play-lh.googleusercontent.com/GwFrgDlzXP089Uey7WpN4Fqzbvxkqf0YoNC3O4q1nPbH-KTVlg-bnLqYInYHq2NpPKqEE57aL2kn5QXljudBHas=w600-h1200",
@@ -705,7 +693,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5e/24/d4/5e24d4ce-3fd1-295e-b1ff-c90f4adb84e3/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/XZ7p_mQt6HyPFhMNbZWT21BigrT3Y6MiXnn6BURrBjzJO5BupYPY3T82LcwmYcjT1g=w600-h1200",
         "https://play-lh.googleusercontent.com/uoo9g5TchRH8T7ZAqrKS55mNs85SDNPSv5MD4k3eS3ToTRfzdF1UbxP4yAOcgaVfsA=w600-h1200",
         "https://play-lh.googleusercontent.com/KK7NxmqeZMvsVBV-iV77nSFaigUdOpOR8YMLFTtvyMh_pKDxR-BEvDt24aUhNI0PrA=w600-h1200",
@@ -769,7 +756,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/39/d4/fa/39d4fa31-0507-fbdf-d901-2b530d1d028f/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/FWlyhAiCQW66AomHnFnAsFGkCOwqN0rJeJaqnR_xTpOLcyY4ius12Z0uWy-j7oQFp9NcHzkOtEonO1T15a2u1Q=w600-h1200",
         "https://play-lh.googleusercontent.com/lhdJfcIoUsv5j-tcurSBGmbQnwuDwfdyLb_Vd_oAQ7EZK4JsSZYHkRqPex2D57CILOUtcUfBqmd_BptWLo9Y7DQ=w600-h1200",
         "https://play-lh.googleusercontent.com/dDfGh4HoE-9khDtT9e6ICM1ViQHxCC2se2J8y_AZ5CmgmbQc2GT5E26z6f3BhI38XMStvZ_EmjVf9S8VlfRt=w600-h1200",
@@ -800,7 +786,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f8/ec/04/f8ec04af-c0cc-10b6-9121-38da9e580a48/Travel_5_5.png/392x696bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/gvO9JpOoXmCAQttD8P7H7QSi2I3miXvt9R38avFbJrbPJ3IK5oa3xcyDTm7ei9QqEQ=w600-h1200",
         "https://play-lh.googleusercontent.com/8fW2-HJ_iN6GCh124Gv3chiPFZEguVkqtkJjSw42CRuVUwWYs9iC_NIBog56fsCeMY7nwx4zqLXSwDYgTRosjQ=w600-h1200",
         "https://play-lh.googleusercontent.com/Ugw3myFcM0c4FOaArmXac97n7qgnmyKXemn9XnDejXWyzqrLR9lMA6rIRiSAM2gwizIIoiIYldsm1DCRl5vHcTs=w600-h1200",
@@ -833,7 +818,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/d3/b1/a3d3b16c-1619-360b-2dd5-0a847f694cee/d2ddcb30-61ee-4d1e-b011-ed23624b9423_Simulator_Screenshot_-_iPad_Pro_2nd_generation_-_2024-07-22_at_17.06.40.png/576x768bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/yig4RxR2rY-lBEG7ptFfuRhGfkngXAbCjKI1SCEjEeyeJ6lLJiOHi7ad6YH8Te5XbQ=w600-h1200",
         "https://play-lh.googleusercontent.com/e37VMg1OftXPc8-nC9WWyBDo3F8b6piCsnuRIpgruhcejC0YfhRcdYXi7tZ5yZawFD1-=w600-h1200",
         "https://play-lh.googleusercontent.com/D9fWBK65FA5GDrDapxnWqQDPC7WNRZu1JLvWtCMt7c0wwdPtkUCsMitXfMWfGwkDyw=w600-h1200",
@@ -866,32 +850,32 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/66/eb/6b/66eb6ba6-93b2-48fc-a1bf-ffa9df6f6d59/29bc407a-aaa6-4ae7-b63e-97cf9acefeb1_IMG_0014.PNG/392x696bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/JZioagnDD7JAn_Yqzj6Hdht_V0iFX4ti4uhNixKdkPNr4YZbasbeRiGYUVLceoqwLw=w600-h1200",
-        "https://play-lh.googleusercontent.com/UnoGnhFj3I-cSekTUXIWEQoDdboln-tIG52KxdiJ4M7i3ps3JuVa9rVSL3aotwagRg=w600-h1200",
-        "https://play-lh.googleusercontent.com/-Y7M4ZFRyJYCkAm9KQrs4MJJqhkD6RrGDLZOJ3WJSFOfsk44qmXdrIsu0nOBvfw6_OU=w600-h1200",
-        "https://play-lh.googleusercontent.com/u2_JSAHkbiLSL6blA43h8E0G9l78TY1tzkf4cAnw0rY95kiRrmgCSh01jDk65PKl0-c=w600-h1200",
-        "https://play-lh.googleusercontent.com/O2CJOYfukrWpNkkZf6Xnms0bQvz6yCi3TZTiXoP2rmC24oW-t876eZ1AU4DkRPSlULcI=w600-h1200",
         "https://play-lh.googleusercontent.com/pGpr7d1v4REzWhJdkad7Ajl80r9I2AE3PXpkn0BlaK5f-NGVMTJ-NqzLD72SbBD6KJ0=w600-h1200",
         "https://play-lh.googleusercontent.com/7YDCspUU37fnquguzAocfkZYKZO9AOI8ejxDRJlbHJ1bF056VYTtXGr4AMdmfvLrIP4=w600-h1200",
         "https://play-lh.googleusercontent.com/gUiYcrCev7kZC2P7waTJQqhuZEAr-BFhczspoVS4GBupiafWZ_kmb2Xa7N_860rwIOo=w600-h1200",
         "https://play-lh.googleusercontent.com/jeFA6jLxMleOSNAK-FibPODFsyL_lj9MJxS0kn21_QwWyPSUMhKG_PulC9LjcZnMeDk=w600-h1200",
-        "https://play-lh.googleusercontent.com/o4SoefBiqsBpTH4u4E11nkDCVL364KBhnlcG-TYbIeB-Pq2-t0C0B99u5x2CHavlCSFO=w600-h1200",
-        "https://play-lh.googleusercontent.com/61NwCOSKcMhvyJIv8FZLy7Y42tlJFfQlkpAaGKckW-wCMTvF8nlylUck-vtkXmoJdA0=w600-h1200",
-        "https://play-lh.googleusercontent.com/9_hEmQi3JjydIjshSrgiQRgOtYs8Pm2-m2OCdof_GkFgmTGXWaRSpPbGm2Aul306bmHO=w600-h1200",
-        "https://play-lh.googleusercontent.com/_jRGFEG4wvKO4O6wdL1ECOox3O1nePtIdQaFLh0V3Sjcz9hKRAfplx1iDyPYUfgsaISW=w600-h1200",
         "https://play-lh.googleusercontent.com/SqB5GRRRrma-ScA45pL2d9zAI0Ggs35uRamDHj5voy-E79A60K9qiO0AF2T6gUbQgkE=w600-h1200",
         "https://play-lh.googleusercontent.com/EkyktE5JKbLNpgW6xvz-qBNBu6voS19WWbCoFypJAnTXeLoSU8iSMWQ7r7WFOAhGoh7j=w600-h1200",
         "https://play-lh.googleusercontent.com/Pwwk-WM2Tvth5tK0c49kKtQ9HqMl7VjUIPYjJkmicKFFBg36nmVh42x627kWXDwUF1w=w600-h1200",
         "https://play-lh.googleusercontent.com/TWy4tNt-ALPLxbj0P1SGE2VSKSB_GdXzU4hTinqzIKyrzzWOeyovcw8yVpKbs74YkjJn=w600-h1200",
+        "https://play-lh.googleusercontent.com/PtmaoBJaJkidRScrneJMt3JAWA58ejSLhe1RfizO_Uwd5gANGJBNo77t-FzE2AnG0jJn=w600-h1200",
+        "https://play-lh.googleusercontent.com/SmXC9bVkMCNZ2vaEtpKgFlEsCRPp7TaNy1ZzDIJn7VLQmnX8jEBiF5tNOZyHoP6t9g=w600-h1200",
+        "https://play-lh.googleusercontent.com/x4ysVcs5tdcGusHtK_0OgvfzdRB9iZ57WkaKxETXOg_esf5Bd-0uBREBBjHAO2s6FPY=w600-h1200"
+      ],
+      "androidTablet": [
+        "https://play-lh.googleusercontent.com/UnoGnhFj3I-cSekTUXIWEQoDdboln-tIG52KxdiJ4M7i3ps3JuVa9rVSL3aotwagRg=w600-h1200",
+        "https://play-lh.googleusercontent.com/-Y7M4ZFRyJYCkAm9KQrs4MJJqhkD6RrGDLZOJ3WJSFOfsk44qmXdrIsu0nOBvfw6_OU=w600-h1200",
+        "https://play-lh.googleusercontent.com/u2_JSAHkbiLSL6blA43h8E0G9l78TY1tzkf4cAnw0rY95kiRrmgCSh01jDk65PKl0-c=w600-h1200",
+        "https://play-lh.googleusercontent.com/O2CJOYfukrWpNkkZf6Xnms0bQvz6yCi3TZTiXoP2rmC24oW-t876eZ1AU4DkRPSlULcI=w600-h1200",
+        "https://play-lh.googleusercontent.com/o4SoefBiqsBpTH4u4E11nkDCVL364KBhnlcG-TYbIeB-Pq2-t0C0B99u5x2CHavlCSFO=w600-h1200",
+        "https://play-lh.googleusercontent.com/61NwCOSKcMhvyJIv8FZLy7Y42tlJFfQlkpAaGKckW-wCMTvF8nlylUck-vtkXmoJdA0=w600-h1200",
+        "https://play-lh.googleusercontent.com/9_hEmQi3JjydIjshSrgiQRgOtYs8Pm2-m2OCdof_GkFgmTGXWaRSpPbGm2Aul306bmHO=w600-h1200",
+        "https://play-lh.googleusercontent.com/_jRGFEG4wvKO4O6wdL1ECOox3O1nePtIdQaFLh0V3Sjcz9hKRAfplx1iDyPYUfgsaISW=w600-h1200",
         "https://play-lh.googleusercontent.com/r1_Ai5f0rworeWWp8qSNGqwa9MJmkU5AsY8heod1s3wWAGa5dkbOSQo3DR0TPZen1Mk=w600-h1200",
         "https://play-lh.googleusercontent.com/1DenXf9oggrapy4GKlyMEhZqTxrdcoGfqtuP9hHKEoHmnJqkLficp6EZNSust8STCA=w600-h1200",
         "https://play-lh.googleusercontent.com/q0XfO716vN5MJYxPVFf2suN3DC1M9L19JMxaVvRBn2bQ_WE6KMws5XAhNBauEw8yc24=w600-h1200",
-        "https://play-lh.googleusercontent.com/PS4zrgm_Tscn-3547nIM1UvTd7xNYOQsjEByVFzy2r0RLLCsTBS92b8wizx1Jv1vJHU=w600-h1200",
-        "https://play-lh.googleusercontent.com/PtmaoBJaJkidRScrneJMt3JAWA58ejSLhe1RfizO_Uwd5gANGJBNo77t-FzE2AnG0jJn=w600-h1200",
-        "https://play-lh.googleusercontent.com/SmXC9bVkMCNZ2vaEtpKgFlEsCRPp7TaNy1ZzDIJn7VLQmnX8jEBiF5tNOZyHoP6t9g=w600-h1200",
-        "https://play-lh.googleusercontent.com/x4ysVcs5tdcGusHtK_0OgvfzdRB9iZ57WkaKxETXOg_esf5Bd-0uBREBBjHAO2s6FPY=w600-h1200",
-        "https://play-lh.googleusercontent.com/KQ7SX_IEP8G4dYP3Sqs-8kLKTW2E-IPm5EwQ8dYTgy2Se-aLX9_p3nwWo_nkXFrUaEcw=w600-h1200"
+        "https://play-lh.googleusercontent.com/PS4zrgm_Tscn-3547nIM1UvTd7xNYOQsjEByVFzy2r0RLLCsTBS92b8wizx1Jv1vJHU=w600-h1200"
       ]
     },
     "platforms": {
@@ -925,7 +909,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/6d/9a/7a6d9a9e-0f49-5a8b-c109-796e6dab98ba/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/IRdqI-96XdV_iIQxPzuxgWlQBThj8_vpiv6AX3R4fsYEnAzVYM5zRbajXnW2BtR60iux3O_6_IhKlRPh-nr0nMo=w600-h1200",
         "https://play-lh.googleusercontent.com/VF2tAnhIOW4-mBNPTSoU0aOv2fEDnOrX-3aWISbXPDhSkhsXpi5j2YnXBiNtW9mI7PoXE5BOW55qikdro49y7A=w600-h1200",
         "https://play-lh.googleusercontent.com/djXj8H14L25VkipttNMrPM_O1fpv1Xfdv2m5c37tmdvAwXbdVqKl9bP3dbePnSuwU1VX0-ty1-EbVhznyc_R=w600-h1200",
@@ -1004,7 +987,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/0b/0a/95/0b0a95cb-6dae-c58a-aab9-c3674e0045f6/2ba63110-cf09-476e-a938-1f2f77e2d9ea_2019-03-14_10-29-55-PM.png/552x414bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/nETtPjaU9RvYyyFshMdwhre_Ragc8RFrDs5WAIUSsuH2NhQQ_B1na5gZ5n-dwscrc-8=w600-h1200",
         "https://play-lh.googleusercontent.com/qGAxQ-C8I_LKNxJ8c1JiMMutnizkrL45dyg5gM40G_THoey41Ewn67pZfJdol58S_kQ=w600-h1200",
         "https://play-lh.googleusercontent.com/P0l-lDhlCKFSVzb0Uu0tXcJyJ3JfQJ4dYuDODVLp_NXshIMueoboLgkTsygpKfQU1f9c=w600-h1200",
@@ -1012,7 +994,9 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/1jsWwgWVbwTP_qRcqUg2QKRIxkOip0vVPK1APgZvi6nHf6eaxzOftmiA1V-dkxmaFpg=w600-h1200",
         "https://play-lh.googleusercontent.com/8nipup-2OOeBThZvsybVo_f05aTyTHfzUfd7iPOxzFf_GTKQ-xa020p44iLuWpftDq0S=w600-h1200",
         "https://play-lh.googleusercontent.com/ggugSi28EZ1xLnuAJ_yj-LZexnJXIyX0Bso47Trf0SzdsfaCJV0RK16rwKyJdZI2Mpc2=w600-h1200",
-        "https://play-lh.googleusercontent.com/4jpYzd-O_CTnkl7t0_yKhZUpPTlRpUznlNbpvHYn8vX_NK6t3iyYPEhm085PLUV2KRHc=w600-h1200",
+        "https://play-lh.googleusercontent.com/4jpYzd-O_CTnkl7t0_yKhZUpPTlRpUznlNbpvHYn8vX_NK6t3iyYPEhm085PLUV2KRHc=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/8ofc87e1-2PJjsosm4yVOgjsPrH89ZQKyGUn_dlmqvVI4VJqKocfxHuFSfScLtTkjaA=w600-h1200",
         "https://play-lh.googleusercontent.com/hyGdUhmLhogdAHcF0lZosr748ZC90STTsBpPQQZpdn5sWuAYuxc_rVu_l5j5pRiyJg5W=w600-h1200",
         "https://play-lh.googleusercontent.com/xPAPi7m8TPkoN7oTTBiAZ8gtGjWAZ8MlzbrxNp0vuOnU6Wj3nwsU2NYtZWCIQIHnmGs=w600-h1200",
@@ -1036,7 +1020,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/uZo5_4F3yFkxAJ88IrnHhszoIaXt7_uR2zaGW1cQLq3BmvjLKEjF7ai2BXGk338v4Nw",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/SObYBnjGp5mH-jXodc57OXSdeS8gN5-v7D6SOEp4vz635F0n71fZqFqiUyAGfaSM84-_=w600-h1200",
         "https://play-lh.googleusercontent.com/q6iAj0AR3uG_3V3kbTGNqEozn9GgK4cS1rnaYK1o2NhBrDBEwfaiKvq28gTaTL6_6_w=w600-h1200",
         "https://play-lh.googleusercontent.com/QHw0BHAWMTupnBjje8h-pRzqOSv9Q-8unrw2_pX_p1aPXh9fiJ_CLfuSNEL2cnkC5g=w600-h1200",
@@ -1079,7 +1062,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b6/86/b7/b686b72a-9ded-34d9-7876-3a250b5a7956/fb113ae2-4cff-4140-9300-956a34f2807f_88888_Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00282nd_generation_U0029_-_2024-05-12_at_22.59.42.png/576x768bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/yQChfa9XKlaXMIYTk8w8QwChjT8_SH-_2d2SS-kesw0TLQK1nxtw54bDcoZ09freZJgKrtg4f__is-31Vg=w600-h1200",
         "https://play-lh.googleusercontent.com/zChuvBtLLBmxV4OQAFK_JxSI438KvF1TIKZZQXoIzvLgBBfwam_SSbcFxQPkS-2S8A=w600-h1200",
         "https://play-lh.googleusercontent.com/xNs48jtDdioM3gJ8A8TLMjazNbrLLbnpAGNXwcS2VOJroSlmLBDWYeZujpJHWABgTW3c=w600-h1200",
         "https://play-lh.googleusercontent.com/VuQ13ecLd4_5pqaic01tDnHKZwNEAiOdBPqCelYxrEh9M2HIUj7zKARDMMwREatMdQ=w600-h1200",
@@ -1087,6 +1069,9 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/kf8aBHuWflKpGfEE0Z-56Xlwh6DPRxAcgGHtSflnVP66HZIgyjzb8ZGVDDHN3EKRkA4=w600-h1200",
         "https://play-lh.googleusercontent.com/YA-HSNobGx_La4fiZClXFNpMiy-bIy9lDgL0JbKxfHw6uYvHR_Cl_BrKG_JecQq0XQ=w600-h1200",
         "https://play-lh.googleusercontent.com/pfER4kOqdQOUqRWQYYeeSQqWsHWG_UgWGts3qYkosCJZvUufeltANhtNJNK6Jp1SOD_z=w600-h1200"
+      ],
+      "androidTablet": [
+        "https://play-lh.googleusercontent.com/yQChfa9XKlaXMIYTk8w8QwChjT8_SH-_2d2SS-kesw0TLQK1nxtw54bDcoZ09freZJgKrtg4f__is-31Vg=w600-h1200"
       ]
     },
     "platforms": {
@@ -1119,7 +1104,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6c/70/64/6c70645a-3681-47ca-a093-40a25839e2c4/bd55b576-4bf9-416d-b794-7c17ea880837_Listen_00000.jpg/576x768bb.jpg"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/pTHNWeUKXfbU0m22fyxWvJUwZ65wPtiMEH4Scz1hlIkGMHJrvRTa8-IUxapI6Dib4tqA-BEuNjGmTQhUxUwEMA=w600-h1200",
         "https://play-lh.googleusercontent.com/ByAhpn3_rTI7RiCscTxA09aUUdzwky5iNnFTxPP2x0jVvRUsz33--tuPNHCItr-a8SVH8Hnd6Rdc6dKFZOMn6g=w600-h1200",
         "https://play-lh.googleusercontent.com/miR01DEtU06JWE40wkOKQZpZYFaMJ3TVWm9OoQLRgk2FGHXleeo6GBMZDfNfMwOD0qtNBR4AvTxWT74bsvadRw=w600-h1200",
@@ -1127,7 +1111,9 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/L5b5bwNShKibeLzkGozTDL6nJhUQNcJdayqpDwEOjPdgylPweIiBbXVa4vltFHQ4BVTcHVht27Fe6p50jE0D=w600-h1200",
         "https://play-lh.googleusercontent.com/raSGM4uok63BIx87qsbKs52gfu5skAtxK4wB5oUIzwwjJ3VGdllZA1w-L8ghVQwKD_frC6-mflJ2E1Xd2TGkEvc=w600-h1200",
         "https://play-lh.googleusercontent.com/2-i9RGOFCERpFLBS2Bqc1djpT8sbP6jGRCDnZiYPdK_jJgo0m4W_uN3s3HNafu85UHxVrLH4fq1lxT-kVLr_fbY=w600-h1200",
-        "https://play-lh.googleusercontent.com/274AJCv6cWcI6MZwkgwC2ZYtV5c2iaEqXIIZV_nE-rhnAjUlI_uCyVO9aGCoCLOjInschFDeIH5kEgbRBPyIDg=w600-h1200",
+        "https://play-lh.googleusercontent.com/274AJCv6cWcI6MZwkgwC2ZYtV5c2iaEqXIIZV_nE-rhnAjUlI_uCyVO9aGCoCLOjInschFDeIH5kEgbRBPyIDg=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/XAwOJHhf8XRsJfhItOlsMxJ9FUh2VYLYJsykWiVfx96f15QQ0feh23KMwEsXn874x34=w600-h1200",
         "https://play-lh.googleusercontent.com/KNPRdoUAq8c31rjpi1jR1Mg_2PZWFBj530JEQEaCiuoXrHPKrDW5SmIaxaMfIB_xW7k1=w600-h1200",
         "https://play-lh.googleusercontent.com/NuaKYeh9QeMMycYY4U9TBJVVazRFXPEMaU1RtRPgkj2ousAR6qGG1rkLxqiVQzp9rg=w600-h1200",
@@ -1148,7 +1134,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/pCMGZY31nEK3uwwHdqWSjQoDjaYKK-uVfNGudmbWQBU760J98TNJ5K-Gpwb7MimTwIQ",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/b1yuQ2527Rtx64xi3IdYRgi36SdxiWYj0rCrfAEIw4ws9fCV7DqpuhLqwCHjYTwDkrTFlXhX9fKk416alrgOtA=w600-h1200",
         "https://play-lh.googleusercontent.com/8tshCqchv6C8uVDFU5luptyW9zMyTi4kLwif3mW-JGJOjdZbDk0DeOm7US4gyebVgwnOrDPQ2h26BqY9gABuxA=w600-h1200",
         "https://play-lh.googleusercontent.com/vMV7v-YKR9o3i5ajp5VDVBJ9WvEqN_d_HkuvQqcrokP0Q6f_g2R-p1BIDsAGAGBuNFzU0NGh_aJODxjbAPUzIOs=w600-h1200",
@@ -1185,14 +1170,15 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple5/v4/a4/e6/b4/a4e6b499-2568-7d09-9cd6-27dec6a44a0d/pr_source.png/360x480bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/vNb3dE1ne3CrR0IKygD-QPrRG4wDjCHW-zJWEfkRUCYZL15d_iN490NFaTWyEWu8us36=w600-h1200",
         "https://play-lh.googleusercontent.com/OTmXdJv3ic52fWIRkbrgf46prKjecRx4geKPFAL3APhDEr6xAceoc_7f5XC1fR1i4Y8=w600-h1200",
         "https://play-lh.googleusercontent.com/QT1q3mhjDUxThjaUJAYjSb8mqypV9ZTh2YHJCo50yejDcdWtcSLAH2TSTcYb__oe0w=w600-h1200",
         "https://play-lh.googleusercontent.com/CcWyuo37t0Lw99jMeE-2a09syvQwHKCzXbGnAkMsq73soWMyICV0Yv_Ym4Nk-0kPfVs=w600-h1200",
         "https://play-lh.googleusercontent.com/hOF3Nh9sXYjZWaT7foqbVdEATfrYUK95hz95NcZBzxtyYoeT0lVV6GL_ko0iO7xwoPc=w600-h1200",
         "https://play-lh.googleusercontent.com/8dpgYHaCeZbQW_TTDNdcKmlJlxjjsmO8o90lRbIlVlbPW67grOZ7cOqXmHm8YRsOA9I=w600-h1200",
-        "https://play-lh.googleusercontent.com/9FS0eDnM7c4B20UovPfqNnAfnWLi4ERgluMr8KCFVuFk65I4Ar3ov6QJdZ9NLuJEDg=w600-h1200",
+        "https://play-lh.googleusercontent.com/9FS0eDnM7c4B20UovPfqNnAfnWLi4ERgluMr8KCFVuFk65I4Ar3ov6QJdZ9NLuJEDg=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/KDyXsLhlqCSyN25dQ6lvx2YzKIQCBbPdEqP7l0-OIazSAoR1fdYUUl1I6ezClPgqX4I=w600-h1200"
       ]
     },
@@ -1233,7 +1219,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/aa/82/b4/aa82b494-c52e-71d7-a6cb-eef19bc7e877/4ef65965-4c90-4c71-b9c3-34932763c6b1_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.30.png/576x768bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/DN_oIJhDU6oDEajERs_Xy7KM7jtMZQcFi08nXeSuQXPnlgZUB9vpm2qyf4Ggplc8ec0=w600-h1200",
         "https://play-lh.googleusercontent.com/4M-_-039QLHl0KHBEDipPmo98V503h5ZEh-gk2zGTeJoVorfM9kOQf3_dGdMEhs0QOXp=w600-h1200",
         "https://play-lh.googleusercontent.com/dffSxMvNxlx78JE4tcKMvBD_pfJla2SxojSSAGifGqoBCwR4Zek5_Q7jvuC9XDBrkg=w600-h1200",
@@ -1265,7 +1250,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/9d/0c/58/9d0c58ed-6489-1256-5cd9-18507e907657/85e56a5c-c242-4709-936a-a22a49614a5a_5.5_image-7_EN.png/392x696bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/dLMf-La9cVhSvuWRyEChAH0IGguj2zIcr1z_s5xQLxGt2D_gFTXyAHKdbvdllQode1M=w600-h1200",
         "https://play-lh.googleusercontent.com/msnwltb6rc9ffh2B3J07IrJb1MMr0AjGD81bWF4CBXUnhiK94_07b3_5VANbE4cer3I=w600-h1200",
         "https://play-lh.googleusercontent.com/1vtQcrdkDfYKNg2Hb0PVi9Yyiw9xz8R1sECRIPAkXQWX7aEfyeUNEvK-buTw0V3cVQ=w600-h1200",
@@ -1288,7 +1272,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/85/f4/36/85f43632-a712-8d31-666e-859e6b459bcd/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/7aIl0fdhDZ78mMcwVv11vLwQGGU3rkOHvWTV72r6CVV56oXwAw5TSQN_gT4RNfF6=w600-h1200",
         "https://play-lh.googleusercontent.com/uFAkg8cmwbTUnmOE41vUszU_BBdl0M_GKNfHpLw1FTb4TcO_wjZCFnNl9XRonikyQ-U=w600-h1200",
         "https://play-lh.googleusercontent.com/quBkyAGJSlySp3fYampM7Mib-qKcrEyShB4a5E2micLxGBngWVctU8erd5_DiMgwkqY=w600-h1200",
@@ -1319,7 +1302,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/35/63/45/3563453d-59ab-e01e-3a6f-f1e5fb0742c7/pr_source.png/392x696bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/kxfIpVPL_fS3XoXy7_CnDH9ZhRr_8j1Q30_2EUkDfPthmZjiW8_b8jSrK2tzGC6Y1rQ=w600-h1200",
         "https://play-lh.googleusercontent.com/dpq7OgC0NiqKR6Pk8u0Y4ONnTVOh3M0DJn7tz5b0WSgdy0FtAm3F1mnEXn4_SwsS8w=w600-h1200",
         "https://play-lh.googleusercontent.com/CK6vDyD1JRPgqtiZWjGK1lQLYmwc2SPSs2e38WTZmHLpBxHbtqPSq45CH4AvwAEPwf4=w600-h1200",
@@ -1340,7 +1322,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/8Til8eKITFhj8Y_nYQMHGaO08zZbWF5ETwEl9nf6xA2krXwTgh-jBMnXOHJzdfVFhZc",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/KgM3llk3Ctco7r4sRUlplK7D7t09Fdmt1Gc3yDfk8HAfQyt9hhY8vIAcOC7xbg2i4AydTf3ncXow9iTn_wsjdw=w600-h1200",
         "https://play-lh.googleusercontent.com/b3Y4CZzHG4LJ-7lrq1fiiJN2r4586PdGvRNfRA_481uxkII-V56joeI7wvcGft-hyBLSoYprvdiVCRCLialN7Q=w600-h1200",
         "https://play-lh.googleusercontent.com/pkI72NkV2REvxrQrklXGD9_2Vmh0nmJDR2CsfajcfCtR-CTZN9r2kflgY89yxZ3DI8vvkPlyYWbCWjlIOU0T=w600-h1200",
@@ -1361,7 +1342,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/31/46/19/3146191e-540f-d6b4-4362-a499503b0eff/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/m8j9CZjYvTlpM2ce6fENZwGbiQFWPWAxhrdH6oKtgYKyS27mm7Hq2ZDVB-M2MUiJtoo=w600-h1200",
         "https://play-lh.googleusercontent.com/ErBMHQ93M0Xk53Unj94oB31hGi0aCeXQuvY1pDwvoRMWTOtQK-emhU39vDDX6yxHizjG=w600-h1200",
         "https://play-lh.googleusercontent.com/v-XlZtDx3azVIadn7erUIopxKcjk4LcrnoxT0PhryBfEL_d7mOIqJZV-rOHNpr0RK2Y=w600-h1200",
@@ -1375,7 +1355,9 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/urxI3DB1xIMRBDNFnVeqvgQM6Hfid1f0UbxvsSH9Y2B1-YXknATnLkmM0ZeYNTaKvQ=w600-h1200",
         "https://play-lh.googleusercontent.com/AoYjdyZqA8G2J23R10SPW64NYmxMSR6fl-mIzLrJvuDzn0iVkh1W_MB1Cm953NxIj0s=w600-h1200",
         "https://play-lh.googleusercontent.com/B_lalfJisGxcCZTdS54PZQ3t7NdTyasMD2_5IRGZSJndpmH1NOhkGwG4WH7hMYkTXw=w600-h1200",
-        "https://play-lh.googleusercontent.com/s3_krPS4lv_QHwfyEj-R9xTgLVmApLsM48t36nayr59i_OqjuOW0jgyt1eyppu-8qRuP=w600-h1200",
+        "https://play-lh.googleusercontent.com/s3_krPS4lv_QHwfyEj-R9xTgLVmApLsM48t36nayr59i_OqjuOW0jgyt1eyppu-8qRuP=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/T9YEw6YvMOYoCPE_JpPFjEAMcvxiTmXsDKpDZtoAvEmBuE2gr8crwhenGpYzZ8g-Y1mR=w600-h1200",
         "https://play-lh.googleusercontent.com/GmpzQuNoKsaXdteJhY-6b2aiM9uRh3HmR_uD6suvOtLk09elC0oBtYlkKBm_2K1eAw=w600-h1200"
       ]
@@ -1400,7 +1382,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/35/de/a035de47-47e8-41c2-2eb4-3fcd4b84b210/b638366e-6c3a-4546-8272-414b78268a8e_06.png/576x768bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/fnuwd7FklfbbF0AlfI0R4SWkmrZl2_Oy-ECBjDkWkFbWq3c4aVnO48RICgFRHGWh_2k5zbTPMeUSPkKL6MA=w600-h1200",
         "https://play-lh.googleusercontent.com/P_vPEDS51C44ogGmhiNdIbd9U306W6lN1SkU_4Hb8i-IsDrd-M34p3KqsFS1SYB8AOsa_k5cOzQWgFkzrTnsMfc=w600-h1200",
         "https://play-lh.googleusercontent.com/p7iJ92fxFCKf3SDF_v1DNOCPEyhAWZViNXsqU32x4_ZACpz4vfVZHqV8yU9ZINZhv5ST-UaA6QRQWZ5BpSEn4g=w600-h1200",
@@ -1432,7 +1413,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ec/e6/a7/ece6a7c4-eac7-8e8a-899e-cd24faebe28d/bc8418ed-acf6-4c97-95df-0df26067f112_image1kopie.jpg/576x768bb.jpg"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/foELSOxI7Hsl2EK9FFvPX1IIAciRkX4RBnXDY5p18z89N0_vTDCnGQGKM4QG1F7gjbdYb1S90zZO2qmpwZodkTA=w600-h1200",
         "https://play-lh.googleusercontent.com/j3XaD8WeIw2Xs7pgFHXSWeUfmbbTwthVyiVhIRVXAa0k7LBW39IveSsiU1eNk8xJND2AqvwQg9VYL_UENtXT=w600-h1200",
         "https://play-lh.googleusercontent.com/_35-qBlB6qc2UmFzpODrnOWDqtWiQukxL0KI2DUq2snuGbOWSoT2mgyO9FqHG0YqTZ4te4NGNzKjgeXvjz5O=w600-h1200",
@@ -1478,7 +1458,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/08/83/ea/0883eac6-54d1-ae9e-38d3-1b0514c15ff8/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/PhnOfj1G-NE9vWBWmpjBLRECa3pWqG0SzEBmKlZMw_n0hH5ELhovWyb667Ctw6Hjbw-jTxCYwKy3pchsltnA=w600-h1200",
         "https://play-lh.googleusercontent.com/O7tVQJFnP7ZHJmHx3_Fl_FWGzsTX_zYlXl_sThtpezKq8GmgY1Xk_dE6PgN6G_FgXngXh_kJZSSqpdegmtqrAA=w600-h1200",
         "https://play-lh.googleusercontent.com/_TjcPxDrNQ8j540tu1UI8fArPuOOqlTZYjJwW5aLy2Bhn9pAmOa_uk2J_1QirCsxeBA3fibGjp5hZHvmOPzB=w600-h1200",
@@ -1500,7 +1479,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/DFmTI5NNcvYBjW5g-URP3qU2QksO9rIYhwlmhqPZEB7C1qoe4Y_CCjUR7b8j5GHuMX0",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/A7VesI4KTp2-7S956RxrAJAPAE4xcazaI7-ATxhdoCzr-AYgAfomhrMAtJHxgD1i5wGm9BcVnw9ooK2FBe_b=w600-h1200",
         "https://play-lh.googleusercontent.com/oXGnGWouvW7TasdgIFRAoGFuPpFownEqPLmr0jaWNMM045I2tdCp4aPndX7iNdpE5Q=w600-h1200",
         "https://play-lh.googleusercontent.com/P_ia_oXrK_ouPkGrdEvtAu5_WWvZn7xd64Zur8fzM58iWJu98C9Vo1gIifD34zDbsnc=w600-h1200",
@@ -1569,7 +1547,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/27/c1/56/27c156a6-1995-bc86-7836-89919da98f38/pr_source.png/576x768bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/0KhydBKYBrbDZMtlCtIk0v1rYhd9X2-OS2gYlBqPGdx6Te_bkO2J1whJ9Qh2F6XQVGO9=w600-h1200",
         "https://play-lh.googleusercontent.com/JZ30xTEJ-1mzO3wXLnR7VxPifRMaonxj7ZlplMKC-wsUEQe_3G5ph2KtJDOZPKg3iko=w600-h1200",
         "https://play-lh.googleusercontent.com/TFJ3a9NU2wVzEWQ_hgn9vuFbw23bN1ckUHrNLYpCoIsLfR558LVzv8eUtRyIZsYYhho=w600-h1200",
@@ -1598,11 +1575,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/53/1f/1e/531f1ecb-84f8-edf7-9154-b9500f092dff/75a12612-2fe8-4600-970b-92cde2981d00_AssetsiOS45.png/392x696bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/QNpsl4k43vdbfwUAlVLZul2W5O5MUGOToystzghc97mljVHbUwtc639tahcuDsAVHdaGMyZA40AmMVcB_ws=w600-h1200",
         "https://play-lh.googleusercontent.com/OJWStITU0DTp8KIzhnYsA0LLOsQs2MbYFr_EICE3ucwvR7nuz5T8JKCWRnAPO__BPLg=w600-h1200",
         "https://play-lh.googleusercontent.com/IYSEmvO_fKMXJtYC8TaqqkhHachZDaKBzl1zNnOpEk8b1FmYzIGOX_Z2x7_xT_8YoLih=w600-h1200",
         "https://play-lh.googleusercontent.com/CKGF_OPhmnnfp-ZgYQHdIS1Fj4TwM_6NeGX3yNdg3h2UtYhWJxyOBrcN_0RIlKU0f5Q=w600-h1200",
         "https://play-lh.googleusercontent.com/Hce_3zGErDpIkgMDbpqzda3P4opJuK19SyER01_R8-cIAwna0agXqK91XRhm4SVWKCkC=w600-h1200"
+      ],
+      "androidTablet": [
+        "https://play-lh.googleusercontent.com/QNpsl4k43vdbfwUAlVLZul2W5O5MUGOToystzghc97mljVHbUwtc639tahcuDsAVHdaGMyZA40AmMVcB_ws=w600-h1200"
       ]
     },
     "platforms": {
@@ -1617,7 +1596,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0b/01/e6/0b01e698-7a0e-154f-75e4-71531bd7be29/sccicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/pirpjH3VQyvR-8mHuChPdIz2ZxP8VwDI5L5Zt14rrc5lwZVRClIVDJU63_5zV0omCA=w600-h1200",
         "https://play-lh.googleusercontent.com/APZN9de3nTd0Gs-hCcSMnja99QhWm5IscJa3wTqKP_myjkIvX4rTf-8xEuvvRwtuw8Sl=w600-h1200",
         "https://play-lh.googleusercontent.com/0UbM3RJs2A3Tvrbu3UUJ_41rp-H06CEixaQ4ahF-DKOG9yJUR1z6ssjACxYttBytqVQ=w600-h1200",
@@ -1660,7 +1638,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/g31M58BL1Er_z_9sEaLU6StlciFGyECEZww0y06JouOE8Zqz4nKtpdYj1hHNuPZFsr4",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/HB45YV_UDNjCnJWXRnDNU19ez929jNNd2S3IKOFzrcE3yQdfMcCkjUeunCb27SmVyQ=w600-h1200",
         "https://play-lh.googleusercontent.com/ow3RBrjd2pq7rYzPkyvFZZwelt2qpRh4JnELHr7lY7xAx1FJgIjZZxQvgrnG5R0Ypw=w600-h1200",
         "https://play-lh.googleusercontent.com/zPAuy7MsVgD412spalQ30JYwKDNHMPo_hgBkuZplleLsFbDExyGgoXxnAm23vrDvTSU=w600-h1200",
@@ -1686,7 +1663,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://play-lh.googleusercontent.com/dV01uQlL6inxWz2lJ4m7IAor_m4PnOl732Tmg0YRUVKgClu-_i3V342_1MMWRJ2wUA",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/atO1GGN5PrOMfpjD8dGEFRuJBdStQIVkjV9zpa2dupgs4rB7d_sQfhX1lSd6HvkBjZA=w600-h1200",
         "https://play-lh.googleusercontent.com/0N1a_e2VL9vzww1fTJrqeQRQGYz5jHdl9Hsvj6e2J3fm4RfUBS_RhCye0jiKB6c8vvM=w600-h1200",
         "https://play-lh.googleusercontent.com/mG7iILMEcITBbr-p_1vSdsJUAfB85cC3p9Efh8-jMTXQ5w5MESssiQAh6UlRLq1du83m=w600-h1200",
@@ -1736,7 +1712,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/91/28/d6/9128d674-e2cd-b1b4-dfa0-c8a341014428/668f70ae-dd14-44bd-b77a-f2c1eafc81d3_en_wind_ipadPro_10.png/576x768bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/0ikB8CEemGT_nc4gawLsc2yfNzHIj1knRMMudW8lHZyfvAVSh01QusI2dHQHgt2qdQ=w600-h1200",
         "https://play-lh.googleusercontent.com/rbTwkEsdP5W_f-V8Ooi2pxcGRafdDLt9mrwjo-i2kfUwattjyTfTncAnvQTO_sRuf8w=w600-h1200",
         "https://play-lh.googleusercontent.com/ruYAVlB2XoHBNt0mJiIufksf9NLGHJrB8KjrxCqwM61ODAvzu4QyrLDhIEZ026tIaTuN=w600-h1200",
@@ -1775,7 +1750,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a9/83/8d/a9838d4a-a6be-5f2c-fc5c-7891bda4f888/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/UiHe30kEWF-gB_visud3SC6ZFTugOpyM3Ga1IfDyUaWSUWT68W-n2HwX9Q42LiGqZsg=w600-h1200",
         "https://play-lh.googleusercontent.com/qHn4_swo6RtaFhmfxvVaqwa1TidNWzC6Vr7HZ_hzvDd0Ia8vM6B6Oc8Di0fDyO7_J8E=w600-h1200",
         "https://play-lh.googleusercontent.com/91WNGp3nbWdhbbKw3qzydd8CH4vLpzC_b3wrzAqHNNB9-b8osT5m9amyZU7Jg1Tbs-M=w600-h1200",
@@ -1785,8 +1759,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/Zp6R7pevJnohq35qfAfKV2pezwYycVNMT4lJP9SGHn0mIeQObxCp3ARIfanMG6g_2fM=w600-h1200",
         "https://play-lh.googleusercontent.com/pCl0V25hmegBmwMp8cJNaXYDtGiEiTt6ibLABpjVpVFhg4DdN76uRtpybWLfSzN61nsn=w600-h1200",
         "https://play-lh.googleusercontent.com/y_4RrRtqehzdZYnaHNdmGrcfp3Aoz-mN37BzfpweoajGFtSMPFhg9oEDhQ_V4AT74LI=w600-h1200",
-        "https://play-lh.googleusercontent.com/g5NKfTeUlLuTVh86UvxTyMsVHkp9RdfrNRaNIHQi2KhpqtObuYDHkyNYhe5Hfyg2_fE=w600-h1200",
-        "https://play-lh.googleusercontent.com/iNZ0Ykw68FhhtWceE9TP6X1pyLArnqN5di3enDbf1_VpBSASEhvf0a-J5aPvtYBlxx4=w600-h1200"
+        "https://play-lh.googleusercontent.com/g5NKfTeUlLuTVh86UvxTyMsVHkp9RdfrNRaNIHQi2KhpqtObuYDHkyNYhe5Hfyg2_fE=w600-h1200"
       ]
     },
     "platforms": {
@@ -1801,12 +1774,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c4/63/7a/c4637a8c-5b2c-6787-f718-d112f1f1706d/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/rD8Z9n4KaHLJKjrp2Gm-0zfw71GgRGJdDgqurH1Zf0C_yQybe3HzN2eC3QDmJINsVEc=w600-h1200",
         "https://play-lh.googleusercontent.com/_wauBTm5l35a3bK6z-w31W8xrCUhvEFY3TRM3zdcneNH271yn8AfJzp6Smh3jhxMTg=w600-h1200",
         "https://play-lh.googleusercontent.com/xSMvP3c8BNHyEyg9D5ptNUGspftd81j7vHVkD3e9pJCYxFxUQ9HmYTqPWKgcmeb1Yc8=w600-h1200",
         "https://play-lh.googleusercontent.com/OqBMGS-uKagNvuPMvajoGVrRG3xSv1bq9MMMq0BQdr7MjYRen3JvxckskTpCmmaQwIY=w600-h1200",
-        "https://play-lh.googleusercontent.com/Equ8SiYVZtWdMsk3jRXAGGSNjEPgRc0AspVey_6QX-jMuVYeVkHUZrKl91ytso-9pG8=w600-h1200",
+        "https://play-lh.googleusercontent.com/Equ8SiYVZtWdMsk3jRXAGGSNjEPgRc0AspVey_6QX-jMuVYeVkHUZrKl91ytso-9pG8=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/gBcGnMRw4R-3dGCPGUsZ8hCdOj8AQUjbURI4y7Kt5DZNlEU1DDrSMbFNR65KVAXVFA8=w600-h1200",
         "https://play-lh.googleusercontent.com/ycDw8uNy27YdE2Bd2IZZEkzJKU5XuGkNIKQAqTWdtLa6YxLqGcGkwByEUlAUTxNa8Uip=w600-h1200",
         "https://play-lh.googleusercontent.com/HLxTHHX1tA1GzG3Yguo5DQV2dPyk_Azz31e2TDSGammX2sihRD5dbHg-qzI70zJILA=w600-h1200",
@@ -1826,7 +1800,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/96/7f/e8967f69-45f9-fc69-b007-dcc5584ba6a7/AppIcons-0-1x_U007epad-0-0-0-8-0-0-85-220-0.png/512x512bb.jpg",
     "screenshots": {
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/Ls-vTvAXmAMG9XT_9obmP9viMvOIr7sUVF9XS_Q94rTNsiFcAM_ZPJ6Qbbva6pswZQ=w600-h1200",
         "https://play-lh.googleusercontent.com/gvS1Uj2cmG82o-o5zo5jAqtJF8G8wQ5D9RAUyhGMFlo65ITRhhWFAV7erDvDX53thVY=w600-h1200",
         "https://play-lh.googleusercontent.com/RDUrw_Pun0Nw1ptch_z7v7xQGH5PJXC2JaSv0qLk3I1PF8OQkJ0raIBAE6-zT_wTSe8R=w600-h1200",
@@ -1861,7 +1834,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/dc/a5/8fdca504-bde2-af65-3366-8c6cf7222c17/d6c9013d-da5d-4350-8ca7-aac6a991bac7_Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029_-_2024-05-06_at_22.46.54.png/576x768bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/sqYee2GC3uTEfQQE-qpM7ANUPsR_ictxPFP6D1m-Wsgj5EtyOl7ryNksFhP3H27pVoaCZGSWWpWupKpRyPBJ=w600-h1200",
         "https://play-lh.googleusercontent.com/HRH83IBNwGiSpKPDzdtB5dU2Xsw_YO0hkb8nnu0uqXQosLL9OhZdgwHoENNrVMW0E2O_yIRbCbnZrFu0ONKgVg=w600-h1200",
         "https://play-lh.googleusercontent.com/39wqjjiesAmtvmOVLOAkkYfHkNx6PdzgReHWLdfVu0qXYQVO_UIXhBkmqRdOQY_uloxKxCxUFD4WFUkRCZc-=w600-h1200",
@@ -1893,7 +1865,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/0c/a4/140ca416-3143-5c2a-4316-af629e7a48f0/72478fec-bbb6-4969-8229-297a2c1280d5_8._iPad_-_Pushnotificaties.png/552x414bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/FByt8SOrnYGJGdTJ3oQ8LGSigvHJMydpBy5_40gTX8jcGMdL7P6DtjYB8dPHpDOMaY8=w600-h1200",
         "https://play-lh.googleusercontent.com/ascO8IsF6LkyXAnVoCEiyxYa7p0umnvvKeeA2eGGqRn0-B1LIOe7FyWapC6doreA9dIC=w600-h1200",
         "https://play-lh.googleusercontent.com/PrXOdQV-o-tP3_tmBe1Jy96hFHMqUasNTrnhtzKB7wtE9eujCysRIlg7uRvHbp035A7R=w600-h1200",
@@ -1901,7 +1872,9 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/zMQzn30GX5XA0IWxxpXTGh8Lh2xnwXRFdXJ1YMWGAYPdyjnGo-pOO6lNoyNTNTk_9sAm=w600-h1200",
         "https://play-lh.googleusercontent.com/kSo6CcmW9LPTH8qjIg8qnk60aaNmNZEzWYuOaGXoclC1Z2ACrLNZxA3KhWtL3sPfCOA8=w600-h1200",
         "https://play-lh.googleusercontent.com/XpHD08WTBQPxyYlw7RHfdTs8fs2NxEfIy7CTB0pXmQ7NIdMsYNsSvmS_rgDZBstsBg=w600-h1200",
-        "https://play-lh.googleusercontent.com/yv_4KPotuwFBIXS120qn-UpQBIsvF4jHMXSxSQOtJtV4zYdcAIRIpOBjLjW2uPSzb3w=w600-h1200",
+        "https://play-lh.googleusercontent.com/yv_4KPotuwFBIXS120qn-UpQBIsvF4jHMXSxSQOtJtV4zYdcAIRIpOBjLjW2uPSzb3w=w600-h1200"
+      ],
+      "androidTablet": [
         "https://play-lh.googleusercontent.com/GF1NDGAvTxwCHlg8TXCPVWi-FLUkXjq7yqzsJ42RBm5bmF4G9THEMtZvDLXFXZsJcGI=w600-h1200",
         "https://play-lh.googleusercontent.com/XwqhfsWd0O6PFUI-y6varLTJunovVIb-2rNs4kxMS1DLCqV8aaAsYjeOhBoI_la6yA4=w600-h1200",
         "https://play-lh.googleusercontent.com/GD3NmtsGzlqYpmaFuKKXbk3NCc8kprO16XYj_NBe-n-DWBKvG931WWEpbFXK1EAR4BA=w600-h1200",
@@ -1964,7 +1937,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/f8/fd/39f8fd43-4cf9-a1b4-03da-a9f6a4d3179c/013193a6-59e5-41b3-8997-33ee997691c1_3.png/576x768bb.png"
       ],
       "android": [
-        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
         "https://play-lh.googleusercontent.com/Z2YwhPnOfWg_8w8ZYb-P5Tg-7Vc9Dw_Rui_cD23SjN_0cW5EaufRvBsHMrfmN1yunYk=w600-h1200",
         "https://play-lh.googleusercontent.com/CsvHc1Y-FKG0RNjuPkC7u47BL1gQz2D_XyB93WmVc_pKhSnFj1ElAI8zXXgsppJTljFV=w600-h1200",
         "https://play-lh.googleusercontent.com/oLO2EE2IxxcyS12ltDynjRwxyQTCduIq68O_FlRVePazMa8Inr6sj1DkN2Y25EkOOvY=w600-h1200",

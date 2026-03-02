@@ -147,6 +147,39 @@ async function fetchIosData(appId) {
   return { icon: null, screenshots: {} };
 }
 
+// Fetch a tiny thumbnail and extract image dimensions from the binary header
+async function getImageDimensions(url) {
+  try {
+    const res = await fetch(url, {
+      signal: AbortSignal.timeout(5000),
+      headers: { 'User-Agent': 'Mozilla/5.0' },
+    });
+    if (!res.ok) return null;
+    const buf = Buffer.from(await res.arrayBuffer());
+    const ct = res.headers.get('content-type') || '';
+
+    // PNG: IHDR chunk at bytes 16-23
+    if (ct.includes('png') && buf.length > 24) {
+      return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+    }
+    // JPEG: scan for SOF0/SOF2 marker
+    if (ct.includes('jpeg') || ct.includes('jpg')) {
+      for (let i = 0; i < buf.length - 9; i++) {
+        if (buf[i] === 0xFF && (buf[i + 1] === 0xC0 || buf[i + 1] === 0xC2)) {
+          return { w: buf.readUInt16BE(i + 7), h: buf.readUInt16BE(i + 5) };
+        }
+      }
+    }
+    // WebP: RIFF container
+    if (ct.includes('webp') && buf.length > 30 && buf.slice(0, 4).toString() === 'RIFF') {
+      return { w: buf.readUInt16LE(26) & 0x3FFF, h: buf.readUInt16LE(28) & 0x3FFF };
+    }
+  } catch {
+    // ignore
+  }
+  return null;
+}
+
 async function fetchGooglePlayData(packageId) {
   try {
     const res = await fetch(
@@ -164,20 +197,45 @@ async function fetchGooglePlayData(packageId) {
       ?? html.match(/<meta\s+content="([^"]+)"\s+property="og:image"/i);
     const icon = ogMatch ? ogMatch[1] : null;
 
-    // Extract screenshot URLs from srcset attributes
-    // Collect all unique play-lh screenshot base URLs under a single "android" category
+    // Extract screenshot base URLs from srcset attributes
     const screenshotSet = new Set();
     const srcsetRegex = /srcset="(https:\/\/play-lh\.googleusercontent\.com\/[^=]+)=w(?:\d+-h\d+)\b/g;
     let match;
     while ((match = srcsetRegex.exec(html)) !== null) {
       screenshotSet.add(match[1]);
     }
-    // Remove the icon base URL from screenshots (it often appears in both)
+    // Remove the icon base URL (it often appears in srcset too)
     const iconBase = icon?.replace(/=[^=]*$/, '');
     if (iconBase) screenshotSet.delete(iconBase);
 
+    if (screenshotSet.size === 0) return { icon, screenshots: {} };
+
+    // Classify each screenshot by fetching a tiny thumbnail and checking dimensions
+    const phone = [];
+    const tablet = [];
+    const baseUrls = [...screenshotSet];
+    for (let i = 0; i < baseUrls.length; i += 4) {
+      const batch = baseUrls.slice(i, i + 4);
+      const results = await Promise.allSettled(
+        batch.map(async (base) => {
+          const dims = await getImageDimensions(base + '=s16');
+          return { base, dims };
+        })
+      );
+      for (const r of results) {
+        if (r.status !== 'fulfilled' || !r.value.dims) continue;
+        const { base, dims } = r.value;
+        const ratio = dims.w / dims.h;
+        if (ratio < 0.8) phone.push(base + '=w600-h1200');       // portrait → phone
+        else if (ratio > 1.2) tablet.push(base + '=w600-h1200'); // landscape → tablet
+        // 0.8-1.2 = nearly square → skip (likely icon/badge)
+      }
+      if (i + 4 < baseUrls.length) await new Promise((r) => setTimeout(r, 100));
+    }
+
     const screenshots = {};
-    if (screenshotSet.size > 0) screenshots.android = [...screenshotSet].map((b) => b + '=w600-h1200');
+    if (phone.length > 0) screenshots.android = phone;
+    if (tablet.length > 0) screenshots.androidTablet = tablet;
 
     return { icon, screenshots };
   } catch {
