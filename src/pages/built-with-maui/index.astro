@@ -140,12 +140,11 @@ const clientApps = apps.map((app) => ({
             <div class="mb-4 flex items-start gap-4">
               {app.iconUrl ? (
                 <img
-                  src={app.iconUrl}
+                  data-lazy-src={app.iconUrl}
                   alt={`${app.name} app icon`}
                   width="56"
                   height="56"
                   class="h-14 w-14 flex-shrink-0 rounded-xl shadow-sm"
-                  loading="lazy"
                 />
               ) : (
                 <div class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-lg font-bold text-brand shadow-sm">
@@ -360,18 +359,43 @@ const clientApps = apps.map((app) => ({
           modalPlatforms.appendChild(a);
         });
 
-        // Screenshots
+        // Screenshots — loaded via throttled queue to avoid 429 rate limits
         if (app.screenshots && app.screenshots.length > 0) {
           modalScreenshotsSection.classList.remove('hidden');
           modalScreenshots.innerHTML = '';
+          var ssQueue = [];
+          var ssActive = 0;
+          function loadNextSS() {
+            while (ssActive < 2 && ssQueue.length > 0) {
+              var item = ssQueue.shift();
+              ssActive++;
+              (function(it) {
+                it.img.onload = function() {
+                  ssActive--;
+                  setTimeout(loadNextSS, 200);
+                };
+                it.img.onerror = function() {
+                  ssActive--;
+                  if (it.retries < 2) {
+                    it.retries++;
+                    it.img.removeAttribute('src');
+                    setTimeout(function() { ssQueue.push(it); loadNextSS(); }, 1000 * it.retries);
+                  } else {
+                    setTimeout(loadNextSS, 200);
+                  }
+                };
+                it.img.src = it.url;
+              })(item);
+            }
+          }
           app.screenshots.forEach(function(url) {
             var img = document.createElement('img');
-            img.src = url;
             img.alt = app.name + ' screenshot';
-            img.loading = 'lazy';
             img.className = 'w-[45%] flex-shrink-0 snap-start rounded-lg border border-edge/30 shadow-sm';
             modalScreenshots.appendChild(img);
+            ssQueue.push({ img: img, url: url, retries: 0 });
           });
+          loadNextSS();
         } else {
           modalScreenshotsSection.classList.add('hidden');
         }
@@ -412,6 +436,57 @@ const clientApps = apps.map((app) => ({
       });
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+      });
+    })();
+  </script>
+
+  {/* Throttled image loader — drip-feeds requests to avoid 429 rate limits */}
+  <script is:inline>
+    (function() {
+      var queue = [];
+      var active = 0;
+      var MAX_CONCURRENT = 3;
+      var STAGGER_MS = 150;
+      var MAX_RETRIES = 2;
+
+      function loadNext() {
+        while (active < MAX_CONCURRENT && queue.length > 0) {
+          var item = queue.shift();
+          if (!item || item.img.src) continue;
+          active++;
+          (function(it) {
+            var src = it.img.getAttribute('data-lazy-src');
+            it.img.onload = function() {
+              active--;
+              setTimeout(loadNext, STAGGER_MS);
+            };
+            it.img.onerror = function() {
+              active--;
+              if (it.retries < MAX_RETRIES) {
+                it.retries++;
+                it.img.removeAttribute('src');
+                setTimeout(function() { queue.push(it); loadNext(); }, 1000 * it.retries);
+              } else {
+                setTimeout(loadNext, STAGGER_MS);
+              }
+            };
+            it.img.src = src;
+          })(item);
+        }
+      }
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            queue.push({ img: entry.target, retries: 0 });
+            observer.unobserve(entry.target);
+            loadNext();
+          }
+        });
+      }, { rootMargin: '200px' });
+
+      document.querySelectorAll('img[data-lazy-src]').forEach(function(img) {
+        observer.observe(img);
       });
     })();
   </script>
