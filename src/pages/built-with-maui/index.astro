@@ -139,13 +139,18 @@ const clientApps = apps.map((app) => ({
             {/* Card header: icon + name + downloads */}
             <div class="mb-4 flex items-start gap-4">
               {app.iconUrl ? (
-                <img
-                  data-lazy-src={app.iconUrl}
-                  alt={`${app.name} app icon`}
-                  width="56"
-                  height="56"
-                  class="h-14 w-14 flex-shrink-0 rounded-xl shadow-sm"
-                />
+                <div class="relative h-14 w-14 flex-shrink-0">
+                  <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-lg font-bold text-brand shadow-sm" data-icon-placeholder>
+                    {getInitials(app.name)}
+                  </div>
+                  <img
+                    data-lazy-src={app.iconUrl}
+                    alt={`${app.name} app icon`}
+                    width="56"
+                    height="56"
+                    class="absolute inset-0 h-14 w-14 rounded-xl shadow-sm opacity-0 transition-opacity duration-300"
+                  />
+                </div>
               ) : (
                 <div class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-lg font-bold text-brand shadow-sm">
                   {getInitials(app.name)}
@@ -332,7 +337,16 @@ const clientApps = apps.map((app) => ({
 
         // Icon
         if (app.iconUrl) {
-          modalIcon.innerHTML = '<img src="' + app.iconUrl + '" alt="' + app.name + ' app icon" width="72" height="72" class="h-18 w-18 rounded-2xl shadow-md" />';
+          var initials = getInitials(app.name);
+          modalIcon.innerHTML = '<div class="relative h-18 w-18">' +
+            '<div class="flex h-18 w-18 items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md">' + initials + '</div>' +
+            '<img alt="' + app.name + ' app icon" width="72" height="72" class="absolute inset-0 h-18 w-18 rounded-2xl shadow-md opacity-0 transition-opacity duration-300" />' +
+            '</div>';
+          var modalImg = modalIcon.querySelector('img');
+          var modalPlaceholder = modalIcon.querySelector('[class*="from-brand"]');
+          modalImg.onload = function() { modalImg.classList.remove('opacity-0'); modalImg.classList.add('opacity-100'); modalPlaceholder.classList.add('invisible'); };
+          modalImg.onerror = function() { modalImg.remove(); };
+          modalImg.src = app.iconUrl;
         } else {
           modalIcon.innerHTML = '<div class="flex h-18 w-18 items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md">' + getInitials(app.name) + '</div>';
         }
@@ -371,6 +385,11 @@ const clientApps = apps.map((app) => ({
               ssActive++;
               (function(it) {
                 it.img.onload = function() {
+                  // Fade in image, resize wrapper to fit, stop shimmer
+                  it.img.classList.remove('opacity-0');
+                  it.img.classList.add('opacity-100');
+                  it.wrapper.classList.remove('animate-pulse', 'w-40', 'bg-gradient-to-br', 'from-brand/10', 'to-brand-extra/10');
+                  it.wrapper.classList.add('w-auto');
                   ssActive--;
                   setTimeout(loadNextSS, 200);
                 };
@@ -381,6 +400,7 @@ const clientApps = apps.map((app) => ({
                     it.img.removeAttribute('src');
                     setTimeout(function() { ssQueue.push(it); loadNextSS(); }, 1000 * it.retries);
                   } else {
+                    it.wrapper.remove();
                     setTimeout(loadNextSS, 200);
                   }
                 };
@@ -389,11 +409,15 @@ const clientApps = apps.map((app) => ({
             }
           }
           app.screenshots.forEach(function(url) {
+            // Wrapper with skeleton shimmer
+            var wrapper = document.createElement('div');
+            wrapper.className = 'h-72 w-40 flex-shrink-0 snap-start rounded-lg bg-gradient-to-br from-brand/10 to-brand-extra/10 animate-pulse';
             var img = document.createElement('img');
             img.alt = app.name + ' screenshot';
-            img.className = 'h-72 w-auto flex-shrink-0 snap-start rounded-lg border border-edge/30 shadow-sm';
-            modalScreenshots.appendChild(img);
-            ssQueue.push({ img: img, url: url, retries: 0 });
+            img.className = 'h-72 w-auto rounded-lg border border-edge/30 shadow-sm opacity-0 transition-opacity duration-300';
+            wrapper.appendChild(img);
+            modalScreenshots.appendChild(wrapper);
+            ssQueue.push({ img: img, wrapper: wrapper, url: url, retries: 0 });
           });
           loadNextSS();
         } else {
@@ -457,6 +481,11 @@ const clientApps = apps.map((app) => ({
           (function(it) {
             var src = it.img.getAttribute('data-lazy-src');
             it.img.onload = function() {
+              // Fade in the image, hide the placeholder behind it
+              it.img.classList.remove('opacity-0');
+              it.img.classList.add('opacity-100');
+              var placeholder = it.img.parentElement && it.img.parentElement.querySelector('[data-icon-placeholder]');
+              if (placeholder) placeholder.classList.add('invisible');
               active--;
               setTimeout(loadNext, STAGGER_MS);
             };
@@ -467,6 +496,8 @@ const clientApps = apps.map((app) => ({
                 it.img.removeAttribute('src');
                 setTimeout(function() { queue.push(it); loadNext(); }, 1000 * it.retries);
               } else {
+                // Keep placeholder visible, remove broken img
+                it.img.remove();
                 setTimeout(loadNext, STAGGER_MS);
               }
             };
@@ -497,5 +528,21 @@ const clientApps = apps.map((app) => ({
     .scrollbar-thin::-webkit-scrollbar { height: 6px; }
     .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
     .scrollbar-thin::-webkit-scrollbar-thumb { background: rgb(var(--color-edge)); border-radius: 3px; }
+
+    /* Hide browser broken-image icon on not-yet-loaded / failed images */
+    img[data-lazy-src]:not([src]) {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+    img[data-lazy-src][src] {
+      visibility: visible;
+    }
+    /* Modal screenshot images: hide broken icon while loading */
+    [data-app-modal-screenshots] img:not([src]),
+    [data-app-modal-screenshots] img.opacity-0 {
+      color: transparent; /* hides alt text */
+    }
   </style>
 </BaseLayout>
