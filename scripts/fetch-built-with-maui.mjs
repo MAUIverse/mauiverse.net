@@ -78,7 +78,7 @@ function parseTableRow(row) {
     description: description.trim(),
     downloads: downloads.trim().replace(/<br\s*\/?>/gi, ' · '),
     iconUrl: null,
-    screenshots: [],
+    screenshots: {},
     platforms,
   };
 }
@@ -129,13 +129,13 @@ async function fetchIosData(appId) {
     const res = await fetch(`https://itunes.apple.com/lookup?id=${appId}`, {
       signal: AbortSignal.timeout(8000),
     });
-    if (!res.ok) return { icon: null, screenshots: [] };
+    if (!res.ok) return { icon: null, screenshots: {} };
     const data = await res.json();
     if (data.results && data.results.length > 0) {
       const r = data.results[0];
-      const screenshots = (r.screenshotUrls && r.screenshotUrls.length > 0)
-        ? r.screenshotUrls
-        : (r.ipadScreenshotUrls ?? []);
+      const screenshots = {};
+      if (r.screenshotUrls && r.screenshotUrls.length > 0) screenshots.iphone = r.screenshotUrls;
+      if (r.ipadScreenshotUrls && r.ipadScreenshotUrls.length > 0) screenshots.ipad = r.ipadScreenshotUrls;
       return {
         icon: r.artworkUrl512 ?? r.artworkUrl100 ?? null,
         screenshots,
@@ -144,7 +144,7 @@ async function fetchIosData(appId) {
   } catch {
     // Silently skip
   }
-  return { icon: null, screenshots: [] };
+  return { icon: null, screenshots: {} };
 }
 
 async function fetchGooglePlayData(packageId) {
@@ -156,7 +156,7 @@ async function fetchGooglePlayData(packageId) {
         headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36' },
       }
     );
-    if (!res.ok) return { icon: null, screenshots: [] };
+    if (!res.ok) return { icon: null, screenshots: {} };
     const html = await res.text();
 
     // Extract icon from og:image meta tag
@@ -165,9 +165,9 @@ async function fetchGooglePlayData(packageId) {
     const icon = ogMatch ? ogMatch[1] : null;
 
     // Extract screenshot URLs from srcset attributes
-    // Portrait phone screenshots use =w480-h960, landscape use =w1052-h592
+    // Collect all unique play-lh screenshot base URLs under a single "android" category
     const screenshotSet = new Set();
-    const srcsetRegex = /srcset="(https:\/\/play-lh\.googleusercontent\.com\/[^=]+)=w(?:480-h960|1052-h592)\b/g;
+    const srcsetRegex = /srcset="(https:\/\/play-lh\.googleusercontent\.com\/[^=]+)=w(?:\d+-h\d+)\b/g;
     let match;
     while ((match = srcsetRegex.exec(html)) !== null) {
       screenshotSet.add(match[1]);
@@ -175,19 +175,20 @@ async function fetchGooglePlayData(packageId) {
     // Remove the icon base URL from screenshots (it often appears in both)
     const iconBase = icon?.replace(/=[^=]*$/, '');
     if (iconBase) screenshotSet.delete(iconBase);
-    // Re-request at a good display size and deduplicate
-    const screenshots = [...screenshotSet].map((base) => base + '=w600-h1200');
+
+    const screenshots = {};
+    if (screenshotSet.size > 0) screenshots.android = [...screenshotSet].map((b) => b + '=w600-h1200');
 
     return { icon, screenshots };
   } catch {
     // Silently skip
   }
-  return { icon: null, screenshots: [] };
+  return { icon: null, screenshots: {} };
 }
 
 async function fetchStoreDataForApp(app) {
   let icon = null;
-  let screenshots = [];
+  let screenshots = {};
 
   // Try iOS first (iTunes API is more reliable for icons + screenshots)
   if (app.platforms.ios) {
@@ -195,17 +196,17 @@ async function fetchStoreDataForApp(app) {
     if (appId) {
       const iosData = await fetchIosData(appId);
       if (iosData.icon) icon = iosData.icon;
-      if (iosData.screenshots.length > 0) screenshots = iosData.screenshots;
+      Object.assign(screenshots, iosData.screenshots);
     }
   }
 
-  // Try Google Play for missing icon or screenshots
-  if (app.platforms.android && (!icon || screenshots.length === 0)) {
+  // Try Google Play for missing icon and Android screenshots
+  if (app.platforms.android) {
     const packageId = extractGooglePlayPackage(app.platforms.android);
     if (packageId) {
       const gpData = await fetchGooglePlayData(packageId);
       if (!icon && gpData.icon) icon = gpData.icon;
-      if (screenshots.length === 0 && gpData.screenshots.length > 0) screenshots = gpData.screenshots;
+      Object.assign(screenshots, gpData.screenshots);
     }
   }
 
@@ -273,7 +274,12 @@ export type BuiltWithMauiApp = {
   description: string;
   downloads: string;
   iconUrl: string | null;
-  screenshots: string[];
+  screenshots: {
+    iphone?: string[];
+    ipad?: string[];
+    android?: string[];
+    androidTablet?: string[];
+  };
   platforms: {
     ios?: string;
     android?: string;
@@ -315,7 +321,7 @@ async function run() {
   console.log('Fetching app store data (icons + screenshots)…');
   apps = await fetchAllStoreData(apps);
   const iconCount = apps.filter((a) => a.iconUrl).length;
-  const screenshotCount = apps.filter((a) => a.screenshots.length > 0).length;
+  const screenshotCount = apps.filter((a) => Object.keys(a.screenshots).length > 0).length;
   console.log(`Fetched icons for ${iconCount}/${apps.length} apps, screenshots for ${screenshotCount}/${apps.length} apps.`);
 
   // Write generated TypeScript data

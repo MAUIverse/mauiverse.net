@@ -188,9 +188,9 @@ const clientApps = apps.map((app) => ({
                   );
                 })}
               </div>
-              {app.screenshots.length > 0 && (
+              {Object.keys(app.screenshots).length > 0 && (
                 <span class="flex-shrink-0 text-xs text-muted/60">
-                  <i class="fa-solid fa-images mr-1" aria-hidden="true"></i>{app.screenshots.length}
+                  <i class="fa-solid fa-images mr-1" aria-hidden="true"></i>{Object.values(app.screenshots).reduce((s, a) => s + a.length, 0)}
                 </span>
               )}
             </div>
@@ -254,11 +254,12 @@ const clientApps = apps.map((app) => ({
       {/* Platform links */}
       <div data-app-modal-platforms class="mb-6 flex flex-wrap gap-2"></div>
 
-      {/* Screenshots */}
+      {/* Screenshots with device tabs */}
       <div data-app-modal-screenshots-section class="hidden">
         <h3 class="mb-3 text-sm font-semibold text-brand-dark">
           <i class="fa-solid fa-images mr-2 text-brand/60" aria-hidden="true"></i>Screenshots
         </h3>
+        <div data-app-modal-screenshot-tabs class="mb-3 flex gap-2 overflow-x-auto scrollbar-thin"></div>
         <div data-app-modal-screenshots class="-mx-6 flex gap-3 overflow-x-auto px-6 pb-3 snap-x snap-mandatory scrollbar-thin sm:-mx-8 sm:px-8"></div>
       </div>
     </div>
@@ -283,6 +284,7 @@ const clientApps = apps.map((app) => ({
       const modalDescription = document.querySelector('[data-app-modal-description]');
       const modalPlatforms = document.querySelector('[data-app-modal-platforms]');
       const modalScreenshotsSection = document.querySelector('[data-app-modal-screenshots-section]');
+      const modalScreenshotTabs = document.querySelector('[data-app-modal-screenshot-tabs]');
       const modalScreenshots = document.querySelector('[data-app-modal-screenshots]');
 
       if (!(searchInput instanceof HTMLInputElement) || !(clearButton instanceof HTMLButtonElement) || !noResults || !modal) {
@@ -373,53 +375,92 @@ const clientApps = apps.map((app) => ({
           modalPlatforms.appendChild(a);
         });
 
-        // Screenshots — loaded via throttled queue to avoid 429 rate limits
-        if (app.screenshots && app.screenshots.length > 0) {
+        // Screenshots — with device category tabs
+        var screenshotCategories = app.screenshots || {};
+        var categoryLabels = { iphone: 'iPhone', ipad: 'iPad', android: 'Android' };
+        var categoryKeys = Object.keys(screenshotCategories).filter(function(k) { return screenshotCategories[k].length > 0; });
+
+        if (categoryKeys.length > 0) {
           modalScreenshotsSection.classList.remove('hidden');
+          modalScreenshotTabs.innerHTML = '';
           modalScreenshots.innerHTML = '';
-          var ssQueue = [];
-          var ssActive = 0;
-          function loadNextSS() {
-            while (ssActive < 2 && ssQueue.length > 0) {
-              var item = ssQueue.shift();
-              ssActive++;
-              (function(it) {
-                it.img.onload = function() {
-                  // Fade in image, resize wrapper to fit, stop shimmer
-                  it.img.classList.remove('opacity-0');
-                  it.img.classList.add('opacity-100');
-                  it.wrapper.classList.remove('animate-pulse', 'w-40', 'bg-gradient-to-br', 'from-brand/10', 'to-brand-extra/10');
-                  it.wrapper.classList.add('w-auto');
-                  ssActive--;
-                  setTimeout(loadNextSS, 200);
-                };
-                it.img.onerror = function() {
-                  ssActive--;
-                  if (it.retries < 2) {
-                    it.retries++;
-                    it.img.removeAttribute('src');
-                    setTimeout(function() { ssQueue.push(it); loadNextSS(); }, 1000 * it.retries);
-                  } else {
-                    it.wrapper.remove();
-                    setTimeout(loadNextSS, 200);
-                  }
-                };
-                it.img.src = it.url;
-              })(item);
-            }
+
+          // Build tab buttons (skip if only one category)
+          if (categoryKeys.length > 1) {
+            modalScreenshotTabs.classList.remove('hidden');
+            categoryKeys.forEach(function(key, i) {
+              var btn = document.createElement('button');
+              btn.type = 'button';
+              btn.textContent = (categoryLabels[key] || key) + ' (' + screenshotCategories[key].length + ')';
+              btn.className = 'rounded-full px-3 py-1 text-xs font-medium transition whitespace-nowrap ' +
+                (i === 0 ? 'bg-brand text-white' : 'bg-surface-alt text-muted hover:text-brand-dark');
+              btn.setAttribute('data-ss-tab', key);
+              btn.addEventListener('click', function() { switchTab(key); });
+              modalScreenshotTabs.appendChild(btn);
+            });
+          } else {
+            modalScreenshotTabs.classList.add('hidden');
           }
-          app.screenshots.forEach(function(url) {
-            // Wrapper with skeleton shimmer
-            var wrapper = document.createElement('div');
-            wrapper.className = 'h-72 w-40 flex-shrink-0 snap-start rounded-lg bg-gradient-to-br from-brand/10 to-brand-extra/10 animate-pulse';
-            var img = document.createElement('img');
-            img.alt = app.name + ' screenshot';
-            img.className = 'h-72 w-auto rounded-lg border border-edge/30 shadow-sm opacity-0 transition-opacity duration-300';
-            wrapper.appendChild(img);
-            modalScreenshots.appendChild(wrapper);
-            ssQueue.push({ img: img, wrapper: wrapper, url: url, retries: 0 });
-          });
-          loadNextSS();
+
+          function renderScreenshots(urls) {
+            modalScreenshots.innerHTML = '';
+            var ssQueue = [];
+            var ssActive = 0;
+            function loadNextSS() {
+              while (ssActive < 2 && ssQueue.length > 0) {
+                var item = ssQueue.shift();
+                ssActive++;
+                (function(it) {
+                  it.img.onload = function() {
+                    it.img.classList.remove('opacity-0');
+                    it.img.classList.add('opacity-100');
+                    it.wrapper.classList.remove('animate-pulse', 'w-40', 'bg-gradient-to-br', 'from-brand/10', 'to-brand-extra/10');
+                    it.wrapper.classList.add('w-auto');
+                    ssActive--;
+                    setTimeout(loadNextSS, 200);
+                  };
+                  it.img.onerror = function() {
+                    ssActive--;
+                    if (it.retries < 2) {
+                      it.retries++;
+                      it.img.removeAttribute('src');
+                      setTimeout(function() { ssQueue.push(it); loadNextSS(); }, 1000 * it.retries);
+                    } else {
+                      it.wrapper.remove();
+                      setTimeout(loadNextSS, 200);
+                    }
+                  };
+                  it.img.src = it.url;
+                })(item);
+              }
+            }
+            urls.forEach(function(url) {
+              var wrapper = document.createElement('div');
+              wrapper.className = 'h-72 w-40 flex-shrink-0 snap-start rounded-lg bg-gradient-to-br from-brand/10 to-brand-extra/10 animate-pulse';
+              var img = document.createElement('img');
+              img.alt = app.name + ' screenshot';
+              img.className = 'h-72 w-auto rounded-lg border border-edge/30 shadow-sm opacity-0 transition-opacity duration-300';
+              wrapper.appendChild(img);
+              modalScreenshots.appendChild(wrapper);
+              ssQueue.push({ img: img, wrapper: wrapper, url: url, retries: 0 });
+            });
+            loadNextSS();
+          }
+
+          function switchTab(key) {
+            // Update active tab styling
+            modalScreenshotTabs.querySelectorAll('[data-ss-tab]').forEach(function(btn) {
+              if (btn.getAttribute('data-ss-tab') === key) {
+                btn.className = 'rounded-full px-3 py-1 text-xs font-medium transition whitespace-nowrap bg-brand text-white';
+              } else {
+                btn.className = 'rounded-full px-3 py-1 text-xs font-medium transition whitespace-nowrap bg-surface-alt text-muted hover:text-brand-dark';
+              }
+            });
+            renderScreenshots(screenshotCategories[key]);
+          }
+
+          // Show first category by default
+          renderScreenshots(screenshotCategories[categoryKeys[0]]);
         } else {
           modalScreenshotsSection.classList.add('hidden');
         }

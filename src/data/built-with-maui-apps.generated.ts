@@ -2,14 +2,19 @@
 // Do not edit manually.
 
 export const builtWithMauiSource = "https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md";
-export const builtWithMauiFetchedAt = "2026-03-02T18:36:03.001Z";
+export const builtWithMauiFetchedAt = "2026-03-02T18:44:53.903Z";
 
 export type BuiltWithMauiApp = {
   name: string;
   description: string;
   downloads: string;
   iconUrl: string | null;
-  screenshots: string[];
+  screenshots: {
+    iphone?: string[];
+    ipad?: string[];
+    android?: string[];
+    androidTablet?: string[];
+  };
   platforms: {
     ios?: string;
     android?: string;
@@ -25,7 +30,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Audio Converter with Advance Audio Controls for iOS & macOS",
     "downloads": "50K+ (App Store)",
     "iconUrl": null,
-    "screenshots": [],
+    "screenshots": {},
     "platforms": {
       "ios": "https://apps.apple.com/us/app/audio-converter-mp3-extractor/id6446039142"
     }
@@ -35,14 +40,32 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "With the Azure mobile app, monitor Azure resources like VMs and web apps on the go from your iOS or Android device.",
     "downloads": "Millions of downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/77/44/50/774450a9-74c5-b32c-121d-e3976ebca3cb/AppIcons-0-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ef/91/31/ef9131e8-03ab-f4bf-17ed-c21f9d0a7b95/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/34/c3/fd/34c3fdba-9fce-966e-8fba-af212b199e5b/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/88/2f/1a/882f1a7b-8ffb-1c96-98cb-9bd027070dc5/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/d2/a5/05d2a503-955f-ee85-233f-96adb0d8ea61/mzl.dfmbbngt.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fc/50/3d/fc503d07-30c8-5ca1-4c33-1b7a4cb38421/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/90/34/e6/9034e657-c713-731a-95c1-cdfd3fa252c0/mzl.odyuebqe.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ef/91/31/ef9131e8-03ab-f4bf-17ed-c21f9d0a7b95/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/34/c3/fd/34c3fdba-9fce-966e-8fba-af212b199e5b/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/88/2f/1a/882f1a7b-8ffb-1c96-98cb-9bd027070dc5/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/d2/a5/05d2a503-955f-ee85-233f-96adb0d8ea61/mzl.dfmbbngt.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fc/50/3d/fc503d07-30c8-5ca1-4c33-1b7a4cb38421/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/90/34/e6/9034e657-c713-731a-95c1-cdfd3fa252c0/mzl.odyuebqe.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d8/f2/fd/d8f2fd45-256a-5391-760c-ddf17ed7950d/pr_source.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0f/83/78/0f8378d7-bf9d-d40a-43a4-159be0b0afb8/pr_source.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/33/ce/fb/33cefba9-9317-d696-ddf5-1dda3d5fa791/pr_source.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/58/b9/81/58b981ac-e1b8-ffc8-16d5-fe49d32ed1cc/pr_source.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3d/5e/81/3d5e813e-7ab4-4117-d2bb-157d4e1ed51d/mzl.zpjansen.png/552x414bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/d3pQ90jv8gWhXuivfHislAyzuIBST1pVv9T27yJvABNJ1-DU7lysyT4CJm2TSkekjA=w600-h1200",
+        "https://play-lh.googleusercontent.com/s_hkITy2rWLt34dSjVmEGsxXZUiZQVmF-ByZVqTrYkVppiVQZ6-YNe_INM350C8mXw=w600-h1200",
+        "https://play-lh.googleusercontent.com/3dalsnttiHqonkrt5su-gnZye3_Nmdn1AbWiP5G2Qk9szRUqNEFiucWcJPUYI-xXuas=w600-h1200",
+        "https://play-lh.googleusercontent.com/gRw6ONOPSkN2ta-tBDM35UkU8Rcin0ZuEndFczp8BIEPmvnLVF8Xgz-Hwrm4-fLyPVw=w600-h1200",
+        "https://play-lh.googleusercontent.com/VcrKTTKl8sCkPNW7KA7bb_a4eYzoDrT5eG1cxcfW3AOQmz2lL0uT2ur_YdQ9e86ZZg=w600-h1200",
+        "https://play-lh.googleusercontent.com/3aMi5WP7WwSO3ZjqyHmDvScM0v0Qvt-O4Y_L5oZvosqTMOKwWhBZnkMWekS_vb3f_Q=w600-h1200"
+      ]
+    },
     "platforms": {
       "ios": "https://itunes.apple.com/us/app/microsoft-azure/id1219013620?ls=1&mt=8",
       "android": "https://play.google.com/store/apps/details?id=com.microsoft.azure"
@@ -53,14 +76,17 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "An app that alert when the device battery reach a low level or when it reaches a sufficient level of charge, in order to avoid battery stressing and prolong its life.",
     "downloads": "100+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/SZX1VsZeaKKYTJzKjDLf2WYjyWaJ8izllgkHmb0AMnsjwGeKpTlOUr3Acm0nGFvN888",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/QvuUe9uvS4SaOV7evQLq-Yi9CwY70QjkKPoEEKBLeUllXaOo3DD502aqCfi1-HZf-z4=w600-h1200",
-      "https://play-lh.googleusercontent.com/MNBaHPrUhJ30ZipmCS-HzJ2zMqN2os32fC9jUXt-4YIafOcuDc_8RAPbAEd9Th4p3cja=w600-h1200",
-      "https://play-lh.googleusercontent.com/WA8RDB7Vq8rbSs7ATnmSkjZ3nsV6CqzrlJhNWD2VTl7g5dNHD-Tor5R5gfwIsoe2m1sv=w600-h1200",
-      "https://play-lh.googleusercontent.com/vpDax3pVakaFPQmkcXAz8suubWvHmo-JmwJXmv4B51t4BEAP2nyBcmFYy8QGH1hphGA=w600-h1200",
-      "https://play-lh.googleusercontent.com/cpfq4xUMRHwOTj7Nvw38QGO8dbW9GrFBpH3oboqlc3MljmoiPOtarZ7y2YOAdMx8UE0=w600-h1200",
-      "https://play-lh.googleusercontent.com/k8naDUSymAqM9ICQ19eUv3gjbeiO-SqUS9TnTaX-C5yOyp7xoisJNp-tq5PowiiuQgg=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/QvuUe9uvS4SaOV7evQLq-Yi9CwY70QjkKPoEEKBLeUllXaOo3DD502aqCfi1-HZf-z4=w600-h1200",
+        "https://play-lh.googleusercontent.com/MNBaHPrUhJ30ZipmCS-HzJ2zMqN2os32fC9jUXt-4YIafOcuDc_8RAPbAEd9Th4p3cja=w600-h1200",
+        "https://play-lh.googleusercontent.com/WA8RDB7Vq8rbSs7ATnmSkjZ3nsV6CqzrlJhNWD2VTl7g5dNHD-Tor5R5gfwIsoe2m1sv=w600-h1200",
+        "https://play-lh.googleusercontent.com/vpDax3pVakaFPQmkcXAz8suubWvHmo-JmwJXmv4B51t4BEAP2nyBcmFYy8QGH1hphGA=w600-h1200",
+        "https://play-lh.googleusercontent.com/cpfq4xUMRHwOTj7Nvw38QGO8dbW9GrFBpH3oboqlc3MljmoiPOtarZ7y2YOAdMx8UE0=w600-h1200",
+        "https://play-lh.googleusercontent.com/k8naDUSymAqM9ICQ19eUv3gjbeiO-SqUS9TnTaX-C5yOyp7xoisJNp-tq5PowiiuQgg=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://github.com/giuseppe-guerra/BatteryMonitor",
       "android": "https://play.google.com/store/apps/details?id=com.toyokenstudio.batterymonitor"
@@ -71,13 +97,33 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Personal mailbox in which you receive digital mail from the government of the Netherlands.",
     "downloads": "3.6M+ (Google Play)  · 3M+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/71/3d/53/713d5323-35b5-4941-33fa-7139a7c4b23a/appicon_ios-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/92/ee/07/92ee0780-e6cf-1800-b374-b8908345ab30/3f3afc3f-9b42-4548-8d0d-add2a11d0bf6_1242x2208.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/4d/09/b2/4d09b20e-f032-5fd4-1070-35371ccb9c6c/467c2a84-dba4-4f30-bd17-0946feb2ece4_1242x2208.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/72/13/fd/7213fd5b-6d1b-e2c6-10e8-5c02ec0007bf/34d7a4d2-53b9-418a-9bf6-d98ddae48423_1242x2208.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/b6/cc/4d/b6cc4d5d-8ef0-4171-106e-c114ff228852/95e45d6c-de56-4f2d-9f3e-4259406ba2dc_1242x2208.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/28/66/e4/2866e44d-defb-2ab0-2266-1a4e396e563b/85c5336e-1775-418a-a774-b0a8b0610523_1242x2208.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/92/ee/07/92ee0780-e6cf-1800-b374-b8908345ab30/3f3afc3f-9b42-4548-8d0d-add2a11d0bf6_1242x2208.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/4d/09/b2/4d09b20e-f032-5fd4-1070-35371ccb9c6c/467c2a84-dba4-4f30-bd17-0946feb2ece4_1242x2208.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/72/13/fd/7213fd5b-6d1b-e2c6-10e8-5c02ec0007bf/34d7a4d2-53b9-418a-9bf6-d98ddae48423_1242x2208.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/b6/cc/4d/b6cc4d5d-8ef0-4171-106e-c114ff228852/95e45d6c-de56-4f2d-9f3e-4259406ba2dc_1242x2208.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/28/66/e4/2866e44d-defb-2ab0-2266-1a4e396e563b/85c5336e-1775-418a-a774-b0a8b0610523_1242x2208.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/cc/a5/ce/cca5ce6f-aaeb-89ee-678b-80efb914b6aa/777b591f-dc63-4acb-8d8c-83c3b2ada105_2732x2048.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/c1/88/2b/c1882bda-2359-1bff-2b50-6832ae2ef6ad/5118f426-5375-494e-8126-f34ca7382e3f_2732x2048.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/0c/aa/a9/0caaa925-ccd7-dd9d-596b-fd2cec2f4ada/30eeabbc-ebcb-4c04-a66a-5984465e4ac2_2732x2048.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/34/64/f5/3464f545-0a68-60ac-d9ce-52ba92fedec2/0632ebdd-8e4e-41ed-9e40-e780d2adaabe_2732x2048.png/552x414bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/RYzyq0LALPbAAgxx1iTMLkO3Ar4uOtxEjqZUb4rS2fg2DFoukIwfZH6xh-d41jlQmA=w600-h1200",
+        "https://play-lh.googleusercontent.com/Njg1LwKietvQdS8fz7TkOtJOFybFv3pUZOCQAvSO8sl2I18EOiwm1dTC3pkq0wyek0E=w600-h1200",
+        "https://play-lh.googleusercontent.com/rPEZmrk051gp5RUadi19Ynl_RIuHfICsOyuhuXzXEkGqyOvsXSylIOzQnNSg-jhTpYUA=w600-h1200",
+        "https://play-lh.googleusercontent.com/rhnzuMDor6AKikH7Sy4nzxn1Yka3DTtWA6-4cn1-1TDyi2IPtISGLv-DyMgVeKxnf9yR=w600-h1200",
+        "https://play-lh.googleusercontent.com/be7rFVrwc_rA8WdV9_LLLTKkoWH0VMt0KnnRCaiGBhhnnwXMngwqauLVsskVQfEkiuc=w600-h1200",
+        "https://play-lh.googleusercontent.com/Md7ugnzWQNW69N_THJ6CXMwreoVdd4hYsn6aIhs_1PdwP5X4UG39m6efXpbUu8kDuIo=w600-h1200",
+        "https://play-lh.googleusercontent.com/Z_r3mJXiU_Q5LvHy0uEiqaiFVak2knNQDyogC8wMese4FoUqx_KHM3N8SCqXMlwDH_Vk=w600-h1200",
+        "https://play-lh.googleusercontent.com/89Ytbuu0gx5-F_tIQV0Ma9ufbm6F77uc5-3ctq1xliOWiZl1tYDc-TdtztuJhwpzg78=w600-h1200",
+        "https://play-lh.googleusercontent.com/tZK-u66FvCYNV3RwnSegvVR0t7flwKuu0NEGP3LzZT5dHnn_6epFnmtkj0wYgwNZK4u0=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=nl.rijksoverheid.mbb.pub&hl=en-US",
       "ios": "https://apps.apple.com/gb/app/digid/id1384987408?l=en-US"
@@ -88,24 +134,27 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Bicicreteiro is a complete platform for cyclists that integrates a social network, marketplace, and safety features. It allows users to share training sessions with live tracking, create product stores, and receive news via newsletter. It uses AI to help identify stolen bikes. Additional features are available through subscriptions and donations integrated with app stores.",
     "downloads": "100 + downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/9d/43/329d4398-9b95-8c8a-e649-92267b1d6cda/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/0ssVjCVuwixJT1tt2kCqUk84yKv7-kGlTPIsyWlYI8-FOejjOHZBepsiWmC4XqJS8g=w600-h1200",
-      "https://play-lh.googleusercontent.com/Flq4AdOV_-Zwjv5AfAwTPYnt_289EWzwjamxQ8UsegI9ExhHnh46lzbx3PkwR2xr_vw=w600-h1200",
-      "https://play-lh.googleusercontent.com/eeYIAC5QNjbNNFHITwJqlX7h7NgVorYDrwuBVzPJiO9oZKnhLP3igS3Mgb9nM31NrA=w600-h1200",
-      "https://play-lh.googleusercontent.com/WcbZ9Xdx8zYJFupe1PkNQRk3q-EEkjZLTatWWZjiKlMpyu1sWJFhmUu9OzGG1DrYHbI=w600-h1200",
-      "https://play-lh.googleusercontent.com/J5rQmPm4GA3vmLMF0HuC2qgIPb8JdqLD7N6yagjxSJwM847dhXlwf3fWNHzt1RZ9ByI=w600-h1200",
-      "https://play-lh.googleusercontent.com/QT5Odya9DL_IHmIpV5qmPs9pM3GMTMaLc27IY9d7EKGrCZAMMyvv2EWN0Ee25Pt6ig=w600-h1200",
-      "https://play-lh.googleusercontent.com/0XgFP6rG8KIYVqTy1zPM1Pp4qukhZmWosMhbTK-KhatXzUyRfO5wkC4hU6h_blXc4A=w600-h1200",
-      "https://play-lh.googleusercontent.com/stMUg6RSVfAEHbzUKJqZ4HWhUu35SzOOFnY0BUtV4UWxiy6RA5pr8RvxEME-nVcij0E=w600-h1200",
-      "https://play-lh.googleusercontent.com/W8T3k9hE8JhTw6R-lBmxA8qS91WGMebM5sXKtLdLVGXpuLwESwmZvWgbURBnDnecGQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/2i6dnpECSt5EkOUION-xrBcHBQW8EovzEvwpHP4wVWa0GsJaXrJsAGg3jzEwYuxdezE=w600-h1200",
-      "https://play-lh.googleusercontent.com/MQ5PqHP_dLmU1AR9Dje6YsFAVACJ9rPwtFdgqDWVV8Vrxzbes4vBXhFBpJQSpTh1hL4=w600-h1200",
-      "https://play-lh.googleusercontent.com/OonRcT94ZS_Rt5L7P0U_XVNtUA2ImCcJtnGQWmlo7on15muV0MbVJQw1iAJwwgqrN1yn=w600-h1200",
-      "https://play-lh.googleusercontent.com/1RZVkaCvhU1PScJor_MJRcvSOW90QneqNSrQa6o3qoJKndaoOdjzGGfPiHQmyxpO7ko=w600-h1200",
-      "https://play-lh.googleusercontent.com/f3G6bz8PgJzCdWZP8pewVoH4uaUsRExv4VLqYzRYF-_TPdcZCI580-UrfP5jXYUCfA=w600-h1200",
-      "https://play-lh.googleusercontent.com/RkiyCkubdU336R7xia6tJvkeiXllA2e9Z-udxJiHQgkl5INhTArdYHpMO11lYPqYtIs=w600-h1200",
-      "https://play-lh.googleusercontent.com/uhnNtQSG-axVKp5puv1fm3p2mCP5fNDPi24dww0VdQOSVIoUTzXfQo0ITlnuvXqyqg=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/0ssVjCVuwixJT1tt2kCqUk84yKv7-kGlTPIsyWlYI8-FOejjOHZBepsiWmC4XqJS8g=w600-h1200",
+        "https://play-lh.googleusercontent.com/Flq4AdOV_-Zwjv5AfAwTPYnt_289EWzwjamxQ8UsegI9ExhHnh46lzbx3PkwR2xr_vw=w600-h1200",
+        "https://play-lh.googleusercontent.com/eeYIAC5QNjbNNFHITwJqlX7h7NgVorYDrwuBVzPJiO9oZKnhLP3igS3Mgb9nM31NrA=w600-h1200",
+        "https://play-lh.googleusercontent.com/WcbZ9Xdx8zYJFupe1PkNQRk3q-EEkjZLTatWWZjiKlMpyu1sWJFhmUu9OzGG1DrYHbI=w600-h1200",
+        "https://play-lh.googleusercontent.com/J5rQmPm4GA3vmLMF0HuC2qgIPb8JdqLD7N6yagjxSJwM847dhXlwf3fWNHzt1RZ9ByI=w600-h1200",
+        "https://play-lh.googleusercontent.com/QT5Odya9DL_IHmIpV5qmPs9pM3GMTMaLc27IY9d7EKGrCZAMMyvv2EWN0Ee25Pt6ig=w600-h1200",
+        "https://play-lh.googleusercontent.com/0XgFP6rG8KIYVqTy1zPM1Pp4qukhZmWosMhbTK-KhatXzUyRfO5wkC4hU6h_blXc4A=w600-h1200",
+        "https://play-lh.googleusercontent.com/stMUg6RSVfAEHbzUKJqZ4HWhUu35SzOOFnY0BUtV4UWxiy6RA5pr8RvxEME-nVcij0E=w600-h1200",
+        "https://play-lh.googleusercontent.com/W8T3k9hE8JhTw6R-lBmxA8qS91WGMebM5sXKtLdLVGXpuLwESwmZvWgbURBnDnecGQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/2i6dnpECSt5EkOUION-xrBcHBQW8EovzEvwpHP4wVWa0GsJaXrJsAGg3jzEwYuxdezE=w600-h1200",
+        "https://play-lh.googleusercontent.com/MQ5PqHP_dLmU1AR9Dje6YsFAVACJ9rPwtFdgqDWVV8Vrxzbes4vBXhFBpJQSpTh1hL4=w600-h1200",
+        "https://play-lh.googleusercontent.com/OonRcT94ZS_Rt5L7P0U_XVNtUA2ImCcJtnGQWmlo7on15muV0MbVJQw1iAJwwgqrN1yn=w600-h1200",
+        "https://play-lh.googleusercontent.com/1RZVkaCvhU1PScJor_MJRcvSOW90QneqNSrQa6o3qoJKndaoOdjzGGfPiHQmyxpO7ko=w600-h1200",
+        "https://play-lh.googleusercontent.com/f3G6bz8PgJzCdWZP8pewVoH4uaUsRExv4VLqYzRYF-_TPdcZCI580-UrfP5jXYUCfA=w600-h1200",
+        "https://play-lh.googleusercontent.com/RkiyCkubdU336R7xia6tJvkeiXllA2e9Z-udxJiHQgkl5INhTArdYHpMO11lYPqYtIs=w600-h1200",
+        "https://play-lh.googleusercontent.com/uhnNtQSG-axVKp5puv1fm3p2mCP5fNDPi24dww0VdQOSVIoUTzXfQo0ITlnuvXqyqg=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://bicicreteiro.com",
       "android": "https://play.google.com/store/apps/details?id=app.bicicreteiro",
@@ -117,9 +166,23 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Open source BluOs NAD remote. Like the official BluOS Controller this app serves as a universal remote for all BluOS-enabled wireless hi-res music systems.",
     "downloads": "13K + downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/29/7e/46/297e46df-096c-fe54-96d5-98ad0c051d64/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/86/38/22/8638228b-b0fd-e5b0-3a79-74480c5a01bc/92218b79-a916-46df-9dcd-c67b0faa0d35_2024-02-29_03-10-47-.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/86/38/22/8638228b-b0fd-e5b0-3a79-74480c5a01bc/92218b79-a916-46df-9dcd-c67b0faa0d35_2024-02-29_03-10-47-.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c1/0d/bc/c10dbc78-ff29-7d28-ea5c-24814a5af82c/44025023-b651-44cf-8efb-7998b996130f_2024-02-29_ipad.png/576x768bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/yQChfa9XKlaXMIYTk8w8QwChjT8_SH-_2d2SS-kesw0TLQK1nxtw54bDcoZ09freZJgKrtg4f__is-31Vg=w600-h1200",
+        "https://play-lh.googleusercontent.com/XDmVBnlP-ab6SHYvUrzsdCQl0PuVRxliDujUpDc1wXnCoo1q9CDfi6VshuBVElQu1cQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/RuPzkY59nVmiA3mOkeZuoK9I8T6BiQ9Rlgi0Tl29HRxWuWwO01WkvYkkw9HrBKfdCkA=w600-h1200",
+        "https://play-lh.googleusercontent.com/Zs-akDXAPtSvysHYWm1FcujCKPcrPaK40OZjhf62cPlS7ZaiT6y81XuxScdG8mab9A=w600-h1200",
+        "https://play-lh.googleusercontent.com/OVJyQziNP7Tiu7Hk1jXd--VvbLzqFbBbO0cORKNU9TYuWZpof1g_4sjP5WTrQyi8rQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/qkFeEvQsuRZwF5cOCGMdd1VEw2w0HJ6N3ytSACdLWasW4Kywna8qaVUU94sYtoTBoNs=w600-h1200",
+        "https://play-lh.googleusercontent.com/9R9Vf5LiIW2iPu2FkO9MG8RjGXDgvE2CdX7NIi_nH_maZNnd5NuYg8MXcRXbnyf_Jmg=w600-h1200"
+      ]
+    },
     "platforms": {
       "github": "https://github.com/crwsolutions/BluOsNadRemote",
       "android": "https://play.google.com/store/apps/details?id=nl.crwsolutions.bluosnadremote",
@@ -131,14 +194,17 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "This app is used by LEGO enthousiasts and it's a tool to help you organize all your LEGO sets when all bricks are mixed up in a big box. It helps you to keep track of all bricks you've collected and which ones are still missing",
     "downloads": "150K+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/fIUeZsRan9hMB-0X_S64xjtoEjM4hCv7GpECQt1n3-SUWQbFFnBx15jUGaFHkJPEMPUfmurxKwupbl9kafL-6Q",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/RIVxoi60Dm4XrUqlk_Veo1p2yce7ESHB9qKEqOhmK1V_3SvrxeF4oOOhQd_csIlyRMx9h3eXanauwb2MNlXk=w600-h1200",
-      "https://play-lh.googleusercontent.com/7ceu0qsb6wiM8jrFABymTEG-VUFh5WJa_bvvr1LEkhBtEzP3TF1z8tV839DG6GBrEVwxHi0cyw4pZ93qc741=w600-h1200",
-      "https://play-lh.googleusercontent.com/A7OukOKDY5p37SdMS1321qXINiBn825q_eczlfcqMddcSCN_iAVFYX1NDXHHaVk4C3cIbciLrZbi97hBDGx3-A=w600-h1200",
-      "https://play-lh.googleusercontent.com/YLgHoADBNnIY2sW-0lU_wIVKtMwUYesD22Wrv3WFzm8BBYTqgwfa9-xO94AODxS3h4ycwXwQjZ0jXTNViUHoTw=w600-h1200",
-      "https://play-lh.googleusercontent.com/nglafFRzZV7l0PQRV2mjm33ua3y4oJo9UvRDBCmT9WWy31uuKYes6fnRCx3upIk46jQiKpydd4svmE2avJ5Xdw=w600-h1200",
-      "https://play-lh.googleusercontent.com/ukITzmwl78DyLSmWSJPj67benXwvYHgte-eNnCb5kISgDcafQkl5oIQAVH9PmLVawC4i5CFwJC5Sw3d2759X=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/RIVxoi60Dm4XrUqlk_Veo1p2yce7ESHB9qKEqOhmK1V_3SvrxeF4oOOhQd_csIlyRMx9h3eXanauwb2MNlXk=w600-h1200",
+        "https://play-lh.googleusercontent.com/7ceu0qsb6wiM8jrFABymTEG-VUFh5WJa_bvvr1LEkhBtEzP3TF1z8tV839DG6GBrEVwxHi0cyw4pZ93qc741=w600-h1200",
+        "https://play-lh.googleusercontent.com/A7OukOKDY5p37SdMS1321qXINiBn825q_eczlfcqMddcSCN_iAVFYX1NDXHHaVk4C3cIbciLrZbi97hBDGx3-A=w600-h1200",
+        "https://play-lh.googleusercontent.com/YLgHoADBNnIY2sW-0lU_wIVKtMwUYesD22Wrv3WFzm8BBYTqgwfa9-xO94AODxS3h4ycwXwQjZ0jXTNViUHoTw=w600-h1200",
+        "https://play-lh.googleusercontent.com/nglafFRzZV7l0PQRV2mjm33ua3y4oJo9UvRDBCmT9WWy31uuKYes6fnRCx3upIk46jQiKpydd4svmE2avJ5Xdw=w600-h1200",
+        "https://play-lh.googleusercontent.com/ukITzmwl78DyLSmWSJPj67benXwvYHgte-eNnCb5kISgDcafQkl5oIQAVH9PmLVawC4i5CFwJC5Sw3d2759X=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.psychosoft.brick_manager"
     }
@@ -148,23 +214,26 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The Career Atlas mobile app offers a detailed personality analysis to help you discover the career that best fits your profile.",
     "downloads": "10+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/Pif20MYAHDNi4CBjDYteNHz_NL04peQPg-FNj_4XU1JjwWGz_fzR3lU8D2d_unYx-A",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/O2IFTGibQSYuZ1mOzVMdA2ai7ELxAN1qHyvvL7yMUWLs151SpKIz0dBbb8TpaD3LSPO-=w600-h1200",
-      "https://play-lh.googleusercontent.com/myVH0v1DVltDZ4Ispk2nIH6TgKOEd1oDHGK7e1mhwZ3WVErtyB4QzAgU9dPxuV1WvUJo=w600-h1200",
-      "https://play-lh.googleusercontent.com/kp3CaHWvwYW9PebbiLjCOgaOfAUULXIN4lwLO8mKwCVcbgUk79r9stw0NL2UV3cLvYMQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/5WLz91n9VOUgkF-QsIy73vHEeRfHpLtodzPEmIfDdNY9pE5d9gkxhmKAQwfY5aJ_9g=w600-h1200",
-      "https://play-lh.googleusercontent.com/fYWweFHymyaDdFGFSJgnVTwrUVjj5J3Q_lfFftCDc6m2ZnrdEpz0L1XuG-l-SPgZkQU=w600-h1200",
-      "https://play-lh.googleusercontent.com/mM0mXTUPNjbyxOwfG5yCEiiiam52V23qvQC3eoLgTjTxBKJREUH1QpEp5sGehjm66SY=w600-h1200",
-      "https://play-lh.googleusercontent.com/uLR3TaiquneHekGU5HoeyjHhblMW0pstxztIlglrdsfK-nA1EPKZPwPQT4J6QOhluro=w600-h1200",
-      "https://play-lh.googleusercontent.com/X9GIkOeyrAcWFDBAC7Q7vb6Q9xFijPzpf2Jcr1J1OwP3ObQnw102qukMI8-AuhPsuE4=w600-h1200",
-      "https://play-lh.googleusercontent.com/UyerW-ZkHCE9AtGNI0Oown9Uyacp8Oqk17UsFt-SiKIAkMw2JBn0bX50_5EdftwO6gkx=w600-h1200",
-      "https://play-lh.googleusercontent.com/1srDn0z7WhYhbvO--hqegiW7dxakA_oZmi-tosxjGHDN3T5kApTm78VeBWhF1RT0BhGv=w600-h1200",
-      "https://play-lh.googleusercontent.com/zEGv9yc8Mgf_lVAKI9oJzjG4TpvSk7Vdrr1BO2MsGMlJ814bZb-lCPdHfb69v0XQBwo=w600-h1200",
-      "https://play-lh.googleusercontent.com/QDaXJx2_xeUWx-WmNh1xZDj7ig0jk1Orc9bgSrxfKE3prEV4KwTW299FC1O4c6W-oMk=w600-h1200",
-      "https://play-lh.googleusercontent.com/6fBNco8jHd_aWK4edBoNTng5nVXTpCkjiW_b-iwEiyWOVURYvmeFc357Lpt3Z9rvQsM=w600-h1200",
-      "https://play-lh.googleusercontent.com/Nap7KELr2pIyX3_kDBjotbQX4_yBvlp1eWzVLW4vizA4OmN_6jlAlZmmCeeagteeiS8=w600-h1200",
-      "https://play-lh.googleusercontent.com/6a-44wX0UH_REZh7V1mVe-4B_xrDgx7CcoluPIRGmNeOzabEIKcl7dDrD6bdFu7MGS8=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/O2IFTGibQSYuZ1mOzVMdA2ai7ELxAN1qHyvvL7yMUWLs151SpKIz0dBbb8TpaD3LSPO-=w600-h1200",
+        "https://play-lh.googleusercontent.com/myVH0v1DVltDZ4Ispk2nIH6TgKOEd1oDHGK7e1mhwZ3WVErtyB4QzAgU9dPxuV1WvUJo=w600-h1200",
+        "https://play-lh.googleusercontent.com/kp3CaHWvwYW9PebbiLjCOgaOfAUULXIN4lwLO8mKwCVcbgUk79r9stw0NL2UV3cLvYMQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/5WLz91n9VOUgkF-QsIy73vHEeRfHpLtodzPEmIfDdNY9pE5d9gkxhmKAQwfY5aJ_9g=w600-h1200",
+        "https://play-lh.googleusercontent.com/fYWweFHymyaDdFGFSJgnVTwrUVjj5J3Q_lfFftCDc6m2ZnrdEpz0L1XuG-l-SPgZkQU=w600-h1200",
+        "https://play-lh.googleusercontent.com/mM0mXTUPNjbyxOwfG5yCEiiiam52V23qvQC3eoLgTjTxBKJREUH1QpEp5sGehjm66SY=w600-h1200",
+        "https://play-lh.googleusercontent.com/uLR3TaiquneHekGU5HoeyjHhblMW0pstxztIlglrdsfK-nA1EPKZPwPQT4J6QOhluro=w600-h1200",
+        "https://play-lh.googleusercontent.com/X9GIkOeyrAcWFDBAC7Q7vb6Q9xFijPzpf2Jcr1J1OwP3ObQnw102qukMI8-AuhPsuE4=w600-h1200",
+        "https://play-lh.googleusercontent.com/UyerW-ZkHCE9AtGNI0Oown9Uyacp8Oqk17UsFt-SiKIAkMw2JBn0bX50_5EdftwO6gkx=w600-h1200",
+        "https://play-lh.googleusercontent.com/1srDn0z7WhYhbvO--hqegiW7dxakA_oZmi-tosxjGHDN3T5kApTm78VeBWhF1RT0BhGv=w600-h1200",
+        "https://play-lh.googleusercontent.com/zEGv9yc8Mgf_lVAKI9oJzjG4TpvSk7Vdrr1BO2MsGMlJ814bZb-lCPdHfb69v0XQBwo=w600-h1200",
+        "https://play-lh.googleusercontent.com/QDaXJx2_xeUWx-WmNh1xZDj7ig0jk1Orc9bgSrxfKE3prEV4KwTW299FC1O4c6W-oMk=w600-h1200",
+        "https://play-lh.googleusercontent.com/6fBNco8jHd_aWK4edBoNTng5nVXTpCkjiW_b-iwEiyWOVURYvmeFc357Lpt3Z9rvQsM=w600-h1200",
+        "https://play-lh.googleusercontent.com/Nap7KELr2pIyX3_kDBjotbQX4_yBvlp1eWzVLW4vizA4OmN_6jlAlZmmCeeagteeiS8=w600-h1200",
+        "https://play-lh.googleusercontent.com/6a-44wX0UH_REZh7V1mVe-4B_xrDgx7CcoluPIRGmNeOzabEIKcl7dDrD6bdFu7MGS8=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.fmglib.myanalysis"
     }
@@ -174,30 +243,33 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "End sleepless nights! Help your baby relax and fall into a peaceful sleep with Colic Baby Sleeping Sounds.",
     "downloads": "10K+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/EBgC3nLVjvUKCm7o8To1XfEpiSOsQzkSg1fI4g_rWgu8oFd7Ac6RntymWuPpgvnQ24I",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/CPWY1f_29Cyu-AhdZhjtnC_RowJopV05-CvWSsAGK4dkB9YTvRXmHgAvqKiCTtYRyZ8=w600-h1200",
-      "https://play-lh.googleusercontent.com/eXSi1s7ZRXKLnY2sF8mQK8VztZSNxeSzzN5kHCiylmyInubptbdS4reRT2Xm6oKKks4=w600-h1200",
-      "https://play-lh.googleusercontent.com/GCL522hgfdkqAPbHPKB6Pma8mxej_cpE3HRgBMvsqusztKFBiDW0Ti5oLw6v5Xza1ul-=w600-h1200",
-      "https://play-lh.googleusercontent.com/hRCZrHxnaLtWHV4krz7nRt5BwpTK8-PhXGw_eLIMPh1lH-5QVXRM3SPCVlAddi1BgbKl=w600-h1200",
-      "https://play-lh.googleusercontent.com/vaTDsznPj4GRRb0SreTpf84Gy2jyHXPyF-yEwR-tk-rl_hph8gukttyadb3Zxprx16zJ=w600-h1200",
-      "https://play-lh.googleusercontent.com/xMAA_ZHwJR8mlv31QGEuGQJcFO2yx6FZEZe1QvWtjsQ4mYcmd_T1l_44ERHDevrI3Xi3=w600-h1200",
-      "https://play-lh.googleusercontent.com/x77QJXjdI6pqNcDntbRq5F08E_IvcY_0EzhAQWIsYJK4h4zi6ybTjvT-vj4_1jrH60k=w600-h1200",
-      "https://play-lh.googleusercontent.com/DsbO7N-9zGK_5WKY9P01aZuY_-G5csfHxIAgLcNbVMT-1EhfWDGgLThegAtSmGLbU3uQNgyeAxTwogiQs1U6iA=w600-h1200",
-      "https://play-lh.googleusercontent.com/qgDhonUXcMjfjnR7ASgF168rZnNbabthW1mP7ag57w8i39oi9bFv8BwQ_Or1T8XH=w600-h1200",
-      "https://play-lh.googleusercontent.com/g6oV0Bn_VYYfWymMu3ZE1oxbip_bhHzVqy7LFyFecIYgRRp0XJyz_IIN9C1YRzVwYw=w600-h1200",
-      "https://play-lh.googleusercontent.com/QXEY1ezOjRY1YC71QJFi5Oy-xqx5ZT7BFCcYWlbJoD4BRpqefDi_WzXklxwPbjUaGg=w600-h1200",
-      "https://play-lh.googleusercontent.com/PcJI4Pj5RWOAeKVbnemeHutevicgNkmoHfT0j87Z75o-Uu4sQMTVYHTiLLls5MYRwg=w600-h1200",
-      "https://play-lh.googleusercontent.com/lVK1jRfI5YEjdcBRDNzgp6PSiGzB0nIyjMXLXM3sTG3eG85U4UxJEn-hfayeUhmMtY8l=w600-h1200",
-      "https://play-lh.googleusercontent.com/udxC3pCjYWWnkKKWObk39homIMKNsTCIywgRfmpnWRlu0YY5-qHcapT1uhyJRluEfEs=w600-h1200",
-      "https://play-lh.googleusercontent.com/RV6z0uOwutsID9PA4ghXbnljxfZKlFPl9fzMPXzhT7diMOE7YLiMOpcsGN7Lxgs0mw=w600-h1200",
-      "https://play-lh.googleusercontent.com/wgUwEi_hwU-j1ecRiMNhH4d341n3Czw9oDZdzivG2WNMzp1Cy3Z7VLHUegl4CFCCzpc=w600-h1200",
-      "https://play-lh.googleusercontent.com/qfFJAonbnEN-XGE2HvBWm5IJIOZA-TbQYdtUAEgWPCHWPZ3jVVyjXwgzFLyWiK6BBOM=w600-h1200",
-      "https://play-lh.googleusercontent.com/BL2nPoOQg9uoi0d1aeKdnczeVFvnHdLqcg96iaJdQUUI47taw4qK8thTjLwgur1ZGA=w600-h1200",
-      "https://play-lh.googleusercontent.com/kmyv2kFzy0MZcNW-6sY8eu-xYtNIvB80991Ir76vUkMqYwqH4h91RrgCk97ObRU5B15D=w600-h1200",
-      "https://play-lh.googleusercontent.com/PZOpw4x_rl4VMKNyCeJn_LK1FYhx5hdkKLMuMdBFiiiOJH_c6-W6V-EaiCT2TVX_u6E=w600-h1200",
-      "https://play-lh.googleusercontent.com/UjcsW3-8PM4PKK5HmkG_PA6I8lA4veQqasJEUq-Xf4k528wdL_SqERaq85mPkobafS4=w600-h1200",
-      "https://play-lh.googleusercontent.com/eddInwIU8WC8qMhO3S0m_mrNDWq2PR-jTY1qsOQEwFryvJEJxE7n5r7sxQLrqS5MWg=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/CPWY1f_29Cyu-AhdZhjtnC_RowJopV05-CvWSsAGK4dkB9YTvRXmHgAvqKiCTtYRyZ8=w600-h1200",
+        "https://play-lh.googleusercontent.com/eXSi1s7ZRXKLnY2sF8mQK8VztZSNxeSzzN5kHCiylmyInubptbdS4reRT2Xm6oKKks4=w600-h1200",
+        "https://play-lh.googleusercontent.com/GCL522hgfdkqAPbHPKB6Pma8mxej_cpE3HRgBMvsqusztKFBiDW0Ti5oLw6v5Xza1ul-=w600-h1200",
+        "https://play-lh.googleusercontent.com/hRCZrHxnaLtWHV4krz7nRt5BwpTK8-PhXGw_eLIMPh1lH-5QVXRM3SPCVlAddi1BgbKl=w600-h1200",
+        "https://play-lh.googleusercontent.com/vaTDsznPj4GRRb0SreTpf84Gy2jyHXPyF-yEwR-tk-rl_hph8gukttyadb3Zxprx16zJ=w600-h1200",
+        "https://play-lh.googleusercontent.com/xMAA_ZHwJR8mlv31QGEuGQJcFO2yx6FZEZe1QvWtjsQ4mYcmd_T1l_44ERHDevrI3Xi3=w600-h1200",
+        "https://play-lh.googleusercontent.com/x77QJXjdI6pqNcDntbRq5F08E_IvcY_0EzhAQWIsYJK4h4zi6ybTjvT-vj4_1jrH60k=w600-h1200",
+        "https://play-lh.googleusercontent.com/DsbO7N-9zGK_5WKY9P01aZuY_-G5csfHxIAgLcNbVMT-1EhfWDGgLThegAtSmGLbU3uQNgyeAxTwogiQs1U6iA=w600-h1200",
+        "https://play-lh.googleusercontent.com/qgDhonUXcMjfjnR7ASgF168rZnNbabthW1mP7ag57w8i39oi9bFv8BwQ_Or1T8XH=w600-h1200",
+        "https://play-lh.googleusercontent.com/g6oV0Bn_VYYfWymMu3ZE1oxbip_bhHzVqy7LFyFecIYgRRp0XJyz_IIN9C1YRzVwYw=w600-h1200",
+        "https://play-lh.googleusercontent.com/QXEY1ezOjRY1YC71QJFi5Oy-xqx5ZT7BFCcYWlbJoD4BRpqefDi_WzXklxwPbjUaGg=w600-h1200",
+        "https://play-lh.googleusercontent.com/PcJI4Pj5RWOAeKVbnemeHutevicgNkmoHfT0j87Z75o-Uu4sQMTVYHTiLLls5MYRwg=w600-h1200",
+        "https://play-lh.googleusercontent.com/lVK1jRfI5YEjdcBRDNzgp6PSiGzB0nIyjMXLXM3sTG3eG85U4UxJEn-hfayeUhmMtY8l=w600-h1200",
+        "https://play-lh.googleusercontent.com/udxC3pCjYWWnkKKWObk39homIMKNsTCIywgRfmpnWRlu0YY5-qHcapT1uhyJRluEfEs=w600-h1200",
+        "https://play-lh.googleusercontent.com/RV6z0uOwutsID9PA4ghXbnljxfZKlFPl9fzMPXzhT7diMOE7YLiMOpcsGN7Lxgs0mw=w600-h1200",
+        "https://play-lh.googleusercontent.com/wgUwEi_hwU-j1ecRiMNhH4d341n3Czw9oDZdzivG2WNMzp1Cy3Z7VLHUegl4CFCCzpc=w600-h1200",
+        "https://play-lh.googleusercontent.com/qfFJAonbnEN-XGE2HvBWm5IJIOZA-TbQYdtUAEgWPCHWPZ3jVVyjXwgzFLyWiK6BBOM=w600-h1200",
+        "https://play-lh.googleusercontent.com/BL2nPoOQg9uoi0d1aeKdnczeVFvnHdLqcg96iaJdQUUI47taw4qK8thTjLwgur1ZGA=w600-h1200",
+        "https://play-lh.googleusercontent.com/kmyv2kFzy0MZcNW-6sY8eu-xYtNIvB80991Ir76vUkMqYwqH4h91RrgCk97ObRU5B15D=w600-h1200",
+        "https://play-lh.googleusercontent.com/PZOpw4x_rl4VMKNyCeJn_LK1FYhx5hdkKLMuMdBFiiiOJH_c6-W6V-EaiCT2TVX_u6E=w600-h1200",
+        "https://play-lh.googleusercontent.com/UjcsW3-8PM4PKK5HmkG_PA6I8lA4veQqasJEUq-Xf4k528wdL_SqERaq85mPkobafS4=w600-h1200",
+        "https://play-lh.googleusercontent.com/eddInwIU8WC8qMhO3S0m_mrNDWq2PR-jTY1qsOQEwFryvJEJxE7n5r7sxQLrqS5MWg=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.kodfab.bes&hl=en"
     }
@@ -207,16 +279,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "CycleProCut is a powerful cycling app built for riders who want to train smarter and push harder. Create personalized training plans, simulate performance outcomes, and analyze advanced ride metrics. With intuitive setup, integrated fitness tools, and no login required, CycleProCut transforms your pocket into a pro-level cycling coach.",
     "downloads": "1K+ downloads",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/41/d5/d9/41d5d925-e2da-1ff7-1463-777681096026/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/hz3BHHcBtI4tI17sSzQT64g0TA_yOKUNSqfmx8VESDZiWG-nbUIIYoNrfeMDPXiITRA=w600-h1200",
-      "https://play-lh.googleusercontent.com/6X6hXQRW9OaK8XTIJnBwt_z0TZ3AVyieCaJQoKrov0uz1bLkfeFF9UWCkHe_J5xH_Ug=w600-h1200",
-      "https://play-lh.googleusercontent.com/w87a3a9481SmolWbF7z1opUjMCGwE6X1yhMRwLIJjGweYDJodKJTX3Y8bMKlBzcddJ8=w600-h1200",
-      "https://play-lh.googleusercontent.com/lz8nU6Zmwl3NfxZ9Ln4oawtq87TpaFq0kC7p2ycspTSFxTNT8s72ciMbge73QKc18Zg=w600-h1200",
-      "https://play-lh.googleusercontent.com/D0ctOcQBeuMZKR4Kqgye_ofBmUQQEdQxIKdLwj9RzVAJazOqGpDqnjQQ_YWOiEAwYnk=w600-h1200",
-      "https://play-lh.googleusercontent.com/1iZOG85TBb47LwUfag8gl-iVD8kpa2ru5ub7kXYW_73WeWEeR05i-pk-Pg-CAXKoBZU=w600-h1200",
-      "https://play-lh.googleusercontent.com/V-bZGwUCDEUNmJ8TlXKBv6n61BJXQBtnv9fIzYIfEFVrtnJwhxk_YElfLKOhMTFWIlw=w600-h1200",
-      "https://play-lh.googleusercontent.com/fImEV40cyx8JBGDukR__kCd-gOX3ELkcWxwf0zRQAEYAbleVnZTdH4d_a4h3_gbPcA=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/hz3BHHcBtI4tI17sSzQT64g0TA_yOKUNSqfmx8VESDZiWG-nbUIIYoNrfeMDPXiITRA=w600-h1200",
+        "https://play-lh.googleusercontent.com/6X6hXQRW9OaK8XTIJnBwt_z0TZ3AVyieCaJQoKrov0uz1bLkfeFF9UWCkHe_J5xH_Ug=w600-h1200",
+        "https://play-lh.googleusercontent.com/w87a3a9481SmolWbF7z1opUjMCGwE6X1yhMRwLIJjGweYDJodKJTX3Y8bMKlBzcddJ8=w600-h1200",
+        "https://play-lh.googleusercontent.com/lz8nU6Zmwl3NfxZ9Ln4oawtq87TpaFq0kC7p2ycspTSFxTNT8s72ciMbge73QKc18Zg=w600-h1200",
+        "https://play-lh.googleusercontent.com/D0ctOcQBeuMZKR4Kqgye_ofBmUQQEdQxIKdLwj9RzVAJazOqGpDqnjQQ_YWOiEAwYnk=w600-h1200",
+        "https://play-lh.googleusercontent.com/1iZOG85TBb47LwUfag8gl-iVD8kpa2ru5ub7kXYW_73WeWEeR05i-pk-Pg-CAXKoBZU=w600-h1200",
+        "https://play-lh.googleusercontent.com/V-bZGwUCDEUNmJ8TlXKBv6n61BJXQBtnv9fIzYIfEFVrtnJwhxk_YElfLKOhMTFWIlw=w600-h1200",
+        "https://play-lh.googleusercontent.com/fImEV40cyx8JBGDukR__kCd-gOX3ELkcWxwf0zRQAEYAbleVnZTdH4d_a4h3_gbPcA=w600-h1200"
+      ]
+    },
     "platforms": {
       "ios": "https://apps.apple.com/app/id6698868765",
       "android": "https://play.google.com/store/apps/details?id=pro.bikesport.cycleprocut"
@@ -227,14 +302,17 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Your go-to destination for all things dad jokes, with a user-friendly interface and cozy design.",
     "downloads": "100+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/jD1ot8NaEmsmGHSgfojAyoaayHps6vA3Vxi10dJ-RaZ1IbdjJXfkYYh8mD7AK2Y15sc",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/1CiFHPZwB_RzemFPTFmng6Xu83oXQE1Gt-lvVp2HwXJUC3rbc9UwUPv1zYZ-iFEVu5w=w600-h1200",
-      "https://play-lh.googleusercontent.com/qPscxLPI7bpN1Sl4JwqfbgX4dN_zJfuOELDi9-ZBzjsUj4uT-cx1M4uJDzE70tyHMgs=w600-h1200",
-      "https://play-lh.googleusercontent.com/WW2ORRTZmrQpCBvGxvt4QyRGMVC1xx4w0KbseX_lYJ6JV6ljtlml7l7m9WvATDtwJWw=w600-h1200",
-      "https://play-lh.googleusercontent.com/2GHcPMszLStwgFS0TcDAtcVxfaOeyEaVsuOsdb79OShjiQTCG1aGD87H5DtPtns2FHM=w600-h1200",
-      "https://play-lh.googleusercontent.com/MtcTko1cRxl1gmFRqSKSvLCj4mCvh0D6oyqM0GpLTXZB1Sst8TIfIN5tHLXkja0_vg=w600-h1200",
-      "https://play-lh.googleusercontent.com/j7PGpFANqEzfFMJcpWsSOlpnXqZHFPVEMCzlWHSbfse9jg3Z7aqbm-1wgkPgfHOesg=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/1CiFHPZwB_RzemFPTFmng6Xu83oXQE1Gt-lvVp2HwXJUC3rbc9UwUPv1zYZ-iFEVu5w=w600-h1200",
+        "https://play-lh.googleusercontent.com/qPscxLPI7bpN1Sl4JwqfbgX4dN_zJfuOELDi9-ZBzjsUj4uT-cx1M4uJDzE70tyHMgs=w600-h1200",
+        "https://play-lh.googleusercontent.com/WW2ORRTZmrQpCBvGxvt4QyRGMVC1xx4w0KbseX_lYJ6JV6ljtlml7l7m9WvATDtwJWw=w600-h1200",
+        "https://play-lh.googleusercontent.com/2GHcPMszLStwgFS0TcDAtcVxfaOeyEaVsuOsdb79OShjiQTCG1aGD87H5DtPtns2FHM=w600-h1200",
+        "https://play-lh.googleusercontent.com/MtcTko1cRxl1gmFRqSKSvLCj4mCvh0D6oyqM0GpLTXZB1Sst8TIfIN5tHLXkja0_vg=w600-h1200",
+        "https://play-lh.googleusercontent.com/j7PGpFANqEzfFMJcpWsSOlpnXqZHFPVEMCzlWHSbfse9jg3Z7aqbm-1wgkPgfHOesg=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.barkerbg001.dad_jokes_galore&hl=en-US"
     }
@@ -244,13 +322,35 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Dutch government authentication app for all government services, to be used by Dutch citizens.",
     "downloads": "11M+ (Google Play)  · 8M+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/02/a6/4b/02a64b29-3c90-b07f-50cc-81c555db91df/appicon-1x_U007epad-0-1-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/89/57/5d89577a-7fcd-d6cb-d7ae-3c37b51c5d31/1d80b2ee-3a2b-41c4-a67e-59054cbe60b4_Screenshot_01.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/48/4d/77/484d77a2-6ea1-3a74-bec5-118ee823e38e/9cc6c67e-a49e-4c9a-b842-8b56c8421946_Screenshot_02.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6f/79/eb/6f79eb76-2271-4755-9934-433a1627e5be/d1d959cb-259e-4919-a9e4-e2638074ff08_Screenshot_03.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/db/db/4f/dbdb4f55-6646-54c6-ece8-c516fbf3e40a/c642fd1f-00f0-4d6a-8257-0ad2762fbc31_Screenshot_04.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/b6/20/d9b620c4-ebd8-49cd-4cde-bddb36c4b9a3/dcd1031e-972c-47d5-8fdb-ebca3c35597c_Screenshot_05.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/89/57/5d89577a-7fcd-d6cb-d7ae-3c37b51c5d31/1d80b2ee-3a2b-41c4-a67e-59054cbe60b4_Screenshot_01.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/48/4d/77/484d77a2-6ea1-3a74-bec5-118ee823e38e/9cc6c67e-a49e-4c9a-b842-8b56c8421946_Screenshot_02.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6f/79/eb/6f79eb76-2271-4755-9934-433a1627e5be/d1d959cb-259e-4919-a9e4-e2638074ff08_Screenshot_03.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/db/db/4f/dbdb4f55-6646-54c6-ece8-c516fbf3e40a/c642fd1f-00f0-4d6a-8257-0ad2762fbc31_Screenshot_04.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/b6/20/d9b620c4-ebd8-49cd-4cde-bddb36c4b9a3/dcd1031e-972c-47d5-8fdb-ebca3c35597c_Screenshot_05.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/90/15/3a/90153ad1-f632-b2f2-8311-9c038e61c16e/07cb450b-b65b-4da2-9e9d-03936a9dd42d_Screenshot_01.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a4/b9/9c/a4b99c6b-3214-da88-9ab6-46e09e43b5f2/0f2d6414-af39-4cbb-806f-b994f9fc4489_Screenshot_02.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/19/56/d2/1956d213-2694-e1d4-b00c-d84fa424f70e/946e0181-6dff-4c6d-9e21-33da4df2162a_Screenshot_03.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/11/25/e8/1125e885-0633-2611-729d-c8942cfb24a4/32cafb2d-ddbf-4076-aa2f-26658cb35268_Screenshot_04.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/56/b9/49/56b9492a-0ad5-d38d-c1fe-e6cd504d8371/79a0aab2-9cca-4526-b950-88126746eaeb_Screenshot_05.png/552x414bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/_7YEBbiTYAOK-C6iaLFLaTnaDWEl_rs3oPQe4VgwwCeQ72qvtxs2m8QEBvTz37rnew=w600-h1200",
+        "https://play-lh.googleusercontent.com/MESjwiwKmxaq2xDEJLLk0lhvPrXGC7jT2YkA4LHmz1OYV4PuVQknHo6SUnbANSkrdnzn=w600-h1200",
+        "https://play-lh.googleusercontent.com/rPsEuZdim_WCO01KyKiJSWkIzbzVE70Xj0qZqNusiJwpRgxJKPZJz7cpUTKaUKG3VQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/zV19GEBAMoNgjnId1Uc0ErF1N2nRtqS1eU3KMlkCM3t0DJaFqaH2GG12DC3lNjFdx7k=w600-h1200",
+        "https://play-lh.googleusercontent.com/izSwEd5B3UfAzZcVCcWbx2s95kMtdVg8AfPzI9p9sqtOYBGnO9PO4C2b-1G5iySsFpc=w600-h1200",
+        "https://play-lh.googleusercontent.com/F8GPDehMij9dNRbkuc7S2ACdyQSpqbaN0Q_Xr8KSeTEW199j4DWB_amwdYhAP-e3m50=w600-h1200",
+        "https://play-lh.googleusercontent.com/kDOWf6nka0pbty5XNFF-vwqN1hibETAlx8_zV_EEEKiNiZtX5zQN97BwAP5tEi0CAA=w600-h1200",
+        "https://play-lh.googleusercontent.com/HDoh4oOy_DqgbJZGRIJp31LTnFNuOZZkHThGe_qZfAswyNU9e7k5ZatysdFQn0rfrxM=w600-h1200",
+        "https://play-lh.googleusercontent.com/GMg174df64pXrUHCx7bhbCdaLR8_JCjZa54MPZ1boGgDFeE62347ja2tVXfWX2nyDmA=w600-h1200",
+        "https://play-lh.googleusercontent.com/xQnXIZZORH-6fEE0-Gfe_bPTOiqHW21VRuS21QEZpgifVWhfCQ-hu4Vv-9HHx252yTo=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://www.digid.nl/en/login-methods/digid-app/",
       "android": "https://play.google.com/store/apps/details?id=nl.rijksoverheid.digid.pub&hl=en-US",
@@ -262,14 +362,33 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "EliteMobile allows TR attorneys to capture, edit, and post client's billing time. Users get real-time insights into time entry status and can access important client's and matter's information from different systems all in one place.",
     "downloads": "5k+ downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/28/f4/25/28f42527-c894-330b-9877-7c1b98b3f1c7/AppIcons-0-0-1x_U007emarketing-0-11-0-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/8f/60/54/8f60540d-958b-d043-c5ab-8ad98a34a007/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/c2/ac/6d/c2ac6d89-4a4f-6b42-d852-5d9f5de50cb8/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/1c/db/11/1cdb1189-0b5a-2646-7fe1-88318a1109a7/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/5e/1f/8b/5e1f8b5e-f7fd-bc98-5297-27b824178f3c/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/7e/5f/bd/7e5fbd1f-50ab-e06c-be43-b1909838840e/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/82/eb/89/82eb899c-b584-bb44-563e-5ea2a7594d43/pr_source.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/8f/60/54/8f60540d-958b-d043-c5ab-8ad98a34a007/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/c2/ac/6d/c2ac6d89-4a4f-6b42-d852-5d9f5de50cb8/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/1c/db/11/1cdb1189-0b5a-2646-7fe1-88318a1109a7/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/5e/1f/8b/5e1f8b5e-f7fd-bc98-5297-27b824178f3c/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/7e/5f/bd/7e5fbd1f-50ab-e06c-be43-b1909838840e/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/82/eb/89/82eb899c-b584-bb44-563e-5ea2a7594d43/pr_source.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/9e/fa/38/9efa389e-0ee4-672a-c7c9-30b7f6a83fe9/pr_source.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/2e/9b/4c/2e9b4cbb-0cab-6bee-c13a-579fcb0d8420/pr_source.png/552x414bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/wmbQP7A7UMIki-rT1SgLMz8yX8VzFMyvpDQHhGUKEvEy0Ag3qt_EfIUU5i2qGuWYRxk=w600-h1200",
+        "https://play-lh.googleusercontent.com/K04axc50h0ltPgSSwMBYza0ksVr5jzLV6y1jxQeGFAvBqjJElS_I6TJ6jDkoOXoFWuU=w600-h1200",
+        "https://play-lh.googleusercontent.com/J1pf3gyZ0dmlkK-z7ju2AOnNSJyUaikvtc5K8F8a7ejXj9mzLDYKP_nOrMtE6uIWtUI=w600-h1200",
+        "https://play-lh.googleusercontent.com/3rWXgsHC7sCfFOleFC35uhx4xD_29pehbNdH9Csfh4cAGhhCxSFF5rSf7KCNCdvh720=w600-h1200",
+        "https://play-lh.googleusercontent.com/3yKVtmN_wQHsJYHzme0m1LhXG92LL3B5252DL_KXmPMz8PLl5YevX-4vrlWMZbGfxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/HjdO4EIBA756ycnw-I5W7zxq9AkYEtl-UmH2DrDBYpDWBL2hnlysXGruDgDb26hUlFc=w600-h1200",
+        "https://play-lh.googleusercontent.com/Ar0YmPyqogvygSMINx0-wOeDK1AeuA7Q8zXTsQ5IvhFjI7sZUVIy3IDcPLj8WmqPb0jF=w600-h1200",
+        "https://play-lh.googleusercontent.com/e6wtidzTybFZ25p-rCHEjT6JFdxGlDLf3YpqZBbfEkK4jBjM6TwRFrYifgeIMT9bGQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/abU-ZF4BNC5MI59RBF8jZeTstArTl2ZLTOy3URqGKG6Ww4IT-rm230B7K0jdYPfhjOw=w600-h1200",
+        "https://play-lh.googleusercontent.com/8u7bsjQfBCG6GuglK_hJjqrtyQ5PrdegvUft272VguBPe93w2UYIWD_totGMxroofvBa=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://www.thomsonreuters.com/en.html",
       "android": "https://play.google.com/store/apps/details?id=com.thomsonreuters.elitemobile&hl=en&gl=US",
@@ -281,18 +400,21 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Elk 49 presents a fresh take on a classic puzzle game concept.",
     "downloads": "10K+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/eFM1z7OB0gsPP-V82BIeSZrZA0PFhknam7siLlPjbu2R08gHtjTbj80q6R4caY_AdQ",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/lbVT0k_2ILLv7PD9mYuk8xdgyGLbUL46_PMgv-_nGNRAo83QNzO2v0TXi0rz_-JVY6U=w600-h1200",
-      "https://play-lh.googleusercontent.com/kiKPS9Z0X407nGFsm0s95nZP6wDf9DyqRL2IEGWiNsyh87eJbYaKPyGIME8v-AGfheI=w600-h1200",
-      "https://play-lh.googleusercontent.com/QJowLcDw4NQ7Oj4hYmgRbj66B3YUdg2FDmUwIs8u1mIJ9bETkpEMw5r3pQoWmmutXJw=w600-h1200",
-      "https://play-lh.googleusercontent.com/qZ9u1afEKRYG942j-CRjILM_1PaMRFsD0M7N49P6Q0etwL5X7NI8vHd_fvFe0jJHPA=w600-h1200",
-      "https://play-lh.googleusercontent.com/EDMwbY7BwZ2aSRoe3sSu_fap48NNIPGsarcb8f-GsCwz4zrEDOMlZkLQMvJ44YbgaA=w600-h1200",
-      "https://play-lh.googleusercontent.com/iU6_ALDv8UIJ3wNZdjozdN72j5C9edT0Ib-NAhFgjm0BNilrLcTg5BWEGR5lAZhE1_I=w600-h1200",
-      "https://play-lh.googleusercontent.com/OMy6rk25uS0RUXORj-P-1p7Su_QISNkkzyvGoCgkko2tpwxfmahvmuu2uChsWvqJqw=w600-h1200",
-      "https://play-lh.googleusercontent.com/XWh17qBwXgDvTAthwxndLE9xGObe8d2_ZHnIEfdC-0d_g2myaoPhwElyQC81yjxNEg=w600-h1200",
-      "https://play-lh.googleusercontent.com/zpy8m83iubGcN_BGfD_qgv3hneJv2QqIbXuBHEcQYRejn30k3sEf6T4dRGGFVdOk02f4=w600-h1200",
-      "https://play-lh.googleusercontent.com/XzrF6VOO9RAmJl8HjpOVYeLgvS9Ya7Hk46M87GOkTFTJwqth717NzVKNGongmYMsURw=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/lbVT0k_2ILLv7PD9mYuk8xdgyGLbUL46_PMgv-_nGNRAo83QNzO2v0TXi0rz_-JVY6U=w600-h1200",
+        "https://play-lh.googleusercontent.com/kiKPS9Z0X407nGFsm0s95nZP6wDf9DyqRL2IEGWiNsyh87eJbYaKPyGIME8v-AGfheI=w600-h1200",
+        "https://play-lh.googleusercontent.com/QJowLcDw4NQ7Oj4hYmgRbj66B3YUdg2FDmUwIs8u1mIJ9bETkpEMw5r3pQoWmmutXJw=w600-h1200",
+        "https://play-lh.googleusercontent.com/qZ9u1afEKRYG942j-CRjILM_1PaMRFsD0M7N49P6Q0etwL5X7NI8vHd_fvFe0jJHPA=w600-h1200",
+        "https://play-lh.googleusercontent.com/EDMwbY7BwZ2aSRoe3sSu_fap48NNIPGsarcb8f-GsCwz4zrEDOMlZkLQMvJ44YbgaA=w600-h1200",
+        "https://play-lh.googleusercontent.com/iU6_ALDv8UIJ3wNZdjozdN72j5C9edT0Ib-NAhFgjm0BNilrLcTg5BWEGR5lAZhE1_I=w600-h1200",
+        "https://play-lh.googleusercontent.com/OMy6rk25uS0RUXORj-P-1p7Su_QISNkkzyvGoCgkko2tpwxfmahvmuu2uChsWvqJqw=w600-h1200",
+        "https://play-lh.googleusercontent.com/XWh17qBwXgDvTAthwxndLE9xGObe8d2_ZHnIEfdC-0d_g2myaoPhwElyQC81yjxNEg=w600-h1200",
+        "https://play-lh.googleusercontent.com/zpy8m83iubGcN_BGfD_qgv3hneJv2QqIbXuBHEcQYRejn30k3sEf6T4dRGGFVdOk02f4=w600-h1200",
+        "https://play-lh.googleusercontent.com/XzrF6VOO9RAmJl8HjpOVYeLgvS9Ya7Hk46M87GOkTFTJwqth717NzVKNGongmYMsURw=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.pekspro.elk49&hl=en"
     }
@@ -302,21 +424,24 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Epub Reader that allows you to read Epub formatted ebooks and connect and download ebooks from Calibre Content servers. Supports variable fonts sizes, font types, is paginated by default, works on Windows, and Android. iOS and MacOS support coming soon!",
     "downloads": "(Google Play  & MS App store)",
     "iconUrl": "https://play-lh.googleusercontent.com/StDEkYlmInSOokMmsk6DkgQrjXwtgunI_E58StgfSrEKpZVgF1GRFedpg_3s9ee_Mr0",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/rR6VVWxLMFqEbGzAgPvVBzZiL2lVkYMU0OUwIW7f47yNhxbPev4MqAc49vBDn69DY2iB=w600-h1200",
-      "https://play-lh.googleusercontent.com/e1ptR-zneAYtpqZounKNqvxhLuuZIWJl4HOILKwy0y7dHMn_9bUBDbigukP4RHNCY8I=w600-h1200",
-      "https://play-lh.googleusercontent.com/YkQErCqmJqOmAh3GdQmpEk0A_KbV1PSUQDqkDZr2Uliax3WNNHQCm0-hibyyvL5pib8=w600-h1200",
-      "https://play-lh.googleusercontent.com/lqTiLvk6JUpSyqxlUjJEqr3jdpDP0-bwfRC9yL7mlCyI1maaqp3bq7ycpTqyNvh1zPI=w600-h1200",
-      "https://play-lh.googleusercontent.com/cYXGY1vPctFgETXqNhYlYU8pSMomXjmOBMBMRcPkRbk7vTen3bj_VG8KsEODGlDMKw=w600-h1200",
-      "https://play-lh.googleusercontent.com/o7HKFGVsjeKRiu0flj4MNTg1RIM6wrIl9OoIbbIb6dnpVXzD8LGURBncrX1qgvcRTA=w600-h1200",
-      "https://play-lh.googleusercontent.com/RGm97LVZCZyxMQeYgVTevDqhtnpbNIh-DTlbLJXzeQmnHpzytNjxN9uMmdf-gAaumjM=w600-h1200",
-      "https://play-lh.googleusercontent.com/6Tm3QaSr3I9qMDgzIdmr4h-gRj9fYTuzxcfs6hYZIwMtuCtYbxkSDf2mp1zWoNQk1w=w600-h1200",
-      "https://play-lh.googleusercontent.com/zO7Uomn85gJj1mtm1UQrkISFL3l3B5rEGKqigTAUlyTXxs7TVDer0ZG9vcM75hIz-_4=w600-h1200",
-      "https://play-lh.googleusercontent.com/d9kjTp-sW-yfhCzF0x-EXZdMhkoZvizoFDpT3A6PFK3dGxKh7wc0WEIY6bwZ35VyL3U=w600-h1200",
-      "https://play-lh.googleusercontent.com/Gu_a-vgVJFHFGOkBtUBJRa6xDbH215-u9OzfBQVd9VXqKQ2gPvw-C5UXglFGcbr58A=w600-h1200",
-      "https://play-lh.googleusercontent.com/aIzhlsvP5EHXWwLl5g4Cy9C2FrtcdPnLuHXAWY3qO8dubHS9biajNFUIHS6rOAcJvw=w600-h1200",
-      "https://play-lh.googleusercontent.com/adpDRYGUMm4RpMAOdY0-aQjDOrgptwnVuALsAOkjUsatJYBP8_ohdK8ZEjncZaj75zM=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/rR6VVWxLMFqEbGzAgPvVBzZiL2lVkYMU0OUwIW7f47yNhxbPev4MqAc49vBDn69DY2iB=w600-h1200",
+        "https://play-lh.googleusercontent.com/e1ptR-zneAYtpqZounKNqvxhLuuZIWJl4HOILKwy0y7dHMn_9bUBDbigukP4RHNCY8I=w600-h1200",
+        "https://play-lh.googleusercontent.com/YkQErCqmJqOmAh3GdQmpEk0A_KbV1PSUQDqkDZr2Uliax3WNNHQCm0-hibyyvL5pib8=w600-h1200",
+        "https://play-lh.googleusercontent.com/lqTiLvk6JUpSyqxlUjJEqr3jdpDP0-bwfRC9yL7mlCyI1maaqp3bq7ycpTqyNvh1zPI=w600-h1200",
+        "https://play-lh.googleusercontent.com/cYXGY1vPctFgETXqNhYlYU8pSMomXjmOBMBMRcPkRbk7vTen3bj_VG8KsEODGlDMKw=w600-h1200",
+        "https://play-lh.googleusercontent.com/o7HKFGVsjeKRiu0flj4MNTg1RIM6wrIl9OoIbbIb6dnpVXzD8LGURBncrX1qgvcRTA=w600-h1200",
+        "https://play-lh.googleusercontent.com/RGm97LVZCZyxMQeYgVTevDqhtnpbNIh-DTlbLJXzeQmnHpzytNjxN9uMmdf-gAaumjM=w600-h1200",
+        "https://play-lh.googleusercontent.com/6Tm3QaSr3I9qMDgzIdmr4h-gRj9fYTuzxcfs6hYZIwMtuCtYbxkSDf2mp1zWoNQk1w=w600-h1200",
+        "https://play-lh.googleusercontent.com/zO7Uomn85gJj1mtm1UQrkISFL3l3B5rEGKqigTAUlyTXxs7TVDer0ZG9vcM75hIz-_4=w600-h1200",
+        "https://play-lh.googleusercontent.com/d9kjTp-sW-yfhCzF0x-EXZdMhkoZvizoFDpT3A6PFK3dGxKh7wc0WEIY6bwZ35VyL3U=w600-h1200",
+        "https://play-lh.googleusercontent.com/Gu_a-vgVJFHFGOkBtUBJRa6xDbH215-u9OzfBQVd9VXqKQ2gPvw-C5UXglFGcbr58A=w600-h1200",
+        "https://play-lh.googleusercontent.com/aIzhlsvP5EHXWwLl5g4Cy9C2FrtcdPnLuHXAWY3qO8dubHS9biajNFUIHS6rOAcJvw=w600-h1200",
+        "https://play-lh.googleusercontent.com/adpDRYGUMm4RpMAOdY0-aQjDOrgptwnVuALsAOkjUsatJYBP8_ohdK8ZEjncZaj75zM=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.companyname.epubreader",
       "windows": "https://apps.microsoft.com/detail/9n3t9qnkk7vx?hl=en-GB&gl=CA"
@@ -327,32 +452,35 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Mobile Client for MantisBT : Track, Manage, Monitor your bugs/tickets on the go! KEY FEATURES: Ticketboard Dashboard Mode for Quick Summary & Quick Tickets, Organize & Easy Ticket Management via API Token, Refreshed WebMode with Dark/Light Support, and much more.., Its a great productivity tool & a perfect MantisBT client (offered by Thenetspider Digital Solutions)",
     "downloads": "20+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/rzEwC-3jOhzQyJWFgtCgGeuu1USQRlSlBHj_UJKidwmdAhn_EycCiCle_fzjHncf8GPL",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/6Aa0a-bmiPj7YiygzV-uxPwWgsZQzZylQkUnKEFd3bIpIlgXyex72YJPOU9tTeMdvg=w600-h1200",
-      "https://play-lh.googleusercontent.com/RcAlwvA0TsSK3CnZws1HAR_9LTgfZLl5rOmvTCslfV-CcfzwG6HVD86AiLrj2C2Hxbnp=w600-h1200",
-      "https://play-lh.googleusercontent.com/dc_NF2ryIcFaGrocL2NqBYxH6vayNn5sCJqICwc2zF6DbKgqJVA9AzXv5Mm1QmLgr8c=w600-h1200",
-      "https://play-lh.googleusercontent.com/qhVN6mdOb8z7F6IrOJmkNNQwvwovDMoLGS7g87ENlXAA2C6LSx6eiAv3x0lt0Tev9Hc=w600-h1200",
-      "https://play-lh.googleusercontent.com/CSQ3HH-c8D_Sheb3sp1-9rOHXF72bCmFqBvHc57MgN3Lz7VxhNm4XTqJvj-tbVguE2Iv=w600-h1200",
-      "https://play-lh.googleusercontent.com/R1pjxNwRoPhkOjkJQ_t7IPAIiMhODKjXsK-FjPzDs_dtNucph7gFRBSavuDOCu345PA=w600-h1200",
-      "https://play-lh.googleusercontent.com/teFbkC0PLTVe_m-ya2jImwH1PR_Jwz-PH5rd_0onhGdFfajEuvEyDtvGU35jK9xr3BM=w600-h1200",
-      "https://play-lh.googleusercontent.com/xzufrWXl5QViyhxvRXSzdhF8A3kjXQk5EMyqCz87vsAsxYg-0PFs8NeGWnA37ko7uA=w600-h1200",
-      "https://play-lh.googleusercontent.com/UfL1zFtbZuHCVUs4vIr_n31aTK0vCaS_20zWyH_Jq2Vzg59j0cEZNK-SvV2tUTDp2uY=w600-h1200",
-      "https://play-lh.googleusercontent.com/uIPh800sYoxuNzLdUN1edObhPfx3yvSau21lo77wLGnCPRmmecssPwM6CLzky_rlAzQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/LkeCcjp9n_KifVbCkM5CBhvWTFNJs6z-_Sw7lM-Ik8Dg4farbRyTGhDVUXGyYDhvqg=w600-h1200",
-      "https://play-lh.googleusercontent.com/dQrAdSac74JIFweiOC0s11eexGt8AK9_dn5Ujyfc6ZMjqpglHiZm2V5HD24a88QYjw=w600-h1200",
-      "https://play-lh.googleusercontent.com/_-iZxizUtS31Nmv730pPyQflajI733nlOuKwT4yU8sxFE90U705E7hPGS2NSxKIMXyj-=w600-h1200",
-      "https://play-lh.googleusercontent.com/W8VwcYYkYONOroaOZ-Wyui7dYSIeTbigXaLR-hBzj0cPna9e-R5TJmO59GnCF7yM0w=w600-h1200",
-      "https://play-lh.googleusercontent.com/RaLvFX0rhDvsVNOlathdOLb58AoeWvjma4sQ1OpsrmWD00vyELU8MM0lUNDlzfnzd4vg=w600-h1200",
-      "https://play-lh.googleusercontent.com/QcFWssx9SXC0zRe50elVONwtTY5mBmElP0cJRadQUzvLvRZAIuyNgNGS_DW0hzTqXjo=w600-h1200",
-      "https://play-lh.googleusercontent.com/P7PW_8X5ArLtI4tS-TTUv17SLGK92sa8eCMJRj3wCax-YU2C5UU8FZGU-jH0YPsHpjI=w600-h1200",
-      "https://play-lh.googleusercontent.com/UAt5vKLpfozr48H7XTOlDhTqGnkcxUtT8TQPLQsQfvswxHb0sJzXGiEvhQYamVdpHJ0=w600-h1200",
-      "https://play-lh.googleusercontent.com/HR4ci22pK92CQZ8KiNRtUhUKrQH2BUlZoRkkMPXfUvU196r2Bzchkc2wIq2sJVjrfjs=w600-h1200",
-      "https://play-lh.googleusercontent.com/3gYdIxghFX749-LsMjRB1g5UwQ-DuXNjL9YFEQ3CpMbNoJtPorrkiqQGtx1Jl5rauA=w600-h1200",
-      "https://play-lh.googleusercontent.com/vfa2Ahn53bBYjelms2ZESvQWxg3m586rrxCx8JltLb5FxbCTzGP0jXHV30KGfvBkTxc=w600-h1200",
-      "https://play-lh.googleusercontent.com/hJna2W2SvHTBkMs5rp14GrRpL7bwHNQpSb5_iotZ5MrdJY3dTZK2k3kBZkUuRTZUrRkk=w600-h1200",
-      "https://play-lh.googleusercontent.com/PvVpOBoOMq5DyjR4s0QYVMXQxM6A2LZFo7saSRb2xvAIx17ThPPTtRxTFk221RqZhQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/ouMEIotQl1JqRaM12TMA1DZ8MajMcTN_I0yHn7nrgqJaZ0eOhRKBCPBAS-tFiqiGsg=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/6Aa0a-bmiPj7YiygzV-uxPwWgsZQzZylQkUnKEFd3bIpIlgXyex72YJPOU9tTeMdvg=w600-h1200",
+        "https://play-lh.googleusercontent.com/RcAlwvA0TsSK3CnZws1HAR_9LTgfZLl5rOmvTCslfV-CcfzwG6HVD86AiLrj2C2Hxbnp=w600-h1200",
+        "https://play-lh.googleusercontent.com/dc_NF2ryIcFaGrocL2NqBYxH6vayNn5sCJqICwc2zF6DbKgqJVA9AzXv5Mm1QmLgr8c=w600-h1200",
+        "https://play-lh.googleusercontent.com/qhVN6mdOb8z7F6IrOJmkNNQwvwovDMoLGS7g87ENlXAA2C6LSx6eiAv3x0lt0Tev9Hc=w600-h1200",
+        "https://play-lh.googleusercontent.com/CSQ3HH-c8D_Sheb3sp1-9rOHXF72bCmFqBvHc57MgN3Lz7VxhNm4XTqJvj-tbVguE2Iv=w600-h1200",
+        "https://play-lh.googleusercontent.com/R1pjxNwRoPhkOjkJQ_t7IPAIiMhODKjXsK-FjPzDs_dtNucph7gFRBSavuDOCu345PA=w600-h1200",
+        "https://play-lh.googleusercontent.com/teFbkC0PLTVe_m-ya2jImwH1PR_Jwz-PH5rd_0onhGdFfajEuvEyDtvGU35jK9xr3BM=w600-h1200",
+        "https://play-lh.googleusercontent.com/xzufrWXl5QViyhxvRXSzdhF8A3kjXQk5EMyqCz87vsAsxYg-0PFs8NeGWnA37ko7uA=w600-h1200",
+        "https://play-lh.googleusercontent.com/UfL1zFtbZuHCVUs4vIr_n31aTK0vCaS_20zWyH_Jq2Vzg59j0cEZNK-SvV2tUTDp2uY=w600-h1200",
+        "https://play-lh.googleusercontent.com/uIPh800sYoxuNzLdUN1edObhPfx3yvSau21lo77wLGnCPRmmecssPwM6CLzky_rlAzQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/LkeCcjp9n_KifVbCkM5CBhvWTFNJs6z-_Sw7lM-Ik8Dg4farbRyTGhDVUXGyYDhvqg=w600-h1200",
+        "https://play-lh.googleusercontent.com/dQrAdSac74JIFweiOC0s11eexGt8AK9_dn5Ujyfc6ZMjqpglHiZm2V5HD24a88QYjw=w600-h1200",
+        "https://play-lh.googleusercontent.com/_-iZxizUtS31Nmv730pPyQflajI733nlOuKwT4yU8sxFE90U705E7hPGS2NSxKIMXyj-=w600-h1200",
+        "https://play-lh.googleusercontent.com/W8VwcYYkYONOroaOZ-Wyui7dYSIeTbigXaLR-hBzj0cPna9e-R5TJmO59GnCF7yM0w=w600-h1200",
+        "https://play-lh.googleusercontent.com/RaLvFX0rhDvsVNOlathdOLb58AoeWvjma4sQ1OpsrmWD00vyELU8MM0lUNDlzfnzd4vg=w600-h1200",
+        "https://play-lh.googleusercontent.com/QcFWssx9SXC0zRe50elVONwtTY5mBmElP0cJRadQUzvLvRZAIuyNgNGS_DW0hzTqXjo=w600-h1200",
+        "https://play-lh.googleusercontent.com/P7PW_8X5ArLtI4tS-TTUv17SLGK92sa8eCMJRj3wCax-YU2C5UU8FZGU-jH0YPsHpjI=w600-h1200",
+        "https://play-lh.googleusercontent.com/UAt5vKLpfozr48H7XTOlDhTqGnkcxUtT8TQPLQsQfvswxHb0sJzXGiEvhQYamVdpHJ0=w600-h1200",
+        "https://play-lh.googleusercontent.com/HR4ci22pK92CQZ8KiNRtUhUKrQH2BUlZoRkkMPXfUvU196r2Bzchkc2wIq2sJVjrfjs=w600-h1200",
+        "https://play-lh.googleusercontent.com/3gYdIxghFX749-LsMjRB1g5UwQ-DuXNjL9YFEQ3CpMbNoJtPorrkiqQGtx1Jl5rauA=w600-h1200",
+        "https://play-lh.googleusercontent.com/vfa2Ahn53bBYjelms2ZESvQWxg3m586rrxCx8JltLb5FxbCTzGP0jXHV30KGfvBkTxc=w600-h1200",
+        "https://play-lh.googleusercontent.com/hJna2W2SvHTBkMs5rp14GrRpL7bwHNQpSb5_iotZ5MrdJY3dTZK2k3kBZkUuRTZUrRkk=w600-h1200",
+        "https://play-lh.googleusercontent.com/PvVpOBoOMq5DyjR4s0QYVMXQxM6A2LZFo7saSRb2xvAIx17ThPPTtRxTFk221RqZhQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/ouMEIotQl1JqRaM12TMA1DZ8MajMcTN_I0yHn7nrgqJaZ0eOhRKBCPBAS-tFiqiGsg=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.thenetspider.ether"
     }
@@ -362,27 +490,30 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Expenmo offers a solution for shared expenses.",
     "downloads": "500+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/BAadGJiZfLk6OGrOaVFHMavQI4sj6693J58OGITuUgQ-WJJvZYQLejymbzH1PryAB3Y",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/ydY4jLAVkdL0GRYjizw_YeRxpWZ0neOMoSuhjIuKD1zWApJ2QjF2S62bFazKzqqZPwpu=w600-h1200",
-      "https://play-lh.googleusercontent.com/yHiCdJwPDwNpvdEdgJfC4tDl8oQAkNVCksu7QSR2tJAo8VbuVnhoupMKkJ9FtczFkQA=w600-h1200",
-      "https://play-lh.googleusercontent.com/DHfeITeO-JT7bQl5GOw5mZkmSfrRlLxYeziWex76XHcoXPt1vz7DAdef4c4_gspfrg=w600-h1200",
-      "https://play-lh.googleusercontent.com/CpkjU14LZBoac9DOpQDys-RqxJwRGIae1DdUPqcEBEZTu_dUoTlTe6gf0x_nFmm-Mvs=w600-h1200",
-      "https://play-lh.googleusercontent.com/46_RdSaLUq6fXmYZlHoDGmlu6yx4SHIUgMz4nXe8JBG63J15kQ7jSg3TXD_qT8KLjsA=w600-h1200",
-      "https://play-lh.googleusercontent.com/wis530zQhmFOxgiAbQI4XhsD9Qx5amfqla8u_A67hqVXJejBilF5tibju6rO_e0Ejk4=w600-h1200",
-      "https://play-lh.googleusercontent.com/CRZD_an0gw_R6_bcMhoHyOZST3WyM-gLEo_3tK73Ire0wqxHL7rsTHxCutj9qq9Db9s=w600-h1200",
-      "https://play-lh.googleusercontent.com/S2Qb0DYX35GPXF1VqkHqN-UGLTKYIPSXqfOgBBokRZB0ygcKGeyIM6u5zHVnF8XPWqID=w600-h1200",
-      "https://play-lh.googleusercontent.com/j_2k9Fd6cqI61mKYN1hnv4Z229sPAwBrAPuOxX35T_T5SfhNeNwhwXqgmz_J7CPsFK8=w600-h1200",
-      "https://play-lh.googleusercontent.com/XVVdDcmEsapwib2mUFWCfHmswWlftrY1L4T6tluyzUVz2vHTPeCGXPHCrnONDCf1zms=w600-h1200",
-      "https://play-lh.googleusercontent.com/d0hJsP7Bmys4yiLL344ePKQoJDzYbeNBI8VL4Ghg7oLuGaxNyg1tJPn7BZ4yO35LrA=w600-h1200",
-      "https://play-lh.googleusercontent.com/lg_xHgsX0nHU10NQ5jGqhKCxXqlRjjT6tZR9w0bSFlhn_mQu7kMJvkhLV9yxZWMY1w=w600-h1200",
-      "https://play-lh.googleusercontent.com/tChrelGtsnK5OlbqWJdK48ZDQdfdSLaeUAdZzgtdIbodwodCqLhF_XF2pY_fBQJjgOs=w600-h1200",
-      "https://play-lh.googleusercontent.com/1EtNAKQ3lEpbFEo7J82zA8-Ar-NDByPlHpA8vG1yLJMqht0MqXRsHYXh06n8cdQZ4A=w600-h1200",
-      "https://play-lh.googleusercontent.com/mmFdnqhYjQQe40aBSn1Ed1ZIlmojXy6A-v5jUflE8jJE0iVoP6vFBLYX_3Wt1kxnPg=w600-h1200",
-      "https://play-lh.googleusercontent.com/n6MfA7tvz9Clw7micREYrC706Ns7O_6eb6vGW5NuI2U2xCHqdwx_KxawxvqWDWv5aQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/inGQyQnkiNjC5Qh8xQV2ZTdQ355tkw-Xz88cjrI1hOHHXl1bQT6bAp3MEbhLpbPxjWM=w600-h1200",
-      "https://play-lh.googleusercontent.com/hH8BPLVkIcvNm_FNfEo17ENFXUtS5QRHb93oqHttt0FXshyhsRKk-4KF2j01ZUVBfzew=w600-h1200",
-      "https://play-lh.googleusercontent.com/yxGPrRXfD_zlmKQ3WEXLPMdmEO_tVV9DL8PJ8cjJ2STvP6Min_TB4dXAQ8ai0JiKmAk=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/ydY4jLAVkdL0GRYjizw_YeRxpWZ0neOMoSuhjIuKD1zWApJ2QjF2S62bFazKzqqZPwpu=w600-h1200",
+        "https://play-lh.googleusercontent.com/yHiCdJwPDwNpvdEdgJfC4tDl8oQAkNVCksu7QSR2tJAo8VbuVnhoupMKkJ9FtczFkQA=w600-h1200",
+        "https://play-lh.googleusercontent.com/DHfeITeO-JT7bQl5GOw5mZkmSfrRlLxYeziWex76XHcoXPt1vz7DAdef4c4_gspfrg=w600-h1200",
+        "https://play-lh.googleusercontent.com/CpkjU14LZBoac9DOpQDys-RqxJwRGIae1DdUPqcEBEZTu_dUoTlTe6gf0x_nFmm-Mvs=w600-h1200",
+        "https://play-lh.googleusercontent.com/46_RdSaLUq6fXmYZlHoDGmlu6yx4SHIUgMz4nXe8JBG63J15kQ7jSg3TXD_qT8KLjsA=w600-h1200",
+        "https://play-lh.googleusercontent.com/wis530zQhmFOxgiAbQI4XhsD9Qx5amfqla8u_A67hqVXJejBilF5tibju6rO_e0Ejk4=w600-h1200",
+        "https://play-lh.googleusercontent.com/CRZD_an0gw_R6_bcMhoHyOZST3WyM-gLEo_3tK73Ire0wqxHL7rsTHxCutj9qq9Db9s=w600-h1200",
+        "https://play-lh.googleusercontent.com/S2Qb0DYX35GPXF1VqkHqN-UGLTKYIPSXqfOgBBokRZB0ygcKGeyIM6u5zHVnF8XPWqID=w600-h1200",
+        "https://play-lh.googleusercontent.com/j_2k9Fd6cqI61mKYN1hnv4Z229sPAwBrAPuOxX35T_T5SfhNeNwhwXqgmz_J7CPsFK8=w600-h1200",
+        "https://play-lh.googleusercontent.com/XVVdDcmEsapwib2mUFWCfHmswWlftrY1L4T6tluyzUVz2vHTPeCGXPHCrnONDCf1zms=w600-h1200",
+        "https://play-lh.googleusercontent.com/d0hJsP7Bmys4yiLL344ePKQoJDzYbeNBI8VL4Ghg7oLuGaxNyg1tJPn7BZ4yO35LrA=w600-h1200",
+        "https://play-lh.googleusercontent.com/lg_xHgsX0nHU10NQ5jGqhKCxXqlRjjT6tZR9w0bSFlhn_mQu7kMJvkhLV9yxZWMY1w=w600-h1200",
+        "https://play-lh.googleusercontent.com/tChrelGtsnK5OlbqWJdK48ZDQdfdSLaeUAdZzgtdIbodwodCqLhF_XF2pY_fBQJjgOs=w600-h1200",
+        "https://play-lh.googleusercontent.com/1EtNAKQ3lEpbFEo7J82zA8-Ar-NDByPlHpA8vG1yLJMqht0MqXRsHYXh06n8cdQZ4A=w600-h1200",
+        "https://play-lh.googleusercontent.com/mmFdnqhYjQQe40aBSn1Ed1ZIlmojXy6A-v5jUflE8jJE0iVoP6vFBLYX_3Wt1kxnPg=w600-h1200",
+        "https://play-lh.googleusercontent.com/n6MfA7tvz9Clw7micREYrC706Ns7O_6eb6vGW5NuI2U2xCHqdwx_KxawxvqWDWv5aQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/inGQyQnkiNjC5Qh8xQV2ZTdQ355tkw-Xz88cjrI1hOHHXl1bQT6bAp3MEbhLpbPxjWM=w600-h1200",
+        "https://play-lh.googleusercontent.com/hH8BPLVkIcvNm_FNfEo17ENFXUtS5QRHb93oqHttt0FXshyhsRKk-4KF2j01ZUVBfzew=w600-h1200",
+        "https://play-lh.googleusercontent.com/yxGPrRXfD_zlmKQ3WEXLPMdmEO_tVV9DL8PJ8cjJ2STvP6Min_TB4dXAQ8ai0JiKmAk=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.HomeAsync.Expenmo&hl=en"
     }
@@ -392,13 +523,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Finance Planner: Your Journey to Financial Freedom (F.I.R.E.). The app is a compact yet powerful tool for anyone consciously working toward a life with more freedom and fewer financial worries. Easily map out your income, expenses, and savings goals, and gain clear insight into your progress toward financial independence.",
     "downloads": "50+ downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/43/6d/5b/436d5b44-4ea8-6f3f-484d-97838fd3ea1b/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/bsmybY2R7OFI6KfCXI7CNyBrWvulCoTB_ldaBHgJlopgkjSLkTQ4zCHhjLoFPuOgkGiYD-9qhwR-49nt2nWijMQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/T95BubgV_wzLnRgR0nusMrpPPxiHRNelHyBwLRKS6YwAck49etXdu8GJq6P5-hJLvgjvxF2gDKBofF9Hrg83mg=w600-h1200",
-      "https://play-lh.googleusercontent.com/Baba17o1RXsEvVus0Ll8UvHQXcgSoWnzCCkX9gmf7Dt04KPHp6IL7flItFwinJVgzi9CTMc0BnhTaorC-CfkAA=w600-h1200",
-      "https://play-lh.googleusercontent.com/87L_lL9XlaJEMO28jkmbOmBlZTnRNkDate1ZajJA_ACKiLbwGZPahG0fTNwC1ioNx0F6NPy6CefsgQ4b7c-7=w600-h1200",
-      "https://play-lh.googleusercontent.com/EcKEHhQW9zuAn1OZnxdMsGqJfSaLMoqtM82ni9dVyreP2f0DuirvozVPxJdEAOD6kvLUaAFk35rwVSPieF2rkT0=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/bsmybY2R7OFI6KfCXI7CNyBrWvulCoTB_ldaBHgJlopgkjSLkTQ4zCHhjLoFPuOgkGiYD-9qhwR-49nt2nWijMQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/T95BubgV_wzLnRgR0nusMrpPPxiHRNelHyBwLRKS6YwAck49etXdu8GJq6P5-hJLvgjvxF2gDKBofF9Hrg83mg=w600-h1200",
+        "https://play-lh.googleusercontent.com/Baba17o1RXsEvVus0Ll8UvHQXcgSoWnzCCkX9gmf7Dt04KPHp6IL7flItFwinJVgzi9CTMc0BnhTaorC-CfkAA=w600-h1200",
+        "https://play-lh.googleusercontent.com/87L_lL9XlaJEMO28jkmbOmBlZTnRNkDate1ZajJA_ACKiLbwGZPahG0fTNwC1ioNx0F6NPy6CefsgQ4b7c-7=w600-h1200",
+        "https://play-lh.googleusercontent.com/EcKEHhQW9zuAn1OZnxdMsGqJfSaLMoqtM82ni9dVyreP2f0DuirvozVPxJdEAOD6kvLUaAFk35rwVSPieF2rkT0=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=nl.crwsolutions.CalcApi.Mobile",
       "ios": "https://apps.apple.com/us/app/finance-planner/id6743322133"
@@ -409,7 +543,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "HD Fishing Maps for US Coastal & Great Lakes.  Up your fishing game using HD Bathymetry to find new fishing spots including wrecks, reefs, ledges, and rock piles.",
     "downloads": "1k+ downloads (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/49/50/15/4950158f-293c-8637-cbe3-0796a391129d/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [],
+    "screenshots": {},
     "platforms": {
       "website": "https://www.fishfathom.com",
       "ios": "https://apps.apple.com/us/app/fishfathom/id6448895341"
@@ -420,23 +554,26 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Ad-free gaming news app.",
     "downloads": "20K+ downloads (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/19/ea/91/19ea91c7-262b-9aba-8088-806638fad399/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/rs0sa786FvVMsABygQMaW3zKUKzWJhg9vKpK_b_bKNRsI412dHcjCKq8z68amg_-Amas=w600-h1200",
-      "https://play-lh.googleusercontent.com/IJNTwUtTicUHlA5sQhW_FvyW_JGREDmoUNHw7GIqpwF_tF6O3ZtpX1vdz_1aokm77Hc=w600-h1200",
-      "https://play-lh.googleusercontent.com/a9E9nC8qxGxRfZ29HOqPJMennJ2R_rEHiI9CQCdl7NQ_F80xZBEEi-SMya_xUZI_wr0=w600-h1200",
-      "https://play-lh.googleusercontent.com/NerwThXFISOFww9pV2E8iBBNd221fySHo6GJovSy3necJh7VrivSH5xgKX4bEV-mY-w=w600-h1200",
-      "https://play-lh.googleusercontent.com/RNjDZYms9NDDKraBu4REJVVWm6mHwan8wNYKpH6dekdAN3plHcnQZx3WsW0T26Vy8D8=w600-h1200",
-      "https://play-lh.googleusercontent.com/kFG3MD956rWm6XmdZZ9HsMW8DRN_iSrHizPbGey97Ay95oAciM5eknfZdejbaJL0fzI=w600-h1200",
-      "https://play-lh.googleusercontent.com/Ivbi1j24KwEqs1xHq5sgJk3pN6pyiqiKqDzxCj8_ZxmZxP2Z4ogwoshN1KtUR2OZJnS_=w600-h1200",
-      "https://play-lh.googleusercontent.com/RotE9nRaGdYu_1exTUkyOavu0Vq9HFc6uy1gd6l0dP1nmuRRSKk5f_4SZqcXaaeTp7s6=w600-h1200",
-      "https://play-lh.googleusercontent.com/MlidGa2TQlymxHrX4_jJ7AriaO1yhbstL0_Suf1UMl9DRR9xdfPu2mCCaAGt_q5BnaA=w600-h1200",
-      "https://play-lh.googleusercontent.com/43cy-EtfcVAo99TFhCljxYzJ8NaA28jMamvV_J0LWjZXX7iiLgzzlW16mwgWWe5xfA=w600-h1200",
-      "https://play-lh.googleusercontent.com/t5IRVEn5ZUHQ2pT3p8SBf0WcJd5NaE9-Vs6Rq0x6bXS06dpOWY3BW47MzHmZFB-H0T6c=w600-h1200",
-      "https://play-lh.googleusercontent.com/1YUyL-I_B0OCLxl2MEUn7hvZIxdwHsEnZVfriuqATcSZiPAp5Klr-o_bEXgBPtPsnuc=w600-h1200",
-      "https://play-lh.googleusercontent.com/jgZH9JwwSIaKjDgdxEjL84muliBbl0gO5kk_-ezqnboNUZT2kB8OHnmlKRVgQZZbYQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/r-GPAFSjXRx1U31FwmFvus6_dTewSDLn917GAGp-HOhlXeI4LtDl2odjd-if_fUqmno=w600-h1200",
-      "https://play-lh.googleusercontent.com/KNIAoNaAdV46hQmmJGCgqeR6pQMdnKJS5UJPnwebVOLt0ivcalmGoppMtesqJ7qTHrox=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/rs0sa786FvVMsABygQMaW3zKUKzWJhg9vKpK_b_bKNRsI412dHcjCKq8z68amg_-Amas=w600-h1200",
+        "https://play-lh.googleusercontent.com/IJNTwUtTicUHlA5sQhW_FvyW_JGREDmoUNHw7GIqpwF_tF6O3ZtpX1vdz_1aokm77Hc=w600-h1200",
+        "https://play-lh.googleusercontent.com/a9E9nC8qxGxRfZ29HOqPJMennJ2R_rEHiI9CQCdl7NQ_F80xZBEEi-SMya_xUZI_wr0=w600-h1200",
+        "https://play-lh.googleusercontent.com/NerwThXFISOFww9pV2E8iBBNd221fySHo6GJovSy3necJh7VrivSH5xgKX4bEV-mY-w=w600-h1200",
+        "https://play-lh.googleusercontent.com/RNjDZYms9NDDKraBu4REJVVWm6mHwan8wNYKpH6dekdAN3plHcnQZx3WsW0T26Vy8D8=w600-h1200",
+        "https://play-lh.googleusercontent.com/kFG3MD956rWm6XmdZZ9HsMW8DRN_iSrHizPbGey97Ay95oAciM5eknfZdejbaJL0fzI=w600-h1200",
+        "https://play-lh.googleusercontent.com/Ivbi1j24KwEqs1xHq5sgJk3pN6pyiqiKqDzxCj8_ZxmZxP2Z4ogwoshN1KtUR2OZJnS_=w600-h1200",
+        "https://play-lh.googleusercontent.com/RotE9nRaGdYu_1exTUkyOavu0Vq9HFc6uy1gd6l0dP1nmuRRSKk5f_4SZqcXaaeTp7s6=w600-h1200",
+        "https://play-lh.googleusercontent.com/MlidGa2TQlymxHrX4_jJ7AriaO1yhbstL0_Suf1UMl9DRR9xdfPu2mCCaAGt_q5BnaA=w600-h1200",
+        "https://play-lh.googleusercontent.com/43cy-EtfcVAo99TFhCljxYzJ8NaA28jMamvV_J0LWjZXX7iiLgzzlW16mwgWWe5xfA=w600-h1200",
+        "https://play-lh.googleusercontent.com/t5IRVEn5ZUHQ2pT3p8SBf0WcJd5NaE9-Vs6Rq0x6bXS06dpOWY3BW47MzHmZFB-H0T6c=w600-h1200",
+        "https://play-lh.googleusercontent.com/1YUyL-I_B0OCLxl2MEUn7hvZIxdwHsEnZVfriuqATcSZiPAp5Klr-o_bEXgBPtPsnuc=w600-h1200",
+        "https://play-lh.googleusercontent.com/jgZH9JwwSIaKjDgdxEjL84muliBbl0gO5kk_-ezqnboNUZT2kB8OHnmlKRVgQZZbYQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/r-GPAFSjXRx1U31FwmFvus6_dTewSDLn917GAGp-HOhlXeI4LtDl2odjd-if_fUqmno=w600-h1200",
+        "https://play-lh.googleusercontent.com/KNIAoNaAdV46hQmmJGCgqeR6pQMdnKJS5UJPnwebVOLt0ivcalmGoppMtesqJ7qTHrox=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.bricefriha.aresgaming&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
       "ios": "https://apps.apple.com/us/app/gamhub-gaming-news-updates/id1595571591"
@@ -447,12 +584,25 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "GnollHack is a remastered and enhanced version of the classic roguelike game NetHack, one of the most iconic games developed in 1980s and 1990s.",
     "downloads": "10K+ downloads (Google Play)  ·  8K+ downloads (App Store)  ·  800+ downloads (Steam)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6f/71/ea/6f71eadc-57e2-7b87-5424-cb2d7810a7b3/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/6f/61/106f61fc-8a66-605c-b01f-6f3142974eab/8347ce2c-4796-4c30-9ed8-e6c50d053948_screenshot-55-4.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/a0/2c/cea02cc7-fc34-ec1f-e58f-dd3cacc252c5/cb65cc7d-73d9-4543-8927-16bb42fe95ac_screenshot-55-8.png/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f5/2d/b2/f52db2e4-1eab-4d6b-0504-7d5f03459bff/6e66e1a0-a0e2-4b8d-9024-7d2c70e11c67_screenshot-55-9.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/49/e8/7b49e8ce-8f33-699a-8b58-43cc89f9ed89/09fd1b82-78f3-482c-babc-805771a013a6_screenshot-55-10.png/406x228bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/6f/61/106f61fc-8a66-605c-b01f-6f3142974eab/8347ce2c-4796-4c30-9ed8-e6c50d053948_screenshot-55-4.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/a0/2c/cea02cc7-fc34-ec1f-e58f-dd3cacc252c5/cb65cc7d-73d9-4543-8927-16bb42fe95ac_screenshot-55-8.png/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f5/2d/b2/f52db2e4-1eab-4d6b-0504-7d5f03459bff/6e66e1a0-a0e2-4b8d-9024-7d2c70e11c67_screenshot-55-9.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/49/e8/7b49e8ce-8f33-699a-8b58-43cc89f9ed89/09fd1b82-78f3-482c-babc-805771a013a6_screenshot-55-10.png/406x228bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/1SrNtAwg9PFOhgMJPXehacRTeQNhHhG12Pj1zACHNVmfRfEZA3_oOEmLvRNsmYGeGHpas7sCwyR3y8OT=w600-h1200",
+        "https://play-lh.googleusercontent.com/c_yKtvxw4RUOgbtp6Xft6D0wPSPyvISiPRuyC6z3ipNgQfQ9ZerahU8qpS2wSb7kHzv337VLiiWF-LF3Y4eE=w600-h1200",
+        "https://play-lh.googleusercontent.com/hhVt9eODzIUGuwpMMx8LbDoaujoxP7v8wtNmZZBaHei20etnL4_KuWRHekhuyh-_xp-mzw44LxLYB3GrnAy9=w600-h1200",
+        "https://play-lh.googleusercontent.com/8rEUmsYEatP5HdYTO2mKVJj_M-iOp3CawjKP48mcIV8h8uzbX5Cqdo9aUDpA3XK2lmiQdSurIkiZUnMUyAnF2g=w600-h1200",
+        "https://play-lh.googleusercontent.com/2kLKC982U_Qk1w9wvZ2B55VELhDDsRkTZvSGdZNB2LbdtrgVcXV9VEF8sFYsd6lSHgD8VrR-j5GYCjT-9uyd8w=w600-h1200",
+        "https://play-lh.googleusercontent.com/Mif2lRauj1E-9Vlm7Kl8W9wvlNMl_38aXx2vLgbmnTIcf-Uf3r-KvfCAi-K1pGW3Ho0dXVARm8ESMeS6NJM2Ew=w600-h1200",
+        "https://play-lh.googleusercontent.com/C0AyiahwtF3-88T47xv7mwwmpaP019EWibnACjoAUUzbmh8SbyRXSHHBq9uCov4sGraM-g_oezgU-cRqwQ0v=w600-h1200",
+        "https://play-lh.googleusercontent.com/kEj8H2JXiUuS0UsgvYN6xWJck1wd2FY2ayvaUVGaAZMEsg5aNG5hrZQSPM6NE3ubhrmsUrTVEPse9QDulVmZUdk=w600-h1200",
+        "https://play-lh.googleusercontent.com/pWn1okXIg1PdEu51UAJpiw1FflYBfd79F1d97iuQLprSEVLSs2Afc0izv2JPRyiC4RsVvJr3mEcsngO184hU55Y=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.soundmindentertainment.gnollhack",
       "ios": "https://apps.apple.com/app/gnollhack/id1626979951",
@@ -464,16 +614,55 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Guitar Fretboard app is designed to help you learn scales, memorize the fretboard and train your ear.",
     "downloads": "10K+ downloads (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/9d/34/249d3418-d912-b025-13de-240fab7b0769/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/60/25/9a/60259a45-6249-dc24-c422-44cf9c7a05c7/2ed18cc6-1280-4a59-972b-ce1a2d6e5af7_S1.png/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/80/2d/16/802d168d-70f4-5abd-9385-16a4cc06e179/7fb8bea3-016a-4713-8087-d29f8782ba41_S2.png/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7d/96/9e/7d969e6d-b611-cbc8-6a6c-b0ff506a7ff4/3d65779a-fdb7-47fc-8897-fbbdcce68c00_S3.png/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/60/e5/9e/60e59e89-5a6c-94f4-f467-5fac98fcbc70/edf96bc8-efc0-4b8b-8f8d-8da43199d4d5_S4.png/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/bd/58/65bd5855-1545-85d3-e45b-3e5810bc2f6d/e089775e-357b-4bac-b15d-67595fbc7007_S5.png/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/24/a3/98/24a39847-0b17-9686-885c-93c026fa32b1/37de70bf-3c41-4513-a26f-300e9f7bdc92_S6.png/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/f9/8c/c8f98c0a-4b55-e6c5-8da2-fed5492a1bb9/654a7586-dee1-4b4b-b928-6510e465347c_S7.png/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a6/94/26/a6942650-0c24-5508-df6c-5c4ef42ea94f/5ed4ef43-4067-4db8-882d-eee2397c0433_S8.png/406x228bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/60/25/9a/60259a45-6249-dc24-c422-44cf9c7a05c7/2ed18cc6-1280-4a59-972b-ce1a2d6e5af7_S1.png/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/80/2d/16/802d168d-70f4-5abd-9385-16a4cc06e179/7fb8bea3-016a-4713-8087-d29f8782ba41_S2.png/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7d/96/9e/7d969e6d-b611-cbc8-6a6c-b0ff506a7ff4/3d65779a-fdb7-47fc-8897-fbbdcce68c00_S3.png/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/60/e5/9e/60e59e89-5a6c-94f4-f467-5fac98fcbc70/edf96bc8-efc0-4b8b-8f8d-8da43199d4d5_S4.png/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/bd/58/65bd5855-1545-85d3-e45b-3e5810bc2f6d/e089775e-357b-4bac-b15d-67595fbc7007_S5.png/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/24/a3/98/24a39847-0b17-9686-885c-93c026fa32b1/37de70bf-3c41-4513-a26f-300e9f7bdc92_S6.png/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/f9/8c/c8f98c0a-4b55-e6c5-8da2-fed5492a1bb9/654a7586-dee1-4b4b-b928-6510e465347c_S7.png/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a6/94/26/a6942650-0c24-5508-df6c-5c4ef42ea94f/5ed4ef43-4067-4db8-882d-eee2397c0433_S8.png/406x228bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ed/31/48/ed3148d2-09f1-31ec-f17d-fef2cd4f0d7a/3391359d-ab90-48b2-add8-4f5028c3d4f3_S1.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dc/57/dd/dc57dd75-2804-561c-1830-538356e82e97/aa12a3c4-a4c9-4de9-9612-1d82e51cd906_S2.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1c/1e/15/1c1e1562-c988-6ed2-4d3e-145bcb5525b4/f1ac4a92-3722-49d1-be44-a98876d2b0f0_S3.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3b/82/32/3b8232bd-5683-98a8-7b9f-1fd3ab41a19f/e9fc1953-d9e6-4c03-9c61-6e788effab35_S4.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/87/6f/d0/876fd068-9ee8-9d0d-3744-d70ce75c2fbe/8d0d4448-7cc3-4135-b1ff-beb7b041702e_S5.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/13/91/9b/13919bb0-1984-f933-25c6-2c113ad03f71/fa4b614f-af8b-4434-b44a-c6354f3dc203_S6.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e6/9a/e1/e69ae184-acc4-8e31-028f-c4be079fc916/a5bf8a7e-54a4-4eeb-a5fe-7026f53906c0_S7.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/e9/f2/7be9f2db-6c1b-aec9-441d-b5fc9212f56b/3cc5a838-a44e-4e14-929a-7e7269a75579_S8.png/552x414bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/T7BumuofhTMbkLyufN7Hno1oCu5joUiC05MH6G74lr2hFH0HOEFEYWKZc0oteWHz7Jc5=w600-h1200",
+        "https://play-lh.googleusercontent.com/CBWfsMxVpjEpVMHp-qpRWCmRKSg4X3SUgkNeBSM_3bGmjVivz1fnsEJ58bB3QtHW8Hbs=w600-h1200",
+        "https://play-lh.googleusercontent.com/orxE3r0HQt7FZeXTMKREzwxS7GOq6nTFxPbsdO-Lrun9PYO70jiWUklk4JQCPmQ8v9c=w600-h1200",
+        "https://play-lh.googleusercontent.com/jl0_ELbj7nzi_tF_TyHm5-palsPxnxewb286s-xIPeHQRHI-rmuhR4lOg6WbdHhUk7M=w600-h1200",
+        "https://play-lh.googleusercontent.com/WZunbRgxW_kVzyVjNKaS0aVP7K010e8Ap0WP1_E-fC5pirba6Xuu62Gpo6D9AVmbeIk=w600-h1200",
+        "https://play-lh.googleusercontent.com/Lp7PkEkBilNfgqw0iTb1GLi3NSJcNXfqEmgVTb0mM6R5RNvfrEaIvNDH3zaufBapRUI=w600-h1200",
+        "https://play-lh.googleusercontent.com/oSDzXvHPw-IIxDYjgiUXHlhdsBSblGOJ3q8BCpQdkZHW_GW0RoEomwdBozKRhDEu6u4=w600-h1200",
+        "https://play-lh.googleusercontent.com/y_lcxyAxGRHHul8eIbfA5p7ou6-1KYbfV49cVe2R0f1nebQJ2WZ8mXv9qN0o2kx-G7w=w600-h1200",
+        "https://play-lh.googleusercontent.com/xIEqqfmBSzW3z-A1dW07OecMnzdNctxRK-N6iNqypKQH516Wdli2iCQIUtbN3ngzoaw=w600-h1200",
+        "https://play-lh.googleusercontent.com/kyJx-VEPVHg-DnCtahcxMpixgmsFEJTpu21er1uDwSYQ-9xjc6J-zRqcmnXPpk4p2hc7=w600-h1200",
+        "https://play-lh.googleusercontent.com/aF3YizcWI-cVT49RDvC4q0GJKKi82SNlrR1FjtHkPEP1e6ofNbh79Zqf1sa3hQMLytTj=w600-h1200",
+        "https://play-lh.googleusercontent.com/YrgnnDh2TyhfXk__vx7q0MhbJWbBQd7vAebzsdkmwYk3Mcw-gVbJYitg9spHf7CEWA=w600-h1200",
+        "https://play-lh.googleusercontent.com/bFK7FKqUoddhUSNEW1k94JZfsYMQec3ZNMD7LPRF2rGw5Hh2xXWmfXk8cleJAp44ufw=w600-h1200",
+        "https://play-lh.googleusercontent.com/JllSr6xWOE5p_d9ipM0WaRpE5joYqSkZf8Wjx4c4i0E6RvZ_xNg1PUlbOaIF3ODkbQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/8sPotkY1wlYaXtvthedfSEXpwByKIIoBpm04BujLamMhjnoEIbAneiLkoXgkNHuiRvs=w600-h1200",
+        "https://play-lh.googleusercontent.com/BNdO0hgdOXkqlZi_CGhp4FbP9nOVyufoluSGAbPzRuctC6GA0PFyKXar-L5tta7zXFE=w600-h1200",
+        "https://play-lh.googleusercontent.com/_0XiYlJG68lEVnwIh6iBuOX4kZzu1vyXaTU1IFvoUUjdDJiHNPxqpiP2me0ul7epbw=w600-h1200",
+        "https://play-lh.googleusercontent.com/nJkfW93U_TfqPquIEvV5G-hWlrvLhRadi0a4wbDmDXU9CFQ2TZ_5kbBAHdWmIMOGYIM=w600-h1200",
+        "https://play-lh.googleusercontent.com/fpvJiLJIhOi89Feylkbdm2EYlA6AYn4lhn-Hnjb-sMDTGLDdG7Xfn1C36CzfIy9iqA=w600-h1200",
+        "https://play-lh.googleusercontent.com/6UCktGaGHpzj7FqLhpRCw5H044YK5V64g2iW4ghvD-0JGU42BtbSd5QJyo3YdWVyQHg=w600-h1200",
+        "https://play-lh.googleusercontent.com/d0MBt7M55ioRn7ABQ3r4W_3eoyMSMSO9aqpPWStOrIAXogzsE1P1YvU_q76aI_wZtAXU=w600-h1200",
+        "https://play-lh.googleusercontent.com/jzhc__7erMO0rfi6AyxNFFfpoTSJ6HPGD-nx4TqwjLBxXgPdoDjTXhv_M9BvpHrdbdpt=w600-h1200",
+        "https://play-lh.googleusercontent.com/PenTr3F3PUwh38CsEJ3Yb25Q9wzd_7ywx3xmJtWYqVo-zdB7a1laYtNYIucVOW8AcCo=w600-h1200",
+        "https://play-lh.googleusercontent.com/HXMwNtHRLfi15epoVLO_RRzRug1Mxfj1UJZbI_y_1uUQ5mOUpkI8uTqtJu1Y3qdmxd4=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.slaverygames.guitarfretboard&hl=en",
       "ios": "https://apps.apple.com/us/app/guitar-fretboard-scales/id1623791852?l=en-US"
@@ -484,23 +673,26 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Amateur radio logging app with templates for HF, POTA, Contest, and SWL. Includes offline tools like Grid Calculator, Azimuth Calculator, Q-Codes, and ITU Prefixes. Full ADIF import/export.",
     "downloads": "1500+ paid downloads (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/03/dc/fb/03dcfb56-8300-4887-7f8c-6b606863fec3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/T6WHk_C3qogHJ0UnOWZ2p4wpWhlv3j5TPuTk7TzIhJzkxqUHicJpi4uwMie0V6qWc3F60e8iVnW6OOiVasnyNBw=w600-h1200",
-      "https://play-lh.googleusercontent.com/a4748wKw5clg4XdW7avBhSMCoq0a1yydrgZoGYV5hiotDbqtMmf5s3Kj4aKt6PzPtOCBnK_JRub9PZX5p-Iq=w600-h1200",
-      "https://play-lh.googleusercontent.com/zuYird3x6_MQj1-fi50hCJv4Ax_pgFMgqjhxZ8-oce9cAOspB36XV1zYR9aK_eOtmac5KnrHfgBP2wFjApKstQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/G3q2C1oEhAaSJhB24tVi4rzLaXWm5XV9OnbtcYLVm8h3Pk_bijAOYy7CFzCcZ1VwKFHbaIfKt3C94JTS9pSjEDI=w600-h1200",
-      "https://play-lh.googleusercontent.com/uq3wLeijEB1GpjjKJXJG6L6jLZrBh9Z_8Sq8iLinXWx8nzJI8kVo1-FobYtlrYkfU8yJZfBzvyAxScyA5yPq=w600-h1200",
-      "https://play-lh.googleusercontent.com/p3V91FRawNtJC9fRKy9ChuB2Mr8bJtcYqJ7DYPedXCWMvFeKi2h6u6Ez5dOy5WohkrExlMqgWtmtYedinQcB=w600-h1200",
-      "https://play-lh.googleusercontent.com/i0bZ_sjvU4HT_gltvn74bcSsfm_Tn4JAcH9YV5We5cXqO_aqbtLVgrauCQMIKDHTTFqJDTvwCpsHxK2Vo1fh_Q=w600-h1200",
-      "https://play-lh.googleusercontent.com/FGELIarEhSoNSKZUcmPlVdVPQV_F1oUa5GDkQ9SAvvZnyfdttladJNbXnoyXUqV9PC8cypYPDZ18IXS1cAfT=w600-h1200",
-      "https://play-lh.googleusercontent.com/Zgdq0DayopuC83ARIyNAM3kJFIxRMBKmE9VtikFguKyN521J9JCqndRDL7hmim3CwjFGdqeCR0eqfFf5YiCQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/GwFrgDlzXP089Uey7WpN4Fqzbvxkqf0YoNC3O4q1nPbH-KTVlg-bnLqYInYHq2NpPKqEE57aL2kn5QXljudBHas=w600-h1200",
-      "https://play-lh.googleusercontent.com/MhKwE8qR1tdRoj1ZsWckpQ9ceUqvClOa12Sej5cBo-T99sDEKlbqx77glAvi3AnP2yHiA3g25t2yEfNfZyxb8g=w600-h1200",
-      "https://play-lh.googleusercontent.com/dyikqweTexVGvyXz2h3s2uMEcjvkp_pVmgW12V8kKgYfBtDM8esOwexkfOHZxDMcJLliM3Cb-O6KxBkOUQC8hQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/X9vGZ_KPFi15RzR6uJw70IfjIdCXROJCxWW4G2MYc6lfGvrVJgk5XRcCXTa5W-ZXThXuNzLrvBhu1FNRjneSPws=w600-h1200",
-      "https://play-lh.googleusercontent.com/s8nRcwgv_YrpN0N8VF-pq4niIDw6IsRD_LFckGbilVdrxFxpLo4ubI4FKkEy-V3-ppyhLLNabNdTM9jdLzh6_Q=w600-h1200",
-      "https://play-lh.googleusercontent.com/08leKQNlrDeKQ2Lmiw3lFcGGQbti6_6NyRSZhPQsZaQUgMELjR6ksvVV8ENZQ4TeqhuxOWiRgFDLlEvN4keR=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/T6WHk_C3qogHJ0UnOWZ2p4wpWhlv3j5TPuTk7TzIhJzkxqUHicJpi4uwMie0V6qWc3F60e8iVnW6OOiVasnyNBw=w600-h1200",
+        "https://play-lh.googleusercontent.com/a4748wKw5clg4XdW7avBhSMCoq0a1yydrgZoGYV5hiotDbqtMmf5s3Kj4aKt6PzPtOCBnK_JRub9PZX5p-Iq=w600-h1200",
+        "https://play-lh.googleusercontent.com/zuYird3x6_MQj1-fi50hCJv4Ax_pgFMgqjhxZ8-oce9cAOspB36XV1zYR9aK_eOtmac5KnrHfgBP2wFjApKstQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/G3q2C1oEhAaSJhB24tVi4rzLaXWm5XV9OnbtcYLVm8h3Pk_bijAOYy7CFzCcZ1VwKFHbaIfKt3C94JTS9pSjEDI=w600-h1200",
+        "https://play-lh.googleusercontent.com/uq3wLeijEB1GpjjKJXJG6L6jLZrBh9Z_8Sq8iLinXWx8nzJI8kVo1-FobYtlrYkfU8yJZfBzvyAxScyA5yPq=w600-h1200",
+        "https://play-lh.googleusercontent.com/p3V91FRawNtJC9fRKy9ChuB2Mr8bJtcYqJ7DYPedXCWMvFeKi2h6u6Ez5dOy5WohkrExlMqgWtmtYedinQcB=w600-h1200",
+        "https://play-lh.googleusercontent.com/i0bZ_sjvU4HT_gltvn74bcSsfm_Tn4JAcH9YV5We5cXqO_aqbtLVgrauCQMIKDHTTFqJDTvwCpsHxK2Vo1fh_Q=w600-h1200",
+        "https://play-lh.googleusercontent.com/FGELIarEhSoNSKZUcmPlVdVPQV_F1oUa5GDkQ9SAvvZnyfdttladJNbXnoyXUqV9PC8cypYPDZ18IXS1cAfT=w600-h1200",
+        "https://play-lh.googleusercontent.com/Zgdq0DayopuC83ARIyNAM3kJFIxRMBKmE9VtikFguKyN521J9JCqndRDL7hmim3CwjFGdqeCR0eqfFf5YiCQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/GwFrgDlzXP089Uey7WpN4Fqzbvxkqf0YoNC3O4q1nPbH-KTVlg-bnLqYInYHq2NpPKqEE57aL2kn5QXljudBHas=w600-h1200",
+        "https://play-lh.googleusercontent.com/MhKwE8qR1tdRoj1ZsWckpQ9ceUqvClOa12Sej5cBo-T99sDEKlbqx77glAvi3AnP2yHiA3g25t2yEfNfZyxb8g=w600-h1200",
+        "https://play-lh.googleusercontent.com/dyikqweTexVGvyXz2h3s2uMEcjvkp_pVmgW12V8kKgYfBtDM8esOwexkfOHZxDMcJLliM3Cb-O6KxBkOUQC8hQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/X9vGZ_KPFi15RzR6uJw70IfjIdCXROJCxWW4G2MYc6lfGvrVJgk5XRcCXTa5W-ZXThXuNzLrvBhu1FNRjneSPws=w600-h1200",
+        "https://play-lh.googleusercontent.com/s8nRcwgv_YrpN0N8VF-pq4niIDw6IsRD_LFckGbilVdrxFxpLo4ubI4FKkEy-V3-ppyhLLNabNdTM9jdLzh6_Q=w600-h1200",
+        "https://play-lh.googleusercontent.com/08leKQNlrDeKQ2Lmiw3lFcGGQbti6_6NyRSZhPQsZaQUgMELjR6ksvVV8ENZQ4TeqhuxOWiRgFDLlEvN4keR=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.mircules.HAM.QuickLog",
       "ios": "https://apps.apple.com/us/app/mircules-ham-quicklog/id939665753"
@@ -511,40 +703,43 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Here'n'There is an AI-powered app that helps you discover activities and events you'll actually enjoy. Instead of browsing endless lists, the app learns your preferences and recommends personalized experiences—making it easier to spend your time doing what you love.",
     "downloads": "100+ downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5e/24/d4/5e24d4ce-3fd1-295e-b1ff-c90f4adb84e3/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/XZ7p_mQt6HyPFhMNbZWT21BigrT3Y6MiXnn6BURrBjzJO5BupYPY3T82LcwmYcjT1g=w600-h1200",
-      "https://play-lh.googleusercontent.com/uoo9g5TchRH8T7ZAqrKS55mNs85SDNPSv5MD4k3eS3ToTRfzdF1UbxP4yAOcgaVfsA=w600-h1200",
-      "https://play-lh.googleusercontent.com/KK7NxmqeZMvsVBV-iV77nSFaigUdOpOR8YMLFTtvyMh_pKDxR-BEvDt24aUhNI0PrA=w600-h1200",
-      "https://play-lh.googleusercontent.com/azI46GeR4uN9z0Fk4_VQj-7XzrF6Q0XooPbqlkLZIT03Nb7Z80mH_D_7DgNNBkDeJc0=w600-h1200",
-      "https://play-lh.googleusercontent.com/HYx2d_01orkrYmnRePH3ZxFg2dNygP7JTjgYepzGjMxmsnXpA3rTUZlac4yvwwplmRg=w600-h1200",
-      "https://play-lh.googleusercontent.com/oCfIvtCfHrxGjXw_elrwITtCOH2N1lgBQb8e0ucKVu-dRHCBGTna2DCZMOFkf8lygA=w600-h1200",
-      "https://play-lh.googleusercontent.com/uezMDnA9giXcMwPH4y0qjJt6q6OdGAZyZn6A_Pty5o_bqapU58zj-HzUDT_n52iTSal6=w600-h1200",
-      "https://play-lh.googleusercontent.com/fp9I3jEnjFIfytNXCL2KO__TqRCksGVocbr3ckIjCetuppMav1IyMGPYAbYsizwbvHA=w600-h1200",
-      "https://play-lh.googleusercontent.com/HM4BnCH8O15x5hEoobrxkmas2PH-NpJCnfR87ds08iZ5rcBixkOMoP3aIuc57XUUBCI=w600-h1200",
-      "https://play-lh.googleusercontent.com/vCqOtWVYFVHOnKLGb25C8aPAV7QCSFUXBJLiOfIlLpctX2FAYnoDy3_YFRHZb_gF7g=w600-h1200",
-      "https://play-lh.googleusercontent.com/VVUwEXsy30frNpaKbYF8-Hz8WpcmZhXYKvbpizgUUX1WD2_dRE9V-QnmahkxPSL5dA=w600-h1200",
-      "https://play-lh.googleusercontent.com/6LyYhxEdnxaFdVRMis5Zu6MnmmXd2x2O7CgaMgBssl61yZ_nNwPhZmfZV1ALEAEAgw=w600-h1200",
-      "https://play-lh.googleusercontent.com/ZGCr8NVE_nTy6ygpMzUdoVC4beI2UBigo0KLMlaFOAu-1MBlnwE_le-trD9I2hKKUA=w600-h1200",
-      "https://play-lh.googleusercontent.com/CUiTU5w3Z2vzVcysoOkOKeRIjkPXzOPa3-rusJIcQnQ1fYNzb3ERUKxBIw5rhNFZqw=w600-h1200",
-      "https://play-lh.googleusercontent.com/INVVwqJFBnKVKJb-pBxuPDD9TJmH-R98nOqRrs2GHsscOOX3lpXuiQ6I0GgFY5UH6ok8=w600-h1200",
-      "https://play-lh.googleusercontent.com/hY14gjPNgL9BpBkQQSnH8OSm_qfoQRboAih3Lxd_vNLa1UNkasSPLtAI1hT5gEt3Ww=w600-h1200",
-      "https://play-lh.googleusercontent.com/DGy94dA6wA0h9LgjLcno5YPjCrUwIFBex27c21o5I0cDQMQKxc7omBSMT7ewGfn3xLgp=w600-h1200",
-      "https://play-lh.googleusercontent.com/zrEhrOwp5VpoOCyQtORS8QFWSi7HrHYtZzKKh4xHzxUgkkyRxBjuN39m8a1duN9EawU=w600-h1200",
-      "https://play-lh.googleusercontent.com/iSjI1X1M_uXu_Pp9Nv914Lwdqc4N2eoP28nTEXvp1nTq_DGhFfMkT8A7XGxkZoJYAA=w600-h1200",
-      "https://play-lh.googleusercontent.com/Bz5bzWqu7WRg2C9FX4zmUo2tM-7VpLWB9blvoiSFV6Uvj7PUGr9-tDvap8Cpw8QqOZE=w600-h1200",
-      "https://play-lh.googleusercontent.com/v8OQR4eEgPHflG7YlWu-VsXA1j_MScMeN3dUtjB0e8i2nHMkSz1omJ25RZNX_V0MySZP=w600-h1200",
-      "https://play-lh.googleusercontent.com/wusYa4mg9C0EauEUesM31ylTzs0TwtTtwA4YSylbMHPT_ne_E7HrqvPVDJEEZzfsWHhV=w600-h1200",
-      "https://play-lh.googleusercontent.com/jGcWrOF-orH9BkVjsMZMZQpW8rRezdOKC7radarsZ01eYFknbb33rq_tGVHCEzT_mw=w600-h1200",
-      "https://play-lh.googleusercontent.com/0RRyc9UYcgPCeFVoDcDpk6pc96R7tEDbjZbaysBnIQgMI1cBCsG40FKxIrhNgNCAZQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/KM5EX7ysTynfiFDa00O5jLPXVQLzvZnYFPvSewtX-RQg0vHfeZB2xn0QGrrqVweBo3xp=w600-h1200",
-      "https://play-lh.googleusercontent.com/nE8aidI-mVX12tcd4gZzb5H-EpGvU2NBGE0JJX-7jMdnw_h8TTobFcAmQ31R2yZ9y5U=w600-h1200",
-      "https://play-lh.googleusercontent.com/nU0MGuaAiO3Pc37qg2oPSiVgmwGJmEPjp8y2z3S0FQyHmwKUZ7VnffE4PWtBJMWGi5I=w600-h1200",
-      "https://play-lh.googleusercontent.com/Z6ehftxO4PQmUHbO47HzGP98o-XcSJd0RYp4PZosY6iqCuAwpWFfVYsGkfuqvD42PMU=w600-h1200",
-      "https://play-lh.googleusercontent.com/46ojS-4Jv_QlOpWJ34l__iKrzt8GRWX3ZK_qTiij1YwPpxnXBxTPXBzT2MlMahDV2EI=w600-h1200",
-      "https://play-lh.googleusercontent.com/dUFuYT2mmjL9FHi6k_N77VjvmfTmVqb72meba8gvK9aE-4ds5bBh5k2xjbf4T1Bdn40=w600-h1200",
-      "https://play-lh.googleusercontent.com/fsmgJz_A6QkobCcumknv04CCZbb-ZGxGu7xrp01alWN0JWUlH5gveatPkm_5mNOOhQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/b1DhuaQos_L3rCTcs5ocmuJFDXe5TOEq_1iqND9yxhH1W_7dm_AMHSAfatVTYYVlAA=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/XZ7p_mQt6HyPFhMNbZWT21BigrT3Y6MiXnn6BURrBjzJO5BupYPY3T82LcwmYcjT1g=w600-h1200",
+        "https://play-lh.googleusercontent.com/uoo9g5TchRH8T7ZAqrKS55mNs85SDNPSv5MD4k3eS3ToTRfzdF1UbxP4yAOcgaVfsA=w600-h1200",
+        "https://play-lh.googleusercontent.com/KK7NxmqeZMvsVBV-iV77nSFaigUdOpOR8YMLFTtvyMh_pKDxR-BEvDt24aUhNI0PrA=w600-h1200",
+        "https://play-lh.googleusercontent.com/azI46GeR4uN9z0Fk4_VQj-7XzrF6Q0XooPbqlkLZIT03Nb7Z80mH_D_7DgNNBkDeJc0=w600-h1200",
+        "https://play-lh.googleusercontent.com/HYx2d_01orkrYmnRePH3ZxFg2dNygP7JTjgYepzGjMxmsnXpA3rTUZlac4yvwwplmRg=w600-h1200",
+        "https://play-lh.googleusercontent.com/oCfIvtCfHrxGjXw_elrwITtCOH2N1lgBQb8e0ucKVu-dRHCBGTna2DCZMOFkf8lygA=w600-h1200",
+        "https://play-lh.googleusercontent.com/uezMDnA9giXcMwPH4y0qjJt6q6OdGAZyZn6A_Pty5o_bqapU58zj-HzUDT_n52iTSal6=w600-h1200",
+        "https://play-lh.googleusercontent.com/fp9I3jEnjFIfytNXCL2KO__TqRCksGVocbr3ckIjCetuppMav1IyMGPYAbYsizwbvHA=w600-h1200",
+        "https://play-lh.googleusercontent.com/HM4BnCH8O15x5hEoobrxkmas2PH-NpJCnfR87ds08iZ5rcBixkOMoP3aIuc57XUUBCI=w600-h1200",
+        "https://play-lh.googleusercontent.com/vCqOtWVYFVHOnKLGb25C8aPAV7QCSFUXBJLiOfIlLpctX2FAYnoDy3_YFRHZb_gF7g=w600-h1200",
+        "https://play-lh.googleusercontent.com/VVUwEXsy30frNpaKbYF8-Hz8WpcmZhXYKvbpizgUUX1WD2_dRE9V-QnmahkxPSL5dA=w600-h1200",
+        "https://play-lh.googleusercontent.com/6LyYhxEdnxaFdVRMis5Zu6MnmmXd2x2O7CgaMgBssl61yZ_nNwPhZmfZV1ALEAEAgw=w600-h1200",
+        "https://play-lh.googleusercontent.com/ZGCr8NVE_nTy6ygpMzUdoVC4beI2UBigo0KLMlaFOAu-1MBlnwE_le-trD9I2hKKUA=w600-h1200",
+        "https://play-lh.googleusercontent.com/CUiTU5w3Z2vzVcysoOkOKeRIjkPXzOPa3-rusJIcQnQ1fYNzb3ERUKxBIw5rhNFZqw=w600-h1200",
+        "https://play-lh.googleusercontent.com/INVVwqJFBnKVKJb-pBxuPDD9TJmH-R98nOqRrs2GHsscOOX3lpXuiQ6I0GgFY5UH6ok8=w600-h1200",
+        "https://play-lh.googleusercontent.com/hY14gjPNgL9BpBkQQSnH8OSm_qfoQRboAih3Lxd_vNLa1UNkasSPLtAI1hT5gEt3Ww=w600-h1200",
+        "https://play-lh.googleusercontent.com/DGy94dA6wA0h9LgjLcno5YPjCrUwIFBex27c21o5I0cDQMQKxc7omBSMT7ewGfn3xLgp=w600-h1200",
+        "https://play-lh.googleusercontent.com/zrEhrOwp5VpoOCyQtORS8QFWSi7HrHYtZzKKh4xHzxUgkkyRxBjuN39m8a1duN9EawU=w600-h1200",
+        "https://play-lh.googleusercontent.com/iSjI1X1M_uXu_Pp9Nv914Lwdqc4N2eoP28nTEXvp1nTq_DGhFfMkT8A7XGxkZoJYAA=w600-h1200",
+        "https://play-lh.googleusercontent.com/Bz5bzWqu7WRg2C9FX4zmUo2tM-7VpLWB9blvoiSFV6Uvj7PUGr9-tDvap8Cpw8QqOZE=w600-h1200",
+        "https://play-lh.googleusercontent.com/v8OQR4eEgPHflG7YlWu-VsXA1j_MScMeN3dUtjB0e8i2nHMkSz1omJ25RZNX_V0MySZP=w600-h1200",
+        "https://play-lh.googleusercontent.com/wusYa4mg9C0EauEUesM31ylTzs0TwtTtwA4YSylbMHPT_ne_E7HrqvPVDJEEZzfsWHhV=w600-h1200",
+        "https://play-lh.googleusercontent.com/jGcWrOF-orH9BkVjsMZMZQpW8rRezdOKC7radarsZ01eYFknbb33rq_tGVHCEzT_mw=w600-h1200",
+        "https://play-lh.googleusercontent.com/0RRyc9UYcgPCeFVoDcDpk6pc96R7tEDbjZbaysBnIQgMI1cBCsG40FKxIrhNgNCAZQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/KM5EX7ysTynfiFDa00O5jLPXVQLzvZnYFPvSewtX-RQg0vHfeZB2xn0QGrrqVweBo3xp=w600-h1200",
+        "https://play-lh.googleusercontent.com/nE8aidI-mVX12tcd4gZzb5H-EpGvU2NBGE0JJX-7jMdnw_h8TTobFcAmQ31R2yZ9y5U=w600-h1200",
+        "https://play-lh.googleusercontent.com/nU0MGuaAiO3Pc37qg2oPSiVgmwGJmEPjp8y2z3S0FQyHmwKUZ7VnffE4PWtBJMWGi5I=w600-h1200",
+        "https://play-lh.googleusercontent.com/Z6ehftxO4PQmUHbO47HzGP98o-XcSJd0RYp4PZosY6iqCuAwpWFfVYsGkfuqvD42PMU=w600-h1200",
+        "https://play-lh.googleusercontent.com/46ojS-4Jv_QlOpWJ34l__iKrzt8GRWX3ZK_qTiij1YwPpxnXBxTPXBzT2MlMahDV2EI=w600-h1200",
+        "https://play-lh.googleusercontent.com/dUFuYT2mmjL9FHi6k_N77VjvmfTmVqb72meba8gvK9aE-4ds5bBh5k2xjbf4T1Bdn40=w600-h1200",
+        "https://play-lh.googleusercontent.com/fsmgJz_A6QkobCcumknv04CCZbb-ZGxGu7xrp01alWN0JWUlH5gveatPkm_5mNOOhQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/b1DhuaQos_L3rCTcs5ocmuJFDXe5TOEq_1iqND9yxhH1W_7dm_AMHSAfatVTYYVlAA=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.ebnet.herenthere",
       "ios": "https://apps.apple.com/de/app/herenthere/id6737746907"
@@ -555,10 +750,12 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A desktop accessibility tool that allows users to type efficiently with one hand by dynamically reflecting keyboard keys, improving speed, reach, and accuracy.",
     "downloads": "+1K",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1f/7a/94/1f7a9493-4599-9c78-413e-111a4b8cc873/keyboardy_logo-1x_U007emarketing-0-6-0-85-220-0.png/512x512bb.png",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ba/43/42/ba43425e-42bd-1348-2f73-5e5418c06710/Mac_-_1.png/800x500bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/16/b1/b716b1e5-b649-59dd-cc6e-85ed7028991f/g2758.png/800x500bb.jpg"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ba/43/42/ba43425e-42bd-1348-2f73-5e5418c06710/Mac_-_1.png/800x500bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/16/b1/b716b1e5-b649-59dd-cc6e-85ed7028991f/g2758.png/800x500bb.jpg"
+      ]
+    },
     "platforms": {
       "website": "https://keyboardy.net",
       "windows": "https://apps.microsoft.com/detail/9p2sbxxxx9w7",
@@ -570,16 +767,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Real Time GPS tracker.",
     "downloads": "20K+ paid downloads (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/39/d4/fa/39d4fa31-0507-fbdf-d901-2b530d1d028f/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/FWlyhAiCQW66AomHnFnAsFGkCOwqN0rJeJaqnR_xTpOLcyY4ius12Z0uWy-j7oQFp9NcHzkOtEonO1T15a2u1Q=w600-h1200",
-      "https://play-lh.googleusercontent.com/lhdJfcIoUsv5j-tcurSBGmbQnwuDwfdyLb_Vd_oAQ7EZK4JsSZYHkRqPex2D57CILOUtcUfBqmd_BptWLo9Y7DQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/dDfGh4HoE-9khDtT9e6ICM1ViQHxCC2se2J8y_AZ5CmgmbQc2GT5E26z6f3BhI38XMStvZ_EmjVf9S8VlfRt=w600-h1200",
-      "https://play-lh.googleusercontent.com/LLXbCZRgGkdUxb5MxGMocNVQL_GSvxzkBHwD5LbmWtH3-PoLmm4fjTFsrHs3tD6ChTLS1qC7ygUG9ycKI3MnbQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/Eqr0tzOv1ijVLbKjTL2o7Ixm1ViHQUOw0sGoSi3ZaA2E-sjagE-KP9OBvpd3MlfDci1WH_wxlheAog-bHl-k-g=w600-h1200",
-      "https://play-lh.googleusercontent.com/Iz0SAvH_HqZBfO1JCzk25v2mNQ75K4_PkCTkGdzHG5zFRTqoF6C3vtjIQI3CI_f4lkqV1Fjp9O1ovvRZTIaSxQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/meNj82H4Mi1jK99tmzrO7ges4ZTZetSzzpH1HkyG8fPDIJ9Bqcqx72xWh1AXJe9beQR5gWTslPfCvVaUgrTHjQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/F40b15Vhimamsu9vTvatpWDjs8dn_3NHsv5VpbPJnQvUXCL3pM67aDGgSY752SIJSONmSjosXZg16qdmqtn8=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/FWlyhAiCQW66AomHnFnAsFGkCOwqN0rJeJaqnR_xTpOLcyY4ius12Z0uWy-j7oQFp9NcHzkOtEonO1T15a2u1Q=w600-h1200",
+        "https://play-lh.googleusercontent.com/lhdJfcIoUsv5j-tcurSBGmbQnwuDwfdyLb_Vd_oAQ7EZK4JsSZYHkRqPex2D57CILOUtcUfBqmd_BptWLo9Y7DQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/dDfGh4HoE-9khDtT9e6ICM1ViQHxCC2se2J8y_AZ5CmgmbQc2GT5E26z6f3BhI38XMStvZ_EmjVf9S8VlfRt=w600-h1200",
+        "https://play-lh.googleusercontent.com/LLXbCZRgGkdUxb5MxGMocNVQL_GSvxzkBHwD5LbmWtH3-PoLmm4fjTFsrHs3tD6ChTLS1qC7ygUG9ycKI3MnbQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/Eqr0tzOv1ijVLbKjTL2o7Ixm1ViHQUOw0sGoSi3ZaA2E-sjagE-KP9OBvpd3MlfDci1WH_wxlheAog-bHl-k-g=w600-h1200",
+        "https://play-lh.googleusercontent.com/Iz0SAvH_HqZBfO1JCzk25v2mNQ75K4_PkCTkGdzHG5zFRTqoF6C3vtjIQI3CI_f4lkqV1Fjp9O1ovvRZTIaSxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/meNj82H4Mi1jK99tmzrO7ges4ZTZetSzzpH1HkyG8fPDIJ9Bqcqx72xWh1AXJe9beQR5gWTslPfCvVaUgrTHjQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/F40b15Vhimamsu9vTvatpWDjs8dn_3NHsv5VpbPJnQvUXCL3pM67aDGgSY752SIJSONmSjosXZg16qdmqtn8=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.wovenobjects.locatoweb&hl=en",
       "ios": "https://apps.apple.com/us/app/locatoweb/id541093617?ls=1"
@@ -590,14 +790,25 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Lohnbits is the all-inclusive, carefree package for payroll accounting.",
     "downloads": "8K+ (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/19/fd/6d/19fd6d24-560d-da02-cdff-324f1440dcff/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/63/18/72/63187243-794d-b78f-cba2-5693d9cc8f0c/aef08446-3a2a-45ed-8dbd-2d9bd1be22af_Lohnbits_Screenshot_01_5-5.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9d/7b/19/9d7b19d1-6689-1a3a-502e-f10b36c60447/Dashboard_5_5.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/40/e9/5d/40e95d5c-7017-a64f-b5e4-048099a928ae/Sick_5_5.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/03/08/ce030887-7236-cc7b-5762-15627cbd143f/Calendar_5_5.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/6b/9f/f06b9f57-2e39-b6a2-e964-de00be46d877/Documents_5_5.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f8/ec/04/f8ec04af-c0cc-10b6-9121-38da9e580a48/Travel_5_5.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/63/18/72/63187243-794d-b78f-cba2-5693d9cc8f0c/aef08446-3a2a-45ed-8dbd-2d9bd1be22af_Lohnbits_Screenshot_01_5-5.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9d/7b/19/9d7b19d1-6689-1a3a-502e-f10b36c60447/Dashboard_5_5.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/40/e9/5d/40e95d5c-7017-a64f-b5e4-048099a928ae/Sick_5_5.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/03/08/ce030887-7236-cc7b-5762-15627cbd143f/Calendar_5_5.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/6b/9f/f06b9f57-2e39-b6a2-e964-de00be46d877/Documents_5_5.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f8/ec/04/f8ec04af-c0cc-10b6-9121-38da9e580a48/Travel_5_5.png/392x696bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/gvO9JpOoXmCAQttD8P7H7QSi2I3miXvt9R38avFbJrbPJ3IK5oa3xcyDTm7ei9QqEQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/8fW2-HJ_iN6GCh124Gv3chiPFZEguVkqtkJjSw42CRuVUwWYs9iC_NIBog56fsCeMY7nwx4zqLXSwDYgTRosjQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/Ugw3myFcM0c4FOaArmXac97n7qgnmyKXemn9XnDejXWyzqrLR9lMA6rIRiSAM2gwizIIoiIYldsm1DCRl5vHcTs=w600-h1200",
+        "https://play-lh.googleusercontent.com/hi3GZTHQvgszAg-kuMItCxvtm89cLIkAapf3504Wns8N0X96ZM1cKd2ul2pZxwZqDLcXpuhI8jQhdXPrf5UPUA=w600-h1200",
+        "https://play-lh.googleusercontent.com/KcvG5PXaej64Zz5x555tBTqMf7jhcouyiQkgdoP75FimyQ1_9syb5yX9ixUOdILnlkTFAzdE3vhsJVHBPWnZPg=w600-h1200",
+        "https://play-lh.googleusercontent.com/dIla8WktiRumgvRB8ut6xnQs1aUs9LgzOSw4sCmsFn_Lxoxvr223fJKBlomIj8ACA4qGNjCHIiLVSN_9dW3F2Dc=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=lohnbits.android&hl=en",
       "ios": "https://apps.apple.com/de/app/lohnbits/id1537955707?l=en-GB"
@@ -608,14 +819,29 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The official Longines Equestrian App, the ultimate companion for equestrian enthusiasts and participants of events sponsored by Longines.",
     "downloads": "1000+",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f2/73/d7/f273d7da-1472-4324-9a75-9fe493d58a17/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e0/4b/8f/e04b8fe7-62a0-9628-9f16-a2da8e785254/2464bd87-d20e-4645-a94f-4e34fdde40f3_EN-5_5inch-1.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/f7/af/14f7af98-bbe6-64d4-cd05-84287341dfc4/6a850ac0-b541-4be8-b4c7-1e9275354b80_EN-5_5inch-2.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/9b/19/219b19a8-6e4c-b025-3f3f-9b5203dce428/61079d4a-3d04-4592-bc27-ab4ad6d11456_EN-5_5inch-5.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/b2/56/00b256a0-20bf-b936-fcac-edd640646bb1/23415e4e-648c-4c07-830f-58ed189b646c_EN-5_5inch-6.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1c/6e/0f/1c6e0f8e-6a2d-2737-49df-935ab345a342/a6216979-edfe-44d3-8b9e-8aeea1d49ff1_EN-5_5inch-3.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/74/23/2f/74232f62-1f89-9ca3-9807-d729c9b90eeb/be6ed5d3-c650-473c-a76c-e6aa255764c6_EN-5_5inch-4.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e0/4b/8f/e04b8fe7-62a0-9628-9f16-a2da8e785254/2464bd87-d20e-4645-a94f-4e34fdde40f3_EN-5_5inch-1.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/f7/af/14f7af98-bbe6-64d4-cd05-84287341dfc4/6a850ac0-b541-4be8-b4c7-1e9275354b80_EN-5_5inch-2.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/9b/19/219b19a8-6e4c-b025-3f3f-9b5203dce428/61079d4a-3d04-4592-bc27-ab4ad6d11456_EN-5_5inch-5.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/b2/56/00b256a0-20bf-b936-fcac-edd640646bb1/23415e4e-648c-4c07-830f-58ed189b646c_EN-5_5inch-6.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1c/6e/0f/1c6e0f8e-6a2d-2737-49df-935ab345a342/a6216979-edfe-44d3-8b9e-8aeea1d49ff1_EN-5_5inch-3.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/74/23/2f/74232f62-1f89-9ca3-9807-d729c9b90eeb/be6ed5d3-c650-473c-a76c-e6aa255764c6_EN-5_5inch-4.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0a/9d/a4/0a9da4aa-8be2-9110-bacc-40fe2e176b24/c42ecee5-29ff-46b0-b9c8-15dad4cda2c1_Simulator_Screenshot_-_iPad_Pro_2nd_generation_-_2024-07-22_at_17.06.31.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/d3/b1/a3d3b16c-1619-360b-2dd5-0a847f694cee/d2ddcb30-61ee-4d1e-b011-ed23624b9423_Simulator_Screenshot_-_iPad_Pro_2nd_generation_-_2024-07-22_at_17.06.40.png/576x768bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/yig4RxR2rY-lBEG7ptFfuRhGfkngXAbCjKI1SCEjEeyeJ6lLJiOHi7ad6YH8Te5XbQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/e37VMg1OftXPc8-nC9WWyBDo3F8b6piCsnuRIpgruhcejC0YfhRcdYXi7tZ5yZawFD1-=w600-h1200",
+        "https://play-lh.googleusercontent.com/D9fWBK65FA5GDrDapxnWqQDPC7WNRZu1JLvWtCMt7c0wwdPtkUCsMitXfMWfGwkDyw=w600-h1200",
+        "https://play-lh.googleusercontent.com/grsyCvXRa7c9L-ZqrB06y8z31yxBqL4pGuuA1LX1zuHE17qFe7WppRr4SuARGS0A5g=w600-h1200",
+        "https://play-lh.googleusercontent.com/QtfnTM_V9-MxNpY-gHnZHTtjxi5UYDRQkY6XG63AGbbmbI7drlgM91UmmquOl3JrWts=w600-h1200",
+        "https://play-lh.googleusercontent.com/gy77_KNxwRQnIa_XwakyVD_W8gB2Zs999c6ehp5mHoZIbvXgXiB3gg5qy4QuqyNH2Zym=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://public.hippodata.net",
       "android": "https://play.google.com/store/apps/details?id=com.longines.equestrian",
@@ -627,17 +853,47 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The KinesiaU™ motor assessment system is a validated, low-cost prescription medical app for individuals to measure their Parkinson’s disease and essential tremor symptoms using an iPhone or Android smartphone and smartwatch. The system tracks tremors, slowness, and dyskinesia as well as therapies and activities in user-friendly reports. These can help patients and clinicians make better care decisions and identify therapies and activities to improve their symptoms.",
     "downloads": "Unknown (HIPAA Compliance)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/77/7b/77/777b773c-4f0b-bb41-4b68-12a9b95f7156/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1a/0e/1b/1a0e1bed-ed95-99ab-48f1-1555649df1d3/0414cfb4-28e2-4646-b307-77a2e80d9cbd_IMG_0002.PNG/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/64/88/a9/6488a921-bade-95ed-03b3-2f24ebe33fc2/ee1eac1a-e8d6-4790-bf32-11a62fefeed8_IMG_0007.PNG/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8f/b7/e4/8fb7e4eb-61c9-e6f2-0001-f27ceb39046d/37ee26c5-81fa-4a1b-b75c-293f1a8e9d51_IMG_0009.PNG/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/48/f0/0c/48f00c08-fe90-0c81-4089-bd3d0617a02b/38c4dff9-6d8e-4db2-8ce1-ab0f93a8259d_IMG_0008.PNG/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/5d/82/7b5d82d1-85f5-67c8-6a54-7b6a08ec11a1/749df88d-71bc-4466-9d5a-c495cd1ea70b_IMG_0006.PNG/406x228bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/98/31/1c/98311c0a-7a3e-317a-8a17-a2da1750a343/dd4e5b9e-3151-4501-a80b-c1e939689073_IMG_0010.PNG/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/24/80/e6/2480e6b4-5e2e-7bd3-bc45-8f02e47a10f6/b651340a-7e2e-4bdd-9bfa-9222ece13733_IMG_0011.PNG/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/92/26/3e922697-e3bc-7b83-7068-eace61af92a8/58c829ed-a886-41f2-9ccf-e9d4d20e8269_IMG_0013.PNG/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/66/eb/6b/66eb6ba6-93b2-48fc-a1bf-ffa9df6f6d59/29bc407a-aaa6-4ae7-b63e-97cf9acefeb1_IMG_0014.PNG/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1a/0e/1b/1a0e1bed-ed95-99ab-48f1-1555649df1d3/0414cfb4-28e2-4646-b307-77a2e80d9cbd_IMG_0002.PNG/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/64/88/a9/6488a921-bade-95ed-03b3-2f24ebe33fc2/ee1eac1a-e8d6-4790-bf32-11a62fefeed8_IMG_0007.PNG/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8f/b7/e4/8fb7e4eb-61c9-e6f2-0001-f27ceb39046d/37ee26c5-81fa-4a1b-b75c-293f1a8e9d51_IMG_0009.PNG/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/48/f0/0c/48f00c08-fe90-0c81-4089-bd3d0617a02b/38c4dff9-6d8e-4db2-8ce1-ab0f93a8259d_IMG_0008.PNG/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/5d/82/7b5d82d1-85f5-67c8-6a54-7b6a08ec11a1/749df88d-71bc-4466-9d5a-c495cd1ea70b_IMG_0006.PNG/406x228bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/98/31/1c/98311c0a-7a3e-317a-8a17-a2da1750a343/dd4e5b9e-3151-4501-a80b-c1e939689073_IMG_0010.PNG/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/24/80/e6/2480e6b4-5e2e-7bd3-bc45-8f02e47a10f6/b651340a-7e2e-4bdd-9bfa-9222ece13733_IMG_0011.PNG/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/92/26/3e922697-e3bc-7b83-7068-eace61af92a8/58c829ed-a886-41f2-9ccf-e9d4d20e8269_IMG_0013.PNG/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/66/eb/6b/66eb6ba6-93b2-48fc-a1bf-ffa9df6f6d59/29bc407a-aaa6-4ae7-b63e-97cf9acefeb1_IMG_0014.PNG/392x696bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/JZioagnDD7JAn_Yqzj6Hdht_V0iFX4ti4uhNixKdkPNr4YZbasbeRiGYUVLceoqwLw=w600-h1200",
+        "https://play-lh.googleusercontent.com/UnoGnhFj3I-cSekTUXIWEQoDdboln-tIG52KxdiJ4M7i3ps3JuVa9rVSL3aotwagRg=w600-h1200",
+        "https://play-lh.googleusercontent.com/-Y7M4ZFRyJYCkAm9KQrs4MJJqhkD6RrGDLZOJ3WJSFOfsk44qmXdrIsu0nOBvfw6_OU=w600-h1200",
+        "https://play-lh.googleusercontent.com/u2_JSAHkbiLSL6blA43h8E0G9l78TY1tzkf4cAnw0rY95kiRrmgCSh01jDk65PKl0-c=w600-h1200",
+        "https://play-lh.googleusercontent.com/O2CJOYfukrWpNkkZf6Xnms0bQvz6yCi3TZTiXoP2rmC24oW-t876eZ1AU4DkRPSlULcI=w600-h1200",
+        "https://play-lh.googleusercontent.com/pGpr7d1v4REzWhJdkad7Ajl80r9I2AE3PXpkn0BlaK5f-NGVMTJ-NqzLD72SbBD6KJ0=w600-h1200",
+        "https://play-lh.googleusercontent.com/7YDCspUU37fnquguzAocfkZYKZO9AOI8ejxDRJlbHJ1bF056VYTtXGr4AMdmfvLrIP4=w600-h1200",
+        "https://play-lh.googleusercontent.com/gUiYcrCev7kZC2P7waTJQqhuZEAr-BFhczspoVS4GBupiafWZ_kmb2Xa7N_860rwIOo=w600-h1200",
+        "https://play-lh.googleusercontent.com/jeFA6jLxMleOSNAK-FibPODFsyL_lj9MJxS0kn21_QwWyPSUMhKG_PulC9LjcZnMeDk=w600-h1200",
+        "https://play-lh.googleusercontent.com/o4SoefBiqsBpTH4u4E11nkDCVL364KBhnlcG-TYbIeB-Pq2-t0C0B99u5x2CHavlCSFO=w600-h1200",
+        "https://play-lh.googleusercontent.com/61NwCOSKcMhvyJIv8FZLy7Y42tlJFfQlkpAaGKckW-wCMTvF8nlylUck-vtkXmoJdA0=w600-h1200",
+        "https://play-lh.googleusercontent.com/9_hEmQi3JjydIjshSrgiQRgOtYs8Pm2-m2OCdof_GkFgmTGXWaRSpPbGm2Aul306bmHO=w600-h1200",
+        "https://play-lh.googleusercontent.com/_jRGFEG4wvKO4O6wdL1ECOox3O1nePtIdQaFLh0V3Sjcz9hKRAfplx1iDyPYUfgsaISW=w600-h1200",
+        "https://play-lh.googleusercontent.com/SqB5GRRRrma-ScA45pL2d9zAI0Ggs35uRamDHj5voy-E79A60K9qiO0AF2T6gUbQgkE=w600-h1200",
+        "https://play-lh.googleusercontent.com/EkyktE5JKbLNpgW6xvz-qBNBu6voS19WWbCoFypJAnTXeLoSU8iSMWQ7r7WFOAhGoh7j=w600-h1200",
+        "https://play-lh.googleusercontent.com/Pwwk-WM2Tvth5tK0c49kKtQ9HqMl7VjUIPYjJkmicKFFBg36nmVh42x627kWXDwUF1w=w600-h1200",
+        "https://play-lh.googleusercontent.com/TWy4tNt-ALPLxbj0P1SGE2VSKSB_GdXzU4hTinqzIKyrzzWOeyovcw8yVpKbs74YkjJn=w600-h1200",
+        "https://play-lh.googleusercontent.com/r1_Ai5f0rworeWWp8qSNGqwa9MJmkU5AsY8heod1s3wWAGa5dkbOSQo3DR0TPZen1Mk=w600-h1200",
+        "https://play-lh.googleusercontent.com/1DenXf9oggrapy4GKlyMEhZqTxrdcoGfqtuP9hHKEoHmnJqkLficp6EZNSust8STCA=w600-h1200",
+        "https://play-lh.googleusercontent.com/q0XfO716vN5MJYxPVFf2suN3DC1M9L19JMxaVvRBn2bQ_WE6KMws5XAhNBauEw8yc24=w600-h1200",
+        "https://play-lh.googleusercontent.com/PS4zrgm_Tscn-3547nIM1UvTd7xNYOQsjEByVFzy2r0RLLCsTBS92b8wizx1Jv1vJHU=w600-h1200",
+        "https://play-lh.googleusercontent.com/PtmaoBJaJkidRScrneJMt3JAWA58ejSLhe1RfizO_Uwd5gANGJBNo77t-FzE2AnG0jJn=w600-h1200",
+        "https://play-lh.googleusercontent.com/SmXC9bVkMCNZ2vaEtpKgFlEsCRPp7TaNy1ZzDIJn7VLQmnX8jEBiF5tNOZyHoP6t9g=w600-h1200",
+        "https://play-lh.googleusercontent.com/x4ysVcs5tdcGusHtK_0OgvfzdRB9iZ57WkaKxETXOg_esf5Bd-0uBREBBjHAO2s6FPY=w600-h1200",
+        "https://play-lh.googleusercontent.com/KQ7SX_IEP8G4dYP3Sqs-8kLKTW2E-IPm5EwQ8dYTgy2Se-aLX9_p3nwWo_nkXFrUaEcw=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.GLNT.KinesiaU",
       "ios": "https://apps.apple.com/us/app/kinesiau/id1528265341"
@@ -648,13 +904,15 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Lithuanian maps application.",
     "downloads": "500+ (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/56/f7/9b/56f79b45-c499-88a0-688b-577dbbc05ec8/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/75/62/1a/75621a79-3abc-ec8e-f7c5-92e1869cfb20/mzl.amkvyrbc.png/480x360bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a1/5d/01/a15d0101-e290-d73e-bdcf-10cb6f92dd68/mzl.zfbzumek.png/480x360bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1a/43/2c/1a432c0a-29ed-aaba-fcdb-f701c5bf72b5/mzl.iyswjcfx.png/480x360bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f6/b8/e9/f6b8e92e-67d3-a0ab-a66f-d1b9f4ac825f/mzl.tcnhpxya.png/480x360bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ba/8d/08/ba8d08e2-d257-2663-c120-1b11216fce15/mzl.eacbaezv.png/480x360bb.png"
-    ],
+    "screenshots": {
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/75/62/1a/75621a79-3abc-ec8e-f7c5-92e1869cfb20/mzl.amkvyrbc.png/480x360bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a1/5d/01/a15d0101-e290-d73e-bdcf-10cb6f92dd68/mzl.zfbzumek.png/480x360bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1a/43/2c/1a432c0a-29ed-aaba-fcdb-f701c5bf72b5/mzl.iyswjcfx.png/480x360bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f6/b8/e9/f6b8e92e-67d3-a0ab-a66f-d1b9f4ac825f/mzl.tcnhpxya.png/480x360bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ba/8d/08/ba8d08e2-d257-2663-c120-1b11216fce15/mzl.eacbaezv.png/480x360bb.png"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/search?q=maps.lt&c=apps",
       "ios": "https://apps.apple.com/lt/app/maps-lt/id840766166?uo=2"
@@ -665,14 +923,17 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "MenuDish converts boring text-based restaurant menus into digital ones with high-quality dish images.",
     "downloads": "100+ (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7a/6d/9a/7a6d9a9e-0f49-5a8b-c109-796e6dab98ba/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/IRdqI-96XdV_iIQxPzuxgWlQBThj8_vpiv6AX3R4fsYEnAzVYM5zRbajXnW2BtR60iux3O_6_IhKlRPh-nr0nMo=w600-h1200",
-      "https://play-lh.googleusercontent.com/VF2tAnhIOW4-mBNPTSoU0aOv2fEDnOrX-3aWISbXPDhSkhsXpi5j2YnXBiNtW9mI7PoXE5BOW55qikdro49y7A=w600-h1200",
-      "https://play-lh.googleusercontent.com/djXj8H14L25VkipttNMrPM_O1fpv1Xfdv2m5c37tmdvAwXbdVqKl9bP3dbePnSuwU1VX0-ty1-EbVhznyc_R=w600-h1200",
-      "https://play-lh.googleusercontent.com/RVD8RSYwcrNzGxpL8yq3Z34rqHsXHMdUAZv_LueNUGGtBNFbsfXRbkrPX2kEWFmcDyW0tPo7IAQmX7QepW2J=w600-h1200",
-      "https://play-lh.googleusercontent.com/6t8qGmMYb70bpA15zmtfQC-X59cy1w0hLEAPxHetQDiEAF6ZXuYBWpGuMciF6Rfc3Vl6SARHCmUm5DH-nBSvhg=w600-h1200",
-      "https://play-lh.googleusercontent.com/FWT0ewJzMKylDHUDHJFnntS1RBpQaj2o4y8w1tFSl8q6ecsqDz2uLW2MXWf1mHhCOO9KNtDwXTswAkbICyfLuQ=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/IRdqI-96XdV_iIQxPzuxgWlQBThj8_vpiv6AX3R4fsYEnAzVYM5zRbajXnW2BtR60iux3O_6_IhKlRPh-nr0nMo=w600-h1200",
+        "https://play-lh.googleusercontent.com/VF2tAnhIOW4-mBNPTSoU0aOv2fEDnOrX-3aWISbXPDhSkhsXpi5j2YnXBiNtW9mI7PoXE5BOW55qikdro49y7A=w600-h1200",
+        "https://play-lh.googleusercontent.com/djXj8H14L25VkipttNMrPM_O1fpv1Xfdv2m5c37tmdvAwXbdVqKl9bP3dbePnSuwU1VX0-ty1-EbVhznyc_R=w600-h1200",
+        "https://play-lh.googleusercontent.com/RVD8RSYwcrNzGxpL8yq3Z34rqHsXHMdUAZv_LueNUGGtBNFbsfXRbkrPX2kEWFmcDyW0tPo7IAQmX7QepW2J=w600-h1200",
+        "https://play-lh.googleusercontent.com/6t8qGmMYb70bpA15zmtfQC-X59cy1w0hLEAPxHetQDiEAF6ZXuYBWpGuMciF6Rfc3Vl6SARHCmUm5DH-nBSvhg=w600-h1200",
+        "https://play-lh.googleusercontent.com/FWT0ewJzMKylDHUDHJFnntS1RBpQaj2o4y8w1tFSl8q6ecsqDz2uLW2MXWf1mHhCOO9KNtDwXTswAkbICyfLuQ=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=ai.menupix",
       "ios": "https://apps.apple.com/app/menudish/id6621264757"
@@ -683,18 +944,31 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "DX spot viewer for ham radio operators. Connects to web clusters or DXSpider telnet servers. Shows spots across MF/HF/VHF/UHF bands with callsign lookups and QRZ integration.",
     "downloads": "1000+ paid downloads (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d3/f7/61/d3f7616e-ca9a-4d32-f4e1-1b88c6f7097c/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/24/42/30/2442309f-ee9a-6607-95da-d6660e03b1fc/tns.gblrnuzo.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/42/b2/d6/42b2d600-cfd5-f201-16a0-2f6149e9ffb5/tns.vywtvxoz.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/4a/dc/c0/4adcc0d8-8023-11f0-16e8-792c7d626767/tns.fzdhicbr.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/60/7d/16/607d16ba-5bab-860c-544b-c37fe95ca7a0/tns.scpzfwer.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/bd/66/bd/bd66bdc5-b7bc-efa8-b21e-713c21001b4f/812420e1-1e0e-44b9-9ff1-e04731d2e215_Simulator_Screen_Shot_-_iPhone_8_Plus_-_2021-12-17_at_15.28.05.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/70/45/01/70450137-3bff-c3bc-ed52-349ea8962e48/419c981d-a992-471e-9125-8aa02ee45262_Simulator_Screen_Shot_-_iPhone_8_Plus_-_2021-12-17_at_15.29.23.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/05/69/b9/0569b9ce-c99b-2355-7e2c-dd0d6e71e90f/ce0fb001-d4f2-4da0-8c1e-c63501f58bf0_Simulator_Screen_Shot_-_iPhone_8_Plus_-_2021-12-17_at_15.29.36.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/8e/5e/3d/8e5e3d61-3811-de9d-ce98-0c64eb10d1c6/469adeb6-cf5b-4923-a4e2-4d79e9bcdb89_EN_-_web__Screenshot_-_iPhone_8_Plus_-_2023-08-06_at_15.28.17.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/f8/e2/25/f8e22587-fdc5-9972-ec20-2bea4faaa72f/f32fcf3f-e474-4cfb-810b-b7bf401c2267_EN_-_telnet_Screenshot_-_iPhone_8_Plus_-_2023-08-06_at_15.27.57.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/c4/01/cc/c401ccac-c421-6da8-5174-72d5abf7ad16/eb2baa5a-42db-4895-9877-fb990773afab_EN_-_server_list__Screenshot_-_iPhone_8_Plus_-_2023-08-06_at_15.28.11.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/24/42/30/2442309f-ee9a-6607-95da-d6660e03b1fc/tns.gblrnuzo.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/42/b2/d6/42b2d600-cfd5-f201-16a0-2f6149e9ffb5/tns.vywtvxoz.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/4a/dc/c0/4adcc0d8-8023-11f0-16e8-792c7d626767/tns.fzdhicbr.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/60/7d/16/607d16ba-5bab-860c-544b-c37fe95ca7a0/tns.scpzfwer.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/bd/66/bd/bd66bdc5-b7bc-efa8-b21e-713c21001b4f/812420e1-1e0e-44b9-9ff1-e04731d2e215_Simulator_Screen_Shot_-_iPhone_8_Plus_-_2021-12-17_at_15.28.05.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/70/45/01/70450137-3bff-c3bc-ed52-349ea8962e48/419c981d-a992-471e-9125-8aa02ee45262_Simulator_Screen_Shot_-_iPhone_8_Plus_-_2021-12-17_at_15.29.23.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/05/69/b9/0569b9ce-c99b-2355-7e2c-dd0d6e71e90f/ce0fb001-d4f2-4da0-8c1e-c63501f58bf0_Simulator_Screen_Shot_-_iPhone_8_Plus_-_2021-12-17_at_15.29.36.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/8e/5e/3d/8e5e3d61-3811-de9d-ce98-0c64eb10d1c6/469adeb6-cf5b-4923-a4e2-4d79e9bcdb89_EN_-_web__Screenshot_-_iPhone_8_Plus_-_2023-08-06_at_15.28.17.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/f8/e2/25/f8e22587-fdc5-9972-ec20-2bea4faaa72f/f32fcf3f-e474-4cfb-810b-b7bf401c2267_EN_-_telnet_Screenshot_-_iPhone_8_Plus_-_2023-08-06_at_15.27.57.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/c4/01/cc/c401ccac-c421-6da8-5174-72d5abf7ad16/eb2baa5a-42db-4895-9877-fb990773afab_EN_-_server_list__Screenshot_-_iPhone_8_Plus_-_2023-08-06_at_15.28.11.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/7b/67/86/7b678680-ad5c-566d-36bc-2b12d0a657f4/tns.uuhsfbxc.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/4d/e9/ea/4de9eac4-4883-e3aa-697b-44f154f7cc47/tns.fgwjxzsq.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/af/ad/1a/afad1ac7-07e2-6927-578f-e5e4b6025ee5/tns.ikrtccjc.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/b7/7c/19/b77c1955-57e4-5b58-de88-30f6537115f3/328c09b2-8486-41f4-b154-9247e3f1ec4d_Simulator_Screen_Shot_-_iPad_Pro__U002812.9-inch_U0029__U00285th_generation_U0029_-_2021-12-17_at_15.36.59.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/5b/ae/55/5bae5519-4699-512e-19d9-7e4ec3747e7c/d95e2d6d-11aa-4375-8b40-2e3d5e8a8159_Simulator_Screen_Shot_-_iPad_Pro__U002812.9-inch_U0029__U00285th_generation_U0029_-_2021-12-17_at_15.37.07.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/76/c0/a5/76c0a519-d6a9-35f1-b3d3-8ede60f69cb9/49695168-0141-40aa-a701-602dca918b71_Simulator_Screen_Shot_-_iPad_Pro__U002812.9-inch_U0029__U00285th_generation_U0029_-_2021-12-17_at_15.37.14.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/2e/9b/10/2e9b10c8-26e8-22df-0c18-ea82fe2bf682/76f8ee70-bcb7-43f0-8cd6-4e130d49f514_EN_-_web_cluster__Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/34/d6/c5/34d6c5bd-2c7e-81e8-99bf-73d7135a6c70/37b29c61-be27-4bfd-84dd-d1e32e5eb223_EN_-_telnet_settings_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/7c/d6/17/7cd617ae-ec2a-ba96-948a-1dda8749351a/e522d782-a3a0-4f9d-8ac8-c1a4681c4b15_EN_-_sever_list__Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029_.png/552x414bb.png"
+      ]
+    },
     "platforms": {
       "ios": "https://apps.apple.com/app/mircules-dx-cluster/id595659818"
     }
@@ -704,18 +978,51 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Personal finance app similar to Microsoft Money and Quicken. Cash and investment accounts, splits, cryptocurrencies, flexible cloneable reports, budgets, etc.",
     "downloads": "10K+ (Google Play/AppStore)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0c/21/d7/0c21d7eb-29ea-3e18-4a9d-3dbcac022431/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/a7/16/9e/a7169eb6-b29e-17af-00ac-878fdba80e90/33da4b8c-6eae-404e-ad4d-bd51ecd95535_2019-03-14_09-54-13-PM.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/e4/16/cc/e416cc4d-b119-3593-74d2-0d717eaefffd/cd987452-e905-41ff-9d74-435755dc91e2_2019-03-14_09-54-46-PM.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/76/04/1b/76041b80-526a-63e7-1f43-e1b1384635f7/7a8aaf31-9ef7-42b3-9b5f-57b6232d8313_2019-03-14_09-54-20-PM.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/b3/0b/9a/b30b9a65-1438-13e9-4206-0e19ef844135/c4f3108e-f37a-455c-8bc7-d68854da1e5e_2019-03-14_10-02-03-PM.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/7b/15/0a/7b150af5-8436-d449-1146-bbdeae3de305/27c36302-9e65-46d2-94f9-6e762792d6bd_2019-03-14_09-54-41-PM.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/b1/9a/39/b19a3972-8071-d4d8-5a3e-f6946db8565b/a7d630dd-31d3-4580-a35a-c3418e0ca422_2019-03-14_09-54-56-PM.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/3a/cc/3d/3acc3dfc-e920-a9a0-24f2-3bc9e2350149/8ab9a511-bfe4-4cfc-850b-7372ac0c15f4_2019-03-14_09-59-37-PM.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/90/71/6b/90716b99-abb2-b3b1-7995-80b1b3d90b49/a56857bd-25c5-42c4-850c-85324c952857_2019-03-14_10-00-08-PM.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/79/9f/d5/799fd528-313d-953a-b420-7acde5cb94f0/eda13228-7c32-41ea-add9-fa315b8d5958_2019-03-14_10-01-49-PM.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/c6/5f/be/c65fbe6c-d76e-68bb-ce0f-332c2ddfd189/e74a5bc9-605b-4d56-bee3-9826badeea8b_2019-03-14_10-03-04-PM.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/a7/16/9e/a7169eb6-b29e-17af-00ac-878fdba80e90/33da4b8c-6eae-404e-ad4d-bd51ecd95535_2019-03-14_09-54-13-PM.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/e4/16/cc/e416cc4d-b119-3593-74d2-0d717eaefffd/cd987452-e905-41ff-9d74-435755dc91e2_2019-03-14_09-54-46-PM.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/76/04/1b/76041b80-526a-63e7-1f43-e1b1384635f7/7a8aaf31-9ef7-42b3-9b5f-57b6232d8313_2019-03-14_09-54-20-PM.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/b3/0b/9a/b30b9a65-1438-13e9-4206-0e19ef844135/c4f3108e-f37a-455c-8bc7-d68854da1e5e_2019-03-14_10-02-03-PM.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/7b/15/0a/7b150af5-8436-d449-1146-bbdeae3de305/27c36302-9e65-46d2-94f9-6e762792d6bd_2019-03-14_09-54-41-PM.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/b1/9a/39/b19a3972-8071-d4d8-5a3e-f6946db8565b/a7d630dd-31d3-4580-a35a-c3418e0ca422_2019-03-14_09-54-56-PM.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/3a/cc/3d/3acc3dfc-e920-a9a0-24f2-3bc9e2350149/8ab9a511-bfe4-4cfc-850b-7372ac0c15f4_2019-03-14_09-59-37-PM.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/90/71/6b/90716b99-abb2-b3b1-7995-80b1b3d90b49/a56857bd-25c5-42c4-850c-85324c952857_2019-03-14_10-00-08-PM.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/79/9f/d5/799fd528-313d-953a-b420-7acde5cb94f0/eda13228-7c32-41ea-add9-fa315b8d5958_2019-03-14_10-01-49-PM.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/c6/5f/be/c65fbe6c-d76e-68bb-ce0f-332c2ddfd189/e74a5bc9-605b-4d56-bee3-9826badeea8b_2019-03-14_10-03-04-PM.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/db/e9/78/dbe9788a-bd08-d6ca-5bbd-964ec77685d1/329b8a22-a32b-422e-aa23-22122e8502ab_2019-03-14_10-26-58-PM.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/32/51/b9/3251b9f1-8ad7-c205-9cba-cc41497a20f9/b9ca3f14-4097-4b1c-a396-c3d2176cedd8_2019-03-14_10-26-29-PM.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/91/28/80/912880d9-7b2d-b14d-b518-99d5469e259d/9406d61c-742a-41b0-8033-03b609b677ea_2019-03-14_10-26-16-PM.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/07/f6/4f/07f64f55-147d-4e3d-c684-95663e5cc133/7aece885-6ca7-4df0-8edf-9b7cba008549_2019-03-14_10-26-23-PM.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/de/f8/e2/def8e2db-9fbe-6ca4-827c-dc3ab7a90fa0/474c847f-4782-47c7-a2ab-b0b7edaeaf6e_2019-03-14_10-26-38-PM.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/48/f9/dd/48f9dd23-8471-83ef-c517-1f1ce9c4737e/0b0be3e4-5634-4835-9fda-826617f292bf_2019-03-14_10-27-05-PM.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/82/90/a1/8290a160-8184-3704-6734-d6f7a3967eda/47f9232e-a3c0-4dcc-b1a7-56a9b3e14bf2_2019-03-14_10-27-16-PM.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/a6/ed/b6/a6edb674-c417-fd30-2907-ef14be0084b6/d1e8c8cc-c737-4aad-aab2-77dad9911cc2_2019-03-14_10-27-31-PM.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/38/c6/78/38c67884-d1c1-6ee2-b404-d06c31eaf22f/401db01e-429f-4720-b861-80bd2dd8870c_2019-03-14_10-28-58-PM.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/0b/0a/95/0b0a95cb-6dae-c58a-aab9-c3674e0045f6/2ba63110-cf09-476e-a938-1f2f77e2d9ea_2019-03-14_10-29-55-PM.png/552x414bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/nETtPjaU9RvYyyFshMdwhre_Ragc8RFrDs5WAIUSsuH2NhQQ_B1na5gZ5n-dwscrc-8=w600-h1200",
+        "https://play-lh.googleusercontent.com/qGAxQ-C8I_LKNxJ8c1JiMMutnizkrL45dyg5gM40G_THoey41Ewn67pZfJdol58S_kQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/P0l-lDhlCKFSVzb0Uu0tXcJyJ3JfQJ4dYuDODVLp_NXshIMueoboLgkTsygpKfQU1f9c=w600-h1200",
+        "https://play-lh.googleusercontent.com/1nBbAdQZmr7w3rfdfkPrZUFTxhe108_6MZ3LPE7b-wSGhBM0dsHMfLvafxdTkbdwa4s=w600-h1200",
+        "https://play-lh.googleusercontent.com/1jsWwgWVbwTP_qRcqUg2QKRIxkOip0vVPK1APgZvi6nHf6eaxzOftmiA1V-dkxmaFpg=w600-h1200",
+        "https://play-lh.googleusercontent.com/8nipup-2OOeBThZvsybVo_f05aTyTHfzUfd7iPOxzFf_GTKQ-xa020p44iLuWpftDq0S=w600-h1200",
+        "https://play-lh.googleusercontent.com/ggugSi28EZ1xLnuAJ_yj-LZexnJXIyX0Bso47Trf0SzdsfaCJV0RK16rwKyJdZI2Mpc2=w600-h1200",
+        "https://play-lh.googleusercontent.com/4jpYzd-O_CTnkl7t0_yKhZUpPTlRpUznlNbpvHYn8vX_NK6t3iyYPEhm085PLUV2KRHc=w600-h1200",
+        "https://play-lh.googleusercontent.com/8ofc87e1-2PJjsosm4yVOgjsPrH89ZQKyGUn_dlmqvVI4VJqKocfxHuFSfScLtTkjaA=w600-h1200",
+        "https://play-lh.googleusercontent.com/hyGdUhmLhogdAHcF0lZosr748ZC90STTsBpPQQZpdn5sWuAYuxc_rVu_l5j5pRiyJg5W=w600-h1200",
+        "https://play-lh.googleusercontent.com/xPAPi7m8TPkoN7oTTBiAZ8gtGjWAZ8MlzbrxNp0vuOnU6Wj3nwsU2NYtZWCIQIHnmGs=w600-h1200",
+        "https://play-lh.googleusercontent.com/aSVZFPFjG5LpM1x9aTpaO-lBzwV1lOgKVuSxUPvoMyHPUOHoOSyCgYaH36KxR7bcsg=w600-h1200",
+        "https://play-lh.googleusercontent.com/yv1EdCDu_PRsYRbLOh4lRgJQQ8IjdQc4v61FG9-yV46TjXTakZEKxbn1bqLemId4r_gB=w600-h1200",
+        "https://play-lh.googleusercontent.com/92Oi8vER94APxyn_E9mlNROB0agp1fWSQMXLhwa3UrOQQMRARk2Eo34U7FeCyPioWMc=w600-h1200",
+        "https://play-lh.googleusercontent.com/QATOBSGo__JY3XXbveGk3buDWEFtfyhDmqQd1X25QeHFwscfc6isyixzSv186a15yA=w600-h1200",
+        "https://play-lh.googleusercontent.com/QVUFFdfC5u7mc_V0cOFL8CN1PewAbcTRLJWbUFQo7dSs02w3m9vC57X68bdEfxONGpI=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.ktechsystems.moneytrackerpro",
       "ios": "https://apps.apple.com/us/app/money-tracker-infinite/id1643407103",
@@ -727,16 +1034,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A free translator and Morse Code learning app.",
     "downloads": "1M+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/uZo5_4F3yFkxAJ88IrnHhszoIaXt7_uR2zaGW1cQLq3BmvjLKEjF7ai2BXGk338v4Nw",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/SObYBnjGp5mH-jXodc57OXSdeS8gN5-v7D6SOEp4vz635F0n71fZqFqiUyAGfaSM84-_=w600-h1200",
-      "https://play-lh.googleusercontent.com/q6iAj0AR3uG_3V3kbTGNqEozn9GgK4cS1rnaYK1o2NhBrDBEwfaiKvq28gTaTL6_6_w=w600-h1200",
-      "https://play-lh.googleusercontent.com/QHw0BHAWMTupnBjje8h-pRzqOSv9Q-8unrw2_pX_p1aPXh9fiJ_CLfuSNEL2cnkC5g=w600-h1200",
-      "https://play-lh.googleusercontent.com/034luv9AvmuT6GEs0eWqN4MckeWUZSTlrKVoGbrFt6Ae5puc25H6-OYQWBH4zrlKxA=w600-h1200",
-      "https://play-lh.googleusercontent.com/21td7mUJGGE_jjx0EirL4LeEeAhpViwsHtkHG9nByGqp7MLzeWd_gkN_jS4_RsqXHko=w600-h1200",
-      "https://play-lh.googleusercontent.com/IyFP6OnGsdO6EOZOBEM17F9b8tXaSSJ_C_AbXViCF04fdR9J-CNPAj6lLNCPTJq8pSw=w600-h1200",
-      "https://play-lh.googleusercontent.com/n5iAsE_UOavf4iEBtvQJBSfrn0TxNlCEKwV76EW-xH_59Xj7bBK7eusakcEp97o3Fgo=w600-h1200",
-      "https://play-lh.googleusercontent.com/1o0CfrvAsNj7hFIZKRXq8_I30p8Rc_WCa3OfpjF9L1-anTB8fC179o7FUMcsvaKf-Q0=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/SObYBnjGp5mH-jXodc57OXSdeS8gN5-v7D6SOEp4vz635F0n71fZqFqiUyAGfaSM84-_=w600-h1200",
+        "https://play-lh.googleusercontent.com/q6iAj0AR3uG_3V3kbTGNqEozn9GgK4cS1rnaYK1o2NhBrDBEwfaiKvq28gTaTL6_6_w=w600-h1200",
+        "https://play-lh.googleusercontent.com/QHw0BHAWMTupnBjje8h-pRzqOSv9Q-8unrw2_pX_p1aPXh9fiJ_CLfuSNEL2cnkC5g=w600-h1200",
+        "https://play-lh.googleusercontent.com/034luv9AvmuT6GEs0eWqN4MckeWUZSTlrKVoGbrFt6Ae5puc25H6-OYQWBH4zrlKxA=w600-h1200",
+        "https://play-lh.googleusercontent.com/21td7mUJGGE_jjx0EirL4LeEeAhpViwsHtkHG9nByGqp7MLzeWd_gkN_jS4_RsqXHko=w600-h1200",
+        "https://play-lh.googleusercontent.com/IyFP6OnGsdO6EOZOBEM17F9b8tXaSSJ_C_AbXViCF04fdR9J-CNPAj6lLNCPTJq8pSw=w600-h1200",
+        "https://play-lh.googleusercontent.com/n5iAsE_UOavf4iEBtvQJBSfrn0TxNlCEKwV76EW-xH_59Xj7bBK7eusakcEp97o3Fgo=w600-h1200",
+        "https://play-lh.googleusercontent.com/1o0CfrvAsNj7hFIZKRXq8_I30p8Rc_WCa3OfpjF9L1-anTB8fC179o7FUMcsvaKf-Q0=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=holecek.pavel.MorseCode",
       "windows": "https://www.microsoft.com/store/apps/9PNBC68XDHR0",
@@ -748,17 +1058,37 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "An intuitive public transportation solution for a common problem that we all face, to travel easier, relaxed and faster without issues! Free app. Developed for Poland.",
     "downloads": "1000+ downloads (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c5/b8/5d/c5b85dd2-8257-ed92-1926-a22228f4a11b/appicon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/a0/6e/1fa06e5f-4305-0327-c36b-cd7c0d59b6dc/6d1796a8-6ab6-4d6b-b601-102283af6d26_1111_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.08.44.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/20/7e/8e207ea2-a713-85b0-9195-a294498c4bc9/2fedf484-91aa-451f-8704-43cf286cc845_2222_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.09.36.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f1/1d/ea/f11dea5f-ce5d-c139-9fbc-db4c87f646da/74891aba-0320-4a7e-818f-b14cd5120fba_33333_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.18.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/38/68/40386843-bf4c-cba7-c7c2-f0d6dbf4b6fa/e928d9e0-bddb-42f3-bbac-5819b2099d4b_44444_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.25.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/9b/80/a79b80eb-b5f3-e55a-009f-064295fd3488/69b92978-0ff7-4a25-83bb-778d401951f0_55555_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.01.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/d5/1a/73d51afd-bc5e-6531-e23f-202db555c83e/016c02d6-725a-427a-9855-e34c0994945d_6666_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.10.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c7/58/94/c75894e1-5327-1e84-948e-ac717b8f78af/4a87f42d-509f-4af0-9955-e634703e0e6c_77777_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_22.34.09.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d5/e7/f8/d5e7f866-70ee-23ce-956b-bf7269861097/b97e0826-21ca-4689-a488-b1438fd4975b_88888_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_22.32.24.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/56/f7/fc56f777-4065-d879-83af-72995d2feccf/0ef645e8-c451-474d-bb13-480e4c9b9509_9999_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_22.40.23.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/a0/6e/1fa06e5f-4305-0327-c36b-cd7c0d59b6dc/6d1796a8-6ab6-4d6b-b601-102283af6d26_1111_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.08.44.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/20/7e/8e207ea2-a713-85b0-9195-a294498c4bc9/2fedf484-91aa-451f-8704-43cf286cc845_2222_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.09.36.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f1/1d/ea/f11dea5f-ce5d-c139-9fbc-db4c87f646da/74891aba-0320-4a7e-818f-b14cd5120fba_33333_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.18.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/38/68/40386843-bf4c-cba7-c7c2-f0d6dbf4b6fa/e928d9e0-bddb-42f3-bbac-5819b2099d4b_44444_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.25.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/9b/80/a79b80eb-b5f3-e55a-009f-064295fd3488/69b92978-0ff7-4a25-83bb-778d401951f0_55555_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.01.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/d5/1a/73d51afd-bc5e-6531-e23f-202db555c83e/016c02d6-725a-427a-9855-e34c0994945d_6666_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_18.10.10.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c7/58/94/c75894e1-5327-1e84-948e-ac717b8f78af/4a87f42d-509f-4af0-9955-e634703e0e6c_77777_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_22.34.09.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d5/e7/f8/d5e7f866-70ee-23ce-956b-bf7269861097/b97e0826-21ca-4689-a488-b1438fd4975b_88888_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_22.32.24.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/56/f7/fc56f777-4065-d879-83af-72995d2feccf/0ef645e8-c451-474d-bb13-480e4c9b9509_9999_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-05-12_at_22.40.23.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0a/37/be/0a37be4a-7bdb-768b-24ca-44d33beee6b9/95aa9a7b-165b-4281-883d-3814e4714d56_1111Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00282nd_generation_U0029_-_2024-05-12_at_18.19.16.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c6/e9/96/c6e99668-1b0b-e474-6294-b74bb953dc6b/9d9b92be-55be-4ca7-8630-2b6075335d82_22222_Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00282nd_generation_U0029_-_2024-05-12_at_18.21.00.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dc/1c/cb/dc1ccb2d-dfda-a4a0-c73d-944edf64f1e7/1a15620f-3aa6-4863-8768-0d2552a76bdb_3333_Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00282nd_generation_U0029_-_2024-05-12_at_18.20.30.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4c/0c/29/4c0c298b-354b-4c5b-26cc-74f09d1e6ad2/aa8dae94-590f-418c-80f3-97c23f58907a_44444_Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00282nd_generation_U0029_-_2024-05-12_at_18.20.37.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/eb/64/8a/eb648a5e-d0dd-f4ef-d94c-50dc4c257319/12054c87-facc-4dea-b6a6-9db6ed6367d0_7777__Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00282nd_generation_U0029_-_2024-05-12_at_23.00.41.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b6/86/b7/b686b72a-9ded-34d9-7876-3a250b5a7956/fb113ae2-4cff-4140-9300-956a34f2807f_88888_Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00282nd_generation_U0029_-_2024-05-12_at_22.59.42.png/576x768bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/yQChfa9XKlaXMIYTk8w8QwChjT8_SH-_2d2SS-kesw0TLQK1nxtw54bDcoZ09freZJgKrtg4f__is-31Vg=w600-h1200",
+        "https://play-lh.googleusercontent.com/zChuvBtLLBmxV4OQAFK_JxSI438KvF1TIKZZQXoIzvLgBBfwam_SSbcFxQPkS-2S8A=w600-h1200",
+        "https://play-lh.googleusercontent.com/xNs48jtDdioM3gJ8A8TLMjazNbrLLbnpAGNXwcS2VOJroSlmLBDWYeZujpJHWABgTW3c=w600-h1200",
+        "https://play-lh.googleusercontent.com/VuQ13ecLd4_5pqaic01tDnHKZwNEAiOdBPqCelYxrEh9M2HIUj7zKARDMMwREatMdQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/XJ-6aMhS5luESQFNBQFzqIGQBet-Rh7XSPi85R-_HYMK94g8izmglvFzgujosi1vPSw=w600-h1200",
+        "https://play-lh.googleusercontent.com/kf8aBHuWflKpGfEE0Z-56Xlwh6DPRxAcgGHtSflnVP66HZIgyjzb8ZGVDDHN3EKRkA4=w600-h1200",
+        "https://play-lh.googleusercontent.com/YA-HSNobGx_La4fiZClXFNpMiy-bIy9lDgL0JbKxfHw6uYvHR_Cl_BrKG_JecQq0XQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/pfER4kOqdQOUqRWQYYeeSQqWsHWG_UgWGts3qYkosCJZvUufeltANhtNJNK6Jp1SOD_z=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.cheapeasesoftware.mrkanarski",
       "website": "https://MrKanarski.com",
@@ -770,18 +1100,42 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Muslim Pillars is a free Islamic application that provides many features such as prayer times, Quran, and many more for free.",
     "downloads": "10K+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a0/d6/3a/a0d63a18-5e36-1658-7359-9311a8108043/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/db/a1/15dba156-dd3c-f23c-ed0f-d573c5f6a72c/cb77b35e-daf5-4f59-aa81-7abe049a6b5e_1.jpg/392x696bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/57/06/495706ad-ebd1-5104-0e0e-5e61afbeb304/13ba298d-6096-485c-84fc-1fe479ced6a1_2.jpg/392x696bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cd/0b/89/cd0b8977-2999-fb1d-9b7d-e2dec02d5182/16db3ff0-df51-4ca5-aa58-90aaaed23f40_3.jpg/392x696bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1a/f3/c3/1af3c31b-d5bc-9199-8009-a8432c9bc171/c42c29d3-5743-49a1-9536-b5fddb09b360_4.jpg/392x696bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/44/33/20/443320ed-5799-3e53-f6f1-93950c02ded1/d96ede21-5b91-458c-9831-a2864dc3455c_5.jpg/392x696bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0a/5c/91/0a5c91f5-d25a-b96e-cd45-afc51c528839/8c2f1e29-4631-4b81-a050-75826a78f93f_6.jpg/392x696bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c5/f8/7c/c5f87cdd-835b-be3b-79e6-a64bce83b252/e3019389-1567-48f8-9d62-dc7628cdfab2_7.jpg/392x696bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/d8/4e/3fd84e6d-3b7e-8ed0-09e8-54c3fdeb03cf/8803b487-efa2-493c-8cf3-dd25f48822f0_8.jpg/392x696bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/1a/6a/ff1a6adb-5ae5-848c-dd28-212ed9ab837f/3e3cb298-d957-4066-9d5f-6316add12cd9_9.jpg/392x696bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/51/98/03/51980383-660d-1f0d-7236-d62e8fb53d1f/81ccf173-bb95-4045-b4f0-bc766ce0ad86_Appearance_00000.jpg/392x696bb.jpg"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/db/a1/15dba156-dd3c-f23c-ed0f-d573c5f6a72c/cb77b35e-daf5-4f59-aa81-7abe049a6b5e_1.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/57/06/495706ad-ebd1-5104-0e0e-5e61afbeb304/13ba298d-6096-485c-84fc-1fe479ced6a1_2.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cd/0b/89/cd0b8977-2999-fb1d-9b7d-e2dec02d5182/16db3ff0-df51-4ca5-aa58-90aaaed23f40_3.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1a/f3/c3/1af3c31b-d5bc-9199-8009-a8432c9bc171/c42c29d3-5743-49a1-9536-b5fddb09b360_4.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/44/33/20/443320ed-5799-3e53-f6f1-93950c02ded1/d96ede21-5b91-458c-9831-a2864dc3455c_5.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0a/5c/91/0a5c91f5-d25a-b96e-cd45-afc51c528839/8c2f1e29-4631-4b81-a050-75826a78f93f_6.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c5/f8/7c/c5f87cdd-835b-be3b-79e6-a64bce83b252/e3019389-1567-48f8-9d62-dc7628cdfab2_7.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/d8/4e/3fd84e6d-3b7e-8ed0-09e8-54c3fdeb03cf/8803b487-efa2-493c-8cf3-dd25f48822f0_8.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/1a/6a/ff1a6adb-5ae5-848c-dd28-212ed9ab837f/3e3cb298-d957-4066-9d5f-6316add12cd9_9.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/51/98/03/51980383-660d-1f0d-7236-d62e8fb53d1f/81ccf173-bb95-4045-b4f0-bc766ce0ad86_Appearance_00000.jpg/392x696bb.jpg"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ed/f8/e9/edf8e910-9063-cdea-b93c-080d8699f76a/591d468a-3521-47e5-ab87-1a5985fd309b_Supplications_00000.jpg/576x768bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8c/40/a3/8c40a3f0-f02c-5ab0-275f-140e5ad0e239/11907218-b0d0-46c8-981f-33064848ee34_Surah_00000.jpg/576x768bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6c/70/64/6c70645a-3681-47ca-a093-40a25839e2c4/bd55b576-4bf9-416d-b794-7c17ea880837_Listen_00000.jpg/576x768bb.jpg"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/pTHNWeUKXfbU0m22fyxWvJUwZ65wPtiMEH4Scz1hlIkGMHJrvRTa8-IUxapI6Dib4tqA-BEuNjGmTQhUxUwEMA=w600-h1200",
+        "https://play-lh.googleusercontent.com/ByAhpn3_rTI7RiCscTxA09aUUdzwky5iNnFTxPP2x0jVvRUsz33--tuPNHCItr-a8SVH8Hnd6Rdc6dKFZOMn6g=w600-h1200",
+        "https://play-lh.googleusercontent.com/miR01DEtU06JWE40wkOKQZpZYFaMJ3TVWm9OoQLRgk2FGHXleeo6GBMZDfNfMwOD0qtNBR4AvTxWT74bsvadRw=w600-h1200",
+        "https://play-lh.googleusercontent.com/Xbee9gL3Cy7KN6EyWMwScML1Fnuv0Nxy9Q52oic3PVWd6gYylCB62lSY1uAzDlcsRtNTMbZE6Z_JHg3YF2T0gQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/L5b5bwNShKibeLzkGozTDL6nJhUQNcJdayqpDwEOjPdgylPweIiBbXVa4vltFHQ4BVTcHVht27Fe6p50jE0D=w600-h1200",
+        "https://play-lh.googleusercontent.com/raSGM4uok63BIx87qsbKs52gfu5skAtxK4wB5oUIzwwjJ3VGdllZA1w-L8ghVQwKD_frC6-mflJ2E1Xd2TGkEvc=w600-h1200",
+        "https://play-lh.googleusercontent.com/2-i9RGOFCERpFLBS2Bqc1djpT8sbP6jGRCDnZiYPdK_jJgo0m4W_uN3s3HNafu85UHxVrLH4fq1lxT-kVLr_fbY=w600-h1200",
+        "https://play-lh.googleusercontent.com/274AJCv6cWcI6MZwkgwC2ZYtV5c2iaEqXIIZV_nE-rhnAjUlI_uCyVO9aGCoCLOjInschFDeIH5kEgbRBPyIDg=w600-h1200",
+        "https://play-lh.googleusercontent.com/XAwOJHhf8XRsJfhItOlsMxJ9FUh2VYLYJsykWiVfx96f15QQ0feh23KMwEsXn874x34=w600-h1200",
+        "https://play-lh.googleusercontent.com/KNPRdoUAq8c31rjpi1jR1Mg_2PZWFBj530JEQEaCiuoXrHPKrDW5SmIaxaMfIB_xW7k1=w600-h1200",
+        "https://play-lh.googleusercontent.com/NuaKYeh9QeMMycYY4U9TBJVVazRFXPEMaU1RtRPgkj2ousAR6qGG1rkLxqiVQzp9rg=w600-h1200",
+        "https://play-lh.googleusercontent.com/QR3sFls_SkBEd0YzeNHbkxv2SkYBIr7rUs1xBJtEi1cw_v-vGa08NgD4zbP4WcFddkI=w600-h1200",
+        "https://play-lh.googleusercontent.com/e4FYZnCJlfaE0R7CW6yVTjEngTKkUrUXvXZ6v_rW37QxM9mhfMjROpqfYvanZDRhb_c=w600-h1200",
+        "https://play-lh.googleusercontent.com/6nAUNmL3umb8qLtvFjmv3ZAItNEr2JJeNtbiusCd-3BOF5U2fSe_BIkVpJCHlB4o6w=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.AZEE.wquran&hl=en",
       "ios": "https://apps.apple.com/us/app/id1529761608?l=en-US"
@@ -792,16 +1146,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A clean, simple, and powerful way to manage your car's health, fuel economy, and service history, all in one place for Android & Windows",
     "downloads": "36K+ (Google Play)  710 (Windows store)",
     "iconUrl": "https://play-lh.googleusercontent.com/pCMGZY31nEK3uwwHdqWSjQoDjaYKK-uVfNGudmbWQBU760J98TNJ5K-Gpwb7MimTwIQ",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/b1yuQ2527Rtx64xi3IdYRgi36SdxiWYj0rCrfAEIw4ws9fCV7DqpuhLqwCHjYTwDkrTFlXhX9fKk416alrgOtA=w600-h1200",
-      "https://play-lh.googleusercontent.com/8tshCqchv6C8uVDFU5luptyW9zMyTi4kLwif3mW-JGJOjdZbDk0DeOm7US4gyebVgwnOrDPQ2h26BqY9gABuxA=w600-h1200",
-      "https://play-lh.googleusercontent.com/vMV7v-YKR9o3i5ajp5VDVBJ9WvEqN_d_HkuvQqcrokP0Q6f_g2R-p1BIDsAGAGBuNFzU0NGh_aJODxjbAPUzIOs=w600-h1200",
-      "https://play-lh.googleusercontent.com/lphUH5utv5bD82Ye4na9ktJ_q8lhr7LRLeXTr2QVTpaNIQ7mbnJAyCC-7BeVIGwaX31xiUFXvGtbJxu_wZWp=w600-h1200",
-      "https://play-lh.googleusercontent.com/vW8JDLI2X52pEPJW5IpUzeVfP8Bxcuim7taJm1SRXxCxJDfdIokme3VJ8gzZ3BJUWBrduuoTtG87ng9MRJc-Erc=w600-h1200",
-      "https://play-lh.googleusercontent.com/nWwHRF-3v5zeTMF0YKiD5sTHNcQdvMxmJKRjmvAjhrYJax0vJr-RmpxXlIYT4kgfC6rudTPZhb76AObOD-vEjg=w600-h1200",
-      "https://play-lh.googleusercontent.com/Ao86kUEcvVT9O296Z0WDFq8NJRbz1Y5purXd3Rt3TBoTmyAHfbOdDFW5L0l2SPeUvK-pTuIHkqB9VsA32pD22xc=w600-h1200",
-      "https://play-lh.googleusercontent.com/K3pnk_ox--b5klXRr-gTSIVvTF95Jw7AaDAxe_yG88Me-yeCYRcqtlLJGl1YG-EAgmhWx0pMK9QOUDOsmk92fA=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/b1yuQ2527Rtx64xi3IdYRgi36SdxiWYj0rCrfAEIw4ws9fCV7DqpuhLqwCHjYTwDkrTFlXhX9fKk416alrgOtA=w600-h1200",
+        "https://play-lh.googleusercontent.com/8tshCqchv6C8uVDFU5luptyW9zMyTi4kLwif3mW-JGJOjdZbDk0DeOm7US4gyebVgwnOrDPQ2h26BqY9gABuxA=w600-h1200",
+        "https://play-lh.googleusercontent.com/vMV7v-YKR9o3i5ajp5VDVBJ9WvEqN_d_HkuvQqcrokP0Q6f_g2R-p1BIDsAGAGBuNFzU0NGh_aJODxjbAPUzIOs=w600-h1200",
+        "https://play-lh.googleusercontent.com/lphUH5utv5bD82Ye4na9ktJ_q8lhr7LRLeXTr2QVTpaNIQ7mbnJAyCC-7BeVIGwaX31xiUFXvGtbJxu_wZWp=w600-h1200",
+        "https://play-lh.googleusercontent.com/vW8JDLI2X52pEPJW5IpUzeVfP8Bxcuim7taJm1SRXxCxJDfdIokme3VJ8gzZ3BJUWBrduuoTtG87ng9MRJc-Erc=w600-h1200",
+        "https://play-lh.googleusercontent.com/nWwHRF-3v5zeTMF0YKiD5sTHNcQdvMxmJKRjmvAjhrYJax0vJr-RmpxXlIYT4kgfC6rudTPZhb76AObOD-vEjg=w600-h1200",
+        "https://play-lh.googleusercontent.com/Ao86kUEcvVT9O296Z0WDFq8NJRbz1Y5purXd3Rt3TBoTmyAHfbOdDFW5L0l2SPeUvK-pTuIHkqB9VsA32pD22xc=w600-h1200",
+        "https://play-lh.googleusercontent.com/K3pnk_ox--b5klXRr-gTSIVvTF95Jw7AaDAxe_yG88Me-yeCYRcqtlLJGl1YG-EAgmhWx0pMK9QOUDOsmk92fA=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.MyCarService.mycarservice&hl=en",
       "windows": "https://apps.microsoft.com/detail/9nn4j90pxm9w?hl=en-US&gl=US"
@@ -812,13 +1169,33 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Nomalys Origin is a mobile and desktop app that connects to your company's IT systems (CRM, ERP, BI, etc.) and gives you real-time, intuitive access to customer data, reports, and opportunities, helping teams boost efficiency and responsiveness on the go.",
     "downloads": "15K + downloads (Google Play + App Store + MS Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/68/55/4e/68554ee7-e4f8-f401-cafc-39ae636ba708/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple30/v4/6f/bc/5a/6fbc5adb-8e08-b766-c514-71c7f15cf06e/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple4/v4/e8/5b/9b/e85b9b48-705d-6f04-42a9-386a4d5f7cde/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple20/v4/e3/19/2f/e3192f36-4141-58b2-09fe-b7f407ede1a6/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple5/v4/27/02/7e/27027ec5-0823-78a7-5955-adcc371cd9aa/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple4/v4/c3/c5/35/c3c53517-84ed-a715-ca10-6e0c712533e8/pr_source.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple30/v4/6f/bc/5a/6fbc5adb-8e08-b766-c514-71c7f15cf06e/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple4/v4/e8/5b/9b/e85b9b48-705d-6f04-42a9-386a4d5f7cde/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple20/v4/e3/19/2f/e3192f36-4141-58b2-09fe-b7f407ede1a6/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple5/v4/27/02/7e/27027ec5-0823-78a7-5955-adcc371cd9aa/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple4/v4/c3/c5/35/c3c53517-84ed-a715-ca10-6e0c712533e8/pr_source.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple20/v4/dc/b1/77/dcb177ad-6bbd-97b0-b351-375fbf95b69c/pr_source.png/360x480bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple30/v4/c4/16/43/c41643db-8a03-8306-4cc6-9e1b9450fa15/pr_source.png/360x480bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple30/v4/ee/53/6a/ee536a88-1675-7bf9-6ab6-a75ad9fe273b/pr_source.png/360x480bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple30/v4/1a/80/80/1a808086-9918-073e-a6a4-f8f7d746c8a7/pr_source.png/360x480bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple5/v4/a4/e6/b4/a4e6b499-2568-7d09-9cd6-27dec6a44a0d/pr_source.png/360x480bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/vNb3dE1ne3CrR0IKygD-QPrRG4wDjCHW-zJWEfkRUCYZL15d_iN490NFaTWyEWu8us36=w600-h1200",
+        "https://play-lh.googleusercontent.com/OTmXdJv3ic52fWIRkbrgf46prKjecRx4geKPFAL3APhDEr6xAceoc_7f5XC1fR1i4Y8=w600-h1200",
+        "https://play-lh.googleusercontent.com/QT1q3mhjDUxThjaUJAYjSb8mqypV9ZTh2YHJCo50yejDcdWtcSLAH2TSTcYb__oe0w=w600-h1200",
+        "https://play-lh.googleusercontent.com/CcWyuo37t0Lw99jMeE-2a09syvQwHKCzXbGnAkMsq73soWMyICV0Yv_Ym4Nk-0kPfVs=w600-h1200",
+        "https://play-lh.googleusercontent.com/hOF3Nh9sXYjZWaT7foqbVdEATfrYUK95hz95NcZBzxtyYoeT0lVV6GL_ko0iO7xwoPc=w600-h1200",
+        "https://play-lh.googleusercontent.com/8dpgYHaCeZbQW_TTDNdcKmlJlxjjsmO8o90lRbIlVlbPW67grOZ7cOqXmHm8YRsOA9I=w600-h1200",
+        "https://play-lh.googleusercontent.com/9FS0eDnM7c4B20UovPfqNnAfnWLi4ERgluMr8KCFVuFk65I4Ar3ov6QJdZ9NLuJEDg=w600-h1200",
+        "https://play-lh.googleusercontent.com/KDyXsLhlqCSyN25dQ6lvx2YzKIQCBbPdEqP7l0-OIazSAoR1fdYUUl1I6ezClPgqX4I=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.nomalys",
       "ios": "https://apps.apple.com/fr/app/nomalys-origin/id380475770",
@@ -830,18 +1207,43 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Notezilla is a notes and reminders app that syncs with Notezilla on Windows which is a leading, highly rated sticky notes app.",
     "downloads": "10K + downloads (Google Play + App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/65/41/ac/6541ac28-4165-4b65-7286-75c4445076c5/icon_logo-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/04/66/f3046626-60b7-7199-f8e9-30438bb8fcc9/b26748ff-ba6d-49d1-9264-3c961c14413a_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.56.51.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dc/a4/30/dca43048-85c0-cedc-d65f-2aaf2f42a0db/f9b5580b-d81d-4b92-b37c-06089b1b6711_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.06.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/45/b8/5a45b88f-af0d-40b5-bd0e-eb811957de82/29be0ac3-5093-4361-a780-2b13e4957c6d_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.20.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/37/ae/71/37ae71f9-8ce8-ae77-4faf-4c6a40f65140/54c2dc6d-a6f2-4fe7-81cb-3d71418a7acc_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.56.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8d/8b/d5/8d8bd522-3b1e-d61a-4316-295e12d759c1/559a5837-20d1-47d9-9af5-21d706487bbc_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.29.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/c6/ed/33c6edd4-759d-790e-4358-da8e7f6983e2/b330fffb-0454-4043-a145-ae2fbb8fda77_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.32.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/33/7a/83/337a833e-b932-90e4-a856-ba5ad9b6ca2d/aae47eed-085d-4cc5-9a38-7132134de133_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.32.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0d/b4/f5/0db4f55c-4394-62ae-2ec9-1fea97574996/a68b450e-b760-475d-bf58-69e59f8a0f4d_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.11.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/17/09/20/170920d5-ee35-edfb-0fa0-7d5403ed5906/9ac42d97-1586-4c98-9693-9f1a65d284ca_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.13.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b8/65/fa/b865fa3e-f279-20ac-cbad-98db2cb7421e/95db958a-9a95-4c7c-9f59-a1371bc4c4ae_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.18.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/04/66/f3046626-60b7-7199-f8e9-30438bb8fcc9/b26748ff-ba6d-49d1-9264-3c961c14413a_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.56.51.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dc/a4/30/dca43048-85c0-cedc-d65f-2aaf2f42a0db/f9b5580b-d81d-4b92-b37c-06089b1b6711_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.06.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/45/b8/5a45b88f-af0d-40b5-bd0e-eb811957de82/29be0ac3-5093-4361-a780-2b13e4957c6d_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.20.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/37/ae/71/37ae71f9-8ce8-ae77-4faf-4c6a40f65140/54c2dc6d-a6f2-4fe7-81cb-3d71418a7acc_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.56.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8d/8b/d5/8d8bd522-3b1e-d61a-4316-295e12d759c1/559a5837-20d1-47d9-9af5-21d706487bbc_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.29.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/c6/ed/33c6edd4-759d-790e-4358-da8e7f6983e2/b330fffb-0454-4043-a145-ae2fbb8fda77_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.57.32.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/33/7a/83/337a833e-b932-90e4-a856-ba5ad9b6ca2d/aae47eed-085d-4cc5-9a38-7132134de133_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.32.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0d/b4/f5/0db4f55c-4394-62ae-2ec9-1fea97574996/a68b450e-b760-475d-bf58-69e59f8a0f4d_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.11.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/17/09/20/170920d5-ee35-edfb-0fa0-7d5403ed5906/9ac42d97-1586-4c98-9693-9f1a65d284ca_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.13.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b8/65/fa/b865fa3e-f279-20ac-cbad-98db2cb7421e/95db958a-9a95-4c7c-9f59-a1371bc4c4ae_Simulator_Screenshot_-_iPhone_8_Plus_-_2024-09-06_at_22.58.18.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1a/d5/cb/1ad5cbf1-1d9d-06f9-1134-187e73246638/75c9f1af-9509-4a70-be3b-d3a678ba134c_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.14.23.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/34/7f/5c/347f5c4d-9375-3031-f787-f4741b3648a3/95ccc095-c54d-41aa-8d32-83a300ea1f87_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.14.54.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7a/61/87/7a6187c0-3e9b-094c-e6a4-a35fb51e6301/638814b8-98fc-4eb1-a3bc-5899d73d3282_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.14.30.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/be/96/99/be96994f-1f08-f064-15b3-1bc8dfde5125/c286d677-f5e2-4cbb-b6f8-b635d72dc83a_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.02.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ef/e8/2f/efe82f78-5344-1301-013d-b10d24c8fe54/c8d46b3d-bb8c-4279-9d17-5e19177f5fc6_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.15.42.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/76/52/68/765268ef-0afe-d687-d945-bd5bb9f92483/510f02ab-bbc5-4e38-889d-3db5525aa088_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.17.08.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ed/8c/b5/ed8cb550-fb18-4677-20e0-d3b709ddd735/23610514-6dc4-4e2c-97b5-a80fed7646d0_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.45.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/41/9f/38/419f38fb-43db-23b4-7e13-5c1903902ad2/9622f920-5c66-414b-8a68-97fad2b19556_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.15.35.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/12/59/b7/1259b76b-63be-959d-aa9b-17c2a4753eec/5b4a43af-cad1-443e-b8a1-5e634dc7ae98_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.24.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/aa/82/b4/aa82b494-c52e-71d7-a6cb-eef19bc7e877/4ef65965-4c90-4c71-b9c3-34932763c6b1_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.30.png/576x768bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/DN_oIJhDU6oDEajERs_Xy7KM7jtMZQcFi08nXeSuQXPnlgZUB9vpm2qyf4Ggplc8ec0=w600-h1200",
+        "https://play-lh.googleusercontent.com/4M-_-039QLHl0KHBEDipPmo98V503h5ZEh-gk2zGTeJoVorfM9kOQf3_dGdMEhs0QOXp=w600-h1200",
+        "https://play-lh.googleusercontent.com/dffSxMvNxlx78JE4tcKMvBD_pfJla2SxojSSAGifGqoBCwR4Zek5_Q7jvuC9XDBrkg=w600-h1200",
+        "https://play-lh.googleusercontent.com/lfWBgfZb-flCiV4jo3ON0w50c3uTFmTB2CF_r5EoQUuqUH2FgnsdbQ8B_LTVYsPZWQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/YKj1mEyYLkT_HFFJzB_O5TXjCIP2TSXHRJ2XcAWkVeFRDStkFpT_47jyh7e8HA7nOAM=w600-h1200",
+        "https://play-lh.googleusercontent.com/msLFfeJJCGelJLqwzH14yPYeJlkTxYcE9fA4FIjSEvhJVIzya35hvqBcEgifx_ZOpg=w600-h1200",
+        "https://play-lh.googleusercontent.com/PZlVlcyxZEWpl8ekYmI1-MgoIcyBMgPVdNXarmb_kvmy1ETn-H8_4E6-NXxU58hwrA=w600-h1200",
+        "https://play-lh.googleusercontent.com/BhMkadS5aQ4H6bjIazbO11TqEfzL9p3iTOuSNQ33yS2wrW-aFSiFOa4Ce85BPafCBuA=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.conceptworld.notezilla",
       "ios": "https://apps.apple.com/us/app/notezilla-notes-reminders/id964449712"
@@ -852,15 +1254,27 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The OVPay app is used for public transportation payments in the Netherlands.",
     "downloads": "100K+ downloads (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d4/fd/a6/d4fda6a9-fd52-5e7f-0772-1ba1a795b059/AppIcon-1x_U007emarketing-0-8-0-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/38/e8/53/38e8532b-d292-2c5d-1dc8-370a392f9920/f304e620-e055-4413-b89f-7f9821155c45_5.5_image-1_EN.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/c2/fe/22/c2fe2236-c58c-d9f3-d5b3-e064076adb1d/a5dd37fa-df9b-4a6d-8f31-b74fb01fef30_5.5_image-2_EN.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/2f/80/9f/2f809f83-7fe7-9f5f-c505-9af5bc30185e/f7423a5b-2076-48bb-8cf0-f6c67b2ff28f_5.5_image-3_EN.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/0b/fd/d0/0bfdd0d4-fbcc-eeb5-34bb-bcfb39ce7202/87edbda7-4540-454a-b50d-9e61e930b41b_5.5_image-4_EN.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/9c/21/23/9c2123ec-9946-855e-aafa-9036fb574970/a9a46ece-4aa0-4b8b-a34e-8a5fdb7fac8d_5.5_image-5_EN.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/71/c8/f2/71c8f226-799d-06bf-4b22-232fa4ff8f1d/22e5f270-1ff8-40ed-a6e0-5527f8025558_5.5_image-6_EN.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/9d/0c/58/9d0c58ed-6489-1256-5cd9-18507e907657/85e56a5c-c242-4709-936a-a22a49614a5a_5.5_image-7_EN.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/38/e8/53/38e8532b-d292-2c5d-1dc8-370a392f9920/f304e620-e055-4413-b89f-7f9821155c45_5.5_image-1_EN.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/c2/fe/22/c2fe2236-c58c-d9f3-d5b3-e064076adb1d/a5dd37fa-df9b-4a6d-8f31-b74fb01fef30_5.5_image-2_EN.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/2f/80/9f/2f809f83-7fe7-9f5f-c505-9af5bc30185e/f7423a5b-2076-48bb-8cf0-f6c67b2ff28f_5.5_image-3_EN.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/0b/fd/d0/0bfdd0d4-fbcc-eeb5-34bb-bcfb39ce7202/87edbda7-4540-454a-b50d-9e61e930b41b_5.5_image-4_EN.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/9c/21/23/9c2123ec-9946-855e-aafa-9036fb574970/a9a46ece-4aa0-4b8b-a34e-8a5fdb7fac8d_5.5_image-5_EN.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/71/c8/f2/71c8f226-799d-06bf-4b22-232fa4ff8f1d/22e5f270-1ff8-40ed-a6e0-5527f8025558_5.5_image-6_EN.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/9d/0c/58/9d0c58ed-6489-1256-5cd9-18507e907657/85e56a5c-c242-4709-936a-a22a49614a5a_5.5_image-7_EN.png/392x696bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/dLMf-La9cVhSvuWRyEChAH0IGguj2zIcr1z_s5xQLxGt2D_gFTXyAHKdbvdllQode1M=w600-h1200",
+        "https://play-lh.googleusercontent.com/msnwltb6rc9ffh2B3J07IrJb1MMr0AjGD81bWF4CBXUnhiK94_07b3_5VANbE4cer3I=w600-h1200",
+        "https://play-lh.googleusercontent.com/1vtQcrdkDfYKNg2Hb0PVi9Yyiw9xz8R1sECRIPAkXQWX7aEfyeUNEvK-buTw0V3cVQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/ubpfTKVj-CPDwtSaa48ZufaJY4qJS6dNcvhuXXLmmB8GYLeJS34JfO-PFrUG65IXdw=w600-h1200",
+        "https://play-lh.googleusercontent.com/bwmdjjPXNr8WuUZMO9u0xK9NUL2QGnaO3qTrnzjNqoseE3tgSnpeSq4QvMne7qjIpQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/bkjzPrsbQI4O8TK86JbY9Q9g3GaE9_1YVpd3rMEX_TkUiPdcQYrefwoh6XJZl_Wmu_Fz=w600-h1200",
+        "https://play-lh.googleusercontent.com/eaF9xUBRIBU-ORbFtZd2HQsRKVyI-3ZfkFfCdL2Ay4gWMRflJZ9L-p9s3gIS3Ctyrg=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://www.ovpay.nl/en",
       "android": "https://play.google.com/store/apps/details?id=nl.tls.ovpay&hl=en",
@@ -872,16 +1286,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "An event-planning app designed to streamline invitations, gift coordination, and RSVPs for events like birthdays, weddings, and more. Built with .NET MAUI and Azure.",
     "downloads": "100+ (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/85/f4/36/85f43632-a712-8d31-666e-859e6b459bcd/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/7aIl0fdhDZ78mMcwVv11vLwQGGU3rkOHvWTV72r6CVV56oXwAw5TSQN_gT4RNfF6=w600-h1200",
-      "https://play-lh.googleusercontent.com/uFAkg8cmwbTUnmOE41vUszU_BBdl0M_GKNfHpLw1FTb4TcO_wjZCFnNl9XRonikyQ-U=w600-h1200",
-      "https://play-lh.googleusercontent.com/quBkyAGJSlySp3fYampM7Mib-qKcrEyShB4a5E2micLxGBngWVctU8erd5_DiMgwkqY=w600-h1200",
-      "https://play-lh.googleusercontent.com/_3EGiCEo-yKxRxwxU3rFHT_EekG262Fk0HbW0BwDRBQpaclneqPwX3Wiv6T_UF25cQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/m8aeTabp-w1Tw5cV44MUHDM3Q-uWfprKmo0v9lg0jfo6MlZ6SvelFXwwEFBp1nrCxvp_=w600-h1200",
-      "https://play-lh.googleusercontent.com/Y0Ryen6muiOn85BYzxYm92lAULXhjYYKgFuyl12Sh3lGSP3bjpdavri_x5dRpV4JXGU=w600-h1200",
-      "https://play-lh.googleusercontent.com/1b-eZ-mJgo_F28yP8iqAjsYcU1n-nSp--M1Re7fDnxzkCusCdzIO7wc2_mxjnEAsA8c=w600-h1200",
-      "https://play-lh.googleusercontent.com/PZV3NmV29XB6DI-n6zPy6BkXojolj2exrecvqBbh6Y3LCQo_VhFjqoijzQkmggVd8-s=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/7aIl0fdhDZ78mMcwVv11vLwQGGU3rkOHvWTV72r6CVV56oXwAw5TSQN_gT4RNfF6=w600-h1200",
+        "https://play-lh.googleusercontent.com/uFAkg8cmwbTUnmOE41vUszU_BBdl0M_GKNfHpLw1FTb4TcO_wjZCFnNl9XRonikyQ-U=w600-h1200",
+        "https://play-lh.googleusercontent.com/quBkyAGJSlySp3fYampM7Mib-qKcrEyShB4a5E2micLxGBngWVctU8erd5_DiMgwkqY=w600-h1200",
+        "https://play-lh.googleusercontent.com/_3EGiCEo-yKxRxwxU3rFHT_EekG262Fk0HbW0BwDRBQpaclneqPwX3Wiv6T_UF25cQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/m8aeTabp-w1Tw5cV44MUHDM3Q-uWfprKmo0v9lg0jfo6MlZ6SvelFXwwEFBp1nrCxvp_=w600-h1200",
+        "https://play-lh.googleusercontent.com/Y0Ryen6muiOn85BYzxYm92lAULXhjYYKgFuyl12Sh3lGSP3bjpdavri_x5dRpV4JXGU=w600-h1200",
+        "https://play-lh.googleusercontent.com/1b-eZ-mJgo_F28yP8iqAjsYcU1n-nSp--M1Re7fDnxzkCusCdzIO7wc2_mxjnEAsA8c=w600-h1200",
+        "https://play-lh.googleusercontent.com/PZV3NmV29XB6DI-n6zPy6BkXojolj2exrecvqBbh6Y3LCQo_VhFjqoijzQkmggVd8-s=w600-h1200"
+      ]
+    },
     "platforms": {
       "ios": "https://apps.apple.com/app/id6503934962",
       "android": "https://play.google.com/store/apps/details?id=se.arcticfusion.partyfellow",
@@ -893,13 +1310,24 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Podcast Tracker is the best way to manage your podcast library on phone or tablet!",
     "downloads": "1M+ downloads (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/00/0d/e9/000de900-550f-80e3-b036-f376ec75717e/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/ba/5a/fe/ba5afedd-6827-98fb-e445-b79780f6474a/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/b7/b7/ee/b7b7ee00-fc36-40f3-1296-03e89e7c60fe/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/2b/19/8d/2b198df0-5f92-a6de-d137-70e252c83ce9/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/0a/2d/68/0a2d6894-6545-86d3-f949-6002c29a605c/pr_source.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/35/63/45/3563453d-59ab-e01e-3a6f-f1e5fb0742c7/pr_source.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/ba/5a/fe/ba5afedd-6827-98fb-e445-b79780f6474a/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/b7/b7/ee/b7b7ee00-fc36-40f3-1296-03e89e7c60fe/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/2b/19/8d/2b198df0-5f92-a6de-d137-70e252c83ce9/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/0a/2d/68/0a2d6894-6545-86d3-f949-6002c29a605c/pr_source.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/35/63/45/3563453d-59ab-e01e-3a6f-f1e5fb0742c7/pr_source.png/392x696bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/kxfIpVPL_fS3XoXy7_CnDH9ZhRr_8j1Q30_2EUkDfPthmZjiW8_b8jSrK2tzGC6Y1rQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/dpq7OgC0NiqKR6Pk8u0Y4ONnTVOh3M0DJn7tz5b0WSgdy0FtAm3F1mnEXn4_SwsS8w=w600-h1200",
+        "https://play-lh.googleusercontent.com/CK6vDyD1JRPgqtiZWjGK1lQLYmwc2SPSs2e38WTZmHLpBxHbtqPSq45CH4AvwAEPwf4=w600-h1200",
+        "https://play-lh.googleusercontent.com/b6vZV_OwIlQbgpcdfXgwaF1yLQU9m2zlk20gX6VgdGJk_Mkh_gPmpXuKx_0ldrAU5Uzx=w600-h1200",
+        "https://play-lh.googleusercontent.com/C9xOtY8a3-7eC_gE2I7DQQucHQclT8ljlBePPQRasR0sqh5Je6BtIx_0PrwbiB85Eg0=w600-h1200",
+        "https://play-lh.googleusercontent.com/DpTpg10T8_vUr1J8gKoom2lTVgOrMGKikZjl-LocqIfUgF94gYzMtjXaj6RvLNByd2I=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.jonathanantoine.Podcasts&hl=en",
       "ios": "https://apps.apple.com/bb/app/podcasts-tracker/id1450382384?l=en-US"
@@ -910,13 +1338,16 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "An app for personal trainers to manage their students, as well as their training and dietary needs. As a user, you will find a friendly interface to help you carry out gym workouts and manage your diet.",
     "downloads": "10+ downloads",
     "iconUrl": "https://play-lh.googleusercontent.com/8Til8eKITFhj8Y_nYQMHGaO08zZbWF5ETwEl9nf6xA2krXwTgh-jBMnXOHJzdfVFhZc",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/KgM3llk3Ctco7r4sRUlplK7D7t09Fdmt1Gc3yDfk8HAfQyt9hhY8vIAcOC7xbg2i4AydTf3ncXow9iTn_wsjdw=w600-h1200",
-      "https://play-lh.googleusercontent.com/b3Y4CZzHG4LJ-7lrq1fiiJN2r4586PdGvRNfRA_481uxkII-V56joeI7wvcGft-hyBLSoYprvdiVCRCLialN7Q=w600-h1200",
-      "https://play-lh.googleusercontent.com/pkI72NkV2REvxrQrklXGD9_2Vmh0nmJDR2CsfajcfCtR-CTZN9r2kflgY89yxZ3DI8vvkPlyYWbCWjlIOU0T=w600-h1200",
-      "https://play-lh.googleusercontent.com/Y2qUgx632MIhdsTzD1xuJaQvYdnnjbqM-nccCHzFtPtJemUyRKsTAPEPp-GwqdmaCotglmGYSWwfY1IeJfrWdyg=w600-h1200",
-      "https://play-lh.googleusercontent.com/TQMDXY2IuyMMTUPWcEEOa-FH_dt0dk_nLpJmqYhaD2Vvyt1srUjcZuXD5CGcbMYQKvdKBFLnklojkYSJMkZqrA=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/KgM3llk3Ctco7r4sRUlplK7D7t09Fdmt1Gc3yDfk8HAfQyt9hhY8vIAcOC7xbg2i4AydTf3ncXow9iTn_wsjdw=w600-h1200",
+        "https://play-lh.googleusercontent.com/b3Y4CZzHG4LJ-7lrq1fiiJN2r4586PdGvRNfRA_481uxkII-V56joeI7wvcGft-hyBLSoYprvdiVCRCLialN7Q=w600-h1200",
+        "https://play-lh.googleusercontent.com/pkI72NkV2REvxrQrklXGD9_2Vmh0nmJDR2CsfajcfCtR-CTZN9r2kflgY89yxZ3DI8vvkPlyYWbCWjlIOU0T=w600-h1200",
+        "https://play-lh.googleusercontent.com/Y2qUgx632MIhdsTzD1xuJaQvYdnnjbqM-nccCHzFtPtJemUyRKsTAPEPp-GwqdmaCotglmGYSWwfY1IeJfrWdyg=w600-h1200",
+        "https://play-lh.googleusercontent.com/TQMDXY2IuyMMTUPWcEEOa-FH_dt0dk_nLpJmqYhaD2Vvyt1srUjcZuXD5CGcbMYQKvdKBFLnklojkYSJMkZqrA=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://proshapehub.com/",
       "android": "https://play.google.com/store/apps/details?id=com.fivehigh.proshape",
@@ -928,24 +1359,27 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A simple todo list manager with reusable lists and items",
     "downloads": "400 (Google Play) + 1k+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/31/46/19/3146191e-540f-d6b4-4362-a499503b0eff/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/m8j9CZjYvTlpM2ce6fENZwGbiQFWPWAxhrdH6oKtgYKyS27mm7Hq2ZDVB-M2MUiJtoo=w600-h1200",
-      "https://play-lh.googleusercontent.com/ErBMHQ93M0Xk53Unj94oB31hGi0aCeXQuvY1pDwvoRMWTOtQK-emhU39vDDX6yxHizjG=w600-h1200",
-      "https://play-lh.googleusercontent.com/v-XlZtDx3azVIadn7erUIopxKcjk4LcrnoxT0PhryBfEL_d7mOIqJZV-rOHNpr0RK2Y=w600-h1200",
-      "https://play-lh.googleusercontent.com/AA6e5f4_wzND91Oz0iL_9JsJaIa2cfJInhRdTOz28q5wo7F_SIVuj5YK8OobnlpKJzE=w600-h1200",
-      "https://play-lh.googleusercontent.com/UFmrdLypGYUMho6_6y8hmxQmFotbP3aSjzrZ1Nnad07wE3HMt4s__h448k_F1LB3lQQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/6eEoIqDOWIU7asyNHG2xXZH43m9j0IfqXN65yUhvT7L9Tj9xBtd0-Npi_wOcxlbWf0s=w600-h1200",
-      "https://play-lh.googleusercontent.com/Qv1UWtzSQMxa4miPzv1RHKe6KUf6Ru407hqTxmdCrSYmsfrYQsNZqMYz0k8o9C5wyQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/5O6hGbbB-WC49gLr4VbZ4RgYmpjGx2R6-v6g0C-3f5V40_TmzloutjlCGmzRhEITpFo=w600-h1200",
-      "https://play-lh.googleusercontent.com/iD_0CJEF59p7EmMG-2zrm6lUURQf0jppOvjsbtK7Gb47antsuXISdNu2ZKBfS1e-4KQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/HmonUCURBi7-EFVqw8P3nS4EKkSlRnRRIyjYPdUY6khBo1Tx-_I7ozM9x99Yvcg2NmQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/urxI3DB1xIMRBDNFnVeqvgQM6Hfid1f0UbxvsSH9Y2B1-YXknATnLkmM0ZeYNTaKvQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/AoYjdyZqA8G2J23R10SPW64NYmxMSR6fl-mIzLrJvuDzn0iVkh1W_MB1Cm953NxIj0s=w600-h1200",
-      "https://play-lh.googleusercontent.com/B_lalfJisGxcCZTdS54PZQ3t7NdTyasMD2_5IRGZSJndpmH1NOhkGwG4WH7hMYkTXw=w600-h1200",
-      "https://play-lh.googleusercontent.com/s3_krPS4lv_QHwfyEj-R9xTgLVmApLsM48t36nayr59i_OqjuOW0jgyt1eyppu-8qRuP=w600-h1200",
-      "https://play-lh.googleusercontent.com/T9YEw6YvMOYoCPE_JpPFjEAMcvxiTmXsDKpDZtoAvEmBuE2gr8crwhenGpYzZ8g-Y1mR=w600-h1200",
-      "https://play-lh.googleusercontent.com/GmpzQuNoKsaXdteJhY-6b2aiM9uRh3HmR_uD6suvOtLk09elC0oBtYlkKBm_2K1eAw=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/m8j9CZjYvTlpM2ce6fENZwGbiQFWPWAxhrdH6oKtgYKyS27mm7Hq2ZDVB-M2MUiJtoo=w600-h1200",
+        "https://play-lh.googleusercontent.com/ErBMHQ93M0Xk53Unj94oB31hGi0aCeXQuvY1pDwvoRMWTOtQK-emhU39vDDX6yxHizjG=w600-h1200",
+        "https://play-lh.googleusercontent.com/v-XlZtDx3azVIadn7erUIopxKcjk4LcrnoxT0PhryBfEL_d7mOIqJZV-rOHNpr0RK2Y=w600-h1200",
+        "https://play-lh.googleusercontent.com/AA6e5f4_wzND91Oz0iL_9JsJaIa2cfJInhRdTOz28q5wo7F_SIVuj5YK8OobnlpKJzE=w600-h1200",
+        "https://play-lh.googleusercontent.com/UFmrdLypGYUMho6_6y8hmxQmFotbP3aSjzrZ1Nnad07wE3HMt4s__h448k_F1LB3lQQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/6eEoIqDOWIU7asyNHG2xXZH43m9j0IfqXN65yUhvT7L9Tj9xBtd0-Npi_wOcxlbWf0s=w600-h1200",
+        "https://play-lh.googleusercontent.com/Qv1UWtzSQMxa4miPzv1RHKe6KUf6Ru407hqTxmdCrSYmsfrYQsNZqMYz0k8o9C5wyQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/5O6hGbbB-WC49gLr4VbZ4RgYmpjGx2R6-v6g0C-3f5V40_TmzloutjlCGmzRhEITpFo=w600-h1200",
+        "https://play-lh.googleusercontent.com/iD_0CJEF59p7EmMG-2zrm6lUURQf0jppOvjsbtK7Gb47antsuXISdNu2ZKBfS1e-4KQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/HmonUCURBi7-EFVqw8P3nS4EKkSlRnRRIyjYPdUY6khBo1Tx-_I7ozM9x99Yvcg2NmQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/urxI3DB1xIMRBDNFnVeqvgQM6Hfid1f0UbxvsSH9Y2B1-YXknATnLkmM0ZeYNTaKvQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/AoYjdyZqA8G2J23R10SPW64NYmxMSR6fl-mIzLrJvuDzn0iVkh1W_MB1Cm953NxIj0s=w600-h1200",
+        "https://play-lh.googleusercontent.com/B_lalfJisGxcCZTdS54PZQ3t7NdTyasMD2_5IRGZSJndpmH1NOhkGwG4WH7hMYkTXw=w600-h1200",
+        "https://play-lh.googleusercontent.com/s3_krPS4lv_QHwfyEj-R9xTgLVmApLsM48t36nayr59i_OqjuOW0jgyt1eyppu-8qRuP=w600-h1200",
+        "https://play-lh.googleusercontent.com/T9YEw6YvMOYoCPE_JpPFjEAMcvxiTmXsDKpDZtoAvEmBuE2gr8crwhenGpYzZ8g-Y1mR=w600-h1200",
+        "https://play-lh.googleusercontent.com/GmpzQuNoKsaXdteJhY-6b2aiM9uRh3HmR_uD6suvOtLk09elC0oBtYlkKBm_2K1eAw=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.epjapps.simple.modern.list.relist",
       "ios": "https://apps.apple.com/us/app/re-list/id1551656021"
@@ -956,14 +1390,24 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The ultimate rock climbing companion app.",
     "downloads": "10k+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/36/89/ef/3689efc1-10cb-dd86-e2e5-8913e89d5557/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/47/c9/f347c98d-ad9a-be0f-e936-07e76eac67f4/4507a129-cbae-450e-b20f-4d19456bae53_01.png/576x768bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b4/fa/2e/b4fa2e5b-438c-a683-4d3f-1d37dffbb718/5c17e439-3a66-401c-af78-c4ed80393deb_02.png/576x768bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/23/b7/8e23b736-eccc-4efd-f7cc-b1d5e380625c/ab3e1fdc-99fd-4169-bb1f-8d9a0109a66c_03.png/576x768bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/43/68/65/436865fc-379d-6637-85ef-f5725bce781d/49510530-71a6-4448-9019-463a188c3c3e_04.png/576x768bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/5f/c1/685fc116-ccdb-d25c-d0cf-a4369665a310/32138912-90ef-4e62-b783-a8c3b8cc5088_05.png/576x768bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/35/de/a035de47-47e8-41c2-2eb4-3fcd4b84b210/b638366e-6c3a-4546-8272-414b78268a8e_06.png/576x768bb.png"
-    ],
+    "screenshots": {
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/47/c9/f347c98d-ad9a-be0f-e936-07e76eac67f4/4507a129-cbae-450e-b20f-4d19456bae53_01.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b4/fa/2e/b4fa2e5b-438c-a683-4d3f-1d37dffbb718/5c17e439-3a66-401c-af78-c4ed80393deb_02.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/23/b7/8e23b736-eccc-4efd-f7cc-b1d5e380625c/ab3e1fdc-99fd-4169-bb1f-8d9a0109a66c_03.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/43/68/65/436865fc-379d-6637-85ef-f5725bce781d/49510530-71a6-4448-9019-463a188c3c3e_04.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/5f/c1/685fc116-ccdb-d25c-d0cf-a4369665a310/32138912-90ef-4e62-b783-a8c3b8cc5088_05.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/35/de/a035de47-47e8-41c2-2eb4-3fcd4b84b210/b638366e-6c3a-4546-8272-414b78268a8e_06.png/576x768bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/fnuwd7FklfbbF0AlfI0R4SWkmrZl2_Oy-ECBjDkWkFbWq3c4aVnO48RICgFRHGWh_2k5zbTPMeUSPkKL6MA=w600-h1200",
+        "https://play-lh.googleusercontent.com/P_vPEDS51C44ogGmhiNdIbd9U306W6lN1SkU_4Hb8i-IsDrd-M34p3KqsFS1SYB8AOsa_k5cOzQWgFkzrTnsMfc=w600-h1200",
+        "https://play-lh.googleusercontent.com/p7iJ92fxFCKf3SDF_v1DNOCPEyhAWZViNXsqU32x4_ZACpz4vfVZHqV8yU9ZINZhv5ST-UaA6QRQWZ5BpSEn4g=w600-h1200",
+        "https://play-lh.googleusercontent.com/q8TkhucNc2dtimPuoGUoSL9DuNaWbdH4uDpfYosGA3M6D8Vl6P4x6P953qMJ4hXTWXjGS6e5R2RGlpAyQQWCTA=w600-h1200",
+        "https://play-lh.googleusercontent.com/GUd2sA0vjG6GJgqdH4mpKC1Ad_-XgAwzufIPfUIU00XJjaT1lFTjcbPWZRqLWVR3kzyB90PoaDx03Hcce6a3-w=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.alphaoutdoors.redpoint",
       "ios": "https://apps.apple.com/au/app/red-point/id1670082950"
@@ -974,13 +1418,31 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A free, very simple, and a privacy-friendly trip registration for the Netherlands to easily keep track of the mileage for business and/or private car use.",
     "downloads": "1k+ (Apple)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e7/84/3d/e7843d74-1f56-6406-e9cb-23b4bd9bc7e6/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d5/a6/12/d5a612fc-0a07-dc55-c778-e985d801114b/e81c2405-8ce0-4738-8de1-5927f0894072_image1.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/a0/ce/9fa0ce65-6fc4-9594-1223-bea4b7382569/bf2cff88-52a9-42a6-a632-f25e42dc6991_image2.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/85/a0/ba85a066-c1c8-7de2-aad9-9d5dd476fe51/9de2d1fb-dda3-4220-a0ec-3294d2a24a00_image3.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/25/18/6e2518d5-372a-1baa-0df4-0a0670d06b87/9aa2bd7a-9bf8-43f4-af56-7c601abaab63_image4.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7e/f3/9c/7ef39c2b-b37f-2d0e-d441-b0a33a29f3e4/8035c25a-9601-4f1c-88db-df8eac4ddc6f_image5.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d5/a6/12/d5a612fc-0a07-dc55-c778-e985d801114b/e81c2405-8ce0-4738-8de1-5927f0894072_image1.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/a0/ce/9fa0ce65-6fc4-9594-1223-bea4b7382569/bf2cff88-52a9-42a6-a632-f25e42dc6991_image2.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/85/a0/ba85a066-c1c8-7de2-aad9-9d5dd476fe51/9de2d1fb-dda3-4220-a0ec-3294d2a24a00_image3.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/25/18/6e2518d5-372a-1baa-0df4-0a0670d06b87/9aa2bd7a-9bf8-43f4-af56-7c601abaab63_image4.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7e/f3/9c/7ef39c2b-b37f-2d0e-d441-b0a33a29f3e4/8035c25a-9601-4f1c-88db-df8eac4ddc6f_image5.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b8/2a/9e/b82a9edd-dd85-184e-653a-8dca5cca9e78/1d3c3082-7993-40cd-af89-23a2da3e9309_image2kopie.jpg/576x768bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8d/57/dd/8d57dd9f-123a-d3bb-226c-95669df385af/a4e58ab4-b19d-4b07-b233-1f882435a4ea_image3kopie.jpg/576x768bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ec/e6/a7/ece6a7c4-eac7-8e8a-899e-cd24faebe28d/bc8418ed-acf6-4c97-95df-0df26067f112_image1kopie.jpg/576x768bb.jpg"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/foELSOxI7Hsl2EK9FFvPX1IIAciRkX4RBnXDY5p18z89N0_vTDCnGQGKM4QG1F7gjbdYb1S90zZO2qmpwZodkTA=w600-h1200",
+        "https://play-lh.googleusercontent.com/j3XaD8WeIw2Xs7pgFHXSWeUfmbbTwthVyiVhIRVXAa0k7LBW39IveSsiU1eNk8xJND2AqvwQg9VYL_UENtXT=w600-h1200",
+        "https://play-lh.googleusercontent.com/_35-qBlB6qc2UmFzpODrnOWDqtWiQukxL0KI2DUq2snuGbOWSoT2mgyO9FqHG0YqTZ4te4NGNzKjgeXvjz5O=w600-h1200",
+        "https://play-lh.googleusercontent.com/UbI1Uzyx8Dtr0gL7RHwna9vFzOuT3jYqMliE2sRA8B0OEG7jDfvveD1JZnc32HMCZCNfZ0o-aKKtUgLMT3Ydvg=w600-h1200",
+        "https://play-lh.googleusercontent.com/iNwrF8_2y9phLibXflFmCr3dSH9WUmabb-2Xx50ny9scp_7u9FWRzLeYWm9Srx3ACE8yDXMbUq62oHPS1XY-QQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/6hBDNzQlscPgMU-eIcxZg6n5i2ChbwJ_dVvltb1tZPf8kR424IvNiJV81G5ia9FbxBX-hqhLnqvM8kMsuNfZJw=w600-h1200",
+        "https://play-lh.googleusercontent.com/v81SgYmDZlKiNrA9EVzjJc9iR9M5fv4sQHOCbRX9Hyyc0UJY_y1jZ_RmgiP-AaymsGp47gEwqUbY_oCuGrzyT3I=w600-h1200",
+        "https://play-lh.googleusercontent.com/JBEG1SiwVAN6yo2JJN6ALLFYX7UA2lHoXW9l0uEbQnsC_E7tB5igGs9Iitf4zD6lDMO-OIy0M0ycNGjPnD2o=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.mrijntjes.ritlogger",
       "ios": "https://apps.apple.com/nl/app/ritlogger-rittenregistratie/id6479636230"
@@ -991,17 +1453,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "News Reader, Filter & Alerts.",
     "downloads": "Unknown",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d5/4c/24/d54c24bc-f4fd-aa4e-df0b-fa9d479c5ef7/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e1/28/15/e12815b7-9c95-3bca-73cc-d257fad37575/Screenshot1_12.png/552x414bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/cf/db/2fcfdbc1-98b8-fd88-1af1-90fd24358a3b/Screenshot2_12.png/552x414bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/28/72/3e287201-0c64-68c5-31ab-7a3f1d0dcbe6/Screenshot3_12.png/552x414bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a9/db/88/a9db8846-1d20-48fd-a8c2-41a981089b1e/Screenshot5_12.png/576x768bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c7/ac/53/c7ac5302-8ba8-4622-fb3c-3a44d32ff37b/Screenshot4_12.png/576x768bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/78/c6/1a/78c61af9-00af-bcd2-c4ef-b4ea0567507e/Screenshot6_12.png/576x768bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/83/2a/94/832a94b9-eb9e-7fd1-5014-08fe0ec842f3/Screenshot7_12.png/576x768bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/17/0e/6e170e04-0777-b85b-7b1d-14065e118a4e/Screenshot8_12.png/576x768bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/47/97/2f/47972fba-1c34-01b3-4b6b-47216ce8a2f4/Screenshot9_12.png/576x768bb.png"
-    ],
+    "screenshots": {
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e1/28/15/e12815b7-9c95-3bca-73cc-d257fad37575/Screenshot1_12.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/cf/db/2fcfdbc1-98b8-fd88-1af1-90fd24358a3b/Screenshot2_12.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/28/72/3e287201-0c64-68c5-31ab-7a3f1d0dcbe6/Screenshot3_12.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a9/db/88/a9db8846-1d20-48fd-a8c2-41a981089b1e/Screenshot5_12.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c7/ac/53/c7ac5302-8ba8-4622-fb3c-3a44d32ff37b/Screenshot4_12.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/78/c6/1a/78c61af9-00af-bcd2-c4ef-b4ea0567507e/Screenshot6_12.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/83/2a/94/832a94b9-eb9e-7fd1-5014-08fe0ec842f3/Screenshot7_12.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/17/0e/6e170e04-0777-b85b-7b1d-14065e118a4e/Screenshot8_12.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/47/97/2f/47972fba-1c34-01b3-4b6b-47216ce8a2f4/Screenshot9_12.png/576x768bb.png"
+      ]
+    },
     "platforms": {
       "windows": "https://apps.microsoft.com/detail/9mwhll3bbx9f?hl=en-us",
       "ios": "https://apps.apple.com/us/app/rss-radar/id6496271582?l=en-US"
@@ -1012,14 +1476,17 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Workout app for indoor training.",
     "downloads": "1K+ (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/08/83/ea/0883eac6-54d1-ae9e-38d3-1b0514c15ff8/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/PhnOfj1G-NE9vWBWmpjBLRECa3pWqG0SzEBmKlZMw_n0hH5ELhovWyb667Ctw6Hjbw-jTxCYwKy3pchsltnA=w600-h1200",
-      "https://play-lh.googleusercontent.com/O7tVQJFnP7ZHJmHx3_Fl_FWGzsTX_zYlXl_sThtpezKq8GmgY1Xk_dE6PgN6G_FgXngXh_kJZSSqpdegmtqrAA=w600-h1200",
-      "https://play-lh.googleusercontent.com/_TjcPxDrNQ8j540tu1UI8fArPuOOqlTZYjJwW5aLy2Bhn9pAmOa_uk2J_1QirCsxeBA3fibGjp5hZHvmOPzB=w600-h1200",
-      "https://play-lh.googleusercontent.com/4q0YHhZIoyAjILC88tkMx-XfHQCP1IKxukvcrmkzBfY8StaDmRcMWPXDA77lkkZ9IZ9dBsHOmpZJUyHEftRx=w600-h1200",
-      "https://play-lh.googleusercontent.com/PPIyANglz_5K63iAlFtVOsnot7WTS8JNgOcuHAmPYitEC6_Nx4QmqUI72UfhQZIhje223qzP5fb2k0N_eDl_TN4=w600-h1200",
-      "https://play-lh.googleusercontent.com/V06MGNnx3YQCaMJyYEEWuCwr1c910j8hjgbEULgTOPwExhdHyCEFJ07_ic7hKNLt-8SwF-caaKzPmYcfiGR8Sw=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/PhnOfj1G-NE9vWBWmpjBLRECa3pWqG0SzEBmKlZMw_n0hH5ELhovWyb667Ctw6Hjbw-jTxCYwKy3pchsltnA=w600-h1200",
+        "https://play-lh.googleusercontent.com/O7tVQJFnP7ZHJmHx3_Fl_FWGzsTX_zYlXl_sThtpezKq8GmgY1Xk_dE6PgN6G_FgXngXh_kJZSSqpdegmtqrAA=w600-h1200",
+        "https://play-lh.googleusercontent.com/_TjcPxDrNQ8j540tu1UI8fArPuOOqlTZYjJwW5aLy2Bhn9pAmOa_uk2J_1QirCsxeBA3fibGjp5hZHvmOPzB=w600-h1200",
+        "https://play-lh.googleusercontent.com/4q0YHhZIoyAjILC88tkMx-XfHQCP1IKxukvcrmkzBfY8StaDmRcMWPXDA77lkkZ9IZ9dBsHOmpZJUyHEftRx=w600-h1200",
+        "https://play-lh.googleusercontent.com/PPIyANglz_5K63iAlFtVOsnot7WTS8JNgOcuHAmPYitEC6_Nx4QmqUI72UfhQZIhje223qzP5fb2k0N_eDl_TN4=w600-h1200",
+        "https://play-lh.googleusercontent.com/V06MGNnx3YQCaMJyYEEWuCwr1c910j8hjgbEULgTOPwExhdHyCEFJ07_ic7hKNLt-8SwF-caaKzPmYcfiGR8Sw=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://satis.fit/",
       "android": "https://play.google.com/store/apps/details?id=com.satisfit.app",
@@ -1031,28 +1498,31 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Sequential Cards tests your memory! 🃏 Play offline, open cards in order, and win!",
     "downloads": "10+ downloads (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/DFmTI5NNcvYBjW5g-URP3qU2QksO9rIYhwlmhqPZEB7C1qoe4Y_CCjUR7b8j5GHuMX0",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/A7VesI4KTp2-7S956RxrAJAPAE4xcazaI7-ATxhdoCzr-AYgAfomhrMAtJHxgD1i5wGm9BcVnw9ooK2FBe_b=w600-h1200",
-      "https://play-lh.googleusercontent.com/oXGnGWouvW7TasdgIFRAoGFuPpFownEqPLmr0jaWNMM045I2tdCp4aPndX7iNdpE5Q=w600-h1200",
-      "https://play-lh.googleusercontent.com/P_ia_oXrK_ouPkGrdEvtAu5_WWvZn7xd64Zur8fzM58iWJu98C9Vo1gIifD34zDbsnc=w600-h1200",
-      "https://play-lh.googleusercontent.com/M3PV_a-XUHXCgCfCSn079z3R15-29NTsbLCEuXuVrmvSx1za5dRCVSXVWPUZjMUzdig=w600-h1200",
-      "https://play-lh.googleusercontent.com/fmerc1qoqo93oyApzjePaEmXCXzai4vQ7B0x6UIXXvJThXlUuKknq7lVDKpLsHvfEknZ=w600-h1200",
-      "https://play-lh.googleusercontent.com/vDNyqNlb0jRvcj2fo7TnFyml6OI_AC3DJ-4sfYhf_0KywzAy5Yk7W4crUV4SG8ilmt1vCvt4Yh_3bR-nqKhphQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/R7q37PfnBhhseDovM4D31ia3tumBn4vCC5XfZUw4IAKhJCJ8Fjh-aEjhisnQEpfKXAccilifg5r479ju5rjbyA=w600-h1200",
-      "https://play-lh.googleusercontent.com/nnqNPiD3iLKB-OTGF3ZIK91qNNZ8lHF5kqvkbKQ1PgdutMFZQdilyrbkq1Eb0-qjqi8W9Xi-qJIgtK25U46PsxQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/3uK21yzQvP26-QYu0jn13gTjZCQoYabbE5Vcwr8Br9vdXKP2BWcOUQSG1YQz76q9A-7ADPcvmNFrf5R8H5OM=w600-h1200",
-      "https://play-lh.googleusercontent.com/6H0-bPEQbs0I-IWCR1yv9uNpTgWWp__Ja9igjqyAeIH0ydUSq_yWijKWp3FcoKRxJ_Ul=w600-h1200",
-      "https://play-lh.googleusercontent.com/-QicXcqXcvs_XHFIkz2zKDHmiGxsTec755GqMnX266maYivBuFuWdmFx3dusAHBioA=w600-h1200",
-      "https://play-lh.googleusercontent.com/i9eOTKsl9F4V74fC_UXP4yaplfcphdE3Ef4oOA0GPb1mW-HNSfzmrqS0BJwJX7yTMfh4=w600-h1200",
-      "https://play-lh.googleusercontent.com/byR-_HfW4hNeCpr7nWS-k3VKBN2Rpr3_Y-RCuHsdVQC9e6syrb1MLjDAqgjOME6pLlnUkgRfKCogIUusiWjg6uA=w600-h1200",
-      "https://play-lh.googleusercontent.com/jbmXMNPaPjhp3gp8G9xOSXFDAEa0zyXRNO8G8IDSPFkOzFu8hCVzNYLIi9EB_SDhkQMujf-kCoaFQZU6VyRVEA=w600-h1200",
-      "https://play-lh.googleusercontent.com/eeZ7V3lbjt5FYbxxqz4HRmpbAaeMTAN8iNFitFRDhZHxWhZ8CzIgo6HTzBUJ4iZkCyk=w600-h1200",
-      "https://play-lh.googleusercontent.com/VhygOzc6xqWefqt9zn_BW_Zz3DSpqX0Wu9BlDpMt3BMiSUZ_gGEhg1xetouVD4Ee0joxq9WXZUKH8QVMpujimUg=w600-h1200",
-      "https://play-lh.googleusercontent.com/X9mRsEhWaynk7GZF1RceolVy7ruWVcAUFJxKHIRnuR5uWARt9_N-8RONGwucd_MznTs=w600-h1200",
-      "https://play-lh.googleusercontent.com/0moVLJhNJEtIBz0VVFMb8FvUAEOvzywJNZpafLO2AMKH9_UJKX1d0bBhKxXMpBiRKrtv=w600-h1200",
-      "https://play-lh.googleusercontent.com/9LOEA5SIffrlK_Eu9yvP3HV_djxE6CPpttGJPTmCAyW3J-JaYVkqEnVI-mRZSenbSzk=w600-h1200",
-      "https://play-lh.googleusercontent.com/0YpniJuYY9gYUdfV4swgM5QYbuBo6Hu5bq-vueVctRy5-D-O5FFgejO_ry2Xm25SQ5Q=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/A7VesI4KTp2-7S956RxrAJAPAE4xcazaI7-ATxhdoCzr-AYgAfomhrMAtJHxgD1i5wGm9BcVnw9ooK2FBe_b=w600-h1200",
+        "https://play-lh.googleusercontent.com/oXGnGWouvW7TasdgIFRAoGFuPpFownEqPLmr0jaWNMM045I2tdCp4aPndX7iNdpE5Q=w600-h1200",
+        "https://play-lh.googleusercontent.com/P_ia_oXrK_ouPkGrdEvtAu5_WWvZn7xd64Zur8fzM58iWJu98C9Vo1gIifD34zDbsnc=w600-h1200",
+        "https://play-lh.googleusercontent.com/M3PV_a-XUHXCgCfCSn079z3R15-29NTsbLCEuXuVrmvSx1za5dRCVSXVWPUZjMUzdig=w600-h1200",
+        "https://play-lh.googleusercontent.com/fmerc1qoqo93oyApzjePaEmXCXzai4vQ7B0x6UIXXvJThXlUuKknq7lVDKpLsHvfEknZ=w600-h1200",
+        "https://play-lh.googleusercontent.com/vDNyqNlb0jRvcj2fo7TnFyml6OI_AC3DJ-4sfYhf_0KywzAy5Yk7W4crUV4SG8ilmt1vCvt4Yh_3bR-nqKhphQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/R7q37PfnBhhseDovM4D31ia3tumBn4vCC5XfZUw4IAKhJCJ8Fjh-aEjhisnQEpfKXAccilifg5r479ju5rjbyA=w600-h1200",
+        "https://play-lh.googleusercontent.com/nnqNPiD3iLKB-OTGF3ZIK91qNNZ8lHF5kqvkbKQ1PgdutMFZQdilyrbkq1Eb0-qjqi8W9Xi-qJIgtK25U46PsxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/3uK21yzQvP26-QYu0jn13gTjZCQoYabbE5Vcwr8Br9vdXKP2BWcOUQSG1YQz76q9A-7ADPcvmNFrf5R8H5OM=w600-h1200",
+        "https://play-lh.googleusercontent.com/6H0-bPEQbs0I-IWCR1yv9uNpTgWWp__Ja9igjqyAeIH0ydUSq_yWijKWp3FcoKRxJ_Ul=w600-h1200",
+        "https://play-lh.googleusercontent.com/-QicXcqXcvs_XHFIkz2zKDHmiGxsTec755GqMnX266maYivBuFuWdmFx3dusAHBioA=w600-h1200",
+        "https://play-lh.googleusercontent.com/i9eOTKsl9F4V74fC_UXP4yaplfcphdE3Ef4oOA0GPb1mW-HNSfzmrqS0BJwJX7yTMfh4=w600-h1200",
+        "https://play-lh.googleusercontent.com/byR-_HfW4hNeCpr7nWS-k3VKBN2Rpr3_Y-RCuHsdVQC9e6syrb1MLjDAqgjOME6pLlnUkgRfKCogIUusiWjg6uA=w600-h1200",
+        "https://play-lh.googleusercontent.com/jbmXMNPaPjhp3gp8G9xOSXFDAEa0zyXRNO8G8IDSPFkOzFu8hCVzNYLIi9EB_SDhkQMujf-kCoaFQZU6VyRVEA=w600-h1200",
+        "https://play-lh.googleusercontent.com/eeZ7V3lbjt5FYbxxqz4HRmpbAaeMTAN8iNFitFRDhZHxWhZ8CzIgo6HTzBUJ4iZkCyk=w600-h1200",
+        "https://play-lh.googleusercontent.com/VhygOzc6xqWefqt9zn_BW_Zz3DSpqX0Wu9BlDpMt3BMiSUZ_gGEhg1xetouVD4Ee0joxq9WXZUKH8QVMpujimUg=w600-h1200",
+        "https://play-lh.googleusercontent.com/X9mRsEhWaynk7GZF1RceolVy7ruWVcAUFJxKHIRnuR5uWARt9_N-8RONGwucd_MznTs=w600-h1200",
+        "https://play-lh.googleusercontent.com/0moVLJhNJEtIBz0VVFMb8FvUAEOvzywJNZpafLO2AMKH9_UJKX1d0bBhKxXMpBiRKrtv=w600-h1200",
+        "https://play-lh.googleusercontent.com/9LOEA5SIffrlK_Eu9yvP3HV_djxE6CPpttGJPTmCAyW3J-JaYVkqEnVI-mRZSenbSzk=w600-h1200",
+        "https://play-lh.googleusercontent.com/0YpniJuYY9gYUdfV4swgM5QYbuBo6Hu5bq-vueVctRy5-D-O5FFgejO_ry2Xm25SQ5Q=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.fmglib.numberpathgame"
     }
@@ -1062,7 +1532,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Sharp Words combines Wordle and crosswords to offer a unique twist.",
     "downloads": "10+ (Google Play)",
     "iconUrl": null,
-    "screenshots": [],
+    "screenshots": {},
     "platforms": {
       "website": "https://sharpwordswebsite.z13.web.core.windows.net/",
       "android": "https://play.google.com/store/apps/details?id=com.npt.sharpwords&hl=en",
@@ -1074,7 +1544,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Minimalist Launcher for a Focused Life - with Widget Support",
     "downloads": "500+ (App Store)",
     "iconUrl": null,
-    "screenshots": [],
+    "screenshots": {},
     "platforms": {
       "ios": "https://apps.apple.com/us/app/simply-dumb/id6636494471"
     }
@@ -1084,16 +1554,32 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "The best apnea app to improve the breath-holding time for freediving, scuba diving and spearfishing with 5 different apnea tables types.",
     "downloads": "50K+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4f/65/7c/4f657c0f-eebb-da1b-775e-835beedfdd62/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/be/42/b7/be42b761-ccd0-9fb6-a740-2770e9872530/40424998-5eb4-4464-ae85-11fe8eb7329f_iOS_screen_5.5_01.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/05/fe/fd/05fefd39-d12b-5808-c4ae-42426bfee4d0/7639012f-6303-42b0-9841-b4f4b5f2ec53_iOS_screen_5.5_07.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/f1/35/cd/f135cd4e-9c43-6089-cfbb-6d209b51fb9f/8a376913-75be-4b71-bddb-1e5ba3eeca6b_iOS_screen_5.5_02.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/1a/ce/ae/1aceaebc-8eba-8ac3-32fe-fd3088532635/53bd653e-69bc-4a77-af1b-2a28ff4dc72a_iOS_screen_5.5_03.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/ac/19/c6/ac19c6f8-8629-9b3f-a178-41e6690bc22d/9168369a-cf3d-477b-acb1-16777f197dcb_iOS_screen_5.5_04.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/2f/29/00/2f2900ed-6a44-f88d-47e7-dd4c9a0136e6/a8395c9a-731b-4e22-816f-623e4964cc24_iOS_screen_5.5_05.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/f0/70/73/f070735f-4727-9ace-90e8-d8fb6970a4f6/3e3c1dfa-f0b5-41c2-8ec1-b8ad3d229852_iOS_screen_5.5_06.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/f9/83/e3/f983e3a8-d8fd-aca8-a16d-0ddc1be5a727/f8c7da67-b4c7-44d0-ab16-7bb049d0672a_iOS_screen_5.5_07.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/be/42/b7/be42b761-ccd0-9fb6-a740-2770e9872530/40424998-5eb4-4464-ae85-11fe8eb7329f_iOS_screen_5.5_01.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/05/fe/fd/05fefd39-d12b-5808-c4ae-42426bfee4d0/7639012f-6303-42b0-9841-b4f4b5f2ec53_iOS_screen_5.5_07.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/f1/35/cd/f135cd4e-9c43-6089-cfbb-6d209b51fb9f/8a376913-75be-4b71-bddb-1e5ba3eeca6b_iOS_screen_5.5_02.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/1a/ce/ae/1aceaebc-8eba-8ac3-32fe-fd3088532635/53bd653e-69bc-4a77-af1b-2a28ff4dc72a_iOS_screen_5.5_03.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/ac/19/c6/ac19c6f8-8629-9b3f-a178-41e6690bc22d/9168369a-cf3d-477b-acb1-16777f197dcb_iOS_screen_5.5_04.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/2f/29/00/2f2900ed-6a44-f88d-47e7-dd4c9a0136e6/a8395c9a-731b-4e22-816f-623e4964cc24_iOS_screen_5.5_05.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/f0/70/73/f070735f-4727-9ace-90e8-d8fb6970a4f6/3e3c1dfa-f0b5-41c2-8ec1-b8ad3d229852_iOS_screen_5.5_06.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/f9/83/e3/f983e3a8-d8fd-aca8-a16d-0ddc1be5a727/f8c7da67-b4c7-44d0-ab16-7bb049d0672a_iOS_screen_5.5_07.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/27/c1/56/27c156a6-1995-bc86-7836-89919da98f38/pr_source.png/576x768bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/0KhydBKYBrbDZMtlCtIk0v1rYhd9X2-OS2gYlBqPGdx6Te_bkO2J1whJ9Qh2F6XQVGO9=w600-h1200",
+        "https://play-lh.googleusercontent.com/JZ30xTEJ-1mzO3wXLnR7VxPifRMaonxj7ZlplMKC-wsUEQe_3G5ph2KtJDOZPKg3iko=w600-h1200",
+        "https://play-lh.googleusercontent.com/TFJ3a9NU2wVzEWQ_hgn9vuFbw23bN1ckUHrNLYpCoIsLfR558LVzv8eUtRyIZsYYhho=w600-h1200",
+        "https://play-lh.googleusercontent.com/2o53GQSHVaa8W6RGz1TUYaN9_O5GWgABiAt66g9p1xNYuERkeoQQtWUBKsI_oF739tJc=w600-h1200",
+        "https://play-lh.googleusercontent.com/ZYqLisoXo5WlwIKj65kSgj1cTUMTILSkRU6_lE-2QJxggZ60SDn7jnLRv57-dhusTYOU=w600-h1200",
+        "https://play-lh.googleusercontent.com/WE0WVNh-rjxrYtm-QmMvTWj4n9eDFNW-Fhh9iSalThQ1beub2-XOeI8UiwfALrHD02s=w600-h1200",
+        "https://play-lh.googleusercontent.com/P3m7HO-dzLJNKyDS1rRyIX-FgAqayRRnHiJY62EWPerDXushvs5vZXBwssvXKZ3UoK0=w600-h1200",
+        "https://play-lh.googleusercontent.com/V1YpNkSKgyNP_6ZM-e412B0-IrCbmztDAeJ68cyZVh6yyaNJOSEGTGaY7wS0Ux0KcJ_6=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.squarecrowdapps.stamina&hl=en",
       "ios": "https://apps.apple.com/us/app/stamina-apnea-trainer/id994874491?l=en-US"
@@ -1104,12 +1590,21 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Sueca is a trick tacking card game popular among Portuguese speaking people.",
     "downloads": "150K+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f2/8c/52/f28c525b-19ca-e812-e24d-feec2afd4fa8/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/52/41/1c/52411cc4-340d-91b0-9236-dd1788a999a0/fca8bf49-dea7-4c05-bcf7-76b45b1e7757_AssetsiOS15.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/f6/57/ca/f657ca01-9bce-d040-f6c1-abbfa30bfba1/fdef63bf-3a66-42c4-a098-041e6732cee9_AssetsiOS25.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/f3/42/f2/f342f283-876d-487f-f4eb-4ce37f020d8e/a31926bd-f037-490d-9754-39b772d46133_AssetsiOS35.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/53/1f/1e/531f1ecb-84f8-edf7-9154-b9500f092dff/75a12612-2fe8-4600-970b-92cde2981d00_AssetsiOS45.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/52/41/1c/52411cc4-340d-91b0-9236-dd1788a999a0/fca8bf49-dea7-4c05-bcf7-76b45b1e7757_AssetsiOS15.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/f6/57/ca/f657ca01-9bce-d040-f6c1-abbfa30bfba1/fdef63bf-3a66-42c4-a098-041e6732cee9_AssetsiOS25.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/f3/42/f2/f342f283-876d-487f-f4eb-4ce37f020d8e/a31926bd-f037-490d-9754-39b772d46133_AssetsiOS35.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/53/1f/1e/531f1ecb-84f8-edf7-9154-b9500f092dff/75a12612-2fe8-4600-970b-92cde2981d00_AssetsiOS45.png/392x696bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/QNpsl4k43vdbfwUAlVLZul2W5O5MUGOToystzghc97mljVHbUwtc639tahcuDsAVHdaGMyZA40AmMVcB_ws=w600-h1200",
+        "https://play-lh.googleusercontent.com/OJWStITU0DTp8KIzhnYsA0LLOsQs2MbYFr_EICE3ucwvR7nuz5T8JKCWRnAPO__BPLg=w600-h1200",
+        "https://play-lh.googleusercontent.com/IYSEmvO_fKMXJtYC8TaqqkhHachZDaKBzl1zNnOpEk8b1FmYzIGOX_Z2x7_xT_8YoLih=w600-h1200",
+        "https://play-lh.googleusercontent.com/CKGF_OPhmnnfp-ZgYQHdIS1Fj4TwM_6NeGX3yNdg3h2UtYhWJxyOBrcN_0RIlKU0f5Q=w600-h1200",
+        "https://play-lh.googleusercontent.com/Hce_3zGErDpIkgMDbpqzda3P4opJuK19SyER01_R8-cIAwna0agXqK91XRhm4SVWKCkC=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.TiagoInteractive.Sueca",
       "ios": "https://apps.apple.com/us/app/sueca-portuguesa-2022/id1638754579"
@@ -1120,23 +1615,26 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Sunshine Coast Council App – Your Connection to Local Services.",
     "downloads": "500+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0b/01/e6/0b01e698-7a0e-154f-75e4-71531bd7be29/sccicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/pirpjH3VQyvR-8mHuChPdIz2ZxP8VwDI5L5Zt14rrc5lwZVRClIVDJU63_5zV0omCA=w600-h1200",
-      "https://play-lh.googleusercontent.com/APZN9de3nTd0Gs-hCcSMnja99QhWm5IscJa3wTqKP_myjkIvX4rTf-8xEuvvRwtuw8Sl=w600-h1200",
-      "https://play-lh.googleusercontent.com/0UbM3RJs2A3Tvrbu3UUJ_41rp-H06CEixaQ4ahF-DKOG9yJUR1z6ssjACxYttBytqVQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/XKPOtuBcDuXiy1hI2_Ff40Va7mls-tLfo7uxV6KmTxeQ8r_q-CdlN9_YETx5_drLtw=w600-h1200",
-      "https://play-lh.googleusercontent.com/G_0IZZCcychn-x7UhC-gX1sEoljI-c7aDETdXaaLkTa_EnIkJn2Vi_H_lv5CjLo9dHE=w600-h1200",
-      "https://play-lh.googleusercontent.com/sb88MzngD6irwjxhfnUo_midXqG9xF40kHvtfiJ8mCgbnIA-8ijKJ2cpHbx2Nuz_V34n=w600-h1200",
-      "https://play-lh.googleusercontent.com/sNNzuavSwGOCutibHJEyXb7bgfRdGMT46nEMvqzQAEvTRHnMxoKCkZ4SW_ELqHVa3J7v=w600-h1200",
-      "https://play-lh.googleusercontent.com/O_HbvgmbCRtFUDAkx3YBZhUpN7FgnAutWGCdcqw93hokAM-xj8gnP1aI7RijN_9FmK4=w600-h1200",
-      "https://play-lh.googleusercontent.com/5KkE4Bin79VA-E5zIPaZ8sBZGc6kIoUZyOMIAOXO96KdOiFSYSp6YxEOe4rTNjMbXfE=w600-h1200",
-      "https://play-lh.googleusercontent.com/EG4EVj-ge3PM3VjGmHjxUQXrzkYzo6ZWpViCRPMPQOrjNqHX5ci63oCBPUll-2zanQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/e7DH0dlDr0-KIfvTp-13fI1Q80YwjbV8mMMi1rmU--JJuTqNuqRex26WgjnJ9EfyBaQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/qmPSXmu4SfAswf4p3tOZ8RyJt7lCOTN2co6L_sHzqCu-6AuQZ95TiUDwt-6tusrl6gQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/qdFa0_v-ERrngpiTs1mnozHQrAshVXWGNsfYrKYYMb8lKKSLf7NPyMHLbtJOvAWbmyxG=w600-h1200",
-      "https://play-lh.googleusercontent.com/hT9iVMX4w6H4TDIsGsEQ398t-HtBBhCyBM7UxlXxUF8hzcpEb1CUPuCiwYZt68tym4Q=w600-h1200",
-      "https://play-lh.googleusercontent.com/jUL1yb6qwAkMy94ApKKbnRDtM4pOs6ldbmxPPXqlYpsyuYL9HSvyPJ58J8USEjO-1l8=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/pirpjH3VQyvR-8mHuChPdIz2ZxP8VwDI5L5Zt14rrc5lwZVRClIVDJU63_5zV0omCA=w600-h1200",
+        "https://play-lh.googleusercontent.com/APZN9de3nTd0Gs-hCcSMnja99QhWm5IscJa3wTqKP_myjkIvX4rTf-8xEuvvRwtuw8Sl=w600-h1200",
+        "https://play-lh.googleusercontent.com/0UbM3RJs2A3Tvrbu3UUJ_41rp-H06CEixaQ4ahF-DKOG9yJUR1z6ssjACxYttBytqVQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/XKPOtuBcDuXiy1hI2_Ff40Va7mls-tLfo7uxV6KmTxeQ8r_q-CdlN9_YETx5_drLtw=w600-h1200",
+        "https://play-lh.googleusercontent.com/G_0IZZCcychn-x7UhC-gX1sEoljI-c7aDETdXaaLkTa_EnIkJn2Vi_H_lv5CjLo9dHE=w600-h1200",
+        "https://play-lh.googleusercontent.com/sb88MzngD6irwjxhfnUo_midXqG9xF40kHvtfiJ8mCgbnIA-8ijKJ2cpHbx2Nuz_V34n=w600-h1200",
+        "https://play-lh.googleusercontent.com/sNNzuavSwGOCutibHJEyXb7bgfRdGMT46nEMvqzQAEvTRHnMxoKCkZ4SW_ELqHVa3J7v=w600-h1200",
+        "https://play-lh.googleusercontent.com/O_HbvgmbCRtFUDAkx3YBZhUpN7FgnAutWGCdcqw93hokAM-xj8gnP1aI7RijN_9FmK4=w600-h1200",
+        "https://play-lh.googleusercontent.com/5KkE4Bin79VA-E5zIPaZ8sBZGc6kIoUZyOMIAOXO96KdOiFSYSp6YxEOe4rTNjMbXfE=w600-h1200",
+        "https://play-lh.googleusercontent.com/EG4EVj-ge3PM3VjGmHjxUQXrzkYzo6ZWpViCRPMPQOrjNqHX5ci63oCBPUll-2zanQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/e7DH0dlDr0-KIfvTp-13fI1Q80YwjbV8mMMi1rmU--JJuTqNuqRex26WgjnJ9EfyBaQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/qmPSXmu4SfAswf4p3tOZ8RyJt7lCOTN2co6L_sHzqCu-6AuQZ95TiUDwt-6tusrl6gQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/qdFa0_v-ERrngpiTs1mnozHQrAshVXWGNsfYrKYYMb8lKKSLf7NPyMHLbtJOvAWbmyxG=w600-h1200",
+        "https://play-lh.googleusercontent.com/hT9iVMX4w6H4TDIsGsEQ398t-HtBBhCyBM7UxlXxUF8hzcpEb1CUPuCiwYZt68tym4Q=w600-h1200",
+        "https://play-lh.googleusercontent.com/jUL1yb6qwAkMy94ApKKbnRDtM4pOs6ldbmxPPXqlYpsyuYL9HSvyPJ58J8USEjO-1l8=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://www.sunshinecoast.qld.gov.au/council/contact-council/site-help/scc-app",
       "android": "https://play.google.com/store/apps/details?id=com.sunshinecoastcouncil.scc.app&hl=en",
@@ -1148,7 +1646,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Learn English and American culture through videos",
     "downloads": "500+ (Google Play)",
     "iconUrl": null,
-    "screenshots": [],
+    "screenshots": {},
     "platforms": {
       "website": "https://swipelore.com/",
       "android": "https://play.google.com/store/apps/details?id=com.companyname.swiplore.mobileapp&hl=en",
@@ -1160,19 +1658,22 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Discover public transport in Torino with ease! Take It Easy Torino helps you track arrivals in real-time, set smart alarms, and plan your trips smoothly. Whether you're a local or a visitor, our app ensures you never miss your ride again.",
     "downloads": "100+ (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/g31M58BL1Er_z_9sEaLU6StlciFGyECEZww0y06JouOE8Zqz4nKtpdYj1hHNuPZFsr4",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/HB45YV_UDNjCnJWXRnDNU19ez929jNNd2S3IKOFzrcE3yQdfMcCkjUeunCb27SmVyQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/ow3RBrjd2pq7rYzPkyvFZZwelt2qpRh4JnELHr7lY7xAx1FJgIjZZxQvgrnG5R0Ypw=w600-h1200",
-      "https://play-lh.googleusercontent.com/zPAuy7MsVgD412spalQ30JYwKDNHMPo_hgBkuZplleLsFbDExyGgoXxnAm23vrDvTSU=w600-h1200",
-      "https://play-lh.googleusercontent.com/OazCfL1CbZwTuvaB46WmqMNB8qBMqsi_V_dFigfQKlVfASA7f2pTCNfFbGntJfA9Npq2=w600-h1200",
-      "https://play-lh.googleusercontent.com/yhBAXhbfIOqEiey6Z-lc2p8pVScxjA5YqXwRXhX4O4q49sjsFF3BjP1jIjG5MuwULw=w600-h1200",
-      "https://play-lh.googleusercontent.com/WUqSdDiMnPKxbazCUKtxDi4MqRDKgDwv7j0vQ4joRH1lspPSPm5VxSnrp4XMjLVtZqjZ=w600-h1200",
-      "https://play-lh.googleusercontent.com/JplID7O20pjnCciFteQQLhlr9XDrjn7cPzzf7bYbBydcq5Tis5ysEf9imcGYYRNcJq4=w600-h1200",
-      "https://play-lh.googleusercontent.com/FzBA-VBldD04-Iy3SbKu-iOW4jlqMO-hisxh3f5Dq4FRdrh71v0s7a0itfzNqOhGyZk=w600-h1200",
-      "https://play-lh.googleusercontent.com/R-PqwdAtChWoSgXekx9LBPn3awQAmK1jH_f4DTKI3pGKmjDvnQvVNue2FOoXqhkAbQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/EztSD4u7kOH8MP3aIr1NnQGFFb-I-8jMp5FUQjlzSHD6Ot8ii1_Nxy-6pQb4IBAbKWod=w600-h1200",
-      "https://play-lh.googleusercontent.com/u_mINFVSoYa9yX_tC0vL78eh-H0_2rBmQvr7JkTtzXPwsoTgFXz2yPgOFdAunnW_mqk=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/HB45YV_UDNjCnJWXRnDNU19ez929jNNd2S3IKOFzrcE3yQdfMcCkjUeunCb27SmVyQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/ow3RBrjd2pq7rYzPkyvFZZwelt2qpRh4JnELHr7lY7xAx1FJgIjZZxQvgrnG5R0Ypw=w600-h1200",
+        "https://play-lh.googleusercontent.com/zPAuy7MsVgD412spalQ30JYwKDNHMPo_hgBkuZplleLsFbDExyGgoXxnAm23vrDvTSU=w600-h1200",
+        "https://play-lh.googleusercontent.com/OazCfL1CbZwTuvaB46WmqMNB8qBMqsi_V_dFigfQKlVfASA7f2pTCNfFbGntJfA9Npq2=w600-h1200",
+        "https://play-lh.googleusercontent.com/yhBAXhbfIOqEiey6Z-lc2p8pVScxjA5YqXwRXhX4O4q49sjsFF3BjP1jIjG5MuwULw=w600-h1200",
+        "https://play-lh.googleusercontent.com/WUqSdDiMnPKxbazCUKtxDi4MqRDKgDwv7j0vQ4joRH1lspPSPm5VxSnrp4XMjLVtZqjZ=w600-h1200",
+        "https://play-lh.googleusercontent.com/JplID7O20pjnCciFteQQLhlr9XDrjn7cPzzf7bYbBydcq5Tis5ysEf9imcGYYRNcJq4=w600-h1200",
+        "https://play-lh.googleusercontent.com/FzBA-VBldD04-Iy3SbKu-iOW4jlqMO-hisxh3f5Dq4FRdrh71v0s7a0itfzNqOhGyZk=w600-h1200",
+        "https://play-lh.googleusercontent.com/R-PqwdAtChWoSgXekx9LBPn3awQAmK1jH_f4DTKI3pGKmjDvnQvVNue2FOoXqhkAbQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/EztSD4u7kOH8MP3aIr1NnQGFFb-I-8jMp5FUQjlzSHD6Ot8ii1_Nxy-6pQb4IBAbKWod=w600-h1200",
+        "https://play-lh.googleusercontent.com/u_mINFVSoYa9yX_tC0vL78eh-H0_2rBmQvr7JkTtzXPwsoTgFXz2yPgOFdAunnW_mqk=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://davomelkumyan40.github.io/TakeItEasy.github.io",
       "android": "https://play.google.com/store/apps/details?id=com.takeiteasy.torino.app&pcampaignid=web_share"
@@ -1183,20 +1684,23 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Explore the movements of the Earth's tectonic plates from 600 million years ago to 200 million years in the future. Select a land mass and watch its movement as you scroll through the years.",
     "downloads": "10+ (Google Play)",
     "iconUrl": "https://play-lh.googleusercontent.com/dV01uQlL6inxWz2lJ4m7IAor_m4PnOl732Tmg0YRUVKgClu-_i3V342_1MMWRJ2wUA",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/atO1GGN5PrOMfpjD8dGEFRuJBdStQIVkjV9zpa2dupgs4rB7d_sQfhX1lSd6HvkBjZA=w600-h1200",
-      "https://play-lh.googleusercontent.com/0N1a_e2VL9vzww1fTJrqeQRQGYz5jHdl9Hsvj6e2J3fm4RfUBS_RhCye0jiKB6c8vvM=w600-h1200",
-      "https://play-lh.googleusercontent.com/mG7iILMEcITBbr-p_1vSdsJUAfB85cC3p9Efh8-jMTXQ5w5MESssiQAh6UlRLq1du83m=w600-h1200",
-      "https://play-lh.googleusercontent.com/T_uzITe1b9KyZaxTNPUTPWmmlOIPvjvL4n4XJZC1nPj6KcBa91bepEtMQSoPSF8h3Q=w600-h1200",
-      "https://play-lh.googleusercontent.com/NtsNueQXQs7GtmACQowg6_5ZxvQRLbNdHozjT8XmEkqfJpdf-2l1Tmr81OXHhviMcLk=w600-h1200",
-      "https://play-lh.googleusercontent.com/l0FXReBHD_OjIAJprvCkfAjPJkJGIVt4CUrbfe-iOctO3ZxhW6o1riMaNtZjyboS0Cc=w600-h1200",
-      "https://play-lh.googleusercontent.com/NEdugyYT3npgsKaNjRXkb1M7btw7Y8KaLbcjVqqd2WLEzT2Astg5Nidshj9nCfQUrvA=w600-h1200",
-      "https://play-lh.googleusercontent.com/eVyTnHiQIspA2EGjy1K8kCn2-ebmMWtxftff0Hm-o9cvM2iX9IBJiiAlNWFOEhzrCgk=w600-h1200",
-      "https://play-lh.googleusercontent.com/dHzKs-ZN-vOmls_MEFUCVS5yfySO79BfsDj1wFE3WKojwjJ7pEUIQpwBTntNA4KSezau=w600-h1200",
-      "https://play-lh.googleusercontent.com/VAlof1vFcjjnj2443suZDyVOCFP8mxN-0PLIaKDUuMBcUjrAfCLHgYRGm7ZlgWrKEA=w600-h1200",
-      "https://play-lh.googleusercontent.com/E7VgRfdiOcQtWbT6PJJgcRSQAsCBfplx2VzdwUC31vht1eCjhT9Pl9fnJSyxQbbQKaM4=w600-h1200",
-      "https://play-lh.googleusercontent.com/w9tGqZhHSOzicgbuMmOuxPk7Uo33qrpEgsJaTlzi4lhJXn_E3sY9DNa3KYS51NvjgVk=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/atO1GGN5PrOMfpjD8dGEFRuJBdStQIVkjV9zpa2dupgs4rB7d_sQfhX1lSd6HvkBjZA=w600-h1200",
+        "https://play-lh.googleusercontent.com/0N1a_e2VL9vzww1fTJrqeQRQGYz5jHdl9Hsvj6e2J3fm4RfUBS_RhCye0jiKB6c8vvM=w600-h1200",
+        "https://play-lh.googleusercontent.com/mG7iILMEcITBbr-p_1vSdsJUAfB85cC3p9Efh8-jMTXQ5w5MESssiQAh6UlRLq1du83m=w600-h1200",
+        "https://play-lh.googleusercontent.com/T_uzITe1b9KyZaxTNPUTPWmmlOIPvjvL4n4XJZC1nPj6KcBa91bepEtMQSoPSF8h3Q=w600-h1200",
+        "https://play-lh.googleusercontent.com/NtsNueQXQs7GtmACQowg6_5ZxvQRLbNdHozjT8XmEkqfJpdf-2l1Tmr81OXHhviMcLk=w600-h1200",
+        "https://play-lh.googleusercontent.com/l0FXReBHD_OjIAJprvCkfAjPJkJGIVt4CUrbfe-iOctO3ZxhW6o1riMaNtZjyboS0Cc=w600-h1200",
+        "https://play-lh.googleusercontent.com/NEdugyYT3npgsKaNjRXkb1M7btw7Y8KaLbcjVqqd2WLEzT2Astg5Nidshj9nCfQUrvA=w600-h1200",
+        "https://play-lh.googleusercontent.com/eVyTnHiQIspA2EGjy1K8kCn2-ebmMWtxftff0Hm-o9cvM2iX9IBJiiAlNWFOEhzrCgk=w600-h1200",
+        "https://play-lh.googleusercontent.com/dHzKs-ZN-vOmls_MEFUCVS5yfySO79BfsDj1wFE3WKojwjJ7pEUIQpwBTntNA4KSezau=w600-h1200",
+        "https://play-lh.googleusercontent.com/VAlof1vFcjjnj2443suZDyVOCFP8mxN-0PLIaKDUuMBcUjrAfCLHgYRGm7ZlgWrKEA=w600-h1200",
+        "https://play-lh.googleusercontent.com/E7VgRfdiOcQtWbT6PJJgcRSQAsCBfplx2VzdwUC31vht1eCjhT9Pl9fnJSyxQbbQKaM4=w600-h1200",
+        "https://play-lh.googleusercontent.com/w9tGqZhHSOzicgbuMmOuxPk7Uo33qrpEgsJaTlzi4lhJXn_E3sY9DNa3KYS51NvjgVk=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.companyname.tectonicplatesmaui"
     }
@@ -1206,18 +1710,59 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Learn music instruments from scratch",
     "downloads": "12 Mio (Apple App Store & Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a7/10/23/a71023b8-8d1e-f4a1-dd3e-fa4304661844/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/27/91/74/279174e0-6eb4-f24e-6caf-f77d0c4d9869/5d861ff2-d3c1-4a41-b424-6c05a18bd8e8_en_wind_iphone55_01.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/1b/4e/c11b4e0a-a27a-7fe5-d2a5-d182a2bcd06e/f71e42fc-c8d2-4f5f-85af-7c623f90df5d_en_wind_iphone55_02.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/7a/4b/4f7a4be7-7e24-10b4-e0ba-34df27078519/4d72df29-dfc3-4f10-95c7-a397d36eb34e_en_wind_iphone55_03.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/4f/e0/674fe010-440d-db72-838d-4e62c14e1cb9/8e08c8fa-2a1f-42c6-8a3f-623f85b6b157_en_wind_iphone55_04.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b3/85/ca/b385ca84-6692-3e2d-fe84-555a821c3203/e20629ee-23f3-474b-b8a4-74957228fcda_en_wind_iphone55_05.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8b/10/57/8b10577d-f78f-6369-10ae-e9c3e173e9a8/211fdc47-af5a-4a4b-b466-9b1825cb32e9_en_wind_iphone55_06.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/82/4c/f3824cb1-dd1d-6d04-fd35-f55706c72689/79ea90f2-c5eb-447a-928a-96cca5f14067_en_wind_iphone55_07.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2f/c9/96/2fc9961f-8c60-c2a6-a1fc-ca4b34c8d568/0bab23d8-d4e2-4d1e-b5c6-9739d9fb3f1b_en_wind_iphone55_08.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0c/db/68/0cdb68be-3135-be29-fa85-bbc19236ad64/f6319f53-d61e-4d14-b8ca-7232b125ecc0_en_wind_iphone55_09.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/8d/f6/808df650-6f25-09e7-2427-bff619fb7d71/03ae33e7-7e28-409b-8285-c56bc64989f2_en_wind_iphone55_10.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/27/91/74/279174e0-6eb4-f24e-6caf-f77d0c4d9869/5d861ff2-d3c1-4a41-b424-6c05a18bd8e8_en_wind_iphone55_01.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/1b/4e/c11b4e0a-a27a-7fe5-d2a5-d182a2bcd06e/f71e42fc-c8d2-4f5f-85af-7c623f90df5d_en_wind_iphone55_02.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/7a/4b/4f7a4be7-7e24-10b4-e0ba-34df27078519/4d72df29-dfc3-4f10-95c7-a397d36eb34e_en_wind_iphone55_03.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/4f/e0/674fe010-440d-db72-838d-4e62c14e1cb9/8e08c8fa-2a1f-42c6-8a3f-623f85b6b157_en_wind_iphone55_04.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b3/85/ca/b385ca84-6692-3e2d-fe84-555a821c3203/e20629ee-23f3-474b-b8a4-74957228fcda_en_wind_iphone55_05.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8b/10/57/8b10577d-f78f-6369-10ae-e9c3e173e9a8/211fdc47-af5a-4a4b-b466-9b1825cb32e9_en_wind_iphone55_06.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/82/4c/f3824cb1-dd1d-6d04-fd35-f55706c72689/79ea90f2-c5eb-447a-928a-96cca5f14067_en_wind_iphone55_07.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2f/c9/96/2fc9961f-8c60-c2a6-a1fc-ca4b34c8d568/0bab23d8-d4e2-4d1e-b5c6-9739d9fb3f1b_en_wind_iphone55_08.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0c/db/68/0cdb68be-3135-be29-fa85-bbc19236ad64/f6319f53-d61e-4d14-b8ca-7232b125ecc0_en_wind_iphone55_09.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/8d/f6/808df650-6f25-09e7-2427-bff619fb7d71/03ae33e7-7e28-409b-8285-c56bc64989f2_en_wind_iphone55_10.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a1/32/56/a1325601-573b-d5c8-cb18-e75da8bae8cf/7a62d644-4c71-4745-8c46-bb3aeb98115c_en_wind_ipadPro_01.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/25/07/6e/25076ed8-fa18-a60b-a55e-d7c17f1f419c/8496815f-f109-4d49-9fa8-bd8069dccfcf_en_wind_ipadPro_02.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c7/22/7a/c7227ae0-22c1-d09a-1335-e5f47c9cf754/e5efd8ea-ded6-46cb-8985-bbb55975b96d_en_wind_ipadPro_03.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/b3/8f/65b38fa0-3b16-a4eb-20c9-596422e5a468/e6b2ccf8-4296-4489-896b-aa11c5b9838c_en_wind_ipadPro_04.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3f/9e/1d/3f9e1daa-ee93-72c5-c665-9d48924caaab/fd4048d4-d77b-4ff0-880e-b2675f198005_en_wind_ipadPro_05.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bd/f6/1a/bdf61a88-b5a3-2e60-e88e-b1d5abe8b089/8b234845-6b8c-42db-813b-6b88573a41a6_en_wind_ipadPro_06.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2a/81/88/2a8188b6-3890-2a91-d9f5-b12378e8b0e8/3ea22f81-7381-4202-a67e-e582f8052c52_en_wind_ipadPro_07.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/78/e9/77/78e977c1-67de-55de-58d3-fa3cd848772d/1350eb3b-321b-4b76-a4bd-1857e2d832f9_en_wind_ipadPro_08.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/31/f0/da/31f0da01-1b77-be4f-fc94-a8d722c18175/33bbfe17-bf14-49a4-b910-8641e4137fde_en_wind_ipadPro_09.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/91/28/d6/9128d674-e2cd-b1b4-dfa0-c8a341014428/668f70ae-dd14-44bd-b77a-f2c1eafc81d3_en_wind_ipadPro_10.png/576x768bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/0ikB8CEemGT_nc4gawLsc2yfNzHIj1knRMMudW8lHZyfvAVSh01QusI2dHQHgt2qdQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/rbTwkEsdP5W_f-V8Ooi2pxcGRafdDLt9mrwjo-i2kfUwattjyTfTncAnvQTO_sRuf8w=w600-h1200",
+        "https://play-lh.googleusercontent.com/ruYAVlB2XoHBNt0mJiIufksf9NLGHJrB8KjrxCqwM61ODAvzu4QyrLDhIEZ026tIaTuN=w600-h1200",
+        "https://play-lh.googleusercontent.com/D5bSLjl4f-hYr2GmhO0kU7EGfZl4RCQDpSGQ9iDsZcbQSx1qt0A5x28pbgPWPtgeYQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/qKEL0MO5IEa1YP0IVjXh6BeEq0TeqIZMhGh6NIiugmpoPPyKVeFuNuN_etGFWo8Jkw=w600-h1200",
+        "https://play-lh.googleusercontent.com/JBtSkD3AwT1hB53oV9T164E6v-w8xw3ASGEdoqEc24R9_spS0mrUIxi6koyTTxZQWtTj=w600-h1200",
+        "https://play-lh.googleusercontent.com/GCjnnNWRfc4AMyS18rCr3dmXUEwjMrn1TlfnBnk_8N4BjUDgziem0GyktxJ1qiw3_XM=w600-h1200",
+        "https://play-lh.googleusercontent.com/xymvrJMmaPRl6BwGl19wktQblxKnN1o7l1nz2BdWAA1S13GD5rJO7BRjzAzvmH9T6oBo=w600-h1200",
+        "https://play-lh.googleusercontent.com/mY2akTBneHKkgT6CSk4N2t5vvTrEVYJv3j998tB2UtsqSu4Eihnk12E8ZFBNmLPf-g=w600-h1200",
+        "https://play-lh.googleusercontent.com/S-hyxAdtgPLpyqZFQG4iuTTw7TREXRpmTxjw1p21ELLt7iOvJYm0c_HefmgSoZCsUF0=w600-h1200",
+        "https://play-lh.googleusercontent.com/uCEvW6P6VQR7iSm44qf6x-C3lfrgk9_0cVVWFZv9-KCk1iuUBSOjMa9EQmOf54IJYQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/oslkNpF4yfzIcXrsaOD0nJpOlsGHMGeytGZLW9J7fYCVdskvBQsVVNbyE_qftqjTAig=w600-h1200",
+        "https://play-lh.googleusercontent.com/RBKhZ82lU5eTBbkFZFk-cmq2HCzZPI4RNWSp7mssAnQb94syqgd1Fdu5q_lYv8jVnhLV=w600-h1200",
+        "https://play-lh.googleusercontent.com/OU6W_-dLUwF1H1ubB_kV9Z8vAxRPlrpy0m0n8iX1CLmkhMWy-pGoW0ArT6lYzaekognn=w600-h1200",
+        "https://play-lh.googleusercontent.com/0g7if5kFj5TiGatvlwEOnyg2KclPAPQEyWKWnWFDhWuAofVJ-mVNXTiEqs4b0DHvsxrG=w600-h1200",
+        "https://play-lh.googleusercontent.com/sjOI5XFGPuFej405kFLu5RJEiNTyqQlizyGrE4bfXEveyX8DBl4hcTZcZblQd2S1Bw8=w600-h1200",
+        "https://play-lh.googleusercontent.com/dIiboyYEIGR0KuHcvj-Hn6vxnGi1lh4h0Lm1Veb-_ju2xgvLc1hgSmn4e-dwaytfcw=w600-h1200",
+        "https://play-lh.googleusercontent.com/Cs9OST9jMsByUeF-Msi0wb1YEVx7doMqGc2jtt4LB4xniyHcDSFJWiexrZEM1yRj8EM=w600-h1200",
+        "https://play-lh.googleusercontent.com/e8DxI-zvJHjTUi8hVt1iuYFVNEjHsGVGNPNutm0tMkgeS5-JAFrqSJU_2y0XOQRk4nE=w600-h1200",
+        "https://play-lh.googleusercontent.com/Pdj5iu6sXO9CRKMXEXDwK-f8xS1JBDyfdGTS6g-1wCzIc2x1WF72gUUhqPSL1b3YZw=w600-h1200",
+        "https://play-lh.googleusercontent.com/2NciPuZh7MVh2oJFxQjuxqUBbr6w_qrnJOTI0pY1kijnfuYijvzMGjDcZYGajdRZuW0=w600-h1200",
+        "https://play-lh.googleusercontent.com/tbGISzGbu4YsMJF5NSe9TLw1Ti9T8WV4d4-0SJeaVEpJj7vWP8MUjxul89c0LjcEscM=w600-h1200",
+        "https://play-lh.googleusercontent.com/xvbShZgRUHsojPkzaUi5h-Twv-3rPDSzpYSCbxtImg1QVAWQZDFfaG7kp8jX9YuRiTQ0=w600-h1200",
+        "https://play-lh.googleusercontent.com/-GsgXELwbYxpy3zmD7--Lwda4zbiJYkl6XXCw36qUD9ouXk-ZGLWBotnLexBBukGFps=w600-h1200"
+      ]
+    },
     "platforms": {
       "ios": "https://apps.apple.com/us/app/tonestro-music-lessons/id1365630760",
       "android": "https://play.google.com/store/apps/details?id=at.funmusic.sepp.mobile"
@@ -1228,19 +1773,22 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Travel Expense Tracker App with Online-First Offline Accesible Approach. Manage Trips, Expeses, Expense Categories. Online Data Store, Offline Data Access",
     "downloads": "15+ (Google Play) 25+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a9/83/8d/a9838d4a-a6be-5f2c-fc5c-7891bda4f888/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/UiHe30kEWF-gB_visud3SC6ZFTugOpyM3Ga1IfDyUaWSUWT68W-n2HwX9Q42LiGqZsg=w600-h1200",
-      "https://play-lh.googleusercontent.com/qHn4_swo6RtaFhmfxvVaqwa1TidNWzC6Vr7HZ_hzvDd0Ia8vM6B6Oc8Di0fDyO7_J8E=w600-h1200",
-      "https://play-lh.googleusercontent.com/91WNGp3nbWdhbbKw3qzydd8CH4vLpzC_b3wrzAqHNNB9-b8osT5m9amyZU7Jg1Tbs-M=w600-h1200",
-      "https://play-lh.googleusercontent.com/m28DWnvlhMvgN8zKqUk_GX1wnCuZ1HHX-lZkJ3hgIHw2XNE6f-NjiM3PvL7IyRFJrA=w600-h1200",
-      "https://play-lh.googleusercontent.com/l5Ah00oGXtI4Aq5ZYYwhfdulRd8q99TdKdv25S8idv03-CfyNeQtOPCDlsTwQ7Sy8Q=w600-h1200",
-      "https://play-lh.googleusercontent.com/xy_suJFTHKQpC3XM3meGnRurn6jQPLLJvEhrzAEUgv1H5bJFMiWbKMSiEbVw74Kxslnl=w600-h1200",
-      "https://play-lh.googleusercontent.com/Zp6R7pevJnohq35qfAfKV2pezwYycVNMT4lJP9SGHn0mIeQObxCp3ARIfanMG6g_2fM=w600-h1200",
-      "https://play-lh.googleusercontent.com/pCl0V25hmegBmwMp8cJNaXYDtGiEiTt6ibLABpjVpVFhg4DdN76uRtpybWLfSzN61nsn=w600-h1200",
-      "https://play-lh.googleusercontent.com/y_4RrRtqehzdZYnaHNdmGrcfp3Aoz-mN37BzfpweoajGFtSMPFhg9oEDhQ_V4AT74LI=w600-h1200",
-      "https://play-lh.googleusercontent.com/g5NKfTeUlLuTVh86UvxTyMsVHkp9RdfrNRaNIHQi2KhpqtObuYDHkyNYhe5Hfyg2_fE=w600-h1200",
-      "https://play-lh.googleusercontent.com/iNZ0Ykw68FhhtWceE9TP6X1pyLArnqN5di3enDbf1_VpBSASEhvf0a-J5aPvtYBlxx4=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/UiHe30kEWF-gB_visud3SC6ZFTugOpyM3Ga1IfDyUaWSUWT68W-n2HwX9Q42LiGqZsg=w600-h1200",
+        "https://play-lh.googleusercontent.com/qHn4_swo6RtaFhmfxvVaqwa1TidNWzC6Vr7HZ_hzvDd0Ia8vM6B6Oc8Di0fDyO7_J8E=w600-h1200",
+        "https://play-lh.googleusercontent.com/91WNGp3nbWdhbbKw3qzydd8CH4vLpzC_b3wrzAqHNNB9-b8osT5m9amyZU7Jg1Tbs-M=w600-h1200",
+        "https://play-lh.googleusercontent.com/m28DWnvlhMvgN8zKqUk_GX1wnCuZ1HHX-lZkJ3hgIHw2XNE6f-NjiM3PvL7IyRFJrA=w600-h1200",
+        "https://play-lh.googleusercontent.com/l5Ah00oGXtI4Aq5ZYYwhfdulRd8q99TdKdv25S8idv03-CfyNeQtOPCDlsTwQ7Sy8Q=w600-h1200",
+        "https://play-lh.googleusercontent.com/xy_suJFTHKQpC3XM3meGnRurn6jQPLLJvEhrzAEUgv1H5bJFMiWbKMSiEbVw74Kxslnl=w600-h1200",
+        "https://play-lh.googleusercontent.com/Zp6R7pevJnohq35qfAfKV2pezwYycVNMT4lJP9SGHn0mIeQObxCp3ARIfanMG6g_2fM=w600-h1200",
+        "https://play-lh.googleusercontent.com/pCl0V25hmegBmwMp8cJNaXYDtGiEiTt6ibLABpjVpVFhg4DdN76uRtpybWLfSzN61nsn=w600-h1200",
+        "https://play-lh.googleusercontent.com/y_4RrRtqehzdZYnaHNdmGrcfp3Aoz-mN37BzfpweoajGFtSMPFhg9oEDhQ_V4AT74LI=w600-h1200",
+        "https://play-lh.googleusercontent.com/g5NKfTeUlLuTVh86UvxTyMsVHkp9RdfrNRaNIHQi2KhpqtObuYDHkyNYhe5Hfyg2_fE=w600-h1200",
+        "https://play-lh.googleusercontent.com/iNZ0Ykw68FhhtWceE9TP6X1pyLArnqN5di3enDbf1_VpBSASEhvf0a-J5aPvtYBlxx4=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.abhayprince.travelexpensetracker",
       "ios": "https://apps.apple.com/in/app/travel-expense-tracker-lite/id6746136868"
@@ -1251,17 +1799,20 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Trip tracking app with statistics",
     "downloads": "50+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c4/63/7a/c4637a8c-5b2c-6787-f718-d112f1f1706d/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/rD8Z9n4KaHLJKjrp2Gm-0zfw71GgRGJdDgqurH1Zf0C_yQybe3HzN2eC3QDmJINsVEc=w600-h1200",
-      "https://play-lh.googleusercontent.com/_wauBTm5l35a3bK6z-w31W8xrCUhvEFY3TRM3zdcneNH271yn8AfJzp6Smh3jhxMTg=w600-h1200",
-      "https://play-lh.googleusercontent.com/xSMvP3c8BNHyEyg9D5ptNUGspftd81j7vHVkD3e9pJCYxFxUQ9HmYTqPWKgcmeb1Yc8=w600-h1200",
-      "https://play-lh.googleusercontent.com/OqBMGS-uKagNvuPMvajoGVrRG3xSv1bq9MMMq0BQdr7MjYRen3JvxckskTpCmmaQwIY=w600-h1200",
-      "https://play-lh.googleusercontent.com/Equ8SiYVZtWdMsk3jRXAGGSNjEPgRc0AspVey_6QX-jMuVYeVkHUZrKl91ytso-9pG8=w600-h1200",
-      "https://play-lh.googleusercontent.com/gBcGnMRw4R-3dGCPGUsZ8hCdOj8AQUjbURI4y7Kt5DZNlEU1DDrSMbFNR65KVAXVFA8=w600-h1200",
-      "https://play-lh.googleusercontent.com/ycDw8uNy27YdE2Bd2IZZEkzJKU5XuGkNIKQAqTWdtLa6YxLqGcGkwByEUlAUTxNa8Uip=w600-h1200",
-      "https://play-lh.googleusercontent.com/HLxTHHX1tA1GzG3Yguo5DQV2dPyk_Azz31e2TDSGammX2sihRD5dbHg-qzI70zJILA=w600-h1200",
-      "https://play-lh.googleusercontent.com/8iLgqByK4WvFKZZPSkuXMS0GAD3o9nj-sy8m8kjkg_b0DdpofkitEPWMYDKuE9U_zMsb=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/rD8Z9n4KaHLJKjrp2Gm-0zfw71GgRGJdDgqurH1Zf0C_yQybe3HzN2eC3QDmJINsVEc=w600-h1200",
+        "https://play-lh.googleusercontent.com/_wauBTm5l35a3bK6z-w31W8xrCUhvEFY3TRM3zdcneNH271yn8AfJzp6Smh3jhxMTg=w600-h1200",
+        "https://play-lh.googleusercontent.com/xSMvP3c8BNHyEyg9D5ptNUGspftd81j7vHVkD3e9pJCYxFxUQ9HmYTqPWKgcmeb1Yc8=w600-h1200",
+        "https://play-lh.googleusercontent.com/OqBMGS-uKagNvuPMvajoGVrRG3xSv1bq9MMMq0BQdr7MjYRen3JvxckskTpCmmaQwIY=w600-h1200",
+        "https://play-lh.googleusercontent.com/Equ8SiYVZtWdMsk3jRXAGGSNjEPgRc0AspVey_6QX-jMuVYeVkHUZrKl91ytso-9pG8=w600-h1200",
+        "https://play-lh.googleusercontent.com/gBcGnMRw4R-3dGCPGUsZ8hCdOj8AQUjbURI4y7Kt5DZNlEU1DDrSMbFNR65KVAXVFA8=w600-h1200",
+        "https://play-lh.googleusercontent.com/ycDw8uNy27YdE2Bd2IZZEkzJKU5XuGkNIKQAqTWdtLa6YxLqGcGkwByEUlAUTxNa8Uip=w600-h1200",
+        "https://play-lh.googleusercontent.com/HLxTHHX1tA1GzG3Yguo5DQV2dPyk_Azz31e2TDSGammX2sihRD5dbHg-qzI70zJILA=w600-h1200",
+        "https://play-lh.googleusercontent.com/8iLgqByK4WvFKZZPSkuXMS0GAD3o9nj-sy8m8kjkg_b0DdpofkitEPWMYDKuE9U_zMsb=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://tripsta.app/",
       "android": "https://play.google.com/store/apps/details?id=com.universley.tripsta&hl=en",
@@ -1273,16 +1824,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "TV Show Tracker let you discover, track and comment your favorite TV shows & movies.",
     "downloads": "100K+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/96/7f/e8967f69-45f9-fc69-b007-dcc5584ba6a7/AppIcons-0-1x_U007epad-0-0-0-8-0-0-85-220-0.png/512x512bb.jpg",
-    "screenshots": [
-      "https://play-lh.googleusercontent.com/Ls-vTvAXmAMG9XT_9obmP9viMvOIr7sUVF9XS_Q94rTNsiFcAM_ZPJ6Qbbva6pswZQ=w600-h1200",
-      "https://play-lh.googleusercontent.com/gvS1Uj2cmG82o-o5zo5jAqtJF8G8wQ5D9RAUyhGMFlo65ITRhhWFAV7erDvDX53thVY=w600-h1200",
-      "https://play-lh.googleusercontent.com/RDUrw_Pun0Nw1ptch_z7v7xQGH5PJXC2JaSv0qLk3I1PF8OQkJ0raIBAE6-zT_wTSe8R=w600-h1200",
-      "https://play-lh.googleusercontent.com/CeR3nqT01YPRlwICk2wXga5j2n0johI3dpqonv6fBCi-BFzfO-tcUcaPFG7lbgFA9CA=w600-h1200",
-      "https://play-lh.googleusercontent.com/CjtqpyOwDxcb4rzibZK0kfnbcHn_t_WNQ-_sRguIti4cW-VghemMf1BGwu9FVNYNhWw=w600-h1200",
-      "https://play-lh.googleusercontent.com/uyi6JjIUDi5vZGny37GfALr9rm4ZGv6Ul_Zgv0IXwZ_-GE-3kJDvd80QYxNTZconxCo=w600-h1200",
-      "https://play-lh.googleusercontent.com/DoKmBQdMO0a3TUNerEKlCKdomAE2wn2KScKsb3SvF6ZfCbfLv7XSLAbvhPgEzrak7Gg=w600-h1200",
-      "https://play-lh.googleusercontent.com/PAKlNTvFADAX8JaOsWz3WSdbdhoUchBAoiflb0t0vEfaF5TSVD46BHZ8ppzWNUAg4Wo=w600-h1200"
-    ],
+    "screenshots": {
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/Ls-vTvAXmAMG9XT_9obmP9viMvOIr7sUVF9XS_Q94rTNsiFcAM_ZPJ6Qbbva6pswZQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/gvS1Uj2cmG82o-o5zo5jAqtJF8G8wQ5D9RAUyhGMFlo65ITRhhWFAV7erDvDX53thVY=w600-h1200",
+        "https://play-lh.googleusercontent.com/RDUrw_Pun0Nw1ptch_z7v7xQGH5PJXC2JaSv0qLk3I1PF8OQkJ0raIBAE6-zT_wTSe8R=w600-h1200",
+        "https://play-lh.googleusercontent.com/CeR3nqT01YPRlwICk2wXga5j2n0johI3dpqonv6fBCi-BFzfO-tcUcaPFG7lbgFA9CA=w600-h1200",
+        "https://play-lh.googleusercontent.com/CjtqpyOwDxcb4rzibZK0kfnbcHn_t_WNQ-_sRguIti4cW-VghemMf1BGwu9FVNYNhWw=w600-h1200",
+        "https://play-lh.googleusercontent.com/uyi6JjIUDi5vZGny37GfALr9rm4ZGv6Ul_Zgv0IXwZ_-GE-3kJDvd80QYxNTZconxCo=w600-h1200",
+        "https://play-lh.googleusercontent.com/DoKmBQdMO0a3TUNerEKlCKdomAE2wn2KScKsb3SvF6ZfCbfLv7XSLAbvhPgEzrak7Gg=w600-h1200",
+        "https://play-lh.googleusercontent.com/PAKlNTvFADAX8JaOsWz3WSdbdhoUchBAoiflb0t0vEfaF5TSVD46BHZ8ppzWNUAg4Wo=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.jonathanantoine.TVST&hl=en",
       "ios": "https://apps.apple.com/nl/app/tv-show-tracker-trakt-client/id1228141510?l=en-US"
@@ -1293,12 +1847,29 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Expense Tracker for Couples",
     "downloads": "100+ (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9d/db/d4/9ddbd43b-4308-7e42-6d40-e518ddfaea49/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/03/13/1a/03131acf-cc03-d1f5-a995-4dc2a4b56c77/b3150eb8-16cb-4056-9605-13342cbbba17_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.52.54.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/af/68/60/af68608b-4835-0d4f-fecf-206c08ad58b4/a6e9746f-b047-4b6b-b86c-43be7b323108_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.53.10.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/4b/68/104b6897-3b27-75a1-cb5b-98cb242cdcbd/0504f7cf-dd8c-4548-b367-3e43f51ae20b_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.53.26.png/392x696bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/cf/8b/49cf8b41-9ec9-00ff-6055-d1b6c50693b1/9ec35ae2-f174-4a22-92dd-91a7808bcab5_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.53.38.png/392x696bb.png"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/03/13/1a/03131acf-cc03-d1f5-a995-4dc2a4b56c77/b3150eb8-16cb-4056-9605-13342cbbba17_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.52.54.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/af/68/60/af68608b-4835-0d4f-fecf-206c08ad58b4/a6e9746f-b047-4b6b-b86c-43be7b323108_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.53.10.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/4b/68/104b6897-3b27-75a1-cb5b-98cb242cdcbd/0504f7cf-dd8c-4548-b367-3e43f51ae20b_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.53.26.png/392x696bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/cf/8b/49cf8b41-9ec9-00ff-6055-d1b6c50693b1/9ec35ae2-f174-4a22-92dd-91a7808bcab5_Simulator_Screenshot_-_iPhone_SE__U00283rd_generation_U0029_-_2024-05-06_at_22.53.38.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fa/d0/41/fad0413f-aba7-6b68-a59a-29eb62f560db/d53b4ebe-2a8c-45fe-b627-a64d9b893879_Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029_-_2024-05-06_at_22.37.03.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/37/a7/e8/37a7e81f-dc93-8a3b-0532-7f4c1276fe5f/90f13595-444e-4c88-9566-0197ab75c5a6_Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029_-_2024-05-06_at_22.37.00.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c4/54/d7/c454d7b0-8774-272d-8d76-df2b9c01736c/e951eea5-fcc2-4304-bd59-0109c056b5de_Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029_-_2024-05-06_at_22.36.45.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/dc/a5/8fdca504-bde2-af65-3366-8c6cf7222c17/d6c9013d-da5d-4350-8ca7-aac6a991bac7_Simulator_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029_-_2024-05-06_at_22.46.54.png/576x768bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/sqYee2GC3uTEfQQE-qpM7ANUPsR_ictxPFP6D1m-Wsgj5EtyOl7ryNksFhP3H27pVoaCZGSWWpWupKpRyPBJ=w600-h1200",
+        "https://play-lh.googleusercontent.com/HRH83IBNwGiSpKPDzdtB5dU2Xsw_YO0hkb8nnu0uqXQosLL9OhZdgwHoENNrVMW0E2O_yIRbCbnZrFu0ONKgVg=w600-h1200",
+        "https://play-lh.googleusercontent.com/39wqjjiesAmtvmOVLOAkkYfHkNx6PdzgReHWLdfVu0qXYQVO_UIXhBkmqRdOQY_uloxKxCxUFD4WFUkRCZc-=w600-h1200",
+        "https://play-lh.googleusercontent.com/kw6I5otCp82t5iFj2x9Uild5qHSAJecw7w_444K4bImV0qIrpubbw7yatihqoW1vRfZslRUxkruBkZVo48OJ-0Q=w600-h1200",
+        "https://play-lh.googleusercontent.com/krZ5sW1CdM1Xn3KzsmGajyw2dJfSrV-Fm2NdjH4qXALZHcTG1e-5bSkbaNBrUOWvLgCyBnfz7mzEd9ZEvZ8RtQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/thq2W1zK0rfwOXtAYGVnv7kJb87NnRobA1Xex3xq5DMGymOFha--cDBsSlEHBxeVtrJiLCRMGd0VM8wjw4QVtw=w600-h1200"
+      ]
+    },
     "platforms": {
       "website": "https://www.williambelle.co/apps/unity-pay",
       "android": "https://play.google.com/store/apps/details?id=co.williambelle.unitypay&hl=en&hl=en",
@@ -1310,16 +1881,45 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Dutch social security and employment agency.",
     "downloads": "100K+ (Google Play) 100K+ (App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e4/ef/8e/e4ef8e74-1488-da63-2ec3-94ab82490185/appicon_ios-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c2/22/6b/c2226b6d-39c0-437e-d90e-a7c1878844f9/9af348ac-4ade-45e6-a0f6-fa8aa602be23_1._iPad_-_Intro.png/552x414bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/32/91/a5/3291a560-8bec-0396-ca29-b3473548f66a/14cac9b1-ffdf-4971-9e1e-5eaa6e6fa2e8_2._iPad_-_IKO.png/552x414bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9e/fb/ca/9efbca41-55f2-f4d9-fb04-52b454de0d09/9b31fe3d-fad5-453b-91d3-6017827df371_3._iPad_-_Betaalinformatie.png/552x414bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dd/95/82/dd9582cb-2dbe-eaa0-8d43-3096c3c1318a/7b352483-f4a9-481f-b132-05e369e23079_4._iPad_-_Sollicitatieactiviteiten.png/552x414bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6f/6d/fe/6f6dfe81-3091-ec77-2654-f357fed6753a/34028e33-eed1-43ae-bf39-37fa55762586_5._iPad_-_ZBM.png/552x414bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/df/11/57/df1157a5-b45d-cf16-7bee-34659e3b8c75/6a861c7f-007c-40e7-901d-20ce7e07c8d0_6._iPad_-_AFS.png/552x414bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d9/11/ad/d911add2-ae1d-dccf-40b1-681632276bab/1753b348-a6db-4276-92a7-22b27c00d5a9_7._iPad_-_DarkMode.png/552x414bb.png",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/0c/a4/140ca416-3143-5c2a-4316-af629e7a48f0/72478fec-bbb6-4969-8229-297a2c1280d5_8._iPad_-_Pushnotificaties.png/552x414bb.png"
-    ],
+    "screenshots": {
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c2/22/6b/c2226b6d-39c0-437e-d90e-a7c1878844f9/9af348ac-4ade-45e6-a0f6-fa8aa602be23_1._iPad_-_Intro.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/32/91/a5/3291a560-8bec-0396-ca29-b3473548f66a/14cac9b1-ffdf-4971-9e1e-5eaa6e6fa2e8_2._iPad_-_IKO.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9e/fb/ca/9efbca41-55f2-f4d9-fb04-52b454de0d09/9b31fe3d-fad5-453b-91d3-6017827df371_3._iPad_-_Betaalinformatie.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dd/95/82/dd9582cb-2dbe-eaa0-8d43-3096c3c1318a/7b352483-f4a9-481f-b132-05e369e23079_4._iPad_-_Sollicitatieactiviteiten.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6f/6d/fe/6f6dfe81-3091-ec77-2654-f357fed6753a/34028e33-eed1-43ae-bf39-37fa55762586_5._iPad_-_ZBM.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/df/11/57/df1157a5-b45d-cf16-7bee-34659e3b8c75/6a861c7f-007c-40e7-901d-20ce7e07c8d0_6._iPad_-_AFS.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d9/11/ad/d911add2-ae1d-dccf-40b1-681632276bab/1753b348-a6db-4276-92a7-22b27c00d5a9_7._iPad_-_DarkMode.png/552x414bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/0c/a4/140ca416-3143-5c2a-4316-af629e7a48f0/72478fec-bbb6-4969-8229-297a2c1280d5_8._iPad_-_Pushnotificaties.png/552x414bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/FByt8SOrnYGJGdTJ3oQ8LGSigvHJMydpBy5_40gTX8jcGMdL7P6DtjYB8dPHpDOMaY8=w600-h1200",
+        "https://play-lh.googleusercontent.com/ascO8IsF6LkyXAnVoCEiyxYa7p0umnvvKeeA2eGGqRn0-B1LIOe7FyWapC6doreA9dIC=w600-h1200",
+        "https://play-lh.googleusercontent.com/PrXOdQV-o-tP3_tmBe1Jy96hFHMqUasNTrnhtzKB7wtE9eujCysRIlg7uRvHbp035A7R=w600-h1200",
+        "https://play-lh.googleusercontent.com/aFnFC9MNXmJ-yQezaAutnAli96hJYTsBfK1nWj9JMN0L7EPcZ0e34iQ2OEGy66MgAQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/zMQzn30GX5XA0IWxxpXTGh8Lh2xnwXRFdXJ1YMWGAYPdyjnGo-pOO6lNoyNTNTk_9sAm=w600-h1200",
+        "https://play-lh.googleusercontent.com/kSo6CcmW9LPTH8qjIg8qnk60aaNmNZEzWYuOaGXoclC1Z2ACrLNZxA3KhWtL3sPfCOA8=w600-h1200",
+        "https://play-lh.googleusercontent.com/XpHD08WTBQPxyYlw7RHfdTs8fs2NxEfIy7CTB0pXmQ7NIdMsYNsSvmS_rgDZBstsBg=w600-h1200",
+        "https://play-lh.googleusercontent.com/yv_4KPotuwFBIXS120qn-UpQBIsvF4jHMXSxSQOtJtV4zYdcAIRIpOBjLjW2uPSzb3w=w600-h1200",
+        "https://play-lh.googleusercontent.com/GF1NDGAvTxwCHlg8TXCPVWi-FLUkXjq7yqzsJ42RBm5bmF4G9THEMtZvDLXFXZsJcGI=w600-h1200",
+        "https://play-lh.googleusercontent.com/XwqhfsWd0O6PFUI-y6varLTJunovVIb-2rNs4kxMS1DLCqV8aaAsYjeOhBoI_la6yA4=w600-h1200",
+        "https://play-lh.googleusercontent.com/GD3NmtsGzlqYpmaFuKKXbk3NCc8kprO16XYj_NBe-n-DWBKvG931WWEpbFXK1EAR4BA=w600-h1200",
+        "https://play-lh.googleusercontent.com/cT7m4kE-7L_AoWfcXx8SoES-GP85HmMGguJUdEJ7PsBfNYrsrStMdMAfz5W9W1rLfeE=w600-h1200",
+        "https://play-lh.googleusercontent.com/AtSXbUKOFcaFaj-0ynLNRX7Cg6HFxq4sUbKlpOPOKk9_SRQpc7ydf7kWdBKYnsPFk4r2=w600-h1200",
+        "https://play-lh.googleusercontent.com/H4YqTtE85Tw5-dI_Lzt0M6S0doGzxl4Dh8JacAUtXNvGLxlHhLpeRxNRIpl0O9tHSUA=w600-h1200",
+        "https://play-lh.googleusercontent.com/dW7wQWjfUPK6BJUUOswJExG6LKg2KGMUlMmmnRobRlHPpurCwfDKU-v_eh1y21bUGVnH=w600-h1200",
+        "https://play-lh.googleusercontent.com/4aeSkKWmiI2J-x9N_m6QGHGmS7c_aQKcb_0qnqzQLci3vGzQmETI4RUlHOWutP-Bvwi0=w600-h1200",
+        "https://play-lh.googleusercontent.com/_Nj_A4GsGOKgkcPxoa-hBHW97cPBFHMn96ZvTJnYozvOxqh13XvreQhhISUIue4NBQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/8LG102MCqhP6vRhGFR06GDQ1RqZcpFqutIjp5hBJuaC1Q8oWBx5rzVvt99zpS5wxlDa5=w600-h1200",
+        "https://play-lh.googleusercontent.com/6oiwjOhMOBx803K-16ONntMg6MDR6XBQUNFyorKDnglrKOh_KT41uCV27_4DBv6PRHc=w600-h1200",
+        "https://play-lh.googleusercontent.com/1uIXELr0ctYqq__VPIk64zg72XUIdrDoo8hRxE7Jp5sd3x8AG_gsVNopZxedtyN3k7s=w600-h1200",
+        "https://play-lh.googleusercontent.com/xTnMSxLR06p0_7qJn7SdlD1t0M21bAVYpm_RwiKDo3tWi4xg6W_gZRzhroY3S3oLBuQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/Vk9ojqCxBthJpvxiI74EJ6F0ysF8uWwkxpByAV3f-Wl1pGyilGoYaJvOk0vjQfMA-w=w600-h1200",
+        "https://play-lh.googleusercontent.com/SUYfwoYnXK48kxQhug2fhudcOqPstZbFy0vwCEvSxyxAs9nBLys7wYuwiWAk8b-HlWE=w600-h1200",
+        "https://play-lh.googleusercontent.com/anRAqpHyzCSpib0ylNFHRBe5cA8p4eLaHFsJ2NlGcPUDhz9x-3BY2P0N3fqym_hG-Ow=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=nl.uwv.app&hl=nl",
       "ios": "https://apps.apple.com/nl/app/uwv/id1478274972"
@@ -1330,7 +1930,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Video Converter with Advance Video Controls for iOS & macOS",
     "downloads": "70K+ (App Store)",
     "iconUrl": null,
-    "screenshots": [],
+    "screenshots": {},
     "platforms": {
       "ios": "https://apps.apple.com/us/app/video-converter-mp4-to-audio/id1620778262"
     }
@@ -1340,7 +1940,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "Explore the globe like never before with World Explorer. Our AI-powered app gives you in-depth insights about any place worldwide, provides a comprehensive description, and recommends local attractions with your personalized travel guide.",
     "downloads": "100K+ (Microsoft Store + Google Play)",
     "iconUrl": null,
-    "screenshots": [],
+    "screenshots": {},
     "platforms": {
       "website": "https://world-explorer.azurewebsites.net",
       "android": "https://play.google.com/store/apps/details?id=com.vladislavantonyuk.worldexplorer",
@@ -1352,11 +1952,27 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "description": "A dive log that interfaces via Bluetooth with most dive computers. In French for now.",
     "downloads": "9K (Google Play & App Store)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/66/db/47/66db47ba-9e44-d33c-da45-54da0d6613b7/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
-    "screenshots": [
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/7c/2b/437c2b4e-f88d-d769-15ce-02e4140bb0db/8a4d7511-d2e3-4369-9176-4de5209ac7cd_1.jpeg/392x696bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/22/77/de/2277de4d-846a-af82-c565-42f14120a5a6/1ad7a8c9-cf17-400e-a515-ff0ad4f5b249_2.jpeg/392x696bb.jpg",
-      "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/ed/6a/b5ed6aab-d689-d61c-d931-484fe3983511/f69c3a1d-1666-4db1-9d13-545c4778a471_3.jpeg/392x696bb.jpg"
-    ],
+    "screenshots": {
+      "iphone": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/7c/2b/437c2b4e-f88d-d769-15ce-02e4140bb0db/8a4d7511-d2e3-4369-9176-4de5209ac7cd_1.jpeg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/22/77/de/2277de4d-846a-af82-c565-42f14120a5a6/1ad7a8c9-cf17-400e-a515-ff0ad4f5b249_2.jpeg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/ed/6a/b5ed6aab-d689-d61c-d931-484fe3983511/f69c3a1d-1666-4db1-9d13-545c4778a471_3.jpeg/392x696bb.jpg"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/df/a4/79/dfa47911-d672-9f30-3316-88c4fa10d166/e02e17da-b221-4af8-9b37-8d3fdc52e241_1.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/39/39/73/39397364-fe31-c617-f519-8c919517f3b8/bbb476a6-0a28-41d9-a18c-1d5718996a67_2.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/f8/fd/39f8fd43-4cf9-a1b4-03da-a9f6a4d3179c/013193a6-59e5-41b3-8997-33ee997691c1_3.png/576x768bb.png"
+      ],
+      "android": [
+        "https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w600-h1200",
+        "https://play-lh.googleusercontent.com/Z2YwhPnOfWg_8w8ZYb-P5Tg-7Vc9Dw_Rui_cD23SjN_0cW5EaufRvBsHMrfmN1yunYk=w600-h1200",
+        "https://play-lh.googleusercontent.com/CsvHc1Y-FKG0RNjuPkC7u47BL1gQz2D_XyB93WmVc_pKhSnFj1ElAI8zXXgsppJTljFV=w600-h1200",
+        "https://play-lh.googleusercontent.com/oLO2EE2IxxcyS12ltDynjRwxyQTCduIq68O_FlRVePazMa8Inr6sj1DkN2Y25EkOOvY=w600-h1200",
+        "https://play-lh.googleusercontent.com/CGZijwR9AbWxAQil-czGLd8SuVbsLVd9CFL9cjKhhVvEv9mRyqRa9-C519ha7ipsRQc=w600-h1200",
+        "https://play-lh.googleusercontent.com/qKAumHFKRqiyZ1YYGreb-ELiiR7WboaYBZPvi7ryfFGHOhrJKVGbC0-l2P1i1RFJzsc=w600-h1200",
+        "https://play-lh.googleusercontent.com/adaaAHZNM5nqEeAzNJRoE6ORhcoVeSDdbf-lmiP5P8Jm0mD2oqAN_vos9M_ntL_MlSc=w600-h1200"
+      ]
+    },
     "platforms": {
       "android": "https://play.google.com/store/apps/details?id=com.dopnet.yourdive",
       "ios": "https://apps.apple.com/app/yourdive/id1469175226?platform=iphone"
