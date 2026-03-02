@@ -133,9 +133,12 @@ async function fetchIosData(appId) {
     const data = await res.json();
     if (data.results && data.results.length > 0) {
       const r = data.results[0];
+      const screenshots = (r.screenshotUrls && r.screenshotUrls.length > 0)
+        ? r.screenshotUrls
+        : (r.ipadScreenshotUrls ?? []);
       return {
         icon: r.artworkUrl512 ?? r.artworkUrl100 ?? null,
-        screenshots: r.screenshotUrls ?? [],
+        screenshots,
       };
     }
   } catch {

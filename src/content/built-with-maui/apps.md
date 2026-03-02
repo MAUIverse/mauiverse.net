@@ -1,7 +1,7 @@
 ---
 title: Apps built with .NET MAUI
 source: https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md
-fetchedAt: 2026-03-02T17:06:25.008Z
+fetchedAt: 2026-03-02T18:36:03.007Z
 ---
 
 ## Apps built with .NET MAUI
