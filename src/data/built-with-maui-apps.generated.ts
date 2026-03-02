@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const builtWithMauiSource = "https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md";
-export const builtWithMauiFetchedAt = "2026-03-02T18:57:20.616Z";
+export const builtWithMauiFetchedAt = "2026-03-02T19:04:55.927Z";
 
 export type BuiltWithMauiApp = {
   name: string;
@@ -178,9 +178,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/OVJyQziNP7Tiu7Hk1jXd--VvbLzqFbBbO0cORKNU9TYuWZpof1g_4sjP5WTrQyi8rQ=w600-h1200",
         "https://play-lh.googleusercontent.com/qkFeEvQsuRZwF5cOCGMdd1VEw2w0HJ6N3ytSACdLWasW4Kywna8qaVUU94sYtoTBoNs=w600-h1200",
         "https://play-lh.googleusercontent.com/9R9Vf5LiIW2iPu2FkO9MG8RjGXDgvE2CdX7NIi_nH_maZNnd5NuYg8MXcRXbnyf_Jmg=w600-h1200"
-      ],
-      "androidTablet": [
-        "https://play-lh.googleusercontent.com/yQChfa9XKlaXMIYTk8w8QwChjT8_SH-_2d2SS-kesw0TLQK1nxtw54bDcoZ09freZJgKrtg4f__is-31Vg=w600-h1200"
       ]
     },
     "platforms": {
@@ -463,6 +460,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/QcFWssx9SXC0zRe50elVONwtTY5mBmElP0cJRadQUzvLvRZAIuyNgNGS_DW0hzTqXjo=w600-h1200",
         "https://play-lh.googleusercontent.com/P7PW_8X5ArLtI4tS-TTUv17SLGK92sa8eCMJRj3wCax-YU2C5UU8FZGU-jH0YPsHpjI=w600-h1200",
         "https://play-lh.googleusercontent.com/UAt5vKLpfozr48H7XTOlDhTqGnkcxUtT8TQPLQsQfvswxHb0sJzXGiEvhQYamVdpHJ0=w600-h1200",
+        "https://play-lh.googleusercontent.com/HR4ci22pK92CQZ8KiNRtUhUKrQH2BUlZoRkkMPXfUvU196r2Bzchkc2wIq2sJVjrfjs=w600-h1200",
         "https://play-lh.googleusercontent.com/3gYdIxghFX749-LsMjRB1g5UwQ-DuXNjL9YFEQ3CpMbNoJtPorrkiqQGtx1Jl5rauA=w600-h1200",
         "https://play-lh.googleusercontent.com/vfa2Ahn53bBYjelms2ZESvQWxg3m586rrxCx8JltLb5FxbCTzGP0jXHV30KGfvBkTxc=w600-h1200",
         "https://play-lh.googleusercontent.com/hJna2W2SvHTBkMs5rp14GrRpL7bwHNQpSb5_iotZ5MrdJY3dTZK2k3kBZkUuRTZUrRkk=w600-h1200",
@@ -500,6 +498,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/mmFdnqhYjQQe40aBSn1Ed1ZIlmojXy6A-v5jUflE8jJE0iVoP6vFBLYX_3Wt1kxnPg=w600-h1200",
         "https://play-lh.googleusercontent.com/n6MfA7tvz9Clw7micREYrC706Ns7O_6eb6vGW5NuI2U2xCHqdwx_KxawxvqWDWv5aQ=w600-h1200",
         "https://play-lh.googleusercontent.com/inGQyQnkiNjC5Qh8xQV2ZTdQ355tkw-Xz88cjrI1hOHHXl1bQT6bAp3MEbhLpbPxjWM=w600-h1200",
+        "https://play-lh.googleusercontent.com/hH8BPLVkIcvNm_FNfEo17ENFXUtS5QRHb93oqHttt0FXshyhsRKk-4KF2j01ZUVBfzew=w600-h1200",
         "https://play-lh.googleusercontent.com/yxGPrRXfD_zlmKQ3WEXLPMdmEO_tVV9DL8PJ8cjJ2STvP6Min_TB4dXAQ8ai0JiKmAk=w600-h1200"
       ]
     },
@@ -1069,9 +1068,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/kf8aBHuWflKpGfEE0Z-56Xlwh6DPRxAcgGHtSflnVP66HZIgyjzb8ZGVDDHN3EKRkA4=w600-h1200",
         "https://play-lh.googleusercontent.com/YA-HSNobGx_La4fiZClXFNpMiy-bIy9lDgL0JbKxfHw6uYvHR_Cl_BrKG_JecQq0XQ=w600-h1200",
         "https://play-lh.googleusercontent.com/pfER4kOqdQOUqRWQYYeeSQqWsHWG_UgWGts3qYkosCJZvUufeltANhtNJNK6Jp1SOD_z=w600-h1200"
-      ],
-      "androidTablet": [
-        "https://play-lh.googleusercontent.com/yQChfa9XKlaXMIYTk8w8QwChjT8_SH-_2d2SS-kesw0TLQK1nxtw54bDcoZ09freZJgKrtg4f__is-31Vg=w600-h1200"
       ]
     },
     "platforms": {
@@ -1177,9 +1173,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/hOF3Nh9sXYjZWaT7foqbVdEATfrYUK95hz95NcZBzxtyYoeT0lVV6GL_ko0iO7xwoPc=w600-h1200",
         "https://play-lh.googleusercontent.com/8dpgYHaCeZbQW_TTDNdcKmlJlxjjsmO8o90lRbIlVlbPW67grOZ7cOqXmHm8YRsOA9I=w600-h1200",
         "https://play-lh.googleusercontent.com/9FS0eDnM7c4B20UovPfqNnAfnWLi4ERgluMr8KCFVuFk65I4Ar3ov6QJdZ9NLuJEDg=w600-h1200"
-      ],
-      "androidTablet": [
-        "https://play-lh.googleusercontent.com/KDyXsLhlqCSyN25dQ6lvx2YzKIQCBbPdEqP7l0-OIazSAoR1fdYUUl1I6ezClPgqX4I=w600-h1200"
       ]
     },
     "platforms": {
@@ -1579,9 +1572,6 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://play-lh.googleusercontent.com/IYSEmvO_fKMXJtYC8TaqqkhHachZDaKBzl1zNnOpEk8b1FmYzIGOX_Z2x7_xT_8YoLih=w600-h1200",
         "https://play-lh.googleusercontent.com/CKGF_OPhmnnfp-ZgYQHdIS1Fj4TwM_6NeGX3yNdg3h2UtYhWJxyOBrcN_0RIlKU0f5Q=w600-h1200",
         "https://play-lh.googleusercontent.com/Hce_3zGErDpIkgMDbpqzda3P4opJuK19SyER01_R8-cIAwna0agXqK91XRhm4SVWKCkC=w600-h1200"
-      ],
-      "androidTablet": [
-        "https://play-lh.googleusercontent.com/QNpsl4k43vdbfwUAlVLZul2W5O5MUGOToystzghc97mljVHbUwtc639tahcuDsAVHdaGMyZA40AmMVcB_ws=w600-h1200"
       ]
     },
     "platforms": {

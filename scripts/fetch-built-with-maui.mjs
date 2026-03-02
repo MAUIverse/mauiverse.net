@@ -235,7 +235,8 @@ async function fetchGooglePlayData(packageId) {
 
     const screenshots = {};
     if (phone.length > 0) screenshots.android = phone;
-    if (tablet.length > 0) screenshots.androidTablet = tablet;
+    // Require 2+ tablet screenshots — singletons are almost always feature graphics
+    if (tablet.length >= 2) screenshots.androidTablet = tablet;
 
     return { icon, screenshots };
   } catch {
