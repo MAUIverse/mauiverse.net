@@ -195,8 +195,10 @@ async function fetchIosData(iosUrl) {
         const basePath = unclassified[i];
         const dims = dimResults[i];
         if (dims) {
-          // Phone aspect ratio ~0.46 (9:19.5), iPad ~0.75 (3:4)
+          // Phone ~0.46 (9:19.5), iPad portrait ~0.75 (3:4), iPad landscape ~1.33
+          // Square 0.85-1.15 = logos/icons, skip
           const ratio = dims.w / dims.h;
+          if (ratio >= 0.85 && ratio <= 1.15) continue; // square — logo/icon, skip
           if (ratio < 0.65) { iphone.push(basePath + '392x696bb.png'); continue; }
           ipad.push(basePath + '576x768bb.png'); continue;
         }
