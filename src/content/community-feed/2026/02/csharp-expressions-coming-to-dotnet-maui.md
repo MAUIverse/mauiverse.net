@@ -4,6 +4,7 @@ link: https://www.youtube.com/watch?v=jVHSyWVg9eM
 description: Daniel Hindrikes previews C# expressions coming to .NET MAUI and why they can make XAML UI code more productive.
 date: 2026-02-11
 author: dhindrik
+conetntType: video
 ---
 
 If you’ve ever felt like XAML needed *just a bit more* expressiveness for common UI glue, this one’s for you.
