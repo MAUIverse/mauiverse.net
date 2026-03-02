@@ -166,39 +166,47 @@ async function fetchIosData(iosUrl) {
       basePathSet.add(match[0]);
     }
 
-    // Classify by filename (device name in screenshot path)
+    // Classify by filename hints, embedded dimensions, then image dimension probing
     const iphone = [];
     const ipad = [];
     const unclassified = [];
     for (const basePath of basePathSet) {
-      if (/iPhone/i.test(basePath)) iphone.push(basePath + '392x696bb.png');
-      else if (/iPad/i.test(basePath)) ipad.push(basePath + '576x768bb.png');
-      else unclassified.push(basePath);
+      if (/iPhone/i.test(basePath)) { iphone.push(basePath + '392x696bb.png'); continue; }
+      if (/iPad/i.test(basePath)) { ipad.push(basePath + '576x768bb.png'); continue; }
+      // Check embedded dimensions in filename (e.g. _2732x2048.png)
+      const dimMatch = basePath.match(/_(\d{3,5})x(\d{3,5})\.\w+\/$/);
+      if (dimMatch) {
+        const minDim = Math.min(parseInt(dimMatch[1]), parseInt(dimMatch[2]));
+        if (minDim >= 1400) { ipad.push(basePath + '576x768bb.png'); continue; }
+        iphone.push(basePath + '392x696bb.png'); continue;
+      }
+      unclassified.push(basePath);
     }
 
-    // For unclassified URLs, use the grid-type in the rendered HTML as a hint
+    // For unclassified URLs, probe actual image dimensions via 16px thumbnail
     if (unclassified.length > 0) {
-      const hasPhoneGrid = html.includes('grid-type-ScreenshotPhone');
-      const hasTabletGrid = html.includes('grid-type-ScreenshotTablet');
-      for (const basePath of unclassified) {
-        // Check if this URL appears inside a ScreenshotPhone or ScreenshotTablet grid
+      const dimResults = await Promise.all(
+        unclassified.map(bp => getImageDimensions(bp + '16x16bb.jpg'))
+      );
+      for (let i = 0; i < unclassified.length; i++) {
+        const basePath = unclassified[i];
+        const dims = dimResults[i];
+        if (dims) {
+          // Phone aspect ratio ~0.46 (9:19.5), iPad ~0.75 (3:4)
+          const ratio = dims.w / dims.h;
+          if (ratio < 0.65) { iphone.push(basePath + '392x696bb.png'); continue; }
+          ipad.push(basePath + '576x768bb.png'); continue;
+        }
+        // Fallback: use grid-type context from HTML
         const shortPath = basePath.slice(basePath.indexOf('/thumb/') + 7, basePath.length - 1);
         const urlIdx = html.indexOf(shortPath);
         if (urlIdx > -1) {
           const preceding = html.slice(Math.max(0, urlIdx - 2000), urlIdx);
           if (preceding.lastIndexOf('ScreenshotTablet') > preceding.lastIndexOf('ScreenshotPhone')) {
-            ipad.push(basePath + '576x768bb.png');
-            continue;
-          }
-          if (preceding.lastIndexOf('ScreenshotPhone') > preceding.lastIndexOf('ScreenshotTablet')) {
-            iphone.push(basePath + '392x696bb.png');
-            continue;
+            ipad.push(basePath + '576x768bb.png'); continue;
           }
         }
-        // Default: if phone grid exists, treat as phone; otherwise skip
-        if (hasPhoneGrid && !hasTabletGrid) iphone.push(basePath + '392x696bb.png');
-        else if (hasTabletGrid && !hasPhoneGrid) ipad.push(basePath + '576x768bb.png');
-        else iphone.push(basePath + '392x696bb.png'); // default to phone
+        iphone.push(basePath + '392x696bb.png');
       }
     }
 

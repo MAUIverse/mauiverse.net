@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const builtWithMauiSource = "https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md";
-export const builtWithMauiFetchedAt = "2026-03-02T19:26:38.183Z";
+export const builtWithMauiFetchedAt = "2026-03-02T19:45:58.047Z";
 
 export type BuiltWithMauiApp = {
   name: string;
@@ -46,22 +46,17 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c2/07/9c/c2079caa-dbdb-66ec-c1d8-360387b145c9/d4a35775-7950-4a52-9425-f0cb751b5f9d_2.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ad/df/a7/addfa744-aa11-c838-2984-0cf306a30095/1f516b16-1528-4487-9c56-461c688016bf_3.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/2b/6b/a72b6b02-0d67-cfeb-ba07-a8412e036957/587cb483-826d-4b40-a6dc-77f0420b92f5_4.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/48/ff/3348ff65-8c61-8a12-2f7c-5bcd0407b40b/2b28701e-0da8-40d3-83d8-a254d53a090b_5.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ee/52/9f/ee529f6e-0ae4-a206-3ec2-2b6d525b0f83/logo_admin_2020q4_color-0-1x_U007emarketing-0-6-0-85-220-0.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9a/4a/e4/9a4ae45e-05ff-8af6-385d-eacdbec9993e/logo_google_analytics_color-0-1x_U007emarketing-0-0-0-7-0-0-0-85-220-0.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fa/31/f0/fa31f046-2775-aef8-cfa6-004ba3dbc2d6/pr_source.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2e/9b/4b/2e9b4b5d-c060-a7b2-0242-1e06f926fc09/pr_source.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cf/0d/2f/cf0d2f34-155c-eb51-d12f-6886d6bd16d1/mzl.fcewyrcc.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b1/55/fe/b155fee0-309c-c025-f68c-5cc91d6f604a/pr_source.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cb/da/37/cbda37c9-3b27-d2c3-2c87-8daa356dd9d1/pr_source.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/76/a4/fe/76a4fe38-9bc7-a814-2604-6d75fa1d7d3c/mzl.juktrvaj.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/48/ff/3348ff65-8c61-8a12-2f7c-5bcd0407b40b/2b28701e-0da8-40d3-83d8-a254d53a090b_5.png/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d8/f2/fd/d8f2fd45-256a-5391-760c-ddf17ed7950d/pr_source.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0f/83/78/0f8378d7-bf9d-d40a-43a4-159be0b0afb8/pr_source.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/33/ce/fb/33cefba9-9317-d696-ddf5-1dda3d5fa791/pr_source.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/58/b9/81/58b981ac-e1b8-ffc8-16d5-fe49d32ed1cc/pr_source.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3d/5e/81/3d5e813e-7ab4-4117-d2bb-157d4e1ed51d/mzl.zpjansen.png/552x414bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ee/52/9f/ee529f6e-0ae4-a206-3ec2-2b6d525b0f83/logo_admin_2020q4_color-0-1x_U007emarketing-0-6-0-85-220-0.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9a/4a/e4/9a4ae45e-05ff-8af6-385d-eacdbec9993e/logo_google_analytics_color-0-1x_U007emarketing-0-0-0-7-0-0-0-85-220-0.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fa/31/f0/fa31f046-2775-aef8-cfa6-004ba3dbc2d6/pr_source.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2e/9b/4b/2e9b4b5d-c060-a7b2-0242-1e06f926fc09/pr_source.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cf/0d/2f/cf0d2f34-155c-eb51-d12f-6886d6bd16d1/mzl.fcewyrcc.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b1/55/fe/b155fee0-309c-c025-f68c-5cc91d6f604a/pr_source.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cb/da/37/cbda37c9-3b27-d2c3-2c87-8daa356dd9d1/pr_source.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/76/a4/fe/76a4fe38-9bc7-a814-2604-6d75fa1d7d3c/mzl.juktrvaj.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/d3pQ90jv8gWhXuivfHislAyzuIBST1pVv9T27yJvABNJ1-DU7lysyT4CJm2TSkekjA=w600-h1200",
@@ -108,18 +103,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/04/8a/cf/048acf41-b726-e2a6-a2d8-941851128651/99e316d4-f84a-437b-a05b-50707a2a1502_1242x2688.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/3e/87/31/3e873149-bf47-664a-09e8-5af89c0585fd/e4f999f0-3a76-4935-8a5e-f4a12ed8a997_1242x2688.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/32/00/5f/32005f6a-7e46-221c-0b56-eb07b52e80d2/655306eb-67fa-4d20-9670-3bbd6790581f_1242x2688.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/25/c2/b8/25c2b888-bc3c-3635-b9af-d8f98b08648d/fe722dff-6a4b-482d-9647-4638ae7cb737_1242x2688.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple69/v4/9b/40/1e/9b401e69-5f06-276e-7554-511f96d17143/mzl.uuplahlb.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/e0/a2/11/e0a2115d-f0c2-f3d4-371f-33f71052763c/dedef7ff-d305-460c-8cf9-0b16a9f7b7ea_2732x2048.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/be/49/f5/be49f52d-b20e-9ce6-836c-65cda9bbe97a/643b94bd-a0e5-4ed5-9169-0c23ba61608d_2732x2048.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/46/b4/aa/46b4aac5-34a4-f6ce-7905-925e0f72b82e/d5bc22cc-8b73-478e-96f4-5b77419c4567_2732x2048.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/da/65/b6/da65b6dc-592f-1948-0442-12a35425049b/d5c90da5-372e-45b8-8d1b-a4a5f6e60f2e_2732x2048.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/25/c2/b8/25c2b888-bc3c-3635-b9af-d8f98b08648d/fe722dff-6a4b-482d-9647-4638ae7cb737_1242x2688.png/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/cc/a5/ce/cca5ce6f-aaeb-89ee-678b-80efb914b6aa/777b591f-dc63-4acb-8d8c-83c3b2ada105_2732x2048.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource125/v4/c1/88/2b/c1882bda-2359-1bff-2b50-6832ae2ef6ad/5118f426-5375-494e-8126-f34ca7382e3f_2732x2048.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/0c/aa/a9/0caaa925-ccd7-dd9d-596b-fd2cec2f4ada/30eeabbc-ebcb-4c04-a66a-5984465e4ac2_2732x2048.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/34/64/f5/3464f545-0a68-60ac-d9ce-52ba92fedec2/0632ebdd-8e4e-41ed-9e40-e780d2adaabe_2732x2048.png/552x414bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/e0/a2/11/e0a2115d-f0c2-f3d4-371f-33f71052763c/dedef7ff-d305-460c-8cf9-0b16a9f7b7ea_2732x2048.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/be/49/f5/be49f52d-b20e-9ce6-836c-65cda9bbe97a/643b94bd-a0e5-4ed5-9169-0c23ba61608d_2732x2048.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/46/b4/aa/46b4aac5-34a4-f6ce-7905-925e0f72b82e/d5bc22cc-8b73-478e-96f4-5b77419c4567_2732x2048.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource115/v4/da/65/b6/da65b6dc-592f-1948-0442-12a35425049b/d5c90da5-372e-45b8-8d1b-a4a5f6e60f2e_2732x2048.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple69/v4/9b/40/1e/9b401e69-5f06-276e-7554-511f96d17143/mzl.uuplahlb.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/RYzyq0LALPbAAgxx1iTMLkO3Ar4uOtxEjqZUb4rS2fg2DFoukIwfZH6xh-d41jlQmA=w600-h1200",
@@ -191,11 +182,11 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/29/7e/46/297e46df-096c-fe54-96d5-98ad0c051d64/appicon-1x_U007emarketing-0-8-0-85-220-0.png/512x512bb.jpg",
     "screenshots": {
       "iphone": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1d/0d/bb/1d0dbb73-523e-4b3e-257f-6c27c5e7d67d/6_9_2025-05-27_08-38-22-.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple1/v4/13/60/67/136067bb-44f9-4802-daad-4fa32b83da3e/pr_source.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1d/0d/bb/1d0dbb73-523e-4b3e-257f-6c27c5e7d67d/6_9_2025-05-27_08-38-22-.png/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/07/2a/59/072a598e-e3f9-2d4b-2415-70721bdb162b/828da3b1-9676-475e-a958-8f7c696901f1_2024-02-29_ipad.png/576x768bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/07/2a/59/072a598e-e3f9-2d4b-2415-70721bdb162b/828da3b1-9676-475e-a958-8f7c696901f1_2024-02-29_ipad.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple1/v4/13/60/67/136067bb-44f9-4802-daad-4fa32b83da3e/pr_source.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/XDmVBnlP-ab6SHYvUrzsdCQl0PuVRxliDujUpDc1wXnCoo1q9CDfi6VshuBVElQu1cQ=w600-h1200",
@@ -298,20 +289,8 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "name": "CycleProCut",
     "description": "CycleProCut is a powerful cycling app built for riders who want to train smarter and push harder. Create personalized training plans, simulate performance outcomes, and analyze advanced ride metrics. With intuitive setup, integrated fitness tools, and no login required, CycleProCut transforms your pocket into a pro-level cycling coach.",
     "downloads": "1K+ downloads",
-    "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/41/d5/d9/41d5d925-e2da-1ff7-1463-777681096026/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "iconUrl": "https://play-lh.googleusercontent.com/laeyzzFA-f2Cl1nmSDrEKPhMILEaZub--YNOROQYmDJ6U02IfRPxHVWTpmdfQSKX6SgO",
     "screenshots": {
-      "iphone": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/75/0d/df750db4-a1c4-9326-ddb0-6e1539a6b55e/iPhone_11_Pro_Max_Screenshot_1.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/a5/2c/80a52ce6-ccc6-da7f-2bac-b88dbbd90484/iPhone_11_Pro_Max_Screenshot_2.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bc/1c/27/bc1c27f1-b60c-09bb-76c9-f8471b50edee/iPhone_11_Pro_Max_Screenshot_3.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ab/87/a6/ab87a629-33ae-0184-7538-1bfa57b1eec4/iPhone_11_Pro_Max_Screenshot_4.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d7/5e/80/d75e8013-8802-69a7-f616-04fa82fac7ff/iPhone_11_Pro_Max_Screenshot_5.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c0/02/15/c00215bb-1cc4-0c00-57f5-a868bf684fa0/iPhone_11_Pro_Max_Screenshot_6.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8c/0e/96/8c0e9604-52cb-b179-cf88-c6568ea75046/iPhone_11_Pro_Max_Screenshot_7.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/24/c5/52/24c5520a-3d5e-300d-bb99-0744588c0e1b/iPhone_11_Pro_Max_Screenshot_8.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/49/23/2149232d-0c5b-daac-94f0-13a1f2523a69/iPhone_11_Pro_Max_Screenshot_9.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/1e/0e/281e0e2a-0146-c2b8-bf6a-a7e8704696e6/iPhone_11_Pro_Max_Screenshot_10.png/392x696bb.png"
-      ],
       "android": [
         "https://play-lh.googleusercontent.com/hz3BHHcBtI4tI17sSzQT64g0TA_yOKUNSqfmx8VESDZiWG-nbUIIYoNrfeMDPXiITRA=w600-h1200",
         "https://play-lh.googleusercontent.com/6X6hXQRW9OaK8XTIJnBwt_z0TZ3AVyieCaJQoKrov0uz1bLkfeFF9UWCkHe_J5xH_Ug=w600-h1200",
@@ -358,20 +337,15 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/38/59/7e/38597eba-8ccb-8edc-d83d-b1f5ac4735a9/cba687d4-e1b2-4051-bd53-67553a7c2894_Screenshot_02.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4a/bd/4f/4abd4f02-444c-6e04-fb14-ee94822ad557/2acedb1c-cc82-4cc7-80f7-8a586edbb785_Screenshot_03.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/2b/7b/f32b7b92-3ac0-5b7b-7c9b-1ff6716b7fd5/723f764a-7f18-4788-8dc5-47358f832331_Screenshot_04.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/e6/e8/c8e6e8c2-695d-4822-1c02-b1c73611bec7/ec100817-230b-48a6-9119-bf92f260371a_Screenshot_05.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple69/v4/9b/40/1e/9b401e69-5f06-276e-7554-511f96d17143/mzl.uuplahlb.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fe/cb/cf/fecbcf0f-6e09-1816-cd73-5b62b5bc49ab/f8c43327-f3db-4a35-9625-0c1a7da8b57c_Screenshot_01.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7f/49/f8/7f49f826-fa71-5dbb-45d4-ef63e5be50ca/e7a8973e-ae6e-4c2f-afd8-84b23c7bcb9e_Screenshot_02.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b2/47/18/b2471829-9f58-2b37-4ce5-e79feb1c34c4/8fcf78ad-4561-4f0d-a6b9-9bb34599bfc6_Screenshot_03.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/42/17/bf/4217bf2f-b29f-fa69-c706-633b234a0abd/1e31002e-e01c-4295-b76d-754104e25d99_Screenshot_04.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5f/1f/1d/5f1f1d5d-5a1f-2c9d-69ea-2b57f400add2/5c3914d8-3e31-4444-a881-5a11c82d308b_Screenshot_05.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/e6/e8/c8e6e8c2-695d-4822-1c02-b1c73611bec7/ec100817-230b-48a6-9119-bf92f260371a_Screenshot_05.png/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/90/15/3a/90153ad1-f632-b2f2-8311-9c038e61c16e/07cb450b-b65b-4da2-9e9d-03936a9dd42d_Screenshot_01.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a4/b9/9c/a4b99c6b-3214-da88-9ab6-46e09e43b5f2/0f2d6414-af39-4cbb-806f-b994f9fc4489_Screenshot_02.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/19/56/d2/1956d213-2694-e1d4-b00c-d84fa424f70e/946e0181-6dff-4c6d-9e21-33da4df2162a_Screenshot_03.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/11/25/e8/1125e885-0633-2611-729d-c8942cfb24a4/32cafb2d-ddbf-4076-aa2f-26658cb35268_Screenshot_04.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/56/b9/49/56b9492a-0ad5-d38d-c1fe-e6cd504d8371/79a0aab2-9cca-4526-b950-88126746eaeb_Screenshot_05.png/552x414bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple69/v4/9b/40/1e/9b401e69-5f06-276e-7554-511f96d17143/mzl.uuplahlb.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fe/cb/cf/fecbcf0f-6e09-1816-cd73-5b62b5bc49ab/f8c43327-f3db-4a35-9625-0c1a7da8b57c_Screenshot_01.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7f/49/f8/7f49f826-fa71-5dbb-45d4-ef63e5be50ca/e7a8973e-ae6e-4c2f-afd8-84b23c7bcb9e_Screenshot_02.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b2/47/18/b2471829-9f58-2b37-4ce5-e79feb1c34c4/8fcf78ad-4561-4f0d-a6b9-9bb34599bfc6_Screenshot_03.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/42/17/bf/4217bf2f-b29f-fa69-c706-633b234a0abd/1e31002e-e01c-4295-b76d-754104e25d99_Screenshot_04.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5f/1f/1d/5f1f1d5d-5a1f-2c9d-69ea-2b57f400add2/5c3914d8-3e31-4444-a881-5a11c82d308b_Screenshot_05.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/_7YEBbiTYAOK-C6iaLFLaTnaDWEl_rs3oPQe4VgwwCeQ72qvtxs2m8QEBvTz37rnew=w600-h1200",
@@ -406,13 +380,11 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/33/f7/ec/33f7eca4-ee7b-4547-d481-b2326916239e/pr_source.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/3c/81/e3/3c81e331-e306-078b-2352-8687b5b0487f/pr_source.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/59/53/c9/5953c928-b0a1-278d-b931-aa2209700c81/pr_source.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/3d/67/cb/3d67cbe1-a96d-4157-ee59-2c18cdcd684d/pr_source.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/c5/65/3b/c5653b11-907c-d8e5-ac90-bb7c8a6745bd/pr_source.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/f0/81/5a/f0815a9b-61e2-ee39-6c28-382bac2e3c5e/pr_source.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/3d/67/cb/3d67cbe1-a96d-4157-ee59-2c18cdcd684d/pr_source.png/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/9e/fa/38/9efa389e-0ee4-672a-c7c9-30b7f6a83fe9/pr_source.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/2e/9b/4c/2e9b4cbb-0cab-6bee-c13a-579fcb0d8420/pr_source.png/552x414bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/c5/65/3b/c5653b11-907c-d8e5-ac90-bb7c8a6745bd/pr_source.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/f0/81/5a/f0815a9b-61e2-ee39-6c28-382bac2e3c5e/pr_source.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/wmbQP7A7UMIki-rT1SgLMz8yX8VzFMyvpDQHhGUKEvEy0Ag3qt_EfIUU5i2qGuWYRxk=w600-h1200",
@@ -565,8 +537,10 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/7d/f7/687df7a9-b1f6-9159-545a-417adaccbff4/2026-01-19_04-27-18-.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bd/42/ab/bd42ab73-ddd6-92e4-246b-0359e31f5a9c/2026-01-19_04-27-52-.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/5b/8f/1f5b8f51-1db0-d75a-129a-9f0b90c166dd/2026-01-19_04-29-03-.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple1/v4/13/60/67/136067bb-44f9-4802-daad-4fa32b83da3e/pr_source.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/50/54/3e505497-231c-05bb-4ccd-f28d24920b24/2026-01-19_04-30-00-.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple1/v4/13/60/67/136067bb-44f9-4802-daad-4fa32b83da3e/pr_source.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/bsmybY2R7OFI6KfCXI7CNyBrWvulCoTB_ldaBHgJlopgkjSLkTQ4zCHhjLoFPuOgkGiYD-9qhwR-49nt2nWijMQ=w600-h1200",
@@ -597,16 +571,18 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d1/77/1b/d1771ba2-6328-8ff5-1536-c77dc906283d/03.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/02/a5/b8/02a5b834-b01f-bb99-8c19-6508cd2d23bb/11.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/fc/73/69fc733f-a3f3-fb0c-c2d1-c51864c81a9d/09.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/68/70/c9/6870c973-4b4b-aad8-e136-c14d6cec421d/06.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ed/a7/0c/eda70c14-9ec8-601c-860e-f52cb2aee22e/01.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/db/c7/ed/dbc7eda5-e592-559b-8f31-31bc91e6fab0/02.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/25/1f/58/251f58b0-94fe-25ac-5842-5c7b242e8ea9/08.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ed/7c/f7/ed7cf7d2-6225-8bb5-5251-5b5bceb043dd/03.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e6/bc/2c/e6bc2c63-b0e9-5008-8ddc-34aabc99363b/05.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/02/2a/29/022a2926-3075-a271-14cc-9573adb801f0/04.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fd/ed/22/fded226b-93d9-506a-765a-bfabb51220b4/09.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/57/ac/f4/57acf4f4-c403-6766-869c-48edc2528989/06.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/84/08/da/8408da69-6de7-da61-6d97-19a3160e363c/10.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/68/70/c9/6870c973-4b4b-aad8-e136-c14d6cec421d/06.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ed/a7/0c/eda70c14-9ec8-601c-860e-f52cb2aee22e/01.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/db/c7/ed/dbc7eda5-e592-559b-8f31-31bc91e6fab0/02.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/25/1f/58/251f58b0-94fe-25ac-5842-5c7b242e8ea9/08.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ed/7c/f7/ed7cf7d2-6225-8bb5-5251-5b5bceb043dd/03.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e6/bc/2c/e6bc2c63-b0e9-5008-8ddc-34aabc99363b/05.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/02/2a/29/022a2926-3075-a271-14cc-9573adb801f0/04.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fd/ed/22/fded226b-93d9-506a-765a-bfabb51220b4/09.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/57/ac/f4/57acf4f4-c403-6766-869c-48edc2528989/06.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/84/08/da/8408da69-6de7-da61-6d97-19a3160e363c/10.png/576x768bb.png"
       ]
     },
     "platforms": {
@@ -654,17 +630,8 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "name": "GnollHack",
     "description": "GnollHack is a remastered and enhanced version of the classic roguelike game NetHack, one of the most iconic games developed in 1980s and 1990s.",
     "downloads": "10K+ downloads (Google Play)  ·  8K+ downloads (App Store)  ·  800+ downloads (Steam)",
-    "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6f/71/ea/6f71eadc-57e2-7b87-5424-cb2d7810a7b3/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "iconUrl": "https://play-lh.googleusercontent.com/BnSNKZoBCTzc7lAICG27mKe03fU80JFH7kRrDbKj3fO56_w7QBjIIDL4UsSkBNNPZ28",
     "screenshots": {
-      "iphone": [
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4a/e4/96/4ae496f4-88c0-430c-d70b-fd972763901b/cc496801-eaf0-484a-9e7f-6d5d53cc348b_IMG_0716.PNG/392x696bb.png"
-      ],
-      "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/99/eb/0e/99eb0e83-fe7e-1bab-7c70-bea9e696d27e/GH_APPSTORE_ASSETS_SCREENCAP_IPAD_001.jpg/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c7/8e/c8/c78ec81a-abdb-742e-11a7-2af441fe53de/GH_APPSTORE_ASSETS_SCREENCAP_IPAD_002.jpg/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0d/e1/4a/0de14a9b-3ebf-ace4-09b3-6c9a45cdb98f/GH_APPSTORE_ASSETS_SCREENCAP_IPAD_003.jpg/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/01/bb/7501bbdd-ed84-d314-0812-2da3bafc7ec8/GH_APPSTORE_ASSETS_SCREENCAP_IPAD_004.jpg/576x768bb.png"
-      ],
       "android": [
         "https://play-lh.googleusercontent.com/c_yKtvxw4RUOgbtp6Xft6D0wPSPyvISiPRuyC6z3ipNgQfQ9ZerahU8qpS2wSb7kHzv337VLiiWF-LF3Y4eE=w600-h1200",
         "https://play-lh.googleusercontent.com/hhVt9eODzIUGuwpMMx8LbDoaujoxP7v8wtNmZZBaHei20etnL4_KuWRHekhuyh-_xp-mzw44LxLYB3GrnAy9=w600-h1200",
@@ -690,33 +657,23 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "downloads": "10K+ downloads (Google Play)",
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/9d/34/249d3418-d912-b025-13de-240fab7b0769/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
     "screenshots": {
-      "iphone": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/f8/c2/65f8c2e9-d09d-59f6-7952-03646702dce4/82a949be-fad9-4ed7-9531-d95d05c01ad3_S1.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/2c/a9/672ca9c3-88b2-6b16-791d-537690fe1235/c5449166-809b-437c-a2e7-31cbd3f66191_S2.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fe/5c/33/fe5c339c-09c1-2a47-378f-eea88b498e1f/a9fa24ca-d91f-4e0c-89a9-6877645bae83_S3.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bb/f8/a1/bbf8a16c-e6f2-241c-098d-28239a6fb7e8/1958ad32-8446-4b0a-9194-63df7904106f_S4.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/38/34/4e/38344ebb-91ac-debd-89a7-3c1e7e7b8728/d3ad68c9-da8e-4251-84fa-4f663dbe07a0_S5.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fa/e3/13/fae313e0-f897-15db-ec8f-90b350f16486/46ab2c07-fd86-4b33-aac0-e02cd3db643a_S6.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c7/b2/39/c7b239ef-d72a-bc74-fb03-ba06bb24fbdd/92078006-37f5-4df0-b123-bd46bfa1a76f_S7.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/84/11/6e8411a4-b2e2-bfef-c4b1-70ef82b93b51/b2589493-0be2-4808-8bda-343cd26acca9_S8.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3d/53/9f/3d539f61-3e1e-758a-d729-c99181c0f89b/0ecdfee8-64f1-45f4-be5f-01d7b53f113f_S1.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/96/22/239622dd-baf4-57ac-9886-1e371ad11ee6/8b6810c2-abdd-411f-9316-7160a97cac9e_S2.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7e/bd/68/7ebd689b-9149-83d4-f49e-ac9fccc8d146/82b12056-6571-4379-be50-96c7243f899f_S3.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c5/fe/0a/c5fe0ac9-586a-5680-5b37-bc8568968186/6c93de9c-0958-4d64-ac07-aeb8b34b9d4c_S4.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/81/d5/2081d5a0-8a44-b34b-5ac3-0b3d67cddc43/c7ad69c5-7289-4c33-8976-75056d06c337_S5.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/ff/c2/ffffc2b0-0ff2-8fee-d57e-1a200777f4f9/247c08d0-df16-412f-98a8-8e1aabb0c8df_S6.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fa/07/5f/fa075f8c-03d9-09a1-0eb2-abaf58841d65/0736c578-39b1-4864-82a5-4677f5ea65ad_S7.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/17/2d/5a/172d5af4-01fb-0169-cc6e-208d2a697c03/5298cfcd-1d89-45ba-8dea-940a535ae326_S8.png/392x696bb.png"
-      ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ed/31/48/ed3148d2-09f1-31ec-f17d-fef2cd4f0d7a/3391359d-ab90-48b2-add8-4f5028c3d4f3_S1.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dc/57/dd/dc57dd75-2804-561c-1830-538356e82e97/aa12a3c4-a4c9-4de9-9612-1d82e51cd906_S2.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1c/1e/15/1c1e1562-c988-6ed2-4d3e-145bcb5525b4/f1ac4a92-3722-49d1-be44-a98876d2b0f0_S3.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3b/82/32/3b8232bd-5683-98a8-7b9f-1fd3ab41a19f/e9fc1953-d9e6-4c03-9c61-6e788effab35_S4.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/87/6f/d0/876fd068-9ee8-9d0d-3744-d70ce75c2fbe/8d0d4448-7cc3-4135-b1ff-beb7b041702e_S5.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/13/91/9b/13919bb0-1984-f933-25c6-2c113ad03f71/fa4b614f-af8b-4434-b44a-c6354f3dc203_S6.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e6/9a/e1/e69ae184-acc4-8e31-028f-c4be079fc916/a5bf8a7e-54a4-4eeb-a5fe-7026f53906c0_S7.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/e9/f2/7be9f2db-6c1b-aec9-441d-b5fc9212f56b/3cc5a838-a44e-4e14-929a-7e7269a75579_S8.png/552x414bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/f8/c2/65f8c2e9-d09d-59f6-7952-03646702dce4/82a949be-fad9-4ed7-9531-d95d05c01ad3_S1.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/2c/a9/672ca9c3-88b2-6b16-791d-537690fe1235/c5449166-809b-437c-a2e7-31cbd3f66191_S2.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fe/5c/33/fe5c339c-09c1-2a47-378f-eea88b498e1f/a9fa24ca-d91f-4e0c-89a9-6877645bae83_S3.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bb/f8/a1/bbf8a16c-e6f2-241c-098d-28239a6fb7e8/1958ad32-8446-4b0a-9194-63df7904106f_S4.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/38/34/4e/38344ebb-91ac-debd-89a7-3c1e7e7b8728/d3ad68c9-da8e-4251-84fa-4f663dbe07a0_S5.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fa/e3/13/fae313e0-f897-15db-ec8f-90b350f16486/46ab2c07-fd86-4b33-aac0-e02cd3db643a_S6.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c7/b2/39/c7b239ef-d72a-bc74-fb03-ba06bb24fbdd/92078006-37f5-4df0-b123-bd46bfa1a76f_S7.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/84/11/6e8411a4-b2e2-bfef-c4b1-70ef82b93b51/b2589493-0be2-4808-8bda-343cd26acca9_S8.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3d/53/9f/3d539f61-3e1e-758a-d729-c99181c0f89b/0ecdfee8-64f1-45f4-be5f-01d7b53f113f_S1.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/96/22/239622dd-baf4-57ac-9886-1e371ad11ee6/8b6810c2-abdd-411f-9316-7160a97cac9e_S2.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7e/bd/68/7ebd689b-9149-83d4-f49e-ac9fccc8d146/82b12056-6571-4379-be50-96c7243f899f_S3.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c5/fe/0a/c5fe0ac9-586a-5680-5b37-bc8568968186/6c93de9c-0958-4d64-ac07-aeb8b34b9d4c_S4.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/81/d5/2081d5a0-8a44-b34b-5ac3-0b3d67cddc43/c7ad69c5-7289-4c33-8976-75056d06c337_S5.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/ff/c2/ffffc2b0-0ff2-8fee-d57e-1a200777f4f9/247c08d0-df16-412f-98a8-8e1aabb0c8df_S6.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fa/07/5f/fa075f8c-03d9-09a1-0eb2-abaf58841d65/0736c578-39b1-4864-82a5-4677f5ea65ad_S7.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/17/2d/5a/172d5af4-01fb-0169-cc6e-208d2a697c03/5298cfcd-1d89-45ba-8dea-940a535ae326_S8.png/576x768bb.png"
       ],
       "androidTablet": [
         "https://play-lh.googleusercontent.com/T7BumuofhTMbkLyufN7Hno1oCu5joUiC05MH6G74lr2hFH0HOEFEYWKZc0oteWHz7Jc5=w600-h1200",
@@ -765,17 +722,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/31/aa/28/31aa289c-fae5-1929-0fc3-f8b3cfb950d1/page_05_-_Choose_your_perfect_logging_layout.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0c/68/22/0c682260-d220-a3c8-dc15-c0b781d4d62c/page_06_-_From_prefixes_to_Q_codes.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/1d/3a/5b1d3a5e-4a8e-7f92-203b-87fcb77a2023/page_09_-_pdf.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/be/4e/26/be4e26ec-8f98-3969-455e-b9a90b763608/page_08_-_your_log_on_your_home.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/59/f8/3359f847-adbc-ad0f-7547-f6eace1b741b/page_01_-_Log_and_view_qsos_side_by_side.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/de/39/a8/de39a850-4f98-9233-2715-8fad70c0db5a/page_03_-_maintain_and_export.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/aa/74/ffaa7426-f71b-21c4-73fa-11c40bebe05a/page_07_-_your_station_toolkit.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c7/05/63/c7056314-121e-07bb-5b56-ee5a1ecc22e0/page_08_-_for_SWL_too.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0a/a6/8d/0aa68dc4-5eea-386a-7e77-dfeac1f6e66f/page_06_-_tailor_ham_quicklog.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7d/d2/b0/7dd2b022-aff5-e732-fe78-961aa3061f45/page_02_-_Full_featured.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8d/65/a7/8d65a71b-2766-caa8-b1ed-be93e7c81c44/page_04_-_import_from_device.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/31/b6/a1/31b6a1ad-8b1e-03b9-3398-bdd8a34d8414/page_05_-_from_prefixes_to_q_codes.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bc/ec/3e/bcec3e2d-616b-c2cf-0889-abd25ad317f3/page_09_-_pdf.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/eb/69/d9/eb69d933-7445-94f2-f91f-d01aa91364b5/page_10_-_widget.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/be/4e/26/be4e26ec-8f98-3969-455e-b9a90b763608/page_08_-_your_log_on_your_home.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/59/f8/3359f847-adbc-ad0f-7547-f6eace1b741b/page_01_-_Log_and_view_qsos_side_by_side.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/de/39/a8/de39a850-4f98-9233-2715-8fad70c0db5a/page_03_-_maintain_and_export.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/aa/74/ffaa7426-f71b-21c4-73fa-11c40bebe05a/page_07_-_your_station_toolkit.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c7/05/63/c7056314-121e-07bb-5b56-ee5a1ecc22e0/page_08_-_for_SWL_too.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0a/a6/8d/0aa68dc4-5eea-386a-7e77-dfeac1f6e66f/page_06_-_tailor_ham_quicklog.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7d/d2/b0/7dd2b022-aff5-e732-fe78-961aa3061f45/page_02_-_Full_featured.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8d/65/a7/8d65a71b-2766-caa8-b1ed-be93e7c81c44/page_04_-_import_from_device.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/31/b6/a1/31b6a1ad-8b1e-03b9-3398-bdd8a34d8414/page_05_-_from_prefixes_to_q_codes.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bc/ec/3e/bcec3e2d-616b-c2cf-0889-abd25ad317f3/page_09_-_pdf.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/eb/69/d9/eb69d933-7445-94f2-f91f-d01aa91364b5/page_10_-_widget.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/T6WHk_C3qogHJ0UnOWZ2p4wpWhlv3j5TPuTk7TzIhJzkxqUHicJpi4uwMie0V6qWc3F60e8iVnW6OOiVasnyNBw=w600-h1200",
@@ -873,10 +832,10 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "downloads": "+1K",
     "iconUrl": null,
     "screenshots": {
-      "iphone": [
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1f/7a/94/1f7a9493-4599-9c78-413e-111a4b8cc873/keyboardy_logo-1x_U007emarketing-0-6-0-85-220-0.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ba/43/42/ba43425e-42bd-1348-2f73-5e5418c06710/Mac_-_1.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/16/b1/b716b1e5-b649-59dd-cc6e-85ed7028991f/g2758.png/392x696bb.png"
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1f/7a/94/1f7a9493-4599-9c78-413e-111a4b8cc873/keyboardy_logo-1x_U007emarketing-0-6-0-85-220-0.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ba/43/42/ba43425e-42bd-1348-2f73-5e5418c06710/Mac_-_1.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b7/16/b1/b716b1e5-b649-59dd-cc6e-85ed7028991f/g2758.png/576x768bb.png"
       ]
     },
     "platforms": {
@@ -929,8 +888,10 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b2/b5/48/b2b548f1-df0b-2121-665a-9e32f11663fa/Sick_6_5.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6f/f4/5f/6ff45f59-6ad5-5f83-9f08-c25afbf70f53/Calendar_6_5.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/67/14/3c/67143cc6-72c5-4cda-97c2-18437690a84d/Documents_6_5.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/b7/5c/6cb75c3b-ed9c-284a-1c6c-8cb62fd3e1a3/Travel_6_5.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e3/74/24/e374249f-481a-b227-741b-a5bf32d0f982/icon-kelheim-0-0-1x_U007epad-0-1-85-220.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/b7/5c/6cb75c3b-ed9c-284a-1c6c-8cb62fd3e1a3/Travel_6_5.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e3/74/24/e374249f-481a-b227-741b-a5bf32d0f982/icon-kelheim-0-0-1x_U007epad-0-1-85-220.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/gvO9JpOoXmCAQttD8P7H7QSi2I3miXvt9R38avFbJrbPJ3IK5oa3xcyDTm7ei9QqEQ=w600-h1200",
@@ -987,16 +948,18 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "screenshots": {
       "iphone": [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9d/32/6a/9d326adc-436d-772a-fb05-55f88f22dcb3/c492aed8-1c88-474b-b36d-6b21572c24ca_IMG_1037.PNG/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/19/00/e6/1900e6d8-cf25-ab5b-f7d4-6800acfeda63/602853d8-3090-49e0-b04d-2b28cbe8edf6_IMG_1043.PNG/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/cf/49/c8cf4928-b295-6083-191a-2d9dd1785316/376376d2-075f-444f-bede-c10769bdef4d_IMG_1044.PNG/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cf/7b/1a/cf7b1a2b-f91f-0bcc-a92f-cda9778560ff/090ae96e-7582-4ea9-acbb-cc070b257fc7_IMG_1069.PNG/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/13/46/e6/1346e6eb-a7ec-00f7-b2e0-53033c2bc69c/a56ab518-37eb-4e20-a935-652ca32d0b0d_IMG_1068.PNG/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/28/02/732802e9-fc18-bd41-313e-0d489824acb2/8ced617f-e92b-4c05-a068-497857c2cfcb_IMG_1033.PNG/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/33/40/a7334035-6a2f-6855-58a9-3d15b7f70dfe/5b49dd2b-f73d-43c6-8911-375101352eb0_IMG_1035.PNG/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/1a/a4/a31aa4f4-34dd-cc47-f616-64ccb71a23d6/4151b84c-deb4-4cef-a042-ec68903f454d_IMG_1036.PNG/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/88/3f/1c/883f1cc8-69af-c328-7741-cdf0888208ed/00c52fc8-1cfd-4581-b62c-18845cd8346d_IMG_1064.PNG/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d0/23/a2/d023a28e-8f0c-a07d-7e52-cba2e32a82f3/7d385855-c358-4d46-9161-0558c896f4a3_MicrosoftTeams-image__U002810_U0029.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b9/21/bf/b921bf38-ebbf-f5f7-97d1-d1740508fd04/7377e377-ec14-4cdb-9593-5741eb7308fc_pause.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/88/3f/1c/883f1cc8-69af-c328-7741-cdf0888208ed/00c52fc8-1cfd-4581-b62c-18845cd8346d_IMG_1064.PNG/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/19/00/e6/1900e6d8-cf25-ab5b-f7d4-6800acfeda63/602853d8-3090-49e0-b04d-2b28cbe8edf6_IMG_1043.PNG/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/cf/49/c8cf4928-b295-6083-191a-2d9dd1785316/376376d2-075f-444f-bede-c10769bdef4d_IMG_1044.PNG/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cf/7b/1a/cf7b1a2b-f91f-0bcc-a92f-cda9778560ff/090ae96e-7582-4ea9-acbb-cc070b257fc7_IMG_1069.PNG/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/13/46/e6/1346e6eb-a7ec-00f7-b2e0-53033c2bc69c/a56ab518-37eb-4e20-a935-652ca32d0b0d_IMG_1068.PNG/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d0/23/a2/d023a28e-8f0c-a07d-7e52-cba2e32a82f3/7d385855-c358-4d46-9161-0558c896f4a3_MicrosoftTeams-image__U002810_U0029.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b9/21/bf/b921bf38-ebbf-f5f7-97d1-d1740508fd04/7377e377-ec14-4cdb-9593-5741eb7308fc_pause.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/JZioagnDD7JAn_Yqzj6Hdht_V0iFX4ti4uhNixKdkPNr4YZbasbeRiGYUVLceoqwLw=w600-h1200",
@@ -1042,18 +1005,13 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ed/90/b3/ed90b3c0-fdcf-8fb4-a149-3904293ba745/1__U00281_U0029.jpg/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d0/7f/b9/d07fb961-fefb-be1d-8074-53be8326edf1/2__U00281_U0029.jpg/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bc/76/ef/bc76ef94-af8e-b8c1-4cc1-38e6fe7bbe4f/3__U00281_U0029.jpg/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/66/94/7e/66947ed2-f77d-2327-467b-503c130caeb8/4.jpg/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f6/ae/66/f6ae6652-a215-2e6c-c4b4-db53a17be875/2_4.jpg/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/8e/c1/008ec170-784b-26aa-77e2-61b232773f44/1_4.jpg/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7d/90/ca/7d90cabe-18de-71be-2aa6-7b2053c959ab/3_4.jpg/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b6/cb/e0/b6cbe089-b693-2fea-2260-391f6d680b43/4_4.jpg/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/66/94/7e/66947ed2-f77d-2327-467b-503c130caeb8/4.jpg/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/75/62/1a/75621a79-3abc-ec8e-f7c5-92e1869cfb20/mzl.amkvyrbc.png/480x360bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a1/5d/01/a15d0101-e290-d73e-bdcf-10cb6f92dd68/mzl.zfbzumek.png/480x360bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1a/43/2c/1a432c0a-29ed-aaba-fcdb-f701c5bf72b5/mzl.iyswjcfx.png/480x360bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f6/b8/e9/f6b8e92e-67d3-a0ab-a66f-d1b9f4ac825f/mzl.tcnhpxya.png/480x360bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ba/8d/08/ba8d08e2-d257-2663-c120-1b11216fce15/mzl.eacbaezv.png/480x360bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f6/ae/66/f6ae6652-a215-2e6c-c4b4-db53a17be875/2_4.jpg/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/8e/c1/008ec170-784b-26aa-77e2-61b232773f44/1_4.jpg/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7d/90/ca/7d90cabe-18de-71be-2aa6-7b2053c959ab/3_4.jpg/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b6/cb/e0/b6cbe089-b693-2fea-2260-391f6d680b43/4_4.jpg/576x768bb.png"
       ]
     },
     "platforms": {
@@ -1105,10 +1063,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/09/b8/61/09b86134-992f-92d7-c365-1055d1291d37/tns.gscoqcjl.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/02/04/a8/0204a85b-181e-d336-ad32-83754145155e/tns.ucgsbdhk.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/42/2e/65/422e656d-1e0b-920b-8fde-140115931153/tns.uwekzxrx.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/52/ea/aa/52eaaaa1-86d9-34ee-062b-335d35ca9caa/tns.pxsfubrg.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/ed/33/87/ed3387d4-fdf8-3ed3-25e7-9aa50b3be252/tns.dowjsoip.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/1e/e8/56/1ee856a0-f58a-394b-8abb-41a2ae594bf7/tns.girxiyby.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/a3/97/89/a3978974-d9ed-ae19-78c5-d0fed52a2fc7/tns.dfcmrdrc.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/52/ea/aa/52eaaaa1-86d9-34ee-062b-335d35ca9caa/tns.pxsfubrg.png/392x696bb.png"
       ],
       "ipad": [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/bb/dd/6a/bbdd6add-801f-eacc-b620-803e813247a7/dfbbe855-ad4f-4d31-bf27-442b6d27050d_Simulator_Screen_Shot_-_iPad_Pro__U002812.9-inch_U0029__U00285th_generation_U0029_-_2021-12-17_at_15.36.59.png/576x768bb.png",
@@ -1116,7 +1071,10 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/9d/74/ca/9d74cae5-1fa8-5ab4-17c4-fb910cf3a9e6/11b80e35-3897-432b-a0e2-827989beb663_Simulator_Screen_Shot_-_iPad_Pro__U002812.9-inch_U0029__U00285th_generation_U0029_-_2021-12-17_at_15.37.14.png/576x768bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/4e/6e/20/4e6e20ec-44c8-f57d-9c23-5823867fa932/c13aa25c-b165-474c-be1f-6c9f6517a38d_EN_-_web_cluster__Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029.png/576x768bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/62/2e/b5/622eb5dd-e57a-c3cf-cdde-6f92cc91146b/a1db67d0-e90d-4109-a95f-cd9754c01d16_EN_-_telnet_settings_Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/ab/7e/dd/ab7edd1d-653f-cc8d-17cd-6d2b0b1c5456/1d9cbbbe-1805-44ec-8779-4a58641a53ec_EN_-_sever_list__Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029_.png/576x768bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/ab/7e/dd/ab7edd1d-653f-cc8d-17cd-6d2b0b1c5456/1d9cbbbe-1805-44ec-8779-4a58641a53ec_EN_-_sever_list__Screenshot_-_iPad_Pro__U002812.9-inch_U0029__U00286th_generation_U0029_.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/ed/33/87/ed3387d4-fdf8-3ed3-25e7-9aa50b3be252/tns.dowjsoip.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/1e/e8/56/1ee856a0-f58a-394b-8abb-41a2ae594bf7/tns.girxiyby.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/a3/97/89/a3978974-d9ed-ae19-78c5-d0fed52a2fc7/tns.dfcmrdrc.png/576x768bb.png"
       ]
     },
     "platforms": {
@@ -1139,29 +1097,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/21/df/a7/21dfa75e-045f-7a68-dbac-290d2bf52b2a/777e62f9-d2fa-4d16-bc3d-98c630bb7a03_2019-04-11_01-59-39-AM.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/29/3b/39/293b392a-1af8-645b-b149-72fd3f02b110/6ff3884f-a5be-4807-b596-47b621e8cad2_2019-04-11_02-03-06-AM.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/fc/dd/80/fcdd80cc-ed73-7b5d-3e81-b8567a700efa/1129ca1d-2f10-42fd-94fe-a92b64f2713d_2019-04-11_02-03-21-AM.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/be/05/34/be05341e-2250-86cf-6fc2-a2c0a8babef9/1e528279-0211-4656-9411-ca0c119c3035_2019-04-11_02-04-18-AM.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/0d/40/e8/0d40e8dd-9f2d-26ee-21ae-96e5d3ab01a6/1495b33b-79b3-45c6-9625-62a0070c84a7_2019-03-14_10-26-58-PM.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/7f/d8/45/7fd8458a-23dd-cae2-7fdf-dabf39dced94/2e5c876b-d43a-4afd-96fb-c7ce40bf4e6e_2019-03-14_10-26-29-PM.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/63/33/94/6333942c-d8d0-9544-2925-db2ee6f80545/e70e8921-754b-4583-b438-b58d5ccddebc_2019-03-14_10-26-16-PM.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/93/77/28/937728aa-e921-90ae-0953-7d7fdc56a135/95a12930-91a3-481a-ad0c-319800f7bd13_2019-03-14_10-26-23-PM.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/39/21/5b/39215b19-03e1-b25e-e3f4-f8b2abd3270c/0fd9bfce-4fd6-4983-b673-1b23b47ac2b5_2019-03-14_10-26-38-PM.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/49/07/a0/4907a076-1b59-a4eb-bf1e-07a08ffcab87/65e7ef58-3349-4cd3-87e1-f8c9443b66ee_2019-03-14_10-27-05-PM.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/6d/77/e4/6d77e49b-17bc-a426-fc72-90a427c90dc5/ac69af0f-b99b-4865-abaa-79f0b85f7e80_2019-03-14_10-27-16-PM.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/d2/78/a0/d278a0e9-c62d-7c2f-0d07-1ce464a6caea/0b8c5514-0985-4d2e-a207-8a50af5a420d_2019-03-14_10-27-31-PM.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/99/56/25/99562502-2935-fa22-ebff-e42ff0861dda/7d01ddcf-be72-430d-8a58-2c1dbfe3e312_2019-03-14_10-28-58-PM.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/f8/8c/d6/f88cd626-4314-42d1-e8f6-12e685511fbb/f74dea8c-ca6a-4ab9-a3e6-80baf157785f_2019-03-14_10-29-55-PM.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/be/05/34/be05341e-2250-86cf-6fc2-a2c0a8babef9/1e528279-0211-4656-9411-ca0c119c3035_2019-04-11_02-04-18-AM.png/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/db/e9/78/dbe9788a-bd08-d6ca-5bbd-964ec77685d1/329b8a22-a32b-422e-aa23-22122e8502ab_2019-03-14_10-26-58-PM.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/32/51/b9/3251b9f1-8ad7-c205-9cba-cc41497a20f9/b9ca3f14-4097-4b1c-a396-c3d2176cedd8_2019-03-14_10-26-29-PM.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/91/28/80/912880d9-7b2d-b14d-b518-99d5469e259d/9406d61c-742a-41b0-8033-03b609b677ea_2019-03-14_10-26-16-PM.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/07/f6/4f/07f64f55-147d-4e3d-c684-95663e5cc133/7aece885-6ca7-4df0-8edf-9b7cba008549_2019-03-14_10-26-23-PM.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/de/f8/e2/def8e2db-9fbe-6ca4-827c-dc3ab7a90fa0/474c847f-4782-47c7-a2ab-b0b7edaeaf6e_2019-03-14_10-26-38-PM.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/48/f9/dd/48f9dd23-8471-83ef-c517-1f1ce9c4737e/0b0be3e4-5634-4835-9fda-826617f292bf_2019-03-14_10-27-05-PM.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/82/90/a1/8290a160-8184-3704-6734-d6f7a3967eda/47f9232e-a3c0-4dcc-b1a7-56a9b3e14bf2_2019-03-14_10-27-16-PM.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/a6/ed/b6/a6edb674-c417-fd30-2907-ef14be0084b6/d1e8c8cc-c737-4aad-aab2-77dad9911cc2_2019-03-14_10-27-31-PM.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/38/c6/78/38c67884-d1c1-6ee2-b404-d06c31eaf22f/401db01e-429f-4720-b861-80bd2dd8870c_2019-03-14_10-28-58-PM.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/0b/0a/95/0b0a95cb-6dae-c58a-aab9-c3674e0045f6/2ba63110-cf09-476e-a938-1f2f77e2d9ea_2019-03-14_10-29-55-PM.png/552x414bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/0d/40/e8/0d40e8dd-9f2d-26ee-21ae-96e5d3ab01a6/1495b33b-79b3-45c6-9625-62a0070c84a7_2019-03-14_10-26-58-PM.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/7f/d8/45/7fd8458a-23dd-cae2-7fdf-dabf39dced94/2e5c876b-d43a-4afd-96fb-c7ce40bf4e6e_2019-03-14_10-26-29-PM.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/63/33/94/6333942c-d8d0-9544-2925-db2ee6f80545/e70e8921-754b-4583-b438-b58d5ccddebc_2019-03-14_10-26-16-PM.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/93/77/28/937728aa-e921-90ae-0953-7d7fdc56a135/95a12930-91a3-481a-ad0c-319800f7bd13_2019-03-14_10-26-23-PM.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/39/21/5b/39215b19-03e1-b25e-e3f4-f8b2abd3270c/0fd9bfce-4fd6-4983-b673-1b23b47ac2b5_2019-03-14_10-26-38-PM.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/49/07/a0/4907a076-1b59-a4eb-bf1e-07a08ffcab87/65e7ef58-3349-4cd3-87e1-f8c9443b66ee_2019-03-14_10-27-05-PM.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/6d/77/e4/6d77e49b-17bc-a426-fc72-90a427c90dc5/ac69af0f-b99b-4865-abaa-79f0b85f7e80_2019-03-14_10-27-16-PM.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/d2/78/a0/d278a0e9-c62d-7c2f-0d07-1ce464a6caea/0b8c5514-0985-4d2e-a207-8a50af5a420d_2019-03-14_10-27-31-PM.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource112/v4/99/56/25/99562502-2935-fa22-ebff-e42ff0861dda/7d01ddcf-be72-430d-8a58-2c1dbfe3e312_2019-03-14_10-28-58-PM.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource122/v4/f8/8c/d6/f88cd626-4314-42d1-e8f6-12e685511fbb/f74dea8c-ca6a-4ab9-a3e6-80baf157785f_2019-03-14_10-29-55-PM.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/nETtPjaU9RvYyyFshMdwhre_Ragc8RFrDs5WAIUSsuH2NhQQ_B1na5gZ5n-dwscrc-8=w600-h1200",
@@ -1270,18 +1218,15 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/86/cf/d9/86cfd983-dcbf-4cdd-9f6b-fa9c215ec6b6/9.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/90/ad/fe/90adfef0-c1ba-8c08-52cf-e4cc7ee1445b/10.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/07/85/74/078574d0-c3a1-0031-7b8a-efdd30e5bbe2/8.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/93/74/ce/9374ce47-4616-656d-7568-d42670d60bb2/7.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b1/c9/36/b1c936e5-5b8d-acd2-924a-e8e89c075fc3/1.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c2/ac/f0/c2acf085-db3e-8cdb-76cd-cb3a53061f83/5.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/55/1e/9f551e03-b1d7-523d-a023-3532fd3fa0c9/2.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fc/e5/17/fce5172e-8acc-cb0c-d905-a8903da97310/4.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/76/b5/57/76b55724-3336-7057-acf2-665d302b2ab3/3.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/de/e3/7bdee38a-0e34-b78d-ed58-17a2d8665cc8/6.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/93/74/ce/9374ce47-4616-656d-7568-d42670d60bb2/7.png/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ed/f8/e9/edf8e910-9063-cdea-b93c-080d8699f76a/591d468a-3521-47e5-ab87-1a5985fd309b_Supplications_00000.jpg/576x768bb.jpg",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8c/40/a3/8c40a3f0-f02c-5ab0-275f-140e5ad0e239/11907218-b0d0-46c8-981f-33064848ee34_Surah_00000.jpg/576x768bb.jpg",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6c/70/64/6c70645a-3681-47ca-a093-40a25839e2c4/bd55b576-4bf9-416d-b794-7c17ea880837_Listen_00000.jpg/576x768bb.jpg"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b1/c9/36/b1c936e5-5b8d-acd2-924a-e8e89c075fc3/1.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c2/ac/f0/c2acf085-db3e-8cdb-76cd-cb3a53061f83/5.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/55/1e/9f551e03-b1d7-523d-a023-3532fd3fa0c9/2.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fc/e5/17/fce5172e-8acc-cb0c-d905-a8903da97310/4.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/76/b5/57/76b55724-3336-7057-acf2-665d302b2ab3/3.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/de/e3/7bdee38a-0e34-b78d-ed58-17a2d8665cc8/6.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/pTHNWeUKXfbU0m22fyxWvJUwZ65wPtiMEH4Scz1hlIkGMHJrvRTa8-IUxapI6Dib4tqA-BEuNjGmTQhUxUwEMA=w600-h1200",
@@ -1338,15 +1283,10 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
       "iphone": [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/1a/51/df/1a51df9d-b3ff-61f4-3d86-03b7567b84ca/pr_source.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/53/33/51/53335138-85bb-3f6c-3492-dcdcf22453d1/pr_source.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/f6/61/97/f6619758-c095-2d53-e5ff-c9d7f89820e6/pr_source.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/59/61/08/596108e1-8220-8389-8c26-e23abf97638c/pr_source.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/f6/61/97/f6619758-c095-2d53-e5ff-c9d7f89820e6/pr_source.png/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple20/v4/dc/b1/77/dcb177ad-6bbd-97b0-b351-375fbf95b69c/pr_source.png/360x480bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple30/v4/c4/16/43/c41643db-8a03-8306-4cc6-9e1b9450fa15/pr_source.png/360x480bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple30/v4/ee/53/6a/ee536a88-1675-7bf9-6ab6-a75ad9fe273b/pr_source.png/360x480bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple30/v4/1a/80/80/1a808086-9918-073e-a6a4-f8f7d746c8a7/pr_source.png/360x480bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple5/v4/a4/e6/b4/a4e6b499-2568-7d09-9cd6-27dec6a44a0d/pr_source.png/360x480bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/59/61/08/596108e1-8220-8389-8c26-e23abf97638c/pr_source.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/vNb3dE1ne3CrR0IKygD-QPrRG4wDjCHW-zJWEfkRUCYZL15d_iN490NFaTWyEWu8us36=w600-h1200",
@@ -1380,8 +1320,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/06/e6/73/06e673d1-b26e-9084-d3ae-0814f1d7c31b/8a171533-0207-4630-95d9-fed384a0f064_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_12.44.46.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0d/ef/17/0def173e-d200-c4cb-d902-afb8bd33e476/251e8e2f-0421-4dc4-91e5-97c8d134100e_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_12.47.04.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/43/a9/2143a9ab-ef72-9862-b746-cc407891fa06/0a342e5a-e87a-448c-a0a5-b415ec7cae42_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_18.42.20.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/aa/cc/69aaccbc-60e2-ebdc-9438-53110e5073b7/2cbb8687-6139-4e3a-a267-8c53e3b6ca75_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_12.44.11.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/65/41/ac/6541ac28-4165-4b65-7286-75c4445076c5/icon_logo-0-0-1x_U007emarketing-0-8-0-85-220.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/aa/cc/69aaccbc-60e2-ebdc-9438-53110e5073b7/2cbb8687-6139-4e3a-a267-8c53e3b6ca75_Simulator_Screenshot_-_iPhone_15_-_2024-09-06_at_12.44.11.png/392x696bb.png"
       ],
       "ipad": [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/13/94/55/13945504-f787-6477-41b0-b791b66cc882/66b4f38d-2095-4df2-a631-d9f76c636b4e_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.14.23.png/576x768bb.png",
@@ -1393,7 +1332,8 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4a/91/07/4a910786-f2dc-dd93-0d13-abe01f93fb6b/81345e4c-0928-4fb1-9475-623e968071e9_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.45.png/576x768bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/c6/91/9fc691c8-d824-fde8-f1c4-23fdc4aba508/0bdc65e1-a701-4385-84af-3232eb014733_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.15.35.png/576x768bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/06/2f/48/062f48ad-c27f-fd7c-b831-ce1dbe5cbf98/12f2e4bd-acf9-4046-bf4f-a71ae5fb9c97_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.30.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/2d/4b/8f2d4b7e-c5fb-3f13-c3ef-47f92b5015b4/10101dea-14a3-4463-8b75-bf5b694b7e0b_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.24.png/576x768bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/2d/4b/8f2d4b7e-c5fb-3f13-c3ef-47f92b5015b4/10101dea-14a3-4463-8b75-bf5b694b7e0b_Simulator_Screenshot_-_iPad_Air_13-inch__U0028M2_U0029_-_2024-09-06_at_20.16.24.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/65/41/ac/6541ac28-4165-4b65-7286-75c4445076c5/icon_logo-0-0-1x_U007emarketing-0-8-0-85-220.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/DN_oIJhDU6oDEajERs_Xy7KM7jtMZQcFi08nXeSuQXPnlgZUB9vpm2qyf4Ggplc8ec0=w600-h1200",
@@ -1582,20 +1522,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6f/5d/4e/6f5d4eb4-8b59-4f81-d021-d35132866dab/02.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/30/36/aa303687-b33d-9547-a757-32ef4f704740/03.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8b/7d/ed/8b7ded9a-c4fd-5bc3-0409-18fdd90e0f30/04.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/bd/2b/08bd2b6f-33b4-4436-45d2-33b546f6db42/05.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ed/b6/1a/edb61a44-d444-1278-47d9-5ca588579819/01.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/57/b7/cd/57b7cd95-3c05-82d0-75d7-e7b6aebf2398/02.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b2/fe/78/b2fe78c5-a5b5-2892-a4bf-2fa2ca8ab800/03.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/97/3b/08973bd1-fbd4-8772-d9d3-4808d35cc7e8/04.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/a2/65/8fa26531-9249-4d74-a898-b3f565a7b38e/05.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/bd/2b/08bd2b6f-33b4-4436-45d2-33b546f6db42/05.png/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/47/c9/f347c98d-ad9a-be0f-e936-07e76eac67f4/4507a129-cbae-450e-b20f-4d19456bae53_01.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b4/fa/2e/b4fa2e5b-438c-a683-4d3f-1d37dffbb718/5c17e439-3a66-401c-af78-c4ed80393deb_02.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/23/b7/8e23b736-eccc-4efd-f7cc-b1d5e380625c/ab3e1fdc-99fd-4169-bb1f-8d9a0109a66c_03.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/43/68/65/436865fc-379d-6637-85ef-f5725bce781d/49510530-71a6-4448-9019-463a188c3c3e_04.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/5f/c1/685fc116-ccdb-d25c-d0cf-a4369665a310/32138912-90ef-4e62-b783-a8c3b8cc5088_05.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/35/de/a035de47-47e8-41c2-2eb4-3fcd4b84b210/b638366e-6c3a-4546-8272-414b78268a8e_06.png/576x768bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ed/b6/1a/edb61a44-d444-1278-47d9-5ca588579819/01.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/57/b7/cd/57b7cd95-3c05-82d0-75d7-e7b6aebf2398/02.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b2/fe/78/b2fe78c5-a5b5-2892-a4bf-2fa2ca8ab800/03.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/97/3b/08973bd1-fbd4-8772-d9d3-4808d35cc7e8/04.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/a2/65/8fa26531-9249-4d74-a898-b3f565a7b38e/05.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/fnuwd7FklfbbF0AlfI0R4SWkmrZl2_Oy-ECBjDkWkFbWq3c4aVnO48RICgFRHGWh_2k5zbTPMeUSPkKL6MA=w600-h1200",
@@ -1626,15 +1560,12 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/5f/2c/c15f2c0b-82a7-6b65-7e96-1f1e41665462/screenshot6.jpg/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ab/66/26/ab6626c8-ea07-cfaa-a74e-e86bd11bd796/screenshot8.jpg/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/04/bd/9004bdce-fe10-d309-9971-cdff80897517/screenshot9.jpg/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f9/4d/7a/f94d7ac0-5941-4b80-01f8-c5fab4901e32/screenshot10.jpg/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/24/e9/03/24e9033c-0e46-89eb-dcbb-43124f4cecc0/aae8faf1-65b7-4ef5-a68b-fce39000677e_image1kopie.jpg/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8c/46/61/8c466138-46ac-fff7-7c7e-16620223b7b6/f6cc328f-9c6d-425d-bf1f-5cabf0feb09b_image2kopie.jpg/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a1/b9/dc/a1b9dcd0-66e3-a0fc-d24a-3655183e9caa/7b9bfeca-3f5a-42d1-9b7c-7d6808fe0eee_image3kopie.jpg/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f9/4d/7a/f94d7ac0-5941-4b80-01f8-c5fab4901e32/screenshot10.jpg/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b8/2a/9e/b82a9edd-dd85-184e-653a-8dca5cca9e78/1d3c3082-7993-40cd-af89-23a2da3e9309_image2kopie.jpg/576x768bb.jpg",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8d/57/dd/8d57dd9f-123a-d3bb-226c-95669df385af/a4e58ab4-b19d-4b07-b233-1f882435a4ea_image3kopie.jpg/576x768bb.jpg",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ec/e6/a7/ece6a7c4-eac7-8e8a-899e-cd24faebe28d/bc8418ed-acf6-4c97-95df-0df26067f112_image1kopie.jpg/576x768bb.jpg"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/24/e9/03/24e9033c-0e46-89eb-dcbb-43124f4cecc0/aae8faf1-65b7-4ef5-a68b-fce39000677e_image1kopie.jpg/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8c/46/61/8c466138-46ac-fff7-7c7e-16620223b7b6/f6cc328f-9c6d-425d-bf1f-5cabf0feb09b_image2kopie.jpg/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a1/b9/dc/a1b9dcd0-66e3-a0fc-d24a-3655183e9caa/7b9bfeca-3f5a-42d1-9b7c-7d6808fe0eee_image3kopie.jpg/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/foELSOxI7Hsl2EK9FFvPX1IIAciRkX4RBnXDY5p18z89N0_vTDCnGQGKM4QG1F7gjbdYb1S90zZO2qmpwZodkTA=w600-h1200",
@@ -1668,37 +1599,28 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/e4/24/44e42407-88ee-5ccf-0cd4-8a3482a3dc05/Screenshot5.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/6b/73/496b7397-d42e-c2c5-9029-1767d95e50e0/Screenshot8.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/fb/e2/1bfbe2eb-31c4-40f7-d3bb-94e5436a36b9/Screenshot9.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b3/7a/54/b37a54dd-b1e3-f5a6-aa2b-d3fb7d6d14c7/Screenshot10.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8c/93/e0/8c93e018-48cb-cc1e-d0b8-a25be5330411/Screenshot1.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/46/9e/8f469ef7-f2de-473e-6577-96966db74d3a/Screenshot2.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/c5/1d/f1c51dbb-c59e-cec7-0715-6773236759ef/Screenshot3.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/0f/7a/670f7a49-3df8-40f0-280e-9a92f9e26ea7/Screenshot4.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e8/e4/34/e8e4340b-f9e4-be16-8a29-7efe973b2438/Screenshot5.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a1/d6/95/a1d6957c-9f8e-f260-d4c6-b2eb1645aee4/Screenshot6.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/be/e3/c2/bee3c283-40eb-3a8d-ac97-4c403a9617d8/Screenshot7.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f1/99/47/f19947a1-7725-bfe0-24af-7b1a833b88e2/Screenshot8.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fc/68/9a/fc689a19-afa0-47ce-9550-a7a87daaa65f/Screenshot9.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b8/76/29/b8762907-4e32-99b6-2192-eb9e592b5d57/Screenshot1.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/69/4e/67694e56-29b0-2b84-72d7-f7365b599366/Screenshot2.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/55/c1/f7/55c1f7d7-a09a-dba0-cc8f-d1b3d852eb9d/Screenshot3.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/f0/84/baf08441-02f7-0517-fce9-5f5d7ba0eab3/Screenshot4.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7f/7e/a2/7f7ea2bb-1399-3a72-ebe5-e738809250be/Screenshot5.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/ac/22/1eac2222-9edb-983c-6b91-ba7fe31c0405/Screenshot6.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/48/a9/20/48a92051-cda3-e4be-8929-e2e5d8a4754b/Screenshot7.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d3/26/be/d326be82-5853-1207-0fef-f599c3d4c538/Screenshot8.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/5b/28/ac5b2875-34f2-bc32-0a17-faa6c4589c3a/Screenshot9.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/62/bc/af/62bcaf4c-8a01-cbcc-a930-feeae786bd28/Screenshot10.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b3/7a/54/b37a54dd-b1e3-f5a6-aa2b-d3fb7d6d14c7/Screenshot10.png/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e1/28/15/e12815b7-9c95-3bca-73cc-d257fad37575/Screenshot1_12.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/cf/db/2fcfdbc1-98b8-fd88-1af1-90fd24358a3b/Screenshot2_12.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/28/72/3e287201-0c64-68c5-31ab-7a3f1d0dcbe6/Screenshot3_12.png/552x414bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a9/db/88/a9db8846-1d20-48fd-a8c2-41a981089b1e/Screenshot5_12.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c7/ac/53/c7ac5302-8ba8-4622-fb3c-3a44d32ff37b/Screenshot4_12.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/78/c6/1a/78c61af9-00af-bcd2-c4ef-b4ea0567507e/Screenshot6_12.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/83/2a/94/832a94b9-eb9e-7fd1-5014-08fe0ec842f3/Screenshot7_12.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/17/0e/6e170e04-0777-b85b-7b1d-14065e118a4e/Screenshot8_12.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/47/97/2f/47972fba-1c34-01b3-4b6b-47216ce8a2f4/Screenshot9_12.png/576x768bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8c/93/e0/8c93e018-48cb-cc1e-d0b8-a25be5330411/Screenshot1.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/46/9e/8f469ef7-f2de-473e-6577-96966db74d3a/Screenshot2.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/c5/1d/f1c51dbb-c59e-cec7-0715-6773236759ef/Screenshot3.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/0f/7a/670f7a49-3df8-40f0-280e-9a92f9e26ea7/Screenshot4.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e8/e4/34/e8e4340b-f9e4-be16-8a29-7efe973b2438/Screenshot5.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a1/d6/95/a1d6957c-9f8e-f260-d4c6-b2eb1645aee4/Screenshot6.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/be/e3/c2/bee3c283-40eb-3a8d-ac97-4c403a9617d8/Screenshot7.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f1/99/47/f19947a1-7725-bfe0-24af-7b1a833b88e2/Screenshot8.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fc/68/9a/fc689a19-afa0-47ce-9550-a7a87daaa65f/Screenshot9.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b8/76/29/b8762907-4e32-99b6-2192-eb9e592b5d57/Screenshot1.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/69/4e/67694e56-29b0-2b84-72d7-f7365b599366/Screenshot2.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/55/c1/f7/55c1f7d7-a09a-dba0-cc8f-d1b3d852eb9d/Screenshot3.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/f0/84/baf08441-02f7-0517-fce9-5f5d7ba0eab3/Screenshot4.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7f/7e/a2/7f7ea2bb-1399-3a72-ebe5-e738809250be/Screenshot5.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/ac/22/1eac2222-9edb-983c-6b91-ba7fe31c0405/Screenshot6.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/48/a9/20/48a92051-cda3-e4be-8929-e2e5d8a4754b/Screenshot7.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d3/26/be/d326be82-5853-1207-0fef-f599c3d4c538/Screenshot8.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/5b/28/ac5b2875-34f2-bc32-0a17-faa6c4589c3a/Screenshot9.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/62/bc/af/62bcaf4c-8a01-cbcc-a930-feeae786bd28/Screenshot10.png/576x768bb.png"
       ]
     },
     "platforms": {
@@ -1718,13 +1640,15 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/47/7c/50477c0f-a7db-bcdf-5eb6-5b763b94d251/Frame_03.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e5/7d/31/e57d3120-0a6e-2760-bea3-53936c0530e8/Frame_04.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4d/cf/5d/4dcf5de6-fdad-5391-7ace-e0aab5a69fc8/Frame_05.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dd/2a/26/dd2a26ce-f0d9-62e3-2383-79c650b06a4f/Frame_06.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3d/56/6e/3d566e15-d5c9-18b4-e0f8-4ce118b39651/Frame_1.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bb/8c/ae/bb8cae72-8129-3cea-cb3f-fda6a7e09457/Frame_2.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/d6/e3/8ed6e32e-6d09-35df-4acd-11af6e41a8d6/Frame_3.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1c/d7/ea/1cd7ea12-1e33-6fb1-4869-1243d164d15a/Frame_4.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/f8/0e/c4f80eec-1413-01b8-8fd7-46c9ef4bd3b4/Frame_5.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e5/af/b7/e5afb730-217f-d079-62f6-8078d454626a/Frame_6.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dd/2a/26/dd2a26ce-f0d9-62e3-2383-79c650b06a4f/Frame_06.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3d/56/6e/3d566e15-d5c9-18b4-e0f8-4ce118b39651/Frame_1.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bb/8c/ae/bb8cae72-8129-3cea-cb3f-fda6a7e09457/Frame_2.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/d6/e3/8ed6e32e-6d09-35df-4acd-11af6e41a8d6/Frame_3.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1c/d7/ea/1cd7ea12-1e33-6fb1-4869-1243d164d15a/Frame_4.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/f8/0e/c4f80eec-1413-01b8-8fd7-46c9ef4bd3b4/Frame_5.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e5/af/b7/e5afb730-217f-d079-62f6-8078d454626a/Frame_6.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/PhnOfj1G-NE9vWBWmpjBLRECa3pWqG0SzEBmKlZMw_n0hH5ELhovWyb667Ctw6Hjbw-jTxCYwKy3pchsltnA=w600-h1200",
@@ -1800,20 +1724,8 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "name": "STAmina Apnea Trainer",
     "description": "The best apnea app to improve the breath-holding time for freediving, scuba diving and spearfishing with 5 different apnea tables types.",
     "downloads": "50K+ (Google Play)",
-    "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4f/65/7c/4f657c0f-eebb-da1b-775e-835beedfdd62/appicon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+    "iconUrl": "https://play-lh.googleusercontent.com/VJl7Ac32JMTx1358zyA1Fc094d5G81Hb75eMSnhLIn9lgNBCJsf1x9YABNa4lc_RISE",
     "screenshots": {
-      "iphone": [
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/72/ff/50/72ff50e8-ff44-91a7-c36f-9e7bf0c431df/ffb011e7-de47-4c60-a746-822eea7d972a_iOS_screen_6.5_01.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/07/61/88/0761885d-4bae-1310-2c27-7e518eadfd3c/89a5a8ec-7267-4e2b-b141-0424af96286d_iOS_screen_6.5_07.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/8b/95/63/8b956370-f81c-d838-0e49-c04960b112a8/94bbf7c9-4ccd-47e4-bcb5-9186bb5c033f_iOS_screen_6.5_02.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/9e/2f/56/9e2f5641-af1d-b6ac-62d8-3440b03d5ed4/c603ef93-42b3-4b25-8826-fc62231b8d1d_iOS_screen_6.5_03.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/f4/a3/8f/f4a38f2e-194d-026b-8a77-013a2a1f2527/32d468f3-6957-45f5-8f41-0da11aaa0ace_iOS_screen_6.5_04.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleVideo114/v4/f5/f0/62/f5f0621e-a1b4-765c-d16e-f6ffbc19a52e/Jobf67f2f93-2201-47ac-ab65-9518827f8252-109180583-PreviewImage_preview_image_nonvideo_sdr-Time1612455028803.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/3b/3a/36/3b3a3611-747b-e2f9-92f4-ebf02c4fc8cf/915b1e72-2abc-4f37-8203-d3d30231ac85_iOS_screen_6.5_05.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/90/54/64/90546416-540f-c53a-55b6-ecff7c5fa069/31027fb8-6752-4d4a-91fe-ed758c321b96_iOS_screen_6.5_06.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/ab/c4/23/abc423bc-7247-deb7-d828-7c7ff9aab566/27222aac-6001-4903-bda0-ad7d89ff7643_iOS_screen_6.5_07.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/85/6a/a5/856aa521-c6a6-e33e-f304-cdbf4cc2c934/pr_source.png/392x696bb.png"
-      ],
       "ipad": [
         "https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/27/c1/56/27c156a6-1995-bc86-7836-89919da98f38/pr_source.png/576x768bb.png"
       ],
@@ -1864,17 +1776,19 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
     "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/02/52/8f/02528f5a-b1fc-591d-714e-81d6eb41c06e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg",
     "screenshots": {
       "iphone": [
-        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0b/01/e6/0b01e698-7a0e-154f-75e4-71531bd7be29/sccicon-1x_U007emarketing-0-8-0-85-220-0.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/db/f4/dc/dbf4dc9d-320e-d36d-b887-b02df042a6c0/e150448a-b5f9-4a7c-a22c-c45a550741b7_Screenshot6.7-1.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4a/52/97/4a529717-4465-6504-6e24-78a3fc873ece/a6558b3f-80b6-498d-bce4-302c1b36ba08_Screenshot6.7-2.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/61/c1/87/61c187ec-670b-cefa-1964-c23ffd3e434b/7998b607-d05b-45e0-aab4-7b9440a4cec9_Screenshot6.7-3.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/45/b6/e8/45b6e83d-3894-43ea-1217-e23d6abc2984/845609f4-b296-4412-97db-1e99d9080a8a_Screenshot6.7-4.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/85/1a/0c/851a0c33-4b20-447c-1c51-f7b15dd167ae/Screenshot6.7-5.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/36/7f/43367f95-26e1-ac1a-c44f-503f7276210b/aa7e5378-4062-403a-ac35-32bbf6669c5a_Screenshot13-1.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d2/df/51/d2df515f-5e01-dc20-0d2f-3e545030722e/473f5858-c327-422f-8bf5-b8e9a187a6f8_Screenshot13-2.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/06/76/f2/0676f2a8-8ec3-9bbb-fc12-8c281f104eb5/837469fa-a4be-4689-acf6-568f4ab02571_Screenshot13-3.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/26/1e/61/261e61bc-6fab-ccd6-9222-369793ddb755/80d79755-722c-4f1b-bb46-30d194fcada8_Screenshot13-4.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6f/f0/8a/6ff08a5c-be7a-4247-e529-9366b889a768/Screenshot13-5.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/85/1a/0c/851a0c33-4b20-447c-1c51-f7b15dd167ae/Screenshot6.7-5.png/392x696bb.png"
+      ],
+      "ipad": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0b/01/e6/0b01e698-7a0e-154f-75e4-71531bd7be29/sccicon-1x_U007emarketing-0-8-0-85-220-0.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/36/7f/43367f95-26e1-ac1a-c44f-503f7276210b/aa7e5378-4062-403a-ac35-32bbf6669c5a_Screenshot13-1.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d2/df/51/d2df515f-5e01-dc20-0d2f-3e545030722e/473f5858-c327-422f-8bf5-b8e9a187a6f8_Screenshot13-2.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/06/76/f2/0676f2a8-8ec3-9bbb-fc12-8c281f104eb5/837469fa-a4be-4689-acf6-568f4ab02571_Screenshot13-3.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/26/1e/61/261e61bc-6fab-ccd6-9222-369793ddb755/80d79755-722c-4f1b-bb46-30d194fcada8_Screenshot13-4.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6f/f0/8a/6ff08a5c-be7a-4247-e529-9366b889a768/Screenshot13-5.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/pirpjH3VQyvR-8mHuChPdIz2ZxP8VwDI5L5Zt14rrc5lwZVRClIVDJU63_5zV0omCA=w600-h1200",
@@ -1978,15 +1892,7 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0b/32/ff/0b32ffad-6017-0378-d85b-7256e3ed831b/3f7347b3-fc95-4730-854f-0604978a90e8_en_wind_iphone65_07.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a4/76/74/a47674f5-07cf-0647-89c8-2dff53b4abd3/6f802a35-53f7-4794-a330-c3cce796ae1b_en_wind_iphone65_08.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/84/12/8c/84128c61-bc9e-a0e7-6ccd-345509325de2/535150af-3b92-4b33-acae-636ff38dd593_en_wind_iphone65_09.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/9d/55/4e9d553f-02fb-79c0-aff9-0ab6543a4b34/618b827e-1a6f-4aa8-8358-c62d0e7ee937_en_wind_iphone65_10.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fa/10/da/fa10da96-f4fd-d324-07e2-a2a6b6dfbb89/ec6270c7-7c6a-4241-9a53-e19f00d0347b_InAppPurchase_Violin.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0e/59/aa/0e59aaa3-18bc-d7a7-c17e-794485201047/5e7b1049-a2ca-4ee1-bcf5-df5d7c0b1884_InAppPurchase_Saxophone.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/05/f8/31/05f83128-36e8-3c92-22e4-485c0d4e1ce2/922e1556-9c22-40d7-bf31-c910d390e3bd_InAppPurchase_Trumpet.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/e9/b2/c4e9b225-9319-6f60-0b34-c17517c2eacc/0db947f9-54e4-4a7f-9d43-8e1116f27cd1_InAppPurchase_Flute.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/34/33/37/343337b9-c71f-ad28-9a82-ddedd11664e9/1213f9c2-b90d-4bff-bded-3b5fbc934649_InAppPurchase_Clarinet.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c0/7c/d7/c07cd763-07ff-0b71-0c75-205ddd8591d7/4e9d1e77-8bcc-4e28-bb6a-5d11a00aa447_InAppPurchase_Trombone.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5f/52/4b/5f524b0d-ae63-d8f6-8269-788983bedb05/0118716b-c5a9-4514-8907-6e92a4723fe1_InAppPurchase_Recorder.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a4/d3/d2/a4d3d28f-cb7c-029e-774a-85dc260017b0/edfa4b09-79e9-4ad0-8abb-45b69699e962_InAppPurchase_Piano_v3.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/9d/55/4e9d553f-02fb-79c0-aff9-0ab6543a4b34/618b827e-1a6f-4aa8-8358-c62d0e7ee937_en_wind_iphone65_10.png/392x696bb.png"
       ],
       "ipad": [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ce/ef/23/ceef236f-d931-39e9-619d-a3f68fd520ac/c6261ba3-0989-459e-a27e-01d27fb7e006_en_wind_ipadPro129_34_01.png/576x768bb.png",
@@ -1998,7 +1904,15 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/63/f9/04/63f90468-c713-841f-8d31-b73c821422a5/460210c3-4620-4c11-828c-47009ec35992_en_wind_ipadPro129_34_07.png/576x768bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/a1/c0/baa1c0f4-d2e9-778b-f643-91c9c385e336/ae765903-e6d7-449e-ab91-31543c6252d2_en_wind_ipadPro129_34_08.png/576x768bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/71/d4/f7/71d4f793-918f-2f40-246c-cabaf0d5f509/673ff84d-b373-4bea-9195-8463830620a1_en_wind_ipadPro129_34_09.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/c4/61/40c461aa-16c0-94df-093d-cfe4af0cf67a/7aacbe24-e72f-43fd-87c9-920731fc457c_en_wind_ipadPro129_34_10.png/576x768bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/c4/61/40c461aa-16c0-94df-093d-cfe4af0cf67a/7aacbe24-e72f-43fd-87c9-920731fc457c_en_wind_ipadPro129_34_10.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fa/10/da/fa10da96-f4fd-d324-07e2-a2a6b6dfbb89/ec6270c7-7c6a-4241-9a53-e19f00d0347b_InAppPurchase_Violin.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0e/59/aa/0e59aaa3-18bc-d7a7-c17e-794485201047/5e7b1049-a2ca-4ee1-bcf5-df5d7c0b1884_InAppPurchase_Saxophone.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/05/f8/31/05f83128-36e8-3c92-22e4-485c0d4e1ce2/922e1556-9c22-40d7-bf31-c910d390e3bd_InAppPurchase_Trumpet.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/e9/b2/c4e9b225-9319-6f60-0b34-c17517c2eacc/0db947f9-54e4-4a7f-9d43-8e1116f27cd1_InAppPurchase_Flute.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/34/33/37/343337b9-c71f-ad28-9a82-ddedd11664e9/1213f9c2-b90d-4bff-bded-3b5fbc934649_InAppPurchase_Clarinet.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c0/7c/d7/c07cd763-07ff-0b71-0c75-205ddd8591d7/4e9d1e77-8bcc-4e28-bb6a-5d11a00aa447_InAppPurchase_Trombone.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5f/52/4b/5f524b0d-ae63-d8f6-8269-788983bedb05/0118716b-c5a9-4514-8907-6e92a4723fe1_InAppPurchase_Recorder.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a4/d3/d2/a4d3d28f-cb7c-029e-774a-85dc260017b0/edfa4b09-79e9-4ad0-8abb-45b69699e962_InAppPurchase_Piano_v3.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/0ikB8CEemGT_nc4gawLsc2yfNzHIj1knRMMudW8lHZyfvAVSh01QusI2dHQHgt2qdQ=w600-h1200",
@@ -2134,14 +2048,14 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1d/75/41/1d754176-d525-cdfe-9d2a-c05265f8084d/Simulator_Screenshot_-_iPhone_16_Pro_Max_-_2026-02-04_at_16.42.02.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/22/ae/6f/22ae6f57-c1f4-aef2-a6be-f237fec65658/0x0ss.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/56/25/6c/56256cfc-d70b-7e95-4e42-ab7f2800c73d/0x3ss.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/b2/3b/a7b23bdf-0350-30af-5b5e-beaac6c7f9e3/0x1ss.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/c9/ac/53c9acfc-95b6-51ad-bad4-b4998974d7b3/0x7ss.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/59/1e/3c/591e3c18-c3f4-5749-eea9-656e4c5c2a20/0x6ss.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/76/64/4a/76644acd-2dff-e988-22de-d436413853fb/0x4ss.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/b2/3b/a7b23bdf-0350-30af-5b5e-beaac6c7f9e3/0x1ss.png/392x696bb.png"
       ],
       "ipad": [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9f/d3/1b/9fd31be6-c44d-f33f-c1aa-3ed866e92b5c/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M5_U0029_-_2026-01-30_at_22.55.07.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/d8/d1/68d8d15e-702b-f874-6639-751dbfcb53f9/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M5_U0029_-_2026-01-30_at_22.55.58.png/576x768bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/d8/d1/68d8d15e-702b-f874-6639-751dbfcb53f9/Simulator_Screenshot_-_iPad_Pro_13-inch__U0028M5_U0029_-_2026-01-30_at_22.55.58.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/c9/ac/53c9acfc-95b6-51ad-bad4-b4998974d7b3/0x7ss.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/59/1e/3c/591e3c18-c3f4-5749-eea9-656e4c5c2a20/0x6ss.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/76/64/4a/76644acd-2dff-e988-22de-d436413853fb/0x4ss.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/Ls-vTvAXmAMG9XT_9obmP9viMvOIr7sUVF9XS_Q94rTNsiFcAM_ZPJ6Qbbva6pswZQ=w600-h1200",
@@ -2281,15 +2195,12 @@ export const builtWithMauiApps: BuiltWithMauiApp[] = [
       "iphone": [
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/90/fd/91/90fd9199-07b5-a6e1-c308-0fbcb5d93ab2/e565480c-afe8-48e0-8497-b76ee048fc4a_1.png/392x696bb.png",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ec/9d/4c/ec9d4c0e-ab31-a21f-cdc4-98d8985381c3/81529320-010c-4370-8b04-7571b3a8178f_2.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/70/ad/e2/70ade2da-8562-eda5-b000-9d041f3666d8/231f0b7b-3fd6-49df-83e0-d0d83a82d7ab_3.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a6/ea/6c/a6ea6cd8-58d4-f85a-e714-d40435ca86b7/a7cd8545-d48c-4786-9c13-416a538f365a_1.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/54/58/45/5458456d-ceae-ad05-382a-a6c2abc02ac0/731b2dc6-27a9-48bc-8654-1dc491300b98_2.png/392x696bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/31/60/aa3160e7-a7fb-5533-a2e1-b37298e8d549/9f9e8f91-50c3-4046-8dee-f157c029ae89_3.png/392x696bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/70/ad/e2/70ade2da-8562-eda5-b000-9d041f3666d8/231f0b7b-3fd6-49df-83e0-d0d83a82d7ab_3.png/392x696bb.png"
       ],
       "ipad": [
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/df/a4/79/dfa47911-d672-9f30-3316-88c4fa10d166/e02e17da-b221-4af8-9b37-8d3fdc52e241_1.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/39/39/73/39397364-fe31-c617-f519-8c919517f3b8/bbb476a6-0a28-41d9-a18c-1d5718996a67_2.png/576x768bb.png",
-        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/f8/fd/39f8fd43-4cf9-a1b4-03da-a9f6a4d3179c/013193a6-59e5-41b3-8997-33ee997691c1_3.png/576x768bb.png"
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a6/ea/6c/a6ea6cd8-58d4-f85a-e714-d40435ca86b7/a7cd8545-d48c-4786-9c13-416a538f365a_1.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/54/58/45/5458456d-ceae-ad05-382a-a6c2abc02ac0/731b2dc6-27a9-48bc-8654-1dc491300b98_2.png/576x768bb.png",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/31/60/aa3160e7-a7fb-5533-a2e1-b37298e8d549/9f9e8f91-50c3-4046-8dee-f157c029ae89_3.png/576x768bb.png"
       ],
       "android": [
         "https://play-lh.googleusercontent.com/Z2YwhPnOfWg_8w8ZYb-P5Tg-7Vc9Dw_Rui_cD23SjN_0cW5EaufRvBsHMrfmN1yunYk=w600-h1200",
