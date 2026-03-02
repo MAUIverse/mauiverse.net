@@ -391,7 +391,7 @@ const clientApps = apps.map((app) => ({
           app.screenshots.forEach(function(url) {
             var img = document.createElement('img');
             img.alt = app.name + ' screenshot';
-            img.className = 'w-[45%] flex-shrink-0 snap-start rounded-lg border border-edge/30 shadow-sm';
+            img.className = 'h-72 w-auto flex-shrink-0 snap-start rounded-lg border border-edge/30 shadow-sm';
             modalScreenshots.appendChild(img);
             ssQueue.push({ img: img, url: url, retries: 0 });
           });
