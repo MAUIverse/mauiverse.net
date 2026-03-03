@@ -5,7 +5,7 @@ description: "David Ortinau - Introducing .NET MAUI - XamExpertDay 2020 explaine
 date: 2020-10-03
 author: davidortinau
 featuring:
-    - jversluis
+    - jfversluis
 contentType: video
 ---
 
