@@ -67,12 +67,20 @@ export const authorEntries = [
     displayName: "Charlin Agramonte",
   },
   {
+    key: "Clancey",
+    displayName: "James Clancey",
+  },
+  {
     key: "CliffAgius",
     displayName: "Clifford Agius",
   },
   {
     key: "codemillmatt",
     displayName: "Matt Soucoup",
+  },
+  {
+    key: "coding-flamingo",
+    displayName: "Coding Flamingo",
   },
   {
     key: "codrinamerigo",
@@ -179,6 +187,10 @@ export const authorEntries = [
   {
     key: "gbarkerz",
     displayName: "Guy Barker",
+  },
+  {
+    key: "gonedotnet",
+    displayName: "Gone DotNet",
   },
   {
     key: "HorusSoftwareUY",
@@ -325,6 +337,10 @@ export const authorEntries = [
     displayName: "Michael Stonis",
   },
   {
+    key: "michalpobuta",
+    displayName: "Michał Pobuta",
+  },
+  {
     key: "MikeCodesDotNET",
     displayName: "Mike James",
   },
@@ -403,6 +419,10 @@ export const authorEntries = [
   {
     key: "samidip",
     displayName: "Sam Basu",
+  },
+  {
+    key: "samirgcofficial",
+    displayName: "Samir GC",
   },
   {
     key: "SirJohnK",
