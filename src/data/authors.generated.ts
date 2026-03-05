@@ -75,6 +75,10 @@ export const authorEntries = [
     displayName: "Clifford Agius",
   },
   {
+    key: "codehippie1",
+    displayName: "Aneesh Gopalakrishnan",
+  },
+  {
     key: "codemillmatt",
     displayName: "Matt Soucoup",
   },
@@ -93,6 +97,10 @@ export const authorEntries = [
   {
     key: "damianantonowicz",
     displayName: "Damian Antonowicz",
+  },
+  {
+    key: "DamianSuess",
+    displayName: "Damian Suess",
   },
   {
     key: "damiendoumer",
@@ -155,6 +163,10 @@ export const authorEntries = [
   {
     key: "EdCharbeneau",
     displayName: "Ed Charbeneau ",
+  },
+  {
+    key: "eilon",
+    displayName: "Eilon Lipton",
   },
   {
     key: "eschimmel",
@@ -423,6 +435,10 @@ export const authorEntries = [
   {
     key: "samirgcofficial",
     displayName: "Samir GC",
+  },
+  {
+    key: "sbwalker",
+    displayName: "Shaun Walker",
   },
   {
     key: "SirJohnK",
