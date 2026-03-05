@@ -417,6 +417,10 @@ export const authorEntries = [
     displayName: "Rui Marinho",
   },
   {
+    key: "robertopc1",
+    displayName: "Roberto Perez",
+  },
+  {
     key: "rogihee",
     displayName: "Rogier van der Hee ",
   },
@@ -435,6 +439,10 @@ export const authorEntries = [
   {
     key: "samirgcofficial",
     displayName: "Samir GC",
+  },
+  {
+    key: "Santiago5050",
+    displayName: "Santiago Martinez",
   },
   {
     key: "sbwalker",
