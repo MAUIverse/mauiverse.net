@@ -5,6 +5,8 @@
   "scripts": {
     "create:author": "node scripts/create-author.mjs",
     "create:feed-item": "node scripts/create-community-feed-item.mjs",
+    "create:community-standup-item": "node scripts/create-community-standup-item.mjs",
+    "create:toolkit-item": "node scripts/create-toolkit-standup-item.mjs",
     "predev": "npm run generate:authors && npm run fetch:built-with-maui && npm run fetch:maui-contributors && npm run fetch:docs-maui-contributors && npm run fetch:maui-toolkit-contributors && npm run fetch:syncfusion-maui-toolkit-contributors && npm run fetch:mauiverse-website-contributors && npm run fetch:nuget-authors",
     "dev": "astro dev",
     "start": "astro dev",
