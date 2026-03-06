@@ -11,6 +11,6 @@ featuring:
 contentType: video
 ---
 
-This month’s community standup is all about real-world momentum: expanding .NET MAUI support to additional platforms and using AI to speed up everyday development. 
+This month's community standup is all about real-world momentum: expanding .NET MAUI support to additional platforms and using AI to speed up everyday development. 
 
 Jon Dick and Allan Ritchie walk through what they built, what they learned, and how these approaches can help you ship faster with more confidence. Whether you are exploring Linux and macOS possibilities or just looking for your next MAUI breakthrough, you will leave with practical ideas to try in your own apps.
