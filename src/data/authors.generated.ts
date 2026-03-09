@@ -43,6 +43,10 @@ export const authorEntries = [
     displayName: "Allan Ritchie",
   },
   {
+    key: "bethmassi",
+    displayName: "Beth Massi",
+  },
+  {
     key: "bijington",
     displayName: "Shaun Lawrence",
   },
