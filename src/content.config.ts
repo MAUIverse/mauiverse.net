@@ -104,6 +104,18 @@ const mauiRelease = defineCollection({
   }),
 });
 
+const toolkitRelease = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/toolkit-release' }),
+  schema: z.object({
+    title: z.string(),
+    link: z.string().url(),
+    date: z.coerce.date(),
+    contributors: z.array(z.string()),
+    prerelease: z.boolean(),
+    contentType: z.literal('release'),
+  }),
+});
+
 export const collections = {
   'community-feed': communityFeed,
   'built-with-maui': builtWithMaui,
@@ -112,4 +124,5 @@ export const collections = {
   'event': event,
   'community-contributors': communityContributors,
   'maui-release': mauiRelease,
+  'toolkit-release': toolkitRelease,
 };

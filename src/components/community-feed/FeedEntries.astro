@@ -38,7 +38,10 @@ function hasBody(entry: { body?: string }): boolean {
 <ul class="space-y-8" aria-label="Community feed posts">
   {entries.map((entry) => {
     if (isReleaseEntry(entry)) {
-      const releaseDetailUrl = `/maui-releases/${entry.id}/`;
+      const releaseDetailUrl =
+        entry.collection === 'toolkit-release'
+          ? `/toolkit-releases/${entry.id}/`
+          : `/maui-releases/${entry.id}/`;
       return (
         <li class="rounded-lg border border-edge bg-surface px-4 py-3 shadow-sm">
           <div class="flex items-center justify-between gap-3">

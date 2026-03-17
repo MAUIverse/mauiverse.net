@@ -9,6 +9,10 @@ import {
   getSyncfusionMauiToolkitContributorUsernames,
 } from '../../data/authors';
 import { getMauiReleases, getMostRecentReleaseForContributor } from '../../data/releases';
+import {
+  getToolkitReleases,
+  getMostRecentToolkitReleaseForContributor,
+} from '../../data/toolkit-releases';
 
 interface RepoDefinition {
   repoSlug: string;
@@ -83,24 +87,39 @@ type ContributorCard = {
   avatarSrc: string;
   href: string;
   hasProfile: boolean;
-  latestRelease?: { title: string; id: string };
+  latestReleaseHref?: string;
+  latestReleaseTitle?: string;
 };
 
-const releases = repoSlug === 'maui' ? await getMauiReleases() : [];
+const mauiReleases = repoSlug === 'maui' ? await getMauiReleases() : [];
+const toolkitReleases = repoSlug === 'community-toolkit' ? await getToolkitReleases() : [];
 
 const contributors: ContributorCard[] = usernames
   .map((username) => {
     const internalHref = getInternalContributorProfileHref(username);
-    const latestReleaseEntry = getMostRecentReleaseForContributor(releases, username);
+    const latestMauiReleaseEntry =
+      repoSlug === 'maui'
+        ? getMostRecentReleaseForContributor(mauiReleases, username)
+        : undefined;
+    const latestToolkitReleaseEntry =
+      repoSlug === 'community-toolkit'
+        ? getMostRecentToolkitReleaseForContributor(toolkitReleases, username)
+        : undefined;
+    const latestReleaseEntry = latestMauiReleaseEntry ?? latestToolkitReleaseEntry;
+    const latestReleaseHref =
+      latestMauiReleaseEntry != null
+        ? `/maui-releases/${latestMauiReleaseEntry.id}/`
+        : latestToolkitReleaseEntry != null
+          ? `/toolkit-releases/${latestToolkitReleaseEntry.id}/`
+          : undefined;
     return {
       username,
       displayName: getAuthorDisplayName(username),
       avatarSrc: getAuthorImageSrc(username, 256),
       href: internalHref ?? `https://github.com/${username}`,
       hasProfile: internalHref !== null,
-      latestRelease: latestReleaseEntry
-        ? { title: latestReleaseEntry.data.title, id: latestReleaseEntry.id }
-        : undefined,
+      latestReleaseHref,
+      latestReleaseTitle: latestReleaseEntry?.data.title,
     };
   })
   .sort((a, b) => {
@@ -208,15 +227,15 @@ const contributors: ContributorCard[] = usernames
                 class="mb-4 h-24 w-24 rounded-full"
                 loading="lazy"
               />
-              <h2 class="mb-4 text-lg font-semibold text-brand-dark">{contributor.displayName}</h2>
-              {contributor.latestRelease && (
+              <h2 class="mb-2 text-lg font-semibold text-brand-dark">{contributor.displayName}</h2>
+              {contributor.latestReleaseHref && contributor.latestReleaseTitle && (
                 <p class="mb-3 text-sm text-muted-light">
                   Latest:{' '}
                   <a
-                    href={`/maui-releases/${contributor.latestRelease.id}/`}
+                    href={contributor.latestReleaseHref}
                     class="text-brand hover:underline"
                   >
-                    {contributor.latestRelease.title}
+                    {contributor.latestReleaseTitle}
                   </a>
                 </p>
               )}

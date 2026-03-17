@@ -4,8 +4,8 @@ import ContributorProfileHeader from '../../components/community-contributors/Co
 import ContributorFeedSection from '../../components/community-contributors/ContributorFeedSection.astro';
 import { paginateEntries } from '../../utils/pagination';
 import { getFeaturingAuthorKeys, getUnifiedFeedEntries, type ContributorFeedEntry, type UnifiedFeedEntry } from '../../data/feed';
-import { getMauiReleases } from '../../data/releases';
-import { isContributorInRelease } from '../../data/releases';
+import { getMauiReleases, isContributorInRelease } from '../../data/releases';
+import { getToolkitReleases, isContributorInToolkitRelease } from '../../data/toolkit-releases';
 import {
   getAuthorKeys,
   getAuthorDisplayName,
@@ -33,18 +33,23 @@ function isFeaturedContributor(entry: UnifiedFeedEntry): boolean {
   );
 }
 
-const [unifiedEntries, releases] = await Promise.all([
+const [unifiedEntries, mauiReleases, toolkitReleases] = await Promise.all([
   getUnifiedFeedEntries(),
   getMauiReleases(),
+  getToolkitReleases(),
 ]);
 
-const releaseEntriesForContributor = releases.filter((r) =>
+const mauiReleaseEntriesForContributor = mauiReleases.filter((r) =>
   isContributorInRelease(r, githubUsername)
+);
+const toolkitReleaseEntriesForContributor = toolkitReleases.filter((r) =>
+  isContributorInToolkitRelease(r, githubUsername)
 );
 
 const contributorEntries: ContributorFeedEntry[] = [
   ...unifiedEntries.filter((entry) => isAuthoredByContributor(entry) || isFeaturedContributor(entry)),
-  ...releaseEntriesForContributor,
+  ...mauiReleaseEntriesForContributor,
+  ...toolkitReleaseEntriesForContributor,
 ].sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const { pages, totalPages } = paginateEntries(contributorEntries, pageSize);
