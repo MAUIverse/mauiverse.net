@@ -3,12 +3,12 @@ import { getCollection } from 'astro:content';
 import FeedEntries from '../community-feed/FeedEntries.astro';
 import Pagination from '../community-feed/Pagination.astro';
 import { isSameAuthorKey } from '../../data/authors';
-import { getFeaturingAuthorKeys, type UnifiedFeedEntry } from '../../data/feed';
+import { getFeaturingAuthorKeys, isReleaseEntry, type ContributorFeedEntry } from '../../data/feed';
 
 interface Props {
   githubUsername: string;
   displayName: string;
-  entries: UnifiedFeedEntry[];
+  entries: ContributorFeedEntry[];
   currentPage: number;
   totalPages: number;
   basePath: string;
@@ -27,6 +27,7 @@ const feedName = hasAvatarImagePath
 const heading = `${feedName}'s Feed`;
 const compactEntryIds = entries
   .filter((entry) => {
+    if (isReleaseEntry(entry)) return false;
     const isAuthoredByContributor =
       entry.data.author && isSameAuthorKey(entry.data.author, githubUsername);
     if (isAuthoredByContributor) return false;

@@ -99,6 +99,10 @@ export const authorEntries = [
     displayName: "Csaba Huszár",
   },
   {
+    key: "csharpfritz",
+    displayName: "Jeff Fritz",
+  },
+  {
     key: "damianantonowicz",
     displayName: "Damian Antonowicz",
   },
@@ -179,6 +183,10 @@ export const authorEntries = [
   {
     key: "EstebanP-dev",
     displayName: "Juan Esteban Navia",
+  },
+  {
+    key: "esulink2514",
+    displayName: "Jesus Angulo",
   },
   {
     key: "ewerspej",
@@ -391,6 +399,10 @@ export const authorEntries = [
   {
     key: "PaulAndersonS",
     displayName: "Paul Anderson",
+  },
+  {
+    key: "Petar879",
+    displayName: "Petar Mishev",
   },
   {
     key: "pictos",

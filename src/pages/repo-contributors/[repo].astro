@@ -8,6 +8,7 @@ import {
   getMauiToolkitContributorUsernames,
   getSyncfusionMauiToolkitContributorUsernames,
 } from '../../data/authors';
+import { getMauiReleases, getMostRecentReleaseForContributor } from '../../data/releases';
 
 interface RepoDefinition {
   repoSlug: string;
@@ -81,17 +82,25 @@ type ContributorCard = {
   displayName: string;
   avatarSrc: string;
   href: string;
+  hasProfile: boolean;
+  latestRelease?: { title: string; id: string };
 };
+
+const releases = await getMauiReleases();
 
 const contributors: ContributorCard[] = usernames
   .map((username) => {
     const internalHref = getInternalContributorProfileHref(username);
+    const latestReleaseEntry = getMostRecentReleaseForContributor(releases, username);
     return {
       username,
       displayName: getAuthorDisplayName(username),
       avatarSrc: getAuthorImageSrc(username, 256),
       href: internalHref ?? `https://github.com/${username}`,
       hasProfile: internalHref !== null,
+      latestRelease: latestReleaseEntry
+        ? { title: latestReleaseEntry.data.title, id: latestReleaseEntry.id }
+        : undefined,
     };
   })
   .sort((a, b) => {
@@ -135,7 +144,7 @@ const contributors: ContributorCard[] = usernames
 
       <div class="divider-gradient mb-10"></div>
 
-      <div class="reveal mb-8">
+      <div class="fade-in mb-8">
         <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <label for="contributor-search" class="mb-2 block text-sm font-semibold text-brand-dark">
@@ -180,7 +189,7 @@ const contributors: ContributorCard[] = usernames
       </div>
 
       <ul
-        class="reveal grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+        class="fade-in grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
         aria-label={`${repoLabel} Contributors`}
         data-contributor-grid
       >
@@ -200,6 +209,17 @@ const contributors: ContributorCard[] = usernames
                 loading="lazy"
               />
               <h2 class="mb-4 text-lg font-semibold text-brand-dark">{contributor.displayName}</h2>
+              {contributor.latestRelease && (
+                <p class="mb-3 text-sm text-muted-light">
+                  Latest:{' '}
+                  <a
+                    href={`/maui-releases/${contributor.latestRelease.id}/`}
+                    class="text-brand hover:underline"
+                  >
+                    {contributor.latestRelease.title}
+                  </a>
+                </p>
+              )}
               <a
                 href={contributor.href}
                 target={contributor.href.startsWith('/') ? undefined : '_blank'}
@@ -274,7 +294,15 @@ const contributors: ContributorCard[] = usernames
         applyFilter();
         searchInput.focus();
       });
-      applyFilter();
+
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get('q');
+      if (q && q.trim()) {
+        searchInput.value = q.trim();
+        applyFilter();
+      } else {
+        applyFilter();
+      }
     })();
   </script>
 </BaseLayout>
