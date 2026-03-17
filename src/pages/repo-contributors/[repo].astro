@@ -8,6 +8,11 @@ import {
   getMauiToolkitContributorUsernames,
   getSyncfusionMauiToolkitContributorUsernames,
 } from '../../data/authors';
+import { getMauiReleases, getMostRecentReleaseForContributor } from '../../data/releases';
+import {
+  getToolkitReleases,
+  getMostRecentToolkitReleaseForContributor,
+} from '../../data/toolkit-releases';
 
 interface RepoDefinition {
   repoSlug: string;
@@ -81,17 +86,40 @@ type ContributorCard = {
   displayName: string;
   avatarSrc: string;
   href: string;
+  hasProfile: boolean;
+  latestReleaseHref?: string;
+  latestReleaseTitle?: string;
 };
+
+const mauiReleases = repoSlug === 'maui' ? await getMauiReleases() : [];
+const toolkitReleases = repoSlug === 'community-toolkit' ? await getToolkitReleases() : [];
 
 const contributors: ContributorCard[] = usernames
   .map((username) => {
     const internalHref = getInternalContributorProfileHref(username);
+    const latestMauiReleaseEntry =
+      repoSlug === 'maui'
+        ? getMostRecentReleaseForContributor(mauiReleases, username)
+        : undefined;
+    const latestToolkitReleaseEntry =
+      repoSlug === 'community-toolkit'
+        ? getMostRecentToolkitReleaseForContributor(toolkitReleases, username)
+        : undefined;
+    const latestReleaseEntry = latestMauiReleaseEntry ?? latestToolkitReleaseEntry;
+    const latestReleaseHref =
+      latestMauiReleaseEntry != null
+        ? `/maui-releases/${latestMauiReleaseEntry.id}/`
+        : latestToolkitReleaseEntry != null
+          ? `/toolkit-releases/${latestToolkitReleaseEntry.id}/`
+          : undefined;
     return {
       username,
       displayName: getAuthorDisplayName(username),
       avatarSrc: getAuthorImageSrc(username, 256),
       href: internalHref ?? `https://github.com/${username}`,
       hasProfile: internalHref !== null,
+      latestReleaseHref,
+      latestReleaseTitle: latestReleaseEntry?.data.title,
     };
   })
   .sort((a, b) => {
@@ -135,7 +163,7 @@ const contributors: ContributorCard[] = usernames
 
       <div class="divider-gradient mb-10"></div>
 
-      <div class="reveal mb-8">
+      <div class="fade-in mb-8">
         <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <label for="contributor-search" class="mb-2 block text-sm font-semibold text-brand-dark">
@@ -180,7 +208,7 @@ const contributors: ContributorCard[] = usernames
       </div>
 
       <ul
-        class="reveal grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+        class="fade-in grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
         aria-label={`${repoLabel} Contributors`}
         data-contributor-grid
       >
@@ -199,7 +227,18 @@ const contributors: ContributorCard[] = usernames
                 class="mb-4 h-24 w-24 rounded-full"
                 loading="lazy"
               />
-              <h2 class="mb-4 text-lg font-semibold text-brand-dark">{contributor.displayName}</h2>
+              <h2 class="mb-2 text-lg font-semibold text-brand-dark">{contributor.displayName}</h2>
+              {contributor.latestReleaseHref && contributor.latestReleaseTitle && (
+                <p class="mb-3 text-sm text-muted-light">
+                  Latest:{' '}
+                  <a
+                    href={contributor.latestReleaseHref}
+                    class="text-brand hover:underline"
+                  >
+                    {contributor.latestReleaseTitle}
+                  </a>
+                </p>
+              )}
               <a
                 href={contributor.href}
                 target={contributor.href.startsWith('/') ? undefined : '_blank'}
@@ -274,7 +313,15 @@ const contributors: ContributorCard[] = usernames
         applyFilter();
         searchInput.focus();
       });
-      applyFilter();
+
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get('q');
+      if (q && q.trim()) {
+        searchInput.value = q.trim();
+        applyFilter();
+      } else {
+        applyFilter();
+      }
     })();
   </script>
 </BaseLayout>

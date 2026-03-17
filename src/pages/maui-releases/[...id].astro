@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { render } from 'astro:content';
+import {
+  getAuthorDisplayName,
+  getAuthorImageSrc,
+  getInternalContributorProfileHref,
+} from '../../data/authors';
+import { formatLongDateUS } from '../../utils/date';
+import PrimaryLinkButton from '../../components/PrimaryLinkButton.astro';
+import { getCollection } from 'astro:content';
+import type { MauiReleaseEntry } from '../../data/releases';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('maui-release');
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props as { entry: MauiReleaseEntry };
+
+function hasBody(e: { body?: string }): boolean {
+  return Boolean(typeof e.body === 'string' && e.body.trim().length > 0);
+}
+
+const withBody = hasBody(entry);
+const rendered = withBody ? await render(entry) : null;
+const Content = rendered?.Content ?? null;
+
+function getContributorHref(username: string): string {
+  const internal = getInternalContributorProfileHref(username);
+  return internal ?? `/repo-contributors/maui/?q=${encodeURIComponent(username)}`;
+}
+---
+
+<BaseLayout
+  title={`${entry.data.title} | MAUI Releases | MAUIverse`}
+  description={`Release notes for ${entry.data.title}.`}
+  allowPageScroll={true}
+>
+  <article class="py-24 md:py-32 px-0 min-h-screen text-brand-dark relative z-10" data-pagefind-body>
+    <div class="container max-w-3xl mx-auto px-6">
+      <a href="/maui-releases/" class="mb-6 inline-block text-sm font-medium text-brand hover:underline">
+        ← Back to MAUI Releases
+      </a>
+
+      <header class="fade-in mb-8">
+        <h1 class="text-gradient text-3xl md:text-5xl font-header font-bold mb-4">
+          {entry.data.title}
+        </h1>
+        <p class="text-muted-light text-sm mb-4 flex flex-wrap items-center gap-2">
+          <time datetime={entry.data.date.toISOString()}>
+            {formatLongDateUS(entry.data.date)}
+          </time>
+          {entry.data.prerelease && (
+            <span class="rounded bg-brand-extra/20 px-1.5 py-0.5 text-xs font-semibold text-brand-extra">
+              Preview
+            </span>
+          )}
+        </p>
+
+        {entry.data.contributors.length > 0 && (
+          <div class="mt-6">
+            <p class="mb-2 text-[11px] font-semibold uppercase tracking-wide text-muted-light">
+              Contributors
+            </p>
+            <div class="flex flex-wrap gap-2.5">
+              {entry.data.contributors.map((username) => {
+                const href = getContributorHref(username);
+                const isInternal = href.startsWith('/');
+                return (
+                  <a
+                    href={href}
+                    class="inline-flex items-center gap-2 rounded-full border border-edge/30 px-2.5 py-1.5 text-sm text-brand-dark transition hover:border-brand/40 hover:text-brand"
+                    aria-label={`View ${getAuthorDisplayName(username)}'s profile`}
+                    target={isInternal ? undefined : '_blank'}
+                    rel={isInternal ? undefined : 'noopener noreferrer'}
+                  >
+                    <img
+                      src={getAuthorImageSrc(username, 64)}
+                      alt=""
+                      width="28"
+                      height="28"
+                      class="h-7 w-7 rounded-full"
+                      loading="lazy"
+                    />
+                    {getAuthorDisplayName(username)}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </header>
+
+      {withBody && Content ? (
+        <div
+          class="prose prose-slate dark:prose-invert max-w-none prose-headings:text-brand-dark prose-headings:font-header prose-headings:font-bold prose-headings:mt-10 prose-headings:mb-4 prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-p:my-5 prose-p:leading-relaxed prose-ul:my-5 prose-ol:my-5 prose-li:my-2 prose-li:leading-relaxed prose-ul:pl-6 prose-ol:pl-6 prose-blockquote:border-brand/30 prose-blockquote:text-muted"
+        >
+          <Content />
+        </div>
+      ) : null}
+
+      <p class="mt-8">
+        <PrimaryLinkButton href={entry.data.link} target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </PrimaryLinkButton>
+      </p>
+
+      <p class="mt-8">
+        <a href="/maui-releases/" class="text-brand font-medium hover:underline">
+          ← Back to MAUI Releases
+        </a>
+      </p>
+    </div>
+  </article>
+</BaseLayout>

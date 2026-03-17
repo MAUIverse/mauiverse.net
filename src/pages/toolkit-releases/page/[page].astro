@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ReleaseEntries from '../../../components/toolkit-releases/ReleaseEntries.astro';
+import Pagination from '../../../components/community-feed/Pagination.astro';
+import { paginateAndBuildStaticPaths } from '../../../utils/pagination';
+import { getToolkitReleases } from '../../../data/toolkit-releases';
+
+export async function getStaticPaths() {
+  const pageSize = 15;
+  const releases = await getToolkitReleases();
+  return paginateAndBuildStaticPaths(releases, pageSize, (page) => ({
+    params: { page: String(page.currentPage) },
+  }));
+}
+
+const { entries, currentPage, totalPages } = Astro.props;
+---
+
+<BaseLayout
+  title={`.NET MAUI Community Toolkit Releases (Page ${currentPage}) | MAUIverse`}
+  description="Release notes for the .NET MAUI Community Toolkit with contributor attributions."
+  allowPageScroll={true}
+>
+  <section class="py-24 md:py-32 px-0 min-h-screen">
+    <div class="container max-w-4xl mx-auto px-6">
+      <a href="/toolkit-releases/" class="mb-6 inline-block text-sm font-medium text-brand hover:underline">
+        ← Back to Toolkit Releases
+      </a>
+      <p class="mb-4 text-sm font-header font-bold uppercase tracking-[0.2em] text-brand">
+        .NET MAUI Community Toolkit
+      </p>
+      <h1 class="mb-5 text-gradient text-4xl md:text-6xl font-header font-bold">
+        Release Notes
+      </h1>
+
+      <div class="mb-12">
+        <ReleaseEntries entries={entries} />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          basePath="/toolkit-releases"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

@@ -1,10 +1,20 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import type { MauiReleaseEntry } from './releases';
+import type { ToolkitReleaseEntry } from './toolkit-releases';
 
 export type UnifiedFeedEntry =
   | CollectionEntry<'community-feed'>
   | CollectionEntry<'community-standup'>
   | CollectionEntry<'toolkit-standup'>
   | CollectionEntry<'event'>;
+
+export type ContributorFeedEntry = UnifiedFeedEntry | MauiReleaseEntry | ToolkitReleaseEntry;
+
+export function isReleaseEntry(
+  entry: ContributorFeedEntry
+): entry is MauiReleaseEntry | ToolkitReleaseEntry {
+  return entry.collection === 'maui-release' || entry.collection === 'toolkit-release';
+}
 
 export function sortFeedEntriesByDateDesc<T extends { data: { date: Date } }>(entries: T[]): T[] {
   return entries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());

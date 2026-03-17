@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ReleaseEntries from '../../components/maui-releases/ReleaseEntries.astro';
+import Pagination from '../../components/community-feed/Pagination.astro';
+import { paginateEntries } from '../../utils/pagination';
+import { getMauiReleases } from '../../data/releases';
+
+const releases = await getMauiReleases();
+const pageSize = 15;
+const { pages, totalPages } = paginateEntries(releases, pageSize);
+const pageEntries = pages[0]?.entries ?? [];
+---
+
+<BaseLayout
+  title=".NET MAUI Releases | MAUIverse"
+  description="Release notes for .NET MAUI with contributor attributions."
+  allowPageScroll={true}
+>
+  <section class="py-24 md:py-32 px-0 min-h-screen">
+    <div class="container max-w-4xl mx-auto px-6">
+      <a href="/" class="mb-6 inline-block text-sm font-medium text-brand hover:underline">
+        ← Home
+      </a>
+      <p class="mb-4 text-sm font-header font-bold uppercase tracking-[0.2em] text-brand">
+        .NET MAUI
+      </p>
+      <h1 class="mb-5 text-gradient text-4xl md:text-6xl font-header font-bold">
+        Release Notes
+      </h1>
+      <p class="mb-12 max-w-3xl text-lg text-muted leading-relaxed">
+        Official .NET MAUI releases from the
+        <a
+          href="https://github.com/dotnet/maui/releases"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-brand hover:underline"
+        >
+          dotnet/maui
+        </a>
+        repository, with contributors linked to their profiles where available.
+      </p>
+
+      <div class="mb-12">
+        <ReleaseEntries entries={pageEntries} />
+        <Pagination
+          currentPage={1}
+          totalPages={totalPages}
+          basePath="/maui-releases"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
