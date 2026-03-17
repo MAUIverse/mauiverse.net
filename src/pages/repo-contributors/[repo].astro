@@ -86,7 +86,7 @@ type ContributorCard = {
   latestRelease?: { title: string; id: string };
 };
 
-const releases = await getMauiReleases();
+const releases = repoSlug === 'maui' ? await getMauiReleases() : [];
 
 const contributors: ContributorCard[] = usernames
   .map((username) => {
