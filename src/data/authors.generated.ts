@@ -217,6 +217,10 @@ export const authorEntries = [
     displayName: "Gone DotNet",
   },
   {
+    key: "Helkin-Chacon",
+    displayName: "Helkin Chacon",
+  },
+  {
     key: "HorusSoftwareUY",
     displayName: "Horus Software",
   },
