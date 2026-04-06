@@ -1,7 +1,7 @@
 ---
 title: Apps built with .NET MAUI
 source: https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md
-fetchedAt: 2026-03-30T10:22:05.307Z
+fetchedAt: 2026-04-06T10:14:51.647Z
 ---
 
 ## Apps built with .NET MAUI
@@ -60,6 +60,7 @@ Do you want to add your own? Please feel free to [open a pull request](https://g
 | **Re:List** | A simple todo list manager with reusable lists and items | 400 (Google Play) + 1k+ (App Store) | [Android](https://play.google.com/store/apps/details?id=com.epjapps.simple.modern.list.relist) [iOS](https://apps.apple.com/us/app/re-list/id1551656021) |
 | **Red-Point** | The ultimate rock climbing companion app. | 10k+ (Google Play) |  [Android](https://play.google.com/store/apps/details?id=com.alphaoutdoors.redpoint) [iOS](https://apps.apple.com/au/app/red-point/id1670082950) |
 | **Ritlogger** | A free, very simple, and a privacy-friendly trip registration for the Netherlands to easily keep track of the mileage for business and/or private car use. | 1k+ (Apple) |  [Android](https://play.google.com/store/apps/details?id=com.mrijntjes.ritlogger) [iOS](https://apps.apple.com/nl/app/ritlogger-rittenregistratie/id6479636230) |
+| **RomCrate** | The ultimate retro game collection tracker. Organize your physical and digital library, log playthroughs, and connect with other gamers. | 50+ (Google Play & App Store) | [Website](https://romcrate.com) [Android](https://play.google.com/store/apps/details?id=com.agenciacosmos.romcrate) [iOS](https://apps.apple.com/br/app/romcrate/id6759972404) |
 | **RSS Radar** | News Reader, Filter & Alerts. | Unknown | [Windows](https://apps.microsoft.com/detail/9mwhll3bbx9f?hl=en-us) [iOS](https://apps.apple.com/us/app/rss-radar/id6496271582?l=en-US) |
 | **SatisFIT** | Workout app for indoor training. | 1K+ (Google Play & App Store) | [Website](https://satis.fit/) [Android](https://play.google.com/store/apps/details?id=com.satisfit.app)  [iOS](https://apps.apple.com/sk/app/satisfit/id1670558703) |
 | **Sequential Cards Game** | Sequential Cards tests your memory! 🃏 Play offline, open cards in order, and win! | 10+ downloads (Google Play) | [Android](https://play.google.com/store/apps/details?id=com.fmglib.numberpathgame) |

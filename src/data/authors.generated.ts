@@ -221,6 +221,10 @@ export const authorEntries = [
     displayName: "Helkin Chacon",
   },
   {
+    key: "holderj-dev",
+    displayName: "James Esil Holder",
+  },
+  {
     key: "HorusSoftwareUY",
     displayName: "Horus Software",
   },
