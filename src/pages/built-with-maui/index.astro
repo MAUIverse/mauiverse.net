@@ -1,30 +1,64 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getEntry, render } from 'astro:content';
+import { builtWithMauiApps } from '../../data/built-with-maui-apps.generated';
 
-const entry = await getEntry('built-with-maui', 'apps');
+const apps = builtWithMauiApps;
+const sourceRepoUrl = 'https://github.com/jfversluis/built-with-maui';
 
-if (!entry) {
-  throw new Error(
-    'Missing built-with-maui content. Run `npm run fetch:built-with-maui` before building.'
-  );
+const platformFilters = [
+  { key: 'ios', label: 'iOS', icon: 'fa-brands fa-apple' },
+  { key: 'android', label: 'Android', icon: 'fa-brands fa-android' },
+  { key: 'windows', label: 'Windows', icon: 'fa-brands fa-windows' },
+  { key: 'github', label: 'Open Source', icon: 'fa-brands fa-github' },
+];
+
+const platformMeta: Record<string, { label: string; icon: string; colorClass: string }> = {
+  ios: { label: 'iOS', icon: 'fa-brands fa-apple', colorClass: 'bg-blue-500/10 text-blue-600 hover:bg-blue-500/20' },
+  android: { label: 'Android', icon: 'fa-brands fa-android', colorClass: 'bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20' },
+  windows: { label: 'Windows', icon: 'fa-brands fa-windows', colorClass: 'bg-sky-500/10 text-sky-600 hover:bg-sky-500/20' },
+  website: { label: 'Website', icon: 'fa-solid fa-globe', colorClass: 'bg-gray-500/10 text-gray-600 hover:bg-gray-500/20' },
+  github: { label: 'GitHub', icon: 'fa-brands fa-github', colorClass: 'bg-gray-500/10 text-gray-600 hover:bg-gray-500/20' },
+};
+
+function getInitials(name: string): string {
+  return name
+    .split(/[\s-]+/)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join('')
+    .toUpperCase();
 }
 
-const { Content } = await render(entry);
-const sourceRepoUrl = 'https://github.com/jfversluis/built-with-maui';
+// Serialize app data for client-side modal (only fields needed)
+const clientApps = apps.map((app) => ({
+  name: app.name,
+  description: app.description,
+  downloads: app.downloads,
+  iconUrl: app.iconUrl,
+  platforms: app.platforms,
+}));
+
+// Safe JSON for embedding in HTML — escape < to prevent </script> breakout
+const safeClientAppsJson = JSON.stringify(clientApps).replace(/</g, '\\u003c');
+const safePlatformMetaJson = JSON.stringify(platformMeta).replace(/</g, '\\u003c');
 ---
 
 <BaseLayout
   title="Built with MAUI | MAUIverse"
-  description="A list of real-world apps built with .NET MAUI."
+  description="Discover real-world apps built with .NET MAUI — from indie projects to enterprise solutions used by millions."
   allowPageScroll={true}
 >
   <section class="min-h-screen py-24 md:py-32 relative z-10">
     <div class="container mx-auto max-w-6xl px-6">
-      <div class="page-hero !px-0 !text-left">
-        <h1 class="text-gradient">Built with MAUI</h1>
-        <p class="subtitle !mx-0">
-          Real-world apps built with .NET MAUI.
+      <div class="fade-in">
+        <p class="mb-4 text-sm font-header font-bold uppercase tracking-[0.2em] text-brand">
+          App Showcase
+        </p>
+        <h1 class="mb-5 text-gradient text-4xl md:text-6xl font-header font-bold">
+          Built with MAUI
+        </h1>
+        <p class="mb-12 max-w-2xl text-lg text-muted leading-relaxed">
+          Real-world apps built with .NET MAUI&thinsp;&mdash;&thinsp;from indie side-projects to apps used by millions.
           <a
             href={sourceRepoUrl}
             target="_blank"
@@ -36,11 +70,438 @@ const sourceRepoUrl = 'https://github.com/jfversluis/built-with-maui';
         </p>
       </div>
 
-      <div class="divider-gradient mb-12"></div>
+      <div class="divider-gradient mb-10"></div>
 
-      <article class="reveal prose dark:prose-invert max-w-none prose-a:text-brand hover:prose-a:underline prose-headings:text-brand-dark prose-headings:font-header prose-img:rounded-xl">
-        <Content />
-      </article>
+      {/* ── Search & Filters ── */}
+      <div class="reveal mb-8">
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,24rem)_1fr] lg:items-start">
+          <div>
+            <label for="app-search" class="mb-2 block text-sm font-semibold text-brand-dark">
+              Search apps
+            </label>
+            <div class="relative">
+              <input
+                id="app-search"
+                type="text"
+                placeholder="Search by name or description…"
+                class="w-full rounded-md border border-edge/50 bg-surface-alt px-4 py-3 pr-12 text-base text-brand-dark placeholder:text-muted focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                data-app-search-input
+              />
+              <button
+                type="button"
+                class="absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full p-2 text-muted transition hover:text-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                aria-label="Clear search"
+                data-app-search-clear
+              >
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <fieldset data-app-filter-group>
+            <legend class="mb-2 text-sm font-semibold text-brand-dark">Platform:</legend>
+            <div class="flex flex-wrap gap-2">
+              {platformFilters.map((filter) => (
+                <label class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-edge/40 px-3 py-2 text-sm text-muted transition hover:border-brand/40 hover:text-brand">
+                  <input
+                    type="checkbox"
+                    value={filter.key}
+                    class="h-4 w-4 rounded border-edge text-brand focus:ring-brand"
+                    data-app-filter-checkbox
+                  />
+                  <i class={filter.icon} aria-hidden="true"></i>
+                  <span>{filter.label}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+        </div>
+
+        <p class="mt-4 text-sm text-muted">
+          Showing <span data-app-visible-count class="font-semibold text-brand-dark">{apps.length}</span> of {apps.length} apps
+        </p>
+      </div>
+
+      {/* ── Card Grid ── */}
+      <ul
+        class="reveal grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        aria-label="Apps built with .NET MAUI"
+        data-app-grid
+      >
+        {apps.map((app, idx) => (
+          <li
+            class="group hover-glow flex cursor-pointer flex-col rounded-xl border border-edge/40 bg-surface p-5 transition"
+            data-app-card
+            data-app-index={idx}
+            data-search-text={`${app.name.toLowerCase()} ${app.description.toLowerCase()}`}
+            data-platforms={Object.keys(app.platforms).join(' ')}
+            role="button"
+            tabindex="0"
+            aria-label={`View details for ${app.name}`}
+          >
+            {/* Card header: icon + name + downloads */}
+            <div class="mb-4 flex items-start gap-4">
+              {app.iconUrl ? (
+                <div class="relative h-14 w-14 flex-shrink-0">
+                  <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-lg font-bold text-brand shadow-sm" data-icon-placeholder>
+                    {getInitials(app.name)}
+                  </div>
+                  <img
+                    data-lazy-src={app.iconUrl}
+                    alt={`${app.name} app icon`}
+                    width="56"
+                    height="56"
+                    class="absolute inset-0 h-14 w-14 rounded-xl shadow-sm opacity-0 transition-opacity duration-300"
+                  />
+                </div>
+              ) : (
+                <div class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-lg font-bold text-brand shadow-sm">
+                  {getInitials(app.name)}
+                </div>
+              )}
+              <div class="min-w-0 flex-1">
+                <h2 class="text-lg font-semibold leading-tight text-brand-dark">
+                  {app.name}
+                </h2>
+                {app.downloads && (
+                  <p class="mt-1 text-xs text-muted">
+                    <i class="fa-solid fa-download mr-1 text-brand/60" aria-hidden="true"></i>
+                    {app.downloads}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Description */}
+            <p class="mb-5 flex-1 text-sm leading-relaxed text-muted line-clamp-3">
+              {app.description}
+            </p>
+
+            {/* Platform links + expand hint */}
+            <div class="mt-auto flex items-center justify-between gap-2">
+              <div class="flex flex-wrap gap-2">
+                {Object.entries(app.platforms).map(([key, url]) => {
+                  const meta = platformMeta[key];
+                  if (!meta) return null;
+                  return (
+                    <span class={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${meta.colorClass}`}>
+                      <i class={meta.icon} aria-hidden="true"></i>
+                      {meta.label}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <p class="mt-6 hidden text-base text-muted" data-app-no-results>
+        No apps found matching your criteria.
+      </p>
+
+      {/* ── Attribution ── */}
+      <p class="mt-12 text-center text-sm text-muted">
+        Data sourced from
+        <a
+          href={sourceRepoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold text-brand hover:underline"
+        >
+          jfversluis/built-with-maui
+        </a>
+        &thinsp;&middot;&thinsp; Icons from app stores
+      </p>
     </div>
   </section>
+
+  {/* ── Detail Modal ── */}
+  <div
+    class="fixed inset-0 z-50 hidden items-start justify-center overflow-y-auto bg-black/50 p-4 backdrop-blur-sm sm:p-8"
+    data-app-modal
+    role="dialog"
+    aria-modal="true"
+    aria-label="App details"
+  >
+    <div
+      class="relative my-8 w-full max-w-3xl rounded-2xl border border-edge/40 bg-surface p-6 shadow-2xl sm:p-8"
+      data-app-modal-content
+    >
+      <button
+        type="button"
+        class="absolute right-4 top-4 rounded-full p-2 text-muted transition hover:bg-surface-alt hover:text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand"
+        aria-label="Close"
+        data-app-modal-close
+      >
+        <i class="fa-solid fa-xmark text-lg" aria-hidden="true"></i>
+      </button>
+
+      {/* Modal header */}
+      <div class="mb-6 flex items-start gap-5 pr-10">
+        <div data-app-modal-icon class="flex-shrink-0"></div>
+        <div class="min-w-0 flex-1">
+          <h2 data-app-modal-name class="text-2xl font-bold text-brand-dark"></h2>
+          <p data-app-modal-downloads class="mt-1 text-sm text-muted"></p>
+        </div>
+      </div>
+
+      {/* Full description */}
+      <p data-app-modal-description class="mb-6 text-base leading-relaxed text-muted"></p>
+
+      {/* Platform links */}
+      <div data-app-modal-platforms class="mb-2 flex flex-wrap gap-2"></div>
+    </div>
+  </div>
+
+  <script is:inline type="application/json" id="app-data" set:html={safeClientAppsJson}></script>
+  <script is:inline type="application/json" id="platform-meta-data" set:html={safePlatformMetaJson}></script>
+  <script is:inline>
+    (() => {
+      const clientApps = JSON.parse(document.getElementById('app-data').textContent);
+      const platformMeta = JSON.parse(document.getElementById('platform-meta-data').textContent);
+      const searchInput = document.querySelector('[data-app-search-input]');
+      const clearButton = document.querySelector('[data-app-search-clear]');
+      const filterCheckboxes = Array.from(document.querySelectorAll('[data-app-filter-checkbox]'));
+      const cards = Array.from(document.querySelectorAll('[data-app-card]'));
+      const noResults = document.querySelector('[data-app-no-results]');
+      const visibleCount = document.querySelector('[data-app-visible-count]');
+
+      // Modal elements
+      const modal = document.querySelector('[data-app-modal]');
+      const modalContent = document.querySelector('[data-app-modal-content]');
+      const modalClose = document.querySelector('[data-app-modal-close]');
+      const modalIcon = document.querySelector('[data-app-modal-icon]');
+      const modalName = document.querySelector('[data-app-modal-name]');
+      const modalDownloads = document.querySelector('[data-app-modal-downloads]');
+      const modalDescription = document.querySelector('[data-app-modal-description]');
+      const modalPlatforms = document.querySelector('[data-app-modal-platforms]');
+
+      if (!(searchInput instanceof HTMLInputElement) || !(clearButton instanceof HTMLButtonElement) || !noResults || !modal) {
+        return;
+      }
+
+      // ── Filtering ──
+      const applyFilter = () => {
+        const query = searchInput.value.trim().toLowerCase();
+        const selectedPlatforms = filterCheckboxes
+          .filter((cb) => cb instanceof HTMLInputElement && cb.checked)
+          .map((cb) => cb.value);
+        let visible = 0;
+
+        cards.forEach((card) => {
+          const searchText = card.getAttribute('data-search-text') ?? '';
+          const platforms = (card.getAttribute('data-platforms') ?? '').split(' ').filter(Boolean);
+          const matchesSearch = !query || searchText.includes(query);
+          const matchesPlatforms =
+            selectedPlatforms.length === 0 ||
+            selectedPlatforms.every((p) => platforms.includes(p));
+          const show = matchesSearch && matchesPlatforms;
+          card.classList.toggle('hidden', !show);
+          if (show) visible++;
+        });
+
+        noResults.classList.toggle('hidden', visible > 0);
+        clearButton.classList.toggle('hidden', query.length === 0);
+        if (visibleCount) visibleCount.textContent = String(visible);
+      };
+
+      searchInput.addEventListener('input', applyFilter);
+      filterCheckboxes.forEach((cb) => {
+        if (cb instanceof HTMLInputElement) cb.addEventListener('change', applyFilter);
+      });
+      clearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        applyFilter();
+        searchInput.focus();
+      });
+      applyFilter();
+
+      // ── Modal ──
+      var triggerElement = null;
+
+      function getInitials(name) {
+        return name.split(/[\s-]+/).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+      }
+
+      function escapeHtml(str) {
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+      }
+
+      function openModal(index) {
+        const app = clientApps[index];
+        if (!app) return;
+
+        triggerElement = document.activeElement;
+
+        // Icon
+        if (app.iconUrl) {
+          var initials = escapeHtml(getInitials(app.name));
+          var safeName = escapeHtml(app.name);
+          modalIcon.innerHTML = '<div class="relative" style="width:4.5rem;height:4.5rem">' +
+            '<div class="flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md" style="width:4.5rem;height:4.5rem">' + initials + '</div>' +
+            '<img alt="' + safeName + ' app icon" width="72" height="72" class="absolute inset-0 rounded-2xl shadow-md opacity-0 transition-opacity duration-300" style="width:4.5rem;height:4.5rem" />' +
+            '</div>';
+          var modalImg = modalIcon.querySelector('img');
+          var modalPlaceholder = modalIcon.querySelector('[class*="from-brand"]');
+          modalImg.onload = function() { modalImg.classList.remove('opacity-0'); modalImg.classList.add('opacity-100'); modalPlaceholder.classList.add('invisible'); };
+          modalImg.onerror = function() { modalImg.remove(); };
+          modalImg.src = app.iconUrl;
+        } else {
+          var fallbackInitials = escapeHtml(getInitials(app.name));
+          modalIcon.innerHTML = '<div class="flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand/20 to-brand-extra/20 text-xl font-bold text-brand shadow-md" style="width:4.5rem;height:4.5rem">' + fallbackInitials + '</div>';
+        }
+
+        // Text
+        modalName.textContent = app.name;
+        modalDownloads.textContent = '';
+        if (app.downloads) {
+          var dlIcon = document.createElement('i');
+          dlIcon.className = 'fa-solid fa-download mr-1 text-brand/60';
+          modalDownloads.appendChild(dlIcon);
+          modalDownloads.appendChild(document.createTextNode(app.downloads));
+        }
+        modalDescription.textContent = app.description;
+
+        // Platform links
+        modalPlatforms.innerHTML = '';
+        Object.entries(app.platforms).forEach(function(entry) {
+          var key = entry[0], url = entry[1];
+          var meta = platformMeta[key];
+          if (!meta) return;
+          if (!/^https?:\/\//i.test(url)) return;
+          var a = document.createElement('a');
+          a.href = url;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.className = 'inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium transition ' + meta.colorClass;
+          a.innerHTML = '<i class="' + meta.icon + '"></i>' + meta.label;
+          modalPlatforms.appendChild(a);
+        });
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        modalClose.focus();
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+        if (triggerElement && triggerElement.focus) triggerElement.focus();
+        triggerElement = null;
+      }
+
+      // Card click handlers
+      cards.forEach(function(card) {
+        card.addEventListener('click', function(e) {
+          // Don't open modal if clicking a link inside the card
+          var el = e.target instanceof Element ? e.target : e.target.parentElement;
+          if (el && el.closest('a')) return;
+          var index = parseInt(card.getAttribute('data-app-index') ?? '-1', 10);
+          openModal(index);
+        });
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            var index = parseInt(card.getAttribute('data-app-index') ?? '-1', 10);
+            openModal(index);
+          }
+        });
+      });
+
+      // Close modal handlers
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) {
+        if (!modalContent.contains(e.target)) closeModal();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+        // Focus trap: cycle Tab within modal when open
+        if (e.key === 'Tab' && !modal.classList.contains('hidden')) {
+          var focusable = modalContent.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+          if (focusable.length === 0) return;
+          var first = focusable[0];
+          var last = focusable[focusable.length - 1];
+          if (e.shiftKey) {
+            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+          } else {
+            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  {/* Throttled image loader — drip-feeds requests to avoid 429 rate limits */}
+  <script is:inline>
+    (function() {
+      var queue = [];
+      var active = 0;
+      var MAX_CONCURRENT = 3;
+      var STAGGER_MS = 150;
+      var MAX_RETRIES = 2;
+
+      function loadNext() {
+        while (active < MAX_CONCURRENT && queue.length > 0) {
+          var item = queue.shift();
+          if (!item || item.img.src) continue;
+          active++;
+          (function(it) {
+            var src = it.img.getAttribute('data-lazy-src');
+            it.img.onload = function() {
+              // Fade in the image, hide the placeholder behind it
+              it.img.classList.remove('opacity-0');
+              it.img.classList.add('opacity-100');
+              var placeholder = it.img.parentElement && it.img.parentElement.querySelector('[data-icon-placeholder]');
+              if (placeholder) placeholder.classList.add('invisible');
+              active--;
+              setTimeout(loadNext, STAGGER_MS);
+            };
+            it.img.onerror = function() {
+              active--;
+              if (it.retries < MAX_RETRIES) {
+                it.retries++;
+                it.img.removeAttribute('src');
+                setTimeout(function() { queue.push(it); loadNext(); }, 1000 * it.retries);
+              } else {
+                // Keep placeholder visible, remove broken img
+                it.img.remove();
+                setTimeout(loadNext, STAGGER_MS);
+              }
+            };
+            it.img.src = src;
+          })(item);
+        }
+      }
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            queue.push({ img: entry.target, retries: 0 });
+            observer.unobserve(entry.target);
+            loadNext();
+          }
+        });
+      }, { rootMargin: '200px' });
+
+      document.querySelectorAll('img[data-lazy-src]').forEach(function(img) {
+        observer.observe(img);
+      });
+    })();
+  </script>
+
+  <style>
+    /* Hide browser broken-image icon on not-yet-loaded / failed images */
+    img[data-lazy-src]:not([src]) {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+    img[data-lazy-src][src] {
+      visibility: visible;
+    }
+  </style>
 </BaseLayout>
