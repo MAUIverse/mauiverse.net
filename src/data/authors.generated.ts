@@ -217,6 +217,10 @@ export const authorEntries = [
     displayName: "Gone DotNet",
   },
   {
+    key: "GypsyCrushader",
+    displayName: "Adarsh Pillai",
+  },
+  {
     key: "Helkin-Chacon",
     displayName: "Helkin Chacon",
   },
@@ -535,6 +539,10 @@ export const authorEntries = [
   {
     key: "unoplatform",
     displayName: "Uno Platform",
+  },
+  {
+    key: "UXDivers",
+    displayName: "UX Divers",
   },
   {
     key: "vhugogarcia",
