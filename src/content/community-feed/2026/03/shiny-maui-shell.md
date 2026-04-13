@@ -2,7 +2,7 @@
 title: "Shiny MAUI Shell — A Library That Takes Shell to the Next Level"
 link: https://allanritchie.com/blog/2026/03/shiny-maui-shell/
 description: "Allan Ritchie introduces Shiny MAUI Shell, a library that wraps standard MAUI Shell with source-generated type-safe navigation, ViewModel lifecycle management, testable services, and zero boilerplate wiring. It replaces string-based routes and Shell.Current with compile-time validated, injectable navigation."
-date: 2026-03-31
+date: 2026-03-23
 author: aritchie
 contentType: article
 ---

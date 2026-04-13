@@ -2,7 +2,7 @@
 title: "Introducing Shiny.Spatial — A Dependency-Free Spatial Database and GPS Geofencing for .NET"
 link: https://allanritchie.com/blog/2026/03/shiny-spatial/
 description: "Allan Ritchie introduces Shiny.Spatial, a spatial database engine that stores geometry in SQLite with R*Tree indexing and pure C# spatial algorithms — no SpatiaLite or NetTopologySuite required. The companion geofencing package enables monitoring thousands of polygon regions via GPS, breaking free from the 20/60 region limits on iOS and Android."
-date: 2026-03-31
+date: 2026-03-01
 author: aritchie
 contentType: article
 ---

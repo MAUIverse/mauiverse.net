@@ -2,7 +2,7 @@
 title: "Shiny Client v4 - Windows Support, .NET 10, and a Ton of Improvements"
 link: https://allanritchie.com/blog/2026/03/shiny-client-v4/
 description: "Allan Ritchie announces Shiny Client v4, a major release that brings Windows support for BluetoothLE, BLE Hosting, HTTP Transfers, and Locations. The release also moves to .NET 10 and includes significant fixes across locations, HTTP transfers, push notifications, and BLE modules."
-date: 2026-03-31
+date: 2026-03-26
 author: aritchie
 contentType: article
 ---

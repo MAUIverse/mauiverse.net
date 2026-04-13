@@ -2,7 +2,7 @@
 title: "Shiny.Maui.ContactStore — Device Contact Access That Does It All"
 link: https://allanritchie.com/blog/2026/03/shiny-contactstore/
 description: "Allan Ritchie introduces Shiny.Maui.ContactStore, a library that provides full CRUD contact management with LINQ queries that translate to native platform operations. It goes beyond what MAUI Essentials offers, with one unified API for both Android and iOS."
-date: 2026-03-31
+date: 2026-03-24
 author: aritchie
 contentType: article
 ---

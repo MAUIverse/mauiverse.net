@@ -2,7 +2,7 @@
 title: "UI Automated Testing for .NET MAUI with MauiDevFlow — And How AI Wrote the Tests"
 link: https://allanritchie.com/blog/2026/03/maui-ui-testing-mauidevflow/
 description: "Allan Ritchie demonstrates how MauiDevFlow enables lightweight UI testing for .NET MAUI without Appium or WebDriver. He walks through building a full suite of 48 UI tests for a real app — with AutomationIds, a custom driver, and AI-generated test code."
-date: 2026-03-31
+date: 2026-03-27
 author: aritchie
 contentType: article
 ---
