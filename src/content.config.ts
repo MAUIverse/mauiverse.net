@@ -83,6 +83,7 @@ const communityContributors = defineCollection({
     instagramUrl: z.string().optional(),
     linkedInUrl: z.string().optional(),
     youTubeUrl: z.string().optional(),
+    youTubeRSS: z.string().optional(),
     tikTokUrl: z.string().optional(),
     blogUrl: z.string().optional(),
     blogRSSFeedUrl: z.string().optional(),
