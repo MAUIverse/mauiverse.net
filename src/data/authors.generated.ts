@@ -177,6 +177,10 @@ export const authorEntries = [
     displayName: "Eilon Lipton",
   },
   {
+    key: "emimontesdeoca",
+    displayName: "Emiliano Montesdeoca",
+  },
+  {
     key: "eschimmel",
     displayName: "Ed Schimmel",
   },
@@ -379,6 +383,10 @@ export const authorEntries = [
   {
     key: "MikeCodesDotNET",
     displayName: "Mike James",
+  },
+  {
+    key: "mitchelsellers",
+    displayName: "Mitchel Sellers",
   },
   {
     key: "morning4coffe-dev",
