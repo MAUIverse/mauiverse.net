@@ -1,5 +1,5 @@
 ---
-title: ".NET MAUI Engineering Team Live Stream: AI-Powered .NET MAUI Development with MauiDevFlow"
+title: "Will they do it? .NET MAUI Engineering Team Live Stream"
 link: https://www.youtube.com/watch?v=vhrpjCJw1CY
 description: "The .NET MAUI engineering team goes live building an app with MauiDevFlow — an open-source toolkit that gives AI agents eyes and hands inside a running MAUI app. Jakub Florkowski, Shane Neuville, and Gerald Versluis set up MauiDevFlow from scratch, let AI agents build and modify UI, and debug in real time."
 date: 2026-04-30
@@ -11,9 +11,9 @@ featuring:
 contentType: video
 ---
 
-No scripts, no safety net — just three .NET MAUI engineers, an AI agent, and a real app taking shape in real time. 
+Hopefully.
 
-Will they do it?
+No scripts, no safety net — just three .NET MAUI engineers, an AI agent, and a real app taking shape in real time. 
 
 This live stream showcases MauiDevFlow, an open-source toolkit from `dotnet/maui-labs` that enables AI agents to inspect, build, and debug .NET MAUI apps through visual tree inspection, live property editing, and terminal-driven screenshots.
 
