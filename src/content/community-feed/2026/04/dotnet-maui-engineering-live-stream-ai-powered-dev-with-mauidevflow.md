@@ -11,9 +11,11 @@ featuring:
 contentType: video
 ---
 
-They build an app. . .
+No scripts, no safety net — just three .NET MAUI engineers, an AI agent, and a real app taking shape in real time. 
 
-No scripts, no safety net — just three .NET MAUI engineers, an AI agent, and a real app taking shape in real time. This live stream showcases MauiDevFlow, an open-source toolkit from `dotnet/maui-labs` that enables AI agents to inspect, build, and debug .NET MAUI apps through visual tree inspection, live property editing, and terminal-driven screenshots.
+Will they do it?
+
+This live stream showcases MauiDevFlow, an open-source toolkit from `dotnet/maui-labs` that enables AI agents to inspect, build, and debug .NET MAUI apps through visual tree inspection, live property editing, and terminal-driven screenshots.
 
 ## What you'll learn
 
