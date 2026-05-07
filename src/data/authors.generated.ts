@@ -293,6 +293,10 @@ export const authorEntries = [
     displayName: "Javier Suárez",
   },
   {
+    key: "justinwojo",
+    displayName: "Justin Wojciechowski",
+  },
+  {
     key: "Kapusch",
     displayName: "Jean-Emmanuel BAILLAT",
   },
@@ -553,12 +557,20 @@ export const authorEntries = [
     displayName: "UX Divers",
   },
   {
+    key: "velocitysystems",
+    displayName: "Velocity Engineering Systems",
+  },
+  {
     key: "vhugogarcia",
     displayName: "Victor Hugo Garcia",
   },
   {
     key: "VladislavAntonyuk",
     displayName: "Vladislav Antonyuk",
+  },
+  {
+    key: "yushulx",
+    displayName: "Xiao Ling",
   },
   {
     key: "zleao",
