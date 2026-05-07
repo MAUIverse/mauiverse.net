@@ -2,10 +2,11 @@
 // Do not edit manually.
 
 export const mauiverseWebsiteContributorSource = "https://api.github.com/repos/MAUIverse/mauiverse.net/contributors?per_page=100";
-export const mauiverseWebsiteContributorFetchedAt = "2026-04-06T10:14:55.315Z";
+export const mauiverseWebsiteContributorFetchedAt = "2026-05-07T19:12:08.460Z";
 export const mauiverseWebsiteContributorUsernames = [
   "jfversluis",
   "kubaflo",
+  "mattleibow",
   "seba47",
   "tonyedwardspz"
 ] as const;

@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const nugetAuthorSource = "https://azuresearch-usnc.nuget.org/query?q=owner:<github-username>&prerelease=false&take=1";
-export const nugetAuthorFetchedAt = "2026-04-06T10:14:56.261Z";
+export const nugetAuthorFetchedAt = "2026-05-07T19:12:11.379Z";
 export const nugetAuthorUsernames = [
   "abhayprince",
   "adospace",
@@ -24,6 +24,7 @@ export const nugetAuthorUsernames = [
   "drasticactions",
   "edcharbeneau",
   "eilon",
+  "emimontesdeoca",
   "ewerspej",
   "flaviogoncalves",
   "framinosona",
@@ -32,11 +33,13 @@ export const nugetAuthorUsernames = [
   "jfversluis",
   "jonathanpeppers",
   "jsuarezruiz",
+  "justinwojo",
   "luismts",
   "mallibone",
   "matt-goldman",
   "mattleibow",
   "mikecodesdotnet",
+  "mitchelsellers",
   "mrlacey",
   "naweed",
   "nicka55",
@@ -52,6 +55,8 @@ export const nugetAuthorUsernames = [
   "toine-db",
   "tsjdev-apps",
   "unoplatform",
+  "uxdivers",
   "vhugogarcia",
+  "yushulx",
   "zleao"
 ] as const;

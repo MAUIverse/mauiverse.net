@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const mauiContributorSource = "https://api.github.com/repos/dotnet/maui/contributors?per_page=100";
-export const mauiContributorFetchedAt = "2026-04-06T10:14:53.131Z";
+export const mauiContributorFetchedAt = "2026-05-07T19:12:05.737Z";
 export const mauiContributorUsernames = [
   "1c3f0x84",
   "1d0n7kn0w",
@@ -32,7 +32,6 @@ export const mauiContributorUsernames = [
   "almirvuk",
   "amralsayed0",
   "andersrasmussen",
-  "andreas-nesheim",
   "andreimisiukevich",
   "andreinitescu",
   "andrekraemer",
@@ -185,6 +184,7 @@ export const mauiContributorUsernames = [
   "humblehacker",
   "ice-j",
   "ilgalvo",
+  "ilonatommy",
   "ionixjunior",
   "ivanpovazan",
   "j-swift",
@@ -199,7 +199,6 @@ export const mauiContributorUsernames = [
   "jeremy-visionaid",
   "jfversluis",
   "jgold6",
-  "jimbobbennett",
   "jimbobsquarepants",
   "jimmgarrido",
   "jingliancui",
@@ -207,8 +206,6 @@ export const mauiContributorUsernames = [
   "jkurdek",
   "joelmartinez",
   "joergmeier106",
-  "jogyblack",
-  "johankson",
   "jonathanantoine",
   "jonathanpeppers",
   "jonlipsky",
@@ -216,7 +213,6 @@ export const mauiContributorUsernames = [
   "joonghyuncho",
   "jorisvergeer",
   "jpd21122012",
-  "jrjrguo",
   "jsmarcus",
   "jstedfast",
   "jsuarezruiz",
@@ -261,6 +257,7 @@ export const mauiContributorUsernames = [
   "mattleibow",
   "mauroa",
   "maxkoshevoi",
+  "mduchev",
   "melimion",
   "mellson",
   "memu8",
@@ -299,6 +296,7 @@ export const mauiContributorUsernames = [
   "ntherning",
   "nwestfall",
   "ooikengsiang",
+  "oxymoron290",
   "pandalink",
   "patridge",
   "paulandersons",
