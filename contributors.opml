@@ -5,61 +5,61 @@
     <dateCreated>Mon, 08 Jun 2026 07:07:08 GMT</dateCreated>
   </head>
   <body>
-    <outline type="rss" text="Adarsh Pillai" title="Adarsh Pillai" xmlUrl="https://medium.com/feed/@GypsyCrushader114" htmlUrl="https://medium.com/@GypsyCrushader114" />
-    <outline type="rss" text="Alberto Aldegheri" title="Alberto Aldegheri" xmlUrl="https://albyrock87.hashnode.dev/rss.xml" htmlUrl="https://albyrock87.hashnode.dev/" />
-    <outline type="rss" text="Allan Ritchie" title="Allan Ritchie" xmlUrl="https://allanritchie.com/rss.xml" htmlUrl="https://allanritchie.com" />
-    <outline type="rss" text="Andreas Nesheim" title="Andreas Nesheim" xmlUrl="https://www.andreasnesheim.no/feed/" htmlUrl="https://www.andreasnesheim.no/" />
-    <outline type="rss" text="Brady Stroud" title="Brady Stroud" xmlUrl="https://bradystroud.dev/rss.xml" htmlUrl="https://bradystroud.dev" />
-    <outline type="rss" text="Brandon Minnick" title="Brandon Minnick" xmlUrl="https://codetraveler.io/rss/" htmlUrl="https://codetraveler.io" />
-    <outline type="rss" text="Clifford Agius" title="Clifford Agius" xmlUrl="https://www.cliffordagius.co.uk/index.xml" htmlUrl="https://cliffordagius.co.uk/" />
-    <outline type="rss" text="Coding Flamingo" title="Coding Flamingo" xmlUrl="https://codingflamingo.com/feed" htmlUrl="https://codingflamingo.com/" />
-    <outline type="rss" text="Damian Antonowicz" title="Damian Antonowicz" xmlUrl="https://damianantonowicz.pl/feed/" htmlUrl="https://damianantonowicz.pl" />
-    <outline type="rss" text="Damian Suess" title="Damian Suess" xmlUrl="https://suesslabs.com/feed/" htmlUrl="https://suesslabs.com/" />
-    <outline type="rss" text="Damien Doumer" title="Damien Doumer" xmlUrl="https://doumer.me/feed/" htmlUrl="https://doumer.me" />
-    <outline type="rss" text="Dan Siegel" title="Dan Siegel" xmlUrl="https://dansiegel.net/syndication.axd" htmlUrl="https://dansiegel.net" />
-    <outline type="rss" text="Daniel Monettelli" title="Daniel Monettelli" xmlUrl="https://danielmonettelli.github.io/blog/feed" htmlUrl="https://danielmonettelli.github.io" />
-    <outline type="rss" text="David Ortinau" title="David Ortinau" xmlUrl="https://dev.to/feed/davidortinau" htmlUrl="https://dev.to/davidortinau" />
-    <outline type="rss" text="Ed Charbeneau " title="Ed Charbeneau " xmlUrl="https://edcharbeneau.com/feed" htmlUrl="http://edcharbeneau.com/" />
-    <outline type="rss" text="Emiliano Montesdeoca" title="Emiliano Montesdeoca" xmlUrl="https://thedotnetblog.com/index.xml" htmlUrl="https://thedotnetblog.com" />
-    <outline type="rss" text="Frank A. Krueger " title="Frank A. Krueger " xmlUrl="https://praeclarum.org/rss" htmlUrl="https://praeclarum.org/" />
-    <outline type="rss" text="Gerald Versluis" title="Gerald Versluis" xmlUrl="https://blog.verslu.is/feed" htmlUrl="https://jfversluis.dev" />
-    <outline type="rss" text="Gone DotNet" title="Gone DotNet" xmlUrl="https://feeds.fireside.fm/gonedotnet/rss" htmlUrl="https://www.gonedotnet.io/" />
-    <outline type="rss" text="Héctor Pérez " title="Héctor Pérez " xmlUrl="https://devs.school/feed/" htmlUrl="https://devs.school/" />
-    <outline type="rss" text="James Montemagno" title="James Montemagno" xmlUrl="https://montemagno.com/rss/" htmlUrl="https://montemagno.com" />
-    <outline type="rss" text="Javier Suárez" title="Javier Suárez" xmlUrl="https://javiersuarezruiz.wordpress.com/feed/" htmlUrl="https://javiersuarezruiz.wordpress.com/" />
-    <outline type="rss" text="Jean-Emmanuel BAILLAT" title="Jean-Emmanuel BAILLAT" xmlUrl="https://www.mauicestclair.fr/index.xml" htmlUrl="https://www.mauicestclair.fr" />
-    <outline type="rss" text="Jean-Marie Alfonsi" title="Jean-Marie Alfonsi" xmlUrl="https://sharpnado.com/rss/" htmlUrl="https://www.sharpnado.com" />
-    <outline type="rss" text="Johan Smarius" title="Johan Smarius" xmlUrl="https://www.johansmarius.dev/feeds/posts/default" htmlUrl="https://www.johansmarius.dev" />
-    <outline type="rss" text="Johan Svensson" title="Johan Svensson" xmlUrl="https://sirjohnk.com/feed.xml" htmlUrl="http://sirjohnk.com/" />
-    <outline type="rss" text="Kerry W. Lothrop" title="Kerry W. Lothrop" xmlUrl="https://kerry.lothrop.de/blog/feed/" htmlUrl="https://kerry.lothrop.de" />
-    <outline type="rss" text="Kym Phillpotts " title="Kym Phillpotts " xmlUrl="https://kymphillpotts.com/feed" htmlUrl="http://www.kymphillpotts.com/" />
-    <outline type="rss" text="Leomaris Reyes" title="Leomaris Reyes" xmlUrl="https://askxammy.com/feed/" htmlUrl="https://askxammy.com/" />
-    <outline type="rss" text="Luce Carter" title="Luce Carter" xmlUrl="https://www.lucecarter.co.uk/feed.xml" htmlUrl="https://lucecarter.co.uk" />
-    <outline type="rss" text="Luis Matos" title="Luis Matos" xmlUrl="https://luismts.com/feed/" htmlUrl="https://luismts.com" />
-    <outline type="rss" text="Mark Allibone" title="Mark Allibone" xmlUrl="https://mallibone.com/feed.xml" htmlUrl="https://mallibone.com" />
-    <outline type="rss" text="Matt Goldman" title="Matt Goldman" xmlUrl="https://goforgoldman.com/feed.xml" htmlUrl="https://goforgoldman.com" />
-    <outline type="rss" text="Matt Lacey" title="Matt Lacey" xmlUrl="http://feeds.feedburner.com/mattlacey" htmlUrl="https://mrlacey.com/" />
-    <outline type="rss" text="Matthew Leibowitz" title="Matthew Leibowitz" xmlUrl="https://dotnetdevaddict.co.za/feed" htmlUrl="https://dotnetdevaddict.co.za/" />
-    <outline type="rss" text="Melissa Houghton" title="Melissa Houghton" xmlUrl="https://melissahoughton.dev/feed.xml" htmlUrl="https://melissahoughton.dev" />
-    <outline type="rss" text="Michael Cummings " title="Michael Cummings " xmlUrl="http://michaelcummings.net/atom.xml" htmlUrl="http://michaelcummings.net/" />
-    <outline type="rss" text="Michael Stonis" title="Michael Stonis" xmlUrl="https://www.ston.is/index.xml" htmlUrl="https://www.ston.is/" />
-    <outline type="rss" text="Mitchel Sellers" title="Mitchel Sellers" xmlUrl="https://www.mitchelsellers.com/blog/rss" htmlUrl="https://mitchelsellers.com/blog" />
-    <outline type="rss" text="Nick Kovalsky" title="Nick Kovalsky" xmlUrl="https://taublast.github.io/feed" htmlUrl="https://taublast.github.io/" />
-    <outline type="rss" text="Pablo Germano" title="Pablo Germano" xmlUrl="https://grialkit.com/blog/rss.xml" htmlUrl="http://www.grialkit.com" />
-    <outline type="rss" text="Petar Mishev" title="Petar Mishev" xmlUrl="https://medium.com/feed/@ravenexp0" htmlUrl="https://medium.com/@ravenexp0" />
-    <outline type="rss" text="Rui Marinho" title="Rui Marinho" xmlUrl="https://ruimarinho.net/feed/" htmlUrl="http://ruimarinho.net/" />
-    <outline type="rss" text="Sam Basu" title="Sam Basu" xmlUrl="https://samidipbasu.com/feed/" htmlUrl="http://samidipbasu.com/" />
-    <outline type="rss" text="Samir GC" title="Samir GC" xmlUrl="http://xamaringuyshow.com/feed/" htmlUrl="http://xamaringuyshow.com" />
-    <outline type="rss" text="Sebastian Jensen" title="Sebastian Jensen" xmlUrl="https://www.tsjdev-apps.de/index.xml" htmlUrl="https://www.tsjdev-apps.de" />
-    <outline type="rss" text="Shane Neuville" title="Shane Neuville" xmlUrl="https://shaneneuville.com/feed" htmlUrl="http://shaneneuville.com/" />
-    <outline type="rss" text="Shaun Lawrence" title="Shaun Lawrence" xmlUrl="https://blog.bijington.com/feed" htmlUrl="https://blog.bijington.com/" />
-    <outline type="rss" text="Syncfusion" title="Syncfusion" xmlUrl="https://www.syncfusion.com/blogs/feed" htmlUrl="https://www.syncfusion.com/blogs" />
-    <outline type="rss" text="Tony Edwards" title="Tony Edwards" xmlUrl="https://tonyedwardspz.co.uk/feed.xml" htmlUrl="https://tonyedwardspz.co.uk" />
-    <outline type="rss" text="Tylah Kapa" title="Tylah Kapa" xmlUrl="https://www.kapa.dev/feed.xml" htmlUrl="https://www.kapa.dev" />
-    <outline type="rss" text="Uno Platform" title="Uno Platform" xmlUrl="https://platform.uno/feed/" htmlUrl="https://platform.uno" />
-    <outline type="rss" text="UX Divers" title="UX Divers" xmlUrl="https://grialkit.com/blog/rss.xml" htmlUrl="https://grialkit.com/blog" />
-    <outline type="rss" text="Victor Hugo Garcia" title="Victor Hugo Garcia" xmlUrl="https://dev.to/feed/vhugogarcia" htmlUrl="https://dev.to/vhugogarcia" />
-    <outline type="rss" text="Vladislav Antonyuk" title="Vladislav Antonyuk" xmlUrl="https://vladislavantonyuk.github.io/rss" htmlUrl="https://vladislavantonyuk.github.io" />
-    <outline type="rss" text="Xiao Ling" title="Xiao Ling" xmlUrl="https://dev.to/feed/yushulx" htmlUrl="https://dev.to/yushulx" />
+    <outline type="rss" text="Adarsh Pillai" title="Adarsh Pillai" xmlUrl="https://medium.com/feed/@GypsyCrushader114" htmlUrl="https://medium.com/@GypsyCrushader114" gitHubUsername="GypsyCrushader" />
+    <outline type="rss" text="Alberto Aldegheri" title="Alberto Aldegheri" xmlUrl="https://albyrock87.hashnode.dev/rss.xml" htmlUrl="https://albyrock87.hashnode.dev/" gitHubUsername="albyrock87" />
+    <outline type="rss" text="Allan Ritchie" title="Allan Ritchie" xmlUrl="https://allanritchie.com/rss.xml" htmlUrl="https://allanritchie.com" gitHubUsername="aritchie" />
+    <outline type="rss" text="Andreas Nesheim" title="Andreas Nesheim" xmlUrl="https://www.andreasnesheim.no/feed/" htmlUrl="https://www.andreasnesheim.no/" gitHubUsername="andreas-nesheim" />
+    <outline type="rss" text="Brady Stroud" title="Brady Stroud" xmlUrl="https://bradystroud.dev/rss.xml" htmlUrl="https://bradystroud.dev" gitHubUsername="bradystroud" />
+    <outline type="rss" text="Brandon Minnick" title="Brandon Minnick" xmlUrl="https://codetraveler.io/rss/" htmlUrl="https://codetraveler.io" gitHubUsername="TheCodeTraveler" />
+    <outline type="rss" text="Clifford Agius" title="Clifford Agius" xmlUrl="https://www.cliffordagius.co.uk/index.xml" htmlUrl="https://cliffordagius.co.uk/" gitHubUsername="CliffAgius" />
+    <outline type="rss" text="Coding Flamingo" title="Coding Flamingo" xmlUrl="https://codingflamingo.com/feed" htmlUrl="https://codingflamingo.com/" gitHubUsername="coding-flamingo" />
+    <outline type="rss" text="Damian Antonowicz" title="Damian Antonowicz" xmlUrl="https://damianantonowicz.pl/feed/" htmlUrl="https://damianantonowicz.pl" gitHubUsername="damianantonowicz" />
+    <outline type="rss" text="Damian Suess" title="Damian Suess" xmlUrl="https://suesslabs.com/feed/" htmlUrl="https://suesslabs.com/" gitHubUsername="DamianSuess" />
+    <outline type="rss" text="Damien Doumer" title="Damien Doumer" xmlUrl="https://doumer.me/feed/" htmlUrl="https://doumer.me" gitHubUsername="damiendoumer" />
+    <outline type="rss" text="Dan Siegel" title="Dan Siegel" xmlUrl="https://dansiegel.net/syndication.axd" htmlUrl="https://dansiegel.net" gitHubUsername="dansiegel" />
+    <outline type="rss" text="Daniel Monettelli" title="Daniel Monettelli" xmlUrl="https://danielmonettelli.github.io/blog/feed" htmlUrl="https://danielmonettelli.github.io" gitHubUsername="danielmonettelli" />
+    <outline type="rss" text="David Ortinau" title="David Ortinau" xmlUrl="https://dev.to/feed/davidortinau" htmlUrl="https://dev.to/davidortinau" gitHubUsername="davidortinau" />
+    <outline type="rss" text="Ed Charbeneau " title="Ed Charbeneau " xmlUrl="https://edcharbeneau.com/feed" htmlUrl="http://edcharbeneau.com/" gitHubUsername="EdCharbeneau" />
+    <outline type="rss" text="Emiliano Montesdeoca" title="Emiliano Montesdeoca" xmlUrl="https://thedotnetblog.com/index.xml" htmlUrl="https://thedotnetblog.com" gitHubUsername="emimontesdeoca" />
+    <outline type="rss" text="Frank A. Krueger " title="Frank A. Krueger " xmlUrl="https://praeclarum.org/rss" htmlUrl="https://praeclarum.org/" gitHubUsername="praeclarum" />
+    <outline type="rss" text="Gerald Versluis" title="Gerald Versluis" xmlUrl="https://blog.verslu.is/feed" htmlUrl="https://jfversluis.dev" gitHubUsername="jfversluis" />
+    <outline type="rss" text="Gone DotNet" title="Gone DotNet" xmlUrl="https://feeds.fireside.fm/gonedotnet/rss" htmlUrl="https://www.gonedotnet.io/" gitHubUsername="gonedotnet" />
+    <outline type="rss" text="Héctor Pérez " title="Héctor Pérez " xmlUrl="https://devs.school/feed/" htmlUrl="https://devs.school/" gitHubUsername="hprez21" />
+    <outline type="rss" text="James Montemagno" title="James Montemagno" xmlUrl="https://montemagno.com/rss/" htmlUrl="https://montemagno.com" gitHubUsername="jamesmontemagno" />
+    <outline type="rss" text="Javier Suárez" title="Javier Suárez" xmlUrl="https://javiersuarezruiz.wordpress.com/feed/" htmlUrl="https://javiersuarezruiz.wordpress.com/" gitHubUsername="jsuarezruiz" />
+    <outline type="rss" text="Jean-Emmanuel BAILLAT" title="Jean-Emmanuel BAILLAT" xmlUrl="https://www.mauicestclair.fr/index.xml" htmlUrl="https://www.mauicestclair.fr" gitHubUsername="Kapusch" />
+    <outline type="rss" text="Jean-Marie Alfonsi" title="Jean-Marie Alfonsi" xmlUrl="https://sharpnado.com/rss/" htmlUrl="https://www.sharpnado.com" gitHubUsername="roubachof" />
+    <outline type="rss" text="Johan Smarius" title="Johan Smarius" xmlUrl="https://www.johansmarius.dev/feeds/posts/default" htmlUrl="https://www.johansmarius.dev" gitHubUsername="JohanSmarius" />
+    <outline type="rss" text="Johan Svensson" title="Johan Svensson" xmlUrl="https://sirjohnk.com/feed.xml" htmlUrl="http://sirjohnk.com/" gitHubUsername="SirJohnK" />
+    <outline type="rss" text="Kerry W. Lothrop" title="Kerry W. Lothrop" xmlUrl="https://kerry.lothrop.de/blog/feed/" htmlUrl="https://kerry.lothrop.de" gitHubUsername="lothrop" />
+    <outline type="rss" text="Kym Phillpotts " title="Kym Phillpotts " xmlUrl="https://kymphillpotts.com/feed" htmlUrl="http://www.kymphillpotts.com/" gitHubUsername="kphillpotts" />
+    <outline type="rss" text="Leomaris Reyes" title="Leomaris Reyes" xmlUrl="https://askxammy.com/feed/" htmlUrl="https://askxammy.com/" gitHubUsername="LeomarisReyes" />
+    <outline type="rss" text="Luce Carter" title="Luce Carter" xmlUrl="https://www.lucecarter.co.uk/feed.xml" htmlUrl="https://lucecarter.co.uk" gitHubUsername="LuceCarter" />
+    <outline type="rss" text="Luis Matos" title="Luis Matos" xmlUrl="https://luismts.com/feed/" htmlUrl="https://luismts.com" gitHubUsername="luismts" />
+    <outline type="rss" text="Mark Allibone" title="Mark Allibone" xmlUrl="https://mallibone.com/feed.xml" htmlUrl="https://mallibone.com" gitHubUsername="mallibone" />
+    <outline type="rss" text="Matt Goldman" title="Matt Goldman" xmlUrl="https://goforgoldman.com/feed.xml" htmlUrl="https://goforgoldman.com" gitHubUsername="matt-goldman" />
+    <outline type="rss" text="Matt Lacey" title="Matt Lacey" xmlUrl="http://feeds.feedburner.com/mattlacey" htmlUrl="https://mrlacey.com/" gitHubUsername="mrlacey" />
+    <outline type="rss" text="Matthew Leibowitz" title="Matthew Leibowitz" xmlUrl="https://dotnetdevaddict.co.za/feed" htmlUrl="https://dotnetdevaddict.co.za/" gitHubUsername="mattleibow" />
+    <outline type="rss" text="Melissa Houghton" title="Melissa Houghton" xmlUrl="https://melissahoughton.dev/feed.xml" htmlUrl="https://melissahoughton.dev" gitHubUsername="melissahoughton" />
+    <outline type="rss" text="Michael Cummings " title="Michael Cummings " xmlUrl="http://michaelcummings.net/atom.xml" htmlUrl="http://michaelcummings.net/" gitHubUsername="borrillis" />
+    <outline type="rss" text="Michael Stonis" title="Michael Stonis" xmlUrl="https://www.ston.is/index.xml" htmlUrl="https://www.ston.is/" gitHubUsername="michaelstonis" />
+    <outline type="rss" text="Mitchel Sellers" title="Mitchel Sellers" xmlUrl="https://www.mitchelsellers.com/blog/rss" htmlUrl="https://mitchelsellers.com/blog" gitHubUsername="mitchelsellers" />
+    <outline type="rss" text="Nick Kovalsky" title="Nick Kovalsky" xmlUrl="https://taublast.github.io/feed" htmlUrl="https://taublast.github.io/" gitHubUsername="taublast" />
+    <outline type="rss" text="Pablo Germano" title="Pablo Germano" xmlUrl="https://grialkit.com/blog/rss.xml" htmlUrl="http://www.grialkit.com" gitHubUsername="pablogermano" />
+    <outline type="rss" text="Petar Mishev" title="Petar Mishev" xmlUrl="https://medium.com/feed/@ravenexp0" htmlUrl="https://medium.com/@ravenexp0" gitHubUsername="Petar879" />
+    <outline type="rss" text="Rui Marinho" title="Rui Marinho" xmlUrl="https://ruimarinho.net/feed/" htmlUrl="http://ruimarinho.net/" gitHubUsername="rmarinho" />
+    <outline type="rss" text="Sam Basu" title="Sam Basu" xmlUrl="https://samidipbasu.com/feed/" htmlUrl="http://samidipbasu.com/" gitHubUsername="samidip" />
+    <outline type="rss" text="Samir GC" title="Samir GC" xmlUrl="http://xamaringuyshow.com/feed/" htmlUrl="http://xamaringuyshow.com" gitHubUsername="samirgcofficial" />
+    <outline type="rss" text="Sebastian Jensen" title="Sebastian Jensen" xmlUrl="https://www.tsjdev-apps.de/index.xml" htmlUrl="https://www.tsjdev-apps.de" gitHubUsername="tsjdev-apps" />
+    <outline type="rss" text="Shane Neuville" title="Shane Neuville" xmlUrl="https://shaneneuville.com/feed" htmlUrl="http://shaneneuville.com/" gitHubUsername="PureWeen" />
+    <outline type="rss" text="Shaun Lawrence" title="Shaun Lawrence" xmlUrl="https://blog.bijington.com/feed" htmlUrl="https://blog.bijington.com/" gitHubUsername="bijington" />
+    <outline type="rss" text="Syncfusion" title="Syncfusion" xmlUrl="https://www.syncfusion.com/blogs/feed" htmlUrl="https://www.syncfusion.com/blogs" gitHubUsername="syncfusion" />
+    <outline type="rss" text="Tony Edwards" title="Tony Edwards" xmlUrl="https://tonyedwardspz.co.uk/feed.xml" htmlUrl="https://tonyedwardspz.co.uk" gitHubUsername="tonyedwardspz" />
+    <outline type="rss" text="Tylah Kapa" title="Tylah Kapa" xmlUrl="https://www.kapa.dev/feed.xml" htmlUrl="https://www.kapa.dev" gitHubUsername="tkapa" />
+    <outline type="rss" text="Uno Platform" title="Uno Platform" xmlUrl="https://platform.uno/feed/" htmlUrl="https://platform.uno" gitHubUsername="unoplatform" />
+    <outline type="rss" text="UX Divers" title="UX Divers" xmlUrl="https://grialkit.com/blog/rss.xml" htmlUrl="https://grialkit.com/blog" gitHubUsername="UXDivers" />
+    <outline type="rss" text="Victor Hugo Garcia" title="Victor Hugo Garcia" xmlUrl="https://dev.to/feed/vhugogarcia" htmlUrl="https://dev.to/vhugogarcia" gitHubUsername="vhugogarcia" />
+    <outline type="rss" text="Vladislav Antonyuk" title="Vladislav Antonyuk" xmlUrl="https://vladislavantonyuk.github.io/rss" htmlUrl="https://vladislavantonyuk.github.io" gitHubUsername="VladislavAntonyuk" />
+    <outline type="rss" text="Xiao Ling" title="Xiao Ling" xmlUrl="https://dev.to/feed/yushulx" htmlUrl="https://dev.to/yushulx" gitHubUsername="yushulx" />
   </body>
 </opml>

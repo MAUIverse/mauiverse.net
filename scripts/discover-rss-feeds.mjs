@@ -434,9 +434,13 @@ function buildOpml(feedEntries) {
         `title="${escapeXmlAttribute(entry.displayName)}"`,
         `xmlUrl="${escapeXmlAttribute(entry.feedUrl)}"`,
         `htmlUrl="${escapeXmlAttribute(entry.blogUrl)}"`,
-      ].join(' ');
+      ];
 
-      return `    <outline ${attrs} />`;
+      if (!isEmpty(entry.gitHubUsername)) {
+        attrs.push(`gitHubUsername="${escapeXmlAttribute(entry.gitHubUsername)}"`);
+      }
+
+      return `    <outline ${attrs.join(' ')} />`;
     })
     .join('\n');
 
@@ -510,6 +514,7 @@ async function loadContributors() {
       displayName: String(data.displayName ?? slug),
       blogUrl: String(data.blogUrl ?? '').trim(),
       blogRSSFeedUrl: String(data.blogRSSFeedUrl ?? '').trim(),
+      gitHubUsername: String(data.gitHubUsername ?? '').trim(),
     });
   }
 
@@ -517,7 +522,7 @@ async function loadContributors() {
 }
 
 async function processContributor(contributor, { force, dryRun }) {
-  const { fileName, slug, displayName, blogUrl, blogRSSFeedUrl, fullPath, content } = contributor;
+  const { fileName, slug, displayName, blogUrl, blogRSSFeedUrl, fullPath, content, gitHubUsername } = contributor;
 
   if (isEmpty(blogUrl)) {
     return { status: 'skippedNoBlog' };
@@ -535,6 +540,7 @@ async function processContributor(contributor, { force, dryRun }) {
         displayName,
         blogUrl: normalizeUrl(blogUrl),
         feedUrl: normalizeUrl(blogRSSFeedUrl),
+        gitHubUsername,
       },
     };
   }
@@ -557,6 +563,7 @@ async function processContributor(contributor, { force, dryRun }) {
       displayName,
       blogUrl: normalizedBlogUrl,
       feedUrl: normalizedFeedUrl,
+      gitHubUsername,
     };
 
     let yamlUpdated = 0;
