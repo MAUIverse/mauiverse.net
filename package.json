@@ -21,6 +21,8 @@
     "fetch:maui-releases": "node scripts/fetch-maui-releases.mjs",
     "fetch:maui-toolkit-releases": "node scripts/fetch-maui-toolkit-releases.mjs",
     "url:to-markdown": "node scripts/url-to-markdown.mjs",
+    "discover:rss": "node scripts/discover-rss-feeds.mjs",
+    "discover:youtube-rss": "node scripts/discover-youtube-rss.mjs",
     "prebuild": "npm run generate:authors && npm run fetch:built-with-maui && npm run fetch:maui-contributors && npm run fetch:docs-maui-contributors && npm run fetch:maui-toolkit-contributors && npm run fetch:syncfusion-maui-toolkit-contributors && npm run fetch:mauiverse-website-contributors && npm run fetch:nuget-authors && npm run fetch:maui-releases && npm run fetch:maui-toolkit-releases",
     "build": "astro build",
     "preview": "astro preview"
