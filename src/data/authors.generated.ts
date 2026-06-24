@@ -71,6 +71,10 @@ export const authorEntries = [
     displayName: "Charlin Agramonte",
   },
   {
+    key: "chuvakpavel",
+    displayName: "Pavel Chuvak",
+  },
+  {
     key: "Clancey",
     displayName: "James Clancey",
   },
@@ -387,6 +391,10 @@ export const authorEntries = [
   {
     key: "MikeCodesDotNET",
     displayName: "Mike James",
+  },
+  {
+    key: "mikhailpetrusheuski",
+    displayName: "Mikhail Petrusheuski",
   },
   {
     key: "mitchelsellers",
