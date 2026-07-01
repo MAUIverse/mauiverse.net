@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const mauiContributorSource = "https://api.github.com/repos/dotnet/maui/contributors?per_page=100";
-export const mauiContributorFetchedAt = "2026-05-07T19:12:05.737Z";
+export const mauiContributorFetchedAt = "2026-07-01T19:55:52.923Z";
 export const mauiContributorUsernames = [
   "1c3f0x84",
   "1d0n7kn0w",
@@ -41,6 +41,7 @@ export const mauiContributorUsernames = [
   "apoukar",
   "appsourcers",
   "aritchie",
+  "arpitjain099",
   "artemious7",
   "artemutin",
   "artemvalieiev",
@@ -113,7 +114,6 @@ export const mauiContributorUsernames = [
   "danielchalmers",
   "danielmarbach",
   "danielwilliamson",
-  "danmoseley",
   "dansiegel",
   "dartasen",
   "davidbritch",
@@ -305,7 +305,6 @@ export const mauiContributorUsernames = [
   "pictos",
   "pingzing",
   "pjcollins",
-  "powerhelmsman",
   "praeclarum",
   "prakashkannansf3972",
   "pranavkm",
