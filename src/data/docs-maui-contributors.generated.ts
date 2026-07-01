@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const docsMauiContributorSource = "https://api.github.com/repos/dotnet/docs-maui/contributors?per_page=100";
-export const docsMauiContributorFetchedAt = "2026-05-07T19:12:06.567Z";
+export const docsMauiContributorFetchedAt = "2026-07-01T19:55:53.806Z";
 export const docsMauiContributorUsernames = [
   "adegeo",
   "adenearnshaw",
@@ -22,6 +22,7 @@ export const docsMauiContributorUsernames = [
   "banovvv",
   "bethmassi",
   "bhavanesh2001",
+  "biackdog",
   "billwagner",
   "bootykit",
   "brayankhosravian",
@@ -63,6 +64,7 @@ export const docsMauiContributorUsernames = [
   "grantmestrength",
   "guardrex",
   "haavamoa",
+  "harishwaranvijayakumar",
   "haritha-mohan",
   "hartez",
   "haule-bti",
@@ -119,7 +121,6 @@ export const docsMauiContributorUsernames = [
   "paulstevens95",
   "pictos",
   "pieeatingninjas",
-  "ponkipon",
   "proudust",
   "rachelkang",
   "rafalfrukowski",
@@ -143,6 +144,7 @@ export const docsMauiContributorUsernames = [
   "stevemonaco",
   "stphnlee",
   "subhikshasf4851",
+  "suthiyuvaraj",
   "syedabdulazeemsf4852",
   "tamilarasan-paranthaman",
   "tdurrr1",

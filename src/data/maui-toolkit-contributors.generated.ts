@@ -2,12 +2,13 @@
 // Do not edit manually.
 
 export const mauiToolkitContributorSource = "https://api.github.com/repos/CommunityToolkit/Maui/contributors?per_page=100";
-export const mauiToolkitContributorFetchedAt = "2026-05-07T19:12:07.382Z";
+export const mauiToolkitContributorFetchedAt = "2026-07-01T19:55:54.652Z";
 export const mauiToolkitContributorUsernames = [
   "alejotorresleon",
   "alex3696",
   "allend-msft",
   "anpin",
+  "aopbk",
   "axemasta",
   "babenkovitaliy",
   "bay1251",
@@ -60,6 +61,7 @@ export const mauiToolkitContributorUsernames = [
   "matt-bartholomew",
   "matt-goldman",
   "maxkoshevoi",
+  "mfinkbk",
   "mhrastegari",
   "michael-hawker",
   "mikelor",
