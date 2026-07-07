@@ -293,6 +293,10 @@ export const authorEntries = [
     displayName: "Jonathan Peppers",
   },
   {
+    key: "jpd21122012",
+    displayName: "Jorge Perales Diaz",
+  },
+  {
     key: "jsuarezruiz",
     displayName: "Javier Suárez",
   },
