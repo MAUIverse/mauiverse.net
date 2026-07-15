@@ -1,0 +1,79 @@
+---
+description: How to create community-feed posts (summaries of articles/videos/podcasts) for MAUIverse from a list of authors + URLs. Use whenever asked to add, batch, or write community-feed items, or when editing files under src/content/community-feed.
+globs: src/content/community-feed/**/*.md
+alwaysApply: false
+---
+
+# Creating MAUIverse community-feed posts
+
+You act as head of .NET MAUI developer relations. Given a list of `First Name (GitHub handle)` + one or more URLs, retrieve each URL, write a summary, and create a post. Tone: friendly but efficient. Descriptions make the content **searchable** and **encourage the click-through** — they do not give away all the value.
+
+## 1. File locations & structure
+
+- **Post path:** `src/content/community-feed/<YYYY>/<MM>/<slug>.md` — year/month come from the content's **publish date**, not today.
+- **Authors:** `src/content/community-contributors/<name>.yaml` (filename is cosmetic).
+- **Schema (source of truth):** `src/content.config.ts` (`community-feed` collection).
+
+## 2. Front matter (all required except noted)
+
+```markdown
+---
+title: "Human Title (MAUI uppercase, use .NET not net)"
+link: https://original-url            # valid URL; use the exact/shareable link, matching sibling posts
+description: "Exactly two sentences. What it is + a nudge to go read/watch."
+date: 2026-07-10                      # YYYY-MM-DD, unquoted
+author: jpd21122012                   # see rule 3 — the gitHubUsername VALUE
+contentType: article                  # see rule 4
+---
+```
+
+Optional: `featuring: [handle1, handle2]` (array of author keys — for content that features people other than the author).
+
+**Description conventions** (2 short sentences, see existing posts for tone):
+- Lead with the author's display name (or org name), e.g. "Sebastian Jensen builds…", "Syncfusion's 2026 Volume 2 release…".
+- Note relevant context when present: event ties ("Part of MAUI UI July 2026", "Recorded at NDC Copenhagen 2026") and, for videos, the approximate runtime ("this ~1 hour session").
+
+Body (Astro markdown): a longer summary. Open with 1–2 sentence framing, then a `## What you'll learn` bullet list (bold the concept, then explain), and a closing line encouraging the reader to open the link. Cover what they'll learn **conceptually and technically**. Use markdown/HTML formatting; keep to markdown since Astro renders it.
+
+## 3. Author lookup (critical)
+
+- The `author` value MUST equal the `gitHubUsername` **value inside** the yaml, **not** the filename. (e.g. Sebastian Jensen's file is `sebastian-jensen.yaml` but key is `tsjdev-apps`.)
+- Check existence: grep `src/content/community-contributors` for the display name or handle.
+- Missing? Create with `npm run create:author -- <githubUsername>`, then fill fields from the scraped page.
+- Author yaml fields: `gitHubUsername`, `displayName`, `avatarImagePath?`, `disableGitHubProfileLink?`, `bskyUrl`, `twitterUrl`, `instagramUrl`, `linkedInUrl`, `youTubeUrl`, `youTubeRSS?`, `tikTokUrl`, `blogUrl`, `blogRSSFeedUrl`, `podcastWebsiteUrl`, `podcastRssUrl`, `twitchProfileUrl`.
+- While scraping, add any social/blog links you discover **only where currently missing**. Never overwrite existing values.
+- To find an author's RSS/YouTube feeds for the profile, the helpers `npm run discover:rss` and `npm run discover:youtube-rss` can help.
+
+## 4. contentType
+
+- `video` — YouTube links
+- `github` — GitHub links
+- `podcast` — podcasts
+- `article` — default for everything else
+
+## 5. Slugs
+
+- Descriptive, kebab-case. Prefer `dotnet-maui` over `net-maui` (matches existing files).
+- **YouTube:** never use the `watch?v=` id — derive a descriptive slug from the title (e.g. `the-best-maui-library-you-dont-know-nalu.md`).
+- Articles: the URL tail is usually fine, but strip random id suffixes (e.g. dev.to `build-the-tools-you-need-4ji0` → `build-the-tools-you-need`).
+
+## 6. Retrieving content & the publish date
+
+Try these, in order, per source:
+
+- **Project helper:** `npm run url:to-markdown -- <url>` → writes markdown into `.tmp/`.
+- **Generic HTML:** `curl -sL -A "Mozilla/5.0" "<url>" -o /tmp/x.html`, then pull structure with `rg -o '<h[1-3][^>]*>.*?</h[1-3]>' /tmp/x.html | sed 's/<[^>]*>//g'`. Find the date via JSON-LD `"datePublished"`, meta tags, or visible text.
+- **Cloudflare-blocked sites (e.g. Medium curl → 403):** use the `WebFetch` tool, or the RSS feed `https://medium.com/feed/@<handle>` and read `<pubDate>`.
+- **YouTube videos:** use `WebFetch` on the watch URL to get the title, description, and often the runtime; write the summary from the video's own description rather than guessing.
+- **Hashnode-hosted URLs:** use the Hashnode GraphQL API at `https://gql.hashnode.com`.
+- **shaunebu.com short URLs** (e.g. `/QgVZp`): follow the redirect with `curl -sL` to get the real title; the publish date isn't on the article page — fetch `https://shaunebu.com` and match the article title to its listed date.
+
+## 7. Optional scaffolder
+
+`npm run create:feed-item -- <url> <date> <githubUsername>` creates a stub with empty description/body. Writing the file directly (matching existing posts) is usually cleaner — study a recent example under `src/content/community-feed/2026/`.
+
+## 8. Before finishing (verify)
+
+- **No duplicates:** confirm the target `<slug>.md` doesn't already exist in that year/month folder (grep for the URL/slug across `community-feed` too).
+- **Author key resolves:** the schema validates `author` against generated keys. If you added a new author, `src/data/authors.generated.ts` is regenerated by `npm run generate:authors` (also runs automatically in `predev`/`prebuild`).
+- **Schema sanity:** `link` is a valid URL, `date` is `YYYY-MM-DD`, `description` present. Running `npm run build` (or `dev`) will surface any content-collection validation errors.
