@@ -501,6 +501,10 @@ export const authorEntries = [
     displayName: "Shaun Walker",
   },
   {
+    key: "simonrozsival",
+    displayName: "Šimon Rozsíval",
+  },
+  {
     key: "SirJohnK",
     displayName: "Johan Svensson",
   },
