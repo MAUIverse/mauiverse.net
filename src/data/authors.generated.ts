@@ -131,6 +131,10 @@ export const authorEntries = [
     displayName: "Dan Siegel",
   },
   {
+    key: "davidbritch",
+    displayName: "David Britch",
+  },
+  {
     key: "davidnsai",
     displayName: "David Nsai",
   },
