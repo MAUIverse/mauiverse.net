@@ -7,6 +7,10 @@ export const authorEntries = [
     displayName: "Abhay Prince",
   },
   {
+    key: "AdamEssenmacher",
+    displayName: "Adam Essenmacher",
+  },
+  {
     key: "adospace",
     displayName: "Adolfo Marinucci",
   },
@@ -223,6 +227,10 @@ export const authorEntries = [
   {
     key: "gbarkerz",
     displayName: "Guy Barker",
+  },
+  {
+    key: "GeorgeLeithead",
+    displayName: "George Leithead",
   },
   {
     key: "gonedotnet",
