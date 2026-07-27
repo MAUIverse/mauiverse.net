@@ -2,7 +2,7 @@
 title: "Faces, Voices & Documents — On-Device Recognition Controls for .NET MAUI"
 link: https://allanritchie.com/blog/2026/07/recognition-intelligence/
 description: "Allan Ritchie introduces on-device face, voice, and document recognition stacks for .NET MAUI — no cloud APIs, no inference bills. Part of MAUI UI July 2026, it centers on drop-in controls that hide the camera, enrollment, and matching plumbing."
-date: 2026-07-27
+date: 2026-07-24
 author: aritchie
 contentType: article
 ---
