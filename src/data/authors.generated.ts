@@ -189,6 +189,10 @@ export const authorEntries = [
     displayName: "Eilon Lipton",
   },
   {
+    key: "ekapic",
+    displayName: "Edin Kapić",
+  },
+  {
     key: "emimontesdeoca",
     displayName: "Emiliano Montesdeoca",
   },
@@ -271,6 +275,10 @@ export const authorEntries = [
   {
     key: "ilija2407",
     displayName: "Ilija Rushkovski",
+  },
+  {
+    key: "iron-software",
+    displayName: "Iron Software",
   },
   {
     key: "its-AliRaza",

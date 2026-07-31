@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const docsMauiContributorSource = "https://api.github.com/repos/dotnet/docs-maui/contributors?per_page=100";
-export const docsMauiContributorFetchedAt = "2026-07-24T19:17:45.576Z";
+export const docsMauiContributorFetchedAt = "2026-07-31T14:57:50.300Z";
 export const docsMauiContributorUsernames = [
   "adegeo",
   "adenearnshaw",
