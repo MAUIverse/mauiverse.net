@@ -561,6 +561,10 @@ export const authorEntries = [
     displayName: "Kostiantyn Bondarenko",
   },
   {
+    key: "telerik",
+    displayName: "Telerik",
+  },
+  {
     key: "TheCodeTraveler",
     displayName: "Brandon Minnick",
   },

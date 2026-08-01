@@ -1,0 +1,26 @@
+---
+title: "Sands of MAUI: Issue #190"
+link: https://www.telerik.com/blogs/sands-maui-issue-190
+description: "Sam Basu's Sands of MAUI #190 curates Scheduler for .NET MAUI, .NET 10 Update, .NET MAUI Toolkit APIs, and more for .NET developers. The roundup points to practical community articles, videos, and announcements worth exploring in full."
+date: 2025-06-23
+author: samidip
+featuring:
+  - dotnet
+  - hprez21
+  - jamesmontemagno
+  - LeomarisReyes
+  - telerik
+contentType: article
+---
+
+Sam Basu's *Sands of MAUI* #190 is a curated stop for developers tracking Scheduler for .NET MAUI, .NET 10 Update, .NET MAUI Toolkit APIs, AI Coding Assistants. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+
+## In this issue
+
+- **Scheduler for .NET MAUI** — .NET developers to create cross-platform apps for Android, iOS, macOS and Windows, with deep platform integrations, native UI and hybrid web experiences. .NET MAUI and Telerik UI are here to oblige. .NET MAUI apps .
+- **.NET 10 Update** — .NET is powerful, open-source, cross-platform and welcoming to all, with mature tooling accompanied by rich ecosystems. .NET settling on a yearly cadence, there are fresh new bits for developers every November—the work starts early in the year though.
+- **.NET MAUI Toolkit APIs** — .NET cross-platform development stack, allowing developers to reach mobile and desktop form factors from a single shared codebase. .NET MAUI Community Toolkit can provide the needed boost. .NET MAUI Community Toolkit Essentials .
+- **AI Coding Assistants** — .NET developers to infuse apps with solutions powered by generative AI and large/small language models. Modern AI is also opportunity to streamline and automate developer workflows for better productivity. .NET apps or KendoReact for JavaScript developers.
+- **AI Help in Xcode** — Cross-platform and native app developers use a variety of IDEs to build for target platforms—XCode remains the dominant tool for folks building apps for Apple ecosystem.
+
+Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.
