@@ -13,14 +13,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #6 is a curated stop for developers tracking BlazorWebView for WPF/WinForms, .NET MAUI on .NET Rocks, WinUI Community Call, .NET MAUI on InFoQ. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #6 rounds up BlazorWebView for WPF/WinForms, .NET MAUI on .NET Rocks, WinUI Community Call, .NET MAUI on InFoQ, and XAML Hot Reload Updates. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **BlazorWebView for WPF/WinForms** — .NET Core updates . .NET MAUI under the covers. .NET MAUI and web UI rendered inside modern WebViews like WebView2 or WKWebView . .NET MAUI and bring in latest Blazor innovations. [BlazorWebView - Main Window shows a counter and it says 'The current count is 3'.
-- **.NET MAUI on .NET Rocks** — .NET MAUI. .NET MAUI.
-- **WinUI Community Call** — .NET MAUI leveraged WinUI 3 as a platform to reach the Windows desktop. .NET MAUI updates—borderline too-close-for-comfort Teams group mode included.
-- **.NET MAUI on InFoQ** — .NET MAUI . .NET MAUI.
-- **XAML Hot Reload Updates** — Dmitry Lyalin and Tim Miller joined James Montemagno on the Xamarin Show to show off the latest and greatest with XAML Hot Reload. With Live Visual Tree and Changes Only mode, UI diff'ing and re-rendering are super optimized.
+- **BlazorWebView for WPF/WinForms** — Take a quick look at “BlazorWebView for WPF/WinForms” and the practical ideas behind it.
+- **.NET MAUI on .NET Rocks** — This short item introduces “.NET MAUI on .NET Rocks” and points you towards the full story.
+- **WinUI Community Call** — Take a quick look at “WinUI Community Call” and the practical ideas behind it.
+- **.NET MAUI on InFoQ** — This short item introduces “.NET MAUI on InFoQ” and points you towards the full story.
+- **XAML Hot Reload Updates** — Catch up on “XAML Hot Reload Updates” and see what has changed for developers.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

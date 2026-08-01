@@ -12,14 +12,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #186 is a curated stop for developers tracking Popups in .NET MAUI, Model Context Protocol, Shipping .NET MAUI Libraries, Blazor Forms. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #186 rounds up Popups in .NET MAUI, Model Context Protocol, Shipping .NET MAUI Libraries, Blazor Forms, and State of AI Agents. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **Popups in .NET MAUI** — .NET cross-platform development stack, allowing developers to reach mobile and desktop form factors from a single shared codebase. User attention is precious and modern apps need to do everything possible to keep users engaged.
-- **Model Context Protocol** — .NET developers to infuse apps with solutions powered by generative AI and large/small language models. Modern AI is also an opportunity to streamline and automate developer workflows for better productivity.
-- **Shipping .NET MAUI Libraries** — .NET development stack and mature tooling ecosystem allows developers to create modern rich apps for various platforms—and a healthy ecosystem is powered by various libraries that enhance developer productivity.
-- **Blazor Forms** — .NET MAUI is more than capable of welcoming web content to native land. .NET MAUI apps, while gaining complete native platform API access.
-- **State of AI Agents** — AI promises a lot with developer productivity, but true value might be in getting around some of the shortcomings of traditional AI models. Agents bring context and automation through customized tools.
+- **Popups in .NET MAUI** — Take a quick look at “Popups in .NET MAUI” and the practical ideas behind it.
+- **Model Context Protocol** — This short item introduces “Model Context Protocol” and points you towards the full story.
+- **Shipping .NET MAUI Libraries** — Take a quick look at “Shipping .NET MAUI Libraries” and the practical ideas behind it.
+- **Blazor Forms** — This short item introduces “Blazor Forms” and points you towards the full story.
+- **State of AI Agents** — Take a quick look at “State of AI Agents” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

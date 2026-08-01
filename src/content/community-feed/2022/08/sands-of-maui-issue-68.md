@@ -12,14 +12,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #68 is a curated stop for developers tracking .NET MAUI Tooling Update, .NET Conf Focus on MAUI, .NET MAUI Apps on Android, .NET MAUI Book. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #68 rounds up .NET MAUI Tooling Update, .NET Conf Focus on MAUI, .NET MAUI Apps on Android, .NET MAUI Book, and .NET MAUI Beautiful UI. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI Tooling Update** — .NET MAUI. .NET MAUI tooling is no longer in preview . Along with tooling updates comes a new release of. .NET MAUI SDK—the fifth release since May General Availability (GA) delivers stability improvements. .NET faster than ever, and ship them to Android, iOS, macOS and Windows, from a single shared codebase.
-- **.NET Conf Focus on MAUI** — .NET releases. .NET technology stacks each time. .NET Conf Focus on MAUI was a one day free livestream event on August 9, 2022, and it was awesome. .NET MAUI, with speakers from Microsoft and developer community worldwide.
-- **.NET MAUI Apps on Android** — .NET MAUI cross-platform app? Congrats. But the next step, while exciting, is also critically important to get right—publishing mobile apps to the respective App Stores. While the overall processes are similar, iOS/Android/Windows each have specific nuances around rules and requirements—developers need to follow all steps meticulously.
-- **.NET MAUI Book** — Enterprise applications often have complicated architectures and design patterns can help in maintaining codebase sanity. Writing a book is one of the more difficult things to do in the software industry. And writing a book on application patterns on top of a new development platform though, sounds way too ambitious.
-- **.NET MAUI Beautiful UI** — .NET code base. .NET MAUI apps and design aesthetics are called for to create beautiful apps that engage/delight users. .NET MAUI Beautiful UI Challenge to rally all of us to do better. Forms—a showcase for reusable UI components.
+- **.NET MAUI Tooling Update** — Catch up on “.NET MAUI Tooling Update” and see what has changed for developers.
+- **.NET Conf Focus on MAUI** — Get the highlights from “.NET Conf Focus on MAUI” and see what the community has been discussing.
+- **.NET MAUI Apps on Android** — Take a quick look at “.NET MAUI Apps on Android” and the practical ideas behind it.
+- **.NET MAUI Book** — This short item introduces “.NET MAUI Book” and points you towards the full story.
+- **.NET MAUI Beautiful UI** — Take a quick look at “.NET MAUI Beautiful UI” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

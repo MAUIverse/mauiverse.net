@@ -14,14 +14,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #32 is a curated stop for developers tracking .NET MAUI Community Standup, Why Evolve to .NET MAUI, Exploring the .NET MAUI AppBuilder, ASP.NET Community Standup. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #32 rounds up .NET MAUI Community Standup, Why Evolve to .NET MAUI, Exploring the .NET MAUI AppBuilder, ASP.NET Community Standup, and Polaris on .NET MAUI Podcast. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI Community Standup** — .NET MAUI. .NET Hot Reload. .NET MAUI developers likely comes from XAML Hot Reload—how quickly can one iterate on the inner dev loop when changing XAML in the visual tree & see changes updated in simulators/devices.
-- **Why Evolve to .NET MAUI** — .NET 6 release, bringing a more unified runtime, language maturity and better developer tooling. .NET MAUI—a modern, open-source, cross-platform stack for targeting mobile and desktop apps. .NET MAUI. .NET MAUI matters .
-- **Exploring the .NET MAUI AppBuilder** — .NET 6 runtime. .NET in using the Host Builder pattern, Luis takes an inside look at how MauiAppBuilder works and some considerations on how to configure everything. .NET MAUI apps will startup—2 articles are live already and we cannot wait for the rest.
-- **ASP.NET Community Standup** — .NET API based on Google's Skia Graphics Library. .NET MAUI. Sure, on the web, Blazor code can talk to JavaScript over the JS Interop, but now developers get the option to have Blazor on native apps talk to other native libraries, perhaps written in C/C++ and compiled into WASM.
-- **Polaris on .NET MAUI Podcast** — .NET MAUI podcast and featured a customer success story—Polaris with their awesome RideCommand companion apps that can work with snowmobiles, motorcycles, off-road and other powersports vehicles.
+- **.NET MAUI Community Standup** — Get the highlights from “.NET MAUI Community Standup” and see what the community has been discussing.
+- **Why Evolve to .NET MAUI** — This short item introduces “Why Evolve to .NET MAUI” and points you towards the full story.
+- **Exploring the .NET MAUI AppBuilder** — Take a quick look at “Exploring the .NET MAUI AppBuilder” and the practical ideas behind it.
+- **ASP.NET Community Standup** — Get the highlights from “ASP.NET Community Standup” and see what the community has been discussing.
+- **Polaris on .NET MAUI Podcast** — Take a quick look at “Polaris on .NET MAUI Podcast” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

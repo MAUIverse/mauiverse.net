@@ -13,14 +13,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #139 is a curated stop for developers tracking Apple Privacy Manifest, Migration from App Center, .NET Smart Components, Uno Platform Design Story. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #139 rounds up Apple Privacy Manifest, Migration from App Center, .NET Smart Components, Uno Platform Design Story, and Nicer .NET MAUI Buttons. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **Apple Privacy Manifest** — Privacy matters. Modern app developers need to keep user data privacy a top priority—it is not only the right things to do, but is also needed for compliance to regulations. Apple is introducing some stricter guidelines for managing privacy for iOS apps.
-- **Migration from App Center** — Visual Studio App Center brings together multiple common services into a DevOps cloud solution—developers can use App Center to build, test, monitor and distribute native/cross-platform apps across platforms. With Visual Studio App Center scheduled for retirement in March 2025, developers are encouraged to consider alternatives.
-- **.NET Smart Components** — It is the age of artificial intelligence (AI). AI is slowly changing the way we live and work, and AI’s popularity is driving adoption in enterprise and consumer apps. .NET developers to infuse apps with solutions powered by Generative AI and Large Language Models (LLMs).
-- **Uno Platform Design Story** — .NET across various platforms. Uno Platform is an open-source framework for building single codebase native mobile, web, desktop and embedded apps—all from the comfort of chosen IDE and C#/XAML codebase.
-- **Nicer .NET MAUI Buttons** — .NET cross-platform development stack, allowing developers to reach mobile and desktop form factors from single shared codebase. While developers have all the power of modern development frameworks/tooling, sometimes it is the little things that bother—like adding fancy buttons to mobile/desktops apps.
+- **Apple Privacy Manifest** — This short item introduces “Apple Privacy Manifest” and points you towards the full story.
+- **Migration from App Center** — Take a quick look at “Migration from App Center” and the practical ideas behind it.
+- **.NET Smart Components** — This short item introduces “.NET Smart Components” and points you towards the full story.
+- **Uno Platform Design Story** — Take a quick look at “Uno Platform Design Story” and the practical ideas behind it.
+- **Nicer .NET MAUI Buttons** — This short item introduces “Nicer .NET MAUI Buttons” and points you towards the full story.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

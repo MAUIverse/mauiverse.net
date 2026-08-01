@@ -14,14 +14,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #171 is a curated stop for developers tracking .NET MAUI Community Standup, Animations in .NET MAUI, .NET Conf Wrap-up, UX Crash Course. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #171 rounds up .NET MAUI Community Standup, Animations in .NET MAUI, .NET Conf Wrap-up, UX Crash Course, and NDC London. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI Community Standup** — .NET MAUI and provide updates—a wonderful way to bring the developer community together. .NET MAUI as a platform, and developer community excitement is noticeable. .NET MAUI 2025 Kickoff . .NET MAUI—an impactful time with stable releases, big framework updates and steady growth in adoption.
-- **Animations in .NET MAUI** — .NET developers to create cross-platform apps for Android, iOS macOS and Windows, with deep native integrations, platform-native UI and hybrid experiences. Modern apps do have to work with fleeting user attention, however, and designers/developers may consider motion in the app UX to keep users engaged.
-- **.NET Conf Wrap-up** — .NET is powerful, open-source, cross-platform and welcoming to all, with mature tooling accompanied by rich ecosystems. .NET 9, developers had a lot to learn. .NET most relevant to them. .NET Conf Recap . .NET Conf.
-- **UX Crash Course** — Modern web, mobile and desktop apps often strive for delightful UX, and beautifully styled UI design is one way to achieve the goal. However, there has traditionally been some friction in the designer-developer handoff—it helps understand some basic tenets of good UX and designing software.
-- **NDC London** — .NET cross-platform development stack, allowing developers to reach mobile and desktop form factors from a single shared codebase. .NET ecosystem—there is plenty of innovation and developer love across various parts of the Microsoft technology stack.
+- **.NET MAUI Community Standup** — Get the highlights from “.NET MAUI Community Standup” and see what the community has been discussing.
+- **Animations in .NET MAUI** — Take a quick look at “Animations in .NET MAUI” and the practical ideas behind it.
+- **.NET Conf Wrap-up** — Get the highlights from “.NET Conf Wrap-up” and see what the community has been discussing.
+- **UX Crash Course** — Take a quick look at “UX Crash Course” and the practical ideas behind it.
+- **NDC London** — This short item introduces “NDC London” and points you towards the full story.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

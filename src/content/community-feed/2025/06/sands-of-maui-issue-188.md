@@ -10,14 +10,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #188 is a curated stop for developers tracking Telerik Release, .NET MAUI Components, Microsoft Build Recap, All in on C\#. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #188 rounds up Telerik Release, .NET MAUI Components, Microsoft Build Recap, All in on C\#, and Google I/O Recap. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **Telerik Release** — Modern app development is complicated, and developers can use all the help available to stay productive. .NET, and Kendo UI for all things JavaScript. There are fresh new bits out—say hello to the Telerik/Kendo UI 2025 Q2 release .
-- **.NET MAUI Components** — .NET cross-platform development stack, allowing developers to reach mobile and desktop form factors from a single shared codebase.
-- **Microsoft Build Recap** — .NET developer world—new frameworks, tools, patterns and, of course, AI trends. Developers building on Microsoft stack had an exciting month of May, with a chance to see what’s next in the horizon.
-- **All in on C\#** — .NET is powerful, open-source, cross-platform and welcoming to all, with mature tooling accompanied by rich ecosystems. .NET settling on a yearly cadence, there are fresh new bits for developers every November. .NET 10 Preview 4 is now out.
-- **Google I/O Recap** — While big tech conferences are fun, it does feel like a drinking from the firehose—a lot of big announcements come out in quick succession. It usually takes a bit of time for enterprises and developer communities to make sense of all the announcements and focus on what matters the most.
+- **Telerik Release** — Catch up on “Telerik Release” and see what has changed for developers.
+- **.NET MAUI Components** — This short item introduces “.NET MAUI Components” and points you towards the full story.
+- **Microsoft Build Recap** — Get the highlights from “Microsoft Build Recap” and see what the community has been discussing.
+- **All in on C\#** — This short item introduces “All in on C\#” and points you towards the full story.
+- **Google I/O Recap** — Take a quick look at “Google I/O Recap” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

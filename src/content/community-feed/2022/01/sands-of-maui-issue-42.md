@@ -14,14 +14,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #42 is a curated stop for developers tracking .NET MAUI Preview 12 Overview, All Things .NET MAUI, Organizing .NET MAUI Startup, Exploring .NET MAUI Overlays. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #42 rounds up .NET MAUI Preview 12 Overview, All Things .NET MAUI, Organizing .NET MAUI Startup, Exploring .NET MAUI Overlays, and Client App Dev Shenanigans. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI Preview 12 Overview** — .NET MAUI Preview release—a helpful Gerald Versluis video breaking down all that’s new for developers. .NET MAUI Preview 12 video, recapping what’s new in the latest release and paving a path for developers to get started.
-- **All Things .NET MAUI** — .NET MAUI . .NET MAUI. .NET MAUI interface-based Handler architecture. .NET developers building web apps with Blazor are now welcome to bring web goodness into native apps and share code easier. Want to know all the fun you have when shipping apps to the App Stores?
-- **Organizing .NET MAUI Startup** — .NET Generic HostBuilder pattern is the one in use. .NET MAUI apps and brings in all configurations/registrations for services. .NET MAUI startup . .NET MAUI app starts up—like Handlers, Configurations, managing Fonts/Images and more.
-- **Exploring .NET MAUI Overlays** — .NET MAUI Source of Truth. .NET MAUI source code and sharing experiences. .NET MAUI and the present state of implementation across platforms.
-- **Client App Dev Shenanigans** — Two friends and nerds make a tech podcast—that’s James Montemagno and Frank A. Krueger doing Merge Conflict. .NET MAUI. .NET MAUI. Give it a listen on your next long drive. sfvrsn=c56ee8ec_0 "MergeConflictMaui") That’s it for now.
+- **.NET MAUI Preview 12 Overview** — Catch up on “.NET MAUI Preview 12 Overview” and see what has changed for developers.
+- **All Things .NET MAUI** — This short item introduces “All Things .NET MAUI” and points you towards the full story.
+- **Organizing .NET MAUI Startup** — Take a quick look at “Organizing .NET MAUI Startup” and the practical ideas behind it.
+- **Exploring .NET MAUI Overlays** — This short item introduces “Exploring .NET MAUI Overlays” and points you towards the full story.
+- **Client App Dev Shenanigans** — Take a quick look at “Client App Dev Shenanigans” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

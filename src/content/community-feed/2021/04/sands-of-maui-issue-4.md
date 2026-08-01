@@ -13,14 +13,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #4 is a curated stop for developers tracking .NET MAUI Preview 3, MAUI Update on Xamarin Podcast, App Startup, .NET 6 on Xamarin Community Standup. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #4 rounds up .NET MAUI Preview 3, MAUI Update on Xamarin Podcast, App Startup, .NET 6 on Xamarin Community Standup, and Microservices on Xamarin Show. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI Preview 3** — .NET 6 Preview 3 is now out with a bunch of low-level performance enhancements. .NET 6 bits. .NET MAUI reach Windows through WinUI 3 has begun.
-- **MAUI Update on Xamarin Podcast** — .NET MAUI .
-- **App Startup** — .NET MAUI . .NET—this should provide more pluggability.
-- **.NET 6 on Xamarin Community Standup** — .NET 6 goodness—project system, build system, runtime and more.
-- **Microservices on Xamarin Show** — Mobile apps benefit from rich and well-engineered backend services, and Microservices can really help. .NET Core, Docker and Kubernetes. sfvrsn=878680eb_0 "XamarinShow") That’s it for now. .NET MAUI. Cheers, developers!
+- **.NET MAUI Preview 3** — Catch up on “.NET MAUI Preview 3” and see what has changed for developers.
+- **MAUI Update on Xamarin Podcast** — Catch up on “MAUI Update on Xamarin Podcast” and see what has changed for developers.
+- **App Startup** — Take a quick look at “App Startup” and the practical ideas behind it.
+- **.NET 6 on Xamarin Community Standup** — Get the highlights from “.NET 6 on Xamarin Community Standup” and see what the community has been discussing.
+- **Microservices on Xamarin Show** — Take a quick look at “Microservices on Xamarin Show” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

@@ -14,14 +14,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #132 is a curated stop for developers tracking VS Code for .NET MAUI, January XAML Fest, Space Shooter with .NET MAUI, Publish .NET MAUI Apps. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #132 rounds up VS Code for .NET MAUI, January XAML Fest, Space Shooter with .NET MAUI, Publish .NET MAUI Apps, and Xamarin to .NET MAUI. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **VS Code for .NET MAUI** — .NET developers to create cross-platform apps for Android, iOS, macOS and Windows, with deep native integrations, platform-native UI and hybrid experiences that extend the reach of Blazor/JS web UI technologies.
-- **January XAML Fest** — .NET MAUI developers will likely end up using C#/XAML to define app UI. .NET MAUI. .NET MAUI . With January XAML Fest, Leomaris has rolled out a collection of articles—each tackling a different piece of UI, breaking down the XAML code, and providing developers with a clear, concise guide to crafting such UI themselves.
-- **Space Shooter with .NET MAUI** — Seeing is believing. Before choosing a technology stack, developers often want to see success stories and amazing apps being with a framework—wow moments create enticement and challenge further creativity. .NET MAUI sports flexible UI stack, lots of performance tuning and easy integration with popular libraries.
-- **Publish .NET MAUI Apps** — Shipping apps to iOS/Android/Windows app stores is not for the fainthearted—with each platform having different gated rules, developers often feel the hassle of signing/distributing apps. .NET MAUI. .NET MAUI apps to app stores.
-- **Xamarin to .NET MAUI** — .NET cross-platform development stack, allowing developers to reach mobile and desktop form factors from single shared codebase. Forms—a migration strategy is needed to move things forward. .NET MAUI . .NET MAUI. Forms app.
+- **VS Code for .NET MAUI** — Take a quick look at “VS Code for .NET MAUI” and the practical ideas behind it.
+- **January XAML Fest** — This short item introduces “January XAML Fest” and points you towards the full story.
+- **Space Shooter with .NET MAUI** — Take a quick look at “Space Shooter with .NET MAUI” and the practical ideas behind it.
+- **Publish .NET MAUI Apps** — This short item introduces “Publish .NET MAUI Apps” and points you towards the full story.
+- **Xamarin to .NET MAUI** — Take a quick look at “Xamarin to .NET MAUI” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

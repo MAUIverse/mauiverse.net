@@ -18,14 +18,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #52 is a curated stop for developers tracking .NET MAUI Community Standup, .NET MAUI Community Toolkit, Location Tracking in Android, ASP.NET Community Standup. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #52 rounds up .NET MAUI Community Standup, .NET MAUI Community Toolkit, Location Tracking in Android, ASP.NET Community Standup, and Future with Merge Conflict. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI Community Standup** — .NET MAUI inches closes to General Availability. .NET MAUI ships in May 2022. .NET developers looking to go cross-platform. .NET MAUI gets closer to shipping. Maddy and David also brought on a special guest on the show: Veteran developer extraordinaire Allan Ritchie .
-- **.NET MAUI Community Toolkit** — ' type questions. Yes, documentation helps—but developers find it particularly useful to peruse through a real world app code base. .NET MAUI Community Toolkit Sample App . .NET MAUI Community Toolkit can do for developers, like Alerts, Behaviors, Converters, Extensions, Layouts and more.
-- **Location Tracking in Android** — Geolocation is a wonderful native API on most mobile devices, and modern frameworks make it rather easy for developers to envision innovative app scenarios that utilize the user's location. However, tapping into APIs to read the user's geo-location is always a matter of privacy—an app's intent and usage should be clearly quantifiable.
-- **ASP.NET Community Standup** — .NET/Blazor Community Standup, often hosted by Tanay Parikh and Jon Galloway . .NET news and reviewing community activities/contributions for Blazor. For March, though, the actual topic was Native client apps with Blazor Hybrid and the usual suspects were guest speakers— Daniel Roth , James Montemagno and Eilon Lipton .
-- **Future with Merge Conflict** — James Montemagno and Frank Krueger host the geeky Merge Conflict podcast. .NET developers. .NET 7 and C# 11. .NET 7 is scheduled to come out production ready in Nov 2022, and the preparations have begun already with two Previews out.
+- **.NET MAUI Community Standup** — Get the highlights from “.NET MAUI Community Standup” and see what the community has been discussing.
+- **.NET MAUI Community Toolkit** — This short item introduces “.NET MAUI Community Toolkit” and points you towards the full story.
+- **Location Tracking in Android** — Take a quick look at “Location Tracking in Android” and the practical ideas behind it.
+- **ASP.NET Community Standup** — Get the highlights from “ASP.NET Community Standup” and see what the community has been discussing.
+- **Future with Merge Conflict** — Take a quick look at “Future with Merge Conflict” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

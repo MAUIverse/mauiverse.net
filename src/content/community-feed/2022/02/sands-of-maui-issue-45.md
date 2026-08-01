@@ -13,14 +13,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #45 is a curated stop for developers tracking .NET MAUI Preview 13, .NET 7, XAML Data Binding, Publish .NET MAUI iOS Apps. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #45 rounds up .NET MAUI Preview 13, .NET 7, XAML Data Binding, Publish .NET MAUI iOS Apps, and 20 Years of .NET. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI Preview 13** — .NET MAUI Preview 13. .NET MAUI is closing in on Release Candidate builds ahead of General Availability release and Preview 13 brings in more quality stabilization. 2 Preview 1 release. FormattedText property for Labels.
-- **.NET 7** — .NET 7. .NET Preview 7 bits are available now. .NET 6 foundation of unified runtime, simplified developer experiences and improved tooling. .NET 7 focus areas include newer technologies like cloud native and containers, as well as investments into modernization of legacy web/desktop stacks.
-- **XAML Data Binding** — .NET ecosystem, there are some basics everyone should know. .NET MAUI developers. James starts out describing the basics of Data Binding in XAML—setting BindingContext , INotifyPropertyChanged and Commands . .NET MAUI samples and fix code issues submitted by audience members.
-- **Publish .NET MAUI iOS Apps** — .NET MAUI allows developers to build cross-platform apps from a truly single codebase—reaching iOS, Android, Windows and MacOS. .NET cross-platform apps, publishing apps to each platform does need specialized knowledge—one has to cater to each application Store's way of doing things.
-- **20 Years of .NET** — .NET recently celebrated its 20th Birthday and Beth Massi had written up the anniversary blog post . .NET—20 years of innovations, embracing open source in the last decade and building a rich developer ecosystem.
+- **.NET MAUI Preview 13** — Catch up on “.NET MAUI Preview 13” and see what has changed for developers.
+- **.NET 7** — Take a quick look at “.NET 7” and the practical ideas behind it.
+- **XAML Data Binding** — This short item introduces “XAML Data Binding” and points you towards the full story.
+- **Publish .NET MAUI iOS Apps** — Take a quick look at “Publish .NET MAUI iOS Apps” and the practical ideas behind it.
+- **20 Years of .NET** — This short item introduces “20 Years of .NET” and points you towards the full story.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

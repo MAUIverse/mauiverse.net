@@ -12,14 +12,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #80 is a curated stop for developers tracking .NET MAUI for .NET 7, State of .NET MAUI, Going Desktop with .NET MAUI, .NET MAUI Performance. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #80 rounds up .NET MAUI for .NET 7, State of .NET MAUI, Going Desktop with .NET MAUI, .NET MAUI Performance, and Telerik UI for .NET MAUI. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI for .NET 7** — .NET MAUI has been out production-ready for just six months now—a lot has happened. .NET MAUI is already set for the next milestone. .NET 7 has now hit General Availability (GA). .NET 7 included addressing feedback, fixing bugs and adding desktop-friendly features.
-- **State of .NET MAUI** — .NET Conf was Nov 8-10 this year. .NET MAUI, Containerization, Cloud Native, ARM 64, Performance optimization and so much more. .NET MAUI session hosted by Maddy Montaquila and David Ortinau . .NET cross-platform story going forward.
-- **Going Desktop with .NET MAUI** — .NET MAUI allows developers to have a single codebase to power native mobile and desktop apps. Forms with a very mobile-first mindset. .NET MAUI? While the shared codebase is nice, desktop apps often have to support heavy usage and demand very different user experiences.
-- **.NET MAUI Performance** — Performance tuning for a cross-platform framework is best left in the hands of hardcore engineers. .NET MAUI apps is a constant uphill climb. .NET 7 . .NET 7. The performance tuning focus remains on startup performance for Android and application size for iOS—with UI rendering and Layout improvements that help every platform.
-- **Telerik UI for .NET MAUI** — .NET MAUI is the framework for building modern, multi-platform, natively compiled iOS, Android, macOS and Windows apps using shared single codebase. Let’s talk about the elephant in the room—enterprise-grade mobile/desktop apps often need complex UI components.
+- **.NET MAUI for .NET 7** — Take a quick look at “.NET MAUI for .NET 7” and the practical ideas behind it.
+- **State of .NET MAUI** — This short item introduces “State of .NET MAUI” and points you towards the full story.
+- **Going Desktop with .NET MAUI** — Take a quick look at “Going Desktop with .NET MAUI” and the practical ideas behind it.
+- **.NET MAUI Performance** — This short item introduces “.NET MAUI Performance” and points you towards the full story.
+- **Telerik UI for .NET MAUI** — Take a quick look at “Telerik UI for .NET MAUI” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

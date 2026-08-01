@@ -13,14 +13,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #8 is a curated stop for developers tracking .NET MAUI Single Project, Accessible Mobile Apps Learn Module, Shiny 2.0 Release, First Impressions with .NET 6 & MAUI. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #8 rounds up .NET MAUI Single Project, Accessible Mobile Apps Learn Module, Shiny 2.0 Release, First Impressions with .NET 6 & MAUI, and Goodness with Microsoft.Maui.Graphics. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI Single Project** — Maddy Leger hosted special guest Jake Kirsch for the May Xamarin Community Standup . .NET MAUI’s new Single Project architecture and the elevated developer experience around fonts/images/resources across platform targets.
-- **Accessible Mobile Apps Learn Module** — Forms Microsoft Learn module . Building from Rachel’s excellent guide , this learning module walks developers through the small steps toward building more accessible mobile apps. Forms UI elements’ automation properties for screen readers, thus creating more equitable user experiences for all users.
-- **Shiny 2.0 Release** — 0 has been in the works for quite some time now, involving lots of commits and efforts to improve the developer experience. 0 with lots of new features and goodies—like end to Boilerplate Code, Static Class Generation, Logging enhancements, very cool updates around Notifications & Beacons, and much more.
-- **First Impressions with .NET 6 & MAUI** — .NET MAUI goodness. They started from scratch and walked through the developer experience with runtime/tooling as they stand now.
-- **Goodness with Microsoft.Maui.Graphics** — .NET MAUI that offers drawn controls with flexibility to choose between Cupertino, Fluent and Material Design systems. Graphics—a cross-platform graphics library for iOS, Android, Windows, macOS. The goal is to allow developers to share drawing code between platforms by using a common API across abstractions.
+- **.NET MAUI Single Project** — Take a quick look at “.NET MAUI Single Project” and the practical ideas behind it.
+- **Accessible Mobile Apps Learn Module** — This short item introduces “Accessible Mobile Apps Learn Module” and points you towards the full story.
+- **Shiny 2.0 Release** — Catch up on “Shiny 2.0 Release” and see what has changed for developers.
+- **First Impressions with .NET 6 & MAUI** — This short item introduces “First Impressions with .NET 6 & MAUI” and points you towards the full story.
+- **Goodness with Microsoft.Maui.Graphics** — Take a quick look at “Goodness with Microsoft.Maui.Graphics” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

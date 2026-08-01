@@ -12,14 +12,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #16 is a curated stop for developers tracking Better XAML with Compiled Bindings, Migration to .NET MAUI, MVVM with FreshMvvm, .NET MAUI Preview 5 and Telerik UI. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #16 rounds up Better XAML with Compiled Bindings, Migration to .NET MAUI, MVVM with FreshMvvm, .NET MAUI Preview 5 and Telerik UI, and Migrating WeatherTwentyOne. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **Better XAML with Compiled Bindings** — James Montemagno continues his excellent YouTube videos for developer education—this time talking about safer and faster XAML . .NET MAUI tomorrow, XAML developers use a ton of data binding to link data objects to rendered views and keeping them in sync—a key to MVVM design pattern.
-- **Migration to .NET MAUI** — .NET MAUI in the near future? This has been promised to be painless and Javier Suárez has started the work. .NET MAUI. Forms Renderers to MAUI Handlers, as well as bringing over Behaviors, Converters, Effects and more.
-- **MVVM with FreshMvvm** — Gerald Versluis posted another helpful video—this time looking at MVVM design pattern and the FreshMvvm framework in particular. Forms already has the built-in plumbing to support MVVM code bases, a well-thought-out framework really helps.
-- **.NET MAUI Preview 5 and Telerik UI** — Better late than never. .NET MAUI Preview 5 bits and tried experimenting with some of the new animations.
-- **Migrating WeatherTwentyOne** — .NET MAUI Weather '21 app to WinUI (Windows App SDK) and Uno Platform—and documented the process . Forms XAML as compared to UWP/WinUI/Uno XAML.
+- **Better XAML with Compiled Bindings** — Take a quick look at “Better XAML with Compiled Bindings” and the practical ideas behind it.
+- **Migration to .NET MAUI** — This short item introduces “Migration to .NET MAUI” and points you towards the full story.
+- **MVVM with FreshMvvm** — Take a quick look at “MVVM with FreshMvvm” and the practical ideas behind it.
+- **.NET MAUI Preview 5 and Telerik UI** — Catch up on “.NET MAUI Preview 5 and Telerik UI” and see what has changed for developers.
+- **Migrating WeatherTwentyOne** — Take a quick look at “Migrating WeatherTwentyOne” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

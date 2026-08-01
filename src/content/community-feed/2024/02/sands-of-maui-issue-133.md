@@ -12,14 +12,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #133 is a curated stop for developers tracking TreeView for .NET MAUI, .NET MAUI Dos & Don’ts, January XAML Fest, Dev Tunnels for Mobile Developers. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #133 rounds up TreeView for .NET MAUI, .NET MAUI Dos & Don’ts, January XAML Fest, Dev Tunnels for Mobile Developers, and Xamarin to .NET MAUI. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **TreeView for .NET MAUI** — .NET MAUI, developers can target mobile and desktop form factors from a single shared codebase. .NET MAUI app development, however, means catering to different platform experiences and building complex yet performant UI that renders consistently across devices.
-- **.NET MAUI Dos & Don’ts** — .NET developers to create cross-platform apps for Android, iOS, macOS and Windows, with deep native integrations, platform-native UI and hybrid experiences that extend the reach of Blazor/JS web UI technologies.
-- **January XAML Fest** — .NET MAUI developers will likely end up using C#/XAML to define app UI. .NET MAUI. .NET MAUI . With January XAML Fest, Leomaris has rolled out a collection of articles—each tackling a different piece of UI, breaking down the XAML code, and providing developers with a clear, concise guide to crafting such UI themselves.
-- **Dev Tunnels for Mobile Developers** — Modern mobile apps do not live in silos—they are often partnered up with an API or a backend service for continuity of user experiences.
-- **Xamarin to .NET MAUI** — .NET cross-platform development stack, allowing developers to reach mobile and desktop form factors from single shared codebase. Forms. A migration strategy is needed to move things forward. .NET MAUI . .NET MAUI.
+- **TreeView for .NET MAUI** — This short item introduces “TreeView for .NET MAUI” and points you towards the full story.
+- **.NET MAUI Dos & Don’ts** — Take a quick look at “.NET MAUI Dos & Don’ts” and the practical ideas behind it.
+- **January XAML Fest** — This short item introduces “January XAML Fest” and points you towards the full story.
+- **Dev Tunnels for Mobile Developers** — Take a quick look at “Dev Tunnels for Mobile Developers” and the practical ideas behind it.
+- **Xamarin to .NET MAUI** — This short item introduces “Xamarin to .NET MAUI” and points you towards the full story.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

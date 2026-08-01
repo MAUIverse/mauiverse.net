@@ -11,14 +11,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #123 is a curated stop for developers tracking .NET MAUI @ .NET Conf, Migration to .NET MAUI, .NET 8 Hack, HyperLinks in .NET MAUI. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #123 rounds up .NET MAUI @ .NET Conf, Migration to .NET MAUI, .NET 8 Hack, HyperLinks in .NET MAUI, and Navigation in .NET MAUI. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI @ .NET Conf** — .NET 8. Like clockwork, developers can expect the latest runtime to be ready for primetime this November, including tons of framework, tooling and performance updates. .NET Conf is scheduled for November 14-16. .NET Conf 2023 .
-- **Migration to .NET MAUI** — .NET cross-platform development stack, allowing developers to reach mobile and desktop form factors from single shared codebase. .NET runtimes—a modernization strategy is needed to push things forward. .NET MAUI .
-- **.NET 8 Hack** — .NET 8 is the newest release of the popular open source and cross-platform development platform that powers millions of apps across the web, mobile, desktop, gaming, IoT and more. .NET developer. .NET 8 Hack . .NET.
-- **HyperLinks in .NET MAUI** — Mobile devices, tablets and computers serve as portals to the world’s happenings via the apps folks use daily. These apps present information through a structured blend of texts, images, hyperlinks and other elements, facilitating effortless access to content.
-- **Navigation in .NET MAUI** — .NET MAUI apps are native apps that run seamlessly on mobile and desktop form factors, powered from a single shared codebase. While UI/business logic is shared, the user experience should not be the same between vastly different mobile and desktop platforms—content organization and navigation can be key factors to differentiate.
+- **.NET MAUI @ .NET Conf** — Get the highlights from “.NET MAUI @ .NET Conf” and see what the community has been discussing.
+- **Migration to .NET MAUI** — Take a quick look at “Migration to .NET MAUI” and the practical ideas behind it.
+- **.NET 8 Hack** — This short item introduces “.NET 8 Hack” and points you towards the full story.
+- **HyperLinks in .NET MAUI** — Take a quick look at “HyperLinks in .NET MAUI” and the practical ideas behind it.
+- **Navigation in .NET MAUI** — This short item introduces “Navigation in .NET MAUI” and points you towards the full story.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

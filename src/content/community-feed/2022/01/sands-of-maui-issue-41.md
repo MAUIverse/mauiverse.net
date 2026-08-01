@@ -14,14 +14,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #41 is a curated stop for developers tracking .NET MAUI Preview 12, Handler Architecture in .NET MAUI, .NET MAUI Handlers Demystified, Control Animations. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #41 rounds up .NET MAUI Preview 12, Handler Architecture in .NET MAUI, .NET MAUI Handlers Demystified, Control Animations, and .NET MAUI Single Project. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI Preview 12** — .NET MAUI aka Preview 12 is now out— David Ortinau wrote up the usual announcement post . .NET MAUI advances towards Release Candidate builds, the focus of the engineering work slowly shifts towards stabilizing the releases and quality improvements—nonetheless, there are some wonderful enhancements in this release.
-- **Handler Architecture in .NET MAUI** — Forms has always had the concept of a Renderer—a piece of code that renders native UI consistently for each platform from abstracted code.
-- **.NET MAUI Handlers Demystified** — .NET MAUI Handlers have piqued your interest, it should be time for a deeper dive. .NET MAUI . Forms Renderers. Next up comes the deeper dive into customizing UI through Handlers—modifying each control or types of controls or specific control instances for each platform.
-- **Control Animations** — Modern mobile development is a cutthroat race for user attention—anything developers can do to engage the audience helps. Modern UI and UX demands smooth motions, transitions and pizzaz—all achieved through animations.
-- **.NET MAUI Single Project** — .NET 6 builds to reach various mobile/desktop platforms from a single codebase. Forms reality and promises to better manage large cross-platform projects. But what about resources for each targeted platform—can those be shared in a single project?
+- **.NET MAUI Preview 12** — Catch up on “.NET MAUI Preview 12” and see what has changed for developers.
+- **Handler Architecture in .NET MAUI** — Take a quick look at “Handler Architecture in .NET MAUI” and the practical ideas behind it.
+- **.NET MAUI Handlers Demystified** — This short item introduces “.NET MAUI Handlers Demystified” and points you towards the full story.
+- **Control Animations** — Take a quick look at “Control Animations” and the practical ideas behind it.
+- **.NET MAUI Single Project** — This short item introduces “.NET MAUI Single Project” and points you towards the full story.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

@@ -12,14 +12,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #76 is a curated stop for developers tracking .NET MAUI Update, .NET 7 Update, Renderers to Handlers, Authentication in .NET MAUI. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #76 rounds up .NET MAUI Update, .NET 7 Update, Renderers to Handlers, Authentication in .NET MAUI, and .NET Conf. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI Update** — .NET MAUI—the sixth Service Release since General Availability (GA) has runtime and tooling updates. .NET MAUI support for iOS 16 and XCode 14 . .NET MAUI developers wanting to target iOS 16—the latest mobile Operating System (OS) from Apple.
-- **.NET 7 Update** — .NET —scheduled to go live in November 2022. .NET 7 Release Candidate (RC) 2 is now out for Windows, MacOS and Linux. 4 Preview 3. .NET 6—a unified developer platform allowing wide platform reach and being fine-tuned for performance.
-- **Renderers to Handlers** — Forms has always had the concept of Renderers—code that renders native UI from abstracted C#/XAML. .NET MAUI introduces the new UI paradigm of Handlers—an interface-based implementation that provides cross-platform mapping to native platform controls.
-- **Authentication in .NET MAUI** — .NET MAUI apps that provide value/services to customers would need to ways to securely identify users—authentication is fundamental to most modern apps.
-- **.NET Conf** — .NET developers look forward to every year? .NET runtime, along with a look at what's possible now and what's coming in future. .NET Conf 2022 : November 8-10—it's less than a month away. .NET Conf? .NET MAUI, Cloud Native, Containers, ARM 64, performance optimization and modernization.
+- **.NET MAUI Update** — Catch up on “.NET MAUI Update” and see what has changed for developers.
+- **.NET 7 Update** — Catch up on “.NET 7 Update” and see what has changed for developers.
+- **Renderers to Handlers** — Take a quick look at “Renderers to Handlers” and the practical ideas behind it.
+- **Authentication in .NET MAUI** — This short item introduces “Authentication in .NET MAUI” and points you towards the full story.
+- **.NET Conf** — Get the highlights from “.NET Conf” and see what the community has been discussing.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

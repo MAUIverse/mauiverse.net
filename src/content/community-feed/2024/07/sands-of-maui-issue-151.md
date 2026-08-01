@@ -12,14 +12,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #151 is a curated stop for developers tracking .NET 9 Release, MAUI Reactor Goodness, Barcode Scanning, Styling Blazor with CSS. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #151 rounds up .NET 9 Release, MAUI Reactor Goodness, Barcode Scanning, Styling Blazor with CSS, and Modernizing Apps. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET 9 Release** — .NET is constantly evolving and the next big milestone is already cooking. .NET 9 with Preview 6 now out . .NET Libraries, Runtime and SDKs. .NET 9 has important focus areas for cloud-native and intelligent app development.
-- **MAUI Reactor Goodness** — It’s July and time for #MAUIUIJuly again. .NET MAUI. .NET MAUI developers to learn from each other. MAUI UI July is happening throughout July 2024. The next article comes from Mark Allibone to stay motivated during home workouts— getting fit with MAUI Reactor .
-- **Barcode Scanning** — .NET cross-platform development stack, allowing developers to reach mobile and desktop form factors from single shared codebase. .NET MAUI—there is fresh content ready to be bookmarked every day of July. .NET MAUI .
-- **Styling Blazor with CSS** — .NET MAUI is more than capable of welcoming web content to native land. .NET MAUI apps, while gaining complete native platform API access. .NET 9. .NET MAUI developers or a refresher for web developers— styling Blazor components with CSS .
-- **Modernizing Apps** — .NET is powerful, open-source, cross-platform and welcoming to all with mature tooling accompanied by rich ecosystems. .NET runtimes. .NET 8. It might be a decision fork for many, and Jefferson S. .NET MAUI .
+- **.NET 9 Release** — Catch up on “.NET 9 Release” and see what has changed for developers.
+- **MAUI Reactor Goodness** — Take a quick look at “MAUI Reactor Goodness” and the practical ideas behind it.
+- **Barcode Scanning** — This short item introduces “Barcode Scanning” and points you towards the full story.
+- **Styling Blazor with CSS** — Take a quick look at “Styling Blazor with CSS” and the practical ideas behind it.
+- **Modernizing Apps** — This short item introduces “Modernizing Apps” and points you towards the full story.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

@@ -16,14 +16,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #63 is a curated stop for developers tracking .NET Conf Focus on MAUI, Layouts in .NET MAUI, Using Shell in .NET MAUI, WSA with .NET MAUI. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #63 rounds up .NET Conf Focus on MAUI, Layouts in .NET MAUI, Using Shell in .NET MAUI, WSA with .NET MAUI, and .NET MAUI @ DevReach. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET Conf Focus on MAUI** — .NET knowledge. .NET. .NET 7 scheduled to launch in Nov 2022. .NET technology stacks. .NET MAUI. .NET Multi-platform App UI. .NET MAUI towards building native apps/libraries/components across iOS/Android/Windows/MacOS and sharing code with web apps.
-- **Layouts in .NET MAUI** — .NET MAUI, there are some foundational concepts everyone will need to understand to be successful. Most mobile/desktop apps are usually a collection of pages/views with navigation in between—and developers/designers decide how content is to be rendered within each page.
-- **Using Shell in .NET MAUI** — .NET MAUI has now adopted the Shell in default project templates, meant to reduce app complexity by providing fundamental features that most apps require ready out of the box—like a layout/visual hierarchy of content, a URI-based navigation scheme and an integrated search handler.
-- **WSA with .NET MAUI** — Windows Subsystem for Android™️ (WSA) enables Windows 11 devices to run Android applications that are available in the Amazon Appstore. .NET MAUI can be the perfect technology stack to build a true native cross-platform app.
-- **.NET MAUI @ DevReach** — DevReach is the premier developer conference in central and eastern Europe, started over a decade back in Sofia BG. As the world slowly comes out of the global pandemic, developers have two big reasons to rejoice—DevReach is back in person with hybrid mode for 2022 and coming to the US for the first time!
+- **.NET Conf Focus on MAUI** — Get the highlights from “.NET Conf Focus on MAUI” and see what the community has been discussing.
+- **Layouts in .NET MAUI** — Take a quick look at “Layouts in .NET MAUI” and the practical ideas behind it.
+- **Using Shell in .NET MAUI** — This short item introduces “Using Shell in .NET MAUI” and points you towards the full story.
+- **WSA with .NET MAUI** — Take a quick look at “WSA with .NET MAUI” and the practical ideas behind it.
+- **.NET MAUI @ DevReach** — Get the highlights from “.NET MAUI @ DevReach” and see what the community has been discussing.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

@@ -10,14 +10,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #101 is a curated stop for developers tracking Drawing on .NET MAUI Maps, Migration to .NET MAUI, .NET Community Toolkit, OpenAI Completions with .NET. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #101 rounds up Drawing on .NET MAUI Maps, Migration to .NET MAUI, .NET Community Toolkit, OpenAI Completions with .NET, and .NET @ Microsoft Build. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **Drawing on .NET MAUI Maps** — Many modern mobile/desktop apps deal with geolocation data and as such, a customizable mapping solution is key for developers powering such experiences. .NET 7 launch.
-- **Migration to .NET MAUI** — .NET code to not just iOS/Android but also to Windows/macOS. Forms is very much the reality today. .NET MAUI. .NET MAUI . .NET Upgrade Assistant tool to assist in automating migrations. .NET MAUI. .NET MAUI should help with shared resources and dependencies, while there is also more help with design patterns like MVVM.
-- **.NET Community Toolkit** — .NET developers, agnostic of any specific UI platform. .NET Foundation. 2 is now out . HighPerformance. .NET MAUI developers. No more writing boilerplate MVVM code—much of the bindings, events and properties are automatically wired up by source code generators.
-- **OpenAI Completions with .NET** — Artificial intelligence (AI) is eating the world and changing the way we live and work. The popularity of AI-driven solutions is driving most technology companies to sprinkle AI power in many consumer-facing products, and AI is increasingly making its way into the developer tools.
-- **.NET @ Microsoft Build** — Microsoft’s premier developer conference is coming up soon—Build 2023 is happening May 23-25. This year, Build is both virtual and in-person in Seattle. While developers can watch many sessions live online, for folks joining in-person, there are lots of interaction opportunities, like meet the experts, demo areas, workshops and more.
+- **Drawing on .NET MAUI Maps** — This short item introduces “Drawing on .NET MAUI Maps” and points you towards the full story.
+- **Migration to .NET MAUI** — Take a quick look at “Migration to .NET MAUI” and the practical ideas behind it.
+- **.NET Community Toolkit** — This short item introduces “.NET Community Toolkit” and points you towards the full story.
+- **OpenAI Completions with .NET** — Take a quick look at “OpenAI Completions with .NET” and the practical ideas behind it.
+- **.NET @ Microsoft Build** — Get the highlights from “.NET @ Microsoft Build” and see what the community has been discussing.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

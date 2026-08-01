@@ -16,14 +16,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #34 is a curated stop for developers tracking Future of .NET, .NET MAUI Preview 10 Recap, .NET Updates, Drawn Controls in .NET MAUI. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #34 rounds up Future of .NET, .NET MAUI Preview 10 Recap, .NET Updates, Drawn Controls in .NET MAUI, and MAUIAppBuilder Code. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **Future of .NET** — .NET webinar . This was a fun 2 hours breaking down all the big announcements from a developer's perspective and whipping up quick demos to showcase the hot bits. .NET MAUI updates and bringing Blazor goodness to desktop with hybrid apps.
-- **.NET MAUI Preview 10 Recap** — .NET MAUI release go by without some expected YouTube goodness? .NET MAUI Preview 10 and recapped some tooling goodness with VS 2022. .NET MAUI and Hybrid apps with Blazor. .NET MAUI. The promise is coming together nicely.
-- **.NET Updates** — .NET 6 and Visual Studio 2022 releases. .NET bits and Azure cloud services. .NET Conf—something soon to be open sourced for developers to tinker with.
-- **Drawn Controls in .NET MAUI** — .NET MAUI. .NET MAUI , diving into much of the awesome work that him and the team has been putting together. Graphics library, giving developers the freedom to render native UI per their needs. Controls library. .NET MAUI, catering to popular design systems like Cupertino, Fluent and Material.
-- **MAUIAppBuilder Code** — .NET Builder pattern. Luis talks about how to initialize a MauiAppBuilder instance using a Static method with default configurations and dives into the MauiAppBuilder Public API. This API is where a lot of the plumbing happens—lot of properties/configurations and a single method called Build() which creates the MauiApp.
+- **Future of .NET** — Take a quick look at “Future of .NET” and the practical ideas behind it.
+- **.NET MAUI Preview 10 Recap** — Catch up on “.NET MAUI Preview 10 Recap” and see what has changed for developers.
+- **.NET Updates** — Catch up on “.NET Updates” and see what has changed for developers.
+- **Drawn Controls in .NET MAUI** — This short item introduces “Drawn Controls in .NET MAUI” and points you towards the full story.
+- **MAUIAppBuilder Code** — Take a quick look at “MAUIAppBuilder Code” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

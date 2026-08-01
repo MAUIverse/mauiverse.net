@@ -13,14 +13,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #38 is a curated stop for developers tracking .NET MAUI Preview 11, Migration and Modernization with .NET MAUI, Platform-Specific Code in .NET MAUI, Image Caching. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #38 rounds up .NET MAUI Preview 11, Migration and Modernization with .NET MAUI, Platform-Specific Code in .NET MAUI, Image Caching, and Comet ImagePicker. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **.NET MAUI Preview 11** — .NET MAUI aka Preview 11 is now out. 1 Preview 2 is being held back a little. .NET Workload update. .NET 6. Go get the hot bits developers!
-- **Migration and Modernization with .NET MAUI** — .NET MAUI aficianado . .NET 6 carrying the LTS badge. .NET MAUI and how to move apps over with considerations for Custom Renderers/Handlers. .NET.
-- **Platform-Specific Code in .NET MAUI** — .NET MAUI provides wonderful set of abstractions to reach mobile/desktop platforms from a truly single code base—there is plumbing to make sure native UI is rendered on each corresponding platform. .NET MAUI does not get in the way.
-- **Image Caching** — Imagery makes mobile apps engaging, but dealing with images often comes with development considerations and optimizations. .NET MAUI —this is a must-watch for developers seeking fine grained control over how images are handled in apps.
-- **Comet ImagePicker** — .NET MAUI? James Clancey and gang have you covered with Comet—an experimental framework that lets you write simple MVU-style C# code to describe/drive visual tree with data binding and state updates. Forever the tinkerer, James put out a fully-interactive scrollable Image Picker for Comet —works across platforms as well.
+- **.NET MAUI Preview 11** — Catch up on “.NET MAUI Preview 11” and see what has changed for developers.
+- **Migration and Modernization with .NET MAUI** — This short item introduces “Migration and Modernization with .NET MAUI” and points you towards the full story.
+- **Platform-Specific Code in .NET MAUI** — Take a quick look at “Platform-Specific Code in .NET MAUI” and the practical ideas behind it.
+- **Image Caching** — This short item introduces “Image Caching” and points you towards the full story.
+- **Comet ImagePicker** — Take a quick look at “Comet ImagePicker” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

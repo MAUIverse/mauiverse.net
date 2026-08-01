@@ -14,14 +14,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #21 is a curated stop for developers tracking Code-Behind to MVVM, .NET MAUI Podcast, Telerik UI for MAUI Release, .NET MAUI Getting Started. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #21 rounds up Code-Behind to MVVM, .NET MAUI Podcast, Telerik UI for MAUI Release, .NET MAUI Getting Started, and .NET MAUI Community Toolkit Ask the Experts. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **Code-Behind to MVVM** — .NET MAUI would continue the trend. .NET MAUI apps are bootstrapped further embraces MVVM patterns and interface-based architectures. Forms and now have a lot of it? Gerald Versluis is here for the rescue with a video on how to migrate tightly coupled code over to MVVM friendly architectures .
-- **.NET MAUI Podcast** — Been a fan of the Xamarin podcast? .NET MAUI & Azure. The same troublemakers will be hosts— James Montemagno , Matt Soucoup & David Ortinau . .NET MAUI release, Visual Studio 2022 and Azure updates. Give it a listen, folks.
-- **Telerik UI for MAUI Release** — .NET MAUI. .NET MAUI apps with. .NET MAUI Preview 7 and an customizable Entry UI component. And one more thing—the Telerik GRID is here! .NET MAUI. .NET MAUI apps. And it is a Telerik DataGrid for sure—full featured with flexibility, easy APIs and fine-tuned performance.
-- **.NET MAUI Getting Started** — .NET MAUI Preview 7 . .NET MAUI app on an Android emulator in Windows. .NET MAUI app on iOS required VS to connect to a Mac host for the build/deploy—all covered seamlessly in this developer-facing walkthrough. Kudos.
-- **.NET MAUI Community Toolkit Ask the Experts** — .NET MAUI news—this time, he is joined by Brandon Minnick . .NET MAUI Community Toolkit . .NET MAUI Community Toolkit is open sourced & community supported—Brandon & Gerald answered lots of questions from the chatroom with honesty & humor.
+- **Code-Behind to MVVM** — This short item introduces “Code-Behind to MVVM” and points you towards the full story.
+- **.NET MAUI Podcast** — Take a quick look at “.NET MAUI Podcast” and the practical ideas behind it.
+- **Telerik UI for MAUI Release** — Catch up on “Telerik UI for MAUI Release” and see what has changed for developers.
+- **.NET MAUI Getting Started** — Take a quick look at “.NET MAUI Getting Started” and the practical ideas behind it.
+- **.NET MAUI Community Toolkit Ask the Experts** — This short item introduces “.NET MAUI Community Toolkit Ask the Experts” and points you towards the full story.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.

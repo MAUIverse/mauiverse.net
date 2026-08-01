@@ -13,14 +13,14 @@ featuring:
 contentType: article
 ---
 
-Sam Basu's *Sands of MAUI* #154 is a curated stop for developers tracking VS Code Setup, Chasing Curiosity, UI Markup, Screen Size Management. It brings together timely resources from the .NET MAUI ecosystem, with enough context to help you decide which original posts, videos, and announcements to open next.
+Sam Basu's *Sands of MAUI* #154 rounds up VS Code Setup, Chasing Curiosity, UI Markup, Screen Size Management, and Infuse AI. It brings together useful links and community updates, with enough context to help you choose what to explore next.
 
 ## In this issue
 
-- **VS Code Setup** — .NET developers to create cross-platform apps for Android, iOS, macOS and Windows, with deep native integrations, platform-native UI and hybrid experiences. .NET MAUI—many seeking consistent building experiences from Windows/macOS/Linux developer machines.
-- **Chasing Curiosity** — .NET MAUI. .NET MAUI developers to learn from each other—MAUI UI July happened throughout July 2024. The next article comes from David Ortinau with an inspiring writeup on his 50th birthday— chasing curiosity . For anyone writing software, David has wonderful advice—embrace curiosity and the perpetual learning that it fuels.
-- **UI Markup** — .NET cross-platform development stack, allowing developers to reach mobile and desktop form factors from single shared codebase. .NET MAUI—there was fresh content ready to be bookmarked every day of July. Markup .
-- **Screen Size Management** — .NET cross-platform development stack, allowing developers to reach mobile and desktop form factors from single shared codebase. While it is wonderful that a single codebase can power apps across various platforms, the sheer variety of screen sizes in devices can pose challenges for developers.
-- **Infuse AI** — It is the age of artificial intelligence. AI is slowly changing the way we live and work, and AI’s popularity is driving adoption in enterprise and consumer apps. .NET developers to infuse apps with solutions powered by Generative AI and Large Language Models (LLMs).
+- **VS Code Setup** — Take a quick look at “VS Code Setup” and the practical ideas behind it.
+- **Chasing Curiosity** — This short item introduces “Chasing Curiosity” and points you towards the full story.
+- **UI Markup** — Take a quick look at “UI Markup” and the practical ideas behind it.
+- **Screen Size Management** — This short item introduces “Screen Size Management” and points you towards the full story.
+- **Infuse AI** — Take a quick look at “Infuse AI” and the practical ideas behind it.
 
 Open the original roundup to follow the links, see the supporting examples, and explore the referenced community work in more depth.
