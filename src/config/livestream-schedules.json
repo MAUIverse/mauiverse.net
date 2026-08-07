@@ -28,6 +28,10 @@
         "title": ".NET MAUI Community Standup - August 2026",
         "date": "2026-08-06T19:00:00Z",
         "liveUrl": "https://www.youtube.com/watch?v=XH19sR5AzuA"
+      },
+      {
+        "title": ".NET MAUI Community Standup - August 2026",
+        "date": "2026-09-03T19:00:00Z"
       }
     ]
   },
@@ -56,6 +60,10 @@
       {
         "title": ".NET MAUI Community Toolkit Standup - August 2026",
         "date": "2026-08-06T20:00:00Z"
+      },
+      {
+        "title": ".NET MAUI Community Toolkit Standup - September 2026",
+        "date": "2026-09-03T20:00:00Z"
       }
     ]
   }

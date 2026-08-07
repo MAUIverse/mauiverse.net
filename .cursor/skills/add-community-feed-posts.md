@@ -1,7 +1,7 @@
 ---
+name: Add new posts
 description: How to create community-feed posts (summaries of articles/videos/podcasts) for MAUIverse from a list of authors + URLs. Use whenever asked to add, batch, or write community-feed items, or when editing files under src/content/community-feed.
 globs: src/content/community-feed/**/*.md
-alwaysApply: false
 ---
 
 # Creating MAUIverse community-feed posts
