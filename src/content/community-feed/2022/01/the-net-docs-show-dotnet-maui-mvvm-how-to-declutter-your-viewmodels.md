@@ -3,7 +3,7 @@ title: "The .NET Docs Show - .NET MAUI (MVVM): How to declutter your ViewModels"
 link: https://www.youtube.com/watch?v=pno61dXWKH8
 description: "Jesus Angulo joins The .NET Docs Show to share practical advice for keeping MVVM ViewModels in .NET MAUI easier to manage. The episode is especially useful for developers trying to cut complexity before their app logic turns brittle."
 date: 2022-01-24
-author: esulink2514
+author: jesulink2514
 contentType: video
 ---
 
