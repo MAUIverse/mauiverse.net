@@ -181,6 +181,10 @@ export const authorEntries = [
     displayName: "Tim Miller",
   },
   {
+    key: "dudchenko610",
+    displayName: "Ruslan Dudchenko",
+  },
+  {
     key: "EdCharbeneau",
     displayName: "Ed Charbeneau ",
   },
@@ -203,10 +207,6 @@ export const authorEntries = [
   {
     key: "EstebanP-dev",
     displayName: "Juan Esteban Navia",
-  },
-  {
-    key: "esulink2514",
-    displayName: "Jesus Angulo",
   },
   {
     key: "ewerspej",
@@ -285,6 +285,10 @@ export const authorEntries = [
     displayName: "Ali Raza",
   },
   {
+    key: "ivanball",
+    displayName: "Ivan Ball-llovera",
+  },
+  {
     key: "jamesmontemagno",
     displayName: "James Montemagno",
   },
@@ -299,6 +303,10 @@ export const authorEntries = [
   {
     key: "jBijsterboschNL",
     displayName: "John Bijsterbosch",
+  },
+  {
+    key: "jesulink2514",
+    displayName: "Jesus Angulo",
   },
   {
     key: "jfversluis",
@@ -429,6 +437,10 @@ export const authorEntries = [
     displayName: "Dominik Titl",
   },
   {
+    key: "mr5z",
+    displayName: "Mark Laureta",
+  },
+  {
     key: "mrlacey",
     displayName: "Matt Lacey",
   },
@@ -467,6 +479,10 @@ export const authorEntries = [
   {
     key: "plattski",
     displayName: "David Platt",
+  },
+  {
+    key: "pmahend1",
+    displayName: "Prateek Mahendrakar",
   },
   {
     key: "praeclarum",
@@ -539,6 +555,10 @@ export const authorEntries = [
   {
     key: "StephaneDelcroix",
     displayName: "Stéphane Delcroix",
+  },
+  {
+    key: "steve3008",
+    displayName: "Stephen Moreton-Howell",
   },
   {
     key: "sthewissen",
