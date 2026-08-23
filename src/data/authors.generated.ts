@@ -337,6 +337,10 @@ export const authorEntries = [
     displayName: "Jean-Emmanuel BAILLAT",
   },
   {
+    key: "kassyi",
+    displayName: "kassyi",
+  },
+  {
     key: "Kode4Hue",
     displayName: "Hubert Graham",
   },
