@@ -2,16 +2,20 @@ import { access, mkdir, writeFile } from 'node:fs/promises';
 import { constants } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
-const SOURCE_URL =
-  'https://raw.githubusercontent.com/jfversluis/built-with-maui/refs/heads/main/README.md';
+const CONTENTS_API_URL =
+  'https://api.github.com/repos/jfversluis/built-with-maui/contents/data/apps';
+const SOURCE_LABEL =
+  'https://github.com/jfversluis/built-with-maui/tree/main/data/apps';
 const TS_OUTPUT_PATH = resolve(process.cwd(), 'src/data/built-with-maui-apps.generated.ts');
-const SECTION_HEADING = '## Apps built with .NET MAUI';
 
 const forceRefresh = /^(1|true|yes)$/i.test(
   process.env.BUILT_WITH_MAUI_SYNC_FORCE_REFRESH ?? ''
 );
 
+const FETCH_CONCURRENCY = 6;
 const ICON_CONCURRENCY = 6;
+
+const VALID_PLATFORMS = new Set(['ios', 'android', 'windows', 'website', 'github', 'macos']);
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -26,85 +30,86 @@ async function hasExistingDataset() {
   }
 }
 
-function extractAppsSection(markdown) {
-  const start = markdown.indexOf(SECTION_HEADING);
-  if (start === -1) {
-    throw new Error(`Could not find section heading "${SECTION_HEADING}".`);
+function githubHeaders() {
+  const headers = {
+    Accept: 'application/vnd.github+json',
+    'User-Agent': 'mauiverse-net-built-with-maui-sync',
+  };
+  if (process.env.GITHUB_TOKEN) {
+    headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   }
-  const rest = markdown.slice(start);
-  const nextHeadingMatch = rest.slice(SECTION_HEADING.length).match(/\n##\s+/);
-  const end =
-    nextHeadingMatch === null
-      ? markdown.length
-      : start + SECTION_HEADING.length + nextHeadingMatch.index + 1;
-  return markdown.slice(start, end).trim();
-}
-
-function normalizeNestedLinks(markdown) {
-  return markdown.replace(/\]\(\[[^\]]+\]\((https?:\/\/[^)\s]+)\)\)/g, ']($1)');
+  return headers;
 }
 
 // ---------------------------------------------------------------------------
-// Parse the markdown table into structured data
+// Load app data from upstream JSON files
 // ---------------------------------------------------------------------------
 
-function parseTableRow(row) {
-  const cells = row.split('|').map((c) => c.trim()).filter((_, i, a) => i > 0 && i < a.length);
-  if (cells.length < 4) return null;
+async function listAppFiles() {
+  const response = await fetch(CONTENTS_API_URL, {
+    headers: githubHeaders(),
+    signal: AbortSignal.timeout(15000),
+  });
+  if (!response.ok) {
+    throw new Error(
+      `Failed to list app JSON files: ${response.status} ${response.statusText}`
+    );
+  }
+  const entries = await response.json();
+  if (!Array.isArray(entries)) {
+    throw new Error('Unexpected GitHub contents API response (expected an array).');
+  }
+  return entries
+    .filter((entry) => entry.type === 'file' && typeof entry.name === 'string' && entry.name.endsWith('.json'))
+    .map((entry) => entry.download_url)
+    .filter(Boolean);
+}
 
-  const [rawName, description, downloads, rawLinks] = cells;
+async function fetchAppJson(url) {
+  const response = await fetch(url, {
+    signal: AbortSignal.timeout(15000),
+    headers: { 'User-Agent': 'mauiverse-net-built-with-maui-sync' },
+  });
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+  }
+  return response.json();
+}
 
-  const nameMatch = rawName.match(/\*\*(.+?)\*\*/);
-  const name = nameMatch ? nameMatch[1].trim() : rawName.trim();
-  if (!name) return null;
+function mapAppJson(json) {
+  if (!json || typeof json.name !== 'string' || !json.name.trim()) {
+    return null;
+  }
 
   const platforms = {};
-  const linkRegex = /\[\s*<img[^>]*src="assets\/([^"./]+)\.png"[^>]*>\s*\]\((https?:\/\/[^)\s]+)\)/gi;
-  let match;
-  while ((match = linkRegex.exec(rawLinks)) !== null) {
-    const key = match[1].toLowerCase();
-    const url = match[2];
-    if (['ios', 'android', 'windows', 'website', 'github'].includes(key)) {
-      platforms[key] = url;
+  for (const link of json.links ?? []) {
+    const platform = typeof link?.platform === 'string' ? link.platform.toLowerCase() : '';
+    const url = typeof link?.url === 'string' ? link.url.trim() : '';
+    if (VALID_PLATFORMS.has(platform) && /^https?:\/\//i.test(url)) {
+      platforms[platform] = url;
     }
   }
 
   return {
-    name,
-    description: description.trim(),
-    downloads: downloads.trim().replace(/<br\s*\/?>/gi, ' · '),
+    name: json.name.trim(),
+    description: typeof json.description === 'string' ? json.description.trim() : '',
+    downloads: typeof json.users === 'string' ? json.users.trim() : '',
     iconUrl: null,
     platforms,
   };
 }
 
-function parseAppsTable(markdown) {
-  const lines = markdown.split('\n');
+async function fetchAllApps(downloadUrls) {
   const apps = [];
-  let inTable = false;
-  let headerSkipped = false;
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed.startsWith('|')) {
-      if (inTable) {
-        // Allow blank lines within the table; break on headings or non-table content
-        if (trimmed === '' || trimmed.startsWith('#')) { if (trimmed.startsWith('#')) break; continue; }
-        break;
-      }
-      continue;
+  for (let i = 0; i < downloadUrls.length; i += FETCH_CONCURRENCY) {
+    const batch = downloadUrls.slice(i, i + FETCH_CONCURRENCY);
+    const results = await Promise.all(batch.map((url) => fetchAppJson(url)));
+    for (const json of results) {
+      const app = mapAppJson(json);
+      if (app) apps.push(app);
     }
-    inTable = true;
-    if (!headerSkipped) {
-      if (trimmed.includes('---')) {
-        headerSkipped = true;
-      }
-      continue;
-    }
-    const app = parseTableRow(trimmed);
-    if (app) apps.push(app);
   }
-
+  apps.sort((a, b) => a.name.localeCompare(b.name));
   return apps;
 }
 
@@ -236,7 +241,7 @@ function buildTsOutput(apps) {
   return `// This file is generated by scripts/fetch-built-with-maui.mjs.
 // Do not edit manually.
 
-export const builtWithMauiSource = ${JSON.stringify(SOURCE_URL)};
+export const builtWithMauiSource = ${JSON.stringify(SOURCE_LABEL)};
 export const builtWithMauiFetchedAt = ${JSON.stringify(fetchedAt)};
 
 export type BuiltWithMauiApp = {
@@ -267,18 +272,12 @@ async function run() {
     return;
   }
 
-  console.log('Fetching built-with-maui data…');
-  const response = await fetch(SOURCE_URL);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch markdown: ${response.status} ${response.statusText}`);
-  }
+  console.log('Fetching built-with-maui app JSON files…');
+  const downloadUrls = await listAppFiles();
+  console.log(`Found ${downloadUrls.length} app JSON files.`);
 
-  const rawMarkdown = await response.text();
-  const normalized = normalizeNestedLinks(rawMarkdown);
-  const appsSection = extractAppsSection(normalized);
-
-  let apps = parseAppsTable(appsSection);
-  console.log(`Parsed ${apps.length} apps from upstream table.`);
+  let apps = await fetchAllApps(downloadUrls);
+  console.log(`Parsed ${apps.length} apps from upstream JSON.`);
 
   console.log('Fetching app store icons…');
   apps = await fetchAllIcons(apps);
