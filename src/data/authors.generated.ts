@@ -19,6 +19,10 @@ export const authorEntries = [
     displayName: "Agustin Bonilla",
   },
   {
+    key: "akhilgite",
+    displayName: "Akhil Gite",
+  },
+  {
     key: "albyrock87",
     displayName: "Alberto Aldegheri",
   },
@@ -275,6 +279,10 @@ export const authorEntries = [
   {
     key: "ilija2407",
     displayName: "Ilija Rushkovski",
+  },
+  {
+    key: "IQTechSolutions",
+    displayName: "Ivan Rossouw",
   },
   {
     key: "iron-software",
@@ -591,6 +599,10 @@ export const authorEntries = [
   {
     key: "TheCodeTraveler",
     displayName: "Brandon Minnick",
+  },
+  {
+    key: "thimanshu1993",
+    displayName: "Himanshu Tyagi",
   },
   {
     key: "tije709",
