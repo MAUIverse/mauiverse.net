@@ -489,6 +489,10 @@ export const authorEntries = [
     displayName: "Pedro Jesus",
   },
   {
+    key: "PieEatingNinjas",
+    displayName: "Pieter Nijs",
+  },
+  {
     key: "plattski",
     displayName: "David Platt",
   },
