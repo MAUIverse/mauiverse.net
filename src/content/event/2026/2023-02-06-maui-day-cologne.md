@@ -25,4 +25,4 @@ MAUI Day is a one-day, in-person event filled with sessions that have to do with
 
 Its also free! 
 
-Speakers from all around the world were in London on February 6th, 2026 to present about the latest and greatest in the .NET MAUI ecosystem.
+Speakers gathered at the Microsoft office in Cologne on February 6th, 2023 to present about the latest and greatest in the .NET MAUI ecosystem.

@@ -221,6 +221,10 @@ export const authorEntries = [
     displayName: "Farshad Momtaz",
   },
   {
+    key: "Flash0ver",
+    displayName: "Stefan Pölz",
+  },
+  {
     key: "flaviogoncalves",
     displayName: "Flavio Gonclaves",
   },
@@ -385,6 +389,10 @@ export const authorEntries = [
     displayName: "Luis Matos",
   },
   {
+    key: "lukaszgrudzinski",
+    displayName: "Łukasz Grudziński",
+  },
+  {
     key: "mackayn",
     displayName: "Norman Mackay ",
   },
@@ -395,6 +403,10 @@ export const authorEntries = [
   {
     key: "mallibone",
     displayName: "Mark Allibone",
+  },
+  {
+    key: "MarioNaumoski07",
+    displayName: "Mario Naumoski",
   },
   {
     key: "matt-goldman",
@@ -431,6 +443,10 @@ export const authorEntries = [
   {
     key: "michalpobuta",
     displayName: "Michał Pobuta",
+  },
+  {
+    key: "mihajloml",
+    displayName: "Mihajlo Mladenov",
   },
   {
     key: "MikeCodesDotNET",
@@ -647,6 +663,12 @@ export const authorEntries = [
   {
     key: "VladislavAntonyuk",
     displayName: "Vladislav Antonyuk",
+  },
+  {
+    key: "vlatko-tasevski",
+    displayName: "Vlatko Tasevski",
+    imagePath: "/img/contributors/vlatko-tasevski.jpg",
+    disableGitHubProfileLink: true,
   },
   {
     key: "yushulx",
