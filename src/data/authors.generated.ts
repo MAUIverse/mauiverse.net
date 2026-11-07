@@ -51,6 +51,10 @@ export const authorEntries = [
     displayName: "Allan Ritchie",
   },
   {
+    key: "beckybuckler",
+    displayName: "Becky Buckler",
+  },
+  {
     key: "bethmassi",
     displayName: "Beth Massi",
   },
@@ -201,6 +205,10 @@ export const authorEntries = [
     displayName: "Edin Kapić",
   },
   {
+    key: "emaf",
+    displayName: "Ema Fernandez Dell'Oca",
+  },
+  {
     key: "emimontesdeoca",
     displayName: "Emiliano Montesdeoca",
   },
@@ -309,6 +317,10 @@ export const authorEntries = [
     displayName: "Nikita Romanov",
   },
   {
+    key: "janne-hmp",
+    displayName: "Janne Gustafsson",
+  },
+  {
     key: "jasho",
     displayName: "Roman Jasek",
   },
@@ -335,6 +347,10 @@ export const authorEntries = [
   {
     key: "jpd21122012",
     displayName: "Jorge Perales Diaz",
+  },
+  {
+    key: "jstedfast",
+    displayName: "Jeffrey Stedfast",
   },
   {
     key: "jsuarezruiz",
@@ -433,6 +449,10 @@ export const authorEntries = [
     displayName: "Max Mannstein",
   },
   {
+    key: "mcumming",
+    displayName: "Michael Cummings",
+  },
+  {
     key: "melissahoughton",
     displayName: "Melissa Houghton",
   },
@@ -451,6 +471,10 @@ export const authorEntries = [
   {
     key: "MikeCodesDotNET",
     displayName: "Mike James",
+  },
+  {
+    key: "mikeparker104",
+    displayName: "Mike Parker",
   },
   {
     key: "mikhailpetrusheuski",
@@ -635,6 +659,10 @@ export const authorEntries = [
   {
     key: "Toine-db",
     displayName: "Toine de Boer",
+  },
+  {
+    key: "TommiGustafsson-HMP",
+    displayName: "Tommi Gustafsson",
   },
   {
     key: "tonyedwardspz",

@@ -8,68 +8,80 @@
       },
       {
         "title": ".NET MAUI Community Standup - April 2026",
-        "date": "2026-04-02T19:00:00Z",
-        "liveUrl": "https://www.youtube.com/watch?v=mfj8oxjqdaM"
+        "date": "2026-04-02T18:00:00Z",
+        "liveUrl": "https://www.youtube.com/watch?v=IfCIubKbyqw"
       },
       {
         "title": ".NET MAUI Community Standup - May 2026",
-        "date": "2026-05-07T19:00:00Z"
+        "date": "2026-05-07T18:00:00Z",
+        "liveUrl": "https://www.youtube.com/watch?v=mfj8oxjqdaM"
       },
       {
         "title": ".NET MAUI Community Standup - June 2026",
-        "date": "2026-06-04T19:00:00Z"
+        "date": "2026-06-04T18:00:00Z",
+        "liveUrl": "https://www.youtube.com/watch?v=F1isgO3XTbk"
       },
       {
         "title": ".NET MAUI Community Standup - July 2026",
-        "date": "2026-07-02T19:00:00Z",
+        "date": "2026-07-02T18:00:00Z",
         "liveUrl": "https://www.youtube.com/watch?v=V_EO32C0AlY"
       },
       {
         "title": ".NET MAUI Community Standup - August 2026",
-        "date": "2026-08-06T19:00:00Z",
+        "date": "2026-08-06T18:00:00Z",
         "liveUrl": "https://www.youtube.com/watch?v=XH19sR5AzuA"
       },
       {
         "title": ".NET MAUI Community Standup - September 2026",
-        "date": "2026-09-03T19:00:00Z",
+        "date": "2026-09-03T18:00:00Z",
         "liveUrl": "https://www.youtube.com/watch?v=A5Pr5N999tc"
       },
       {
         "title": ".NET MAUI Community Standup - October 2026",
-        "date": "2026-10-01T19:00:00Z",
+        "date": "2026-10-01T18:00:00Z",
         "liveUrl": "https://www.youtube.com/watch?v=_1iLdE7d1jo"
+      },
+      {
+        "title": ".NET MAUI Community Standup - December 2026",
+        "date": "2026-12-03T19:00:00Z"
       }
     ]
   },
   "toolkitStandup": {
     "episodes": [
       {
-        "title": ".NET MAUI Community Toolkit Standup - March 2026",
-        "date": "2026-03-05T20:00:00Z"
-      },
-      {
         "title": ".NET MAUI Community Toolkit Standup - April 2026",
-        "date": "2026-04-02T20:00:00Z"
+        "date": "2026-04-02T19:00:00Z",
+        "liveUrl": "https://www.youtube.com/watch?v=gF1YSJyxAB8"
       },
       {
         "title": ".NET MAUI Community Toolkit Standup - May 2026",
-        "date": "2026-05-07T20:00:00Z"
+        "date": "2026-05-07T19:00:00Z",
+        "liveUrl": "https://www.youtube.com/watch?v=ZuoppreJeto"
       },
       {
         "title": ".NET MAUI Community Toolkit Standup - June 2026",
-        "date": "2026-06-04T20:00:00Z"
-      },
-      {
-        "title": ".NET MAUI Community Toolkit Standup - July 2026",
-        "date": "2026-07-02T20:00:00Z"
+        "date": "2026-06-04T19:00:00Z",
+        "liveUrl": "https://www.youtube.com/watch?v=-saluayXw6U"
       },
       {
         "title": ".NET MAUI Community Toolkit Standup - August 2026",
-        "date": "2026-08-06T20:00:00Z"
+        "date": "2026-08-06T19:00:00Z",
+        "liveUrl": "https://www.youtube.com/watch?v=Oz0rKKgqv2Q"
       },
       {
-        "title": ".NET MAUI Community Toolkit Standup - September 2026",
-        "date": "2026-09-03T20:00:00Z"
+        "title": ".NET MAUI Community Toolkit Standup - October 2026",
+        "date": "2026-10-01T19:00:00Z",
+        "liveUrl": "https://www.youtube.com/watch?v=QuW6OokYbdA"
+      },
+      {
+        "title": ".NET MAUI Community Toolkit Standup - November 2026",
+        "date": "2026-11-05T20:00:00Z",
+        "liveUrl": "https://www.youtube.com/watch?v=Aa6SJnnUCrY"
+      },
+      {
+        "title": ".NET MAUI Community Toolkit Standup - December 2026",
+        "date": "2026-12-03T20:00:00Z"
       }
     ]
   }
