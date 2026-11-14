@@ -2,7 +2,7 @@
 // Do not edit manually.
 
 export const syncfusionMauiToolkitContributorSource = "https://api.github.com/repos/syncfusion/maui-toolkit/contributors?per_page=100";
-export const syncfusionMauiToolkitContributorFetchedAt = "2026-11-07T11:12:11.968Z";
+export const syncfusionMauiToolkitContributorFetchedAt = "2026-11-14T09:20:04.701Z";
 export const syncfusionMauiToolkitContributorUsernames = [
   "anandh-sf4665",
   "aneesfathimas",
@@ -44,5 +44,6 @@ export const syncfusionMauiToolkitContributorUsernames = [
   "sriradheshnags",
   "surya3655",
   "tameemansari-sf4702",
+  "vishalomprasad",
   "yuvaraj-gajaraj"
 ] as const;
