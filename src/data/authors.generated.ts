@@ -197,6 +197,10 @@ export const authorEntries = [
     displayName: "Ed Charbeneau ",
   },
   {
+    key: "egarim",
+    displayName: "Joche Ojeda",
+  },
+  {
     key: "eilon",
     displayName: "Eilon Lipton",
   },
@@ -235,6 +239,10 @@ export const authorEntries = [
   {
     key: "flaviogoncalves",
     displayName: "Flavio Gonclaves",
+  },
+  {
+    key: "fooberichu150",
+    displayName: "Jon Seeley",
   },
   {
     key: "framinosona",
