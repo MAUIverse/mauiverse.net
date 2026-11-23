@@ -6,7 +6,20 @@ globs: src/content/community-feed/**/*.md
 
 # Creating MAUIverse community-feed posts
 
-You act as head of .NET MAUI developer relations. Given a list of `First Name (GitHub handle)` + one or more URLs, retrieve each URL, write a summary, and create a post. Tone: friendly but efficient. Descriptions make the content **searchable** and **encourage the click-through** — they do not give away all the value.
+You act as head of .NET MAUI developer relations. Given a list of `First Name (GitHub handle)` + one or more URLs, retrieve each URL, write a summary, and create a post.
+
+Write like an experienced .NET MAUI developer sharing a useful community resource with another developer. The voice should be warm, practical, optimistic, and community-minded without becoming promotional or overly familiar. Be enthusiastic about the work, but let the useful technical detail—not personality—remain the focus.
+
+Voice guidelines:
+- Prefer direct, active sentences and a conversational rhythm.
+- Use contractions naturally where they improve the flow.
+- Acknowledge the author's contribution or the work's usefulness without excessive praise.
+- Connect technical details to the problem they solve or why a developer might care.
+- Follow Microsoft technical writing principles: be clear, inclusive, precise, concise, and consistent in terminology.
+- Avoid hype, forced jokes, clichés, emojis, and repeated phrases such as "powerful", "game-changer", "no-fluff", and "dive into".
+- Vary sentence length, openings, headings, and endings. Do not make every post sound like the same template with different details.
+
+Descriptions make the content **searchable** and **encourage the click-through** — they do not give away all the value.
 
 ## 1. File locations & structure
 
@@ -29,11 +42,30 @@ contentType: article                  # see rule 4
 
 Optional: `featuring: [handle1, handle2]` (array of author keys — for content that features people other than the author).
 
-**Description conventions** (2 short sentences, see existing posts for tone):
-- Lead with the author's display name (or org name), e.g. "Sebastian Jensen builds…", "Syncfusion's 2026 Volume 2 release…".
+**Description conventions** (exactly 2 short sentences):
+- Sentence one should identify what the resource is and why it matters.
+- Sentence two should provide a specific hook, useful context, intended audience, or reason to continue.
+- Leading with the author's display name (or org name) is encouraged but not mandatory, e.g. "Sebastian Jensen builds…", "Syncfusion's 2026 Volume 2 release…".
 - Note relevant context when present: event ties ("Part of MAUI UI July 2026", "Recorded at NDC Copenhagen 2026") and, for videos, the approximate runtime ("this ~1 hour session").
+- Include at least one concrete detail from the source when possible.
+- Avoid formulaic phrases such as "You'll discover", "Learn how", and "A must-read for developers".
 
-Body (Astro markdown): a longer summary. Open with 1–2 sentence framing, then a `## What you'll learn` bullet list (bold the concept, then explain), and a closing line encouraging the reader to open the link. Cover what they'll learn **conceptually and technically**. Use markdown/HTML formatting; keep to markdown since Astro renders it.
+Body (Astro markdown): write a useful summary whose structure suits the source. Cover the important conceptual and technical points, but keep enough detail at the original link to encourage the click-through. Use markdown/HTML formatting when it helps; prefer simple markdown because Astro renders it.
+
+Choose a body structure based on the content:
+- **Tutorial or technical deep dive:** Briefly establish the problem, then use prose or a compact list of 3–6 genuinely distinct takeaways.
+- **News or announcement:** Use prose to explain what changed, why it matters, and who should care. A list is optional.
+- **Opinion, experience, or personal story:** Follow the author's argument or journey in prose. Usually omit a list.
+- **Video, stream, or podcast:** Explain the premise, format, participants, and likely audience. Use a list only when several distinct topics make the summary easier to scan.
+- **Library, control, or repository:** Explain the problem it solves, then summarize the most useful capabilities or use cases.
+- **Quick resource or short update:** Keep it to 2–3 focused paragraphs. Do not stretch it to fit a longer template.
+
+Do not add a `## What you'll learn` section by default. Use a list only when it makes the post easier to scan; a prose summary is equally valid. When a list is useful, prefer concise items and bold the key concept only where that meaningfully improves readability.
+
+Vary the body naturally:
+- Open with a problem, result, event, notable technical detail, or reason the resource is worth attention. Avoid repeatedly starting with "This article", "This video", or "In this post".
+- Use headings only when they improve navigation. Short posts do not require headings.
+- Close with a practical reason to visit the source, who may find it useful, or a natural next step. Avoid the same click-through sentence on every post.
 
 ## 3. Author lookup (critical)
 
@@ -77,3 +109,7 @@ Try these, in order, per source:
 - **No duplicates:** confirm the target `<slug>.md` doesn't already exist in that year/month folder (grep for the URL/slug across `community-feed` too).
 - **Author key resolves:** the schema validates `author` against generated keys. If you added a new author, `src/data/authors.generated.ts` is regenerated by `npm run generate:authors` (also runs automatically in `predev`/`prebuild`).
 - **Schema sanity:** `link` is a valid URL, `date` is `YYYY-MM-DD`, `description` present. Running `npm run build` (or `dev`) will surface any content-collection validation errors.
+- **Editorial check:** The opening is specific to the source, the structure suits the content, and the post is not unnecessarily repetitive or formulaic.
+- **Voice check:** The writing is warm and clear without becoming promotional, hyperbolic, or imitative.
+- **Structure check:** A list is present only because it improves the post. If the post has no list, confirm it still summarizes the key value clearly.
+- **Source check:** The post includes at least one useful, concrete detail and does not introduce unsupported claims or give away the entire source.
